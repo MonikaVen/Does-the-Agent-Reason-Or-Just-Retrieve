@@ -34,7 +34,7 @@ retrieval, adaptive evidence acquisition, planning, and interpretation.
 
 # 2. Architecture Overview
 
-![Architecture diagram](media/image1.png)
+![Architecture diagram](images/Architecture.svg)
 
 *Figure 1. C3 full-agent logical architecture. Solid arrows represent synchronous data or control flow; dashed arrows represent asynchronous trajectory recording.*
 
