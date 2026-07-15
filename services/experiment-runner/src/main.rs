@@ -1,8 +1,17 @@
+use chrono::Utc;
+use serde::Serialize;
 use std::env;
 
 #[derive(Debug, PartialEq, Eq)]
 struct Config {
     condition: String,
+}
+
+#[derive(Serialize)]
+struct RunResponse {
+    condition: String,
+    status: String,
+    timestamp: String,
 }
 
 fn parse_args<I, S>(args: I) -> Result<Config, String>
@@ -21,9 +30,7 @@ where
                     "--condition" => {
                         condition = values.next();
                     }
-                    _ => {
-                        return Err(format!("unexpected argument: {arg}"));
-                    }
+                    _ => return Err(format!("unexpected argument: {arg}")),
                 }
             }
 
@@ -35,10 +42,20 @@ where
     }
 }
 
+fn build_response(config: Config) -> RunResponse {
+    RunResponse {
+        condition: config.condition,
+        status: "started".to_string(),
+        timestamp: Utc::now().to_rfc3339_opts(chrono::SecondsFormat::Secs, true),
+    }
+}
+
 fn main() {
     match parse_args(env::args()) {
         Ok(config) => {
-            println!("experiment-runner executing condition {}", config.condition);
+            let response = build_response(config);
+            let json = serde_json::to_string(&response).expect("failed to serialize response");
+            println!("{json}");
         }
         Err(err) => {
             eprintln!("error: {err}");
@@ -49,7 +66,7 @@ fn main() {
 
 #[cfg(test)]
 mod tests {
-    use super::parse_args;
+    use super::{build_response, parse_args};
 
     #[test]
     fn parses_condition_from_run_command() {
@@ -61,5 +78,15 @@ mod tests {
     fn rejects_missing_condition() {
         let err = parse_args(["experiment-runner", "run"]).unwrap_err();
         assert_eq!(err, "missing --condition argument");
+    }
+
+    #[test]
+    fn builds_json_response() {
+        let config = parse_args(["experiment-runner", "run", "--condition", "C1"]).unwrap();
+        let response = build_response(config);
+
+        assert_eq!(response.condition, "C1");
+        assert_eq!(response.status, "started");
+        assert!(response.timestamp.ends_with('Z'));
     }
 }

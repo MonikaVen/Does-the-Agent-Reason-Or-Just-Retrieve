@@ -6,9 +6,9 @@ It is implemented in Rust as a small CLI binary and is built into the Docker ser
 
 ## Purpose
 
-The experiment runner is responsible for accepting a single experiment condition and executing the corresponding experiment flow.
+The experiment runner accepts a single experiment condition and produces a structured execution event for downstream orchestration.
 
-At present, the service is a minimal scaffold that exposes the CLI contract for the orchestration system.
+This version implements the future contract described in the documentation: the service now emits structured JSON instead of plain text.
 
 ## Build & Run
 
@@ -43,8 +43,8 @@ experiment-runner run --condition <CONDITION>
 
 ### Parameters
 
-- `run` - required subcommand
-- `--condition <CONDITION>` - required experiment condition identifier
+- `run` — required subcommand
+- `--condition <CONDITION>` — required experiment condition identifier
 
 ### Example
 
@@ -69,7 +69,7 @@ struct Config {
 
 ### JSON equivalent
 
-If this service is later extended to consume structured input, the equivalent JSON request body would be:
+If the service is represented as structured input, the equivalent JSON request body is:
 
 ```json
 {
@@ -77,15 +77,9 @@ If this service is later extended to consume structured input, the equivalent JS
 }
 ```
 
-### Output
+## Output schema
 
-The current implementation prints a single text line to stdout:
-
-```text
-experiment-runner executing condition C0
-```
-
-A future version may replace this with structured JSON output such as:
+The service now emits structured JSON to stdout.
 
 ```json
 {
@@ -94,6 +88,16 @@ A future version may replace this with structured JSON output such as:
   "timestamp": "2026-07-15T00:00:00Z"
 }
 ```
+
+### Response fields
+
+- `condition` — the requested experiment condition
+- `status` — the execution state, currently `started`
+- `timestamp` — the UTC start time in ISO 8601 format
+
+## Implementation details
+
+`src/main.rs` now serializes a `RunResponse` struct using `serde_json` and uses `chrono` to generate the timestamp.
 
 ## Docker build
 
@@ -104,10 +108,9 @@ The `Dockerfile` builds the Rust binary in a multi-stage container:
 
 ## Extension points
 
-This README documents the current scaffold. The service can be extended with:
+This README documents the current future-ready scaffold. The service can be extended with:
 
 - richer experiment execution logic
 - additional CLI flags for logging, config path, or output destination
-- structured stdout / JSON result serialization
 - HTTP or gRPC service wrapper for remote orchestration
 - database or message queue integration for experiment lifecycle state
