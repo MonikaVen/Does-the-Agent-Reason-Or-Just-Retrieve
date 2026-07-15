@@ -1,0 +1,9 @@
+services:
+  experiment-runner:
+    build: .
+    working_dir: /workspace
+    volumes:
+      - ./configs:/workspace/configs:ro
+      - ./incidents:/workspace/incidents:ro
+      - ./runs:/workspace/runs
+    command: ["validate-config"]

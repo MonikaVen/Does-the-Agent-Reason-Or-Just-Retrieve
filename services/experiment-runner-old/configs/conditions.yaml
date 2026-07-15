@@ -1,0 +1,139 @@
+conditions:
+  C0:
+    name: Raw LLM
+    capabilities:
+      knowledge_access: false
+      adaptive_search: false
+      structured_state: false
+      fixed_retrieval: false
+      passive_matched_evidence: false
+      oracle_evidence: false
+      oracle_plan: false
+    input_mode: fixed_raw_context
+    allowed_interfaces:
+      - submit_report
+
+  C1:
+    name: Knowledge-only
+    capabilities:
+      knowledge_access: true
+      adaptive_search: false
+      structured_state: false
+      fixed_retrieval: false
+      passive_matched_evidence: false
+      oracle_evidence: false
+      oracle_plan: false
+    input_mode: fixed_raw_context
+    allowed_interfaces:
+      - retrieve_knowledge
+      - submit_report
+
+  C2:
+    name: Search-only agent
+    capabilities:
+      knowledge_access: false
+      adaptive_search: true
+      structured_state: true
+      fixed_retrieval: false
+      passive_matched_evidence: false
+      oracle_evidence: false
+      oracle_plan: false
+    input_mode: initial_alert
+    allowed_interfaces:
+      - grep_logs
+      - query_events
+      - find_process_tree
+      - build_timeline
+      - search_related
+      - submit_report
+
+  C3:
+    name: Full agent
+    capabilities:
+      knowledge_access: true
+      adaptive_search: true
+      structured_state: true
+      fixed_retrieval: false
+      passive_matched_evidence: false
+      oracle_evidence: false
+      oracle_plan: false
+    input_mode: initial_alert
+    allowed_interfaces:
+      - retrieve_knowledge
+      - grep_logs
+      - query_events
+      - find_process_tree
+      - build_timeline
+      - search_related
+      - submit_report
+
+  C4:
+    name: Fixed retrieval
+    capabilities:
+      knowledge_access: true
+      adaptive_search: false
+      structured_state: false
+      fixed_retrieval: true
+      passive_matched_evidence: false
+      oracle_evidence: false
+      oracle_plan: false
+    input_mode: deterministic_retrieval
+    allowed_interfaces:
+      - execute_fixed_retrieval
+      - retrieve_knowledge
+      - submit_report
+
+  C5:
+    name: Passive matched evidence
+    capabilities:
+      knowledge_access: true
+      adaptive_search: false
+      structured_state: false
+      fixed_retrieval: false
+      passive_matched_evidence: true
+      oracle_evidence: false
+      oracle_plan: false
+    input_mode: matched_c3_evidence
+    depends_on:
+      condition: C3
+      artifact: trajectory
+    allowed_interfaces:
+      - retrieve_knowledge
+      - submit_report
+
+  C6:
+    name: Oracle evidence
+    capabilities:
+      knowledge_access: true
+      adaptive_search: false
+      structured_state: false
+      fixed_retrieval: false
+      passive_matched_evidence: false
+      oracle_evidence: true
+      oracle_plan: false
+    input_mode: oracle_evidence
+    allowed_interfaces:
+      - retrieve_knowledge
+      - load_oracle_evidence
+      - submit_report
+
+  C7:
+    name: Oracle plan
+    capabilities:
+      knowledge_access: true
+      adaptive_search: true
+      structured_state: true
+      fixed_retrieval: false
+      passive_matched_evidence: false
+      oracle_evidence: false
+      oracle_plan: true
+    input_mode: initial_alert
+    allowed_interfaces:
+      - load_oracle_plan
+      - retrieve_knowledge
+      - grep_logs
+      - query_events
+      - find_process_tree
+      - build_timeline
+      - search_related
+      - submit_report

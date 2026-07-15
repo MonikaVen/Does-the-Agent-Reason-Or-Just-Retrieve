@@ -1,116 +1,43 @@
-# Experiment Runner Service
+# Experiment Runner
 
-This service is the `experiment-runner` component used by the orchestration stack to execute evaluation conditions.
+Commented Rust reference implementation for C0-C7.
 
-It is implemented in Rust as a small CLI binary and is built into the Docker service defined in `../orchestration/Orchestration.yaml`.
-
-## Purpose
-
-The experiment runner accepts a single experiment condition and produces a structured execution event for downstream orchestration.
-
-This version implements the future contract described in the documentation: the service now emits structured JSON instead of plain text.
-
-## Build & Run
-
-### Local development
-
-From `services/experiment-runner`:
+## Build
 
 ```bash
 cargo test
-cargo run -- run --condition C0
+cargo build --release
 ```
 
-### Docker
-
-From the repository root:
+## Validate
 
 ```bash
-docker compose -f orchestration/Orchestration.yaml run --rm experiment-runner run --condition C0
+cargo run -- validate-config
 ```
 
-This uses the service definition in `orchestration/Orchestration.yaml`.
-
-## Service interface
-
-The service exposes a CLI interface only.
-
-### Command
+## Run C3 and C5
 
 ```bash
-experiment-runner run --condition <CONDITION>
+cargo run -- run --condition C3 --incident incidents/example.yaml --seed 100 --run-id c3-example
+cargo run -- run --condition C5 --incident incidents/example.yaml --seed 100 --matched-run runs/c3-example --run-id c5-example
 ```
 
-### Parameters
-
-- `run` — required subcommand
-- `--condition <CONDITION>` — required experiment condition identifier
-
-### Example
+## Run a batch
 
 ```bash
-experiment-runner run --condition C0
+cargo run -- run-batch --conditions C0,C1,C2,C3,C4,C6,C7 --incident incidents/example.yaml --repetitions 3 --seed-start 100
 ```
 
-### Exit codes
+C5 is separate because each C5 run must reference a specific completed C3 trajectory.
 
-- `0` — success
-- `2` — invalid arguments or missing `--condition`
+## Artifacts
 
-## Data schema
-
-The current input schema is simple and defined by the Rust `Config` struct.
-
-```rust
-struct Config {
-    condition: String,
-}
+```text
+runs/<run-id>/
+├── manifest.yaml
+├── trajectory.jsonl
+├── report.json
+└── result.json
 ```
 
-### JSON equivalent
-
-If the service is represented as structured input, the equivalent JSON request body is:
-
-```json
-{
-  "condition": "C0"
-}
-```
-
-## Output schema
-
-The service now emits structured JSON to stdout.
-
-```json
-{
-  "condition": "C0",
-  "status": "started",
-  "timestamp": "2026-07-15T00:00:00Z"
-}
-```
-
-### Response fields
-
-- `condition` — the requested experiment condition
-- `status` — the execution state, currently `started`
-- `timestamp` — the UTC start time in ISO 8601 format
-
-## Implementation details
-
-`src/main.rs` now serializes a `RunResponse` struct using `serde_json` and uses `chrono` to generate the timestamp.
-
-## Docker build
-
-The `Dockerfile` builds the Rust binary in a multi-stage container:
-
-- `rust:1.81-bookworm` builder stage compiles the binary
-- `debian:bookworm-slim` runtime image contains only the final executable
-
-## Extension points
-
-This README documents the current future-ready scaffold. The service can be extended with:
-
-- richer experiment execution logic
-- additional CLI flags for logging, config path, or output destination
-- HTTP or gRPC service wrapper for remote orchestration
-- database or message queue integration for experiment lifecycle state
+`src/executor.rs` contains deterministic reference adapters. Replace them with real model, knowledge, telemetry, oracle, and fixed-retrieval clients while retaining the interface checks and trajectory format.

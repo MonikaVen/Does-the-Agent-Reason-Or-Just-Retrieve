@@ -1,0 +1,17 @@
+schema_version: "1"
+experiment_id: agent-reasoning-v1
+dataset: cyber-investigations-test
+model: replace-with-pinned-model-version
+
+defaults:
+  repetitions: 3
+  maximum_model_calls: 15
+  maximum_tool_calls: 12
+  maximum_records_per_call: 100
+  maximum_runtime_seconds: 300
+
+artifacts:
+  output_root: runs
+  save_model_inputs: true
+  save_tool_results: true
+  save_state_history: true
