@@ -34,7 +34,7 @@ retrieval, adaptive evidence acquisition, planning, and interpretation.
 
 # 2. Architecture Overview
 
-![Architecture diagram](images/Architecture.svg)
+![Architecture diagram](images/C3Architecture.png)
 
 *Figure 1. C3 full-agent logical architecture. Solid arrows represent synchronous data or control flow; dashed arrows represent asynchronous trajectory recording.*
 
@@ -939,7 +939,7 @@ search, planning, state, and evidence-provider services. A disabled
 service must be inaccessible at the interface level; prompt instructions
 alone are not considered sufficient isolation.
 
-![Architecture diagram](images/Architecture.png)
+![Architecture diagram](images/Architecture.svg)
 
 *Figure 2. Shared test architecture and condition-specific service profiles.* The condition controller instantiates a reproducible service
 graph before each run.
