@@ -1,31 +1,19 @@
 from __future__ import annotations
 
-import asyncio
-from collections import defaultdict
+from collections.abc import Callable
 from typing import Any
 
 from .store import Store, utcnow
 
+EventCallback = Callable[[dict[str, Any]], None]
+
 
 class EventBus:
-    """Append-only trajectory plus in-process fan-out for SSE."""
+    """Append-only trajectory with an optional progress callback."""
 
-    def __init__(self, store: Store) -> None:
+    def __init__(self, store: Store, on_event: EventCallback | None = None) -> None:
         self.store = store
-        self._subs: dict[str, list[asyncio.Queue]] = defaultdict(list)
-        self._lock = asyncio.Lock()
-
-    async def subscribe(self, run_id: str) -> asyncio.Queue:
-        queue: asyncio.Queue = asyncio.Queue()
-        async with self._lock:
-            self._subs[run_id].append(queue)
-        return queue
-
-    async def unsubscribe(self, run_id: str, queue: asyncio.Queue) -> None:
-        async with self._lock:
-            subs = self._subs.get(run_id, [])
-            if queue in subs:
-                subs.remove(queue)
+        self.on_event = on_event
 
     async def emit(
         self,
@@ -45,7 +33,6 @@ class EventBus:
             "payload": payload or {},
         }
         self.store.append_event(event)
-        async with self._lock:
-            for queue in list(self._subs.get(run_id, [])):
-                await queue.put(event)
+        if self.on_event:
+            self.on_event(event)
         return event

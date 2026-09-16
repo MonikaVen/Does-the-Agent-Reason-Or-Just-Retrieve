@@ -25,15 +25,15 @@ The central research question is:
 
 > **Does the agent reason over evidence, or does it just retrieve useful context?**
 
-The runnable lab is Python. Upload typed agent data (alert, telemetry,
-knowledge, C4/C6/C7 packs), pin a **local Ollama** model (default) or a
-cloud model (GPT, Claude, Grok, Groq) with a local API key, run C0–C7,
-and download the experiment report. See [`platform/README.md`](platform/README.md).
+The runnable lab is Python. There is no frontend. Load typed agent data
+(alert, telemetry, knowledge, C4/C6/C7 packs), pin a **local Ollama** model
+(default) or a cloud model, and run C0–C7 from the terminal. See
+[`platform/README.md`](platform/README.md).
 
 ```bash
 cd platform
 python3 -m pip install -r requirements.txt
-python3 -m uvicorn app.main:app --host 0.0.0.0 --port 8000
+python3 -m app suite --provider ollama --model llama3.2:1b
 ```
 
 Rather than treating generated explanations or chain-of-thought text as proof of reasoning, the framework evaluates observable behavior:

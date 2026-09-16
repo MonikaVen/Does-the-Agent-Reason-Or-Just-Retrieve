@@ -6,21 +6,22 @@ from typing import Any
 
 def generate_experiment(spec: dict[str, Any]) -> dict[str, Any]:
     condition = spec["condition"]
-    dataset_id = spec["dataset_id"]
-    provider = spec.get("provider") or "reference"
-    model = spec.get("model") or "reference-investigator-v1"
+    dataset_id = spec.get("dataset_id") or ""
+    provider = spec.get("provider") or "ollama"
+    model = spec.get("model") or "llama3.2:1b"
     budgets = spec.get("budgets") or {
-        "max_tool_calls": 12,
+        "max_tool_calls": 6,
         "max_records_per_call": 100,
         "max_runtime_seconds": 300,
     }
     matched = spec.get("matched_run_id")
     seed = int(spec.get("seed") or 42)
-    base_url = (spec.get("lab_url") or "http://127.0.0.1:8000").rstrip("/")
+    pack_path = spec.get("pack_path") or "data/sample_incident.json"
     filename = f"experiment_{condition.lower()}_{provider}.py"
     body = {
-        "dataset_id": dataset_id,
         "condition": condition,
+        "pack_path": pack_path,
+        "dataset_id": dataset_id,
         "provider": provider,
         "model": model,
         "seed": seed,
@@ -28,54 +29,44 @@ def generate_experiment(spec: dict[str, Any]) -> dict[str, Any]:
         "matched_run_id": matched,
     }
     python = f'''#!/usr/bin/env python3
-"""Generated C0-C7 experiment. Pins condition, model, dataset, and budgets."""
+"""Generated C0-C7 experiment. Pins condition, model, pack, and budgets."""
 from __future__ import annotations
 
-import json
-import time
-import urllib.request
+import asyncio
+import os
 
-LAB = {base_url!r}
-BODY = {json.dumps(body, indent=2)}
+from app.lab import Lab, format_architecture, format_summary
+
+SPEC = {json.dumps(body, indent=4)}
 
 
-def api(method: str, path: str, payload=None):
-    data = None if payload is None else json.dumps(payload).encode()
-    req = urllib.request.Request(
-        LAB + path,
-        data=data,
-        method=method,
-        headers={{"Content-Type": "application/json"}} if payload is not None else {{}},
+async def main() -> None:
+    os.environ.setdefault("LAB_STEP_DELAY", "0")
+    lab = Lab()
+    lab.set_provider(SPEC["provider"], SPEC["model"])
+    dataset = lab.load_pack_file(SPEC["pack_path"])
+    print(format_architecture(lab.architecture(SPEC["condition"], SPEC["provider"], dataset["id"])))
+    summary = await lab.run_condition(
+        SPEC["condition"],
+        dataset["id"],
+        provider=SPEC["provider"],
+        model=SPEC["model"],
+        matched_run_id=SPEC["matched_run_id"],
+        budgets=SPEC["budgets"],
+        seed=SPEC["seed"],
     )
-    with urllib.request.urlopen(req) as response:
-        return json.load(response)
-
-
-def main() -> None:
-    run = api("POST", "/api/runs", BODY)
-    run_id = run["id"]
-    print(f"started {{run_id}} condition={{run['condition']}} provider={provider} model={model}")
-    while True:
-        detail = api("GET", f"/api/runs/{{run_id}}")
-        status = detail["status"]
-        print(f"status={{status}} events={{len(detail.get('events') or [])}}")
-        if status in {{"completed", "failed"}}:
-            report = detail.get("report") or {{}}
-            print(json.dumps({{"verdict": report.get("verdict"), "confidence": report.get("confidence"), "error": detail.get("error")}}, indent=2))
-            if status == "failed":
-                raise SystemExit(1)
-            return
-        time.sleep(0.5)
+    print(format_summary(summary))
+    if summary.get("status") != "completed":
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
 '''
     return {
         "filename": filename,
         "spec": {
             "schema_version": "1.0",
-            "lab_url": base_url,
             **body,
         },
         "python": python,

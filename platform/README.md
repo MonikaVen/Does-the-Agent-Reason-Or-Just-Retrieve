@@ -1,62 +1,80 @@
 # Investigation lab
 
-Python FastAPI app plus a frontend that treats the C0–C7 architecture as
-the interface. The default model is a **locally deployed Ollama** LLM.
+Python C0–C7 experiment runner. There is no frontend. Experiments run from
+the terminal against a **locally deployed Ollama** LLM (default) or the
+offline reference investigator.
 
 ## Setup
 
 ```bash
-# 1. Local model
+# 1. Local model (skip if using --provider reference)
 ollama serve
 ollama pull llama3.2:1b
 
 # 2. Lab
 python3 -m pip install -r requirements.txt
-LAB_STEP_DELAY=0 python3 -m uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
 
-Open http://127.0.0.1:8000
+## Run experiments
 
-The lab probes `http://127.0.0.1:11434` on startup. If Ollama is up it pins
-`ollama` + the pulled model (prefers `llama3.2:1b`). There is no silent
-fallback to the reference investigator.
+From `platform/`:
+
+```bash
+# Full C0–C7 matrix on the sample incident; writes reports/
+python3 -m app suite --provider ollama --model llama3.2:1b
+
+# One condition
+python3 -m app run C3 --provider ollama --model llama3.2:1b
+
+# Offline baseline (no Ollama)
+python3 -m app suite --provider reference
+
+# Your own pack
+python3 -m app suite --pack data/sample_incident.json --provider ollama
+
+# Typed parts
+python3 -m app load --pack data/sample_incident.json
+python3 -m app load --kind telemetry --file telemetry.json --dataset ds-...
+
+# Inspect isolation
+python3 -m app architecture C0
+python3 -m app architecture C3
+python3 -m app conditions
+python3 -m app health
+python3 -m app report
+```
+
+C5 uses the completed C3 run from the same suite. There is no silent
+fallback from Ollama to the reference investigator.
 
 ## Models
 
-- **Ollama** — default. Local, no cloud key. Set the base URL if needed.
+- **Ollama** — default. Local, no cloud key.
 - **Reference investigator** — deterministic offline baseline.
-- **GPT / Claude / Grok / Groq** — save an API key in the lab; keys are stored locally and never written into trajectories.
+- **GPT / Claude / Grok / Groq** — `python3 -m app key openai --api-key sk-...`
 
-## Typed uploads
+Keys stay in the local SQLite store and never enter trajectories.
 
-Each button merges one pack onto the selected dataset:
+## Typed packs
 
-| Pack | Used by |
-|---|---|
-| Alert | all conditions |
-| Telemetry | C0–C5 |
-| Knowledge corpus | C1, C3–C7 |
-| C4 query pack | C4 |
-| C6 oracle evidence | C6 |
-| C7 oracle plan | C7 |
-| Ground truth | sealed; never sent to the model |
+| Pack | Used by | CLI |
+|---|---|---|
+| Alert | all conditions | `--kind alert` |
+| Telemetry | C0–C5 | `--kind telemetry` |
+| Knowledge corpus | C1, C3–C7 | `--kind knowledge` |
+| C4 query pack | C4 | `--kind query_pack` |
+| C6 oracle evidence | C6 | `--kind oracle_evidence` |
+| C7 oracle plan | C7 | `--kind oracle_plan` |
+| Ground truth | sealed | `--kind ground_truth` |
 
-## C0–C7 suite and experiment report
+## Experiment report
 
-**Run C0–C7 suite** executes the matrix sequentially against the pinned
-model (C5 uses the completed C3 run from the same suite). Results are
-written to `platform/reports/experiment-report.md` and `.json`.
+`python3 -m app suite` writes `reports/experiment-report.md` and `.json`.
 
-```bash
-curl -X POST http://127.0.0.1:8000/api/experiments/suite \
-  -H 'Content-Type: application/json' \
-  -d '{"dataset_id":"ds-sample-0042","provider":"ollama","model":"llama3.2:1b","wait":true}'
-```
+## Generated runners
 
-## Experiment code
-
-**Generate experiment code** downloads a pinned Python runner for the current
-condition, provider, model, dataset, and budgets.
+`python3 -m app generate C3 --provider ollama` prints an in-process script
+that pins condition, pack, model, and budgets. It does not call HTTP.
 
 ## Tests
 

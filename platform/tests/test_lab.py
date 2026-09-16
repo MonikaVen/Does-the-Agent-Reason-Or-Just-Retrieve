@@ -5,7 +5,9 @@ from pathlib import Path
 
 import pytest
 
+from app.cli import main
 from app.codegen import generate_experiment
+from app.lab import Lab
 from app.conditions import architecture_view, interface_enabled
 from app.llm import extract_json
 from app.experiment_report import render_markdown, summarize_run
@@ -69,13 +71,16 @@ def test_generated_experiment_pins_condition():
         {
             "condition": "C3",
             "dataset_id": "ds-1",
-            "provider": "openai",
-            "model": "gpt-4.1-mini",
+            "pack_path": "data/sample_incident.json",
+            "provider": "ollama",
+            "model": "llama3.2:1b",
         }
     )
     assert "C3" in generated["python"]
-    assert "openai" in generated["python"]
-    assert generated["filename"] == "experiment_c3_openai.py"
+    assert "from app.lab import Lab" in generated["python"]
+    assert "llama3.2:1b" in generated["python"]
+    assert generated["filename"] == "experiment_c3_ollama.py"
+    assert "urllib" not in generated["python"]
 
 
 def test_policy_rejects_disabled_tool():
@@ -182,3 +187,36 @@ def test_experiment_report_markdown():
     assert summary["tool_observations"] == 1
     assert summary["knowledge_retrievals"] == 1
     assert summary["evidence_ids"] == ["event-1021"]
+
+
+def test_cli_lists_conditions(capsys):
+    assert main(["conditions"]) == 0
+    out = capsys.readouterr().out
+    assert "C0" in out and "C3" in out and "C7" in out
+
+
+def test_cli_architecture(capsys):
+    assert main(["architecture", "C0"]) == 0
+    out = capsys.readouterr().out
+    assert "C0" in out
+    assert "[off]" in out
+    assert "Model gateway" in out
+
+
+@pytest.mark.asyncio
+async def test_lab_suite_reference_writes_report(tmp_path, monkeypatch):
+    monkeypatch.setattr("app.orchestrator.STEP_DELAY", 0)
+    lab = Lab(db_path=tmp_path / "lab.sqlite3")
+    dataset = lab.load_pack(SAMPLE)
+    suite = await lab.run_suite(
+        dataset["id"],
+        provider="reference",
+        model="reference-investigator-v1",
+        conditions=["C0", "C3"],
+        report_dir=tmp_path / "reports",
+    )
+    assert [row["condition"] for row in suite["runs"]] == ["C0", "C3"]
+    assert all(row["status"] == "completed" for row in suite["runs"])
+    assert (tmp_path / "reports" / "experiment-report.md").read_text().count("| C0 |")
+    c3 = suite["runs"][1]
+    assert c3["tool_observations"] >= 1

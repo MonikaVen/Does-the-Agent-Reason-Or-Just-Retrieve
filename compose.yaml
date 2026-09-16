@@ -1,12 +1,14 @@
 services:
   lab:
     build: ./platform
-    ports:
-      - "8000:8000"
     volumes:
       - lab-data:/app/var
     environment:
       LAB_DB: /app/var/lab.sqlite3
+      LAB_STEP_DELAY: "0"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    command: ["python", "-m", "app", "suite", "--provider", "ollama", "--ollama-url", "http://host.docker.internal:11434"]
 
 volumes:
   lab-data:

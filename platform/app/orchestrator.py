@@ -18,7 +18,7 @@ from .report import validate_report
 from .store import Store, utcnow
 from .telemetry import TelemetryGateway, TelemetryStore, flatten_pack, normalize_record
 
-STEP_DELAY = float(os.environ.get("LAB_STEP_DELAY", "0.16"))
+STEP_DELAY = float(os.environ.get("LAB_STEP_DELAY", "0"))
 
 
 class Orchestrator:
