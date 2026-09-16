@@ -16,24 +16,41 @@
       <h1>Investigation lab</h1>
     </div>
     <p class="lede">
-      The architecture is the interface. Upload incident telemetry, pick a C0–C7
-      condition, and watch which services can fire — then follow the live trajectory.
+      Upload each evidence type, pin a local or cloud model, regenerate the
+      service graph for the selected C0–C7 condition, then run or download the
+      experiment code.
     </p>
   </header>
 
   <nav class="condition-rail" id="condition-rail" aria-label="Experimental conditions"></nav>
 
+  <section class="model-bar" aria-label="Model providers">
+    <div class="model-selects">
+      <label>Provider
+        <select id="provider"></select>
+      </label>
+      <label>Model
+        <input id="model-name" type="text" autocomplete="off" />
+      </label>
+      <label id="ollama-url-wrap">Ollama URL
+        <input id="ollama-url" type="text" value="http://127.0.0.1:11434" />
+      </label>
+    </div>
+    <form id="key-form" class="key-form">
+      <label>API key
+        <input id="api-key" type="password" autocomplete="off" placeholder="sk-… / gsk_… / xai-…" />
+      </label>
+      <button type="submit" class="ghost" id="save-key">Save key</button>
+      <p id="key-status" class="hint"></p>
+    </form>
+  </section>
+
   <main class="bench">
     <section class="panel setup" aria-label="Dataset and run setup">
-      <h2>1. Data</h2>
-      <form id="upload-form" class="upload">
-        <label class="file-drop">
-          <input id="file-input" type="file" accept="application/json,.json" />
-          <span>Upload incident pack (JSON)</span>
-        </label>
-        <button type="submit" class="ghost">Add dataset</button>
-      </form>
-      <p class="hint">Needs <code>incident_id</code>, <code>alert</code>, and <code>telemetry</code> sources with stable <code>event_id</code>s. Oracle packs and a C4 query pack are optional.</p>
+      <h2>1. Agent data</h2>
+      <p class="hint">Each button uploads one typed pack onto the selected dataset (or creates one).</p>
+      <div id="upload-kinds" class="upload-kinds"></div>
+      <p id="upload-status" class="hint"></p>
       <div id="dataset-list" class="dataset-list"></div>
       <div id="passport" class="passport empty">Select a dataset to see its data passport.</div>
 
@@ -48,6 +65,7 @@
           <label>Records/call <input id="budget-records" type="number" min="1" max="500" value="100" /></label>
         </div>
         <button id="start-run" class="primary" type="button">Start experiment</button>
+        <button id="generate-code" class="ghost" type="button">Generate experiment code</button>
         <p id="run-error" class="error" hidden></p>
       </div>
       <div id="run-list" class="run-list"></div>
@@ -55,8 +73,11 @@
 
     <section class="panel canvas-wrap" aria-label="Live architecture">
       <div class="canvas-head">
-        <h2 id="canvas-title">Architecture</h2>
-        <p id="canvas-summary"></p>
+        <div>
+          <h2 id="canvas-title">Architecture</h2>
+          <p id="canvas-summary"></p>
+        </div>
+        <button id="regen-arch" class="ghost" type="button">Regenerate architecture</button>
       </div>
       <ol class="stages" id="stages"></ol>
       <div class="signal" id="signal">idle</div>
@@ -65,7 +86,7 @@
 
     <section class="panel trail" aria-label="Trajectory">
       <h2>Trajectory</h2>
-      <p class="hint" id="trail-meta">Events appear as services fire. Disabled interfaces fail closed.</p>
+      <p class="hint" id="trail-meta">Events appear as services fire. Disabled interfaces fail closed. Keys never appear here.</p>
       <ol id="events" class="events"></ol>
     </section>
   </main>
@@ -78,6 +99,12 @@
     <div>
       <h2>Report</h2>
       <div id="report-view" class="report empty">The validator only accepts citations that exist in this run’s evidence ledger.</div>
+    </div>
+    <div class="code-panel">
+      <h2>Experiment code</h2>
+      <p class="hint" id="code-meta">Pins condition, provider, model, dataset, and budgets into a runnable script.</p>
+      <pre id="code-view" class="code empty">Generate experiment code after selecting a dataset.</pre>
+      <button id="download-code" class="ghost" type="button" hidden>Download .py</button>
     </div>
   </section>
 

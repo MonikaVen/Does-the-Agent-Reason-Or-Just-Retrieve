@@ -4,13 +4,15 @@ const state = {
   datasets: [],
   runs: [],
   c3Runs: [],
+  providers: [],
+  selected: { provider: "reference", model: "reference-investigator-v1" },
   selectedCondition: "C3",
   selectedDataset: null,
   selectedRun: null,
   seenStages: new Set(),
   seenSequences: new Set(),
-  liveService: null,
   stream: null,
+  generated: null,
 };
 
 const $ = (id) => document.getElementById(id);
@@ -24,6 +26,10 @@ async function api(path, options) {
     throw new Error(message || response.statusText);
   }
   return data;
+}
+
+function currentProviderMeta() {
+  return state.providers.find((item) => item.id === state.selected.provider) || state.providers[0];
 }
 
 function renderConditions() {
@@ -41,18 +47,79 @@ function renderConditions() {
   }
 }
 
+function renderProviders() {
+  $("provider").innerHTML = state.providers
+    .map((item) => {
+      const mark = item.configured ? "" : item.needs_key ? " · key needed" : "";
+      return `<option value="${item.id}">${item.label}${mark}</option>`;
+    })
+    .join("");
+  $("provider").value = state.selected.provider;
+  $("model-name").value = state.selected.model;
+  const meta = currentProviderMeta();
+  $("ollama-url-wrap").hidden = meta?.id !== "ollama";
+  $("key-form").hidden = !meta?.needs_key && meta?.id !== "ollama";
+  $("api-key").placeholder = meta?.hint || "paste key";
+  $("save-key").textContent = meta?.id === "ollama" ? "Save URL" : "Save key";
+  if (meta?.id === "ollama") $("ollama-url").value = meta.base_url || "http://127.0.0.1:11434";
+}
+
+function renderUploadKinds() {
+  const kinds = state.architecture?.data_kinds || [];
+  $("upload-kinds").innerHTML = kinds
+    .map((kind) => {
+      const active = kind.active_for_condition ? "active-kind" : "";
+      const loaded = kind.loaded ? "loaded-kind" : "";
+      return `<label class="kind-btn ${active} ${loaded}" title="${kind.hint}">
+        <input type="file" accept="application/json,.json" data-kind="${kind.id}" />
+        <strong>${kind.label}</strong>
+        <span>${kind.loaded ? "loaded" : kind.active_for_condition ? "needed for this condition" : "optional / sealed"}</span>
+      </label>`;
+    })
+    .join("");
+  for (const input of $("upload-kinds").querySelectorAll("input")) {
+    input.addEventListener("change", () => uploadKind(input.dataset.kind, input.files[0]));
+  }
+}
+
+async function uploadKind(kind, file) {
+  if (!file) return;
+  $("upload-status").textContent = `Uploading ${kind}…`;
+  try {
+    const body = new FormData();
+    body.append("file", file);
+    const query = state.selectedDataset ? `?dataset_id=${encodeURIComponent(state.selectedDataset)}` : "";
+    const dataset = await api(`/api/datasets/parts/${kind}${query}`, { method: "POST", body });
+    await refreshLists();
+    await selectDataset(dataset.id);
+    $("upload-status").textContent = `Loaded ${kind} onto ${dataset.incident_id}.`;
+    await regenerateArchitecture();
+  } catch (error) {
+    $("upload-status").textContent = error.message;
+  }
+}
+
 async function selectCondition(id) {
   state.selectedCondition = id;
   renderConditions();
-  state.architecture = await api(`/api/architecture?condition=${id}`);
-  renderArchitecture();
   $("matched-run").disabled = id !== "C5";
+  await regenerateArchitecture();
+}
+
+async function regenerateArchitecture() {
+  const provider = state.selected.provider;
+  const dataset = state.selectedDataset ? `&dataset_id=${encodeURIComponent(state.selectedDataset)}` : "";
+  state.architecture = await api(
+    `/api/architecture?condition=${state.selectedCondition}&provider=${encodeURIComponent(provider)}${dataset}`
+  );
+  renderArchitecture();
+  renderUploadKinds();
 }
 
 function renderArchitecture() {
   const view = state.architecture;
   const profile = view.profile;
-  $("canvas-title").textContent = `${view.condition_id} · ${profile.name}`;
+  $("canvas-title").textContent = `${view.condition_id} · ${profile.name} · ${view.provider || "reference"}`;
   $("canvas-summary").textContent = profile.summary;
   $("stages").innerHTML = view.stages
     .map((stage) => `<li data-stage="${stage.id}">${stage.label}</li>`)
@@ -67,14 +134,21 @@ function renderArchitecture() {
         <p>${plane.blurb}</p>
         <div class="services">
           ${plane.services
-            .map(
-              (svc) => `
-            <div class="svc ${svc.enabled ? "on" : "off"}" data-service="${svc.id}">
+            .map((svc) => {
+              const classes = [
+                "svc",
+                svc.enabled ? "on" : "off",
+                svc.selected ? "selected" : "",
+                svc.loaded ? "loaded" : "",
+              ].join(" ");
+              const badge = svc.selected ? "pinned" : svc.loaded ? "data" : svc.enabled ? "on" : "off";
+              return `
+            <div class="${classes}" data-service="${svc.id}">
               <div class="name">${svc.label}</div>
               <div class="role">${svc.role}</div>
-              <div class="badge">${svc.enabled ? "on" : "off"}</div>
-            </div>`
-            )
+              <div class="badge">${badge}</div>
+            </div>`;
+            })
             .join("")}
         </div>
       </article>`
@@ -102,25 +176,21 @@ async function selectDataset(id) {
   renderDatasets();
   const dataset = await api(`/api/datasets/${id}`);
   const passport = dataset.passport;
-  const counts = Object.entries(passport.record_counts)
+  const counts = Object.entries(passport.record_counts || {})
     .map(([source, count]) => `<span>${source} ${count}</span>`)
     .join("");
+  const present = passport.packs_present || {};
   $("passport").classList.remove("empty");
   $("passport").innerHTML = `
     <dl>
       <dt>Incident</dt><dd class="mono">${passport.incident_id}</dd>
       <dt>Host</dt><dd>${passport.alert.host || "—"}</dd>
       <dt>Alert</dt><dd>${passport.alert.summary || passport.alert.alert_type || "—"}</dd>
-      <dt>Window</dt><dd>${(passport.scope.start || "?").slice(11, 16)}–${(passport.scope.end || "?").slice(11, 16)}</dd>
       <dt>Packs</dt>
-      <dd>
-        ${passport.has_fixed_query_pack ? "C4 query pack · " : ""}
-        ${passport.has_oracle_evidence ? "C6 oracle evidence · " : ""}
-        ${passport.has_oracle_plan ? "C7 oracle plan" : ""}
-        ${!passport.has_fixed_query_pack && !passport.has_oracle_evidence && !passport.has_oracle_plan ? "none" : ""}
-      </dd>
+      <dd>${Object.entries(present).filter(([, on]) => on).map(([name]) => name).join(" · ") || "none"}</dd>
     </dl>
     <div class="counts">${counts}</div>`;
+  await regenerateArchitecture();
 }
 
 function renderRuns() {
@@ -128,9 +198,10 @@ function renderRuns() {
     .slice(0, 12)
     .map((run) => {
       const active = run.id === state.selectedRun ? "active" : "";
+      const model = run.manifest?.model_profile || "";
       return `<button class="run-chip ${active}" data-id="${run.id}">
         ${run.condition} · ${run.status}
-        <small>${run.id}</small>
+        <small>${run.id} ${model}</small>
       </button>`;
     })
     .join("");
@@ -165,9 +236,6 @@ function markService(serviceId, mode) {
       node.querySelector(".badge").textContent = "live";
     } else {
       node.classList.remove("live");
-      if (node.classList.contains("on") && node.querySelector(".badge").textContent === "live") {
-        node.querySelector(".badge").textContent = "on";
-      }
     }
     if (mode !== "live" && node.dataset.service === serviceId) {
       node.classList.add("done");
@@ -185,10 +253,11 @@ function eventLine(event) {
     event.payload?.message ||
     (event.payload?.record_count != null ? `${event.payload.record_count} records` : "") ||
     (event.payload?.passages ? `${event.payload.passages.length} passages` : "") ||
+    event.payload?.model ||
     event.payload?.stage ||
     "";
   return `<li>
-    <div class="meta">${String(event.sequence).padStart(3, "0")} · ${event.service} · ${event.kind}</div>
+    <div class="meta">${String(event.sequence ?? 0).padStart(3, "0")} · ${event.service} · ${event.kind}</div>
     <div class="why">${why}</div>
   </li>`;
 }
@@ -199,15 +268,11 @@ function pushEvent(event) {
     if (state.seenSequences.has(event.sequence)) return;
     state.seenSequences.add(event.sequence);
   }
-  const list = $("events");
-  list.insertAdjacentHTML("afterbegin", eventLine(event));
+  $("events").insertAdjacentHTML("afterbegin", eventLine(event));
   markStage(event.stage);
   markService(event.service, event.kind === "run_failed" || event.kind === "service_disabled" ? "fail" : "live");
-  const hop = event.stage ? `${event.service} · ${event.stage}` : `${event.service} · ${event.kind}`;
-  setSignal(hop);
-  if (event.kind === "state_updated" || event.kind === "state_initialized") {
-    renderState(event.payload);
-  }
+  setSignal(event.stage ? `${event.service} · ${event.stage}` : `${event.service} · ${event.kind}`);
+  if (event.kind === "state_updated" || event.kind === "state_initialized") renderState(event.payload);
   if (event.kind === "decision") {
     renderState({
       hypotheses: event.payload.hypotheses,
@@ -258,7 +323,15 @@ function renderReport(report) {
     <div>${cites}</div>`;
 }
 
-async function attachRun(runId, fromHistory = true) {
+function showGenerated(generated) {
+  state.generated = generated;
+  $("code-view").classList.remove("empty");
+  $("code-view").textContent = generated.python;
+  $("code-meta").textContent = generated.filename;
+  $("download-code").hidden = false;
+}
+
+async function attachRun(runId) {
   if (state.stream) {
     state.stream.close();
     state.stream = null;
@@ -273,6 +346,7 @@ async function attachRun(runId, fromHistory = true) {
   state.architecture = detail.architecture;
   renderConditions();
   renderArchitecture();
+  renderUploadKinds();
   renderState(detail.state);
   renderReport(detail.report);
   for (const event of detail.events || []) pushEvent(event);
@@ -304,37 +378,113 @@ async function refreshLists() {
   renderRuns();
 }
 
-$("upload-form").addEventListener("submit", async (event) => {
+function runPayload() {
+  return {
+    dataset_id: state.selectedDataset,
+    condition: state.selectedCondition,
+    provider: state.selected.provider,
+    model: $("model-name").value,
+    matched_run_id: state.selectedCondition === "C5" ? $("matched-run").value || null : null,
+    budgets: {
+      max_tool_calls: Number($("budget-tools").value),
+      max_records_per_call: Number($("budget-records").value),
+    },
+  };
+}
+
+$("regen-arch").addEventListener("click", () => regenerateArchitecture());
+
+$("provider").addEventListener("change", async () => {
+  const provider = $("provider").value;
+  const meta = state.providers.find((item) => item.id === provider);
+  state.selected.provider = provider;
+  state.selected.model = meta.default_model;
+  $("model-name").value = meta.default_model;
+  await api("/api/providers/select", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ provider, model: meta.default_model, base_url: $("ollama-url").value }),
+  });
+  renderProviders();
+  await regenerateArchitecture();
+});
+
+$("key-form").addEventListener("submit", async (event) => {
   event.preventDefault();
-  const file = $("file-input").files[0];
-  if (!file) return;
-  const body = new FormData();
-  body.append("file", file);
-  const dataset = await api("/api/datasets", { method: "POST", body });
-  await refreshLists();
-  await selectDataset(dataset.id);
+  try {
+    const provider = $("provider").value;
+    const result = await api("/api/secrets", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        provider,
+        api_key: $("api-key").value,
+        base_url: $("ollama-url").value,
+      }),
+    });
+    $("api-key").value = "";
+    $("key-status").textContent = `${provider} ${result.hint || "saved"}`;
+    const providers = await api("/api/providers");
+    state.providers = providers.providers;
+    renderProviders();
+    await regenerateArchitecture();
+  } catch (error) {
+    $("key-status").textContent = error.message;
+  }
+});
+
+$("generate-code").addEventListener("click", async () => {
+  $("run-error").hidden = true;
+  try {
+    if (!state.selectedDataset) throw new Error("Select a dataset first.");
+    const generated = await api("/api/experiments/generate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(runPayload()),
+    });
+    showGenerated(generated);
+    if (generated.architecture) {
+      state.architecture = generated.architecture;
+      renderArchitecture();
+      renderUploadKinds();
+    }
+  } catch (error) {
+    $("run-error").hidden = false;
+    $("run-error").textContent = error.message;
+  }
+});
+
+$("download-code").addEventListener("click", () => {
+  if (!state.generated) return;
+  const blob = new Blob([state.generated.python], { type: "text/x-python" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = state.generated.filename;
+  link.click();
+  URL.revokeObjectURL(url);
 });
 
 $("start-run").addEventListener("click", async () => {
   $("run-error").hidden = true;
   try {
     if (!state.selectedDataset) throw new Error("Select a dataset first.");
-    const payload = {
-      dataset_id: state.selectedDataset,
-      condition: state.selectedCondition,
-      matched_run_id: state.selectedCondition === "C5" ? $("matched-run").value || null : null,
-      budgets: {
-        max_tool_calls: Number($("budget-tools").value),
-        max_records_per_call: Number($("budget-records").value),
-      },
-    };
+    await api("/api/providers/select", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        provider: state.selected.provider,
+        model: $("model-name").value,
+        base_url: $("ollama-url").value,
+      }),
+    });
     const run = await api("/api/runs", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
+      body: JSON.stringify(runPayload()),
     });
     await refreshLists();
-    await attachRun(run.id, false);
+    await attachRun(run.id);
   } catch (error) {
     $("run-error").hidden = false;
     $("run-error").textContent = error.message;
@@ -342,11 +492,15 @@ $("start-run").addEventListener("click", async () => {
 });
 
 async function boot() {
-  const conditions = await api("/api/conditions");
+  const [conditions, providers] = await Promise.all([api("/api/conditions"), api("/api/providers")]);
   state.conditions = conditions.conditions;
-  await selectCondition("C3");
+  state.providers = providers.providers;
+  state.selected = providers.selected;
+  renderConditions();
+  renderProviders();
   await refreshLists();
   if (state.datasets[0]) await selectDataset(state.datasets[0].id);
+  else await selectCondition("C3");
 }
 
 boot();

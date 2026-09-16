@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from typing import Any
 
+from .packs import DATA_KINDS
+
 PLANES: list[dict[str, Any]] = [
     {
         "id": "control",
@@ -29,7 +31,13 @@ PLANES: list[dict[str, Any]] = [
             {
                 "id": "model-gateway",
                 "label": "Model gateway",
-                "role": "Pinned structured decisions. No datastore credentials.",
+                "role": "Routes Ollama / GPT / Claude / Grok / Groq. Structured JSON only. No datastore credentials.",
+                "capability": "always",
+            },
+            {
+                "id": "secrets-vault",
+                "label": "Provider keys",
+                "role": "Cloud API keys stay on the lab. Never enter prompts, trajectories, or reports.",
                 "capability": "always",
             },
             {
@@ -56,7 +64,14 @@ PLANES: list[dict[str, Any]] = [
                 "label": "Knowledge service",
                 "role": "Retrieve versioned passages by question and corpus tags.",
                 "capability": "knowledge",
-            }
+            },
+            {
+                "id": "knowledge-corpus",
+                "label": "Knowledge corpus",
+                "role": "Uploaded ATT&CK / Sigma / playbook passages for this dataset.",
+                "capability": "knowledge",
+                "intake": "knowledge",
+            },
         ],
     },
     {
@@ -75,17 +90,26 @@ PLANES: list[dict[str, Any]] = [
                 "label": "Telemetry store",
                 "role": "Incident-scoped logs. Ground truth is sealed.",
                 "capability": "store",
+                "intake": "telemetry",
+            },
+            {
+                "id": "alert-intake",
+                "label": "Alert",
+                "role": "Initial alert only. Shared across conditions.",
+                "capability": "always",
+                "intake": "alert",
             },
             {
                 "id": "fixed-retrieval",
                 "label": "Fixed retrieval",
                 "role": "Analyst query pack. Model cannot choose queries.",
                 "capability": "fixed_retrieval",
+                "intake": "query_pack",
             },
             {
                 "id": "matched-evidence",
                 "label": "Matched evidence",
-                "role": "Passive C3 records with tool names and order stripped.",
+                "role": "Passive C3 records with tool names and search order stripped.",
                 "capability": "matched_evidence",
             },
             {
@@ -93,12 +117,21 @@ PLANES: list[dict[str, Any]] = [
                 "label": "Oracle evidence",
                 "role": "Expert-minimal decisive set.",
                 "capability": "oracle_evidence",
+                "intake": "oracle_evidence",
             },
             {
                 "id": "oracle-plan",
                 "label": "Oracle plan",
                 "role": "Expert investigation plan; agent may still adapt.",
                 "capability": "oracle_plan",
+                "intake": "oracle_plan",
+            },
+            {
+                "id": "ground-truth",
+                "label": "Ground truth (sealed)",
+                "role": "Labels never reach the model, context builder, or gateways.",
+                "capability": "always",
+                "intake": "ground_truth",
             },
         ],
     },
@@ -124,6 +157,61 @@ PLANES: list[dict[str, Any]] = [
                 "label": "Trajectory service",
                 "role": "Append-only events and replay checkpoints.",
                 "capability": "always",
+            },
+            {
+                "id": "experiment-codegen",
+                "label": "Experiment code",
+                "role": "Generate a pinned runner for this condition, model, and dataset.",
+                "capability": "always",
+            },
+        ],
+    },
+    {
+        "id": "model",
+        "label": "Model adapters",
+        "blurb": "One pinned provider per run. Cloud keys never leave the secrets vault.",
+        "services": [
+            {
+                "id": "adapter-reference",
+                "label": "Reference",
+                "role": "Deterministic offline investigator.",
+                "capability": "always",
+                "provider": "reference",
+            },
+            {
+                "id": "adapter-ollama",
+                "label": "Ollama",
+                "role": "Local HTTP to 127.0.0.1:11434. No key.",
+                "capability": "always",
+                "provider": "ollama",
+            },
+            {
+                "id": "adapter-openai",
+                "label": "GPT",
+                "role": "OpenAI Chat Completions.",
+                "capability": "always",
+                "provider": "openai",
+            },
+            {
+                "id": "adapter-anthropic",
+                "label": "Claude",
+                "role": "Anthropic Messages API.",
+                "capability": "always",
+                "provider": "anthropic",
+            },
+            {
+                "id": "adapter-xai",
+                "label": "Grok",
+                "role": "xAI OpenAI-compatible API.",
+                "capability": "always",
+                "provider": "xai",
+            },
+            {
+                "id": "adapter-groq",
+                "label": "Groq",
+                "role": "Groq OpenAI-compatible API.",
+                "capability": "always",
+                "provider": "groq",
             },
         ],
     },
@@ -289,9 +377,17 @@ def interface_enabled(condition_id: str, name: str) -> bool:
     return name in get_condition(condition_id)["allowed_interfaces"]
 
 
-def architecture_view(condition_id: str) -> dict[str, Any]:
+def architecture_view(
+    condition_id: str,
+    *,
+    provider: str = "reference",
+    configured_providers: list[str] | None = None,
+    packs_present: dict[str, bool] | None = None,
+) -> dict[str, Any]:
     profile = get_condition(condition_id)
     caps = profile["capabilities"]
+    configured = set(configured_providers or [])
+    present = packs_present or {}
     planes = []
     for plane in PLANES:
         services = []
@@ -301,14 +397,37 @@ def architecture_view(condition_id: str) -> dict[str, Any]:
                 enabled = True
             if service["id"] == "telemetry-gateway":
                 enabled = bool(profile["search"]["enabled"])
-            services.append({**service, "enabled": enabled})
+            intake = service.get("intake")
+            loaded = bool(present.get(intake)) if intake else None
+            adapter = service.get("provider")
+            selected = adapter == provider if adapter else False
+            if adapter in {"openai", "anthropic", "xai", "groq"}:
+                enabled = adapter in configured or selected
+            services.append(
+                {
+                    **service,
+                    "enabled": enabled,
+                    "loaded": loaded,
+                    "selected": selected,
+                    "configured": (adapter in configured) if adapter else None,
+                }
+            )
         planes.append({**plane, "services": services})
     return {
         "condition_id": condition_id,
+        "provider": provider,
         "profile": profile,
         "planes": planes,
         "stages": STAGES,
         "search_tools": SEARCH_TOOLS,
+        "data_kinds": [
+            {
+                **kind,
+                "active_for_condition": condition_id in kind["used_by"] or kind["id"] in {"alert", "telemetry", "ground_truth"},
+                "loaded": bool(present.get(kind["id"])),
+            }
+            for kind in DATA_KINDS
+        ],
     }
 
 

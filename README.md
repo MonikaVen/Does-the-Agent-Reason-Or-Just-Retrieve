@@ -25,9 +25,10 @@ The central research question is:
 
 > **Does the agent reason over evidence, or does it just retrieve useful context?**
 
-The runnable lab is Python: upload an incident pack, pick a C0–C7 condition,
-and watch the architecture graph execute. See [`platform/README.md`](platform/README.md)
-and [`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md).
+The runnable lab is Python. Upload typed agent data (alert, telemetry,
+knowledge, C4/C6/C7 packs), pin Ollama or a cloud model (GPT, Claude, Grok,
+Groq) with a local API key, regenerate the architecture graph, and download
+experiment code. See [`platform/README.md`](platform/README.md).
 
 ```bash
 cd platform

@@ -71,10 +71,74 @@ h2 { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: 
 
 .bench {
   display: grid;
-  grid-template-columns: 300px minmax(0, 1.5fr) 320px;
+  grid-template-columns: 340px minmax(0, 1.5fr) 320px;
   gap: 16px;
   padding: 12px 32px 16px;
 }
+.model-bar {
+  margin: 0 32px;
+  padding: 12px 16px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 16px;
+  align-items: end;
+}
+.model-selects, .key-form {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  align-items: end;
+}
+.key-form {
+  grid-template-columns: 1fr auto;
+}
+.model-bar label, .run-form label {
+  display: block;
+  font-size: 12px;
+  color: var(--mute);
+}
+.model-bar input, .model-bar select {
+  width: 100%;
+  margin-top: 4px;
+  font: inherit;
+  padding: 6px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+.upload-kinds {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin: 8px 0 10px;
+}
+.kind-btn {
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 8px;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  position: relative;
+}
+.kind-btn input { display: none; }
+.kind-btn strong { display: block; font-size: 12px; }
+.kind-btn span { display: block; color: var(--mute); font-size: 10px; margin-top: 2px; }
+.kind-btn.active-kind { border-color: var(--control); box-shadow: inset 3px 0 0 var(--control); }
+.kind-btn.loaded-kind { background: #f3f8f3; }
+.canvas-head { display: flex; justify-content: space-between; gap: 12px; align-items: start; margin-bottom: 10px; }
+.plane.model { border-top: 3px solid #2457a7; grid-column: 1 / -1; }
+.svc.selected { border-color: var(--ink); background: #edf3ff; }
+.svc.loaded { box-shadow: inset 0 -2px 0 var(--ok); }
+.dock {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr 1fr;
+  gap: 16px;
+  padding: 0 32px 32px;
+}
+.code { font-family: "IBM Plex Mono", monospace; font-size: 11px; white-space: pre-wrap; max-height: 280px; overflow: auto; background: #12141a; color: #e7d7a8; padding: 10px; }
+.code.empty { color: var(--mute); background: #faf7f0; }
 .panel {
   background: var(--panel);
   border: 1px solid var(--line);
@@ -199,7 +263,7 @@ select, input[type="number"] {
 .plane header { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
 .plane p { margin: 0; font-size: 12px; color: var(--mute); }
 .services { display: grid; gap: 6px; }
-.plane.control .services, .plane.evidence .services, .plane.reporting .services {
+.plane.control .services, .plane.evidence .services, .plane.reporting .services, .plane.model .services {
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 }
 .svc {
@@ -238,12 +302,6 @@ select, input[type="number"] {
 }
 .events .why { color: #3c382f; margin-top: 4px; }
 
-.dock {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 16px;
-  padding: 0 32px 32px;
-}
 .dock > div {
   background: var(--panel);
   border: 1px solid var(--line);
@@ -272,6 +330,7 @@ select, input[type="number"] {
 .verdict.inconclusive { color: var(--reporting); }
 
 @media (max-width: 1100px) {
-  .top, .bench, .dock { grid-template-columns: 1fr; padding-left: 16px; padding-right: 16px; }
+  .top, .bench, .dock, .model-bar { grid-template-columns: 1fr; padding-left: 16px; padding-right: 16px; }
+  .model-selects, .key-form { grid-template-columns: 1fr; }
   .panel { min-height: 0; }
 }

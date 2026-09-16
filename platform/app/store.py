@@ -70,6 +70,16 @@ class Store:
                     payload_json TEXT NOT NULL,
                     FOREIGN KEY(run_id) REFERENCES runs(id)
                 );
+                CREATE TABLE IF NOT EXISTS secrets (
+                    provider TEXT PRIMARY KEY,
+                    api_key TEXT NOT NULL,
+                    extra_json TEXT NOT NULL DEFAULT '{}',
+                    updated_at TEXT NOT NULL
+                );
+                CREATE TABLE IF NOT EXISTS settings (
+                    key TEXT PRIMARY KEY,
+                    value_json TEXT NOT NULL
+                );
                 """
             )
 
@@ -117,6 +127,8 @@ class Store:
             "has_oracle_evidence": bool(pack.get("oracle_evidence")),
             "has_oracle_plan": bool(pack.get("oracle_plan")),
             "has_fixed_query_pack": bool(pack.get("fixed_query_pack")),
+            "has_knowledge_corpus": bool(pack.get("knowledge_corpus")),
+            "has_ground_truth": bool(pack.get("ground_truth")),
             "pack": pack,
         }
 
@@ -247,3 +259,84 @@ class Store:
             }
             for row in rows
         ]
+
+    def update_dataset_pack(self, dataset_id: str, pack: dict[str, Any], name: str | None = None) -> None:
+        incident_id = pack.get("incident_id") or dataset_id
+        with self._lock, self._connect() as conn:
+            if name:
+                conn.execute(
+                    "UPDATE datasets SET pack_json = ?, incident_id = ?, name = ? WHERE id = ?",
+                    (json.dumps(pack), incident_id, name, dataset_id),
+                )
+            else:
+                conn.execute(
+                    "UPDATE datasets SET pack_json = ?, incident_id = ? WHERE id = ?",
+                    (json.dumps(pack), incident_id, dataset_id),
+                )
+
+    def upsert_secret(self, provider: str, api_key: str, extra: dict[str, Any] | None = None) -> None:
+        extra_json = json.dumps(extra or {})
+        with self._lock, self._connect() as conn:
+            conn.execute(
+                """
+                INSERT INTO secrets (provider, api_key, extra_json, updated_at)
+                VALUES (?, ?, ?, ?)
+                ON CONFLICT(provider) DO UPDATE SET
+                    api_key = excluded.api_key,
+                    extra_json = excluded.extra_json,
+                    updated_at = excluded.updated_at
+                """,
+                (provider, api_key, extra_json, utcnow()),
+            )
+
+    def delete_secret(self, provider: str) -> None:
+        with self._lock, self._connect() as conn:
+            conn.execute("DELETE FROM secrets WHERE provider = ?", (provider,))
+
+    def get_secret(self, provider: str) -> dict[str, Any] | None:
+        with self._lock, self._connect() as conn:
+            row = conn.execute(
+                "SELECT provider, api_key, extra_json, updated_at FROM secrets WHERE provider = ?",
+                (provider,),
+            ).fetchone()
+        if not row:
+            return None
+        return {
+            "provider": row["provider"],
+            "api_key": row["api_key"],
+            "extra": json.loads(row["extra_json"] or "{}"),
+            "updated_at": row["updated_at"],
+        }
+
+    def list_secret_public(self) -> list[dict[str, Any]]:
+        with self._lock, self._connect() as conn:
+            rows = conn.execute("SELECT provider, api_key, extra_json, updated_at FROM secrets").fetchall()
+        public = []
+        for row in rows:
+            key = row["api_key"] or ""
+            hint = f"••••{key[-4:]}" if len(key) >= 4 else "••••"
+            extra = json.loads(row["extra_json"] or "{}")
+            public.append(
+                {
+                    "provider": row["provider"],
+                    "configured": bool(key),
+                    "hint": hint,
+                    "base_url": extra.get("base_url"),
+                    "updated_at": row["updated_at"],
+                }
+            )
+        return public
+
+    def set_setting(self, key: str, value: Any) -> None:
+        with self._lock, self._connect() as conn:
+            conn.execute(
+                "INSERT INTO settings (key, value_json) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value_json = excluded.value_json",
+                (key, json.dumps(value)),
+            )
+
+    def get_setting(self, key: str, default: Any = None) -> Any:
+        with self._lock, self._connect() as conn:
+            row = conn.execute("SELECT value_json FROM settings WHERE key = ?", (key,)).fetchone()
+        if not row:
+            return default
+        return json.loads(row["value_json"])

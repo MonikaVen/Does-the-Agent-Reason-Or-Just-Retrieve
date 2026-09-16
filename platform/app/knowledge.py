@@ -9,9 +9,15 @@ from .store import DATA_DIR
 
 
 class KnowledgeService:
-    def __init__(self, path: Path | None = None) -> None:
+    def __init__(self, path: Path | None = None, extra: dict[str, Any] | None = None) -> None:
         kb_path = path or (DATA_DIR / "knowledge.json")
         self.corpus = json.loads(kb_path.read_text())
+        extra_passages = (extra or {}).get("passages") if isinstance(extra, dict) else None
+        if extra_passages:
+            self.corpus = {
+                "index_version": extra.get("index_version") or self.corpus.get("index_version"),
+                "passages": list(self.corpus.get("passages") or []) + list(extra_passages),
+            }
 
     def search(self, question: str, corpus_tags: list[str] | None = None, top_k: int = 4) -> dict[str, Any]:
         tags = {tag.lower() for tag in (corpus_tags or [])}

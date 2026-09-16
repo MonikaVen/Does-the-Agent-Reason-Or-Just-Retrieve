@@ -67,9 +67,9 @@ enters those records.
 The cockpit is the first complete slice. It does not yet replace every
 section of `Architecture.md`.
 
-1. **Pinned LLM adapter** in `model-gateway`, same schemas, recorded
-   decoding parameters. Keep the reference investigator as the offline
-   baseline.
+1. **Pinned LLM adapter** in `model-gateway` — **done** for Ollama, GPT,
+   Claude, Grok, and Groq, plus a reference investigator. Cloud keys are
+   stored locally and never written into trajectories.
 2. **Replay / trajectory surgery** (§11): prefix reconstruct, one
    intervention, hide original final answer, paired seeds.
 3. **Metrics service** (§4.13 / §14.8): outcome metrics for all

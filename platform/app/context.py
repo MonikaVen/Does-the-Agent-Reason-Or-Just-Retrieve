@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from typing import Any
 
+from .telemetry import flatten_pack
+
 
 SYSTEM_POLICY = (
     "You are an experimental incident investigator. Use only the supplied alert, "
@@ -25,9 +27,6 @@ def build_context(
     alert = pack.get("alert") or {}
     raw_window = []
     if mode == "fixed_raw":
-        from .telemetry import flatten_pack
-
-        raw_window = flatten_pack(pack)[:100]
         raw_window = [
             {
                 "evidence_id": item.get("evidence_id"),
@@ -36,7 +35,7 @@ def build_context(
                 "host": item.get("host"),
                 "fields": item.get("fields"),
             }
-            for item in raw_window
+            for item in flatten_pack(pack)[:100]
         ]
 
     layers = [

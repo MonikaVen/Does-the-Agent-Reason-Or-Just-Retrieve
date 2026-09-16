@@ -5,8 +5,11 @@ from pathlib import Path
 
 import pytest
 
+from app.codegen import generate_experiment
 from app.conditions import architecture_view, interface_enabled
+from app.llm import extract_json
 from app.orchestrator import Orchestrator, validate_pack
+from app.packs import merge_part, empty_pack, packs_present
 from app.policy import PolicyEngine
 from app.store import Store
 from app.bus import EventBus
@@ -31,6 +34,45 @@ def test_c0_cannot_search():
     assert enabled["knowledge-service"] is False
     assert enabled["telemetry-gateway"] is False
     assert enabled["model-gateway"] is True
+    assert "adapter-ollama" in enabled
+    assert "adapter-openai" in enabled
+
+
+def test_typed_upload_and_sealed_ground_truth():
+    pack = empty_pack()
+    pack = merge_part(pack, "alert", {"host": "workstation-17", "summary": "ps"})
+    pack = merge_part(pack, "telemetry", {"process_events": [{"event_id": "e1", "host": "workstation-17"}]})
+    pack = merge_part(pack, "knowledge", {"passages": [{"passage_id": "k1", "text": "guidance", "category": "detection", "source_id": "s", "source_version": "1", "corpus_tags": []}]})
+    pack = merge_part(pack, "ground_truth", {"verdict": "malicious"})
+    present = packs_present(pack)
+    assert present["alert"] and present["telemetry"] and present["knowledge"] and present["ground_truth"]
+
+
+def test_extract_json_from_fence():
+    data = extract_json("noise ```json\n{\"verdict\": \"benign\"}\n```")
+    assert data["verdict"] == "benign"
+
+
+def test_secrets_are_masked(tmp_path):
+    store = Store(tmp_path / "lab.sqlite3")
+    store.upsert_secret("openai", "sk-test-secret-key", {})
+    public = store.list_secret_public()
+    assert public[0]["hint"] == "••••-key"
+    assert "sk-test-secret" not in json.dumps(public)
+
+
+def test_generated_experiment_pins_condition():
+    generated = generate_experiment(
+        {
+            "condition": "C3",
+            "dataset_id": "ds-1",
+            "provider": "openai",
+            "model": "gpt-4.1-mini",
+        }
+    )
+    assert "C3" in generated["python"]
+    assert "openai" in generated["python"]
+    assert generated["filename"] == "experiment_c3_openai.py"
 
 
 def test_policy_rejects_disabled_tool():
@@ -38,6 +80,13 @@ def test_policy_rejects_disabled_tool():
     decision = policy.validate({"tool": "query_events", "arguments": {"source": "process_events"}, "action_id": "a-1"})
     assert decision["decision"] == "reject"
     assert decision["error"]["error_code"] == "SERVICE_DISABLED"
+
+
+def test_architecture_marks_selected_provider():
+    view = architecture_view("C3", provider="groq", configured_providers=["groq"])
+    adapters = {svc["id"]: svc for plane in view["planes"] for svc in plane["services"]}
+    assert adapters["adapter-groq"]["selected"] is True
+    assert adapters["adapter-openai"]["selected"] is False
 
 
 @pytest.mark.asyncio
@@ -71,7 +120,7 @@ async def test_c0_and_c3_runs(tmp_path, monkeypatch):
                     "max_model_tokens": 8000,
                 },
                 "matched_run_id": None,
-                "manifest": {},
+                "manifest": {"model": {"provider": "reference", "model": "reference-investigator-v1"}},
             }
         )
         await orch.run(run_id)

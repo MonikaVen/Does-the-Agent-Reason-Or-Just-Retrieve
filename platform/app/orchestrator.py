@@ -11,7 +11,8 @@ from .bus import EventBus
 from .conditions import architecture_view, disabled_error, get_condition, interface_enabled
 from .context import build_context
 from .knowledge import KnowledgeService
-from .model import ReferenceInvestigator
+from .llm import ModelGateway
+from .packs import packs_present
 from .policy import PolicyEngine
 from .report import validate_report
 from .store import Store, utcnow
@@ -25,7 +26,6 @@ class Orchestrator:
         self.store = store
         self.bus = bus
         self.knowledge = KnowledgeService()
-        self.model = ReferenceInvestigator()
 
     async def run(self, run_id: str) -> None:
         run = self.store.get_run(run_id)
@@ -57,7 +57,18 @@ class Orchestrator:
         run_id = run["id"]
         condition = run["condition"]
         budgets = run["budgets"]
-        await self._stage(run_id, "create_run", "investigation-api", {"condition": condition})
+        model_cfg = ((run.get("manifest") or {}).get("model") or {})
+        provider = model_cfg.get("provider") or "reference"
+        model_name = model_cfg.get("model")
+        secret = self.store.get_secret(provider) or {}
+        connector_secrets = dict(secret.get("extra") or {})
+        if secret.get("api_key"):
+            connector_secrets["api_key"] = secret["api_key"]
+        if provider == "ollama" and not connector_secrets.get("base_url"):
+            connector_secrets["base_url"] = self.store.get_setting("ollama_base_url") or "http://127.0.0.1:11434"
+        model = ModelGateway(provider, model_name, connector_secrets)
+        self.knowledge = KnowledgeService(extra=pack.get("knowledge_corpus"))
+        await self._stage(run_id, "create_run", "investigation-api", {"condition": condition, "provider": provider, "model": model.model})
 
         telemetry_store = TelemetryStore(pack)
         gateway = TelemetryGateway(telemetry_store, max_records=int(budgets.get("max_records_per_call", 100)))
@@ -156,8 +167,14 @@ class Orchestrator:
                 )
 
                 await self._stage(run_id, "generate_decision", "model-gateway")
-                decision = self.model.generate_decision(context)
-                await self.bus.emit(run_id, "decision", "model-gateway", decision, "generate_decision")
+                decision = await asyncio.to_thread(model.generate_decision, context)
+                await self.bus.emit(
+                    run_id,
+                    "decision",
+                    "model-gateway",
+                    {**decision, "provider": provider, "model": model.model},
+                    "generate_decision",
+                )
                 if state is not None:
                     state = state_mod.apply_beliefs(
                         state, decision.get("hypotheses") or [], decision.get("next_question")
@@ -270,7 +287,7 @@ class Orchestrator:
             knowledge=knowledge_passages,
             tools=tools,
         )
-        report = self.model.generate_report(final_context)
+        report = await asyncio.to_thread(model.generate_report, final_context)
         await self.bus.emit(run_id, "report_generated", "report-service", report, "generate_report")
 
         await self._stage(run_id, "validate_report", "report-validator")
@@ -297,7 +314,11 @@ class Orchestrator:
                 **(run.get("manifest") or {}),
                 "evidence_ids": sorted(evidence_ids),
                 "validation": validation,
-                "architecture": architecture_view(condition),
+                "architecture": architecture_view(
+                    condition,
+                    provider=provider,
+                    packs_present=packs_present(pack),
+                ),
             },
         )
         await self.bus.emit(
@@ -449,6 +470,17 @@ def dataset_passport(pack: dict[str, Any]) -> dict[str, Any]:
         "has_oracle_evidence": bool(pack.get("oracle_evidence")),
         "has_oracle_plan": bool(pack.get("oracle_plan")),
         "has_fixed_query_pack": bool(pack.get("fixed_query_pack")),
+        "has_knowledge_corpus": bool(pack.get("knowledge_corpus")),
+        "has_ground_truth": bool(pack.get("ground_truth")),
+        "packs_present": {
+            "alert": bool(pack.get("alert")),
+            "telemetry": bool(telemetry),
+            "knowledge": bool(pack.get("knowledge_corpus")),
+            "query_pack": bool(pack.get("fixed_query_pack")),
+            "oracle_evidence": bool(pack.get("oracle_evidence")),
+            "oracle_plan": bool(pack.get("oracle_plan")),
+            "ground_truth": bool(pack.get("ground_truth")),
+        },
     }
 
 
