@@ -1,0 +1,45 @@
+{
+  "index_version": "kb-2026-07-01",
+  "passages": [
+    {
+      "passage_id": "kbp-1881",
+      "source_id": "attack-T1059.001-v15",
+      "source_version": "15.1",
+      "category": "detection",
+      "corpus_tags": ["detection", "powershell", "execution"],
+      "text": "Encoded PowerShell (T1059.001) is distinguished from approved administration by parent process, user context, and what happens next. Interactive office or browser parents, encoded command lines, and follow-on network or persistence activity are more suspicious than a signed management agent launching a short, decoded script."
+    },
+    {
+      "passage_id": "kbp-1882",
+      "source_id": "attack-T1059.001-v15",
+      "source_version": "15.1",
+      "category": "procedural",
+      "corpus_tags": ["procedural", "powershell"],
+      "text": "Investigation playbook: (1) recover the process tree for the alerting PowerShell PID, (2) inspect command-line encoding and script block content, (3) pivot to network and file activity in a tight time window, (4) look for persistence (Run keys, scheduled tasks) on the same host."
+    },
+    {
+      "passage_id": "kbp-2104",
+      "source_id": "attack-T1105-v15",
+      "source_version": "15.1",
+      "category": "detection",
+      "corpus_tags": ["detection", "network", "ingress"],
+      "text": "Ingress tool transfer often follows suspicious execution. A new outbound connection to an uncommon IP shortly after encoded PowerShell, especially on 443 with a non-browser process, is stronger evidence than the execution event alone."
+    },
+    {
+      "passage_id": "kbp-2210",
+      "source_id": "sigma-powershell-encoded-v2",
+      "source_version": "2.0",
+      "category": "declarative",
+      "corpus_tags": ["detection", "powershell"],
+      "text": "Common encoded-PowerShell indicators: -enc/-encodedcommand, FromBase64String, hidden window style, and bypassed execution policy. These are prior knowledge, not proof that a specific incident occurred."
+    },
+    {
+      "passage_id": "kbp-2301",
+      "source_id": "playbook-persistence-v3",
+      "source_version": "3.0",
+      "category": "procedural",
+      "corpus_tags": ["procedural", "persistence", "registry"],
+      "text": "After confirming execution, check CurrentVersion\\Run, RunOnce, and startup folders for newly written values whose data references the dropped script or an unknown URL. Persistence is corroborating evidence, not a substitute for the execution chain."
+    }
+  ]
+}

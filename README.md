@@ -25,6 +25,16 @@ The central research question is:
 
 > **Does the agent reason over evidence, or does it just retrieve useful context?**
 
+The runnable lab is Python: upload an incident pack, pick a C0–C7 condition,
+and watch the architecture graph execute. See [`platform/README.md`](platform/README.md)
+and [`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md).
+
+```bash
+cd platform
+python3 -m pip install -r requirements.txt
+python3 -m uvicorn app.main:app --host 0.0.0.0 --port 8000
+```
+
 Rather than treating generated explanations or chain-of-thought text as proof of reasoning, the framework evaluates observable behavior:
 
 1. whether the agent selects actions that distinguish competing hypotheses;
