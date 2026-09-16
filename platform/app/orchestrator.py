@@ -11,7 +11,7 @@ from .bus import EventBus
 from .conditions import architecture_view, disabled_error, get_condition, interface_enabled
 from .context import build_context
 from .knowledge import KnowledgeService
-from .llm import ModelGateway
+from .llm import ModelGateway, ModelError
 from .packs import packs_present
 from .policy import PolicyEngine
 from .report import validate_report
@@ -167,7 +167,17 @@ class Orchestrator:
                 )
 
                 await self._stage(run_id, "generate_decision", "model-gateway")
-                decision = await asyncio.to_thread(model.generate_decision, context)
+                try:
+                    decision = await asyncio.to_thread(model.generate_decision, context)
+                except ModelError as exc:
+                    decision = {
+                        "schema_version": "1.0",
+                        "hypotheses": [],
+                        "stop": True,
+                        "stop_reason": f"Model returned invalid JSON: {exc}",
+                        "selected_action": {"tool": "submit_report", "arguments": {}},
+                        "expected_discrimination": "Stop because the model did not produce a usable action.",
+                    }
                 await self.bus.emit(
                     run_id,
                     "decision",
@@ -287,7 +297,20 @@ class Orchestrator:
             knowledge=knowledge_passages,
             tools=tools,
         )
-        report = await asyncio.to_thread(model.generate_report, final_context)
+        try:
+            report = await asyncio.to_thread(model.generate_report, final_context)
+        except ModelError as exc:
+            report = {
+                "verdict": "inconclusive",
+                "confidence": 0.0,
+                "summary": "The model did not return a valid JSON report.",
+                "attack_chain": [],
+                "key_entities": {"hosts": [], "users": [], "ips": [], "files": []},
+                "supporting_evidence": [],
+                "contradicting_evidence": [],
+                "remaining_uncertainty": str(exc),
+                "recommended_human_check": "Inspect the trajectory; do not treat this as a silent fallback to the reference investigator.",
+            }
         await self.bus.emit(run_id, "report_generated", "report-service", report, "generate_report")
 
         await self._stage(run_id, "validate_report", "report-validator")

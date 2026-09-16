@@ -52,6 +52,8 @@ def test_typed_upload_and_sealed_ground_truth():
 def test_extract_json_from_fence():
     data = extract_json("noise ```json\n{\"verdict\": \"benign\"}\n```")
     assert data["verdict"] == "benign"
+    trailing = extract_json('{"verdict": "malicious", "confidence": 0.4} trailing text')
+    assert trailing["verdict"] == "malicious"
 
 
 def test_secrets_are_masked(tmp_path):

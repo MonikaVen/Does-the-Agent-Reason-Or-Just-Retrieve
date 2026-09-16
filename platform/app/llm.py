@@ -107,9 +107,15 @@ def extract_json(text: str) -> dict[str, Any]:
     if start < 0 or end <= start:
         raise ModelError("Model did not return a JSON object.")
     try:
-        value = json.loads(stripped[start : end + 1])
+        value, _ = json.JSONDecoder().raw_decode(stripped[start:])
     except json.JSONDecodeError as exc:
-        raise ModelError(f"Invalid JSON from model: {exc}") from exc
+        end = stripped.rfind("}")
+        if end <= start:
+            raise ModelError(f"Invalid JSON from model: {exc}") from exc
+        try:
+            value = json.loads(stripped[start : end + 1])
+        except json.JSONDecodeError as inner:
+            raise ModelError(f"Invalid JSON from model: {inner}") from inner
     if not isinstance(value, dict):
         raise ModelError("Model JSON must be an object.")
     return value
@@ -238,9 +244,10 @@ class ModelGateway:
             return self.reference.generate_report(context)
         system = (
             "You write the final incident report. Reply with one JSON object only. "
+            "Keep it short: verdict, confidence, one-sentence summary, at most 4 supporting_evidence items. "
             "Every factual claim must cite an evidence_id present in the supplied observations "
             "or raw window. Do not invent evidence. verdict must be malicious, benign, or inconclusive. "
-            "confidence is in [0,1]. ATT&CK techniques look like T1059.001."
+            "confidence is in [0,1]. ATT&CK techniques look like T1059.001. No extra keys."
         )
         user = (
             "Return a FinalReport JSON with this shape:\n"
@@ -248,7 +255,7 @@ class ModelGateway:
             + "\n\nContext:\n"
             + _context_prompt(context)
         )
-        data = self._complete(system, user, retries=2, num_predict=768)
+        data = self._complete(system, user, retries=2, num_predict=1024)
         return _coerce_report(data)
 
     def _complete(self, system: str, user: str, retries: int = 1, num_predict: int = 512) -> dict[str, Any]:
