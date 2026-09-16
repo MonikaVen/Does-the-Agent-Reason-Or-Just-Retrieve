@@ -45,6 +45,37 @@ h1, h2 { margin: 0; font-weight: 600; }
 h1 { font-size: 32px; letter-spacing: -0.03em; }
 h2 { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mute); margin-bottom: 10px; }
 .lede { margin: 0; max-width: 46rem; color: #3c382f; line-height: 1.45; }
+.lede-wrap { display: flex; flex-direction: column; gap: 10px; }
+.ollama-chip {
+  margin: 0;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  background: #fff;
+  width: fit-content;
+}
+.ollama-chip.on { border-color: var(--ok); color: var(--ok); }
+.ollama-chip.off { border-color: var(--danger); color: var(--danger); }
+.link-btn {
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 8px;
+  padding: 8px 12px;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  background: transparent;
+  font: inherit;
+}
+.suite-table { font-size: 12px; overflow: auto; }
+.suite-table table { width: 100%; border-collapse: collapse; }
+.suite-table th, .suite-table td {
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  padding: 4px 6px;
+  font-family: "IBM Plex Mono", monospace;
+}
+.suite-table.empty { color: var(--mute); }
 
 .condition-rail {
   display: flex;

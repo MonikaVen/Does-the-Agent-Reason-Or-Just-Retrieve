@@ -50,10 +50,11 @@ not being an LLM.
 | Condition controller | C0–C7 allowlists + architecture view for the UI |
 | Orchestrator | Adaptive loop (C2/C3/C7) and one-shot paths (C0/C1/C4/C5/C6) |
 | Context builder | Layered, bounded prompts; telemetry/KB marked untrusted |
-| Model gateway | `ReferenceInvestigator` — structured decisions + reports |
+| Model gateway | Ollama (default, local), plus GPT / Claude / Grok / Groq adapters and a reference investigator |
 | State / policy / knowledge / telemetry | Real typed modules, not stubs |
 | Report validator | Verdict vocab, citations must be in this run’s ledger |
-| Frontend lab | Condition rail, data passport, live four-plane canvas, trajectory, state, report |
+| Frontend lab | Ollama-first cockpit: condition rail, typed uploads, live four-plane canvas, trajectory, C0–C7 suite, experiment report |
+| Experiment report | `platform/reports/experiment-report.md` from a sequential C0–C7 suite |
 
 Data in is an incident pack: `incident_id`, `alert`, `telemetry.{source}[]`
 with stable `event_id`s. Optional `fixed_query_pack`, `oracle_evidence`,

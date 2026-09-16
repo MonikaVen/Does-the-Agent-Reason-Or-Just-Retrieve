@@ -15,11 +15,13 @@
       <p class="kicker">Does the agent reason, or just retrieve?</p>
       <h1>Investigation lab</h1>
     </div>
-    <p class="lede">
-      Upload each evidence type, pin a local or cloud model, regenerate the
-      service graph for the selected C0–C7 condition, then run or download the
-      experiment code.
-    </p>
+    <div class="lede-wrap">
+      <p class="lede">
+        Pin a local Ollama model, upload typed agent data, run C0–C7, and watch
+        which services actually fire. The graph is the experiment.
+      </p>
+      <p id="ollama-chip" class="ollama-chip">checking Ollama…</p>
+    </div>
   </header>
 
   <nav class="condition-rail" id="condition-rail" aria-label="Experimental conditions"></nav>
@@ -30,7 +32,8 @@
         <select id="provider"></select>
       </label>
       <label>Model
-        <input id="model-name" type="text" autocomplete="off" />
+        <input id="model-name" type="text" list="model-options" autocomplete="off" />
+        <datalist id="model-options"></datalist>
       </label>
       <label id="ollama-url-wrap">Ollama URL
         <input id="ollama-url" type="text" value="http://127.0.0.1:11434" />
@@ -48,7 +51,7 @@
   <main class="bench">
     <section class="panel setup" aria-label="Dataset and run setup">
       <h2>1. Agent data</h2>
-      <p class="hint">Each button uploads one typed pack onto the selected dataset (or creates one).</p>
+      <p class="hint">Each button uploads one typed pack onto the selected dataset.</p>
       <div id="upload-kinds" class="upload-kinds"></div>
       <p id="upload-status" class="hint"></p>
       <div id="dataset-list" class="dataset-list"></div>
@@ -61,12 +64,14 @@
           <select id="matched-run"></select>
         </label>
         <div class="budget-row">
-          <label>Tool calls <input id="budget-tools" type="number" min="1" max="30" value="12" /></label>
+          <label>Tool calls <input id="budget-tools" type="number" min="1" max="30" value="6" /></label>
           <label>Records/call <input id="budget-records" type="number" min="1" max="500" value="100" /></label>
         </div>
-        <button id="start-run" class="primary" type="button">Start experiment</button>
+        <button id="start-run" class="primary" type="button">Start this condition</button>
+        <button id="start-suite" class="ghost" type="button">Run C0–C7 suite</button>
         <button id="generate-code" class="ghost" type="button">Generate experiment code</button>
         <p id="run-error" class="error" hidden></p>
+        <p id="suite-status" class="hint"></p>
       </div>
       <div id="run-list" class="run-list"></div>
     </section>
@@ -91,7 +96,7 @@
     </section>
   </main>
 
-  <section class="dock" aria-label="Investigation state and report">
+  <section class="dock" aria-label="Investigation state, report, and suite">
     <div>
       <h2>Observable state</h2>
       <div id="state-view" class="state-grid empty">No adaptive state until C2, C3, or C7 is running.</div>
@@ -101,10 +106,12 @@
       <div id="report-view" class="report empty">The validator only accepts citations that exist in this run’s evidence ledger.</div>
     </div>
     <div class="code-panel">
-      <h2>Experiment code</h2>
-      <p class="hint" id="code-meta">Pins condition, provider, model, dataset, and budgets into a runnable script.</p>
-      <pre id="code-view" class="code empty">Generate experiment code after selecting a dataset.</pre>
+      <h2>Experiment report</h2>
+      <p class="hint" id="suite-meta">Run the C0–C7 suite against local Ollama to fill this table.</p>
+      <div id="suite-table" class="suite-table empty">No suite results yet.</div>
+      <pre id="code-view" class="code empty" hidden>Generate experiment code after selecting a dataset.</pre>
       <button id="download-code" class="ghost" type="button" hidden>Download .py</button>
+      <a id="download-report" class="ghost link-btn" href="/api/experiments/report.md" hidden>Download report.md</a>
     </div>
   </section>
 

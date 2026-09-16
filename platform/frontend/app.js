@@ -5,7 +5,7 @@ const state = {
   runs: [],
   c3Runs: [],
   providers: [],
-  selected: { provider: "reference", model: "reference-investigator-v1" },
+  selected: { provider: "ollama", model: "llama3.2:1b" },
   selectedCondition: "C3",
   selectedDataset: null,
   selectedRun: null,
@@ -13,6 +13,7 @@ const state = {
   seenSequences: new Set(),
   stream: null,
   generated: null,
+  suiteTimer: null,
 };
 
 const $ = (id) => document.getElementById(id);
@@ -30,6 +31,18 @@ async function api(path, options) {
 
 function currentProviderMeta() {
   return state.providers.find((item) => item.id === state.selected.provider) || state.providers[0];
+}
+
+function renderOllamaChip(health) {
+  const chip = $("ollama-chip");
+  const ollama = health.ollama || {};
+  if (ollama.ok) {
+    chip.className = "ollama-chip on";
+    chip.textContent = `Ollama online · ${(ollama.models || []).join(", ") || "no models"}`;
+  } else {
+    chip.className = "ollama-chip off";
+    chip.textContent = `Ollama offline · ${ollama.error || "start ollama serve"}`;
+  }
 }
 
 function renderConditions() {
@@ -51,12 +64,15 @@ function renderProviders() {
   $("provider").innerHTML = state.providers
     .map((item) => {
       const mark = item.configured ? "" : item.needs_key ? " · key needed" : "";
-      return `<option value="${item.id}">${item.label}${mark}</option>`;
+      const live = item.id === "ollama" && item.online === false ? " · offline" : "";
+      return `<option value="${item.id}">${item.label}${mark}${live}</option>`;
     })
     .join("");
   $("provider").value = state.selected.provider;
   $("model-name").value = state.selected.model;
   const meta = currentProviderMeta();
+  const models = meta?.models || [];
+  $("model-options").innerHTML = models.map((name) => `<option value="${name}"></option>`).join("");
   $("ollama-url-wrap").hidden = meta?.id !== "ollama";
   $("key-form").hidden = !meta?.needs_key && meta?.id !== "ollama";
   $("api-key").placeholder = meta?.hint || "paste key";
@@ -119,7 +135,7 @@ async function regenerateArchitecture() {
 function renderArchitecture() {
   const view = state.architecture;
   const profile = view.profile;
-  $("canvas-title").textContent = `${view.condition_id} · ${profile.name} · ${view.provider || "reference"}`;
+  $("canvas-title").textContent = `${view.condition_id} · ${profile.name} · ${view.provider || "ollama"}`;
   $("canvas-summary").textContent = profile.summary;
   $("stages").innerHTML = view.stages
     .map((stage) => `<li data-stage="${stage.id}">${stage.label}</li>`)
@@ -323,11 +339,44 @@ function renderReport(report) {
     <div>${cites}</div>`;
 }
 
+function renderSuite(suite) {
+  if (!suite || !suite.runs || !suite.runs.length) {
+    $("suite-table").className = "suite-table empty";
+    $("suite-table").textContent = "No suite results yet.";
+    $("download-report").hidden = true;
+    return;
+  }
+  const current = suite.current ? `Now: ${suite.current.condition}` : suite.status;
+  $("suite-meta").textContent = `${suite.provider || ""}:${suite.model || ""} · ${current}`;
+  $("suite-table").className = "suite-table";
+  $("suite-table").innerHTML = `
+    <table>
+      <thead>
+        <tr><th>C</th><th>Status</th><th>Verdict</th><th>Conf</th><th>Tools</th><th>KB</th></tr>
+      </thead>
+      <tbody>
+        ${suite.runs
+          .map(
+            (row) => `<tr>
+              <td>${row.condition}</td>
+              <td>${row.status}</td>
+              <td>${row.verdict || "—"}</td>
+              <td>${row.confidence ?? "—"}</td>
+              <td>${row.tool_observations ?? 0}</td>
+              <td>${row.knowledge_retrievals ?? 0}</td>
+            </tr>`
+          )
+          .join("")}
+      </tbody>
+    </table>`;
+  $("download-report").hidden = suite.status !== "completed";
+}
+
 function showGenerated(generated) {
   state.generated = generated;
+  $("code-view").hidden = false;
   $("code-view").classList.remove("empty");
   $("code-view").textContent = generated.python;
-  $("code-meta").textContent = generated.filename;
   $("download-code").hidden = false;
 }
 
@@ -392,6 +441,39 @@ function runPayload() {
   };
 }
 
+async function pinProvider() {
+  await api("/api/providers/select", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      provider: state.selected.provider,
+      model: $("model-name").value,
+      base_url: $("ollama-url").value,
+    }),
+  });
+}
+
+async function pollSuite() {
+  const suite = await api("/api/experiments/suite");
+  renderSuite(suite);
+  $("suite-status").textContent = suite.status === "running"
+    ? `Suite running${suite.current ? ` · ${suite.current.condition}` : ""}…`
+    : suite.status === "completed"
+      ? "Suite complete."
+      : suite.status === "failed"
+        ? `Suite failed: ${suite.error || ""}`
+        : "";
+  if (suite.current?.run_id && suite.current.run_id !== state.selectedRun) {
+    await refreshLists();
+    await attachRun(suite.current.run_id);
+  }
+  if (suite.status === "completed" || suite.status === "failed") {
+    clearInterval(state.suiteTimer);
+    state.suiteTimer = null;
+    await refreshLists();
+  }
+}
+
 $("regen-arch").addEventListener("click", () => regenerateArchitecture());
 
 $("provider").addEventListener("change", async () => {
@@ -400,11 +482,7 @@ $("provider").addEventListener("change", async () => {
   state.selected.provider = provider;
   state.selected.model = meta.default_model;
   $("model-name").value = meta.default_model;
-  await api("/api/providers/select", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ provider, model: meta.default_model, base_url: $("ollama-url").value }),
-  });
+  await pinProvider();
   renderProviders();
   await regenerateArchitecture();
 });
@@ -469,15 +547,7 @@ $("start-run").addEventListener("click", async () => {
   $("run-error").hidden = true;
   try {
     if (!state.selectedDataset) throw new Error("Select a dataset first.");
-    await api("/api/providers/select", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        provider: state.selected.provider,
-        model: $("model-name").value,
-        base_url: $("ollama-url").value,
-      }),
-    });
+    await pinProvider();
     const run = await api("/api/runs", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -491,16 +561,60 @@ $("start-run").addEventListener("click", async () => {
   }
 });
 
+$("start-suite").addEventListener("click", async () => {
+  $("run-error").hidden = true;
+  try {
+    if (!state.selectedDataset) throw new Error("Select a dataset first.");
+    await pinProvider();
+    await api("/api/experiments/suite", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        dataset_id: state.selectedDataset,
+        provider: state.selected.provider,
+        model: $("model-name").value,
+        budgets: runPayload().budgets,
+      }),
+    });
+    $("suite-status").textContent = "Suite started…";
+    if (state.suiteTimer) clearInterval(state.suiteTimer);
+    state.suiteTimer = setInterval(pollSuite, 1500);
+    await pollSuite();
+  } catch (error) {
+    $("run-error").hidden = false;
+    $("run-error").textContent = error.message;
+  }
+});
+
 async function boot() {
-  const [conditions, providers] = await Promise.all([api("/api/conditions"), api("/api/providers")]);
+  const [conditions, providers, health] = await Promise.all([
+    api("/api/conditions"),
+    api("/api/providers"),
+    api("/api/health"),
+  ]);
   state.conditions = conditions.conditions;
   state.providers = providers.providers;
   state.selected = providers.selected;
+  renderOllamaChip(health);
   renderConditions();
   renderProviders();
   await refreshLists();
   if (state.datasets[0]) await selectDataset(state.datasets[0].id);
   else await selectCondition("C3");
+  try {
+    const suite = await api("/api/experiments/suite");
+    renderSuite(suite);
+    if (suite.status === "running") {
+      state.suiteTimer = setInterval(pollSuite, 1500);
+    } else if (suite.status === "completed") {
+      renderSuite(suite);
+    } else {
+      const report = await api("/api/experiments/report").catch(() => null);
+      if (report) renderSuite({ ...report, status: "completed" });
+    }
+  } catch {
+    /* no suite yet */
+  }
 }
 
 boot();

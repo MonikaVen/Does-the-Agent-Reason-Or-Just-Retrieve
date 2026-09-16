@@ -14,7 +14,8 @@ from fastapi.staticfiles import StaticFiles
 from .bus import EventBus
 from .codegen import generate_experiment
 from .conditions import CONDITIONS, architecture_view, condition_ids, get_condition
-from .llm import PROVIDERS, PROVIDER_INDEX
+from .experiment_report import summarize_run, write_report
+from .llm import PROVIDERS, PROVIDER_INDEX, probe_ollama
 from .orchestrator import Orchestrator, config_digest, dataset_passport, validate_pack
 from .packs import DATA_KINDS, empty_pack, merge_part, packs_present, part_errors
 from .store import DATA_DIR, ROOT, Store, utcnow
@@ -26,6 +27,8 @@ store = Store()
 bus = EventBus(store)
 orchestrator = Orchestrator(store, bus)
 TASKS: set = set()
+SUITE: dict[str, Any] = {"status": "idle", "runs": []}
+SUITE_CONDITIONS = ["C0", "C1", "C2", "C3", "C4", "C5", "C6", "C7"]
 
 
 def _seed_sample() -> None:
@@ -43,9 +46,20 @@ def _seed_sample() -> None:
     )
 
 
+def _prefer_ollama() -> None:
+    status = probe_ollama(store.get_setting("ollama_base_url", "http://127.0.0.1:11434"))
+    if not status["ok"] or not status["models"]:
+        return
+    preferred = "llama3.2:1b" if "llama3.2:1b" in status["models"] else status["models"][0]
+    store.set_setting("provider", "ollama")
+    store.set_setting("model", preferred)
+    store.set_setting("ollama_models", status["models"])
+
+
 @asynccontextmanager
 async def lifespan(_app: FastAPI):
     _seed_sample()
+    _prefer_ollama()
     yield
 
 
@@ -94,8 +108,14 @@ def index() -> FileResponse:
 
 
 @app.get("/api/health")
-def health() -> dict[str, str]:
-    return {"status": "ok"}
+def health() -> dict[str, Any]:
+    ollama = probe_ollama(store.get_setting("ollama_base_url", "http://127.0.0.1:11434"))
+    return {
+        "status": "ok",
+        "ollama": ollama,
+        "provider": store.get_setting("provider", "reference"),
+        "model": store.get_setting("model"),
+    }
 
 
 @app.get("/api/conditions")
@@ -113,24 +133,32 @@ def list_conditions() -> dict[str, Any]:
 def list_providers() -> dict[str, Any]:
     secrets = {item["provider"]: item for item in store.list_secret_public()}
     ollama_url = store.get_setting("ollama_base_url", "http://127.0.0.1:11434")
+    ollama = probe_ollama(ollama_url)
     providers = []
     for meta in PROVIDERS:
         public = secrets.get(meta["id"])
-        providers.append(
-            {
-                **meta,
-                "configured": (not meta["needs_key"]) or bool(public and public["configured"]),
-                "hint": None if not meta["needs_key"] else (public or {}).get("hint"),
-                "base_url": ollama_url if meta["id"] == "ollama" else (public or {}).get("base_url"),
-            }
-        )
+        entry = {
+            **meta,
+            "configured": (not meta["needs_key"]) or bool(public and public["configured"]),
+            "hint": None if not meta["needs_key"] else (public or {}).get("hint"),
+            "base_url": ollama_url if meta["id"] == "ollama" else (public or {}).get("base_url"),
+        }
+        if meta["id"] == "ollama" and ollama["models"]:
+            entry["models"] = ollama["models"]
+            entry["online"] = ollama["ok"]
+        providers.append(entry)
+    selected_provider = store.get_setting("provider", "ollama" if ollama["ok"] else "reference")
+    selected_model = store.get_setting("model") or (
+        "llama3.2:1b" if selected_provider == "ollama" else PROVIDER_INDEX[selected_provider]["default_model"]
+    )
     return {
         "providers": providers,
         "selected": {
-            "provider": store.get_setting("provider", "reference"),
-            "model": store.get_setting("model", "reference-investigator-v1"),
+            "provider": selected_provider,
+            "model": selected_model,
             "ollama_base_url": ollama_url,
         },
+        "ollama": ollama,
         "data_kinds": DATA_KINDS,
     }
 
@@ -331,8 +359,7 @@ def download_experiment(
     )
 
 
-@app.post("/api/runs")
-async def create_run(payload: dict[str, Any]) -> dict[str, Any]:
+def _prepare_run(payload: dict[str, Any]) -> dict[str, Any]:
     condition = payload.get("condition")
     dataset_id = payload.get("dataset_id")
     if condition not in CONDITIONS:
@@ -356,7 +383,7 @@ async def create_run(payload: dict[str, Any]) -> dict[str, Any]:
     elif matched_run_id:
         raise HTTPException(400, "matched_run_id is only valid for C5")
 
-    provider = payload.get("provider") or store.get_setting("provider", "reference")
+    provider = payload.get("provider") or store.get_setting("provider", "ollama")
     if provider not in PROVIDER_INDEX:
         raise HTTPException(400, f"unknown provider {provider}")
     model_name = payload.get("model") or store.get_setting("model") or PROVIDER_INDEX[provider]["default_model"]
@@ -364,9 +391,16 @@ async def create_run(payload: dict[str, Any]) -> dict[str, Any]:
         secret = store.get_secret(provider)
         if not secret or not secret.get("api_key"):
             raise HTTPException(400, f"Save an API key for {provider} before running.")
+    if provider == "ollama":
+        status = probe_ollama(store.get_setting("ollama_base_url", "http://127.0.0.1:11434"))
+        if not status["ok"]:
+            raise HTTPException(503, f"Ollama is not reachable: {status.get('error')}")
+        if status["models"] and model_name not in status["models"] and f"{model_name}:latest" not in status["models"]:
+            raise HTTPException(400, f"Ollama does not have model {model_name}. Pulled: {status['models']}")
 
+    default_tools = 6 if provider == "ollama" else 12
     budgets = {
-        "max_tool_calls": int((payload.get("budgets") or {}).get("max_tool_calls", 12)),
+        "max_tool_calls": int((payload.get("budgets") or {}).get("max_tool_calls", default_tools)),
         "max_records_per_call": int((payload.get("budgets") or {}).get("max_records_per_call", 100)),
         "max_runtime_seconds": int((payload.get("budgets") or {}).get("max_runtime_seconds", 300)),
         "max_model_tokens": int((payload.get("budgets") or {}).get("max_model_tokens", 32000)),
@@ -384,13 +418,13 @@ async def create_run(payload: dict[str, Any]) -> dict[str, Any]:
         "model": model_profile,
         "model_profile": f"{provider}:{model_name}",
         "service_manifest": {
-            "investigation_api": "0.2.0",
-            "condition_controller": "0.2.0",
+            "investigation_api": "0.3.0",
+            "condition_controller": "0.3.0",
             "model_gateway": f"{provider}:{model_name}",
             "knowledge_service": "kb-2026-07-01" if profile["knowledge"]["enabled"] else None,
-            "agent_orchestrator": "0.2.0" if profile["capabilities"]["adaptive_loop"] else None,
-            "state_service": "0.2.0" if profile["state"]["enabled"] else None,
-            "telemetry_gateway": "0.2.0" if profile["search"]["enabled"] else None,
+            "agent_orchestrator": "0.3.0" if profile["capabilities"]["adaptive_loop"] else None,
+            "state_service": "0.3.0" if profile["state"]["enabled"] else None,
+            "telemetry_gateway": "0.3.0" if profile["search"]["enabled"] else None,
         },
         "artifact_versions": {
             "output_schema": "report-1.0",
@@ -416,10 +450,124 @@ async def create_run(payload: dict[str, Any]) -> dict[str, Any]:
         "error": None,
     }
     store.insert_run(record)
-    task = asyncio.create_task(orchestrator.run(run_id))
+    return record
+
+
+@app.post("/api/runs")
+async def create_run(payload: dict[str, Any]) -> dict[str, Any]:
+    record = _prepare_run(payload)
+    task = asyncio.create_task(orchestrator.run(record["id"]))
     TASKS.add(task)
     task.add_done_callback(TASKS.discard)
-    return _public_run(store.get_run(run_id))
+    return _public_run(store.get_run(record["id"]))
+
+
+async def _run_suite(payload: dict[str, Any]) -> dict[str, Any]:
+    dataset_id = payload["dataset_id"]
+    dataset = store.get_dataset(dataset_id)
+    conditions = payload.get("conditions") or list(SUITE_CONDITIONS)
+    provider = payload.get("provider") or store.get_setting("provider", "ollama")
+    model_name = payload.get("model") or store.get_setting("model")
+    summaries: list[dict[str, Any]] = []
+    c3_id = None
+    SUITE.update(
+        {
+            "status": "running",
+            "dataset_id": dataset_id,
+            "incident_id": dataset["incident_id"],
+            "provider": provider,
+            "model": model_name,
+            "current": None,
+            "runs": summaries,
+            "error": None,
+            "started_at": utcnow(),
+        }
+    )
+    try:
+        for condition in conditions:
+            request = {
+                "dataset_id": dataset_id,
+                "condition": condition,
+                "provider": provider,
+                "model": model_name,
+                "budgets": payload.get("budgets") or {},
+                "seed": payload.get("seed") or 42,
+            }
+            if condition == "C5":
+                if not c3_id:
+                    summary = {
+                        "condition": "C5",
+                        "status": "skipped",
+                        "error": "C5 skipped; no completed C3 run in this suite.",
+                    }
+                    summaries.append(summary)
+                    continue
+                request["matched_run_id"] = c3_id
+            record = _prepare_run(request)
+            SUITE["current"] = {"condition": condition, "run_id": record["id"]}
+            await orchestrator.run(record["id"])
+            run = store.get_run(record["id"])
+            summary = summarize_run(run, store.list_events(record["id"]))
+            summaries.append(summary)
+            if condition == "C3" and run and run["status"] == "completed":
+                c3_id = run["id"]
+        suite = {
+            "generated_at": utcnow(),
+            "dataset_id": dataset_id,
+            "incident_id": dataset["incident_id"],
+            "provider": provider,
+            "model": model_name,
+            "runs": summaries,
+        }
+        paths = write_report(suite)
+        suite["files"] = paths
+        SUITE.update({"status": "completed", "current": None, **suite})
+        return dict(SUITE)
+    except Exception as exc:  # noqa: BLE001
+        SUITE.update({"status": "failed", "error": str(exc), "completed_at": utcnow()})
+        raise
+
+
+@app.post("/api/experiments/suite")
+async def run_suite(payload: dict[str, Any]) -> dict[str, Any]:
+    dataset_id = payload.get("dataset_id")
+    dataset = store.get_dataset(dataset_id or "")
+    if not dataset:
+        raise HTTPException(404, "dataset not found")
+    if SUITE.get("status") == "running":
+        raise HTTPException(409, "A suite is already running")
+    if payload.get("wait"):
+        return await _run_suite(payload)
+    task = asyncio.create_task(_run_suite(payload))
+    TASKS.add(task)
+    task.add_done_callback(TASKS.discard)
+    return {
+        "status": "running",
+        "dataset_id": dataset_id,
+        "provider": payload.get("provider"),
+        "model": payload.get("model"),
+    }
+
+
+@app.get("/api/experiments/suite")
+def suite_status() -> dict[str, Any]:
+    return dict(SUITE)
+
+
+@app.get("/api/experiments/report")
+def latest_report() -> dict[str, Any]:
+    path = ROOT / "reports" / "experiment-report.json"
+    if not path.exists():
+        raise HTTPException(404, "No experiment report yet. Run the C0–C7 suite.")
+    return json.loads(path.read_text())
+
+
+@app.get("/api/experiments/report.md")
+def latest_report_markdown() -> FileResponse:
+    path = ROOT / "reports" / "experiment-report.md"
+    if not path.exists():
+        raise HTTPException(404, "No experiment report yet. Run the C0–C7 suite.")
+    return FileResponse(path, media_type="text/markdown", filename="experiment-report.md")
 
 
 @app.get("/api/runs/{run_id}")

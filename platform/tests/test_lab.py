@@ -8,6 +8,7 @@ import pytest
 from app.codegen import generate_experiment
 from app.conditions import architecture_view, interface_enabled
 from app.llm import extract_json
+from app.experiment_report import render_markdown, summarize_run
 from app.orchestrator import Orchestrator, validate_pack
 from app.packs import merge_part, empty_pack, packs_present
 from app.policy import PolicyEngine
@@ -134,3 +135,48 @@ async def test_c0_and_c3_runs(tmp_path, monkeypatch):
             assert run["state"]["known_evidence"]
         if condition == "C0":
             assert "tool_observation" not in kinds
+
+
+def test_experiment_report_markdown():
+    suite = {
+        "generated_at": "2026-09-16T19:00:00Z",
+        "incident_id": "incident-0042",
+        "provider": "ollama",
+        "model": "llama3.2:1b",
+        "dataset_id": "ds-sample-0042",
+        "runs": [
+            {
+                "condition": "C0",
+                "status": "completed",
+                "verdict": "inconclusive",
+                "confidence": 0.4,
+                "evidence_ids": [],
+                "tool_observations": 0,
+                "knowledge_retrievals": 0,
+                "summary": "Alert only.",
+                "tools": [],
+            },
+            {
+                "condition": "C5",
+                "status": "skipped",
+                "error": "C5 skipped; no completed C3 run in this suite.",
+            },
+        ],
+    }
+    markdown = render_markdown(suite)
+    assert "ollama:llama3.2:1b" in markdown
+    assert "| C0 |" in markdown
+    assert "C5 skipped" in markdown
+    summary = summarize_run(
+        {
+            "id": "run-1",
+            "condition": "C3",
+            "status": "completed",
+            "report": {"verdict": "malicious", "confidence": 0.9, "summary": "ps", "supporting_evidence": [{"event_id": "event-1021"}]},
+            "manifest": {"model_profile": "ollama:llama3.2:1b"},
+        },
+        [{"kind": "tool_observation", "payload": {"tool": "query_events"}}, {"kind": "knowledge_retrieved", "payload": {}}],
+    )
+    assert summary["tool_observations"] == 1
+    assert summary["knowledge_retrievals"] == 1
+    assert summary["evidence_ids"] == ["event-1021"]
