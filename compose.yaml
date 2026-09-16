@@ -1,103 +1,14 @@
 services:
-  experiment-runner:
-    build: ./services/experiment-runner
-    depends_on:
-      postgres:
-        condition: service_healthy
-      trajectory-store:
-        condition: service_healthy
-    networks: [control]
-
-  agent-orchestrator:
-    build: ./services/agent-orchestrator
-    depends_on:
-      postgres:
-        condition: service_healthy
-      model-gateway:
-        condition: service_healthy
-    networks: [control, agent]
-
-  model-gateway:
-    build: ./services/model-gateway
-    networks: [agent]
-
-  context-builder:
-    build: ./services/context-builder
-    networks: [agent]
-
-  policy-engine:
-    build: ./services/policy-engine
-    networks: [agent]
-
-  report-service:
-    build: ./services/report-service
-    networks: [agent]
-
-  trajectory-store:
-    build: ./services/trajectory-store
-    depends_on:
-      postgres:
-        condition: service_healthy
-    networks: [control]
-
-  telemetry-gateway:
-    build: ./services/telemetry-gateway
-    profiles: ["search"]
-    networks: [agent, telemetry]
-
-  knowledge-service:
-    build: ./services/knowledge-service
-    profiles: ["knowledge"]
-    networks: [agent, knowledge]
-
-  fixed-retrieval-service:
-    build: ./services/fixed-retrieval
-    profiles: ["fixed-retrieval"]
-    networks: [agent, telemetry, knowledge]
-
-  matched-evidence-builder:
-    build: ./services/matched-evidence
-    profiles: ["matched-evidence"]
-    networks: [agent, control]
-
-  oracle-evidence-service:
-    build: ./services/oracle-evidence
-    profiles: ["oracle-evidence"]
-    networks: [agent]
-
-  oracle-plan-service:
-    build: ./services/oracle-plan
-    profiles: ["oracle-plan"]
-    networks: [agent]
-
-  postgres:
-    image: postgres:17
-    environment:
-      POSTGRES_DB: agent_eval
-      POSTGRES_USER: agent_eval
-      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
-    secrets:
-      - postgres_password
+  lab:
+    build: ./platform
     volumes:
-      - postgres-data:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U agent_eval"]
-      interval: 5s
-      timeout: 5s
-      retries: 12
-    networks: [control]
-
-networks:
-  control:
-  agent:
-  telemetry:
-    internal: true
-  knowledge:
-    internal: true
+      - lab-data:/app/var
+    environment:
+      LAB_DB: /app/var/lab.sqlite3
+      LAB_STEP_DELAY: "0"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    command: ["python", "-m", "app", "suite", "--provider", "ollama", "--ollama-url", "http://host.docker.internal:11434"]
 
 volumes:
-  postgres-data:
-
-secrets:
-  postgres_password:
-    file: ./secrets/postgres_password.txt
+  lab-data:

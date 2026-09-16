@@ -864,66 +864,67 @@ asynchronous and append-only.
 ```mermaid
 flowchart LR
 
-Client[Investigation Client] --> API[Investigation API]
+Client[Investigation Client / Lab UI] --> API[Investigation API]
+
+subgraph Intake
+Alert[Alert pack] --> Store[(Telemetry store)]
+Tel[Telemetry pack] --> Store
+KBUp[Knowledge corpus] --> KB[(Versioned Knowledge Index)]
+QPack[C4 query pack] --> Fixed[Fixed retrieval]
+OEv[C6 oracle evidence] --> OracleE[Oracle evidence]
+OPl[C7 oracle plan] --> OracleP[Oracle plan]
+GT[Ground truth sealed] -.-> Metrics[Metrics / eval only]
+end
 
 subgraph Control Plane
-
 API --> O[Agent Orchestrator]
-
 O --> C[Context Builder]
-
-C --> M[Model Gateway / LLM]
-
+C --> M[Model Gateway]
 M --> O
-
 O <--> S[State Service]
-
 O --> P[Policy Engine]
+API --> Keys[Provider key vault]
+end
 
+subgraph Model adapters
+M --> Ref[Reference investigator]
+M --> Ollama[Ollama local]
+M --> GPT[GPT OpenAI]
+M --> Claude[Claude Anthropic]
+M --> Grok[Grok xAI]
+M --> Groq[Groq]
+Keys -.-> GPT
+Keys -.-> Claude
+Keys -.-> Grok
+Keys -.-> Groq
 end
 
 subgraph Knowledge Plane
-
-K[Knowledge Service] <--> KB[(Versioned Knowledge Index)]
-
+K[Knowledge Service] <--> KB
 end
 
 subgraph Evidence Plane
-
 T[Telemetry Gateway] --> Tools[Typed Investigation Tools]
-
-Tools --> Logs[(Read-only Telemetry)]
-
+Tools --> Store
 end
 
 subgraph Reporting and Evaluation
-
-R[Report Service] --> V[Report Validator] --> Result[Validated
-Result]
-
+R[Report Service] --> V[Report Validator] --> Result[Validated Result]
 X[Trajectory Service]
-
+Code[Experiment codegen]
 end
 
 O <--> K
-
 O <--> T
-
 O --> R
-
 S --> R
-
 API -.-> X
-
 O -.-> X
-
 M -.-> X
-
 K -.-> X
-
 T -.-> X
-
 V -.-> X
+API --> Code
 ```
 Source basis: the manuscript defines C3 as the full agent with
 knowledge-base access and adaptive search, specifies typed read-only

