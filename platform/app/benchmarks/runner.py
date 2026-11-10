@@ -71,15 +71,36 @@ def run_benchmarks(
     # Prefer cyber evidence tasks first, then DiscoveryBench, then DiscoveryWorld fill.
     preferred = [k for k in ["cyber_secops", "ait_ads", "discoverybench", "discoveryworld"] if k in include]
     preferred += [k for k in include if k not in preferred]
-    queue: list[tuple[str, dict[str, Any]]] = []
+    unique: list[tuple[str, dict[str, Any]]] = []
     for key in preferred:
         scenarios = loaders[key](limit=None)
         print(f"benchmark  {key}  available={len(scenarios)}  model={model}", flush=True)
         for scenario in scenarios:
-            queue.append((key, scenario))
-    if limit is not None:
-        queue = queue[:limit]
-    print(f"queue  total={len(queue)}  limit={limit}", flush=True)
+            unique.append((key, scenario))
+    print(f"unique  total={len(unique)}", flush=True)
+
+    # If the caller asks for more than the unique inventory, tile with decoding
+    # replicas (rep0, rep1, ...) so long runs can estimate variance.
+    queue: list[tuple[str, dict[str, Any]]] = []
+    target = limit if limit is not None else len(unique)
+    if target <= len(unique):
+        queue = unique[:target]
+    else:
+        replica = 0
+        while len(queue) < target:
+            for key, scenario in unique:
+                if len(queue) >= target:
+                    break
+                cloned = dict(scenario)
+                if replica > 0:
+                    cloned["scenario"] = f"{scenario.get('scenario')}/rep{replica}"
+                    cloned["id"] = f"{scenario.get('id')}/rep{replica}"
+                    cloned["replica"] = replica
+                else:
+                    cloned["replica"] = 0
+                queue.append((key, cloned))
+            replica += 1
+    print(f"queue  total={len(queue)}  limit={limit}  replicas~{max(1, (len(queue) + len(unique) - 1) // max(1, len(unique)))}", flush=True)
 
     # Resume from checkpoint if present.
     done_ids: set[str] = set()
