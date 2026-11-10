@@ -48,13 +48,15 @@ def render_markdown(suite: dict[str, Any]) -> str:
         "",
         "## Results",
         "",
-        "| Condition | Status | Verdict | Confidence | Evidence IDs | Tool observations | Knowledge |",
-        "|---|---|---|---|---|---|---|",
+        "| Model | Condition | Status | Verdict | Confidence | Evidence IDs | Tool observations | Knowledge |",
+        "|---|---|---|---|---|---|---|---|",
     ]
+    model_label = f"{suite.get('provider')}:{suite.get('model')}"
     for row in suite["runs"]:
         evidence = ", ".join(row.get("evidence_ids") or []) or "—"
+        row_model = row.get("model") or model_label
         lines.append(
-            f"| {row['condition']} | {row['status']} | {row.get('verdict') or '—'} | "
+            f"| {row_model} | {row['condition']} | {row['status']} | {row.get('verdict') or '—'} | "
             f"{row.get('confidence') if row.get('confidence') is not None else '—'} | `{evidence}` | "
             f"{row.get('tool_observations', 0)} | {row.get('knowledge_retrievals', 0)} |"
         )

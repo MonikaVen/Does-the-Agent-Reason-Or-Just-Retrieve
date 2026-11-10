@@ -7,16 +7,16 @@
 
 ## Results
 
-| Condition | Status | Verdict | Confidence | Evidence IDs | Tool observations | Knowledge |
-|---|---|---|---|---|---|---|
-| C0 | completed | malicious | 0.93 | `event-1021, event-1028, event-1026` | 0 | 0 |
-| C1 | completed | malicious | 0.93 | `event-1021, event-1028, event-1024` | 0 | 1 |
-| C2 | completed | inconclusive | 0.93 | `event-1021, event-1028, event-1024` | 6 | 0 |
-| C3 | completed | malicious | 0.93 | `event-1021, event-1028, event-1024` | 6 | 0 |
-| C4 | completed | malicious | 0.93 | `event-1021, event-1028, event-1024` | 2 | 1 |
-| C5 | completed | malicious | 0.93 | `event-1008` | 0 | 1 |
-| C6 | completed | malicious | 0.92 | `event-1021, event-1024` | 0 | 1 |
-| C7 | completed | benign | 0.93 | `event-1021, event-1028, event-1024` | 6 | 0 |
+| Model | Condition | Status | Verdict | Confidence | Evidence IDs | Tool observations | Knowledge |
+|---|---|---|---|---|---|---|---|
+| ollama:qwen2.5 | C0 | completed | malicious | 0.93 | `event-1021, event-1028, event-1026` | 0 | 0 |
+| ollama:qwen2.5 | C1 | completed | malicious | 0.93 | `event-1021, event-1028, event-1024` | 0 | 1 |
+| ollama:qwen2.5 | C2 | completed | inconclusive | 0.93 | `event-1021, event-1028, event-1024` | 6 | 0 |
+| ollama:qwen2.5 | C3 | completed | malicious | 0.93 | `event-1021, event-1028, event-1024` | 6 | 0 |
+| ollama:qwen2.5 | C4 | completed | malicious | 0.93 | `event-1021, event-1028, event-1024` | 2 | 1 |
+| ollama:qwen2.5 | C5 | completed | malicious | 0.93 | `event-1008` | 0 | 1 |
+| ollama:qwen2.5 | C6 | completed | malicious | 0.92 | `event-1021, event-1024` | 0 | 1 |
+| ollama:qwen2.5 | C7 | completed | benign | 0.93 | `event-1021, event-1028, event-1024` | 6 | 0 |
 
 ## Setup
 

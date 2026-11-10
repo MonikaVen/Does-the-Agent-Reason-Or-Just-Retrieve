@@ -201,7 +201,8 @@ def test_experiment_report_markdown():
     }
     markdown = render_markdown(suite)
     assert "ollama:llama3.2:1b" in markdown
-    assert "| C0 |" in markdown
+    assert "| Model | Condition |" in markdown
+    assert "| ollama:llama3.2:1b | C0 |" in markdown
     assert "C5 skipped" in markdown
     summary = summarize_run(
         {
