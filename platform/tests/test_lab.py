@@ -14,6 +14,7 @@ from app.experiment_report import render_markdown, summarize_run
 from app.orchestrator import Orchestrator, validate_pack
 from app.packs import merge_part, empty_pack, packs_present
 from app.policy import PolicyEngine
+from app.report import assign_evidence_confidence, compute_evidence_confidence
 from app.store import Store
 from app.bus import EventBus
 
@@ -56,6 +57,34 @@ def test_extract_json_from_fence():
     assert data["verdict"] == "benign"
     trailing = extract_json('{"verdict": "malicious", "confidence": 0.4} trailing text')
     assert trailing["verdict"] == "malicious"
+
+
+def test_confidence_is_evidence_derived_not_self_reported():
+    records = [
+        {
+            "evidence_id": "event-1021",
+            "source": "process_events",
+            "fields": {
+                "process_name": "powershell.exe",
+                "parent_process_name": "WINWORD.EXE",
+                "command_line": "powershell.exe -nop -w hidden -enc JABz",
+            },
+        },
+        {
+            "evidence_id": "event-1024",
+            "source": "network",
+            "fields": {"destination_ip": "203.0.113.18", "process_name": "powershell.exe"},
+        },
+    ]
+    scored = compute_evidence_confidence(records)
+    assert 0.7 <= scored <= 0.93
+    report = assign_evidence_confidence(
+        {"verdict": "malicious", "confidence": 0.99, "summary": "model self-report"},
+        {"observations": [{"records": records}], "state": {"known_evidence": ["event-1021"]}},
+    )
+    assert report["confidence"] == scored
+    assert report["confidence"] != 0.99
+    assert report["confidence_source"] == "evidence"
 
 
 def test_secrets_are_masked(tmp_path):

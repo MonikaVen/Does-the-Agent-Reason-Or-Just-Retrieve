@@ -244,10 +244,11 @@ class ModelGateway:
             return self.reference.generate_report(context)
         system = (
             "You write the final incident report. Reply with one JSON object only. "
-            "Keep it short: verdict, confidence, one-sentence summary, at most 4 supporting_evidence items. "
+            "Keep it short: verdict, one-sentence summary, at most 4 supporting_evidence items. "
             "Every factual claim must cite an evidence_id present in the supplied observations "
             "or raw window. Do not invent evidence. verdict must be malicious, benign, or inconclusive. "
-            "confidence is in [0,1]. ATT&CK techniques look like T1059.001. No extra keys."
+            "Do not self-report confidence; the harness scores confidence from observed evidence. "
+            "You may omit confidence or set it to 0. ATT&CK techniques look like T1059.001. No extra keys."
         )
         user = (
             "Return a FinalReport JSON with this shape:\n"
@@ -333,16 +334,6 @@ class ModelGateway:
         return extract_json(text)
 
 
-def _coerce_confidence(value: Any, default: float = 0.5) -> float:
-    try:
-        number = float(value)
-    except (TypeError, ValueError):
-        return default
-    if number > 1:
-        number = number / 100.0 if number <= 100 else 1.0
-    return max(0.0, min(1.0, number))
-
-
 def _coerce_decision(data: dict[str, Any], tools: list[str]) -> dict[str, Any]:
     action = data.get("selected_action")
     if isinstance(action, str):
@@ -392,7 +383,8 @@ def _coerce_report(data: dict[str, Any]) -> dict[str, Any]:
     if not isinstance(entities, dict):
         entities = {"hosts": [], "users": [], "ips": [], "files": []}
     data["verdict"] = verdict
-    data["confidence"] = _coerce_confidence(data.get("confidence"))
+    # Placeholder only — orchestrator overwrites with evidence-derived confidence.
+    data["confidence"] = 0.0
     data["summary"] = str(data.get("summary") or "")
     data["attack_chain"] = data.get("attack_chain") if isinstance(data.get("attack_chain"), list) else []
     data["key_entities"] = entities

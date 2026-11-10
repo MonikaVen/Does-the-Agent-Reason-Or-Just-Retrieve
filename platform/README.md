@@ -71,6 +71,9 @@ Keys stay in the local SQLite store and never enter trajectories.
 
 `python3 -m app suite` writes `reports/experiment-report.md` and `.json`.
 
+Report `confidence` is **evidence-derived** (telemetry heuristics on the
+records available in that run). Model self-reported confidence is ignored.
+
 ## Generated runners
 
 `python3 -m app generate C3 --provider ollama` prints an in-process script
