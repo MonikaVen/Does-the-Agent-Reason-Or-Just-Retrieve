@@ -71,6 +71,23 @@ Keys stay in the local SQLite store and never enter trajectories.
 
 `python3 -m app suite` writes `reports/experiment-report.md` and `.json`.
 
+Report `confidence` is **evidence-derived** (telemetry heuristics on the
+records available in that run). Model self-reported confidence is ignored.
+Result tables include a **Model** column.
+
+## Multi-dataset benchmarks
+
+Download DiscoveryBench, DiscoveryWorld, SecOps-ES, and AIT-ADS, then score
+`qwen2.5` (or another Ollama model) per scenario:
+
+```bash
+python3 scripts/download_benchmarks.py
+python3 -m app bench --provider ollama --model qwen2.5 --out reports/benchmarks
+```
+
+Writes `reports/benchmarks/multi-benchmark-report.md` with Model, Dataset,
+Scenario, and Score.
+
 ## Generated runners
 
 `python3 -m app generate C3 --provider ollama` prints an in-process script

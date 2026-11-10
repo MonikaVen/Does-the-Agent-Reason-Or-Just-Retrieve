@@ -177,6 +177,31 @@ def cmd_report(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_bench(args: argparse.Namespace) -> int:
+    from .benchmarks.runner import run_benchmarks
+
+    include = None
+    if args.datasets and args.datasets != "all":
+        include = [part.strip() for part in args.datasets.split(",") if part.strip()]
+    model = args.model or "qwen2.5"
+    report = run_benchmarks(
+        model=model,
+        base_url=args.ollama_url,
+        out_dir=Path(args.out) if args.out else None,
+        include=include,
+        limit=args.limit,
+        checkpoint_every=args.checkpoint_every,
+    )
+    print(f"model   {report['provider']}:{report['model']}")
+    print(f"queued  {report.get('queued')}  completed={len(report.get('scenarios') or [])}")
+    for row in report["datasets"]:
+        print(f"dataset {row['dataset']}  mean={row['mean_score']}  n={row['scenarios']}")
+    print(f"report  {report['files']['markdown']}")
+    print(f"json    {report['files']['json']}")
+    failed = any(row.get("status") == "failed" for row in report["scenarios"])
+    return 1 if failed else 0
+
+
 def cmd_generate(args: argparse.Namespace) -> int:
     lab = Lab()
     dataset = lab.ensure_dataset(args.pack, args.dataset)
@@ -262,6 +287,20 @@ def build_parser() -> argparse.ArgumentParser:
     generate.add_argument("--matched-run")
     generate.add_argument("--write", help="write the script to this path")
     generate.set_defaults(func=cmd_generate)
+
+    bench = sub.add_parser(
+        "bench",
+        parents=[common],
+        help="run DiscoveryBench + DiscoveryWorld + cyber evidence benchmarks",
+    )
+    bench.add_argument(
+        "--datasets",
+        default="all",
+        help="comma list: discoverybench,discoveryworld,cyber_secops,ait_ads — or 'all'",
+    )
+    bench.add_argument("--limit", type=int, default=1000, help="max scenarios to run (default 1000)")
+    bench.add_argument("--checkpoint-every", type=int, default=10, help="write checkpoint every N scenarios")
+    bench.set_defaults(func=cmd_bench)
 
     parser.set_defaults(func=None, conditions="all")
     return parser

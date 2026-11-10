@@ -1,22 +1,22 @@
 # Experiment report
 
-- Generated: `2026-09-16T20:01:55.315Z`
+- Generated: `2026-11-10T17:03:49.821Z`
 - Incident: `incident-0042`
-- Model: `ollama:llama3.2:1b`
+- Model: `ollama:qwen2.5`
 - Dataset: `ds-sample-0042`
 
 ## Results
 
-| Condition | Status | Verdict | Confidence | Evidence IDs | Tool observations | Knowledge |
-|---|---|---|---|---|---|---|
-| C0 | completed | malicious | 0.8 | `event-1008, event-1019, event-1021, event-1024, event-1009, event-1026, event-1033` | 0 | 0 |
-| C1 | completed | malicious | 0.9 | `event-1008, event-1019, event-1021, event-1024, event-1026, event-1033` | 0 | 1 |
-| C2 | completed | malicious | 0.8 | `event-1008, event-1019, event-1021, event-1028, event-1024, event-1009` | 1 | 0 |
-| C3 | completed | malicious | 0.9 | `event-1008, event-1019, event-1021, event-1028, event-1024, event-1009` | 3 | 0 |
-| C4 | completed | malicious | 0.8 | `event-1021, event-1028, event-1009` | 2 | 1 |
-| C5 | completed | malicious | 0.8 | `event-1008, event-1009` | 0 | 1 |
-| C6 | completed | malicious | 0.8 | `event-1021, event-1024` | 0 | 1 |
-| C7 | completed | malicious | 0.8 | `event-1008, event-1019, event-1021, event-1028, event-1024, event-1009` | 3 | 0 |
+| Model | Condition | Status | Verdict | Confidence | Evidence IDs | Tool observations | Knowledge |
+|---|---|---|---|---|---|---|---|
+| ollama:qwen2.5 | C0 | completed | malicious | 0.93 | `event-1021, event-1028, event-1026` | 0 | 0 |
+| ollama:qwen2.5 | C1 | completed | malicious | 0.93 | `event-1021, event-1028, event-1024` | 0 | 1 |
+| ollama:qwen2.5 | C2 | completed | inconclusive | 0.93 | `event-1021, event-1028, event-1024` | 6 | 0 |
+| ollama:qwen2.5 | C3 | completed | malicious | 0.93 | `event-1021, event-1028, event-1024` | 6 | 0 |
+| ollama:qwen2.5 | C4 | completed | malicious | 0.93 | `event-1021, event-1028, event-1024` | 2 | 1 |
+| ollama:qwen2.5 | C5 | completed | malicious | 0.93 | `event-1008` | 0 | 1 |
+| ollama:qwen2.5 | C6 | completed | malicious | 0.92 | `event-1021, event-1024` | 0 | 1 |
+| ollama:qwen2.5 | C7 | completed | benign | 0.93 | `event-1021, event-1028, event-1024` | 6 | 0 |
 
 ## Setup
 
@@ -31,32 +31,32 @@ Local Ollama was the model gateway. The reference investigator was not used as a
 ## Notes
 
 ### C0
-Encoded PowerShell execution detected on workstation-17, suggesting a potential attack.
+Encoded PowerShell execution detected, with network activity and registry changes.
 
 ### C1
-The presence of encoded PowerShell execution and suspicious network activity suggests a malicious attack.
+Encoded PowerShell execution with network activity suggests malicious intent.
 
 ### C2
-The alerting process appears to have been launched by the execution of PowerShell on workstation-17.
-Tools: query_events, query_events
+Insufficient evidence to determine if the PowerShell execution is malicious or benign.
+Tools: query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events
 
 ### C3
-The ATT&CK technique T1059.001 was used to launch the alerting process.
-Tools: query_events, query_events, query_events, query_events, query_events, query_events
+Encoded PowerShell execution detected on workstation-17, indicating potential malicious activity.
+Tools: query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events
 
 ### C4
-Encoded PowerShell execution detected on workstation-17, suggesting malicious activity.
+Encoded PowerShell execution detected with suspicious parent process and network activity.
 Tools: query_events, query_events
 
 ### C5
-Encoded PowerShell execution detected on workstation-17, suggesting malicious activity.
+Encoded PowerShell execution detected, indicative of malicious activity.
 
 ### C6
-The presence of encoded PowerShell execution on workstation-17 suggests malicious activity.
+Encoded PowerShell execution detected, followed by network activity, indicating potential malicious intent.
 
 ### C7
-The ATT&CK technique T1059.001 was used to launch the alerting process.
-Tools: query_events, query_events, query_events, query_events, query_events, query_events
+The PowerShell execution detected on workstation-17 appears to be benign as it is part of a legitimate workflow involving multiple processes.
+Tools: query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events
 
 ## Reading the matrix
 

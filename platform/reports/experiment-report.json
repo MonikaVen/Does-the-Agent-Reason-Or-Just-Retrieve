@@ -1,120 +1,110 @@
 {
-  "generated_at": "2026-09-16T20:01:55.315Z",
+  "generated_at": "2026-11-10T17:03:49.821Z",
   "dataset_id": "ds-sample-0042",
   "incident_id": "incident-0042",
   "provider": "ollama",
-  "model": "llama3.2:1b",
+  "model": "qwen2.5",
   "runs": [
     {
-      "run_id": "run-6ca180c9914c",
+      "run_id": "run-97efe958149f",
       "condition": "C0",
       "status": "completed",
       "error": null,
-      "model": "ollama:llama3.2:1b",
+      "model": "ollama:qwen2.5",
       "verdict": "malicious",
-      "confidence": 0.8,
-      "summary": "Encoded PowerShell execution detected on workstation-17, suggesting a potential attack.",
+      "confidence": 0.93,
+      "summary": "Encoded PowerShell execution detected, with network activity and registry changes.",
       "evidence_ids": [
-        "event-1008",
-        "event-1019",
         "event-1021",
-        "event-1024",
-        "event-1009",
-        "event-1026",
-        "event-1033"
+        "event-1028",
+        "event-1026"
       ],
       "event_count": 11,
       "tool_observations": 0,
       "knowledge_retrievals": 0,
       "tools": [],
-      "started_at": "2026-09-16T19:57:33.430Z",
-      "completed_at": "2026-09-16T19:57:43.743Z",
+      "started_at": "2026-11-10T16:36:31.201Z",
+      "completed_at": "2026-11-10T16:37:39.797Z",
       "validation": {
         "ok": true,
         "errors": [],
         "cited_evidence": [
-          "event-1008",
-          "event-1009",
-          "event-1019",
           "event-1021",
-          "event-1024",
           "event-1026",
-          "event-1033"
+          "event-1028"
         ],
         "unsupported_claim_rate": 0.0
       }
     },
     {
-      "run_id": "run-d2ea2b38f286",
+      "run_id": "run-bf306947b71b",
       "condition": "C1",
       "status": "completed",
       "error": null,
-      "model": "ollama:llama3.2:1b",
+      "model": "ollama:qwen2.5",
       "verdict": "malicious",
-      "confidence": 0.9,
-      "summary": "The presence of encoded PowerShell execution and suspicious network activity suggests a malicious attack.",
+      "confidence": 0.93,
+      "summary": "Encoded PowerShell execution with network activity suggests malicious intent.",
       "evidence_ids": [
-        "event-1008",
-        "event-1019",
         "event-1021",
-        "event-1024",
-        "event-1026",
-        "event-1033"
+        "event-1028",
+        "event-1024"
       ],
       "event_count": 12,
       "tool_observations": 0,
       "knowledge_retrievals": 1,
       "tools": [],
-      "started_at": "2026-09-16T19:57:43.749Z",
-      "completed_at": "2026-09-16T19:57:58.151Z",
+      "started_at": "2026-11-10T16:37:39.803Z",
+      "completed_at": "2026-11-10T16:38:40.834Z",
       "validation": {
         "ok": true,
         "errors": [],
         "cited_evidence": [
-          "event-1008",
-          "event-1019",
           "event-1021",
           "event-1024",
           "event-1026",
-          "event-1028",
-          "event-1033"
+          "event-1028"
         ],
         "unsupported_claim_rate": 0.0
       }
     },
     {
-      "run_id": "run-817fe2c7ba9b",
+      "run_id": "run-37d9ffe0e92f",
       "condition": "C2",
       "status": "completed",
       "error": null,
-      "model": "ollama:llama3.2:1b",
-      "verdict": "malicious",
-      "confidence": 0.8,
-      "summary": "The alerting process appears to have been launched by the execution of PowerShell on workstation-17.",
+      "model": "ollama:qwen2.5",
+      "verdict": "inconclusive",
+      "confidence": 0.93,
+      "summary": "Insufficient evidence to determine if the PowerShell execution is malicious or benign.",
       "evidence_ids": [
-        "event-1008",
-        "event-1019",
         "event-1021",
         "event-1028",
-        "event-1024",
-        "event-1009"
+        "event-1024"
       ],
-      "event_count": 27,
-      "tool_observations": 1,
+      "event_count": 87,
+      "tool_observations": 6,
       "knowledge_retrievals": 0,
       "tools": [
         "query_events",
+        "query_events",
+        "query_events",
+        "query_events",
+        "query_events",
+        "query_events",
+        "query_events",
+        "query_events",
+        "query_events",
+        "query_events",
+        "query_events",
         "query_events"
       ],
-      "started_at": "2026-09-16T19:57:58.157Z",
-      "completed_at": "2026-09-16T19:58:45.251Z",
+      "started_at": "2026-11-10T16:38:40.840Z",
+      "completed_at": "2026-11-10T16:46:34.727Z",
       "validation": {
         "ok": true,
         "errors": [],
         "cited_evidence": [
-          "event-1008",
-          "event-1009",
-          "event-1019",
           "event-1021",
           "event-1024",
           "event-1028"
@@ -123,24 +113,21 @@
       }
     },
     {
-      "run_id": "run-eee627a7cf00",
+      "run_id": "run-261db2a9b7ca",
       "condition": "C3",
       "status": "completed",
       "error": null,
-      "model": "ollama:llama3.2:1b",
+      "model": "ollama:qwen2.5",
       "verdict": "malicious",
-      "confidence": 0.9,
-      "summary": "The ATT&CK technique T1059.001 was used to launch the alerting process.",
+      "confidence": 0.93,
+      "summary": "Encoded PowerShell execution detected on workstation-17, indicating potential malicious activity.",
       "evidence_ids": [
-        "event-1008",
-        "event-1019",
         "event-1021",
         "event-1028",
-        "event-1024",
-        "event-1009"
+        "event-1024"
       ],
-      "event_count": 53,
-      "tool_observations": 3,
+      "event_count": 87,
+      "tool_observations": 6,
       "knowledge_retrievals": 0,
       "tools": [
         "query_events",
@@ -148,17 +135,20 @@
         "query_events",
         "query_events",
         "query_events",
+        "query_events",
+        "query_events",
+        "query_events",
+        "query_events",
+        "query_events",
+        "query_events",
         "query_events"
       ],
-      "started_at": "2026-09-16T19:58:45.262Z",
-      "completed_at": "2026-09-16T20:00:02.463Z",
+      "started_at": "2026-11-10T16:46:34.743Z",
+      "completed_at": "2026-11-10T16:54:34.606Z",
       "validation": {
         "ok": true,
         "errors": [],
         "cited_evidence": [
-          "event-1008",
-          "event-1009",
-          "event-1019",
           "event-1021",
           "event-1024",
           "event-1028"
@@ -167,18 +157,18 @@
       }
     },
     {
-      "run_id": "run-b03542008a1a",
+      "run_id": "run-be09c1fa9a74",
       "condition": "C4",
       "status": "completed",
       "error": null,
-      "model": "ollama:llama3.2:1b",
+      "model": "ollama:qwen2.5",
       "verdict": "malicious",
-      "confidence": 0.8,
-      "summary": "Encoded PowerShell execution detected on workstation-17, suggesting malicious activity.",
+      "confidence": 0.93,
+      "summary": "Encoded PowerShell execution detected with suspicious parent process and network activity.",
       "evidence_ids": [
         "event-1021",
         "event-1028",
-        "event-1009"
+        "event-1024"
       ],
       "event_count": 16,
       "tool_observations": 2,
@@ -187,57 +177,55 @@
         "query_events",
         "query_events"
       ],
-      "started_at": "2026-09-16T20:00:02.474Z",
-      "completed_at": "2026-09-16T20:00:13.306Z",
+      "started_at": "2026-11-10T16:54:34.615Z",
+      "completed_at": "2026-11-10T16:55:30.979Z",
       "validation": {
         "ok": true,
         "errors": [],
         "cited_evidence": [
-          "event-1009",
           "event-1021",
+          "event-1024",
           "event-1028"
         ],
         "unsupported_claim_rate": 0.0
       }
     },
     {
-      "run_id": "run-92d2eb34d5d4",
+      "run_id": "run-c359a858b19c",
       "condition": "C5",
       "status": "completed",
       "error": null,
-      "model": "ollama:llama3.2:1b",
+      "model": "ollama:qwen2.5",
       "verdict": "malicious",
-      "confidence": 0.8,
-      "summary": "Encoded PowerShell execution detected on workstation-17, suggesting malicious activity.",
+      "confidence": 0.93,
+      "summary": "Encoded PowerShell execution detected, indicative of malicious activity.",
       "evidence_ids": [
-        "event-1008",
-        "event-1009"
+        "event-1008"
       ],
       "event_count": 13,
       "tool_observations": 0,
       "knowledge_retrievals": 1,
       "tools": [],
-      "started_at": "2026-09-16T20:00:13.312Z",
-      "completed_at": "2026-09-16T20:00:22.419Z",
+      "started_at": "2026-11-10T16:55:30.989Z",
+      "completed_at": "2026-11-10T16:56:13.797Z",
       "validation": {
         "ok": true,
         "errors": [],
         "cited_evidence": [
-          "event-1008",
-          "event-1009"
+          "event-1008"
         ],
         "unsupported_claim_rate": 0.0
       }
     },
     {
-      "run_id": "run-3ad2cc1ca2f4",
+      "run_id": "run-2978ce396640",
       "condition": "C6",
       "status": "completed",
       "error": null,
-      "model": "ollama:llama3.2:1b",
+      "model": "ollama:qwen2.5",
       "verdict": "malicious",
-      "confidence": 0.8,
-      "summary": "The presence of encoded PowerShell execution on workstation-17 suggests malicious activity.",
+      "confidence": 0.92,
+      "summary": "Encoded PowerShell execution detected, followed by network activity, indicating potential malicious intent.",
       "evidence_ids": [
         "event-1021",
         "event-1024"
@@ -246,8 +234,8 @@
       "tool_observations": 0,
       "knowledge_retrievals": 1,
       "tools": [],
-      "started_at": "2026-09-16T20:00:22.440Z",
-      "completed_at": "2026-09-16T20:00:30.368Z",
+      "started_at": "2026-11-10T16:56:13.804Z",
+      "completed_at": "2026-11-10T16:56:55.251Z",
       "validation": {
         "ok": true,
         "errors": [],
@@ -259,24 +247,21 @@
       }
     },
     {
-      "run_id": "run-2870d812a4d6",
+      "run_id": "run-aa1dcd731599",
       "condition": "C7",
       "status": "completed",
       "error": null,
-      "model": "ollama:llama3.2:1b",
-      "verdict": "malicious",
-      "confidence": 0.8,
-      "summary": "The ATT&CK technique T1059.001 was used to launch the alerting process.",
+      "model": "ollama:qwen2.5",
+      "verdict": "benign",
+      "confidence": 0.93,
+      "summary": "The PowerShell execution detected on workstation-17 appears to be benign as it is part of a legitimate workflow involving multiple processes.",
       "evidence_ids": [
-        "event-1008",
-        "event-1019",
         "event-1021",
         "event-1028",
-        "event-1024",
-        "event-1009"
+        "event-1024"
       ],
-      "event_count": 53,
-      "tool_observations": 3,
+      "event_count": 87,
+      "tool_observations": 6,
       "knowledge_retrievals": 0,
       "tools": [
         "query_events",
@@ -284,17 +269,20 @@
         "query_events",
         "query_events",
         "query_events",
+        "query_events",
+        "query_events",
+        "query_events",
+        "query_events",
+        "query_events",
+        "query_events",
         "query_events"
       ],
-      "started_at": "2026-09-16T20:00:30.378Z",
-      "completed_at": "2026-09-16T20:01:55.310Z",
+      "started_at": "2026-11-10T16:56:55.260Z",
+      "completed_at": "2026-11-10T17:03:49.812Z",
       "validation": {
         "ok": true,
         "errors": [],
         "cited_evidence": [
-          "event-1008",
-          "event-1009",
-          "event-1019",
           "event-1021",
           "event-1024",
           "event-1028"
