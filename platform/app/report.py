@@ -5,6 +5,58 @@ from typing import Any
 
 VERDICTS = {"malicious", "benign", "inconclusive"}
 ATTACK_RE = re.compile(r"^T\d{4}(?:\.\d{3})?$")
+OFFICE_PARENTS = {"winword.exe", "excel.exe", "powerpnt.exe", "outlook.exe", "wscript.exe"}
+ADMIN_PARENTS = {"management-agent.exe", "sccm.exe", "intune.exe", "services.exe"}
+
+
+def evidence_beliefs(records: list[dict[str, Any]], known: list[str] | None = None) -> tuple[float, float]:
+    """Deterministic malicious/admin beliefs from observed telemetry only."""
+    known = known or []
+    score = 0.5
+    if not records and not known:
+        return 0.5, 0.5
+    blob = str(records).lower()
+    if "-enc" in blob or "encodedcommand" in blob or "-w hidden" in blob:
+        score += 0.18
+    if any(parent in blob for parent in OFFICE_PARENTS):
+        score += 0.16
+    if any(parent in blob for parent in ADMIN_PARENTS):
+        score -= 0.2
+    if "203.0.113." in blob or ("destination_ip" in blob and "powershell" in blob):
+        score += 0.08
+    if "currentversion\\\\run" in blob or "currentversion\\run" in blob:
+        score += 0.1
+    if "update.ps1" in blob:
+        score += 0.06
+    score = min(0.93, max(0.07, score))
+    return round(score, 2), round(1 - score, 2)
+
+
+def compute_evidence_confidence(records: list[dict[str, Any]], known: list[str] | None = None) -> float:
+    """Report confidence from evidence strength — never from a model self-report."""
+    malicious, admin = evidence_beliefs(records, known)
+    return round(max(malicious, admin), 2)
+
+
+def context_records(context: dict[str, Any]) -> list[dict[str, Any]]:
+    records: list[dict[str, Any]] = []
+    for obs in context.get("observations") or []:
+        records.extend(obs.get("records") or [])
+    if not records:
+        records = list(context.get("raw_window") or [])
+    return records
+
+
+def assign_evidence_confidence(report: dict[str, Any], context: dict[str, Any]) -> dict[str, Any]:
+    """Overwrite any model-provided confidence with an evidence-derived score."""
+    known = []
+    state = context.get("state") or {}
+    if isinstance(state, dict):
+        known = list(state.get("known_evidence") or [])
+    next_report = dict(report)
+    next_report["confidence"] = compute_evidence_confidence(context_records(context), known)
+    next_report["confidence_source"] = "evidence"
+    return next_report
 
 
 def validate_report(report: dict[str, Any], known_ids: set[str]) -> dict[str, Any]:

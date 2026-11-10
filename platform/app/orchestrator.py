@@ -14,7 +14,7 @@ from .knowledge import KnowledgeService
 from .llm import ModelGateway, ModelError
 from .packs import packs_present
 from .policy import PolicyEngine
-from .report import validate_report
+from .report import assign_evidence_confidence, validate_report
 from .store import Store, utcnow
 from .telemetry import TelemetryGateway, TelemetryStore, flatten_pack, normalize_record
 
@@ -311,6 +311,8 @@ class Orchestrator:
                 "remaining_uncertainty": str(exc),
                 "recommended_human_check": "Inspect the trajectory; do not treat this as a silent fallback to the reference investigator.",
             }
+        # Never trust model self-reported confidence; score from observed evidence only.
+        report = assign_evidence_confidence(report, final_context)
         await self.bus.emit(run_id, "report_generated", "report-service", report, "generate_report")
 
         await self._stage(run_id, "validate_report", "report-validator")
@@ -322,6 +324,7 @@ class Orchestrator:
                 "verdict": "inconclusive",
                 "remaining_uncertainty": "; ".join(validation["errors"]),
             }
+            report = assign_evidence_confidence(report, final_context)
             validation = validate_report(report, evidence_ids)
 
         await self._stage(run_id, "finalize", "trajectory-service")
