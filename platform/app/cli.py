@@ -189,8 +189,11 @@ def cmd_bench(args: argparse.Namespace) -> int:
         base_url=args.ollama_url,
         out_dir=Path(args.out) if args.out else None,
         include=include,
+        limit=args.limit,
+        checkpoint_every=args.checkpoint_every,
     )
     print(f"model   {report['provider']}:{report['model']}")
+    print(f"queued  {report.get('queued')}  completed={len(report.get('scenarios') or [])}")
     for row in report["datasets"]:
         print(f"dataset {row['dataset']}  mean={row['mean_score']}  n={row['scenarios']}")
     print(f"report  {report['files']['markdown']}")
@@ -295,6 +298,8 @@ def build_parser() -> argparse.ArgumentParser:
         default="all",
         help="comma list: discoverybench,discoveryworld,cyber_secops,ait_ads — or 'all'",
     )
+    bench.add_argument("--limit", type=int, default=1000, help="max scenarios to run (default 1000)")
+    bench.add_argument("--checkpoint-every", type=int, default=10, help="write checkpoint every N scenarios")
     bench.set_defaults(func=cmd_bench)
 
     parser.set_defaults(func=None, conditions="all")

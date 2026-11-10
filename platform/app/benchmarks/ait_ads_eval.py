@@ -9,14 +9,12 @@ from .common import exact_ci, ollama_generate, scenario_row
 
 ROOT = Path(__file__).resolve().parents[2] / "data" / "benchmarks"
 LABELS = ROOT / "ait_labels.csv"
-AMINER = ROOT / "ait-ads" / "russellmitchell_aminer.json"
-
-SELECTED_ATTACKS = ["network_scans", "webshell", "dirb"]
+ADS = ROOT / "ait-ads"
 
 
 def _load_labels() -> list[dict[str, str]]:
     with LABELS.open() as fh:
-        return [row for row in csv.DictReader(fh) if row.get("scenario") == "russellmitchell"]
+        return list(csv.DictReader(fh))
 
 
 def _iter_alerts(path: Path):
@@ -85,27 +83,31 @@ def _sample_alerts(path: Path, start: float, end: float, limit: int = 40) -> lis
     return out or fallback
 
 
-def load_scenarios(limit: int = 3) -> list[dict[str, Any]]:
-    if not AMINER.exists() or not LABELS.exists():
+def load_scenarios(limit: int | None = None) -> list[dict[str, Any]]:
+    if not LABELS.exists() or not ADS.exists():
         return []
     labels = _load_labels()
-    by_attack = {row["attack"]: row for row in labels}
+    attacks = sorted({row["attack"] for row in labels})
     scenarios: list[dict[str, Any]] = []
-    for attack in SELECTED_ATTACKS[:limit]:
-        row = by_attack.get(attack)
-        if not row:
+    for row in labels:
+        if limit is not None and len(scenarios) >= limit:
+            break
+        host = row["scenario"]
+        attack = row["attack"]
+        aminer = ADS / f"{host}_aminer.json"
+        if not aminer.exists():
             continue
         start, end = float(row["start"]), float(row["end"])
-        evidence = _sample_alerts(AMINER, start, end)
+        evidence = _sample_alerts(aminer, start, end)
         scenarios.append(
             {
-                "id": f"ait-ads:russellmitchell:{attack}",
+                "id": f"ait-ads:{host}:{attack}",
                 "dataset": "Cyber-AIT-ADS",
-                "scenario": f"russellmitchell/{attack}",
+                "scenario": f"{host}/{attack}",
                 "prompt": (
                     "Based on the AMiner alerts in the evidence window, which multi-step attack stage "
                     "is occurring? Reply with one attack label only "
-                    f"(one of: {', '.join(SELECTED_ATTACKS + ['service_scans', 'wpscan', 'webshell'])})."
+                    f"(one of: {', '.join(attacks)})."
                 ),
                 "answer": attack,
                 "accept": [attack, attack.replace("_", " ")],
