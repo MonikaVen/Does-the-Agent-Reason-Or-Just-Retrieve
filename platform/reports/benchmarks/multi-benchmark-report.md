@@ -1,6 +1,6 @@
 # Multi-benchmark report
 
-- Generated: `2026-11-11T12:07:21.394Z`
+- Generated: `2026-11-11T12:14:01.726Z`
 - Model: `ollama:qwen2.5:3b`
 - Queued: `1256`
 - Completed rows: `1256`
@@ -11,8 +11,8 @@
 |---|---|---|---|---|
 | qwen2.5:3b | Cyber-SecOps-ES | 54 | 54 | 0.5569 |
 | qwen2.5:3b | Cyber-AIT-ADS | 79 | 79 | 0.4937 |
-| qwen2.5:3b | DiscoveryBench | 439 | 417 | 0.4605 |
-| qwen2.5:3b | DiscoveryWorld | 684 | 326 | 0.1155 |
+| qwen2.5:3b | DiscoveryBench | 439 | 439 | 0.4618 |
+| qwen2.5:3b | DiscoveryWorld | 684 | 386 | 0.1085 |
 
 ## Scenario scores
 
@@ -340,29 +340,29 @@
 | qwen2.5:3b | DiscoveryBench | real/nls_raw/metadata_6/q0 | completed | 0.4706 | token_f1 vs gold hypothesis |
 | qwen2.5:3b | DiscoveryBench | real/nls_raw/metadata_7/q0 | completed | 0.25 | token_f1 vs gold hypothesis |
 | qwen2.5:3b | DiscoveryBench | real/nls_raw/metadata_8/q0 | completed | 0.4762 | token_f1 vs gold hypothesis |
-| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_0/q0 | failed | 0.0 | Ollama call failed: HTTP Error 500: Internal Server Error |
-| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_0/q1 | failed | 0.0 | Ollama call failed: HTTP Error 500: Internal Server Error |
+| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_0/q0 | completed | 0.383 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_0/q1 | completed | 0.4878 | token_f1 vs gold hypothesis |
 | qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_1/q0 | completed | 0.0 | token_f1 vs gold hypothesis |
-| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_10/q0 | failed | 0.0 | Ollama call failed: HTTP Error 500: Internal Server Error |
-| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_10/q1 | failed | 0.0 | Ollama call failed: HTTP Error 500: Internal Server Error |
-| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_10/q2 | failed | 0.0 | Ollama call failed: HTTP Error 500: Internal Server Error |
-| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_10/q3 | failed | 0.0 | Ollama call failed: HTTP Error 500: Internal Server Error |
-| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_11/q0 | failed | 0.0 | Ollama call failed: HTTP Error 500: Internal Server Error |
-| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_2/q0 | failed | 0.0 | Ollama call failed: HTTP Error 500: Internal Server Error |
-| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_3/q0 | failed | 0.0 | Ollama call failed: HTTP Error 500: Internal Server Error |
-| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_4/q0 | failed | 0.0 | Ollama call failed: HTTP Error 500: Internal Server Error |
-| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_4/q1 | failed | 0.0 | Ollama call failed: HTTP Error 500: Internal Server Error |
-| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_5/q0 | failed | 0.0 | Ollama call failed: HTTP Error 500: Internal Server Error |
-| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_5/q1 | failed | 0.0 | Ollama call failed: HTTP Error 500: Internal Server Error |
-| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_6/q0 | failed | 0.0 | Ollama call failed: HTTP Error 500: Internal Server Error |
-| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_6/q1 | failed | 0.0 | Ollama call failed: HTTP Error 500: Internal Server Error |
-| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_6/q2 | failed | 0.0 | Ollama call failed: HTTP Error 500: Internal Server Error |
-| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_7/q0 | failed | 0.0 | Ollama call failed: HTTP Error 500: Internal Server Error |
-| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_7/q1 | failed | 0.0 | Ollama call failed: HTTP Error 500: Internal Server Error |
-| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_8/q0 | failed | 0.0 | Ollama call failed: HTTP Error 500: Internal Server Error |
-| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_8/q1 | failed | 0.0 | Ollama call failed: HTTP Error 500: Internal Server Error |
-| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_9/q0 | failed | 0.0 | Ollama call failed: HTTP Error 500: Internal Server Error |
-| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_9/q1 | failed | 0.0 | Ollama call failed: HTTP Error 500: Internal Server Error |
+| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_10/q0 | completed | 0.6809 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_10/q1 | completed | 0.4407 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_10/q2 | completed | 0.7059 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_10/q3 | completed | 0.6667 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_11/q0 | completed | 0.1579 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_2/q0 | completed | 0.3143 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_3/q0 | completed | 0.3273 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_4/q0 | completed | 0.4324 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_4/q1 | completed | 0.4444 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_5/q0 | completed | 0.4865 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_5/q1 | completed | 0.64 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_6/q0 | completed | 0.625 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_6/q1 | completed | 0.4255 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_6/q2 | completed | 0.6939 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_7/q0 | completed | 0.6222 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_7/q1 | completed | 0.5 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_8/q0 | completed | 0.4324 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_8/q1 | completed | 0.5417 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_9/q0 | completed | 0.3684 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | real/nls_ses/metadata_9/q1 | completed | 0.3333 | token_f1 vs gold hypothesis |
 | qwen2.5:3b | DiscoveryBench | real/requirements_engineering_for_ML_enabled_systems/metadata_0/q0 | completed | 0.8387 | token_f1 vs gold hypothesis |
 | qwen2.5:3b | DiscoveryBench | real/requirements_engineering_for_ML_enabled_systems/metadata_1/q0 | completed | 0.3729 | token_f1 vs gold hypothesis |
 | qwen2.5:3b | DiscoveryBench | real/requirements_engineering_for_ML_enabled_systems/metadata_10/q0 | completed | 0.5556 | token_f1 vs gold hypothesis |
@@ -1014,66 +1014,66 @@
 | qwen2.5:3b | DiscoveryWorld | Proteomics/Challenge/seed4/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
 | qwen2.5:3b | DiscoveryWorld | Proteomics/Challenge/seed4/cq1 | skipped | 0.0 | no critical question at index |
 | qwen2.5:3b | DiscoveryWorld | Proteomics/Challenge/seed4/cq2 | skipped | 0.0 | no critical question at index |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed0/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed0/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed0/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed1/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed1/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed1/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed2/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed2/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed2/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed3 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed3/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed3/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed3/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed4 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed4/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed4/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed4/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed0/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed0/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed0/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed1/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed1/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed1/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed2/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed2/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed2/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed3 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed3/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed3/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed3/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed4 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed4/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed4/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed4/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed0/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed0/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed0/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed1/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed1/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed1/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed2/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed2/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed2/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed3 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed3/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed3/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed3/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed4 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed4/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed4/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
-| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed4/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed0 | completed | 0.1818 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed0/cq0 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed0/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed0/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed1 | completed | 0.0909 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed1/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed1/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed1/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed2 | completed | 0.1818 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed2/cq0 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed2/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed2/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed3 | completed | 0.1818 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed3/cq0 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed3/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed3/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed4 | completed | 0.1818 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed4/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed4/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed4/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed0 | completed | 0.0625 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed0/cq0 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed0/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed0/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed1 | completed | 0.1562 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed1/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed1/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed1/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed2 | completed | 0.0625 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed2/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed2/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed2/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed3 | completed | 0.0625 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed3/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed3/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed3/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed4 | completed | 0.0625 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed4/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed4/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed4/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed0 | completed | 0.1562 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed0/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed0/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed0/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed1 | completed | 0.25 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed1/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed1/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed1/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed2 | completed | 0.2188 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed2/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed2/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed2/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed3 | completed | 0.1875 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed3/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed3/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed3/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed4 | completed | 0.1562 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed4/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed4/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed4/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
 | qwen2.5:3b | DiscoveryWorld | Small Skills: Dialog Test/Normal/seed0 | completed | 0.0 | critical-hypothesis keyword coverage |
 | qwen2.5:3b | DiscoveryWorld | Small Skills: Dialog Test/Normal/seed0/cq0 | skipped | 0.0 | no critical question at index |
 | qwen2.5:3b | DiscoveryWorld | Small Skills: Dialog Test/Normal/seed0/cq1 | skipped | 0.0 | no critical question at index |

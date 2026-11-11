@@ -70,11 +70,27 @@ def _enumerate_specs(limit: int | None = None) -> list[dict[str, Any]]:
     return specs
 
 
+def _patch_discoveryworld_rng() -> None:
+    """DiscoveryWorld's Rocket Science scenario passes float bounds to randint."""
+    import random
+
+    if getattr(random.Random.randint, "_dw_int_patch", False):
+        return
+    original = random.Random.randint
+
+    def safe_randint(self, a, b):  # type: ignore[no-untyped-def]
+        return original(self, int(a), int(b))
+
+    safe_randint._dw_int_patch = True  # type: ignore[attr-defined]
+    random.Random.randint = safe_randint  # type: ignore[method-assign]
+
+
 def _materialize(spec: dict[str, Any]) -> dict[str, Any]:
     if spec.get("task_description") is not None and spec.get("evidence") is not None:
         return spec
     from discoveryworld.DiscoveryWorldAPI import DiscoveryWorldAPI
 
+    _patch_discoveryworld_rng()
     api = DiscoveryWorldAPI()
     ok = api.loadScenario(
         scenarioName=spec["theme"],
