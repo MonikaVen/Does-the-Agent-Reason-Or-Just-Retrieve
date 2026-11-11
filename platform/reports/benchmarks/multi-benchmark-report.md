@@ -1,9 +1,9 @@
 # Multi-benchmark report
 
-- Generated: `2026-11-11T11:40:49.620Z`
+- Generated: `2026-11-11T12:07:21.394Z`
 - Model: `ollama:qwen2.5:3b`
 - Queued: `1256`
-- Completed rows: `525`
+- Completed rows: `1256`
 
 ## Dataset scores
 
@@ -11,7 +11,8 @@
 |---|---|---|---|---|
 | qwen2.5:3b | Cyber-SecOps-ES | 54 | 54 | 0.5569 |
 | qwen2.5:3b | Cyber-AIT-ADS | 79 | 79 | 0.4937 |
-| qwen2.5:3b | DiscoveryBench | 392 | 370 | 0.4609 |
+| qwen2.5:3b | DiscoveryBench | 439 | 417 | 0.4605 |
+| qwen2.5:3b | DiscoveryWorld | 684 | 326 | 0.1155 |
 
 ## Scenario scores
 
@@ -542,6 +543,737 @@
 | qwen2.5:3b | DiscoveryBench | synth/machine-learning_0_1/metadata_1/q388 | completed | 0.7407 | token_f1 vs gold hypothesis |
 | qwen2.5:3b | DiscoveryBench | synth/machine-learning_0_2/metadata_0/q378 | completed | 0.7463 | token_f1 vs gold hypothesis |
 | qwen2.5:3b | DiscoveryBench | synth/machine-learning_0_2/metadata_1/q379 | completed | 0.48 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/machine-learning_0_2/metadata_2/q380 | completed | 0.2 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/machine-learning_0_2/metadata_3/q381 | completed | 0.2857 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/machine-learning_0_3/metadata_0/q374 | completed | 0.3077 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/machine-learning_0_3/metadata_1/q375 | completed | 0.1395 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/machine-learning_0_3/metadata_2/q376 | completed | 0.4615 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/machine-learning_0_3/metadata_3/q382 | completed | 0.7857 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/machine-learning_0_3/metadata_4/q383 | completed | 0.6087 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/machine-learning_1_2/metadata_1/q384 | completed | 0.4 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/molecular-gastronomy_0_0/metadata_0/q808 | completed | 0.4667 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/molecular-gastronomy_0_2/metadata_0/q812 | completed | 0.48 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/molecular-gastronomy_0_3/metadata_0/q809 | completed | 0.5507 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/molecular-gastronomy_0_3/metadata_1/q810 | completed | 0.5517 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/molecular-gastronomy_0_3/metadata_2/q816 | completed | 0.4308 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/molecular-gastronomy_0_3/metadata_3/q820 | completed | 0.8333 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/molecular-gastronomy_0_3/metadata_4/q826 | completed | 0.3077 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/molecular-gastronomy_0_3/metadata_5/q829 | completed | 0.4935 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/molecular-gastronomy_1_1/metadata_2/q824 | completed | 0.7719 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/molecular-gastronomy_1_2/metadata_1/q821 | completed | 0.4483 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/molecular-gastronomy_1_2/metadata_2/q827 | completed | 0.3929 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/molecular-gastronomy_1_2/metadata_3/q830 | completed | 0.5333 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/molecular-gastronomy_2_1/metadata_0/q813 | completed | 0.5116 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/molecular-gastronomy_2_1/metadata_1/q817 | completed | 0.4727 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/molecular-gastronomy_2_1/metadata_3/q832 | completed | 0.4 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/neuroscience_0_0/metadata_0/q390 | completed | 0.4615 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/neuroscience_0_1/metadata_0/q391 | completed | 0.5652 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/neuroscience_0_1/metadata_1/q397 | completed | 0.3462 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/neuroscience_0_2/metadata_0/q394 | completed | 0.5618 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/neuroscience_0_3/metadata_0/q392 | completed | 0.4074 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/philosophical-debates_0_0/metadata_0/q284 | completed | 0.65 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/philosophical-debates_0_3/metadata_0/q285 | completed | 0.5106 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/philosophical-debates_0_3/metadata_1/q286 | completed | 0.4 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/philosophical-debates_0_3/metadata_2/q292 | completed | 0.4783 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/philosophical-debates_0_3/metadata_3/q298 | completed | 0.6 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/philosophical-debates_1_2/metadata_0/q287 | completed | 0.4333 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/philosophical-debates_1_2/metadata_1/q293 | completed | 0.5588 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/philosophical-debates_1_2/metadata_2/q299 | completed | 0.6207 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/philosophical-debates_2_1/metadata_0/q289 | completed | 0.4375 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/philosophical-debates_2_1/metadata_1/q295 | completed | 0.5333 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/robotics_0_1/metadata_0/q325 | completed | 0.2903 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/robotics_0_1/metadata_1/q326 | completed | 0.386 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/robotics_0_2/metadata_0/q322 | completed | 0.4533 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/robotics_0_2/metadata_1/q329 | completed | 0.386 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/robotics_0_3/metadata_0/q319 | completed | 0.3662 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/robotics_0_3/metadata_1/q320 | completed | 0.3582 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/robotics_0_3/metadata_2/q327 | completed | 0.3333 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/robotics_1_0/metadata_0/q317 | completed | 0.3636 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/robotics_2_1/metadata_1/q330 | completed | 0.1455 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryWorld | Tutorial/Normal/seed0 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Tutorial/Normal/seed0/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Tutorial/Normal/seed0/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Tutorial/Normal/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Easy/seed0 | completed | 1.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Easy/seed0/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Easy/seed0/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Easy/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Easy/seed1 | completed | 1.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Easy/seed1/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Easy/seed1/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Easy/seed1/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Easy/seed2 | completed | 1.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Easy/seed2/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Easy/seed2/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Easy/seed2/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Easy/seed3 | completed | 1.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Easy/seed3/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Easy/seed3/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Easy/seed3/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Easy/seed4 | completed | 1.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Easy/seed4/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Easy/seed4/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Easy/seed4/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Normal/seed0 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Normal/seed0/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Normal/seed0/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Normal/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Normal/seed1 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Normal/seed1/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Normal/seed1/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Normal/seed1/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Normal/seed2 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Normal/seed2/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Normal/seed2/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Normal/seed2/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Normal/seed3 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Normal/seed3/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Normal/seed3/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Normal/seed3/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Normal/seed4 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Normal/seed4/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Normal/seed4/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Normal/seed4/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Challenge/seed0 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Challenge/seed0/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Challenge/seed0/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Challenge/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Challenge/seed1 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Challenge/seed1/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Challenge/seed1/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Challenge/seed1/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Challenge/seed2 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Challenge/seed2/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Challenge/seed2/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Challenge/seed2/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Challenge/seed3 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Challenge/seed3/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Challenge/seed3/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Challenge/seed3/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Challenge/seed4 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Challenge/seed4/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Challenge/seed4/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Combinatorial Chemistry/Challenge/seed4/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Easy/seed0 | completed | 1.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Easy/seed0/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Easy/seed0/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Easy/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Easy/seed1 | completed | 1.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Easy/seed1/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Easy/seed1/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Easy/seed1/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Easy/seed2 | completed | 1.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Easy/seed2/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Easy/seed2/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Easy/seed2/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Easy/seed3 | completed | 1.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Easy/seed3/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Easy/seed3/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Easy/seed3/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Easy/seed4 | completed | 1.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Easy/seed4/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Easy/seed4/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Easy/seed4/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Normal/seed0 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Normal/seed0/cq0 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Normal/seed0/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Normal/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Normal/seed1 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Normal/seed1/cq0 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Normal/seed1/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Normal/seed1/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Normal/seed2 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Normal/seed2/cq0 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Normal/seed2/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Normal/seed2/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Normal/seed3 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Normal/seed3/cq0 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Normal/seed3/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Normal/seed3/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Normal/seed4 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Normal/seed4/cq0 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Normal/seed4/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Normal/seed4/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Challenge/seed0 | completed | 1.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Challenge/seed0/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Challenge/seed0/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Challenge/seed0/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Challenge/seed1 | completed | 0.5 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Challenge/seed1/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Challenge/seed1/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Challenge/seed1/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Challenge/seed2 | completed | 0.5 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Challenge/seed2/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Challenge/seed2/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Challenge/seed2/cq2 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Challenge/seed3 | completed | 0.5 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Challenge/seed3/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Challenge/seed3/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Challenge/seed3/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Challenge/seed4 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Challenge/seed4/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Challenge/seed4/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Archaeology Dating/Challenge/seed4/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Easy/seed0 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Easy/seed0/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Easy/seed0/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Easy/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Easy/seed1 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Easy/seed1/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Easy/seed1/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Easy/seed1/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Easy/seed2 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Easy/seed2/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Easy/seed2/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Easy/seed2/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Easy/seed3 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Easy/seed3/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Easy/seed3/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Easy/seed3/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Easy/seed4 | completed | 1.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Easy/seed4/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Easy/seed4/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Easy/seed4/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Normal/seed0 | completed | 1.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Normal/seed0/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Normal/seed0/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Normal/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Normal/seed1 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Normal/seed1/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Normal/seed1/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Normal/seed1/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Normal/seed2 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Normal/seed2/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Normal/seed2/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Normal/seed2/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Normal/seed3 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Normal/seed3/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Normal/seed3/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Normal/seed3/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Normal/seed4 | completed | 1.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Normal/seed4/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Normal/seed4/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Normal/seed4/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Challenge/seed0 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Challenge/seed0/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Challenge/seed0/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Challenge/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Challenge/seed1 | completed | 1.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Challenge/seed1/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Challenge/seed1/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Challenge/seed1/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Challenge/seed2 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Challenge/seed2/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Challenge/seed2/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Challenge/seed2/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Challenge/seed3 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Challenge/seed3/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Challenge/seed3/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Challenge/seed3/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Challenge/seed4 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Challenge/seed4/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Challenge/seed4/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Plant Nutrients/Challenge/seed4/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Easy/seed0 | completed | 0.4286 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Easy/seed0/cq0 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Easy/seed0/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Easy/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Easy/seed1 | completed | 0.5714 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Easy/seed1/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Easy/seed1/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Easy/seed1/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Easy/seed2 | completed | 0.5714 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Easy/seed2/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Easy/seed2/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Easy/seed2/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Easy/seed3 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Easy/seed3/cq0 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Easy/seed3/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Easy/seed3/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Easy/seed4 | completed | 0.1429 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Easy/seed4/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Easy/seed4/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Easy/seed4/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Normal/seed0 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Normal/seed0/cq0 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Normal/seed0/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Normal/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Normal/seed1 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Normal/seed1/cq0 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Normal/seed1/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Normal/seed1/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Normal/seed2 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Normal/seed2/cq0 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Normal/seed2/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Normal/seed2/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Normal/seed3 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Normal/seed3/cq0 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Normal/seed3/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Normal/seed3/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Normal/seed4 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Normal/seed4/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Normal/seed4/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Normal/seed4/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Challenge/seed0 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Challenge/seed0/cq0 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Challenge/seed0/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Challenge/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Challenge/seed1 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Challenge/seed1/cq0 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Challenge/seed1/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Challenge/seed1/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Challenge/seed2 | completed | 0.4545 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Challenge/seed2/cq0 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Challenge/seed2/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Challenge/seed2/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Challenge/seed3 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Challenge/seed3/cq0 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Challenge/seed3/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Challenge/seed3/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Challenge/seed4 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Challenge/seed4/cq0 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Challenge/seed4/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Reactor Lab/Challenge/seed4/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Easy/seed0 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Easy/seed0/cq0 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Easy/seed0/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Easy/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Easy/seed1 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Easy/seed1/cq0 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Easy/seed1/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Easy/seed1/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Easy/seed2 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Easy/seed2/cq0 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Easy/seed2/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Easy/seed2/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Easy/seed3 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Easy/seed3/cq0 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Easy/seed3/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Easy/seed3/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Easy/seed4 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Easy/seed4/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Easy/seed4/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Easy/seed4/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Normal/seed0 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Normal/seed0/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Normal/seed0/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Normal/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Normal/seed1 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Normal/seed1/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Normal/seed1/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Normal/seed1/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Normal/seed2 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Normal/seed2/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Normal/seed2/cq1 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Normal/seed2/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Normal/seed3 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Normal/seed3/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Normal/seed3/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Normal/seed3/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Normal/seed4 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Normal/seed4/cq0 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Normal/seed4/cq1 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Normal/seed4/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Challenge/seed0 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Challenge/seed0/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Challenge/seed0/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Challenge/seed0/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Challenge/seed1 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Challenge/seed1/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Challenge/seed1/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Challenge/seed1/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Challenge/seed2 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Challenge/seed2/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Challenge/seed2/cq1 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Challenge/seed2/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Challenge/seed3 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Challenge/seed3/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Challenge/seed3/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Challenge/seed3/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Challenge/seed4 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Challenge/seed4/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Challenge/seed4/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Lost in Translation/Challenge/seed4/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Easy/seed0 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Easy/seed0/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Easy/seed0/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Easy/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Easy/seed1 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Easy/seed1/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Easy/seed1/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Easy/seed1/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Easy/seed2 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Easy/seed2/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Easy/seed2/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Easy/seed2/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Easy/seed3 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Easy/seed3/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Easy/seed3/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Easy/seed3/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Easy/seed4 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Easy/seed4/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Easy/seed4/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Easy/seed4/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Normal/seed0 | completed | 0.5 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Normal/seed0/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Normal/seed0/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Normal/seed0/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Normal/seed1 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Normal/seed1/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Normal/seed1/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Normal/seed1/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Normal/seed2 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Normal/seed2/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Normal/seed2/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Normal/seed2/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Normal/seed3 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Normal/seed3/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Normal/seed3/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Normal/seed3/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Normal/seed4 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Normal/seed4/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Normal/seed4/cq1 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Normal/seed4/cq2 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Challenge/seed0 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Challenge/seed0/cq0 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Challenge/seed0/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Challenge/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Challenge/seed1 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Challenge/seed1/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Challenge/seed1/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Challenge/seed1/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Challenge/seed2 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Challenge/seed2/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Challenge/seed2/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Challenge/seed2/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Challenge/seed3 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Challenge/seed3/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Challenge/seed3/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Challenge/seed3/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Challenge/seed4 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Challenge/seed4/cq0 | completed | 0.5 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Challenge/seed4/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Space Sick/Challenge/seed4/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Easy/seed0 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Easy/seed0/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Easy/seed0/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Easy/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Easy/seed1 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Easy/seed1/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Easy/seed1/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Easy/seed1/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Easy/seed2 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Easy/seed2/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Easy/seed2/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Easy/seed2/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Easy/seed3 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Easy/seed3/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Easy/seed3/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Easy/seed3/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Easy/seed4 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Easy/seed4/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Easy/seed4/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Easy/seed4/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Normal/seed0 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Normal/seed0/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Normal/seed0/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Normal/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Normal/seed1 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Normal/seed1/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Normal/seed1/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Normal/seed1/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Normal/seed2 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Normal/seed2/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Normal/seed2/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Normal/seed2/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Normal/seed3 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Normal/seed3/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Normal/seed3/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Normal/seed3/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Normal/seed4 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Normal/seed4/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Normal/seed4/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Normal/seed4/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Challenge/seed0 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Challenge/seed0/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Challenge/seed0/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Challenge/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Challenge/seed1 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Challenge/seed1/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Challenge/seed1/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Challenge/seed1/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Challenge/seed2 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Challenge/seed2/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Challenge/seed2/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Challenge/seed2/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Challenge/seed3 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Challenge/seed3/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Challenge/seed3/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Challenge/seed3/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Challenge/seed4 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Challenge/seed4/cq0 | completed | 0.0 | critical-question yes/no + keyword support |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Challenge/seed4/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Proteomics/Challenge/seed4/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed0/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed0/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed0/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed1/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed1/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed1/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed2/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed2/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed2/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed3 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed3/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed3/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed3/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed4 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed4/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed4/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Easy/seed4/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed0/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed0/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed0/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed1/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed1/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed1/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed2/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed2/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed2/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed3 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed3/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed3/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed3/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed4 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed4/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed4/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Normal/seed4/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed0/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed0/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed0/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed1/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed1/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed1/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed2/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed2/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed2/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed3 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed3/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed3/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed3/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed4 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed4/cq0 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed4/cq1 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | It's (not) Rocket Science!/Challenge/seed4/cq2 | failed | 0.0 | 'float' object cannot be interpreted as an integer |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Dialog Test/Normal/seed0 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Dialog Test/Normal/seed0/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Dialog Test/Normal/seed0/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Dialog Test/Normal/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Dialog Test/Normal/seed1 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Dialog Test/Normal/seed1/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Dialog Test/Normal/seed1/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Dialog Test/Normal/seed1/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Dialog Test/Normal/seed2 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Dialog Test/Normal/seed2/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Dialog Test/Normal/seed2/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Dialog Test/Normal/seed2/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Dialog Test/Normal/seed3 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Dialog Test/Normal/seed3/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Dialog Test/Normal/seed3/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Dialog Test/Normal/seed3/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Dialog Test/Normal/seed4 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Dialog Test/Normal/seed4/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Dialog Test/Normal/seed4/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Dialog Test/Normal/seed4/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Place Test/Normal/seed0 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Place Test/Normal/seed0/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Place Test/Normal/seed0/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Place Test/Normal/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Place Test/Normal/seed1 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Place Test/Normal/seed1/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Place Test/Normal/seed1/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Place Test/Normal/seed1/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Place Test/Normal/seed2 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Place Test/Normal/seed2/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Place Test/Normal/seed2/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Place Test/Normal/seed2/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Place Test/Normal/seed3 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Place Test/Normal/seed3/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Place Test/Normal/seed3/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Place Test/Normal/seed3/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Place Test/Normal/seed4 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Place Test/Normal/seed4/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Place Test/Normal/seed4/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Place Test/Normal/seed4/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Give Test/Normal/seed0 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Give Test/Normal/seed0/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Give Test/Normal/seed0/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Give Test/Normal/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Give Test/Normal/seed1 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Give Test/Normal/seed1/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Give Test/Normal/seed1/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Give Test/Normal/seed1/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Give Test/Normal/seed2 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Give Test/Normal/seed2/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Give Test/Normal/seed2/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Give Test/Normal/seed2/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Give Test/Normal/seed3 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Give Test/Normal/seed3/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Give Test/Normal/seed3/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Give Test/Normal/seed3/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Give Test/Normal/seed4 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Give Test/Normal/seed4/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Give Test/Normal/seed4/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Pick and Give Test/Normal/seed4/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Instrument Measurement Test/Normal/seed0 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Instrument Measurement Test/Normal/seed0/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Instrument Measurement Test/Normal/seed0/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Instrument Measurement Test/Normal/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Instrument Measurement Test/Normal/seed1 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Instrument Measurement Test/Normal/seed1/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Instrument Measurement Test/Normal/seed1/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Instrument Measurement Test/Normal/seed1/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Instrument Measurement Test/Normal/seed2 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Instrument Measurement Test/Normal/seed2/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Instrument Measurement Test/Normal/seed2/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Instrument Measurement Test/Normal/seed2/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Instrument Measurement Test/Normal/seed3 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Instrument Measurement Test/Normal/seed3/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Instrument Measurement Test/Normal/seed3/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Instrument Measurement Test/Normal/seed3/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Instrument Measurement Test/Normal/seed4 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Instrument Measurement Test/Normal/seed4/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Instrument Measurement Test/Normal/seed4/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Instrument Measurement Test/Normal/seed4/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors Test/Normal/seed0 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors Test/Normal/seed0/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors Test/Normal/seed0/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors Test/Normal/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors Test/Normal/seed1 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors Test/Normal/seed1/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors Test/Normal/seed1/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors Test/Normal/seed1/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors Test/Normal/seed2 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors Test/Normal/seed2/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors Test/Normal/seed2/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors Test/Normal/seed2/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors Test/Normal/seed3 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors Test/Normal/seed3/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors Test/Normal/seed3/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors Test/Normal/seed3/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors Test/Normal/seed4 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors Test/Normal/seed4/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors Test/Normal/seed4/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors Test/Normal/seed4/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors with Keys Test/Normal/seed0 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors with Keys Test/Normal/seed0/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors with Keys Test/Normal/seed0/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors with Keys Test/Normal/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors with Keys Test/Normal/seed1 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors with Keys Test/Normal/seed1/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors with Keys Test/Normal/seed1/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors with Keys Test/Normal/seed1/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors with Keys Test/Normal/seed2 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors with Keys Test/Normal/seed2/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors with Keys Test/Normal/seed2/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors with Keys Test/Normal/seed2/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors with Keys Test/Normal/seed3 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors with Keys Test/Normal/seed3/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors with Keys Test/Normal/seed3/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors with Keys Test/Normal/seed3/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors with Keys Test/Normal/seed4 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors with Keys Test/Normal/seed4/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors with Keys Test/Normal/seed4/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Doors with Keys Test/Normal/seed4/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Navigation in a House Test/Normal/seed0 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Navigation in a House Test/Normal/seed0/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Navigation in a House Test/Normal/seed0/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Navigation in a House Test/Normal/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Navigation in a House Test/Normal/seed1 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Navigation in a House Test/Normal/seed1/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Navigation in a House Test/Normal/seed1/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Navigation in a House Test/Normal/seed1/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Navigation in a House Test/Normal/seed2 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Navigation in a House Test/Normal/seed2/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Navigation in a House Test/Normal/seed2/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Navigation in a House Test/Normal/seed2/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Navigation in a House Test/Normal/seed3 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Navigation in a House Test/Normal/seed3/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Navigation in a House Test/Normal/seed3/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Navigation in a House Test/Normal/seed3/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Navigation in a House Test/Normal/seed4 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Navigation in a House Test/Normal/seed4/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Navigation in a House Test/Normal/seed4/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Navigation in a House Test/Normal/seed4/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Search Test/Normal/seed0 | completed | 1.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Search Test/Normal/seed0/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Search Test/Normal/seed0/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Search Test/Normal/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Search Test/Normal/seed1 | completed | 1.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Search Test/Normal/seed1/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Search Test/Normal/seed1/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Search Test/Normal/seed1/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Search Test/Normal/seed2 | completed | 1.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Search Test/Normal/seed2/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Search Test/Normal/seed2/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Search Test/Normal/seed2/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Search Test/Normal/seed3 | completed | 1.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Search Test/Normal/seed3/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Search Test/Normal/seed3/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Search Test/Normal/seed3/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Search Test/Normal/seed4 | completed | 1.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Search Test/Normal/seed4/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Search Test/Normal/seed4/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Search Test/Normal/seed4/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Discovery Feed Test/Normal/seed0 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Discovery Feed Test/Normal/seed0/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Discovery Feed Test/Normal/seed0/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Discovery Feed Test/Normal/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Discovery Feed Test/Normal/seed1 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Discovery Feed Test/Normal/seed1/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Discovery Feed Test/Normal/seed1/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Discovery Feed Test/Normal/seed1/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Discovery Feed Test/Normal/seed2 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Discovery Feed Test/Normal/seed2/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Discovery Feed Test/Normal/seed2/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Discovery Feed Test/Normal/seed2/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Discovery Feed Test/Normal/seed3 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Discovery Feed Test/Normal/seed3/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Discovery Feed Test/Normal/seed3/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Discovery Feed Test/Normal/seed3/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Discovery Feed Test/Normal/seed4 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Discovery Feed Test/Normal/seed4/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Discovery Feed Test/Normal/seed4/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Discovery Feed Test/Normal/seed4/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Moving Agents Test/Normal/seed0 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Moving Agents Test/Normal/seed0/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Moving Agents Test/Normal/seed0/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Moving Agents Test/Normal/seed0/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Moving Agents Test/Normal/seed1 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Moving Agents Test/Normal/seed1/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Moving Agents Test/Normal/seed1/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Moving Agents Test/Normal/seed1/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Moving Agents Test/Normal/seed2 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Moving Agents Test/Normal/seed2/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Moving Agents Test/Normal/seed2/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Moving Agents Test/Normal/seed2/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Moving Agents Test/Normal/seed3 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Moving Agents Test/Normal/seed3/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Moving Agents Test/Normal/seed3/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Moving Agents Test/Normal/seed3/cq2 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Moving Agents Test/Normal/seed4 | completed | 0.0 | critical-hypothesis keyword coverage |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Moving Agents Test/Normal/seed4/cq0 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Moving Agents Test/Normal/seed4/cq1 | skipped | 0.0 | no critical question at index |
+| qwen2.5:3b | DiscoveryWorld | Small Skills: Moving Agents Test/Normal/seed4/cq2 | skipped | 0.0 | no critical question at index |
 
 ## Notes
 
