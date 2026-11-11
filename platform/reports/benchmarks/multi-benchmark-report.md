@@ -1,9 +1,9 @@
 # Multi-benchmark report
 
-- Generated: `2026-11-11T11:31:13.204Z`
+- Generated: `2026-11-11T11:40:49.620Z`
 - Model: `ollama:qwen2.5:3b`
 - Queued: `1256`
-- Completed rows: `475`
+- Completed rows: `525`
 
 ## Dataset scores
 
@@ -11,7 +11,7 @@
 |---|---|---|---|---|
 | qwen2.5:3b | Cyber-SecOps-ES | 54 | 54 | 0.5569 |
 | qwen2.5:3b | Cyber-AIT-ADS | 79 | 79 | 0.4937 |
-| qwen2.5:3b | DiscoveryBench | 342 | 320 | 0.4579 |
+| qwen2.5:3b | DiscoveryBench | 392 | 370 | 0.4609 |
 
 ## Scenario scores
 
@@ -492,6 +492,56 @@
 | qwen2.5:3b | DiscoveryBench | synth/coding-competitions_1_2/metadata_2/q545 | completed | 0.3333 | token_f1 vs gold hypothesis |
 | qwen2.5:3b | DiscoveryBench | synth/coding-competitions_2_1/metadata_0/q541 | completed | 0.3714 | token_f1 vs gold hypothesis |
 | qwen2.5:3b | DiscoveryBench | synth/digital-artistry_0_1/metadata_1/q726 | completed | 0.4407 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/digital-artistry_0_2/metadata_1/q731 | completed | 0.5455 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/digital-artistry_0_2/metadata_2/q734 | completed | 0.4211 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/digital-artistry_0_2/metadata_4/q743 | completed | 0.3684 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/digital-artistry_0_3/metadata_0/q720 | completed | 0.4 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/digital-artistry_0_3/metadata_1/q727 | completed | 0.5294 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/digital-artistry_0_3/metadata_2/q728 | completed | 0.5283 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/digital-artistry_0_3/metadata_3/q729 | completed | 0.3636 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/digital-artistry_0_3/metadata_4/q732 | completed | 0.76 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/digital-artistry_0_3/metadata_5/q738 | completed | 0.375 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/digital-artistry_0_3/metadata_6/q741 | completed | 0.549 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/digital-artistry_1_0/metadata_0/q718 | completed | 0.5312 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/digital-artistry_1_1/metadata_0/q724 | completed | 0.5758 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/digital-artistry_1_2/metadata_0/q721 | completed | 0.4737 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/digital-artistry_1_2/metadata_3/q739 | completed | 0.4478 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/digital-artistry_2_1/metadata_1/q735 | completed | 0.4615 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/digital-artistry_2_1/metadata_2/q744 | completed | 0.4789 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/futuristic-technology_0_0/metadata_0/q647 | completed | 0.1918 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/futuristic-technology_0_2/metadata_2/q657 | completed | 0.5915 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/futuristic-technology_0_3/metadata_0/q648 | completed | 0.4103 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/futuristic-technology_0_3/metadata_1/q651 | completed | 0.6875 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/futuristic-technology_1_1/metadata_1/q658 | completed | 0.4557 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/futuristic-technology_1_2/metadata_0/q649 | completed | 0.5 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/futuristic-technology_1_2/metadata_1/q652 | completed | 0.3556 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/futuristic-technology_2_1/metadata_0/q654 | completed | 0.7143 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/impressionist-art_0_0/metadata_0/q999 | completed | 0.1846 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/impressionist-art_0_2/metadata_0/q1002 | completed | 0.4898 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/impressionist-art_0_2/metadata_1/q1007 | completed | 0.1702 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/impressionist-art_0_2/metadata_3/q1019 | completed | 0.3488 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/impressionist-art_0_2/metadata_4/q1025 | completed | 0.5075 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/impressionist-art_0_2/metadata_5/q1028 | completed | 0.5366 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/impressionist-art_0_3/metadata_0/q1000 | completed | 0.4783 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/impressionist-art_0_3/metadata_1/q1003 | completed | 0.3404 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/impressionist-art_0_3/metadata_10/q1026 | completed | 0.375 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/impressionist-art_0_3/metadata_2/q1004 | completed | 0.4407 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/impressionist-art_0_3/metadata_3/q1005 | completed | 0.4561 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/impressionist-art_0_3/metadata_4/q1011 | completed | 0.3889 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/impressionist-art_0_3/metadata_5/q1012 | completed | 0.6216 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/impressionist-art_0_3/metadata_6/q1013 | completed | 0.4706 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/impressionist-art_0_3/metadata_7/q1016 | completed | 0.5246 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/impressionist-art_0_3/metadata_8/q1017 | completed | 0.5556 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/impressionist-art_0_3/metadata_9/q1023 | completed | 0.5278 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/impressionist-art_1_1/metadata_0/q1009 | completed | 0.3913 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/impressionist-art_1_1/metadata_2/q1030 | completed | 0.3944 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/impressionist-art_1_2/metadata_2/q1014 | completed | 0.6429 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/impressionist-art_2_1/metadata_1/q1020 | completed | 0.4348 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/machine-learning_0_0/metadata_0/q372 | completed | 0.4828 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/machine-learning_0_1/metadata_0/q373 | completed | 0.5574 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/machine-learning_0_1/metadata_1/q388 | completed | 0.7407 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/machine-learning_0_2/metadata_0/q378 | completed | 0.7463 | token_f1 vs gold hypothesis |
+| qwen2.5:3b | DiscoveryBench | synth/machine-learning_0_2/metadata_1/q379 | completed | 0.48 | token_f1 vs gold hypothesis |
 
 ## Notes
 
