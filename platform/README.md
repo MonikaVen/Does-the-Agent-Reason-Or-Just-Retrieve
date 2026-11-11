@@ -82,8 +82,12 @@ Download DiscoveryBench, DiscoveryWorld, SecOps-ES, and AIT-ADS, then score
 
 ```bash
 python3 scripts/download_benchmarks.py
-python3 -m app bench --provider ollama --model qwen2.5 --out reports/benchmarks
+# All unique scenarios (no replica tiling). Use --limit N to cap or tile.
+python3 -m app bench --provider ollama --model qwen2.5:3b --limit 0 --out reports/benchmarks
 ```
+
+`--limit 0` runs the full unique inventory (~1256 after download). Positive
+`--limit` values larger than the inventory tile `repN` replicas.
 
 Writes `reports/benchmarks/multi-benchmark-report.md` with Model, Dataset,
 Scenario, and Score.

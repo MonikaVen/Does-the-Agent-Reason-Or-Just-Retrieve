@@ -184,12 +184,14 @@ def cmd_bench(args: argparse.Namespace) -> int:
     if args.datasets and args.datasets != "all":
         include = [part.strip() for part in args.datasets.split(",") if part.strip()]
     model = args.model or "qwen2.5"
+    # --limit 0 means every unique scenario (no replica tiling).
+    limit = None if args.limit == 0 else args.limit
     report = run_benchmarks(
         model=model,
         base_url=args.ollama_url,
         out_dir=Path(args.out) if args.out else None,
         include=include,
-        limit=args.limit,
+        limit=limit,
         checkpoint_every=args.checkpoint_every,
     )
     print(f"model   {report['provider']}:{report['model']}")
@@ -298,7 +300,12 @@ def build_parser() -> argparse.ArgumentParser:
         default="all",
         help="comma list: discoverybench,discoveryworld,cyber_secops,ait_ads — or 'all'",
     )
-    bench.add_argument("--limit", type=int, default=1000, help="max scenarios to run (default 1000)")
+    bench.add_argument(
+        "--limit",
+        type=int,
+        default=0,
+        help="max scenarios to run; 0 = all unique scenarios without replicas (default 0)",
+    )
     bench.add_argument("--checkpoint-every", type=int, default=10, help="write checkpoint every N scenarios")
     bench.set_defaults(func=cmd_bench)
 

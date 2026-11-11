@@ -19,7 +19,7 @@ def main() -> int:
         repo_id="allenai/discoverybench",
         repo_type="dataset",
         local_dir=str(ROOT / "discoverybench"),
-        allow_patterns=["README.md", "discoverybench/real/**", "answer_key/**"],
+        allow_patterns=["README.md", "discoverybench/real/**", "discoverybench/synth/**", "answer_key/**"],
     )
     print("SecOps-ES benchmark…")
     snapshot_download(
