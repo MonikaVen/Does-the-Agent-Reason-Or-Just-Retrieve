@@ -1,0 +1,306 @@
+{
+  "generated_at": "2026-09-16T20:01:55.315Z",
+  "dataset_id": "ds-sample-0042",
+  "incident_id": "incident-0042",
+  "provider": "ollama",
+  "model": "llama3.2:1b",
+  "runs": [
+    {
+      "run_id": "run-6ca180c9914c",
+      "condition": "C0",
+      "status": "completed",
+      "error": null,
+      "model": "ollama:llama3.2:1b",
+      "verdict": "malicious",
+      "confidence": 0.8,
+      "summary": "Encoded PowerShell execution detected on workstation-17, suggesting a potential attack.",
+      "evidence_ids": [
+        "event-1008",
+        "event-1019",
+        "event-1021",
+        "event-1024",
+        "event-1009",
+        "event-1026",
+        "event-1033"
+      ],
+      "event_count": 11,
+      "tool_observations": 0,
+      "knowledge_retrievals": 0,
+      "tools": [],
+      "started_at": "2026-09-16T19:57:33.430Z",
+      "completed_at": "2026-09-16T19:57:43.743Z",
+      "validation": {
+        "ok": true,
+        "errors": [],
+        "cited_evidence": [
+          "event-1008",
+          "event-1009",
+          "event-1019",
+          "event-1021",
+          "event-1024",
+          "event-1026",
+          "event-1033"
+        ],
+        "unsupported_claim_rate": 0.0
+      }
+    },
+    {
+      "run_id": "run-d2ea2b38f286",
+      "condition": "C1",
+      "status": "completed",
+      "error": null,
+      "model": "ollama:llama3.2:1b",
+      "verdict": "malicious",
+      "confidence": 0.9,
+      "summary": "The presence of encoded PowerShell execution and suspicious network activity suggests a malicious attack.",
+      "evidence_ids": [
+        "event-1008",
+        "event-1019",
+        "event-1021",
+        "event-1024",
+        "event-1026",
+        "event-1033"
+      ],
+      "event_count": 12,
+      "tool_observations": 0,
+      "knowledge_retrievals": 1,
+      "tools": [],
+      "started_at": "2026-09-16T19:57:43.749Z",
+      "completed_at": "2026-09-16T19:57:58.151Z",
+      "validation": {
+        "ok": true,
+        "errors": [],
+        "cited_evidence": [
+          "event-1008",
+          "event-1019",
+          "event-1021",
+          "event-1024",
+          "event-1026",
+          "event-1028",
+          "event-1033"
+        ],
+        "unsupported_claim_rate": 0.0
+      }
+    },
+    {
+      "run_id": "run-817fe2c7ba9b",
+      "condition": "C2",
+      "status": "completed",
+      "error": null,
+      "model": "ollama:llama3.2:1b",
+      "verdict": "malicious",
+      "confidence": 0.8,
+      "summary": "The alerting process appears to have been launched by the execution of PowerShell on workstation-17.",
+      "evidence_ids": [
+        "event-1008",
+        "event-1019",
+        "event-1021",
+        "event-1028",
+        "event-1024",
+        "event-1009"
+      ],
+      "event_count": 27,
+      "tool_observations": 1,
+      "knowledge_retrievals": 0,
+      "tools": [
+        "query_events",
+        "query_events"
+      ],
+      "started_at": "2026-09-16T19:57:58.157Z",
+      "completed_at": "2026-09-16T19:58:45.251Z",
+      "validation": {
+        "ok": true,
+        "errors": [],
+        "cited_evidence": [
+          "event-1008",
+          "event-1009",
+          "event-1019",
+          "event-1021",
+          "event-1024",
+          "event-1028"
+        ],
+        "unsupported_claim_rate": 0.0
+      }
+    },
+    {
+      "run_id": "run-eee627a7cf00",
+      "condition": "C3",
+      "status": "completed",
+      "error": null,
+      "model": "ollama:llama3.2:1b",
+      "verdict": "malicious",
+      "confidence": 0.9,
+      "summary": "The ATT&CK technique T1059.001 was used to launch the alerting process.",
+      "evidence_ids": [
+        "event-1008",
+        "event-1019",
+        "event-1021",
+        "event-1028",
+        "event-1024",
+        "event-1009"
+      ],
+      "event_count": 53,
+      "tool_observations": 3,
+      "knowledge_retrievals": 0,
+      "tools": [
+        "query_events",
+        "query_events",
+        "query_events",
+        "query_events",
+        "query_events",
+        "query_events"
+      ],
+      "started_at": "2026-09-16T19:58:45.262Z",
+      "completed_at": "2026-09-16T20:00:02.463Z",
+      "validation": {
+        "ok": true,
+        "errors": [],
+        "cited_evidence": [
+          "event-1008",
+          "event-1009",
+          "event-1019",
+          "event-1021",
+          "event-1024",
+          "event-1028"
+        ],
+        "unsupported_claim_rate": 0.0
+      }
+    },
+    {
+      "run_id": "run-b03542008a1a",
+      "condition": "C4",
+      "status": "completed",
+      "error": null,
+      "model": "ollama:llama3.2:1b",
+      "verdict": "malicious",
+      "confidence": 0.8,
+      "summary": "Encoded PowerShell execution detected on workstation-17, suggesting malicious activity.",
+      "evidence_ids": [
+        "event-1021",
+        "event-1028",
+        "event-1009"
+      ],
+      "event_count": 16,
+      "tool_observations": 2,
+      "knowledge_retrievals": 1,
+      "tools": [
+        "query_events",
+        "query_events"
+      ],
+      "started_at": "2026-09-16T20:00:02.474Z",
+      "completed_at": "2026-09-16T20:00:13.306Z",
+      "validation": {
+        "ok": true,
+        "errors": [],
+        "cited_evidence": [
+          "event-1009",
+          "event-1021",
+          "event-1028"
+        ],
+        "unsupported_claim_rate": 0.0
+      }
+    },
+    {
+      "run_id": "run-92d2eb34d5d4",
+      "condition": "C5",
+      "status": "completed",
+      "error": null,
+      "model": "ollama:llama3.2:1b",
+      "verdict": "malicious",
+      "confidence": 0.8,
+      "summary": "Encoded PowerShell execution detected on workstation-17, suggesting malicious activity.",
+      "evidence_ids": [
+        "event-1008",
+        "event-1009"
+      ],
+      "event_count": 13,
+      "tool_observations": 0,
+      "knowledge_retrievals": 1,
+      "tools": [],
+      "started_at": "2026-09-16T20:00:13.312Z",
+      "completed_at": "2026-09-16T20:00:22.419Z",
+      "validation": {
+        "ok": true,
+        "errors": [],
+        "cited_evidence": [
+          "event-1008",
+          "event-1009"
+        ],
+        "unsupported_claim_rate": 0.0
+      }
+    },
+    {
+      "run_id": "run-3ad2cc1ca2f4",
+      "condition": "C6",
+      "status": "completed",
+      "error": null,
+      "model": "ollama:llama3.2:1b",
+      "verdict": "malicious",
+      "confidence": 0.8,
+      "summary": "The presence of encoded PowerShell execution on workstation-17 suggests malicious activity.",
+      "evidence_ids": [
+        "event-1021",
+        "event-1024"
+      ],
+      "event_count": 13,
+      "tool_observations": 0,
+      "knowledge_retrievals": 1,
+      "tools": [],
+      "started_at": "2026-09-16T20:00:22.440Z",
+      "completed_at": "2026-09-16T20:00:30.368Z",
+      "validation": {
+        "ok": true,
+        "errors": [],
+        "cited_evidence": [
+          "event-1021",
+          "event-1024"
+        ],
+        "unsupported_claim_rate": 0.0
+      }
+    },
+    {
+      "run_id": "run-2870d812a4d6",
+      "condition": "C7",
+      "status": "completed",
+      "error": null,
+      "model": "ollama:llama3.2:1b",
+      "verdict": "malicious",
+      "confidence": 0.8,
+      "summary": "The ATT&CK technique T1059.001 was used to launch the alerting process.",
+      "evidence_ids": [
+        "event-1008",
+        "event-1019",
+        "event-1021",
+        "event-1028",
+        "event-1024",
+        "event-1009"
+      ],
+      "event_count": 53,
+      "tool_observations": 3,
+      "knowledge_retrievals": 0,
+      "tools": [
+        "query_events",
+        "query_events",
+        "query_events",
+        "query_events",
+        "query_events",
+        "query_events"
+      ],
+      "started_at": "2026-09-16T20:00:30.378Z",
+      "completed_at": "2026-09-16T20:01:55.310Z",
+      "validation": {
+        "ok": true,
+        "errors": [],
+        "cited_evidence": [
+          "event-1008",
+          "event-1009",
+          "event-1019",
+          "event-1021",
+          "event-1024",
+          "event-1028"
+        ],
+        "unsupported_claim_rate": 0.0
+      }
+    }
+  ]
+}
