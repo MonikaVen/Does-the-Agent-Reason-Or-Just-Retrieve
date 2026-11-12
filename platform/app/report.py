@@ -28,6 +28,30 @@ def evidence_beliefs(records: list[dict[str, Any]], known: list[str] | None = No
         score += 0.1
     if "update.ps1" in blob:
         score += 0.06
+    # Converted cyber-pack heuristics (SecOps-ES / AIT-ADS telemetry shapes).
+    if any(
+        token in blob
+        for token in (
+            "reverse_shell",
+            "revshell",
+            "webshell",
+            "log4shell",
+            "gtfobins",
+            "privilege_escalation",
+            "/etc/shadow",
+            "chmod u+s",
+            "suid",
+        )
+    ):
+        score += 0.14
+    if any(token in blob for token in ("nmap", "masscan", "wpscan", "dirb", "dnsteal", "hydra", "cracker")):
+        score += 0.08
+    if "aminer" in blob or '"detector"' in blob:
+        score += 0.06
+    if any(token in blob for token in ("exfil", "c2", "beacon", "implant", "persistence")):
+        score += 0.08
+    if re.search(r"\bt1\d{3}\b", blob):
+        score += 0.05
     score = min(0.93, max(0.07, score))
     return round(score, 2), round(1 - score, 2)
 
