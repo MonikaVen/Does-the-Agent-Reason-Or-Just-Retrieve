@@ -1,0 +1,275 @@
+{
+  "generated_at": "2026-11-12T22:27:14.622Z",
+  "dataset_id": "ds-f023a721d3",
+  "incident_id": "ait-wilson-dnsteal",
+  "provider": "ollama",
+  "model": "llama3.2:1b",
+  "runs": [
+    {
+      "run_id": "run-10382159c3a0",
+      "condition": "C0",
+      "status": "completed",
+      "error": null,
+      "model": "ollama:llama3.2:1b",
+      "verdict": "inconclusive",
+      "confidence": 0.56,
+      "summary": "The T1059.001 attack chain was detected.",
+      "evidence_ids": [
+        "event-id"
+      ],
+      "event_count": 11,
+      "tool_observations": 0,
+      "knowledge_retrievals": 0,
+      "tools": [],
+      "started_at": "2026-11-12T22:24:20.069Z",
+      "completed_at": "2026-11-12T22:24:30.666Z",
+      "validation": {
+        "ok": false,
+        "errors": [
+          "supporting evidence event-id was not observed in this run",
+          "attack-chain evidence event-id was not observed in this run"
+        ],
+        "cited_evidence": [
+          "event-id"
+        ],
+        "unsupported_claim_rate": 0.5
+      }
+    },
+    {
+      "run_id": "run-8c7c714e6acf",
+      "condition": "C1",
+      "status": "completed",
+      "error": null,
+      "model": "ollama:llama3.2:1b",
+      "verdict": "inconclusive",
+      "confidence": 0.56,
+      "summary": "The execution of a T1059.001 technique was observed on a host with suspicious activity.",
+      "evidence_ids": [
+        "event-id"
+      ],
+      "event_count": 12,
+      "tool_observations": 0,
+      "knowledge_retrievals": 1,
+      "tools": [],
+      "started_at": "2026-11-12T22:24:30.680Z",
+      "completed_at": "2026-11-12T22:24:45.377Z",
+      "validation": {
+        "ok": false,
+        "errors": [
+          "supporting evidence event-id was not observed in this run",
+          "attack-chain evidence event-id was not observed in this run"
+        ],
+        "cited_evidence": [
+          "event-id"
+        ],
+        "unsupported_claim_rate": 0.5
+      }
+    },
+    {
+      "run_id": "run-d9ce2c5aaf51",
+      "condition": "C2",
+      "status": "completed",
+      "error": null,
+      "model": "ollama:llama3.2:1b",
+      "verdict": "inconclusive",
+      "confidence": 0.56,
+      "summary": "The alert represents malicious execution.",
+      "evidence_ids": [
+        "event-id"
+      ],
+      "event_count": 35,
+      "tool_observations": 2,
+      "knowledge_retrievals": 0,
+      "tools": [
+        "query_events",
+        "query_events",
+        "query_events",
+        "query_events"
+      ],
+      "started_at": "2026-11-12T22:24:45.391Z",
+      "completed_at": "2026-11-12T22:25:23.314Z",
+      "validation": {
+        "ok": false,
+        "errors": [
+          "supporting evidence event-id was not observed in this run",
+          "attack-chain evidence event-id was not observed in this run"
+        ],
+        "cited_evidence": [
+          "event-id"
+        ],
+        "unsupported_claim_rate": 0.5
+      }
+    },
+    {
+      "run_id": "run-8f8707c691d4",
+      "condition": "C3",
+      "status": "completed",
+      "error": null,
+      "model": "ollama:llama3.2:1b",
+      "verdict": "inconclusive",
+      "confidence": 0.56,
+      "summary": "The alert represents malicious execution.",
+      "evidence_ids": [
+        "event-id"
+      ],
+      "event_count": 35,
+      "tool_observations": 2,
+      "knowledge_retrievals": 0,
+      "tools": [
+        "query_events",
+        "query_events",
+        "query_events",
+        "query_events"
+      ],
+      "started_at": "2026-11-12T22:25:23.328Z",
+      "completed_at": "2026-11-12T22:26:06.177Z",
+      "validation": {
+        "ok": false,
+        "errors": [
+          "supporting evidence event-id was not observed in this run",
+          "attack-chain evidence event-id was not observed in this run"
+        ],
+        "cited_evidence": [
+          "event-id"
+        ],
+        "unsupported_claim_rate": 0.5
+      }
+    },
+    {
+      "run_id": "run-5ddd28b791da",
+      "condition": "C4",
+      "status": "completed",
+      "error": null,
+      "model": "ollama:llama3.2:1b",
+      "verdict": "inconclusive",
+      "confidence": 0.56,
+      "summary": "The analysis of the provided observations suggests that the T1059.001 ATT&CK technique was successfully exploited to execute malicious code on the target system.",
+      "evidence_ids": [
+        "event-id",
+        "event-id",
+        "event-id"
+      ],
+      "event_count": 16,
+      "tool_observations": 2,
+      "knowledge_retrievals": 1,
+      "tools": [
+        "query_events",
+        "query_events"
+      ],
+      "started_at": "2026-11-12T22:26:06.200Z",
+      "completed_at": "2026-11-12T22:26:26.845Z",
+      "validation": {
+        "ok": false,
+        "errors": [
+          "supporting evidence event-id was not observed in this run",
+          "supporting evidence event-id was not observed in this run",
+          "supporting evidence event-id was not observed in this run",
+          "attack-chain evidence event-id was not observed in this run"
+        ],
+        "cited_evidence": [
+          "event-id"
+        ],
+        "unsupported_claim_rate": 0.5
+      }
+    },
+    {
+      "run_id": "run-6d56451a27fe",
+      "condition": "C5",
+      "status": "completed",
+      "error": null,
+      "model": "ollama:llama3.2:1b",
+      "verdict": "inconclusive",
+      "confidence": 0.56,
+      "summary": "The analysis of the AIT-ADS multi-step stage candidate on wilson indicates the presence of encoded PowerShell (T1059.001), suggesting a malicious attack.",
+      "evidence_ids": [
+        "event-id",
+        "event-id"
+      ],
+      "event_count": 13,
+      "tool_observations": 0,
+      "knowledge_retrievals": 1,
+      "tools": [],
+      "started_at": "2026-11-12T22:26:26.870Z",
+      "completed_at": "2026-11-12T22:26:40.990Z",
+      "validation": {
+        "ok": false,
+        "errors": [
+          "supporting evidence event-id was not observed in this run",
+          "supporting evidence event-id was not observed in this run",
+          "attack-chain evidence event-id was not observed in this run"
+        ],
+        "cited_evidence": [
+          "event-id"
+        ],
+        "unsupported_claim_rate": 0.5
+      }
+    },
+    {
+      "run_id": "run-2c93d2ef10c2",
+      "condition": "C6",
+      "status": "completed",
+      "error": null,
+      "model": "ollama:llama3.2:1b",
+      "verdict": "inconclusive",
+      "confidence": 0.56,
+      "summary": "The presence of T1059.001 in the observed events suggests a malicious attack.",
+      "evidence_ids": [
+        "event-id",
+        "event-id"
+      ],
+      "event_count": 13,
+      "tool_observations": 0,
+      "knowledge_retrievals": 1,
+      "tools": [],
+      "started_at": "2026-11-12T22:26:41.001Z",
+      "completed_at": "2026-11-12T22:26:49.738Z",
+      "validation": {
+        "ok": false,
+        "errors": [
+          "supporting evidence event-id was not observed in this run",
+          "supporting evidence event-id was not observed in this run",
+          "attack-chain evidence event-id was not observed in this run"
+        ],
+        "cited_evidence": [
+          "event-id"
+        ],
+        "unsupported_claim_rate": 0.5
+      }
+    },
+    {
+      "run_id": "run-c369df6c09c9",
+      "condition": "C7",
+      "status": "completed",
+      "error": null,
+      "model": "ollama:llama3.2:1b",
+      "verdict": "inconclusive",
+      "confidence": 0.56,
+      "summary": "The alert represents malicious execution.",
+      "evidence_ids": [
+        "event-id"
+      ],
+      "event_count": 35,
+      "tool_observations": 2,
+      "knowledge_retrievals": 0,
+      "tools": [
+        "query_events",
+        "query_events",
+        "query_events",
+        "query_events"
+      ],
+      "started_at": "2026-11-12T22:26:49.750Z",
+      "completed_at": "2026-11-12T22:27:14.615Z",
+      "validation": {
+        "ok": false,
+        "errors": [
+          "supporting evidence event-id was not observed in this run",
+          "attack-chain evidence event-id was not observed in this run"
+        ],
+        "cited_evidence": [
+          "event-id"
+        ],
+        "unsupported_claim_rate": 0.5
+      }
+    }
+  ]
+}
