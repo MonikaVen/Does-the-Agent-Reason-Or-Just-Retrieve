@@ -1,0 +1,136 @@
+{
+  "incident_id": "secops-q-x-implant",
+  "name": "SecOps cross-case/q-x-implant",
+  "source_benchmark": "Cyber-SecOps-ES",
+  "source_scenario": "cross-case/q-x-implant",
+  "alert": {
+    "timestamp": "2026-01-01T00:00:00Z",
+    "host": "unknown-host",
+    "user": "unknown",
+    "alert_type": "secops_investigation",
+    "summary": "What single on-host implant binary is the common root process behind the recon, exfiltration, web-shell, privilege-escalation and lateral-movement activity on ubuntu-2404-noble-amd64-base?",
+    "attck": []
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "process_events",
+      "network",
+      "alerts",
+      "file"
+    ],
+    "start": "2026-01-01T00:00:00Z",
+    "end": "2026-12-31T23:59:59Z",
+    "hosts": [
+      "unknown-host"
+    ]
+  },
+  "telemetry": {
+    "process_events": [
+      {
+        "event_id": "stub-0001-6787d353",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "unknown-host",
+        "process_name": "unknown",
+        "command_line": "SecOps cross-case/q-x-implant"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "stub-0001-6787d353",
+      "source": "process_events",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "host": "unknown-host",
+      "fields": {
+        "process_name": "unknown",
+        "command_line": "SecOps cross-case/q-x-implant"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "process_events",
+        "filter": {
+          "host": "unknown-host"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "process_events",
+        "filter": {
+          "host": "unknown-host"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "What single on-host implant binary is the common root process behind the recon, exfiltration, web-shell, privilege-escalation and lateral-movement activity on ubuntu-2404-noble-amd64-base?",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "process_events",
+          "filter": {
+            "host": "unknown-host"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "process_events",
+          "filter": {
+            "host": "unknown-host"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "What single on-host implant binary is the common root process behind the recon, exfiltration, web-shell, privilege-escalation and lateral-movement activity on ubuntu-2404-noble-amd64-base?",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-SecOps-ES",
+    "scenario": "cross-case/q-x-implant",
+    "answer": "/tmp/.sysupdate",
+    "accept": [
+      "/tmp/.sysupdate",
+      ".sysupdate"
+    ],
+    "grading": "exact_ci",
+    "attck": [],
+    "sealed": true
+  }
+}

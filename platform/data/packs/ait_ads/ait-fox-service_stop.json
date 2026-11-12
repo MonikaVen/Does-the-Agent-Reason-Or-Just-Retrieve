@@ -1,0 +1,168 @@
+{
+  "incident_id": "ait-fox-service_stop",
+  "name": "AIT-ADS fox/service_stop",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "fox/service_stop",
+  "alert": {
+    "timestamp": "2022-01-17T09:04:47Z",
+    "host": "fox",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on fox: service_stop"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-17T09:04:47Z",
+    "end": "2022-01-17T09:04:47Z",
+    "hosts": [
+      "fox"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-a16b2313",
+        "timestamp": "2022-01-17T09:04:47Z",
+        "host": "fox",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642410287.683:615): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=consequuntur comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "raw_alert": {
+          "timestamp": 1642410287.68,
+          "detector": "AMiner: New service_start parameter combination in Audit logs.",
+          "message": "type=SERVICE_START msg=audit(1642410287.683:615): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=consequuntur comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0002-8a4cbbb6",
+        "timestamp": "2022-01-17T09:04:47Z",
+        "host": "fox",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642410287.683:616): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=consequuntur comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "raw_alert": {
+          "timestamp": 1642410287.68,
+          "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+          "message": "type=SERVICE_STOP msg=audit(1642410287.683:616): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=consequuntur comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'"
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-a16b2313",
+      "source": "alerts",
+      "timestamp": "2022-01-17T09:04:47Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642410287.683:615): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=consequuntur comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "raw_alert": {
+          "timestamp": 1642410287.68,
+          "detector": "AMiner: New service_start parameter combination in Audit logs.",
+          "message": "type=SERVICE_START msg=audit(1642410287.683:615): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=consequuntur comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'"
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-8a4cbbb6",
+      "source": "alerts",
+      "timestamp": "2022-01-17T09:04:47Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642410287.683:616): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=consequuntur comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "raw_alert": {
+          "timestamp": 1642410287.68,
+          "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+          "message": "type=SERVICE_STOP msg=audit(1642410287.683:616): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=consequuntur comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'"
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on fox: service_stop",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on fox: service_stop",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "fox/service_stop",
+    "answer": "service_stop",
+    "accept": [
+      "service_stop",
+      "service stop"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

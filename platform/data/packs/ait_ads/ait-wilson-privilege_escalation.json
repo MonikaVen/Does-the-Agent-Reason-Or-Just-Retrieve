@@ -1,0 +1,267 @@
+{
+  "incident_id": "ait-wilson-privilege_escalation",
+  "name": "AIT-ADS wilson/privilege_escalation",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "wilson/privilege_escalation",
+  "alert": {
+    "timestamp": "2022-02-07T11:48:18Z",
+    "host": "wilson",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on wilson: privilege_escalation"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-07T11:48:18Z",
+    "end": "2022-02-07T11:48:51Z",
+    "hosts": [
+      "wilson"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-9ce04283",
+        "timestamp": "2022-02-07T11:48:18Z",
+        "host": "wilson",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  7 11:48:18 intranet-server su[6084]: Successful su for jwilkinson by www-data",
+        "raw_alert": {
+          "timestamp": 1644234498.0,
+          "detector": "AMiner: New event type.",
+          "message": "Feb  7 11:48:18 intranet-server su[6084]: Successful su for jwilkinson by www-data"
+        }
+      },
+      {
+        "event_id": "ait-0002-a24a3fb7",
+        "timestamp": "2022-02-07T11:48:18Z",
+        "host": "wilson",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  7 11:48:18 intranet-server su[6084]: + /dev/pts/1 www-data:jwilkinson",
+        "raw_alert": {
+          "timestamp": 1644234498.0,
+          "detector": "AMiner: New event type.",
+          "message": "Feb  7 11:48:18 intranet-server su[6084]: + /dev/pts/1 www-data:jwilkinson"
+        }
+      },
+      {
+        "event_id": "ait-0003-b4b5a5e4",
+        "timestamp": "2022-02-07T11:48:18Z",
+        "host": "wilson",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  7 11:48:18 intranet-server su[6084]: pam_unix(su:session): session opened for user jwilkinson by (uid=33)",
+        "raw_alert": {
+          "timestamp": 1644234498.0,
+          "detector": "AMiner: New event type.",
+          "message": "Feb  7 11:48:18 intranet-server su[6084]: pam_unix(su:session): session opened for user jwilkinson by (uid=33)"
+        }
+      },
+      {
+        "event_id": "ait-0004-f7dd685b",
+        "timestamp": "2022-02-07T11:48:18Z",
+        "host": "wilson",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1644234498.650:3022): pid=6084 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"jwilkinson\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "raw_alert": {
+          "timestamp": 1644234498.65,
+          "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+          "message": "type=USER_AUTH msg=audit(1644234498.650:3022): pid=6084 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"jwilkinson\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0005-4bfeb68f",
+        "timestamp": "2022-02-07T11:48:18Z",
+        "host": "wilson",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1644234498.650:3023): pid=6084 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"jwilkinson\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "raw_alert": {
+          "timestamp": 1644234498.65,
+          "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+          "message": "type=USER_ACCT msg=audit(1644234498.650:3023): pid=6084 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"jwilkinson\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0006-7deeaf07",
+        "timestamp": "2022-02-07T11:48:18Z",
+        "host": "wilson",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1644234498.658:3024): pid=6084 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"jwilkinson\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "raw_alert": {
+          "timestamp": 1644234498.66,
+          "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+          "message": "type=CRED_ACQ msg=audit(1644234498.658:3024): pid=6084 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"jwilkinson\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0007-475a08ea",
+        "timestamp": "2022-02-07T11:48:18Z",
+        "host": "wilson",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1644234498.762:3026): pid=6086 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"jwilkinson\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "raw_alert": {
+          "timestamp": 1644234498.76,
+          "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+          "message": "type=CRED_ACQ msg=audit(1644234498.762:3026): pid=6086 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"jwilkinson\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0008-8c49e860",
+        "timestamp": "2022-02-07T11:48:19Z",
+        "host": "wilson",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1644234499.014:3030): pid=6084 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"jwilkinson\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "raw_alert": {
+          "timestamp": 1644234499.01,
+          "detector": "AMiner: New user_start parameter combination in Audit logs.",
+          "message": "type=USER_START msg=audit(1644234499.014:3030): pid=6084 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"jwilkinson\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0009-26a92ca9",
+        "timestamp": "2022-02-07T11:48:51Z",
+        "host": "wilson",
+        "detector": "AMiner: New syscall parameter combination in Audit logs.",
+        "message": "type=SYSCALL msg=audit(1644234531.050:3039): arch=c000003e syscall=313 success=yes exit=0 a0=0 a1=556b5f6aecee a2=0 a3=0 items=0 ppid=6054 pid=6120 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm=\"modprobe\" exe=\"/bin/kmod\" key=(null)",
+        "raw_alert": {
+          "timestamp": 1644234531.05,
+          "detector": "AMiner: New syscall parameter combination in Audit logs.",
+          "message": "type=SYSCALL msg=audit(1644234531.050:3039): arch=c000003e syscall=313 success=yes exit=0 a0=0 a1=556b5f6aecee a2=0 a3=0 items=0 ppid=6054 pid=6120 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm=\"modprobe\" exe=\"/bin/kmod\" key=(null)"
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-9ce04283",
+      "source": "alerts",
+      "timestamp": "2022-02-07T11:48:18Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Feb  7 11:48:18 intranet-server su[6084]: Successful su for jwilkinson by www-data",
+        "raw_alert": {
+          "timestamp": 1644234498.0,
+          "detector": "AMiner: New event type.",
+          "message": "Feb  7 11:48:18 intranet-server su[6084]: Successful su for jwilkinson by www-data"
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-a24a3fb7",
+      "source": "alerts",
+      "timestamp": "2022-02-07T11:48:18Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Feb  7 11:48:18 intranet-server su[6084]: + /dev/pts/1 www-data:jwilkinson",
+        "raw_alert": {
+          "timestamp": 1644234498.0,
+          "detector": "AMiner: New event type.",
+          "message": "Feb  7 11:48:18 intranet-server su[6084]: + /dev/pts/1 www-data:jwilkinson"
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-b4b5a5e4",
+      "source": "alerts",
+      "timestamp": "2022-02-07T11:48:18Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Feb  7 11:48:18 intranet-server su[6084]: pam_unix(su:session): session opened for user jwilkinson by (uid=33)",
+        "raw_alert": {
+          "timestamp": 1644234498.0,
+          "detector": "AMiner: New event type.",
+          "message": "Feb  7 11:48:18 intranet-server su[6084]: pam_unix(su:session): session opened for user jwilkinson by (uid=33)"
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on wilson: privilege_escalation",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on wilson: privilege_escalation",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "wilson/privilege_escalation",
+    "answer": "privilege_escalation",
+    "accept": [
+      "privilege_escalation",
+      "privilege escalation"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

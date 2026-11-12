@@ -67,6 +67,24 @@ Keys stay in the local SQLite store and never enter trajectories.
 | C7 oracle plan | C7 | `--kind oracle_plan` |
 | Ground truth | sealed | `--kind ground_truth` |
 
+### Converted cyber packs (C0–C7 dataset points)
+
+After downloading benchmarks, convert SecOps-ES + AIT-ADS scenarios into
+incident packs the suite can load:
+
+```bash
+python3 scripts/download_benchmarks.py
+python3 scripts/convert_benchmarks_to_packs.py
+# 133 packs → data/packs/{secops,ait_ads}/ + data/packs/manifest.json
+
+# Example: run the full C0–C7 matrix on one converted pack
+python3 -m app suite --pack data/packs/secops/secops-q-c01-root-cause.json --provider ollama --model qwen2.5:3b
+```
+
+These are **+133 packs** beyond `sample_incident.json` (→ **+1,064**
+condition-runs if every pack is suite-run). DiscoveryBench/DiscoveryWorld
+are not converted.
+
 ## Experiment report
 
 `python3 -m app suite` writes `reports/experiment-report.md` and `.json`.

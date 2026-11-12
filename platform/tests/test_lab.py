@@ -250,3 +250,35 @@ async def test_lab_suite_reference_writes_report(tmp_path, monkeypatch):
     assert (tmp_path / "reports" / "experiment-report.md").read_text().count("| C0 |")
     c3 = suite["runs"][1]
     assert c3["tool_observations"] >= 1
+
+
+@pytest.mark.asyncio
+async def test_converted_cyber_packs_validate_and_load(tmp_path, monkeypatch):
+    manifest_path = ROOT / "data" / "packs" / "manifest.json"
+    if not manifest_path.exists():
+        pytest.skip("converted packs not generated")
+    monkeypatch.setattr("app.orchestrator.STEP_DELAY", 0)
+    manifest = json.loads(manifest_path.read_text())
+    assert manifest["counts"]["total"] == 133
+    assert manifest["counts"]["secops"] == 54
+    assert manifest["counts"]["ait_ads"] == 79
+    lab = Lab(db_path=tmp_path / "converted-packs.sqlite3")
+    for row in manifest["packs"]:
+        pack = json.loads((ROOT / row["path"]).read_text())
+        assert validate_pack(pack) == []
+        assert pack["incident_id"] == row["incident_id"]
+        loaded = lab.load_pack_file(row["path"])
+        assert loaded["incident_id"] == row["incident_id"]
+        assert sum(len(v) for v in loaded["pack"]["telemetry"].values()) == row["event_count"]
+    sample_path = next(
+        r["path"] for r in manifest["packs"] if r["dataset"] == "Cyber-SecOps-ES"
+    )
+    dataset = lab.load_pack_file(sample_path)
+    suite = await lab.run_suite(
+        dataset["id"],
+        provider="reference",
+        model="reference-investigator-v1",
+        report_dir=tmp_path / "reports",
+    )
+    assert len(suite["runs"]) == 8
+    assert all(row["status"] == "completed" for row in suite["runs"])
