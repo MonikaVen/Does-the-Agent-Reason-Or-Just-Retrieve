@@ -1,22 +1,22 @@
 # Experiment report
 
-- Generated: `2026-11-10T17:03:49.821Z`
+- Generated: `2026-11-12T16:25:22.409Z`
 - Incident: `incident-0042`
-- Model: `ollama:qwen2.5`
+- Model: `ollama:qwen2.5:3b`
 - Dataset: `ds-sample-0042`
 
 ## Results
 
 | Model | Condition | Status | Verdict | Confidence | Evidence IDs | Tool observations | Knowledge |
 |---|---|---|---|---|---|---|---|
-| ollama:qwen2.5 | C0 | completed | malicious | 0.93 | `event-1021, event-1028, event-1026` | 0 | 0 |
-| ollama:qwen2.5 | C1 | completed | malicious | 0.93 | `event-1021, event-1028, event-1024` | 0 | 1 |
-| ollama:qwen2.5 | C2 | completed | inconclusive | 0.93 | `event-1021, event-1028, event-1024` | 6 | 0 |
-| ollama:qwen2.5 | C3 | completed | malicious | 0.93 | `event-1021, event-1028, event-1024` | 6 | 0 |
-| ollama:qwen2.5 | C4 | completed | malicious | 0.93 | `event-1021, event-1028, event-1024` | 2 | 1 |
-| ollama:qwen2.5 | C5 | completed | malicious | 0.93 | `event-1008` | 0 | 1 |
-| ollama:qwen2.5 | C6 | completed | malicious | 0.92 | `event-1021, event-1024` | 0 | 1 |
-| ollama:qwen2.5 | C7 | completed | benign | 0.93 | `event-1021, event-1028, event-1024` | 6 | 0 |
+| ollama:qwen2.5:3b | C0 | completed | malicious | 0.93 | `event-1021, event-1028, event-1024, event-1026` | 0 | 0 |
+| ollama:qwen2.5:3b | C1 | completed | malicious | 0.93 | `event-1021, event-1028, event-1024, event-1033` | 0 | 1 |
+| ollama:qwen2.5:3b | C2 | completed | malicious | 0.93 | `event-1021, event-1028, event-1024` | 6 | 0 |
+| ollama:qwen2.5:3b | C3 | completed | malicious | 0.93 | `event-1021, event-1028, event-1024` | 6 | 0 |
+| ollama:qwen2.5:3b | C4 | completed | malicious | 0.93 | `event-1021, event-1028, event-1024, event-1009` | 2 | 1 |
+| ollama:qwen2.5:3b | C5 | completed | malicious | 0.93 | `event-1008` | 0 | 1 |
+| ollama:qwen2.5:3b | C6 | completed | malicious | 0.92 | `event-1021, event-1024` | 0 | 1 |
+| ollama:qwen2.5:3b | C7 | completed | malicious | 0.93 | `event-1021, event-1028, event-1024` | 6 | 0 |
 
 ## Setup
 
@@ -31,31 +31,31 @@ Local Ollama was the model gateway. The reference investigator was not used as a
 ## Notes
 
 ### C0
-Encoded PowerShell execution detected, with network activity and registry changes.
+Encoded PowerShell execution detected on workstation-17, likely part of a malicious campaign.
 
 ### C1
-Encoded PowerShell execution with network activity suggests malicious intent.
+Encoded PowerShell execution detected on workstation-17 with suspicious network activity and registry persistence.
 
 ### C2
-Insufficient evidence to determine if the PowerShell execution is malicious or benign.
+The alert represents malicious execution as evidenced by the encoded PowerShell execution detected on workstation-17.
 Tools: query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events
 
 ### C3
-Encoded PowerShell execution detected on workstation-17, indicating potential malicious activity.
+The alert represents malicious execution as evidenced by the encoded PowerShell execution detected on workstation-17.
 Tools: query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events
 
 ### C4
-Encoded PowerShell execution detected with suspicious parent process and network activity.
+Encoded PowerShell execution detected on workstation-17 with suspicious parent process and network activity, indicative of malicious intent.
 Tools: query_events, query_events
 
 ### C5
-Encoded PowerShell execution detected, indicative of malicious activity.
+Encoded PowerShell execution detected and suspicious activity following execution.
 
 ### C6
-Encoded PowerShell execution detected, followed by network activity, indicating potential malicious intent.
+Encoded PowerShell execution detected and followed by an outbound connection to an uncommon IP, raising suspicion of malicious activity.
 
 ### C7
-The PowerShell execution detected on workstation-17 appears to be benign as it is part of a legitimate workflow involving multiple processes.
+The alert represents malicious execution as evidenced by the encoded PowerShell execution detected on workstation-17.
 Tools: query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events, query_events
 
 ## Reading the matrix
