@@ -121,7 +121,7 @@ def extract_json(text: str) -> dict[str, Any]:
     return value
 
 
-def _http_json(url: str, payload: dict[str, Any] | None, headers: dict[str, str], timeout: int = 180, method: str = "POST") -> dict[str, Any]:
+def _http_json(url: str, payload: dict[str, Any] | None, headers: dict[str, str], timeout: int = 900, method: str = "POST") -> dict[str, Any]:
     body = None if payload is None else json.dumps(payload).encode("utf-8")
     request = Request(url, data=body, headers={"Content-Type": "application/json", **headers}, method=method)
     try:
@@ -130,6 +130,8 @@ def _http_json(url: str, payload: dict[str, Any] | None, headers: dict[str, str]
     except HTTPError as exc:
         detail = exc.read().decode("utf-8", errors="replace")[:400]
         raise ModelError(f"{url} returned HTTP {exc.code}: {detail}") from exc
+    except TimeoutError as exc:
+        raise ModelError(f"Request to {url} timed out after {timeout}s") from exc
     except URLError as exc:
         raise ModelError(f"Could not reach {url}: {exc.reason}") from exc
     try:

@@ -165,6 +165,7 @@ async def run_one(
     model: str,
     tools: int | None,
     records: int | None,
+    runtime: int | None,
     seed: int,
     quiet: bool,
 ) -> dict[str, Any]:
@@ -174,6 +175,8 @@ async def run_one(
         budgets["max_tool_calls"] = tools
     if records is not None:
         budgets["max_records_per_call"] = records
+    if runtime is not None:
+        budgets["max_runtime_seconds"] = runtime
     if not quiet:
         print(f"suite  {pack_meta['incident_id']}  ({pack_meta.get('dataset')})", flush=True)
     suite = await lab.run_suite(
@@ -256,6 +259,7 @@ async def main_async(args: argparse.Namespace) -> int:
                     model=args.model,
                     tools=args.tools,
                     records=args.records,
+                    runtime=args.runtime,
                     seed=args.seed,
                     quiet=args.quiet,
                 )
@@ -320,6 +324,12 @@ def main() -> int:
     parser.add_argument("--model", default="qwen2.5:3b")
     parser.add_argument("--tools", type=int, default=4, help="max tool calls per condition")
     parser.add_argument("--records", type=int, default=50)
+    parser.add_argument(
+        "--runtime",
+        type=int,
+        default=1800,
+        help="max wall-clock seconds per condition (raise for large local models)",
+    )
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--workers", type=int, default=1, help="parallel pack suites")
     parser.add_argument("--limit", type=int, default=0, help="optional pack cap for smoke runs")
