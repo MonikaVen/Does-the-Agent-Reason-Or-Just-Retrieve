@@ -163,7 +163,7 @@ async def test_c0_and_c3_runs(tmp_path, monkeypatch):
         await orch.run(run_id)
         run = store.get_run(run_id)
         assert run["status"] == "completed"
-        assert run["report"]["verdict"] in {"malicious", "benign", "inconclusive"}
+        assert run["report"]["verdict"] in {"malicious", "benign"}
         kinds = [event["kind"] for event in store.list_events(run_id)]
         assert "report_validated" in kinds
         if condition == "C3":
@@ -184,7 +184,7 @@ def test_experiment_report_markdown():
             {
                 "condition": "C0",
                 "status": "completed",
-                "verdict": "inconclusive",
+                "verdict": "benign",
                 "confidence": 0.4,
                 "evidence_ids": [],
                 "tool_observations": 0,

@@ -100,8 +100,9 @@ def render_markdown(suite: dict[str, Any]) -> str:
         "C0/C1 cannot search telemetry. C2 searches without a knowledge service. "
         "C3 is the full adaptive loop. C4 uses a fixed query pack instead of agent-chosen tools. "
         "C5 receives C3's evidence without C3's search order. C6 is given oracle evidence; C7 is given an oracle plan. "
-        "A small local model may stop early, cite poorly, or return inconclusive after validation — "
-        "that is a measured outcome, not a reason to swap in the reference investigator."
+        "A small local model may stop early, cite poorly, or fail validation and fall back to an "
+        "evidence-based malicious/benign verdict — that is a measured outcome, not a reason to "
+        "swap in the reference investigator."
     )
     return "\n".join(lines) + "\n"
 

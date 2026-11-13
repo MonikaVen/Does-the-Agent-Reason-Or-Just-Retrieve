@@ -14,7 +14,7 @@ from .knowledge import KnowledgeService
 from .llm import ModelGateway, ModelError
 from .packs import packs_present
 from .policy import PolicyEngine
-from .report import assign_evidence_confidence, validate_report
+from .report import assign_evidence_confidence, binary_fallback_report, validate_report
 from .store import Store, utcnow
 from .telemetry import TelemetryGateway, TelemetryStore, flatten_pack, normalize_record
 
@@ -300,17 +300,12 @@ class Orchestrator:
         try:
             report = await asyncio.to_thread(model.generate_report, final_context)
         except ModelError as exc:
-            report = {
-                "verdict": "inconclusive",
-                "confidence": 0.0,
-                "summary": "The model did not return a valid JSON report.",
-                "attack_chain": [],
-                "key_entities": {"hosts": [], "users": [], "ips": [], "files": []},
-                "supporting_evidence": [],
-                "contradicting_evidence": [],
-                "remaining_uncertainty": str(exc),
-                "recommended_human_check": "Inspect the trajectory; do not treat this as a silent fallback to the reference investigator.",
-            }
+            report = binary_fallback_report(
+                final_context,
+                known_ids=evidence_ids,
+                summary="The model did not return a valid JSON report.",
+                uncertainty=str(exc),
+            )
         # Never trust model self-reported confidence; score from observed evidence only.
         report = assign_evidence_confidence(report, final_context)
         await self.bus.emit(run_id, "report_generated", "report-service", report, "generate_report")
@@ -319,11 +314,12 @@ class Orchestrator:
         validation = validate_report(report, evidence_ids)
         await self.bus.emit(run_id, "report_validated", "report-validator", validation, "validate_report")
         if not validation["ok"]:
-            report = {
-                **report,
-                "verdict": "inconclusive",
-                "remaining_uncertainty": "; ".join(validation["errors"]),
-            }
+            report = binary_fallback_report(
+                final_context,
+                known_ids=evidence_ids,
+                summary=str(report.get("summary") or "Report failed validation; evidence-based binary verdict applied."),
+                uncertainty="; ".join(validation["errors"]),
+            )
             report = assign_evidence_confidence(report, final_context)
             validation = validate_report(report, evidence_ids)
 

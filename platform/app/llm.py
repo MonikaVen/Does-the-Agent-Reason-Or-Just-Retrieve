@@ -81,7 +81,7 @@ DECISION_SCHEMA = {
 }
 
 REPORT_SCHEMA = {
-    "verdict": "malicious | benign | inconclusive",
+    "verdict": "malicious | benign",
     "confidence": 0.0,
     "summary": "string",
     "attack_chain": [{"stage": "Execution", "technique": "T1059.001", "evidence_ids": ["event-id"]}],
@@ -246,7 +246,7 @@ class ModelGateway:
             "You write the final incident report. Reply with one JSON object only. "
             "Keep it short: verdict, one-sentence summary, at most 4 supporting_evidence items. "
             "Every factual claim must cite an evidence_id present in the supplied observations "
-            "or raw window. Do not invent evidence. verdict must be malicious, benign, or inconclusive. "
+            "or raw window. Do not invent evidence. verdict must be malicious or benign only. "
             "Do not self-report confidence; the harness scores confidence from observed evidence. "
             "You may omit confidence or set it to 0. ATT&CK techniques look like T1059.001. No extra keys."
         )
@@ -362,9 +362,9 @@ def _coerce_decision(data: dict[str, Any], tools: list[str]) -> dict[str, Any]:
 
 
 def _coerce_report(data: dict[str, Any]) -> dict[str, Any]:
-    verdict = str(data.get("verdict") or "inconclusive").strip().lower()
-    if verdict not in {"malicious", "benign", "inconclusive"}:
-        verdict = "inconclusive"
+    verdict = str(data.get("verdict") or "benign").strip().lower()
+    if verdict not in {"malicious", "benign"}:
+        verdict = "benign"
     evidence = data.get("supporting_evidence") or []
     if isinstance(evidence, dict):
         evidence = [evidence]

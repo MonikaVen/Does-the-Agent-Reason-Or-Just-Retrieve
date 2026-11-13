@@ -3,10 +3,20 @@ from __future__ import annotations
 import re
 from typing import Any
 
-VERDICTS = {"malicious", "benign", "inconclusive"}
+VERDICTS = {"malicious", "benign"}
 ATTACK_RE = re.compile(r"^T\d{4}(?:\.\d{3})?$")
 OFFICE_PARENTS = {"winword.exe", "excel.exe", "powerpnt.exe", "outlook.exe", "wscript.exe"}
 ADMIN_PARENTS = {"management-agent.exe", "sccm.exe", "intune.exe", "services.exe"}
+
+
+def normalize_verdict(verdict: Any, *, malicious_score: float | None = None) -> str:
+    """Force a binary verdict. Unknown/inconclusive values become evidence-based or benign."""
+    value = str(verdict or "").strip().lower()
+    if value in VERDICTS:
+        return value
+    if malicious_score is not None:
+        return "malicious" if float(malicious_score) >= 0.5 else "benign"
+    return "benign"
 
 
 def evidence_beliefs(records: list[dict[str, Any]], known: list[str] | None = None) -> tuple[float, float]:
@@ -77,16 +87,57 @@ def assign_evidence_confidence(report: dict[str, Any], context: dict[str, Any]) 
     state = context.get("state") or {}
     if isinstance(state, dict):
         known = list(state.get("known_evidence") or [])
+    records = context_records(context)
+    malicious, _admin = evidence_beliefs(records, known)
     next_report = dict(report)
-    next_report["confidence"] = compute_evidence_confidence(context_records(context), known)
+    next_report["verdict"] = normalize_verdict(next_report.get("verdict"), malicious_score=malicious)
+    next_report["confidence"] = compute_evidence_confidence(records, known)
     next_report["confidence_source"] = "evidence"
     return next_report
+
+
+def binary_fallback_report(
+    context: dict[str, Any],
+    *,
+    known_ids: set[str] | None = None,
+    summary: str,
+    uncertainty: str = "",
+) -> dict[str, Any]:
+    """Build a valid malicious/benign report when the model output cannot be used."""
+    known = []
+    state = context.get("state") or {}
+    if isinstance(state, dict):
+        known = list(state.get("known_evidence") or [])
+    records = context_records(context)
+    malicious, _admin = evidence_beliefs(records, known)
+    verdict = "malicious" if malicious >= 0.5 else "benign"
+    cite_ids = [eid for eid in (known_ids or set()) if eid]
+    if not cite_ids:
+        cite_ids = [rec.get("evidence_id") for rec in records if rec.get("evidence_id")]
+    supporting = [
+        {"event_id": eid, "claim": "Observed in this run."}
+        for eid in cite_ids[:4]
+    ]
+    if not supporting and cite_ids:
+        supporting = [{"event_id": cite_ids[0], "claim": "Observed in this run."}]
+    return {
+        "verdict": verdict,
+        "confidence": compute_evidence_confidence(records, known),
+        "confidence_source": "evidence",
+        "summary": summary,
+        "attack_chain": [],
+        "key_entities": {"hosts": [], "users": [], "ips": [], "files": []},
+        "supporting_evidence": supporting,
+        "contradicting_evidence": [],
+        "remaining_uncertainty": uncertainty,
+        "recommended_human_check": "Inspect the trajectory for decisive telemetry.",
+    }
 
 
 def validate_report(report: dict[str, Any], known_ids: set[str]) -> dict[str, Any]:
     errors: list[str] = []
     if report.get("verdict") not in VERDICTS:
-        errors.append(f"invalid verdict '{report.get('verdict')}'")
+        errors.append(f"invalid verdict '{report.get('verdict')}' (must be malicious or benign)")
     confidence = report.get("confidence")
     if not isinstance(confidence, (int, float)) or not 0 <= float(confidence) <= 1:
         errors.append("confidence must be in [0, 1]")
@@ -107,7 +158,7 @@ def validate_report(report: dict[str, Any], known_ids: set[str]) -> dict[str, An
             cited.append(eid)
             if known_ids and eid not in known_ids:
                 errors.append(f"attack-chain evidence {eid} was not observed in this run")
-    if report.get("verdict") in {"malicious", "benign"} and not cited:
+    if report.get("verdict") in VERDICTS and not cited:
         errors.append("factual verdict requires at least one evidence citation")
     return {
         "ok": not errors,

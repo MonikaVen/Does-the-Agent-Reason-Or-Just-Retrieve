@@ -140,7 +140,7 @@ class ReferenceInvestigator:
             records = list(context.get("raw_window") or [])
         known = [rec.get("evidence_id") for rec in records if rec.get("evidence_id")]
         malicious, _admin = evidence_beliefs(records, known)
-        verdict = "malicious" if malicious >= 0.66 else "benign" if malicious <= 0.34 else "inconclusive"
+        verdict = "malicious" if malicious >= 0.5 else "benign"
         chain = []
         evidence_by_stage = {
             "Execution": [rec for rec in records if rec.get("source") == "process_events"],
@@ -267,6 +267,4 @@ class ReferenceInvestigator:
                 "Encoded PowerShell was launched from an office parent and followed by "
                 "staging, uncommon egress, and a Run-key persistence write."
             )
-        if verdict == "benign":
-            return "The available context is consistent with approved administration rather than an attack chain."
-        return f"Interpreted {len(records)} evidence records without a decisive parent/follow-on pattern."
+        return "The available context is consistent with approved administration rather than an attack chain."

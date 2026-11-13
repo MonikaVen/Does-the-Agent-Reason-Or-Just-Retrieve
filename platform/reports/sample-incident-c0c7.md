@@ -9,14 +9,14 @@
 
 | Model | Condition | Status | Verdict | Confidence | Evidence IDs | Tool observations | Knowledge |
 |---|---|---|---|---|---|---|---|
-| ollama:llama3.2:1b | C0 | completed | inconclusive | 0.56 | `event-id` | 0 | 0 |
-| ollama:llama3.2:1b | C1 | completed | inconclusive | 0.56 | `event-id` | 0 | 1 |
-| ollama:llama3.2:1b | C2 | completed | inconclusive | 0.56 | `event-id` | 2 | 0 |
-| ollama:llama3.2:1b | C3 | completed | inconclusive | 0.56 | `event-id` | 2 | 0 |
-| ollama:llama3.2:1b | C4 | completed | inconclusive | 0.56 | `event-id, event-id, event-id` | 2 | 1 |
-| ollama:llama3.2:1b | C5 | completed | inconclusive | 0.56 | `event-id, event-id` | 0 | 1 |
-| ollama:llama3.2:1b | C6 | completed | inconclusive | 0.56 | `event-id, event-id` | 0 | 1 |
-| ollama:llama3.2:1b | C7 | completed | inconclusive | 0.56 | `event-id` | 2 | 0 |
+| ollama:llama3.2:1b | C0 | completed | benign | 0.56 | `event-id` | 0 | 0 |
+| ollama:llama3.2:1b | C1 | completed | benign | 0.56 | `event-id` | 0 | 1 |
+| ollama:llama3.2:1b | C2 | completed | benign | 0.56 | `event-id` | 2 | 0 |
+| ollama:llama3.2:1b | C3 | completed | benign | 0.56 | `event-id` | 2 | 0 |
+| ollama:llama3.2:1b | C4 | completed | benign | 0.56 | `event-id, event-id, event-id` | 2 | 1 |
+| ollama:llama3.2:1b | C5 | completed | benign | 0.56 | `event-id, event-id` | 0 | 1 |
+| ollama:llama3.2:1b | C6 | completed | benign | 0.56 | `event-id, event-id` | 0 | 1 |
+| ollama:llama3.2:1b | C7 | completed | benign | 0.56 | `event-id` | 2 | 0 |
 
 ## Setup
 
@@ -68,4 +68,4 @@ Validator: supporting evidence event-id was not observed in this run; attack-cha
 
 ## Reading the matrix
 
-C0/C1 cannot search telemetry. C2 searches without a knowledge service. C3 is the full adaptive loop. C4 uses a fixed query pack instead of agent-chosen tools. C5 receives C3's evidence without C3's search order. C6 is given oracle evidence; C7 is given an oracle plan. A small local model may stop early, cite poorly, or return inconclusive after validation — that is a measured outcome, not a reason to swap in the reference investigator.
+C0/C1 cannot search telemetry. C2 searches without a knowledge service. C3 is the full adaptive loop. C4 uses a fixed query pack instead of agent-chosen tools. C5 receives C3's evidence without C3's search order. C6 is given oracle evidence; C7 is given an oracle plan. A small local model may stop early, cite poorly, or fail validation and fall back to an evidence-based malicious/benign verdict — that is a measured outcome, not a reason to swap in the reference investigator.
