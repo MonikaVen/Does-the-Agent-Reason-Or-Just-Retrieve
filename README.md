@@ -102,3 +102,15 @@ flowchart LR
     class C,D execution;
     class E,F intervention;
     class G,H result;
+```
+
+---
+
+## Paper
+
+Manuscript materials live under [`paper/`](paper/):
+
+- Pre-results draft PDF: [`paper/Beyond_Retrieval_Open_Dataset_Experiments.pdf`](paper/Beyond_Retrieval_Open_Dataset_Experiments.pdf)
+- Pilot results for §8 (C0–C7 + open-dataset scores): [`paper/08_pilot_results.md`](paper/08_pilot_results.md)
+
+Confirmatory R/A/P/H/AS/HS tables remain blank until the preregistered AIT protocol is run.

