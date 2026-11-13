@@ -11,10 +11,6 @@
     "summary": "Automated detection: Encoded PowerShell command execution. Investigate correlated telemetry.",
     "title": "Encoded PowerShell command execution",
     "severity": "high",
-    "attck": [
-      "T1059.001",
-      "T1027"
-    ],
     "assets": [
       "WS-146",
       "SRV-DB-04"
@@ -101,60 +97,6 @@
           "message": "Routine logon event",
           "noise": true
         }
-      },
-      {
-        "event_id": "ev-soc-000047-0",
-        "timestamp": "2025-07-18T00:05:00Z",
-        "host": "WS-146",
-        "rule": "sysmon",
-        "severity": "high",
-        "message": "Primary indicator on WS-146: Encoded PowerShell command execution",
-        "supports": "confirm",
-        "raw_alert": {
-          "evidence_id": "ev-soc-000047-0",
-          "source": "sysmon",
-          "log_type": "sysmon",
-          "timestamp": "2025-07-18T00:05:00+00:00",
-          "host": "WS-146",
-          "message": "Primary indicator on WS-146: Encoded PowerShell command execution",
-          "supports": "confirm"
-        }
-      },
-      {
-        "event_id": "ev-soc-000047-1",
-        "timestamp": "2025-07-18T00:08:00Z",
-        "host": "SRV-DB-04",
-        "rule": "wazuh",
-        "severity": "high",
-        "message": "Correlated alert on SRV-DB-04",
-        "supports": "confirm",
-        "raw_alert": {
-          "evidence_id": "ev-soc-000047-1",
-          "source": "wazuh",
-          "log_type": "wazuh",
-          "timestamp": "2025-07-18T00:08:00+00:00",
-          "host": "SRV-DB-04",
-          "message": "Correlated alert on SRV-DB-04",
-          "supports": "confirm"
-        }
-      },
-      {
-        "event_id": "ev-soc-000047-2",
-        "timestamp": "2025-07-18T00:12:00Z",
-        "host": "WS-146",
-        "rule": "suricata",
-        "severity": "high",
-        "message": "Network activity from 203.0.113.59 to WS-146",
-        "supports": "confirm",
-        "raw_alert": {
-          "evidence_id": "ev-soc-000047-2",
-          "source": "suricata",
-          "log_type": "suricata",
-          "timestamp": "2025-07-18T00:12:00+00:00",
-          "host": "WS-146",
-          "message": "Network activity from 203.0.113.59 to WS-146",
-          "supports": "confirm"
-        }
       }
     ],
     "process_events": [
@@ -210,75 +152,62 @@
         }
       },
       {
-        "event_id": "soc-ioc-0001-03d1c02b",
+        "event_id": "soc-ioc-0001-2b658a3d",
         "timestamp": "2025-07-18T00:15:00Z",
         "host": "WS-146",
         "destination_ip": "203.0.113.59",
         "protocol": "tcp",
-        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
-        "reputation": "malicious"
+        "message": "Observed IP 203.0.113.59"
       }
     ]
   },
   "oracle_evidence": [
     {
-      "event_id": "soc-000047-noise-0",
+      "event_id": "ev-soc-000047-0",
       "source": "alerts",
-      "timestamp": "2025-07-18T00:04:00Z",
-      "host": "WS-028",
+      "timestamp": "2025-07-18T00:05:00Z",
+      "host": "WS-146",
       "fields": {
-        "rule": "Encoded PowerShell command execution",
+        "rule": "sysmon",
         "severity": "high",
-        "message": "Routine logon event",
-        "user": null,
-        "raw_alert": {
-          "log_id": "soc-000047-noise-0",
-          "timestamp": "2025-07-18T00:04:00+00:00",
-          "source": "windows_security",
-          "host": "WS-028",
-          "message": "Routine logon event",
-          "noise": true
-        }
+        "message": "Primary indicator on WS-146: Encoded PowerShell command execution",
+        "supports": "confirm"
       }
     },
     {
-      "event_id": "soc-000047-noise-1",
+      "event_id": "ev-soc-000047-1",
       "source": "alerts",
-      "timestamp": "2025-07-18T00:04:00Z",
-      "host": "WS-070",
+      "timestamp": "2025-07-18T00:08:00Z",
+      "host": "SRV-DB-04",
       "fields": {
-        "rule": "Encoded PowerShell command execution",
+        "rule": "wazuh",
         "severity": "high",
-        "message": "Routine logon event",
-        "user": null,
-        "raw_alert": {
-          "log_id": "soc-000047-noise-1",
-          "timestamp": "2025-07-18T00:04:00+00:00",
-          "source": "windows_security",
-          "host": "WS-070",
-          "message": "Routine logon event",
-          "noise": true
-        }
+        "message": "Correlated alert on SRV-DB-04",
+        "supports": "confirm"
       }
     },
     {
-      "event_id": "soc-000047-noise-2",
+      "event_id": "ev-soc-000047-2",
       "source": "alerts",
-      "timestamp": "2025-07-18T00:06:00Z",
-      "host": "WS-054",
+      "timestamp": "2025-07-18T00:12:00Z",
+      "host": "WS-146",
       "fields": {
-        "rule": "Encoded PowerShell command execution",
+        "rule": "suricata",
         "severity": "high",
-        "message": "Routine logon event",
-        "user": null,
-        "raw_alert": {
-          "log_id": "soc-000047-noise-2",
-          "timestamp": "2025-07-18T00:06:00+00:00",
-          "source": "windows_security",
-          "host": "WS-054",
-          "message": "Routine logon event",
-          "noise": true
-        }
+        "message": "Network activity from 203.0.113.59 to WS-146",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "soc-ioc-rep-0001-03d1c02b",
+      "source": "network",
+      "timestamp": "2025-07-18T00:15:00Z",
+      "host": "WS-146",
+      "fields": {
+        "destination_ip": "203.0.113.59",
+        "protocol": "tcp",
+        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
+        "reputation": "malicious"
       }
     }
   ],
@@ -373,6 +302,13 @@
       "T1059.001",
       "T1027"
     ],
+    "ioc_enrichment": {
+      "203.0.113.59": {
+        "type": "ip",
+        "reputation": "malicious",
+        "category": "scanner"
+      }
+    },
     "sealed": true
   }
 }

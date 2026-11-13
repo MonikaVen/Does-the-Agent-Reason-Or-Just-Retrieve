@@ -9,8 +9,7 @@
     "user": "unknown",
     "alert_type": "excytin_investigation",
     "summary": "In a related alert, a suspicious inbox rule was set by a user named Jordan P (laylaw@vnevado.alpineskihouse.co). Can you identify the AppId of the cloud application associated with this suspicious activity?",
-    "context": "A recent security incident detected involved a password spray attack on an account with AadUserId `89e933b9-5b2e-4bd6-bcdf-033db707ef82` from the IP address `95.202.65.202`. This is part of a larger multi-alert incident. Note that a password spray attack is a brute force attack that attempts a single password against many accounts before moving on to the next password, to avoid detection.",
-    "attck": []
+    "context": "A recent security incident detected involved a password spray attack on an account with AadUserId `89e933b9-5b2e-4bd6-bcdf-033db707ef82` from the IP address `95.202.65.202`. This is part of a larger multi-alert incident. Note that a password spray attack is a brute force attack that attempts a single password against many accounts before moving on to the next password, to avoid detection."
   },
   "scope": {
     "allowed_log_sources": [
@@ -27,38 +26,6 @@
   },
   "telemetry": {
     "alerts": [
-      {
-        "event_id": "exq-incident_166-0000-8c086e91",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_166",
-        "rule": "incident_context",
-        "severity": "high",
-        "message": "A recent security incident detected involved a password spray attack on an account with AadUserId `89e933b9-5b2e-4bd6-bcdf-033db707ef82` from the IP address `95.202.65.202`. This is part of a larger multi-alert incident. Note that a password spray attack is a brute force attack that attempts a single password against many accounts before moving on to the next password, to avoid detection."
-      },
-      {
-        "event_id": "exq-incident_166-0001-c0d3c737",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_166",
-        "rule": "investigation_graph_step",
-        "severity": "medium",
-        "message": "A password spray attack was detected from IP address `95.202.65.202`."
-      },
-      {
-        "event_id": "exq-incident_166-0002-3554767f",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_166",
-        "rule": "investigation_graph_step",
-        "severity": "medium",
-        "message": "A suspicious inbox rule was created by the user `Jordan P` with email `laylaw@vnevado.alpineskihouse.co`. The user created a rule named `ITCleanup` to move messages to a folder named `RSS Feeds`, indicating a potential compromise of the account."
-      },
-      {
-        "event_id": "exq-incident_166-0003-5c02531c",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_166",
-        "rule": "investigation_graph_step",
-        "severity": "medium",
-        "message": "The suspicious activity is related to the cloud application with AppId `11161`."
-      },
       {
         "event_id": "ex-incident_166-AlertInfo-0001-1b703afe",
         "timestamp": "2026-01-01T00:00:00Z",
@@ -2253,17 +2220,6 @@
   },
   "oracle_evidence": [
     {
-      "event_id": "exq-incident_166-0000-8c086e91",
-      "source": "alerts",
-      "timestamp": "2026-01-01T00:00:00Z",
-      "host": "excytin-incident_166",
-      "fields": {
-        "rule": "incident_context",
-        "severity": "high",
-        "message": "A recent security incident detected involved a password spray attack on an account with AadUserId `89e933b9-5b2e-4bd6-bcdf-033db707ef82` from the IP address `95.202.65.202`. This is part of a larger multi-alert incident. Note that a password spray attack is a brute force attack that attempts a single password against many accounts before moving on to the next password, to avoid detection."
-      }
-    },
-    {
       "event_id": "exq-incident_166-0001-c0d3c737",
       "source": "alerts",
       "timestamp": "2026-01-01T00:00:00Z",
@@ -2283,6 +2239,17 @@
         "rule": "investigation_graph_step",
         "severity": "medium",
         "message": "A suspicious inbox rule was created by the user `Jordan P` with email `laylaw@vnevado.alpineskihouse.co`. The user created a rule named `ITCleanup` to move messages to a folder named `RSS Feeds`, indicating a potential compromise of the account."
+      }
+    },
+    {
+      "event_id": "exq-incident_166-0003-5c02531c",
+      "source": "alerts",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "host": "excytin-incident_166",
+      "fields": {
+        "rule": "investigation_graph_step",
+        "severity": "medium",
+        "message": "The suspicious activity is related to the cloud application with AppId `11161`."
       }
     }
   ],

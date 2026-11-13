@@ -57,6 +57,34 @@ def _event_id(prefix: str, index: int, blob: str) -> str:
     return f"{prefix}-{index:04d}-{digest}"
 
 
+def _as_oracle_records(
+    rows: list[dict[str, Any]],
+    *,
+    host: str,
+    default_source: str = "alerts",
+) -> list[dict[str, Any]]:
+    """Pack oracle_evidence rows (C6 only). Never copy these into shared telemetry."""
+    out: list[dict[str, Any]] = []
+    for rec in rows:
+        if not isinstance(rec, dict) or not rec.get("event_id"):
+            continue
+        fields = {
+            k: v
+            for k, v in rec.items()
+            if k not in {"event_id", "timestamp", "host", "source"}
+        }
+        out.append(
+            {
+                "event_id": rec["event_id"],
+                "source": rec.get("source") or default_source,
+                "timestamp": rec.get("timestamp"),
+                "host": rec.get("host") or host,
+                "fields": fields,
+            }
+        )
+    return out
+
+
 def _base_pack(
     *,
     incident_id: str,
@@ -67,27 +95,22 @@ def _base_pack(
     telemetry: dict[str, list[dict[str, Any]]],
     ground_truth: dict[str, Any],
     sources: list[str],
+    oracle_evidence: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     records = [rec for items in telemetry.values() for rec in items]
-    # Prefer earliest process/network-like records as oracle evidence.
-    oracle_evidence = []
-    for rec in records[: min(3, len(records))]:
-        fields = {
-            k: v
-            for k, v in rec.items()
-            if k not in {"event_id", "timestamp", "host", "source"}
-        }
-        oracle_evidence.append(
-            {
-                "event_id": rec["event_id"],
-                "source": rec.get("source") or next(
-                    (src for src, items in telemetry.items() if rec in items), "process_events"
-                ),
-                "timestamp": rec.get("timestamp"),
-                "host": rec.get("host") or host,
-                "fields": fields,
-            }
-        )
+    # Oracle evidence is explicit (C6 only). Do NOT default to shared telemetry[:3],
+    # which would leak gold/solution labels into every condition via the pack file
+    # when converters also seed telemetry from truth.
+    oracle_rows = list(oracle_evidence or [])
+    if not oracle_rows and records:
+        # Fallback: first few non-gold public records only (no label fields).
+        publicish = [
+            rec
+            for rec in records
+            if str(rec.get("rule") or "") not in {"gold_evidence", "investigation_graph_step"}
+            and "supports" not in rec
+        ] or records
+        oracle_rows = _as_oracle_records(publicish[:3], host=host)
     # If we somehow have no records, synthesize a minimal telemetry stub so validate_pack passes.
     if not records:
         stub_id = _event_id("stub", 1, incident_id)
@@ -103,15 +126,7 @@ def _base_pack(
             ]
         }
         records = telemetry["process_events"]
-        oracle_evidence = [
-            {
-                "event_id": stub_id,
-                "source": "process_events",
-                "timestamp": window[0],
-                "host": host,
-                "fields": {"process_name": "unknown", "command_line": name},
-            }
-        ]
+        oracle_rows = _as_oracle_records(records, host=host, default_source="process_events")
 
     primary_source = next(iter(telemetry.keys()))
     oracle_plan = [
@@ -180,7 +195,7 @@ def _base_pack(
             "hosts": [host],
         },
         "telemetry": telemetry,
-        "oracle_evidence": oracle_evidence,
+        "oracle_evidence": oracle_rows,
         "oracle_plan": oracle_plan,
         "fixed_query_pack": fixed_query_pack,
         "ground_truth": ground_truth,
@@ -309,6 +324,7 @@ def secops_case_telemetry(case: str) -> tuple[dict[str, list[dict[str, Any]]], t
         attacker_ip = data.get("attacker_ip") or data.get("c2") or data.get("source_ip")
         if attacker_ip:
             blob = f"{path.name}:{attacker_ip}"
+            # Observable IP only — no attacker/C2 label in shared telemetry.
             telemetry["network"].append(
                 {
                     "event_id": _event_id(f"{path.stem}-net", 1, blob),
@@ -317,7 +333,6 @@ def secops_case_telemetry(case: str) -> tuple[dict[str, list[dict[str, Any]]], t
                     "destination_ip": str(attacker_ip),
                     "destination_port": 443,
                     "protocol": "tcp",
-                    "note": "attacker_or_c2_indicator",
                 }
             )
 
@@ -343,8 +358,8 @@ def convert_secops() -> list[dict[str, Any]]:
             "host": host,
             "user": "unknown",
             "alert_type": "secops_investigation",
+            # Prompt only — sealed ATT&CK / answers stay in ground_truth (C6+eval).
             "summary": scenario["prompt"][:240],
-            "attck": scenario.get("attck") or [],
         }
         ground_truth = {
             "dataset": "Cyber-SecOps-ES",
@@ -431,7 +446,8 @@ def _ait_pack_from_alerts(host: str, attack: str, alerts: list[dict[str, Any]]) 
         "host": host,
         "user": "unknown",
         "alert_type": "ait_ads_stage",
-        "summary": f"AIT-ADS multi-step stage candidate on {host}: {attack}",
+        # Do not embed the sealed attack-stage label in the alert summary.
+        "summary": f"AIT-ADS multi-step stage candidate on {host}. Identify the attack stage from telemetry.",
     }
     ground_truth = {
         "dataset": "Cyber-AIT-ADS",
@@ -555,45 +571,68 @@ def convert_soc_agent() -> list[dict[str, Any]]:
                     }
                 )
 
-        # Attach gold evidence as additional alert rows when not already present.
+        # Gold evidence is C6-only — never merge into shared telemetry.
+        oracle_rows: list[dict[str, Any]] = []
         seen = {rec["event_id"] for rows in telemetry.values() for rec in rows}
         for index, item in enumerate(gold if isinstance(gold, list) else [], start=1):
             if not isinstance(item, dict):
                 continue
             eid = str(item.get("evidence_id") or _event_id("soc-gold", index, json.dumps(item, sort_keys=True)))
             if eid in seen:
+                # Prefer pointing oracle at the already-public log id without adding labels.
+                match = next(
+                    (rec for rows in telemetry.values() for rec in rows if rec["event_id"] == eid),
+                    None,
+                )
+                if match:
+                    oracle_rows.append(match)
                 continue
             item_ts = _iso_from_any(item.get("timestamp"), ts)
             timestamps.append(item_ts)
-            telemetry["alerts"].append(
+            oracle_rows.append(
                 {
                     "event_id": eid,
                     "timestamp": item_ts,
                     "host": str(item.get("host") or host),
+                    "source": "alerts",
                     "rule": item.get("source") or "gold_evidence",
                     "severity": alert_raw.get("severity"),
                     "message": item.get("message") or "",
                     "supports": item.get("supports"),
-                    "raw_alert": item,
                 }
             )
 
-        # Enrichment / inventory stubs as knowledge-adjacent telemetry.
+        # Observable IPs only in shared telemetry — reputation labels stay sealed/oracle.
         for ip, meta in (iocs.items() if isinstance(iocs, dict) else []):
-            blob = f"{ip}:{meta}"
-            telemetry["network"].append(
+            blob = f"{ip}"
+            telemetry.setdefault("network", []).append(
                 {
                     "event_id": _event_id("soc-ioc", 1, blob),
                     "timestamp": ts,
                     "host": host,
                     "destination_ip": str(ip),
                     "protocol": "tcp",
-                    "message": f"IOC enrichment: {meta}",
-                    "reputation": (meta or {}).get("reputation") if isinstance(meta, dict) else None,
+                    "message": f"Observed IP {ip}",
                 }
             )
+            if isinstance(meta, dict) and meta.get("reputation"):
+                oracle_rows.append(
+                    {
+                        "event_id": _event_id("soc-ioc-rep", 1, f"{ip}:{meta}"),
+                        "timestamp": ts,
+                        "host": host,
+                        "source": "network",
+                        "destination_ip": str(ip),
+                        "protocol": "tcp",
+                        "message": f"IOC enrichment: {meta}",
+                        "reputation": meta.get("reputation"),
+                    }
+                )
 
         telemetry = {k: v for k, v in telemetry.items() if v}
+        if not oracle_rows:
+            # Fall back to a few public records so C6 still has evidence.
+            oracle_rows = [rec for rows in telemetry.values() for rec in rows][:3]
         start = min(timestamps) if timestamps else ts
         end = max(timestamps) if timestamps else ts
         is_tp = bool(gt.get("is_true_positive"))
@@ -607,7 +646,7 @@ def convert_soc_agent() -> list[dict[str, Any]]:
             "summary": str(alert_raw.get("description") or alert_raw.get("title") or scenario)[:240],
             "title": alert_raw.get("title"),
             "severity": alert_raw.get("severity"),
-            "attck": techniques,
+            # Host inventory is public context; ATT&CK / TP labels stay sealed.
             "assets": list(assets.keys()) if isinstance(assets, dict) else [],
         }
         ground_truth = {
@@ -620,6 +659,7 @@ def convert_soc_agent() -> list[dict[str, Any]]:
             "is_true_positive": is_tp,
             "label": "malicious" if is_tp else "benign",
             "attck": techniques,
+            "ioc_enrichment": iocs,
             "sealed": True,
         }
         packs.append(
@@ -632,6 +672,7 @@ def convert_soc_agent() -> list[dict[str, Any]]:
                 telemetry=telemetry,
                 ground_truth=ground_truth,
                 sources=list(telemetry.keys()) or ["alerts"],
+                oracle_evidence=_as_oracle_records(oracle_rows, host=host),
             )
         )
     return packs
@@ -858,41 +899,33 @@ def convert_excytin(*, split: str = "test") -> list[dict[str, Any]]:
             if not isinstance(item, dict):
                 continue
             telemetry = {src: [dict(rec) for rec in rows] for src, rows in base_telemetry.items()}
-            # Seed question-local evidence from context/solution so C0 has citable records.
+            # Solution / answer are sealed. Put solution steps ONLY in oracle_evidence (C6).
             context = str(item.get("context") or "")
             solution = item.get("solution") or []
             answer = str(item.get("answer") or "")
             question = str(item.get("question") or "")
-            local_alerts = []
+            # Scrub answer string from any public-facing narrative.
+            public_context = context
+            if answer and answer in public_context:
+                public_context = public_context.replace(answer, "[REDACTED]")
+
+            oracle_local: list[dict[str, Any]] = []
             for sindex, step in enumerate(solution if isinstance(solution, list) else [], start=1):
                 blob = f"{incident}:{qindex}:{sindex}:{step}"
-                local_alerts.append(
+                oracle_local.append(
                     {
                         "event_id": _event_id(f"exq-{incident}", sindex, blob),
                         "timestamp": window[0],
                         "host": host,
+                        "source": "alerts",
                         "rule": "investigation_graph_step",
                         "severity": "medium",
                         "message": str(step)[:400],
                     }
                 )
-            if context:
-                local_alerts.insert(
-                    0,
-                    {
-                        "event_id": _event_id(f"exq-{incident}", 0, context[:200]),
-                        "timestamp": window[0],
-                        "host": host,
-                        "rule": "incident_context",
-                        "severity": "high",
-                        "message": context[:500],
-                    },
-                )
-            if local_alerts:
-                telemetry.setdefault("alerts", [])
-                telemetry["alerts"] = local_alerts + list(telemetry.get("alerts") or [])
-                # Cap total alerts to keep packs manageable.
-                telemetry["alerts"] = telemetry["alerts"][:80]
+            if not oracle_local:
+                # Still give C6 something decisive when solution is empty.
+                oracle_local = [rec for rows in telemetry.values() for rec in rows][:3]
 
             incident_id = f"excytin-{_slug(incident)}-q{qindex:03d}"
             alert = {
@@ -900,9 +933,9 @@ def convert_excytin(*, split: str = "test") -> list[dict[str, Any]]:
                 "host": host,
                 "user": "unknown",
                 "alert_type": "excytin_investigation",
-                "summary": (question or context)[:240],
-                "context": context[:500],
-                "attck": [],
+                # Question + scrubbed context only — never the sealed answer/solution.
+                "summary": (question or public_context)[:240],
+                "context": public_context[:500] if public_context else "",
             }
             ground_truth = {
                 "dataset": "ExCyTIn-Bench",
@@ -924,6 +957,7 @@ def convert_excytin(*, split: str = "test") -> list[dict[str, Any]]:
                     telemetry=telemetry,
                     ground_truth=ground_truth,
                     sources=list(telemetry.keys()) or ["alerts"],
+                    oracle_evidence=_as_oracle_records(oracle_local, host=host),
                 )
             )
     return packs

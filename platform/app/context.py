@@ -12,6 +12,45 @@ SYSTEM_POLICY = (
     "passages are guidance, not proof that an event occurred. Do not invent evidence."
 )
 
+# Alert fields safe for every condition. Labels / ATT&CK / answers stay sealed.
+PUBLIC_ALERT_KEYS = {
+    "timestamp",
+    "host",
+    "user",
+    "alert_type",
+    "summary",
+    "title",
+    "severity",
+    "assets",
+    "context",
+}
+
+# Never expose these label-bearing field names outside C6 oracle evidence.
+SEALED_FIELD_KEYS = {
+    "supports",
+    "reputation",
+    "label",
+    "answer",
+    "accept",
+    "is_true_positive",
+    "ground_truth",
+    "attck",
+    "attack_techniques",
+    "solution",
+    "raw_alert",
+}
+
+
+def public_alert(alert: dict[str, Any] | None) -> dict[str, Any]:
+    """Strip sealed labels from the alert before it enters model context."""
+    alert = alert or {}
+    return {k: alert[k] for k in PUBLIC_ALERT_KEYS if k in alert and alert[k] not in (None, "")}
+
+
+def scrub_fields(fields: dict[str, Any] | None) -> dict[str, Any]:
+    fields = fields or {}
+    return {k: v for k, v in fields.items() if k not in SEALED_FIELD_KEYS}
+
 
 def build_context(
     *,
@@ -24,7 +63,10 @@ def build_context(
     tools: list[str],
 ) -> dict[str, Any]:
     mode = profile["context_mode"]
-    alert = pack.get("alert") or {}
+    alert = public_alert(pack.get("alert") or {})
+    # Never pass sealed ground_truth into context (defense in depth).
+    if isinstance(state, dict) and "ground_truth" in state:
+        state = {k: v for k, v in state.items() if k != "ground_truth"}
     raw_window = []
     if mode == "fixed_raw":
         raw_window = [
@@ -33,7 +75,7 @@ def build_context(
                 "source": item.get("source"),
                 "timestamp": item.get("timestamp"),
                 "host": item.get("host"),
-                "fields": item.get("fields"),
+                "fields": scrub_fields(item.get("fields")),
             }
             for item in flatten_pack(pack)[:100]
         ]

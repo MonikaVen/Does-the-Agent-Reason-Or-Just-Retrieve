@@ -11,9 +11,6 @@
     "summary": "Automated detection: Suspicious scheduled task creation. Investigate correlated telemetry.",
     "title": "Suspicious scheduled task creation",
     "severity": "high",
-    "attck": [
-      "T1053.005"
-    ],
     "assets": [
       "WS-234",
       "SRV-FILE-04"
@@ -116,60 +113,6 @@
           "message": "Routine logon event",
           "noise": true
         }
-      },
-      {
-        "event_id": "ev-soc-000055-0",
-        "timestamp": "2025-07-26T00:05:00Z",
-        "host": "WS-234",
-        "rule": "sysmon",
-        "severity": "high",
-        "message": "Primary indicator on WS-234: Suspicious scheduled task creation",
-        "supports": "confirm",
-        "raw_alert": {
-          "evidence_id": "ev-soc-000055-0",
-          "source": "sysmon",
-          "log_type": "sysmon",
-          "timestamp": "2025-07-26T00:05:00+00:00",
-          "host": "WS-234",
-          "message": "Primary indicator on WS-234: Suspicious scheduled task creation",
-          "supports": "confirm"
-        }
-      },
-      {
-        "event_id": "ev-soc-000055-1",
-        "timestamp": "2025-07-26T00:08:00Z",
-        "host": "SRV-FILE-04",
-        "rule": "wazuh",
-        "severity": "high",
-        "message": "Correlated alert on SRV-FILE-04",
-        "supports": "confirm",
-        "raw_alert": {
-          "evidence_id": "ev-soc-000055-1",
-          "source": "wazuh",
-          "log_type": "wazuh",
-          "timestamp": "2025-07-26T00:08:00+00:00",
-          "host": "SRV-FILE-04",
-          "message": "Correlated alert on SRV-FILE-04",
-          "supports": "confirm"
-        }
-      },
-      {
-        "event_id": "ev-soc-000055-2",
-        "timestamp": "2025-07-26T00:12:00Z",
-        "host": "WS-234",
-        "rule": "suricata",
-        "severity": "high",
-        "message": "Network activity from 203.0.113.142 to WS-234",
-        "supports": "confirm",
-        "raw_alert": {
-          "evidence_id": "ev-soc-000055-2",
-          "source": "suricata",
-          "log_type": "suricata",
-          "timestamp": "2025-07-26T00:12:00+00:00",
-          "host": "WS-234",
-          "message": "Network activity from 203.0.113.142 to WS-234",
-          "supports": "confirm"
-        }
       }
     ],
     "network": [
@@ -206,75 +149,62 @@
         }
       },
       {
-        "event_id": "soc-ioc-0001-699dd5af",
+        "event_id": "soc-ioc-0001-3715c07b",
         "timestamp": "2025-07-26T00:15:00Z",
         "host": "WS-234",
         "destination_ip": "203.0.113.142",
         "protocol": "tcp",
-        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
-        "reputation": "malicious"
+        "message": "Observed IP 203.0.113.142"
       }
     ]
   },
   "oracle_evidence": [
     {
-      "event_id": "soc-000055-log-001",
+      "event_id": "ev-soc-000055-0",
       "source": "alerts",
       "timestamp": "2025-07-26T00:05:00Z",
       "host": "WS-234",
       "fields": {
-        "rule": "Suspicious scheduled task creation",
+        "rule": "sysmon",
         "severity": "high",
         "message": "Primary indicator on WS-234: Suspicious scheduled task creation",
-        "user": "contractor_temp",
-        "raw_alert": {
-          "log_id": "soc-000055-log-001",
-          "timestamp": "2025-07-26T00:05:00+00:00",
-          "source": "sysmon",
-          "host": "WS-234",
-          "user": "contractor_temp",
-          "message": "Primary indicator on WS-234: Suspicious scheduled task creation"
-        }
+        "supports": "confirm"
       }
     },
     {
-      "event_id": "soc-000055-noise-0",
+      "event_id": "ev-soc-000055-1",
       "source": "alerts",
-      "timestamp": "2025-07-26T00:07:00Z",
-      "host": "WS-040",
+      "timestamp": "2025-07-26T00:08:00Z",
+      "host": "SRV-FILE-04",
       "fields": {
-        "rule": "Suspicious scheduled task creation",
+        "rule": "wazuh",
         "severity": "high",
-        "message": "Routine logon event",
-        "user": null,
-        "raw_alert": {
-          "log_id": "soc-000055-noise-0",
-          "timestamp": "2025-07-26T00:07:00+00:00",
-          "source": "windows_security",
-          "host": "WS-040",
-          "message": "Routine logon event",
-          "noise": true
-        }
+        "message": "Correlated alert on SRV-FILE-04",
+        "supports": "confirm"
       }
     },
     {
-      "event_id": "soc-000055-noise-1",
+      "event_id": "ev-soc-000055-2",
       "source": "alerts",
-      "timestamp": "2025-07-26T00:01:00Z",
-      "host": "WS-019",
+      "timestamp": "2025-07-26T00:12:00Z",
+      "host": "WS-234",
       "fields": {
-        "rule": "Suspicious scheduled task creation",
+        "rule": "suricata",
         "severity": "high",
-        "message": "Routine logon event",
-        "user": null,
-        "raw_alert": {
-          "log_id": "soc-000055-noise-1",
-          "timestamp": "2025-07-26T00:01:00+00:00",
-          "source": "windows_security",
-          "host": "WS-019",
-          "message": "Routine logon event",
-          "noise": true
-        }
+        "message": "Network activity from 203.0.113.142 to WS-234",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "soc-ioc-rep-0001-699dd5af",
+      "source": "network",
+      "timestamp": "2025-07-26T00:15:00Z",
+      "host": "WS-234",
+      "fields": {
+        "destination_ip": "203.0.113.142",
+        "protocol": "tcp",
+        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
+        "reputation": "malicious"
       }
     }
   ],
@@ -368,6 +298,13 @@
     "attck": [
       "T1053.005"
     ],
+    "ioc_enrichment": {
+      "203.0.113.142": {
+        "type": "ip",
+        "reputation": "malicious",
+        "category": "scanner"
+      }
+    },
     "sealed": true
   }
 }

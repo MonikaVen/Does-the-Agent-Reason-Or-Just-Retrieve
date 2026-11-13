@@ -8,8 +8,7 @@
     "host": "ubuntu-2404-noble-amd64-base",
     "user": "unknown",
     "alert_type": "secops_investigation",
-    "summary": "Map this case to MITRE ATT&CK technique IDs (scanning, exploit public-facing app, web shell, unix shell execution, C2).",
-    "attck": []
+    "summary": "Map this case to MITRE ATT&CK technique IDs (scanning, exploit public-facing app, web shell, unix shell execution, C2)."
   },
   "scope": {
     "allowed_log_sources": [
@@ -107,8 +106,7 @@
         "host": "ubuntu-2404-noble-amd64-base",
         "destination_ip": "204.168.178.42",
         "destination_port": 443,
-        "protocol": "tcp",
-        "note": "attacker_or_c2_indicator"
+        "protocol": "tcp"
       }
     ],
     "alerts": [
@@ -171,7 +169,7 @@
   "oracle_evidence": [
     {
       "event_id": "evidence-b-0001-c97995c7",
-      "source": "process_events",
+      "source": "alerts",
       "timestamp": "2026-07-29T02:54:17.700Z",
       "host": "ubuntu-2404-noble-amd64-base",
       "fields": {
@@ -182,7 +180,7 @@
     },
     {
       "event_id": "evidence-b-0002-bc6ce837",
-      "source": "process_events",
+      "source": "alerts",
       "timestamp": "2026-07-29T02:54:17.702Z",
       "host": "ubuntu-2404-noble-amd64-base",
       "fields": {
@@ -193,7 +191,7 @@
     },
     {
       "event_id": "evidence-b-0003-e3747567",
-      "source": "process_events",
+      "source": "alerts",
       "timestamp": "2026-07-29T02:54:17.721Z",
       "host": "ubuntu-2404-noble-amd64-base",
       "fields": {

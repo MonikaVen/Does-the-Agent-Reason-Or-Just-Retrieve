@@ -11,10 +11,6 @@
     "summary": "Automated detection: Privileged container deployed in production namespace. Investigate correlated telemetry.",
     "title": "Privileged container deployed in production namespace",
     "severity": "high",
-    "attck": [
-      "T1611",
-      "T1053.007"
-    ],
     "assets": [
       "WS-110",
       "SRV-FILE-02"
@@ -117,60 +113,6 @@
           "message": "Routine logon event",
           "noise": true
         }
-      },
-      {
-        "event_id": "ev-soc-000088-0",
-        "timestamp": "2025-06-29T00:05:00Z",
-        "host": "WS-110",
-        "rule": "kubernetes_audit",
-        "severity": "high",
-        "message": "Primary indicator on WS-110: Privileged container deployed in production namespace",
-        "supports": "confirm",
-        "raw_alert": {
-          "evidence_id": "ev-soc-000088-0",
-          "source": "kubernetes_audit",
-          "log_type": "kubernetes_audit",
-          "timestamp": "2025-06-29T00:05:00+00:00",
-          "host": "WS-110",
-          "message": "Primary indicator on WS-110: Privileged container deployed in production namespace",
-          "supports": "confirm"
-        }
-      },
-      {
-        "event_id": "ev-soc-000088-1",
-        "timestamp": "2025-06-29T00:08:00Z",
-        "host": "SRV-FILE-02",
-        "rule": "wazuh",
-        "severity": "high",
-        "message": "Correlated alert on SRV-FILE-02",
-        "supports": "confirm",
-        "raw_alert": {
-          "evidence_id": "ev-soc-000088-1",
-          "source": "wazuh",
-          "log_type": "wazuh",
-          "timestamp": "2025-06-29T00:08:00+00:00",
-          "host": "SRV-FILE-02",
-          "message": "Correlated alert on SRV-FILE-02",
-          "supports": "confirm"
-        }
-      },
-      {
-        "event_id": "ev-soc-000088-2",
-        "timestamp": "2025-06-29T00:12:00Z",
-        "host": "WS-110",
-        "rule": "suricata",
-        "severity": "high",
-        "message": "Network activity from 203.0.113.29 to WS-110",
-        "supports": "confirm",
-        "raw_alert": {
-          "evidence_id": "ev-soc-000088-2",
-          "source": "suricata",
-          "log_type": "suricata",
-          "timestamp": "2025-06-29T00:12:00+00:00",
-          "host": "WS-110",
-          "message": "Network activity from 203.0.113.29 to WS-110",
-          "supports": "confirm"
-        }
       }
     ],
     "network": [
@@ -207,75 +149,62 @@
         }
       },
       {
-        "event_id": "soc-ioc-0001-194430b0",
+        "event_id": "soc-ioc-0001-17a4f85d",
         "timestamp": "2025-06-29T00:15:00Z",
         "host": "WS-110",
         "destination_ip": "203.0.113.29",
         "protocol": "tcp",
-        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
-        "reputation": "malicious"
+        "message": "Observed IP 203.0.113.29"
       }
     ]
   },
   "oracle_evidence": [
     {
-      "event_id": "soc-000088-log-001",
+      "event_id": "ev-soc-000088-0",
       "source": "alerts",
       "timestamp": "2025-06-29T00:05:00Z",
       "host": "WS-110",
       "fields": {
-        "rule": "Privileged container deployed in production namespace",
+        "rule": "kubernetes_audit",
         "severity": "high",
         "message": "Primary indicator on WS-110: Privileged container deployed in production namespace",
-        "user": "contractor_temp",
-        "raw_alert": {
-          "log_id": "soc-000088-log-001",
-          "timestamp": "2025-06-29T00:05:00+00:00",
-          "source": "kubernetes_audit",
-          "host": "WS-110",
-          "user": "contractor_temp",
-          "message": "Primary indicator on WS-110: Privileged container deployed in production namespace"
-        }
+        "supports": "confirm"
       }
     },
     {
-      "event_id": "soc-000088-noise-0",
-      "source": "alerts",
-      "timestamp": "2025-06-29T00:06:00Z",
-      "host": "WS-097",
-      "fields": {
-        "rule": "Privileged container deployed in production namespace",
-        "severity": "high",
-        "message": "Routine logon event",
-        "user": null,
-        "raw_alert": {
-          "log_id": "soc-000088-noise-0",
-          "timestamp": "2025-06-29T00:06:00+00:00",
-          "source": "windows_security",
-          "host": "WS-097",
-          "message": "Routine logon event",
-          "noise": true
-        }
-      }
-    },
-    {
-      "event_id": "soc-000088-noise-1",
+      "event_id": "ev-soc-000088-1",
       "source": "alerts",
       "timestamp": "2025-06-29T00:08:00Z",
-      "host": "WS-053",
+      "host": "SRV-FILE-02",
       "fields": {
-        "rule": "Privileged container deployed in production namespace",
+        "rule": "wazuh",
         "severity": "high",
-        "message": "Routine logon event",
-        "user": null,
-        "raw_alert": {
-          "log_id": "soc-000088-noise-1",
-          "timestamp": "2025-06-29T00:08:00+00:00",
-          "source": "windows_security",
-          "host": "WS-053",
-          "message": "Routine logon event",
-          "noise": true
-        }
+        "message": "Correlated alert on SRV-FILE-02",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "ev-soc-000088-2",
+      "source": "alerts",
+      "timestamp": "2025-06-29T00:12:00Z",
+      "host": "WS-110",
+      "fields": {
+        "rule": "suricata",
+        "severity": "high",
+        "message": "Network activity from 203.0.113.29 to WS-110",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "soc-ioc-rep-0001-194430b0",
+      "source": "network",
+      "timestamp": "2025-06-29T00:15:00Z",
+      "host": "WS-110",
+      "fields": {
+        "destination_ip": "203.0.113.29",
+        "protocol": "tcp",
+        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
+        "reputation": "malicious"
       }
     }
   ],
@@ -370,6 +299,13 @@
       "T1611",
       "T1053.007"
     ],
+    "ioc_enrichment": {
+      "203.0.113.29": {
+        "type": "ip",
+        "reputation": "malicious",
+        "category": "scanner"
+      }
+    },
     "sealed": true
   }
 }

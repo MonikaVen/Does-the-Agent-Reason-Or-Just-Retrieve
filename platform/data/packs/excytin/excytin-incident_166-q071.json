@@ -9,8 +9,7 @@
     "user": "unknown",
     "alert_type": "excytin_investigation",
     "summary": "Can you identify the Azure Active Directory (AAD) User ID associated with the compromised account that signed in to SAP?",
-    "context": "A business email compromise (BEC)-related user, under the name `Jordan P`, signed in to SAP in a suspicious manner. This incident was flagged by Microsoft Defender XDR. The user account also had the following details: SID `S-1-5-21-1740051960-3534030288-108486866-1602`, IP address `107.253.5.27`, and associated email `Jordan P@vnevado.alpineskihouse.co`. The attacker might have taken control of the account to search through SAP with the intention of recording or modifying sensitive financial inf",
-    "attck": []
+    "context": "A business email compromise (BEC)-related user, under the name `Jordan P`, signed in to SAP in a suspicious manner. This incident was flagged by Microsoft Defender XDR. The user account also had the following details: SID `S-1-5-21-1740051960-3534030288-108486866-1602`, IP address `107.253.5.27`, and associated email `Jordan P@vnevado.alpineskihouse.co`. The attacker might have taken control of the account to search through SAP with the intention of recording or modifying sensitive financial inf"
   },
   "scope": {
     "allowed_log_sources": [
@@ -27,22 +26,6 @@
   },
   "telemetry": {
     "alerts": [
-      {
-        "event_id": "exq-incident_166-0000-c662c770",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_166",
-        "rule": "incident_context",
-        "severity": "high",
-        "message": "A business email compromise (BEC)-related user, under the name `Jordan P`, signed in to SAP in a suspicious manner. This incident was flagged by Microsoft Defender XDR. The user account also had the following details: SID `S-1-5-21-1740051960-3534030288-108486866-1602`, IP address `107.253.5.27`, and associated email `Jordan P@vnevado.alpineskihouse.co`. The attacker might have taken control of the account to search through SAP with the intention of recording or modifying sensitive financial inf"
-      },
-      {
-        "event_id": "exq-incident_166-0001-2c95e6cc",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_166",
-        "rule": "investigation_graph_step",
-        "severity": "medium",
-        "message": "A user with AadUserId `89e933b9-5b2e-4bd6-bcdf-033db707ef82` involved in a business email compromise-related alert signed in to SAP in a suspicious manner. This account may have been controlled by an attacker to search through SAP with the intention of recording or modifying sensitive financial information."
-      },
       {
         "event_id": "ex-incident_166-AlertInfo-0001-1b703afe",
         "timestamp": "2026-01-01T00:00:00Z",
@@ -2237,17 +2220,6 @@
   },
   "oracle_evidence": [
     {
-      "event_id": "exq-incident_166-0000-c662c770",
-      "source": "alerts",
-      "timestamp": "2026-01-01T00:00:00Z",
-      "host": "excytin-incident_166",
-      "fields": {
-        "rule": "incident_context",
-        "severity": "high",
-        "message": "A business email compromise (BEC)-related user, under the name `Jordan P`, signed in to SAP in a suspicious manner. This incident was flagged by Microsoft Defender XDR. The user account also had the following details: SID `S-1-5-21-1740051960-3534030288-108486866-1602`, IP address `107.253.5.27`, and associated email `Jordan P@vnevado.alpineskihouse.co`. The attacker might have taken control of the account to search through SAP with the intention of recording or modifying sensitive financial inf"
-      }
-    },
-    {
       "event_id": "exq-incident_166-0001-2c95e6cc",
       "source": "alerts",
       "timestamp": "2026-01-01T00:00:00Z",
@@ -2256,18 +2228,6 @@
         "rule": "investigation_graph_step",
         "severity": "medium",
         "message": "A user with AadUserId `89e933b9-5b2e-4bd6-bcdf-033db707ef82` involved in a business email compromise-related alert signed in to SAP in a suspicious manner. This account may have been controlled by an attacker to search through SAP with the intention of recording or modifying sensitive financial information."
-      }
-    },
-    {
-      "event_id": "ex-incident_166-AlertInfo-0001-1b703afe",
-      "source": "alerts",
-      "timestamp": "2026-01-01T00:00:00Z",
-      "host": "excytin-incident_166",
-      "fields": {
-        "rule": "sentinel_alert",
-        "severity": null,
-        "message": "",
-        "fields": {}
       }
     }
   ],

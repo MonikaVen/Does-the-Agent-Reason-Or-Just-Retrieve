@@ -8,10 +8,7 @@
     "host": "ubuntu-2404-noble-amd64-base",
     "user": "unknown",
     "alert_type": "secops_investigation",
-    "summary": "To which external URL host:port did the attacker upload the archive?",
-    "attck": [
-      "T1041"
-    ]
+    "summary": "To which external URL host:port did the attacker upload the archive?"
   },
   "scope": {
     "allowed_log_sources": [
@@ -146,8 +143,7 @@
         "host": "ubuntu-2404-noble-amd64-base",
         "destination_ip": "204.168.178.42",
         "destination_port": 443,
-        "protocol": "tcp",
-        "note": "attacker_or_c2_indicator"
+        "protocol": "tcp"
       }
     ],
     "alerts": [
@@ -208,7 +204,7 @@
   "oracle_evidence": [
     {
       "event_id": "evidence-pf-0001-1d89576c",
-      "source": "process_events",
+      "source": "alerts",
       "timestamp": "2026-07-29T02:27:43.267Z",
       "host": "ubuntu-2404-noble-amd64-base",
       "fields": {
@@ -220,7 +216,7 @@
     },
     {
       "event_id": "evidence-pf-0002-18e39dc3",
-      "source": "process_events",
+      "source": "alerts",
       "timestamp": "2026-07-29T02:27:43.270Z",
       "host": "ubuntu-2404-noble-amd64-base",
       "fields": {
@@ -232,7 +228,7 @@
     },
     {
       "event_id": "evidence-pf-0003-bbe1c5a6",
-      "source": "process_events",
+      "source": "alerts",
       "timestamp": "2026-07-29T02:27:43.283Z",
       "host": "ubuntu-2404-noble-amd64-base",
       "fields": {

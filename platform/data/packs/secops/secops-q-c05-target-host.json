@@ -8,8 +8,7 @@
     "host": "ubuntu-2404-noble-amd64-base",
     "user": "unknown",
     "alert_type": "secops_investigation",
-    "summary": "Which host was the lateral-movement target (the second host compromised)?",
-    "attck": []
+    "summary": "Which host was the lateral-movement target (the second host compromised)?"
   },
   "scope": {
     "allowed_log_sources": [
@@ -111,15 +110,14 @@
         "host": "ubuntu-2404-noble-amd64-base",
         "destination_ip": "204.168.178.42",
         "destination_port": 443,
-        "protocol": "tcp",
-        "note": "attacker_or_c2_indicator"
+        "protocol": "tcp"
       }
     ]
   },
   "oracle_evidence": [
     {
       "event_id": "evidence-sour-0001-2252beeb",
-      "source": "process_events",
+      "source": "alerts",
       "timestamp": "2026-07-29T03:49:46.664Z",
       "host": "ubuntu-2404-noble-amd64-base",
       "fields": {
@@ -132,7 +130,7 @@
     },
     {
       "event_id": "evidence-sour-0002-2d9af92b",
-      "source": "process_events",
+      "source": "alerts",
       "timestamp": "2026-07-29T03:49:46.679Z",
       "host": "ubuntu-2404-noble-amd64-base",
       "fields": {
@@ -146,7 +144,7 @@
     },
     {
       "event_id": "evidence-targ-0001-af2584f9",
-      "source": "process_events",
+      "source": "alerts",
       "timestamp": "2026-07-29T03:49:47.500Z",
       "host": "attacktrace",
       "fields": {

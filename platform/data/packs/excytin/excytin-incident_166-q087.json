@@ -9,8 +9,7 @@
     "user": "unknown",
     "alert_type": "excytin_investigation",
     "summary": "Related to the suspicious SAP authentication incident, a user's inbox had rules manipulated suspiciously. Can you find the IP address from which the inbox manipulation originated?",
-    "context": "A security incident involving multiple suspicious activities including SAP authentication and inbox manipulation was detected. This incident indicates that an attacker might have taken control of a user account to search through SAP with the possibility of recording or modifying sensitive financial information. This was identified by a risky sign-in alert in Microsoft Entra ID, wherein the attack initiated from IP address `107.253.5.27` using app ID `100`.",
-    "attck": []
+    "context": "A security incident involving multiple suspicious activities including SAP authentication and inbox manipulation was detected. This incident indicates that an attacker might have taken control of a user account to search through SAP with the possibility of recording or modifying sensitive financial information. This was identified by a risky sign-in alert in Microsoft Entra ID, wherein the attack initiated from IP address `107.253.5.27` using app ID `100`."
   },
   "scope": {
     "allowed_log_sources": [
@@ -27,30 +26,6 @@
   },
   "telemetry": {
     "alerts": [
-      {
-        "event_id": "exq-incident_166-0000-c0429010",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_166",
-        "rule": "incident_context",
-        "severity": "high",
-        "message": "A security incident involving multiple suspicious activities including SAP authentication and inbox manipulation was detected. This incident indicates that an attacker might have taken control of a user account to search through SAP with the possibility of recording or modifying sensitive financial information. This was identified by a risky sign-in alert in Microsoft Entra ID, wherein the attack initiated from IP address `107.253.5.27` using app ID `100`."
-      },
-      {
-        "event_id": "exq-incident_166-0001-ac25d7e8",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_166",
-        "rule": "investigation_graph_step",
-        "severity": "medium",
-        "message": "The user account with email `Jordan P@vnevado.alpineskihouse.co` signed in to SAP with a risky sign-in alert detected by Microsoft Entra ID, indicating potential compromise and intentions to record or modify sensitive financial information."
-      },
-      {
-        "event_id": "exq-incident_166-0002-7d8bddf3",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_166",
-        "rule": "investigation_graph_step",
-        "severity": "medium",
-        "message": "There was a suspicious inbox manipulation rule detected from the IP address `255.246.85.58`, indicating that an attacker might be manipulating a user's inbox to delete or move messages or folders for data exfiltration purposes."
-      },
       {
         "event_id": "ex-incident_166-AlertInfo-0001-1b703afe",
         "timestamp": "2026-01-01T00:00:00Z",
@@ -2244,17 +2219,6 @@
     ]
   },
   "oracle_evidence": [
-    {
-      "event_id": "exq-incident_166-0000-c0429010",
-      "source": "alerts",
-      "timestamp": "2026-01-01T00:00:00Z",
-      "host": "excytin-incident_166",
-      "fields": {
-        "rule": "incident_context",
-        "severity": "high",
-        "message": "A security incident involving multiple suspicious activities including SAP authentication and inbox manipulation was detected. This incident indicates that an attacker might have taken control of a user account to search through SAP with the possibility of recording or modifying sensitive financial information. This was identified by a risky sign-in alert in Microsoft Entra ID, wherein the attack initiated from IP address `107.253.5.27` using app ID `100`."
-      }
-    },
     {
       "event_id": "exq-incident_166-0001-ac25d7e8",
       "source": "alerts",

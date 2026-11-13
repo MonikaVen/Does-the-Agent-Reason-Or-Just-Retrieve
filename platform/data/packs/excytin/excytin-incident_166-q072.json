@@ -9,8 +9,7 @@
     "user": "unknown",
     "alert_type": "excytin_investigation",
     "summary": "Can you identify the IP address from which the suspicious sign-in to SAP was made?",
-    "context": "As part of an investigation into a recent security incident, it was found that a user account under the name `Jordan P` with the email `Jordan P@vnevado.alpineskihouse.co` was flagged for a risky sign-in to SAP via Microsoft Entra ID. This security threat indicates that an attacker might have hijacked this user's account to sift through sensitive financial data in SAP for potential misuse. The alert was triggered by a risky sign-in detected in Microsoft Entra ID, which could be indicative of com",
-    "attck": []
+    "context": "As part of an investigation into a recent security incident, it was found that a user account under the name `Jordan P` with the email `Jordan P@vnevado.alpineskihouse.co` was flagged for a risky sign-in to SAP via Microsoft Entra ID. This security threat indicates that an attacker might have hijacked this user's account to sift through sensitive financial data in SAP for potential misuse. The alert was triggered by a risky sign-in detected in Microsoft Entra ID, which could be indicative of com"
   },
   "scope": {
     "allowed_log_sources": [
@@ -27,22 +26,6 @@
   },
   "telemetry": {
     "alerts": [
-      {
-        "event_id": "exq-incident_166-0000-4c616c35",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_166",
-        "rule": "incident_context",
-        "severity": "high",
-        "message": "As part of an investigation into a recent security incident, it was found that a user account under the name `Jordan P` with the email `Jordan P@vnevado.alpineskihouse.co` was flagged for a risky sign-in to SAP via Microsoft Entra ID. This security threat indicates that an attacker might have hijacked this user's account to sift through sensitive financial data in SAP for potential misuse. The alert was triggered by a risky sign-in detected in Microsoft Entra ID, which could be indicative of com"
-      },
-      {
-        "event_id": "exq-incident_166-0001-05a8e792",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_166",
-        "rule": "investigation_graph_step",
-        "severity": "medium",
-        "message": "A suspicious SAP authentication was detected from IP address `107.253.5.27`. This indicates that a user account with a risky sign-in alert in Microsoft Entra ID accessed SAP, potentially to record or modify sensitive financial information."
-      },
       {
         "event_id": "ex-incident_166-AlertInfo-0001-1b703afe",
         "timestamp": "2026-01-01T00:00:00Z",
@@ -2237,17 +2220,6 @@
   },
   "oracle_evidence": [
     {
-      "event_id": "exq-incident_166-0000-4c616c35",
-      "source": "alerts",
-      "timestamp": "2026-01-01T00:00:00Z",
-      "host": "excytin-incident_166",
-      "fields": {
-        "rule": "incident_context",
-        "severity": "high",
-        "message": "As part of an investigation into a recent security incident, it was found that a user account under the name `Jordan P` with the email `Jordan P@vnevado.alpineskihouse.co` was flagged for a risky sign-in to SAP via Microsoft Entra ID. This security threat indicates that an attacker might have hijacked this user's account to sift through sensitive financial data in SAP for potential misuse. The alert was triggered by a risky sign-in detected in Microsoft Entra ID, which could be indicative of com"
-      }
-    },
-    {
       "event_id": "exq-incident_166-0001-05a8e792",
       "source": "alerts",
       "timestamp": "2026-01-01T00:00:00Z",
@@ -2256,18 +2228,6 @@
         "rule": "investigation_graph_step",
         "severity": "medium",
         "message": "A suspicious SAP authentication was detected from IP address `107.253.5.27`. This indicates that a user account with a risky sign-in alert in Microsoft Entra ID accessed SAP, potentially to record or modify sensitive financial information."
-      }
-    },
-    {
-      "event_id": "ex-incident_166-AlertInfo-0001-1b703afe",
-      "source": "alerts",
-      "timestamp": "2026-01-01T00:00:00Z",
-      "host": "excytin-incident_166",
-      "fields": {
-        "rule": "sentinel_alert",
-        "severity": null,
-        "message": "",
-        "fields": {}
       }
     }
   ],

@@ -11,9 +11,6 @@
     "summary": "Automated detection: Internal port scan from workstation. Investigate correlated telemetry.",
     "title": "Internal port scan from workstation",
     "severity": "medium",
-    "attck": [
-      "T1046"
-    ],
     "assets": [
       "WS-076",
       "SRV-WEB-05"
@@ -99,60 +96,6 @@
           "message": "Routine logon event",
           "noise": true
         }
-      },
-      {
-        "event_id": "ev-soc-000009-0",
-        "timestamp": "2025-06-10T00:05:00Z",
-        "host": "WS-076",
-        "rule": "suricata",
-        "severity": "medium",
-        "message": "Primary indicator on WS-076: Internal port scan from workstation",
-        "supports": "confirm",
-        "raw_alert": {
-          "evidence_id": "ev-soc-000009-0",
-          "source": "suricata",
-          "log_type": "suricata",
-          "timestamp": "2025-06-10T00:05:00+00:00",
-          "host": "WS-076",
-          "message": "Primary indicator on WS-076: Internal port scan from workstation",
-          "supports": "confirm"
-        }
-      },
-      {
-        "event_id": "ev-soc-000009-1",
-        "timestamp": "2025-06-10T00:08:00Z",
-        "host": "SRV-WEB-05",
-        "rule": "wazuh",
-        "severity": "medium",
-        "message": "Correlated alert on SRV-WEB-05",
-        "supports": "confirm",
-        "raw_alert": {
-          "evidence_id": "ev-soc-000009-1",
-          "source": "wazuh",
-          "log_type": "wazuh",
-          "timestamp": "2025-06-10T00:08:00+00:00",
-          "host": "SRV-WEB-05",
-          "message": "Correlated alert on SRV-WEB-05",
-          "supports": "confirm"
-        }
-      },
-      {
-        "event_id": "ev-soc-000009-2",
-        "timestamp": "2025-06-10T00:12:00Z",
-        "host": "WS-076",
-        "rule": "suricata",
-        "severity": "medium",
-        "message": "Network activity from 203.0.113.176 to WS-076",
-        "supports": "confirm",
-        "raw_alert": {
-          "evidence_id": "ev-soc-000009-2",
-          "source": "suricata",
-          "log_type": "suricata",
-          "timestamp": "2025-06-10T00:12:00+00:00",
-          "host": "WS-076",
-          "message": "Network activity from 203.0.113.176 to WS-076",
-          "supports": "confirm"
-        }
       }
     ],
     "network": [
@@ -205,75 +148,62 @@
         }
       },
       {
-        "event_id": "soc-ioc-0001-4ab24765",
+        "event_id": "soc-ioc-0001-2eb91be9",
         "timestamp": "2025-06-10T00:15:00Z",
         "host": "WS-076",
         "destination_ip": "203.0.113.176",
         "protocol": "tcp",
-        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
-        "reputation": "malicious"
+        "message": "Observed IP 203.0.113.176"
       }
     ]
   },
   "oracle_evidence": [
     {
-      "event_id": "soc-000009-noise-0",
+      "event_id": "ev-soc-000009-0",
       "source": "alerts",
-      "timestamp": "2025-06-10T00:09:00Z",
-      "host": "WS-021",
+      "timestamp": "2025-06-10T00:05:00Z",
+      "host": "WS-076",
       "fields": {
-        "rule": "Internal port scan from workstation",
+        "rule": "suricata",
         "severity": "medium",
-        "message": "Routine logon event",
-        "user": null,
-        "raw_alert": {
-          "log_id": "soc-000009-noise-0",
-          "timestamp": "2025-06-10T00:09:00+00:00",
-          "source": "windows_security",
-          "host": "WS-021",
-          "message": "Routine logon event",
-          "noise": true
-        }
+        "message": "Primary indicator on WS-076: Internal port scan from workstation",
+        "supports": "confirm"
       }
     },
     {
-      "event_id": "soc-000009-noise-1",
+      "event_id": "ev-soc-000009-1",
       "source": "alerts",
+      "timestamp": "2025-06-10T00:08:00Z",
+      "host": "SRV-WEB-05",
+      "fields": {
+        "rule": "wazuh",
+        "severity": "medium",
+        "message": "Correlated alert on SRV-WEB-05",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "ev-soc-000009-2",
+      "source": "alerts",
+      "timestamp": "2025-06-10T00:12:00Z",
+      "host": "WS-076",
+      "fields": {
+        "rule": "suricata",
+        "severity": "medium",
+        "message": "Network activity from 203.0.113.176 to WS-076",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "soc-ioc-rep-0001-4ab24765",
+      "source": "network",
       "timestamp": "2025-06-10T00:15:00Z",
-      "host": "WS-017",
+      "host": "WS-076",
       "fields": {
-        "rule": "Internal port scan from workstation",
-        "severity": "medium",
-        "message": "Routine logon event",
-        "user": null,
-        "raw_alert": {
-          "log_id": "soc-000009-noise-1",
-          "timestamp": "2025-06-10T00:15:00+00:00",
-          "source": "windows_security",
-          "host": "WS-017",
-          "message": "Routine logon event",
-          "noise": true
-        }
-      }
-    },
-    {
-      "event_id": "soc-000009-noise-2",
-      "source": "alerts",
-      "timestamp": "2025-06-10T00:11:00Z",
-      "host": "WS-051",
-      "fields": {
-        "rule": "Internal port scan from workstation",
-        "severity": "medium",
-        "message": "Routine logon event",
-        "user": null,
-        "raw_alert": {
-          "log_id": "soc-000009-noise-2",
-          "timestamp": "2025-06-10T00:11:00+00:00",
-          "source": "windows_security",
-          "host": "WS-051",
-          "message": "Routine logon event",
-          "noise": true
-        }
+        "destination_ip": "203.0.113.176",
+        "protocol": "tcp",
+        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
+        "reputation": "malicious"
       }
     }
   ],
@@ -367,6 +297,13 @@
     "attck": [
       "T1046"
     ],
+    "ioc_enrichment": {
+      "203.0.113.176": {
+        "type": "ip",
+        "reputation": "malicious",
+        "category": "scanner"
+      }
+    },
     "sealed": true
   }
 }

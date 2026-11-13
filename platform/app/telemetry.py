@@ -22,6 +22,22 @@ def flatten_pack(pack: dict[str, Any]) -> list[dict[str, Any]]:
     return records
 
 
+# Label-bearing keys must not appear on public telemetry observations.
+_SEALED_FIELD_KEYS = {
+    "supports",
+    "reputation",
+    "label",
+    "answer",
+    "accept",
+    "is_true_positive",
+    "ground_truth",
+    "attck",
+    "attack_techniques",
+    "solution",
+    "raw_alert",
+}
+
+
 def normalize_record(source: str, item: dict[str, Any]) -> dict[str, Any]:
     fields = {
         key: value
@@ -183,12 +199,17 @@ class TelemetryGateway:
         return True
 
     def _public(self, record: dict[str, Any]) -> dict[str, Any]:
+        fields = {
+            k: v
+            for k, v in (record.get("fields") or {}).items()
+            if k not in _SEALED_FIELD_KEYS
+        }
         return {
             "evidence_id": record.get("evidence_id"),
             "source": record.get("source"),
             "timestamp": record.get("timestamp"),
             "host": record.get("host"),
-            "fields": record.get("fields") or {},
+            "fields": fields,
         }
 
     def _observation(self, tool: str, records: list[dict[str, Any]], limit: Any) -> dict[str, Any]:

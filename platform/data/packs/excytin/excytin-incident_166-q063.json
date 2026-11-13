@@ -9,8 +9,7 @@
     "user": "unknown",
     "alert_type": "excytin_investigation",
     "summary": "Can you identify the AppId of the cloud application involved in this suspicious activity?",
-    "context": "We detected a security incident involving suspicious SAP authentication, where an account associated with Jordan P (email: Jordan P@vnevado.alpineskihouse.co) with risky sign-in alert in Microsoft Entra ID, signed in to SAP. There is a possibility that an attacker has taken control of this user account to search through SAP with the intention of recording or modifying sensitive financial information.",
-    "attck": []
+    "context": "We detected a security incident involving suspicious SAP authentication, where an account associated with Jordan P (email: Jordan P@vnevado.alpineskihouse.co) with risky sign-in alert in Microsoft Entra ID, signed in to SAP. There is a possibility that an attacker has taken control of this user account to search through SAP with the intention of recording or modifying sensitive financial information."
   },
   "scope": {
     "allowed_log_sources": [
@@ -27,22 +26,6 @@
   },
   "telemetry": {
     "alerts": [
-      {
-        "event_id": "exq-incident_166-0000-8e67160d",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_166",
-        "rule": "incident_context",
-        "severity": "high",
-        "message": "We detected a security incident involving suspicious SAP authentication, where an account associated with Jordan P (email: Jordan P@vnevado.alpineskihouse.co) with risky sign-in alert in Microsoft Entra ID, signed in to SAP. There is a possibility that an attacker has taken control of this user account to search through SAP with the intention of recording or modifying sensitive financial information."
-      },
-      {
-        "event_id": "exq-incident_166-0001-da6281d4",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_166",
-        "rule": "investigation_graph_step",
-        "severity": "medium",
-        "message": "There is a suspicious authentication attempt to the SAP cloud application with AppId `100`, indicating a potential attacker might have taken control of a user account to access or modify sensitive financial information."
-      },
       {
         "event_id": "ex-incident_166-AlertInfo-0001-1b703afe",
         "timestamp": "2026-01-01T00:00:00Z",
@@ -2237,17 +2220,6 @@
   },
   "oracle_evidence": [
     {
-      "event_id": "exq-incident_166-0000-8e67160d",
-      "source": "alerts",
-      "timestamp": "2026-01-01T00:00:00Z",
-      "host": "excytin-incident_166",
-      "fields": {
-        "rule": "incident_context",
-        "severity": "high",
-        "message": "We detected a security incident involving suspicious SAP authentication, where an account associated with Jordan P (email: Jordan P@vnevado.alpineskihouse.co) with risky sign-in alert in Microsoft Entra ID, signed in to SAP. There is a possibility that an attacker has taken control of this user account to search through SAP with the intention of recording or modifying sensitive financial information."
-      }
-    },
-    {
       "event_id": "exq-incident_166-0001-da6281d4",
       "source": "alerts",
       "timestamp": "2026-01-01T00:00:00Z",
@@ -2256,18 +2228,6 @@
         "rule": "investigation_graph_step",
         "severity": "medium",
         "message": "There is a suspicious authentication attempt to the SAP cloud application with AppId `100`, indicating a potential attacker might have taken control of a user account to access or modify sensitive financial information."
-      }
-    },
-    {
-      "event_id": "ex-incident_166-AlertInfo-0001-1b703afe",
-      "source": "alerts",
-      "timestamp": "2026-01-01T00:00:00Z",
-      "host": "excytin-incident_166",
-      "fields": {
-        "rule": "sentinel_alert",
-        "severity": null,
-        "message": "",
-        "fields": {}
       }
     }
   ],

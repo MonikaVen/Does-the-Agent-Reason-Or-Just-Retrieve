@@ -9,8 +9,7 @@
     "user": "unknown",
     "alert_type": "excytin_investigation",
     "summary": "As part of this incident, several dual-purpose tools were also dropped on the device. Can you identify one of the dual-purpose tools that was dropped?",
-    "context": "A Mimikatz credential theft tool was detected on a device on July 4, 2024. Mimikatz is a hacktool that can harvest various types of credentials, including plaintext passwords, password hashes, smartcard PINs, and Kerberos tickets. The detected command line activity involved the `mimikatz.exe` process using the `lsadump::dcsync` command to target the domain `vnevado.alpineskihouse.co`. This indicates that an attacker might be trying to harvest credentials to log into this or other devices on the ",
-    "attck": []
+    "context": "A Mimikatz credential theft tool was detected on a device on July 4, 2024. Mimikatz is a hacktool that can harvest various types of credentials, including plaintext passwords, password hashes, smartcard PINs, and Kerberos tickets. The detected command line activity involved the `mimikatz.exe` process using the `lsadump::dcsync` command to target the domain `vnevado.alpineskihouse.co`. This indicates that an attacker might be trying to harvest credentials to log into this or other devices on the "
   },
   "scope": {
     "allowed_log_sources": [
@@ -27,30 +26,6 @@
   },
   "telemetry": {
     "alerts": [
-      {
-        "event_id": "exq-incident_39-0000-a37399e7",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_39",
-        "rule": "incident_context",
-        "severity": "high",
-        "message": "A Mimikatz credential theft tool was detected on a device on July 4, 2024. Mimikatz is a hacktool that can harvest various types of credentials, including plaintext passwords, password hashes, smartcard PINs, and Kerberos tickets. The detected command line activity involved the `mimikatz.exe` process using the `lsadump::dcsync` command to target the domain `vnevado.alpineskihouse.co`. This indicates that an attacker might be trying to harvest credentials to log into this or other devices on the "
-      },
-      {
-        "event_id": "exq-incident_39-0001-1e358cb9",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_39",
-        "rule": "investigation_graph_step",
-        "severity": "medium",
-        "message": "The Mimikatz credential theft tool was detected attempting to harvest credentials to log into this or other devices on the network, associated with the account having AadUserId `1d94aaf6-efe6-4e76-ad56-ffd7d1257bc1`."
-      },
-      {
-        "event_id": "exq-incident_39-0002-cd4b7f26",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_39",
-        "rule": "investigation_graph_step",
-        "severity": "medium",
-        "message": "Multiple dual-purpose tools, including `psexesvc.exe`, were dropped on the device, indicating potential preparation for credential theft, privilege escalation, or lateral movement."
-      },
       {
         "event_id": "ex-incident_39-AlertInfo-0001-ad77180d",
         "timestamp": "2026-01-01T00:00:00Z",
@@ -737,6 +712,393 @@
       },
       {
         "event_id": "ex-incident_39-AlertEvidenc-0007-37ef2c17",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0008-37ef2c17",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0009-37ef2c17",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0010-f101c286",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0011-43430702",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0012-fd841e34",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0013-17349218",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0014-17349218",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0015-45349e25",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0016-17349218",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0017-17349218",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0018-45349e25",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0019-45349e25",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0020-45349e25",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0021-45349e25",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0022-45349e25",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0023-45349e25",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0024-17349218",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0025-45349e25",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0026-45349e25",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0027-45349e25",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0028-17349218",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0029-17349218",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0030-17349218",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0031-17349218",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0032-17349218",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0033-17349218",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0034-17349218",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0035-17349218",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0036-45349e25",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0037-45349e25",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0038-45349e25",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0039-45349e25",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-AlertEvidenc-0040-45349e25",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-SecurityInci-0001-13a75ad9",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-SecurityInci-0002-8edb5632",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-SecurityInci-0003-bdd15015",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-SecurityInci-0004-7856ceb3",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-SecurityInci-0005-ecb68155",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-SecurityInci-0006-096c9312",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-SecurityInci-0007-9e1892d1",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-SecurityInci-0008-1fc5a1b4",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-SecurityInci-0009-1df354ae",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_39",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_39-SecurityInci-0010-1e0f3b0e",
         "timestamp": "2026-01-01T00:00:00Z",
         "host": "excytin-incident_39",
         "rule": "sentinel_alert",
@@ -2263,17 +2625,6 @@
     ]
   },
   "oracle_evidence": [
-    {
-      "event_id": "exq-incident_39-0000-a37399e7",
-      "source": "alerts",
-      "timestamp": "2026-01-01T00:00:00Z",
-      "host": "excytin-incident_39",
-      "fields": {
-        "rule": "incident_context",
-        "severity": "high",
-        "message": "A Mimikatz credential theft tool was detected on a device on July 4, 2024. Mimikatz is a hacktool that can harvest various types of credentials, including plaintext passwords, password hashes, smartcard PINs, and Kerberos tickets. The detected command line activity involved the `mimikatz.exe` process using the `lsadump::dcsync` command to target the domain `vnevado.alpineskihouse.co`. This indicates that an attacker might be trying to harvest credentials to log into this or other devices on the "
-      }
-    },
     {
       "event_id": "exq-incident_39-0001-1e358cb9",
       "source": "alerts",

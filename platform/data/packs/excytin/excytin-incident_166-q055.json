@@ -9,8 +9,7 @@
     "user": "unknown",
     "alert_type": "excytin_investigation",
     "summary": "Following the anonymous sign-in, a suspicious inbox manipulation rule was set on the inbox of a user named Jordan P with email laylaw@vnevado.alpineskihouse.co. Can you identify the cloud application AppId associated with this suspicious ac",
-    "context": "On 2024-07-22, at 08:45:32.664841+00:00, a sign-in from an anonymous IP address 95.202.65.202 was detected. The account associated with this sign-in has the AadUserId `89e933b9-5b2e-4bd6-bcdf-033db707ef82`. This incident might indicate potential malicious activity leveraging the anonymized IP.",
-    "attck": []
+    "context": "On 2024-07-22, at 08:45:32.664841+00:00, a sign-in from an anonymous IP address 95.202.65.202 was detected. The account associated with this sign-in has the AadUserId `89e933b9-5b2e-4bd6-bcdf-033db707ef82`. This incident might indicate potential malicious activity leveraging the anonymized IP."
   },
   "scope": {
     "allowed_log_sources": [
@@ -27,38 +26,6 @@
   },
   "telemetry": {
     "alerts": [
-      {
-        "event_id": "exq-incident_166-0000-41c7e8e5",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_166",
-        "rule": "incident_context",
-        "severity": "high",
-        "message": "On 2024-07-22, at 08:45:32.664841+00:00, a sign-in from an anonymous IP address 95.202.65.202 was detected. The account associated with this sign-in has the AadUserId `89e933b9-5b2e-4bd6-bcdf-033db707ef82`. This incident might indicate potential malicious activity leveraging the anonymized IP."
-      },
-      {
-        "event_id": "exq-incident_166-0001-623879e3",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_166",
-        "rule": "investigation_graph_step",
-        "severity": "medium",
-        "message": "There was a sign-in from an anonymous IP address by the account with AadUserId `89e933b9-5b2e-4bd6-bcdf-033db707ef82`."
-      },
-      {
-        "event_id": "exq-incident_166-0002-8ae8d32a",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_166",
-        "rule": "investigation_graph_step",
-        "severity": "medium",
-        "message": "A suspicious inbox rule named 'ITCleanup' was set on the inbox of the user `Jordan P` (email: `laylaw@vnevado.alpineskihouse.co`), moving messages to a folder named 'RSS Feeds'."
-      },
-      {
-        "event_id": "exq-incident_166-0003-d4257e20",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_166",
-        "rule": "investigation_graph_step",
-        "severity": "medium",
-        "message": "The cloud application with AppId `20893` may have been leveraged during this suspicious activity."
-      },
       {
         "event_id": "ex-incident_166-AlertInfo-0001-1b703afe",
         "timestamp": "2026-01-01T00:00:00Z",
@@ -2253,17 +2220,6 @@
   },
   "oracle_evidence": [
     {
-      "event_id": "exq-incident_166-0000-41c7e8e5",
-      "source": "alerts",
-      "timestamp": "2026-01-01T00:00:00Z",
-      "host": "excytin-incident_166",
-      "fields": {
-        "rule": "incident_context",
-        "severity": "high",
-        "message": "On 2024-07-22, at 08:45:32.664841+00:00, a sign-in from an anonymous IP address 95.202.65.202 was detected. The account associated with this sign-in has the AadUserId `89e933b9-5b2e-4bd6-bcdf-033db707ef82`. This incident might indicate potential malicious activity leveraging the anonymized IP."
-      }
-    },
-    {
       "event_id": "exq-incident_166-0001-623879e3",
       "source": "alerts",
       "timestamp": "2026-01-01T00:00:00Z",
@@ -2283,6 +2239,17 @@
         "rule": "investigation_graph_step",
         "severity": "medium",
         "message": "A suspicious inbox rule named 'ITCleanup' was set on the inbox of the user `Jordan P` (email: `laylaw@vnevado.alpineskihouse.co`), moving messages to a folder named 'RSS Feeds'."
+      }
+    },
+    {
+      "event_id": "exq-incident_166-0003-d4257e20",
+      "source": "alerts",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "host": "excytin-incident_166",
+      "fields": {
+        "rule": "investigation_graph_step",
+        "severity": "medium",
+        "message": "The cloud application with AppId `20893` may have been leveraged during this suspicious activity."
       }
     }
   ],

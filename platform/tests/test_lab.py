@@ -52,6 +52,87 @@ def test_typed_upload_and_sealed_ground_truth():
     assert present["alert"] and present["telemetry"] and present["knowledge"] and present["ground_truth"]
 
 
+def test_truth_labels_only_reach_oracle_evidence():
+    """Shared alert/telemetry must not carry sealed answers; C6 oracle_evidence may."""
+    from app.context import build_context, public_alert
+    from app.conditions import get_condition
+    from app.telemetry import TelemetryGateway, TelemetryStore
+
+    pack = {
+        "incident_id": "seal-1",
+        "alert": {
+            "host": "h1",
+            "summary": "Investigate anomalous session",
+            "attck": ["T1021.001"],
+            "label": "malicious",
+        },
+        "telemetry": {
+            "alerts": [
+                {
+                    "event_id": "pub-1",
+                    "host": "h1",
+                    "timestamp": "2025-01-01T00:00:00Z",
+                    "message": "public log",
+                    "supports": "confirm",
+                }
+            ]
+        },
+        "oracle_evidence": [
+            {
+                "event_id": "gold-1",
+                "source": "alerts",
+                "host": "h1",
+                "timestamp": "2025-01-01T00:00:00Z",
+                "fields": {"message": "decisive gold step", "supports": "confirm"},
+            }
+        ],
+        "ground_truth": {"answer": "secret-answer", "label": "malicious", "sealed": True},
+        "scope": {"allowed_log_sources": ["alerts"], "hosts": ["h1"]},
+    }
+    alert = public_alert(pack["alert"])
+    assert "attck" not in alert and "label" not in alert
+    ctx = build_context(
+        condition_id="C0",
+        profile=get_condition("C0"),
+        pack=pack,
+        state={},
+        observations=[],
+        knowledge=[],
+        tools=[],
+    )
+    blob = json.dumps(ctx)
+    assert "secret-answer" not in blob
+    assert "T1021.001" not in blob
+    assert '"label": "malicious"' not in blob
+    assert "ground_truth" not in blob
+
+    gateway = TelemetryGateway(TelemetryStore(pack))
+    obs = gateway.query_events({"source": "alerts", "limit": 10})
+    assert obs["records"]
+    assert "supports" not in (obs["records"][0].get("fields") or {})
+
+    # Converted packs: gold/solution rows live only under oracle_evidence.
+    manifest_path = ROOT / "data" / "packs" / "manifest.json"
+    if manifest_path.exists():
+        manifest = json.loads(manifest_path.read_text())
+        for dataset in ("SOC-AgentBench", "ExCyTIn-Bench", "Cyber-AIT-ADS"):
+            row = next(r for r in manifest["packs"] if r["dataset"] == dataset)
+            converted = json.loads((ROOT / row["path"]).read_text())
+            tele_blob = json.dumps(converted.get("telemetry") or {})
+            gt = converted.get("ground_truth") or {}
+            answer = str(gt.get("answer") or "")
+            if answer and dataset == "ExCyTIn-Bench":
+                assert answer not in tele_blob
+            assert "investigation_graph_step" not in tele_blob
+            assert '"supports"' not in tele_blob
+            assert "gold_evidence" not in tele_blob
+            if dataset == "Cyber-AIT-ADS":
+                assert answer not in str((converted.get("alert") or {}).get("summary") or "")
+            oracle = json.dumps(converted.get("oracle_evidence") or {})
+            if dataset == "ExCyTIn-Bench":
+                assert "investigation_graph_step" in oracle or converted.get("oracle_evidence")
+
+
 def test_extract_json_from_fence():
     data = extract_json("noise ```json\n{\"verdict\": \"benign\"}\n```")
     assert data["verdict"] == "benign"

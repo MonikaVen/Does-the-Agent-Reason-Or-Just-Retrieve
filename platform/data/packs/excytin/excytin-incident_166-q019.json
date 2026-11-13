@@ -9,8 +9,7 @@
     "user": "unknown",
     "alert_type": "excytin_investigation",
     "summary": "Can you identify the email of the user account that signed in to SAP with a risky sign-in alert?",
-    "context": "During a security incident, there was a sign-in from an anonymous IP address `95.202.65.202`, indicating possible use of a Tor browser or anonymizer VPNs. Following this, a user account with a risky sign-in alert in Microsoft Entra ID signed in to SAP, which might suggest an attacker taking control of an account to manipulate sensitive financial information in SAP systems.",
-    "attck": []
+    "context": "During a security incident, there was a sign-in from an anonymous IP address `95.202.65.202`, indicating possible use of a Tor browser or anonymizer VPNs. Following this, a user account with a risky sign-in alert in Microsoft Entra ID signed in to SAP, which might suggest an attacker taking control of an account to manipulate sensitive financial information in SAP systems."
   },
   "scope": {
     "allowed_log_sources": [
@@ -27,30 +26,6 @@
   },
   "telemetry": {
     "alerts": [
-      {
-        "event_id": "exq-incident_166-0000-7ad32eb5",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_166",
-        "rule": "incident_context",
-        "severity": "high",
-        "message": "During a security incident, there was a sign-in from an anonymous IP address `95.202.65.202`, indicating possible use of a Tor browser or anonymizer VPNs. Following this, a user account with a risky sign-in alert in Microsoft Entra ID signed in to SAP, which might suggest an attacker taking control of an account to manipulate sensitive financial information in SAP systems."
-      },
-      {
-        "event_id": "exq-incident_166-0001-0504e9d5",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_166",
-        "rule": "investigation_graph_step",
-        "severity": "medium",
-        "message": "A user account with AadUserId `89e933b9-5b2e-4bd6-bcdf-033db707ef82` signed in from an anonymous IP address."
-      },
-      {
-        "event_id": "exq-incident_166-0002-c68c5161",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_166",
-        "rule": "investigation_graph_step",
-        "severity": "medium",
-        "message": "The user account with the email `Jordan P@vnevado.alpineskihouse.co`, which had a risky sign-in alert in Microsoft Entra ID, signed in to SAP."
-      },
       {
         "event_id": "ex-incident_166-AlertInfo-0001-1b703afe",
         "timestamp": "2026-01-01T00:00:00Z",
@@ -2244,17 +2219,6 @@
     ]
   },
   "oracle_evidence": [
-    {
-      "event_id": "exq-incident_166-0000-7ad32eb5",
-      "source": "alerts",
-      "timestamp": "2026-01-01T00:00:00Z",
-      "host": "excytin-incident_166",
-      "fields": {
-        "rule": "incident_context",
-        "severity": "high",
-        "message": "During a security incident, there was a sign-in from an anonymous IP address `95.202.65.202`, indicating possible use of a Tor browser or anonymizer VPNs. Following this, a user account with a risky sign-in alert in Microsoft Entra ID signed in to SAP, which might suggest an attacker taking control of an account to manipulate sensitive financial information in SAP systems."
-      }
-    },
     {
       "event_id": "exq-incident_166-0001-0504e9d5",
       "source": "alerts",

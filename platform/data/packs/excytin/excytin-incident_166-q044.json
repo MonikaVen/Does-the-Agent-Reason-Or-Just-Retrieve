@@ -9,8 +9,7 @@
     "user": "unknown",
     "alert_type": "excytin_investigation",
     "summary": "What is the IP address associated with the business email compromise (BEC) financial fraud incident?",
-    "context": "A suspicious SAP authentication incident was reported where a user account with a risky sign-in alert in Microsoft Entra ID signed in to SAP, potentially allowing an attacker to record or modify sensitive financial information. The cloud application has AppId `100` and a related IP address `107.253.5.27`. This incident might be connected to another alert involving financial fraud through business email compromise (BEC), where a suspicious inbox rule that hides incoming emails was created in a ri",
-    "attck": []
+    "context": "A suspicious SAP authentication incident was reported where a user account with a risky sign-in alert in Microsoft Entra ID signed in to SAP, potentially allowing an attacker to record or modify sensitive financial information. The cloud application has AppId `100` and a related IP address `107.253.5.27`. This incident might be connected to another alert involving financial fraud through business email compromise (BEC), where a suspicious inbox rule that hides incoming emails was created in a ri"
   },
   "scope": {
     "allowed_log_sources": [
@@ -27,30 +26,6 @@
   },
   "telemetry": {
     "alerts": [
-      {
-        "event_id": "exq-incident_166-0000-8d3346cb",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_166",
-        "rule": "incident_context",
-        "severity": "high",
-        "message": "A suspicious SAP authentication incident was reported where a user account with a risky sign-in alert in Microsoft Entra ID signed in to SAP, potentially allowing an attacker to record or modify sensitive financial information. The cloud application has AppId `100` and a related IP address `107.253.5.27`. This incident might be connected to another alert involving financial fraud through business email compromise (BEC), where a suspicious inbox rule that hides incoming emails was created in a ri"
-      },
-      {
-        "event_id": "exq-incident_166-0001-62a0d616",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_166",
-        "rule": "investigation_graph_step",
-        "severity": "medium",
-        "message": "A user account with AadUserId `89e933b9-5b2e-4bd6-bcdf-033db707ef82` had a risky sign-in alert and accessed SAP, potentially to gather or modify sensitive financial information."
-      },
-      {
-        "event_id": "exq-incident_166-0002-17f2ad10",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_166",
-        "rule": "investigation_graph_step",
-        "severity": "medium",
-        "message": "A suspicious inbox rule that hides incoming email messages was created from the IP address `255.246.85.58`, indicating an attempt at business email compromise (BEC) financial fraud."
-      },
       {
         "event_id": "ex-incident_166-AlertInfo-0001-1b703afe",
         "timestamp": "2026-01-01T00:00:00Z",
@@ -2244,17 +2219,6 @@
     ]
   },
   "oracle_evidence": [
-    {
-      "event_id": "exq-incident_166-0000-8d3346cb",
-      "source": "alerts",
-      "timestamp": "2026-01-01T00:00:00Z",
-      "host": "excytin-incident_166",
-      "fields": {
-        "rule": "incident_context",
-        "severity": "high",
-        "message": "A suspicious SAP authentication incident was reported where a user account with a risky sign-in alert in Microsoft Entra ID signed in to SAP, potentially allowing an attacker to record or modify sensitive financial information. The cloud application has AppId `100` and a related IP address `107.253.5.27`. This incident might be connected to another alert involving financial fraud through business email compromise (BEC), where a suspicious inbox rule that hides incoming emails was created in a ri"
-      }
-    },
     {
       "event_id": "exq-incident_166-0001-62a0d616",
       "source": "alerts",

@@ -11,10 +11,6 @@
     "summary": "Automated detection: Privileged container deployed in production namespace. Investigate correlated telemetry.",
     "title": "Privileged container deployed in production namespace",
     "severity": "high",
-    "attck": [
-      "T1611",
-      "T1053.007"
-    ],
     "assets": [
       "WS-171",
       "SRV-DB-05"
@@ -117,60 +113,6 @@
           "message": "Routine logon event",
           "noise": true
         }
-      },
-      {
-        "event_id": "ev-soc-000040-0",
-        "timestamp": "2025-07-11T00:05:00Z",
-        "host": "WS-171",
-        "rule": "kubernetes_audit",
-        "severity": "high",
-        "message": "Primary indicator on WS-171: Privileged container deployed in production namespace",
-        "supports": "confirm",
-        "raw_alert": {
-          "evidence_id": "ev-soc-000040-0",
-          "source": "kubernetes_audit",
-          "log_type": "kubernetes_audit",
-          "timestamp": "2025-07-11T00:05:00+00:00",
-          "host": "WS-171",
-          "message": "Primary indicator on WS-171: Privileged container deployed in production namespace",
-          "supports": "confirm"
-        }
-      },
-      {
-        "event_id": "ev-soc-000040-1",
-        "timestamp": "2025-07-11T00:08:00Z",
-        "host": "SRV-DB-05",
-        "rule": "wazuh",
-        "severity": "high",
-        "message": "Correlated alert on SRV-DB-05",
-        "supports": "confirm",
-        "raw_alert": {
-          "evidence_id": "ev-soc-000040-1",
-          "source": "wazuh",
-          "log_type": "wazuh",
-          "timestamp": "2025-07-11T00:08:00+00:00",
-          "host": "SRV-DB-05",
-          "message": "Correlated alert on SRV-DB-05",
-          "supports": "confirm"
-        }
-      },
-      {
-        "event_id": "ev-soc-000040-2",
-        "timestamp": "2025-07-11T00:12:00Z",
-        "host": "WS-171",
-        "rule": "suricata",
-        "severity": "high",
-        "message": "Network activity from 203.0.113.238 to WS-171",
-        "supports": "confirm",
-        "raw_alert": {
-          "evidence_id": "ev-soc-000040-2",
-          "source": "suricata",
-          "log_type": "suricata",
-          "timestamp": "2025-07-11T00:12:00+00:00",
-          "host": "WS-171",
-          "message": "Network activity from 203.0.113.238 to WS-171",
-          "supports": "confirm"
-        }
       }
     ],
     "network": [
@@ -207,75 +149,62 @@
         }
       },
       {
-        "event_id": "soc-ioc-0001-30c17700",
+        "event_id": "soc-ioc-0001-defc7aa9",
         "timestamp": "2025-07-11T00:15:00Z",
         "host": "WS-171",
         "destination_ip": "203.0.113.238",
         "protocol": "tcp",
-        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
-        "reputation": "malicious"
+        "message": "Observed IP 203.0.113.238"
       }
     ]
   },
   "oracle_evidence": [
     {
-      "event_id": "soc-000040-log-001",
+      "event_id": "ev-soc-000040-0",
       "source": "alerts",
       "timestamp": "2025-07-11T00:05:00Z",
       "host": "WS-171",
       "fields": {
-        "rule": "Privileged container deployed in production namespace",
+        "rule": "kubernetes_audit",
         "severity": "high",
         "message": "Primary indicator on WS-171: Privileged container deployed in production namespace",
-        "user": "admin_jdoe",
-        "raw_alert": {
-          "log_id": "soc-000040-log-001",
-          "timestamp": "2025-07-11T00:05:00+00:00",
-          "source": "kubernetes_audit",
-          "host": "WS-171",
-          "user": "admin_jdoe",
-          "message": "Primary indicator on WS-171: Privileged container deployed in production namespace"
-        }
+        "supports": "confirm"
       }
     },
     {
-      "event_id": "soc-000040-noise-0",
+      "event_id": "ev-soc-000040-1",
       "source": "alerts",
-      "timestamp": "2025-07-11T00:05:00Z",
-      "host": "WS-059",
+      "timestamp": "2025-07-11T00:08:00Z",
+      "host": "SRV-DB-05",
       "fields": {
-        "rule": "Privileged container deployed in production namespace",
+        "rule": "wazuh",
         "severity": "high",
-        "message": "Routine logon event",
-        "user": null,
-        "raw_alert": {
-          "log_id": "soc-000040-noise-0",
-          "timestamp": "2025-07-11T00:05:00+00:00",
-          "source": "windows_security",
-          "host": "WS-059",
-          "message": "Routine logon event",
-          "noise": true
-        }
+        "message": "Correlated alert on SRV-DB-05",
+        "supports": "confirm"
       }
     },
     {
-      "event_id": "soc-000040-noise-1",
+      "event_id": "ev-soc-000040-2",
       "source": "alerts",
-      "timestamp": "2025-07-11T00:19:00Z",
-      "host": "WS-071",
+      "timestamp": "2025-07-11T00:12:00Z",
+      "host": "WS-171",
       "fields": {
-        "rule": "Privileged container deployed in production namespace",
+        "rule": "suricata",
         "severity": "high",
-        "message": "Routine logon event",
-        "user": null,
-        "raw_alert": {
-          "log_id": "soc-000040-noise-1",
-          "timestamp": "2025-07-11T00:19:00+00:00",
-          "source": "windows_security",
-          "host": "WS-071",
-          "message": "Routine logon event",
-          "noise": true
-        }
+        "message": "Network activity from 203.0.113.238 to WS-171",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "soc-ioc-rep-0001-30c17700",
+      "source": "network",
+      "timestamp": "2025-07-11T00:15:00Z",
+      "host": "WS-171",
+      "fields": {
+        "destination_ip": "203.0.113.238",
+        "protocol": "tcp",
+        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
+        "reputation": "malicious"
       }
     }
   ],
@@ -370,6 +299,13 @@
       "T1611",
       "T1053.007"
     ],
+    "ioc_enrichment": {
+      "203.0.113.238": {
+        "type": "ip",
+        "reputation": "malicious",
+        "category": "scanner"
+      }
+    },
     "sealed": true
   }
 }

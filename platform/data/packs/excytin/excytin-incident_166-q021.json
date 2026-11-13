@@ -9,8 +9,7 @@
     "user": "unknown",
     "alert_type": "excytin_investigation",
     "summary": "Can you identify the Application ID for the cloud application where the SAP sign-in activity was observed?",
-    "context": "A security incident reported a sign-in from an anonymous IP address `192.238.237.190` on 2024-07-22 at 09:11:31. This alert suggests that anonymizing methods might have been used to hide the user's identity, which could indicate a potential malicious intent. Subsequently, a user involved in a business email compromise (BEC) alert signed in to SAP applications in a suspicious manner, indicating potential unauthorized access to sensitive financial information.",
-    "attck": []
+    "context": "A security incident reported a sign-in from an anonymous IP address `192.238.237.190` on 2024-07-22 at 09:11:31. This alert suggests that anonymizing methods might have been used to hide the user's identity, which could indicate a potential malicious intent. Subsequently, a user involved in a business email compromise (BEC) alert signed in to SAP applications in a suspicious manner, indicating potential unauthorized access to sensitive financial information."
   },
   "scope": {
     "allowed_log_sources": [
@@ -27,30 +26,6 @@
   },
   "telemetry": {
     "alerts": [
-      {
-        "event_id": "exq-incident_166-0000-23970a2f",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_166",
-        "rule": "incident_context",
-        "severity": "high",
-        "message": "A security incident reported a sign-in from an anonymous IP address `192.238.237.190` on 2024-07-22 at 09:11:31. This alert suggests that anonymizing methods might have been used to hide the user's identity, which could indicate a potential malicious intent. Subsequently, a user involved in a business email compromise (BEC) alert signed in to SAP applications in a suspicious manner, indicating potential unauthorized access to sensitive financial information."
-      },
-      {
-        "event_id": "exq-incident_166-0001-37ce0054",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_166",
-        "rule": "investigation_graph_step",
-        "severity": "medium",
-        "message": "A user with AadUserId `89e933b9-5b2e-4bd6-bcdf-033db707ef82` signed in from an anonymous IP address (e.g. Tor browser, anonymizer VPNs) on 2024-07-22 at 09:11:31.290020+00:00."
-      },
-      {
-        "event_id": "exq-incident_166-0002-ecc80d4d",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_166",
-        "rule": "investigation_graph_step",
-        "severity": "medium",
-        "message": "The same user with AadUserId `89e933b9-5b2e-4bd6-bcdf-033db707ef82` signed in to SAP (AppId `100`) in a suspicious manner, which is related to a business email compromise alert on 2024-07-22 at 14:09:41.075798+00:00."
-      },
       {
         "event_id": "ex-incident_166-AlertInfo-0001-1b703afe",
         "timestamp": "2026-01-01T00:00:00Z",
@@ -2244,17 +2219,6 @@
     ]
   },
   "oracle_evidence": [
-    {
-      "event_id": "exq-incident_166-0000-23970a2f",
-      "source": "alerts",
-      "timestamp": "2026-01-01T00:00:00Z",
-      "host": "excytin-incident_166",
-      "fields": {
-        "rule": "incident_context",
-        "severity": "high",
-        "message": "A security incident reported a sign-in from an anonymous IP address `192.238.237.190` on 2024-07-22 at 09:11:31. This alert suggests that anonymizing methods might have been used to hide the user's identity, which could indicate a potential malicious intent. Subsequently, a user involved in a business email compromise (BEC) alert signed in to SAP applications in a suspicious manner, indicating potential unauthorized access to sensitive financial information."
-      }
-    },
     {
       "event_id": "exq-incident_166-0001-37ce0054",
       "source": "alerts",

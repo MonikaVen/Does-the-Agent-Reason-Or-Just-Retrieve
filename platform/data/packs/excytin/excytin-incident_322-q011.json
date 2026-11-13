@@ -9,8 +9,7 @@
     "user": "unknown",
     "alert_type": "excytin_investigation",
     "summary": "Within this sequence of events, there was a suspicious credential dump from NTDS.dit. Can you identify the file name of the process that was used during this credential dump?",
-    "context": "A suspicious multi-stage security incident was detected involving multiple alerts. Initially, a potentially malicious URL click was detected on August 1, 2024. The click was performed by a user `alyssat@vnevado.alpineskihouse.co`. This was followed by an alert indicating that email messages containing malicious URLs were removed after delivery. Subsequently, there was an alert from Azure Resource Manager noting a suspicious operation from a proxy IP address. These activities can be indicative of",
-    "attck": []
+    "context": "A suspicious multi-stage security incident was detected involving multiple alerts. Initially, a potentially malicious URL click was detected on August 1, 2024. The click was performed by a user `alyssat@vnevado.alpineskihouse.co`. This was followed by an alert indicating that email messages containing malicious URLs were removed after delivery. Subsequently, there was an alert from Azure Resource Manager noting a suspicious operation from a proxy IP address. These activities can be indicative of"
   },
   "scope": {
     "allowed_log_sources": [
@@ -27,46 +26,6 @@
   },
   "telemetry": {
     "alerts": [
-      {
-        "event_id": "exq-incident_322-0000-29e34c32",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_322",
-        "rule": "incident_context",
-        "severity": "high",
-        "message": "A suspicious multi-stage security incident was detected involving multiple alerts. Initially, a potentially malicious URL click was detected on August 1, 2024. The click was performed by a user `alyssat@vnevado.alpineskihouse.co`. This was followed by an alert indicating that email messages containing malicious URLs were removed after delivery. Subsequently, there was an alert from Azure Resource Manager noting a suspicious operation from a proxy IP address. These activities can be indicative of"
-      },
-      {
-        "event_id": "exq-incident_322-0001-6626067a",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_322",
-        "rule": "investigation_graph_step",
-        "severity": "medium",
-        "message": "The email recipient `alyssat@vnevado.alpineskihouse.co` clicked on a potentially malicious URL."
-      },
-      {
-        "event_id": "exq-incident_322-0002-6a7d1835",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_322",
-        "rule": "investigation_graph_step",
-        "severity": "medium",
-        "message": "The email associated with the user having AadUserId `5e5dd0bd-f7ed-4583-8e9e-52f91e31a360` contained a malicious URL and was removed after delivery."
-      },
-      {
-        "event_id": "exq-incident_322-0003-0ad7abf8",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_322",
-        "rule": "investigation_graph_step",
-        "severity": "medium",
-        "message": "There is a suspicious Azure Resource Manager operation from a proxy IP address originating from the host `vnevado-dc`."
-      },
-      {
-        "event_id": "exq-incident_322-0004-8e042e42",
-        "timestamp": "2026-01-01T00:00:00Z",
-        "host": "excytin-incident_322",
-        "rule": "investigation_graph_step",
-        "severity": "medium",
-        "message": "The process `powershell.exe` was used in a suspicious credential dump from the NTDS.dit to obtain user's credentials."
-      },
       {
         "event_id": "ex-incident_322-AlertInfo-0001-a1df2eca",
         "timestamp": "2026-01-01T00:00:00Z",
@@ -735,6 +694,411 @@
       },
       {
         "event_id": "ex-incident_322-AlertEvidenc-0005-fb1ee5e6",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0006-271f9394",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0007-b7f79c26",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0008-f5feb542",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0009-f972c1b3",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0010-d020f549",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0011-f12b21c5",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0012-8a8eba27",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0013-9d058e22",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0014-ca79e707",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0015-2f6c997c",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0016-b407f3a3",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0017-d29f99f9",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0018-03089acb",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0019-58a4f2f3",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0020-d919ef23",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0021-732e8dde",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0022-eb658438",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0023-8f75474d",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0024-215b188f",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0025-62999756",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0026-e11723b7",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0027-04d7f45a",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0028-b10e434b",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0029-271f9394",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0030-b7f79c26",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0031-fd6060bd",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0032-fd6060bd",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0033-fd6060bd",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0034-fd6060bd",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0035-fd6060bd",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0036-f5feb542",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0037-ddf9f860",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0038-ddf9f860",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0039-ddf9f860",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-AlertEvidenc-0040-8f168536",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-SecurityInci-0001-d954b7c1",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-SecurityInci-0002-a39b1c3b",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-SecurityInci-0003-dca62b74",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-SecurityInci-0004-389389b6",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-SecurityInci-0005-b9f91641",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-SecurityInci-0006-3bcb7473",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-SecurityInci-0007-f7e2c10b",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-SecurityInci-0008-11e94f93",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-SecurityInci-0009-89f1768a",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_322",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_322-SecurityInci-0010-10a57638",
         "timestamp": "2026-01-01T00:00:00Z",
         "host": "excytin-incident_322",
         "rule": "sentinel_alert",
@@ -2272,17 +2636,6 @@
   },
   "oracle_evidence": [
     {
-      "event_id": "exq-incident_322-0000-29e34c32",
-      "source": "alerts",
-      "timestamp": "2026-01-01T00:00:00Z",
-      "host": "excytin-incident_322",
-      "fields": {
-        "rule": "incident_context",
-        "severity": "high",
-        "message": "A suspicious multi-stage security incident was detected involving multiple alerts. Initially, a potentially malicious URL click was detected on August 1, 2024. The click was performed by a user `alyssat@vnevado.alpineskihouse.co`. This was followed by an alert indicating that email messages containing malicious URLs were removed after delivery. Subsequently, there was an alert from Azure Resource Manager noting a suspicious operation from a proxy IP address. These activities can be indicative of"
-      }
-    },
-    {
       "event_id": "exq-incident_322-0001-6626067a",
       "source": "alerts",
       "timestamp": "2026-01-01T00:00:00Z",
@@ -2302,6 +2655,28 @@
         "rule": "investigation_graph_step",
         "severity": "medium",
         "message": "The email associated with the user having AadUserId `5e5dd0bd-f7ed-4583-8e9e-52f91e31a360` contained a malicious URL and was removed after delivery."
+      }
+    },
+    {
+      "event_id": "exq-incident_322-0003-0ad7abf8",
+      "source": "alerts",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "host": "excytin-incident_322",
+      "fields": {
+        "rule": "investigation_graph_step",
+        "severity": "medium",
+        "message": "There is a suspicious Azure Resource Manager operation from a proxy IP address originating from the host `vnevado-dc`."
+      }
+    },
+    {
+      "event_id": "exq-incident_322-0004-8e042e42",
+      "source": "alerts",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "host": "excytin-incident_322",
+      "fields": {
+        "rule": "investigation_graph_step",
+        "severity": "medium",
+        "message": "The process `powershell.exe` was used in a suspicious credential dump from the NTDS.dit to obtain user's credentials."
       }
     }
   ],

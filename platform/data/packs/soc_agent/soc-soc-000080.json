@@ -11,9 +11,6 @@
     "summary": "Automated detection: Windows event log clearing detected. Investigate correlated telemetry.",
     "title": "Windows event log clearing detected",
     "severity": "high",
-    "attck": [
-      "T1070.001"
-    ],
     "assets": [
       "WS-195",
       "SRV-FILE-02"
@@ -116,60 +113,6 @@
           "message": "Routine logon event",
           "noise": true
         }
-      },
-      {
-        "event_id": "ev-soc-000080-0",
-        "timestamp": "2025-06-21T00:05:00Z",
-        "host": "WS-195",
-        "rule": "windows_security",
-        "severity": "high",
-        "message": "Primary indicator on WS-195: Windows event log clearing detected",
-        "supports": "confirm",
-        "raw_alert": {
-          "evidence_id": "ev-soc-000080-0",
-          "source": "windows_security",
-          "log_type": "windows_security",
-          "timestamp": "2025-06-21T00:05:00+00:00",
-          "host": "WS-195",
-          "message": "Primary indicator on WS-195: Windows event log clearing detected",
-          "supports": "confirm"
-        }
-      },
-      {
-        "event_id": "ev-soc-000080-1",
-        "timestamp": "2025-06-21T00:08:00Z",
-        "host": "SRV-FILE-02",
-        "rule": "wazuh",
-        "severity": "high",
-        "message": "Correlated alert on SRV-FILE-02",
-        "supports": "confirm",
-        "raw_alert": {
-          "evidence_id": "ev-soc-000080-1",
-          "source": "wazuh",
-          "log_type": "wazuh",
-          "timestamp": "2025-06-21T00:08:00+00:00",
-          "host": "SRV-FILE-02",
-          "message": "Correlated alert on SRV-FILE-02",
-          "supports": "confirm"
-        }
-      },
-      {
-        "event_id": "ev-soc-000080-2",
-        "timestamp": "2025-06-21T00:12:00Z",
-        "host": "WS-195",
-        "rule": "suricata",
-        "severity": "high",
-        "message": "Network activity from 203.0.113.210 to WS-195",
-        "supports": "confirm",
-        "raw_alert": {
-          "evidence_id": "ev-soc-000080-2",
-          "source": "suricata",
-          "log_type": "suricata",
-          "timestamp": "2025-06-21T00:12:00+00:00",
-          "host": "WS-195",
-          "message": "Network activity from 203.0.113.210 to WS-195",
-          "supports": "confirm"
-        }
       }
     ],
     "network": [
@@ -206,75 +149,62 @@
         }
       },
       {
-        "event_id": "soc-ioc-0001-c3d1ee20",
+        "event_id": "soc-ioc-0001-6daf4ada",
         "timestamp": "2025-06-21T00:15:00Z",
         "host": "WS-195",
         "destination_ip": "203.0.113.210",
         "protocol": "tcp",
-        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
-        "reputation": "malicious"
+        "message": "Observed IP 203.0.113.210"
       }
     ]
   },
   "oracle_evidence": [
     {
-      "event_id": "soc-000080-log-001",
+      "event_id": "ev-soc-000080-0",
       "source": "alerts",
       "timestamp": "2025-06-21T00:05:00Z",
       "host": "WS-195",
       "fields": {
-        "rule": "Windows event log clearing detected",
+        "rule": "windows_security",
         "severity": "high",
         "message": "Primary indicator on WS-195: Windows event log clearing detected",
-        "user": "mwilliams",
-        "raw_alert": {
-          "log_id": "soc-000080-log-001",
-          "timestamp": "2025-06-21T00:05:00+00:00",
-          "source": "windows_security",
-          "host": "WS-195",
-          "user": "mwilliams",
-          "message": "Primary indicator on WS-195: Windows event log clearing detected"
-        }
+        "supports": "confirm"
       }
     },
     {
-      "event_id": "soc-000080-noise-0",
+      "event_id": "ev-soc-000080-1",
       "source": "alerts",
-      "timestamp": "2025-06-21T00:10:00Z",
-      "host": "WS-025",
+      "timestamp": "2025-06-21T00:08:00Z",
+      "host": "SRV-FILE-02",
       "fields": {
-        "rule": "Windows event log clearing detected",
+        "rule": "wazuh",
         "severity": "high",
-        "message": "Routine logon event",
-        "user": null,
-        "raw_alert": {
-          "log_id": "soc-000080-noise-0",
-          "timestamp": "2025-06-21T00:10:00+00:00",
-          "source": "windows_security",
-          "host": "WS-025",
-          "message": "Routine logon event",
-          "noise": true
-        }
+        "message": "Correlated alert on SRV-FILE-02",
+        "supports": "confirm"
       }
     },
     {
-      "event_id": "soc-000080-noise-1",
+      "event_id": "ev-soc-000080-2",
       "source": "alerts",
-      "timestamp": "2025-06-21T00:10:00Z",
-      "host": "WS-064",
+      "timestamp": "2025-06-21T00:12:00Z",
+      "host": "WS-195",
       "fields": {
-        "rule": "Windows event log clearing detected",
+        "rule": "suricata",
         "severity": "high",
-        "message": "Routine logon event",
-        "user": null,
-        "raw_alert": {
-          "log_id": "soc-000080-noise-1",
-          "timestamp": "2025-06-21T00:10:00+00:00",
-          "source": "windows_security",
-          "host": "WS-064",
-          "message": "Routine logon event",
-          "noise": true
-        }
+        "message": "Network activity from 203.0.113.210 to WS-195",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "soc-ioc-rep-0001-c3d1ee20",
+      "source": "network",
+      "timestamp": "2025-06-21T00:15:00Z",
+      "host": "WS-195",
+      "fields": {
+        "destination_ip": "203.0.113.210",
+        "protocol": "tcp",
+        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
+        "reputation": "malicious"
       }
     }
   ],
@@ -368,6 +298,13 @@
     "attck": [
       "T1070.001"
     ],
+    "ioc_enrichment": {
+      "203.0.113.210": {
+        "type": "ip",
+        "reputation": "malicious",
+        "category": "scanner"
+      }
+    },
     "sealed": true
   }
 }

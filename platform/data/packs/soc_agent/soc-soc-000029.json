@@ -11,9 +11,6 @@
     "summary": "Automated detection: Password spray detected against Azure AD. Investigate correlated telemetry.",
     "title": "Password spray detected against Azure AD",
     "severity": "medium",
-    "attck": [
-      "T1110.003"
-    ],
     "assets": [
       "WS-133",
       "SRV-FILE-03"
@@ -116,60 +113,6 @@
           "message": "Routine logon event",
           "noise": true
         }
-      },
-      {
-        "event_id": "ev-soc-000029-0",
-        "timestamp": "2025-06-30T00:05:00Z",
-        "host": "WS-133",
-        "rule": "azure_signin",
-        "severity": "medium",
-        "message": "Primary indicator on WS-133: Password spray detected against Azure AD",
-        "supports": "confirm",
-        "raw_alert": {
-          "evidence_id": "ev-soc-000029-0",
-          "source": "azure_signin",
-          "log_type": "azure_signin",
-          "timestamp": "2025-06-30T00:05:00+00:00",
-          "host": "WS-133",
-          "message": "Primary indicator on WS-133: Password spray detected against Azure AD",
-          "supports": "confirm"
-        }
-      },
-      {
-        "event_id": "ev-soc-000029-1",
-        "timestamp": "2025-06-30T00:08:00Z",
-        "host": "SRV-FILE-03",
-        "rule": "wazuh",
-        "severity": "medium",
-        "message": "Correlated alert on SRV-FILE-03",
-        "supports": "confirm",
-        "raw_alert": {
-          "evidence_id": "ev-soc-000029-1",
-          "source": "wazuh",
-          "log_type": "wazuh",
-          "timestamp": "2025-06-30T00:08:00+00:00",
-          "host": "SRV-FILE-03",
-          "message": "Correlated alert on SRV-FILE-03",
-          "supports": "confirm"
-        }
-      },
-      {
-        "event_id": "ev-soc-000029-2",
-        "timestamp": "2025-06-30T00:12:00Z",
-        "host": "WS-133",
-        "rule": "suricata",
-        "severity": "medium",
-        "message": "Network activity from 203.0.113.57 to WS-133",
-        "supports": "confirm",
-        "raw_alert": {
-          "evidence_id": "ev-soc-000029-2",
-          "source": "suricata",
-          "log_type": "suricata",
-          "timestamp": "2025-06-30T00:12:00+00:00",
-          "host": "WS-133",
-          "message": "Network activity from 203.0.113.57 to WS-133",
-          "supports": "confirm"
-        }
       }
     ],
     "network": [
@@ -206,75 +149,62 @@
         }
       },
       {
-        "event_id": "soc-ioc-0001-b55c41b9",
+        "event_id": "soc-ioc-0001-3fbe0f39",
         "timestamp": "2025-06-30T00:15:00Z",
         "host": "WS-133",
         "destination_ip": "203.0.113.57",
         "protocol": "tcp",
-        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
-        "reputation": "malicious"
+        "message": "Observed IP 203.0.113.57"
       }
     ]
   },
   "oracle_evidence": [
     {
-      "event_id": "soc-000029-log-001",
+      "event_id": "ev-soc-000029-0",
       "source": "alerts",
       "timestamp": "2025-06-30T00:05:00Z",
       "host": "WS-133",
       "fields": {
-        "rule": "Password spray detected against Azure AD",
+        "rule": "azure_signin",
         "severity": "medium",
         "message": "Primary indicator on WS-133: Password spray detected against Azure AD",
-        "user": "mwilliams",
-        "raw_alert": {
-          "log_id": "soc-000029-log-001",
-          "timestamp": "2025-06-30T00:05:00+00:00",
-          "source": "azure_signin",
-          "host": "WS-133",
-          "user": "mwilliams",
-          "message": "Primary indicator on WS-133: Password spray detected against Azure AD"
-        }
+        "supports": "confirm"
       }
     },
     {
-      "event_id": "soc-000029-noise-0",
+      "event_id": "ev-soc-000029-1",
       "source": "alerts",
-      "timestamp": "2025-06-30T00:14:00Z",
-      "host": "WS-084",
+      "timestamp": "2025-06-30T00:08:00Z",
+      "host": "SRV-FILE-03",
       "fields": {
-        "rule": "Password spray detected against Azure AD",
+        "rule": "wazuh",
         "severity": "medium",
-        "message": "Routine logon event",
-        "user": null,
-        "raw_alert": {
-          "log_id": "soc-000029-noise-0",
-          "timestamp": "2025-06-30T00:14:00+00:00",
-          "source": "windows_security",
-          "host": "WS-084",
-          "message": "Routine logon event",
-          "noise": true
-        }
+        "message": "Correlated alert on SRV-FILE-03",
+        "supports": "confirm"
       }
     },
     {
-      "event_id": "soc-000029-noise-1",
+      "event_id": "ev-soc-000029-2",
       "source": "alerts",
-      "timestamp": "2025-06-30T00:02:00Z",
-      "host": "WS-043",
+      "timestamp": "2025-06-30T00:12:00Z",
+      "host": "WS-133",
       "fields": {
-        "rule": "Password spray detected against Azure AD",
+        "rule": "suricata",
         "severity": "medium",
-        "message": "Routine logon event",
-        "user": null,
-        "raw_alert": {
-          "log_id": "soc-000029-noise-1",
-          "timestamp": "2025-06-30T00:02:00+00:00",
-          "source": "windows_security",
-          "host": "WS-043",
-          "message": "Routine logon event",
-          "noise": true
-        }
+        "message": "Network activity from 203.0.113.57 to WS-133",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "soc-ioc-rep-0001-b55c41b9",
+      "source": "network",
+      "timestamp": "2025-06-30T00:15:00Z",
+      "host": "WS-133",
+      "fields": {
+        "destination_ip": "203.0.113.57",
+        "protocol": "tcp",
+        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
+        "reputation": "malicious"
       }
     }
   ],
@@ -368,6 +298,13 @@
     "attck": [
       "T1110.003"
     ],
+    "ioc_enrichment": {
+      "203.0.113.57": {
+        "type": "ip",
+        "reputation": "malicious",
+        "category": "scanner"
+      }
+    },
     "sealed": true
   }
 }

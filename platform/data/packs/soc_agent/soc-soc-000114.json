@@ -11,9 +11,6 @@
     "summary": "Automated detection: SSH brute force attempts on jump host. Investigate correlated telemetry.",
     "title": "SSH brute force attempts on jump host",
     "severity": "medium",
-    "attck": [
-      "T1110.001"
-    ],
     "assets": [
       "WS-017",
       "SRV-DB-02"
@@ -116,60 +113,6 @@
           "message": "Routine logon event",
           "noise": true
         }
-      },
-      {
-        "event_id": "ev-soc-000114-0",
-        "timestamp": "2025-07-25T00:05:00Z",
-        "host": "WS-017",
-        "rule": "linux_auth",
-        "severity": "medium",
-        "message": "Primary indicator on WS-017: SSH brute force attempts on jump host",
-        "supports": "confirm",
-        "raw_alert": {
-          "evidence_id": "ev-soc-000114-0",
-          "source": "linux_auth",
-          "log_type": "linux_auth",
-          "timestamp": "2025-07-25T00:05:00+00:00",
-          "host": "WS-017",
-          "message": "Primary indicator on WS-017: SSH brute force attempts on jump host",
-          "supports": "confirm"
-        }
-      },
-      {
-        "event_id": "ev-soc-000114-1",
-        "timestamp": "2025-07-25T00:08:00Z",
-        "host": "SRV-DB-02",
-        "rule": "wazuh",
-        "severity": "medium",
-        "message": "Correlated alert on SRV-DB-02",
-        "supports": "confirm",
-        "raw_alert": {
-          "evidence_id": "ev-soc-000114-1",
-          "source": "wazuh",
-          "log_type": "wazuh",
-          "timestamp": "2025-07-25T00:08:00+00:00",
-          "host": "SRV-DB-02",
-          "message": "Correlated alert on SRV-DB-02",
-          "supports": "confirm"
-        }
-      },
-      {
-        "event_id": "ev-soc-000114-2",
-        "timestamp": "2025-07-25T00:12:00Z",
-        "host": "WS-017",
-        "rule": "suricata",
-        "severity": "medium",
-        "message": "Network activity from 203.0.113.45 to WS-017",
-        "supports": "confirm",
-        "raw_alert": {
-          "evidence_id": "ev-soc-000114-2",
-          "source": "suricata",
-          "log_type": "suricata",
-          "timestamp": "2025-07-25T00:12:00+00:00",
-          "host": "WS-017",
-          "message": "Network activity from 203.0.113.45 to WS-017",
-          "supports": "confirm"
-        }
       }
     ],
     "network": [
@@ -206,75 +149,62 @@
         }
       },
       {
-        "event_id": "soc-ioc-0001-186eccf9",
+        "event_id": "soc-ioc-0001-515a5a8b",
         "timestamp": "2025-07-25T00:15:00Z",
         "host": "WS-017",
         "destination_ip": "203.0.113.45",
         "protocol": "tcp",
-        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
-        "reputation": "malicious"
+        "message": "Observed IP 203.0.113.45"
       }
     ]
   },
   "oracle_evidence": [
     {
-      "event_id": "soc-000114-log-001",
+      "event_id": "ev-soc-000114-0",
       "source": "alerts",
       "timestamp": "2025-07-25T00:05:00Z",
       "host": "WS-017",
       "fields": {
-        "rule": "SSH brute force attempts on jump host",
+        "rule": "linux_auth",
         "severity": "medium",
         "message": "Primary indicator on WS-017: SSH brute force attempts on jump host",
-        "user": "svc_backup",
-        "raw_alert": {
-          "log_id": "soc-000114-log-001",
-          "timestamp": "2025-07-25T00:05:00+00:00",
-          "source": "linux_auth",
-          "host": "WS-017",
-          "user": "svc_backup",
-          "message": "Primary indicator on WS-017: SSH brute force attempts on jump host"
-        }
+        "supports": "confirm"
       }
     },
     {
-      "event_id": "soc-000114-noise-0",
+      "event_id": "ev-soc-000114-1",
       "source": "alerts",
-      "timestamp": "2025-07-25T00:14:00Z",
-      "host": "WS-047",
+      "timestamp": "2025-07-25T00:08:00Z",
+      "host": "SRV-DB-02",
       "fields": {
-        "rule": "SSH brute force attempts on jump host",
+        "rule": "wazuh",
         "severity": "medium",
-        "message": "Routine logon event",
-        "user": null,
-        "raw_alert": {
-          "log_id": "soc-000114-noise-0",
-          "timestamp": "2025-07-25T00:14:00+00:00",
-          "source": "windows_security",
-          "host": "WS-047",
-          "message": "Routine logon event",
-          "noise": true
-        }
+        "message": "Correlated alert on SRV-DB-02",
+        "supports": "confirm"
       }
     },
     {
-      "event_id": "soc-000114-noise-1",
+      "event_id": "ev-soc-000114-2",
       "source": "alerts",
-      "timestamp": "2025-07-25T00:14:00Z",
-      "host": "WS-092",
+      "timestamp": "2025-07-25T00:12:00Z",
+      "host": "WS-017",
       "fields": {
-        "rule": "SSH brute force attempts on jump host",
+        "rule": "suricata",
         "severity": "medium",
-        "message": "Routine logon event",
-        "user": null,
-        "raw_alert": {
-          "log_id": "soc-000114-noise-1",
-          "timestamp": "2025-07-25T00:14:00+00:00",
-          "source": "windows_security",
-          "host": "WS-092",
-          "message": "Routine logon event",
-          "noise": true
-        }
+        "message": "Network activity from 203.0.113.45 to WS-017",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "soc-ioc-rep-0001-186eccf9",
+      "source": "network",
+      "timestamp": "2025-07-25T00:15:00Z",
+      "host": "WS-017",
+      "fields": {
+        "destination_ip": "203.0.113.45",
+        "protocol": "tcp",
+        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
+        "reputation": "malicious"
       }
     }
   ],
@@ -368,6 +298,13 @@
     "attck": [
       "T1110.001"
     ],
+    "ioc_enrichment": {
+      "203.0.113.45": {
+        "type": "ip",
+        "reputation": "malicious",
+        "category": "scanner"
+      }
+    },
     "sealed": true
   }
 }

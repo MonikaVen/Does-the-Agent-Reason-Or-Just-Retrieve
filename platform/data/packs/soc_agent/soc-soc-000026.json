@@ -11,10 +11,6 @@
     "summary": "Automated detection: DNS beaconing pattern to rare domain. Investigate correlated telemetry.",
     "title": "DNS beaconing pattern to rare domain",
     "severity": "critical",
-    "attck": [
-      "T1071.004",
-      "T1568.002"
-    ],
     "assets": [
       "WS-012",
       "SRV-WEB-03"
@@ -100,60 +96,6 @@
           "message": "Routine logon event",
           "noise": true
         }
-      },
-      {
-        "event_id": "ev-soc-000026-0",
-        "timestamp": "2025-06-27T00:05:00Z",
-        "host": "WS-012",
-        "rule": "zeek",
-        "severity": "critical",
-        "message": "Primary indicator on WS-012: DNS beaconing pattern to rare domain",
-        "supports": "confirm",
-        "raw_alert": {
-          "evidence_id": "ev-soc-000026-0",
-          "source": "zeek",
-          "log_type": "zeek",
-          "timestamp": "2025-06-27T00:05:00+00:00",
-          "host": "WS-012",
-          "message": "Primary indicator on WS-012: DNS beaconing pattern to rare domain",
-          "supports": "confirm"
-        }
-      },
-      {
-        "event_id": "ev-soc-000026-1",
-        "timestamp": "2025-06-27T00:08:00Z",
-        "host": "SRV-WEB-03",
-        "rule": "wazuh",
-        "severity": "critical",
-        "message": "Correlated alert on SRV-WEB-03",
-        "supports": "confirm",
-        "raw_alert": {
-          "evidence_id": "ev-soc-000026-1",
-          "source": "wazuh",
-          "log_type": "wazuh",
-          "timestamp": "2025-06-27T00:08:00+00:00",
-          "host": "SRV-WEB-03",
-          "message": "Correlated alert on SRV-WEB-03",
-          "supports": "confirm"
-        }
-      },
-      {
-        "event_id": "ev-soc-000026-2",
-        "timestamp": "2025-06-27T00:12:00Z",
-        "host": "WS-012",
-        "rule": "suricata",
-        "severity": "critical",
-        "message": "Network activity from 203.0.113.134 to WS-012",
-        "supports": "confirm",
-        "raw_alert": {
-          "evidence_id": "ev-soc-000026-2",
-          "source": "suricata",
-          "log_type": "suricata",
-          "timestamp": "2025-06-27T00:12:00+00:00",
-          "host": "WS-012",
-          "message": "Network activity from 203.0.113.134 to WS-012",
-          "supports": "confirm"
-        }
       }
     ],
     "network": [
@@ -206,75 +148,62 @@
         }
       },
       {
-        "event_id": "soc-ioc-0001-de5f4907",
+        "event_id": "soc-ioc-0001-b4b192cd",
         "timestamp": "2025-06-27T00:15:00Z",
         "host": "WS-012",
         "destination_ip": "203.0.113.134",
         "protocol": "tcp",
-        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
-        "reputation": "malicious"
+        "message": "Observed IP 203.0.113.134"
       }
     ]
   },
   "oracle_evidence": [
     {
-      "event_id": "soc-000026-noise-0",
+      "event_id": "ev-soc-000026-0",
       "source": "alerts",
-      "timestamp": "2025-06-27T00:10:00Z",
-      "host": "WS-058",
+      "timestamp": "2025-06-27T00:05:00Z",
+      "host": "WS-012",
       "fields": {
-        "rule": "DNS beaconing pattern to rare domain",
+        "rule": "zeek",
         "severity": "critical",
-        "message": "Routine logon event",
-        "user": null,
-        "raw_alert": {
-          "log_id": "soc-000026-noise-0",
-          "timestamp": "2025-06-27T00:10:00+00:00",
-          "source": "windows_security",
-          "host": "WS-058",
-          "message": "Routine logon event",
-          "noise": true
-        }
+        "message": "Primary indicator on WS-012: DNS beaconing pattern to rare domain",
+        "supports": "confirm"
       }
     },
     {
-      "event_id": "soc-000026-noise-1",
+      "event_id": "ev-soc-000026-1",
       "source": "alerts",
-      "timestamp": "2025-06-27T00:04:00Z",
-      "host": "WS-016",
+      "timestamp": "2025-06-27T00:08:00Z",
+      "host": "SRV-WEB-03",
       "fields": {
-        "rule": "DNS beaconing pattern to rare domain",
+        "rule": "wazuh",
         "severity": "critical",
-        "message": "Routine logon event",
-        "user": null,
-        "raw_alert": {
-          "log_id": "soc-000026-noise-1",
-          "timestamp": "2025-06-27T00:04:00+00:00",
-          "source": "windows_security",
-          "host": "WS-016",
-          "message": "Routine logon event",
-          "noise": true
-        }
+        "message": "Correlated alert on SRV-WEB-03",
+        "supports": "confirm"
       }
     },
     {
-      "event_id": "soc-000026-noise-2",
+      "event_id": "ev-soc-000026-2",
       "source": "alerts",
-      "timestamp": "2025-06-27T00:09:00Z",
-      "host": "WS-092",
+      "timestamp": "2025-06-27T00:12:00Z",
+      "host": "WS-012",
       "fields": {
-        "rule": "DNS beaconing pattern to rare domain",
+        "rule": "suricata",
         "severity": "critical",
-        "message": "Routine logon event",
-        "user": null,
-        "raw_alert": {
-          "log_id": "soc-000026-noise-2",
-          "timestamp": "2025-06-27T00:09:00+00:00",
-          "source": "windows_security",
-          "host": "WS-092",
-          "message": "Routine logon event",
-          "noise": true
-        }
+        "message": "Network activity from 203.0.113.134 to WS-012",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "soc-ioc-rep-0001-de5f4907",
+      "source": "network",
+      "timestamp": "2025-06-27T00:15:00Z",
+      "host": "WS-012",
+      "fields": {
+        "destination_ip": "203.0.113.134",
+        "protocol": "tcp",
+        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
+        "reputation": "malicious"
       }
     }
   ],
@@ -369,6 +298,13 @@
       "T1071.004",
       "T1568.002"
     ],
+    "ioc_enrichment": {
+      "203.0.113.134": {
+        "type": "ip",
+        "reputation": "malicious",
+        "category": "scanner"
+      }
+    },
     "sealed": true
   }
 }
