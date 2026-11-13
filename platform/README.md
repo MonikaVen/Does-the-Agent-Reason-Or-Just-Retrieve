@@ -80,11 +80,14 @@ python3 scripts/convert_benchmarks_to_packs.py
 # Example: run the full C0–C7 matrix on one converted pack
 python3 -m app suite --pack data/packs/secops/secops-q-c01-root-cause.json --provider ollama --model qwen2.5:3b
 
-# Run only the newly added datasets
+# Run each new dataset in its own session/output dir (preferred)
 LAB_STEP_DELAY=0 python3 scripts/run_converted_packs_suite.py \
   --provider ollama --model llama3.2:1b --tools 2 --workers 2 \
-  --datasets SOC-AgentBench,ExCyTIn-Bench \
-  --out reports/c0c7-soc-excytin
+  --datasets SOC-AgentBench --out reports/c0c7-soc
+
+LAB_STEP_DELAY=0 python3 scripts/run_converted_packs_suite.py \
+  --provider ollama --model llama3.2:1b --tools 2 --workers 2 \
+  --datasets ExCyTIn-Bench --out reports/c0c7-excytin
 ```
 
 DiscoveryBench/DiscoveryWorld are not converted.
