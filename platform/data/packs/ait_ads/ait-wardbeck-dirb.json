@@ -1,0 +1,915 @@
+{
+  "incident_id": "ait-wardbeck-dirb",
+  "name": "AIT-ADS wardbeck/dirb",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "wardbeck/dirb",
+  "alert": {
+    "timestamp": "2022-01-23T12:11:49Z",
+    "host": "wardbeck",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on wardbeck: dirb"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-23T12:11:49Z",
+    "end": "2022-01-23T12:12:02Z",
+    "hosts": [
+      "wardbeck"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-deb518cd",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /.hta HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /.hta HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0002-3e883184",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /.hta_ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /.hta_ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0003-a85f24c9",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /.htaccess HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /.htaccess HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0004-f8761c97",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /.htaccess_ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /.htaccess_ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0005-ee92120b",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /.htpasswd HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /.htpasswd HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0006-3bcc9751",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /.htpasswd_ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /.htpasswd_ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0007-f0e986ab",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /@ HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /@ HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0008-dc2d9a55",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~adm HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~adm HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0009-b45ecb82",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~admin HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~admin HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0010-8f7080f9",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~administrator HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~administrator HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0011-5ed5813b",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~amanda HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~amanda HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0012-0dd3478c",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~apache HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~apache HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0013-99f48c1a",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~bin HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~bin HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0014-dd4de4e0",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~ftp HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~ftp HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0015-1c926000",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~guest HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~guest HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0016-7f956940",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~http HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~http HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0017-6f435ad0",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~httpd HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~httpd HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0018-43eddb82",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~log HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~log HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0019-64b1f887",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~logs HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~logs HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0020-fe80d627",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~lp HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~lp HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0021-cdf65a92",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~mail HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~mail HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0022-f95e7006",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~nobody HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~nobody HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0023-b92bfff7",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~operator HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~operator HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0024-eeac488f",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~root HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~root HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0025-ab3334dc",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~sys HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~sys HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0026-16e54242",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~sysadm HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~sysadm HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0027-7d3a5a32",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~sysadmin HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~sysadmin HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0028-a54de7e4",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~test HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~test HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0029-55d05a06",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~tmp HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~tmp HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0030-185c6346",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~user HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~user HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0031-a28b5de0",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~webmaster HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~webmaster HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0032-4f84402b",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~www HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~www HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0033-b388f8ff",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 23 12:11:49.635087 2022] [authz_core:error] [pid 28476] [client 10.132.56.81:49598] AH01630: client denied by server configuration: /var/www/intranet.hurstwong.wardbeck.info/.hta",
+        "raw_alert": {
+          "timestamp": 1642939909.64,
+          "detector": "AMiner: New event type.",
+          "message": "[Sun Jan 23 12:11:49.635087 2022] [authz_core:error] [pid 28476] [client 10.132.56.81:49598] AH01630: client denied by server configuration: /var/www/intranet.hurstwong.wardbeck.info/.hta"
+        }
+      },
+      {
+        "event_id": "ait-0034-c785aa0e",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 23 12:11:49.637861 2022] [authz_core:error] [pid 28476] [client 10.132.56.81:49598] AH01630: client denied by server configuration: /var/www/intranet.hurstwong.wardbeck.info/.hta_",
+        "raw_alert": {
+          "timestamp": 1642939909.64,
+          "detector": "AMiner: New event type.",
+          "message": "[Sun Jan 23 12:11:49.637861 2022] [authz_core:error] [pid 28476] [client 10.132.56.81:49598] AH01630: client denied by server configuration: /var/www/intranet.hurstwong.wardbeck.info/.hta_"
+        }
+      },
+      {
+        "event_id": "ait-0035-9049636b",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 23 12:11:49.640190 2022] [authz_core:error] [pid 28476] [client 10.132.56.81:49598] AH01630: client denied by server configuration: /var/www/intranet.hurstwong.wardbeck.info/.htaccess",
+        "raw_alert": {
+          "timestamp": 1642939909.64,
+          "detector": "AMiner: New event type.",
+          "message": "[Sun Jan 23 12:11:49.640190 2022] [authz_core:error] [pid 28476] [client 10.132.56.81:49598] AH01630: client denied by server configuration: /var/www/intranet.hurstwong.wardbeck.info/.htaccess"
+        }
+      },
+      {
+        "event_id": "ait-0036-5679bfdd",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 23 12:11:49.642689 2022] [authz_core:error] [pid 28476] [client 10.132.56.81:49598] AH01630: client denied by server configuration: /var/www/intranet.hurstwong.wardbeck.info/.htaccess_",
+        "raw_alert": {
+          "timestamp": 1642939909.64,
+          "detector": "AMiner: New event type.",
+          "message": "[Sun Jan 23 12:11:49.642689 2022] [authz_core:error] [pid 28476] [client 10.132.56.81:49598] AH01630: client denied by server configuration: /var/www/intranet.hurstwong.wardbeck.info/.htaccess_"
+        }
+      },
+      {
+        "event_id": "ait-0037-3110324b",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 23 12:11:49.645423 2022] [authz_core:error] [pid 28476] [client 10.132.56.81:49598] AH01630: client denied by server configuration: /var/www/intranet.hurstwong.wardbeck.info/.htpasswd",
+        "raw_alert": {
+          "timestamp": 1642939909.65,
+          "detector": "AMiner: New event type.",
+          "message": "[Sun Jan 23 12:11:49.645423 2022] [authz_core:error] [pid 28476] [client 10.132.56.81:49598] AH01630: client denied by server configuration: /var/www/intranet.hurstwong.wardbeck.info/.htpasswd"
+        }
+      },
+      {
+        "event_id": "ait-0038-2feee330",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 23 12:11:49.648151 2022] [authz_core:error] [pid 28476] [client 10.132.56.81:49598] AH01630: client denied by server configuration: /var/www/intranet.hurstwong.wardbeck.info/.htpasswd_",
+        "raw_alert": {
+          "timestamp": 1642939909.65,
+          "detector": "AMiner: New event type.",
+          "message": "[Sun Jan 23 12:11:49.648151 2022] [authz_core:error] [pid 28476] [client 10.132.56.81:49598] AH01630: client denied by server configuration: /var/www/intranet.hurstwong.wardbeck.info/.htpasswd_"
+        }
+      },
+      {
+        "event_id": "ait-0039-f2376ebb",
+        "timestamp": "2022-01-23T12:11:50Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 23 12:11:50.351805 2022] [php7:error] [pid 28475] [client 10.132.56.81:49602] script '/var/www/intranet.hurstwong.wardbeck.info/admin.php' not found or unable to stat",
+        "raw_alert": {
+          "timestamp": 1642939910.35,
+          "detector": "AMiner: New event type.",
+          "message": "[Sun Jan 23 12:11:50.351805 2022] [php7:error] [pid 28475] [client 10.132.56.81:49602] script '/var/www/intranet.hurstwong.wardbeck.info/admin.php' not found or unable to stat"
+        }
+      },
+      {
+        "event_id": "ait-0040-bec6d76f",
+        "timestamp": "2022-01-23T12:11:55Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:55 +0000] \"GET /index.php HTTP/1.1\" 301 247 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939915.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:55 +0000] \"GET /index.php HTTP/1.1\" 301 247 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0041-6be5650c",
+        "timestamp": "2022-01-23T12:11:55Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:55 +0000] \"GET /javascript HTTP/1.1\" 301 499 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939915.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:55 +0000] \"GET /javascript HTTP/1.1\" 301 499 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0042-aca3dc25",
+        "timestamp": "2022-01-23T12:11:55Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 23 12:11:55.160464 2022] [negotiation:error] [pid 28242] [client 10.132.56.81:49636] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.hurstwong.wardbeck.info/index (None could be negotiated).",
+        "raw_alert": {
+          "timestamp": 1642939915.16,
+          "detector": "AMiner: New event type.",
+          "message": "[Sun Jan 23 12:11:55.160464 2022] [negotiation:error] [pid 28242] [client 10.132.56.81:49636] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.hurstwong.wardbeck.info/index (None could be negotiated)."
+        }
+      },
+      {
+        "event_id": "ait-0043-a6f882ed",
+        "timestamp": "2022-01-23T12:11:55Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 23 12:11:55.256707 2022] [php7:error] [pid 28242] [client 10.132.56.81:49636] script '/var/www/intranet.hurstwong.wardbeck.info/info.php' not found or unable to stat",
+        "raw_alert": {
+          "timestamp": 1642939915.26,
+          "detector": "AMiner: New event type.",
+          "message": "[Sun Jan 23 12:11:55.256707 2022] [php7:error] [pid 28242] [client 10.132.56.81:49636] script '/var/www/intranet.hurstwong.wardbeck.info/info.php' not found or unable to stat"
+        }
+      },
+      {
+        "event_id": "ait-0044-5c3c6339",
+        "timestamp": "2022-01-23T12:11:56Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:56 +0000] \"GET /lost+found HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939916.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:56 +0000] \"GET /lost+found HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0045-396f874b",
+        "timestamp": "2022-01-23T12:11:57Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 23 12:11:57.911542 2022] [php7:error] [pid 28471] [client 10.132.56.81:49654] script '/var/www/intranet.hurstwong.wardbeck.info/phpinfo.php' not found or unable to stat",
+        "raw_alert": {
+          "timestamp": 1642939917.91,
+          "detector": "AMiner: New event type.",
+          "message": "[Sun Jan 23 12:11:57.911542 2022] [php7:error] [pid 28471] [client 10.132.56.81:49654] script '/var/www/intranet.hurstwong.wardbeck.info/phpinfo.php' not found or unable to stat"
+        }
+      },
+      {
+        "event_id": "ait-0046-d096c2a4",
+        "timestamp": "2022-01-23T12:11:59Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:59 +0000] \"GET /server-status HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939919.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:59 +0000] \"GET /server-status HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0047-965bebd0",
+        "timestamp": "2022-01-23T12:11:59Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 23 12:11:59.626982 2022] [authz_core:error] [pid 28469] [client 10.132.56.81:49666] AH01630: client denied by server configuration: /var/www/intranet.hurstwong.wardbeck.info/server-status",
+        "raw_alert": {
+          "timestamp": 1642939919.63,
+          "detector": "AMiner: New event type.",
+          "message": "[Sun Jan 23 12:11:59.626982 2022] [authz_core:error] [pid 28469] [client 10.132.56.81:49666] AH01630: client denied by server configuration: /var/www/intranet.hurstwong.wardbeck.info/server-status"
+        }
+      },
+      {
+        "event_id": "ait-0048-4b306ad8",
+        "timestamp": "2022-01-23T12:12:02Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:12:02 +0000] \"GET /wp-admin HTTP/1.1\" 301 495 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939922.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:12:02 +0000] \"GET /wp-admin HTTP/1.1\" 301 495 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0049-7ddb4a70",
+        "timestamp": "2022-01-23T12:12:02Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:12:02 +0000] \"GET /wp-content HTTP/1.1\" 301 499 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939922.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:12:02 +0000] \"GET /wp-content HTTP/1.1\" 301 499 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0050-5356717c",
+        "timestamp": "2022-01-23T12:12:02Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:12:02 +0000] \"GET /wp-includes HTTP/1.1\" 301 501 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939922.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:12:02 +0000] \"GET /wp-includes HTTP/1.1\" 301 501 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0051-93249867",
+        "timestamp": "2022-01-23T12:12:02Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:12:02 +0000] \"GET /xmlrpc.php HTTP/1.1\" 405 225 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939922.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:12:02 +0000] \"GET /xmlrpc.php HTTP/1.1\" 405 225 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0052-2570c015",
+        "timestamp": "2022-01-23T12:12:02Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 23 12:12:02.271205 2022] [negotiation:error] [pid 28475] [client 10.132.56.81:49682] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.hurstwong.wardbeck.info/wp-blog-header (None could be negotiated).",
+        "raw_alert": {
+          "timestamp": 1642939922.27,
+          "detector": "AMiner: New event type.",
+          "message": "[Sun Jan 23 12:12:02.271205 2022] [negotiation:error] [pid 28475] [client 10.132.56.81:49682] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.hurstwong.wardbeck.info/wp-blog-header (None could be negotiated)."
+        }
+      },
+      {
+        "event_id": "ait-0053-004dae35",
+        "timestamp": "2022-01-23T12:12:02Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 23 12:12:02.304437 2022] [negotiation:error] [pid 28399] [client 10.132.56.81:49684] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.hurstwong.wardbeck.info/wp-config (None could be negotiated).",
+        "raw_alert": {
+          "timestamp": 1642939922.3,
+          "detector": "AMiner: New event type.",
+          "message": "[Sun Jan 23 12:12:02.304437 2022] [negotiation:error] [pid 28399] [client 10.132.56.81:49684] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.hurstwong.wardbeck.info/wp-config (None could be negotiated)."
+        }
+      },
+      {
+        "event_id": "ait-0054-ab3f0512",
+        "timestamp": "2022-01-23T12:12:02Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 23 12:12:02.310674 2022] [negotiation:error] [pid 28399] [client 10.132.56.81:49684] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.hurstwong.wardbeck.info/wp-cron (None could be negotiated).",
+        "raw_alert": {
+          "timestamp": 1642939922.31,
+          "detector": "AMiner: New event type.",
+          "message": "[Sun Jan 23 12:12:02.310674 2022] [negotiation:error] [pid 28399] [client 10.132.56.81:49684] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.hurstwong.wardbeck.info/wp-cron (None could be negotiated)."
+        }
+      },
+      {
+        "event_id": "ait-0055-e5bce1bf",
+        "timestamp": "2022-01-23T12:12:02Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 23 12:12:02.323656 2022] [negotiation:error] [pid 28399] [client 10.132.56.81:49684] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.hurstwong.wardbeck.info/wp-links-opml (None could be negotiated).",
+        "raw_alert": {
+          "timestamp": 1642939922.32,
+          "detector": "AMiner: New event type.",
+          "message": "[Sun Jan 23 12:12:02.323656 2022] [negotiation:error] [pid 28399] [client 10.132.56.81:49684] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.hurstwong.wardbeck.info/wp-links-opml (None could be negotiated)."
+        }
+      },
+      {
+        "event_id": "ait-0056-eeeb7a4d",
+        "timestamp": "2022-01-23T12:12:02Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 23 12:12:02.325924 2022] [negotiation:error] [pid 28399] [client 10.132.56.81:49684] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.hurstwong.wardbeck.info/wp-load (None could be negotiated).",
+        "raw_alert": {
+          "timestamp": 1642939922.33,
+          "detector": "AMiner: New event type.",
+          "message": "[Sun Jan 23 12:12:02.325924 2022] [negotiation:error] [pid 28399] [client 10.132.56.81:49684] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.hurstwong.wardbeck.info/wp-load (None could be negotiated)."
+        }
+      },
+      {
+        "event_id": "ait-0057-3f32bc48",
+        "timestamp": "2022-01-23T12:12:02Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 23 12:12:02.327988 2022] [negotiation:error] [pid 28399] [client 10.132.56.81:49684] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.hurstwong.wardbeck.info/wp-login (None could be negotiated).",
+        "raw_alert": {
+          "timestamp": 1642939922.33,
+          "detector": "AMiner: New event type.",
+          "message": "[Sun Jan 23 12:12:02.327988 2022] [negotiation:error] [pid 28399] [client 10.132.56.81:49684] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.hurstwong.wardbeck.info/wp-login (None could be negotiated)."
+        }
+      },
+      {
+        "event_id": "ait-0058-38b099f9",
+        "timestamp": "2022-01-23T12:12:02Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 23 12:12:02.330085 2022] [negotiation:error] [pid 28399] [client 10.132.56.81:49684] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.hurstwong.wardbeck.info/wp-mail (None could be negotiated).",
+        "raw_alert": {
+          "timestamp": 1642939922.33,
+          "detector": "AMiner: New event type.",
+          "message": "[Sun Jan 23 12:12:02.330085 2022] [negotiation:error] [pid 28399] [client 10.132.56.81:49684] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.hurstwong.wardbeck.info/wp-mail (None could be negotiated)."
+        }
+      },
+      {
+        "event_id": "ait-0059-2595ec4d",
+        "timestamp": "2022-01-23T12:12:02Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 23 12:12:02.345197 2022] [negotiation:error] [pid 28399] [client 10.132.56.81:49684] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.hurstwong.wardbeck.info/wp-settings (None could be negotiated).",
+        "raw_alert": {
+          "timestamp": 1642939922.35,
+          "detector": "AMiner: New event type.",
+          "message": "[Sun Jan 23 12:12:02.345197 2022] [negotiation:error] [pid 28399] [client 10.132.56.81:49684] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.hurstwong.wardbeck.info/wp-settings (None could be negotiated)."
+        }
+      },
+      {
+        "event_id": "ait-0060-be9579d0",
+        "timestamp": "2022-01-23T12:12:02Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 23 12:12:02.347253 2022] [negotiation:error] [pid 28399] [client 10.132.56.81:49684] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.hurstwong.wardbeck.info/wp-signup (None could be negotiated).",
+        "raw_alert": {
+          "timestamp": 1642939922.35,
+          "detector": "AMiner: New event type.",
+          "message": "[Sun Jan 23 12:12:02.347253 2022] [negotiation:error] [pid 28399] [client 10.132.56.81:49684] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.hurstwong.wardbeck.info/wp-signup (None could be negotiated)."
+        }
+      },
+      {
+        "event_id": "ait-0061-4d45002b",
+        "timestamp": "2022-01-23T12:12:02Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 23 12:12:02.351531 2022] [negotiation:error] [pid 28399] [client 10.132.56.81:49684] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.hurstwong.wardbeck.info/wp-trackback (None could be negotiated).",
+        "raw_alert": {
+          "timestamp": 1642939922.35,
+          "detector": "AMiner: New event type.",
+          "message": "[Sun Jan 23 12:12:02.351531 2022] [negotiation:error] [pid 28399] [client 10.132.56.81:49684] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.hurstwong.wardbeck.info/wp-trackback (None could be negotiated)."
+        }
+      },
+      {
+        "event_id": "ait-0062-6ff849b2",
+        "timestamp": "2022-01-23T12:12:02Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 23 12:12:02.464819 2022] [negotiation:error] [pid 28399] [client 10.132.56.81:49684] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.hurstwong.wardbeck.info/xmlrpc (None could be negotiated).",
+        "raw_alert": {
+          "timestamp": 1642939922.46,
+          "detector": "AMiner: New event type.",
+          "message": "[Sun Jan 23 12:12:02.464819 2022] [negotiation:error] [pid 28399] [client 10.132.56.81:49684] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.hurstwong.wardbeck.info/xmlrpc (None could be negotiated)."
+        }
+      },
+      {
+        "event_id": "ait-0063-4fccfd91",
+        "timestamp": "2022-01-23T12:12:02Z",
+        "host": "wardbeck",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 23 12:12:02.519425 2022] [php7:error] [pid 28399] [client 10.132.56.81:49684] script '/var/www/intranet.hurstwong.wardbeck.info/xmlrpc_server.php' not found or unable to stat",
+        "raw_alert": {
+          "timestamp": 1642939922.52,
+          "detector": "AMiner: New event type.",
+          "message": "[Sun Jan 23 12:12:02.519425 2022] [php7:error] [pid 28399] [client 10.132.56.81:49684] script '/var/www/intranet.hurstwong.wardbeck.info/xmlrpc_server.php' not found or unable to stat"
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-deb518cd",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:49Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /.hta HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /.hta HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-3e883184",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:49Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /.hta_ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /.hta_ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-a85f24c9",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:49Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /.htaccess HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642939909.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /.htaccess HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on wardbeck: dirb",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on wardbeck: dirb",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "wardbeck/dirb",
+    "answer": "dirb",
+    "accept": [
+      "dirb",
+      "dirb"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

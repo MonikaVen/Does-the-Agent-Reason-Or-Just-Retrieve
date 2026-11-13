@@ -67,9 +67,48 @@ Keys stay in the local SQLite store and never enter trajectories.
 | C7 oracle plan | C7 | `--kind oracle_plan` |
 | Ground truth | sealed | `--kind ground_truth` |
 
+### Converted cyber packs (C0–C7 dataset points)
+
+After downloading benchmarks, convert SecOps-ES + AIT-ADS scenarios into
+incident packs the suite can load:
+
+```bash
+python3 scripts/download_benchmarks.py
+python3 scripts/convert_benchmarks_to_packs.py
+# 133 packs → data/packs/{secops,ait_ads}/ + data/packs/manifest.json
+
+# Example: run the full C0–C7 matrix on one converted pack
+python3 -m app suite --pack data/packs/secops/secops-q-c01-root-cause.json --provider ollama --model qwen2.5:3b
+```
+
+These are **+133 packs** beyond `sample_incident.json` (→ **+1,064**
+condition-runs if every pack is suite-run). DiscoveryBench/DiscoveryWorld
+are not converted.
+
 ## Experiment report
 
 `python3 -m app suite` writes `reports/experiment-report.md` and `.json`.
+
+Report `confidence` is **evidence-derived** (telemetry heuristics on the
+records available in that run). Model self-reported confidence is ignored.
+Result tables include a **Model** column.
+
+## Multi-dataset benchmarks
+
+Download DiscoveryBench, DiscoveryWorld, SecOps-ES, and AIT-ADS, then score
+`qwen2.5` (or another Ollama model) per scenario:
+
+```bash
+python3 scripts/download_benchmarks.py
+# All unique scenarios (no replica tiling). Use --limit N to cap or tile.
+python3 -m app bench --provider ollama --model qwen2.5:3b --limit 0 --out reports/benchmarks
+```
+
+`--limit 0` runs the full unique inventory (~1256 after download). Positive
+`--limit` values larger than the inventory tile `repN` replicas.
+
+Writes `reports/benchmarks/multi-benchmark-report.md` with Model, Dataset,
+Scenario, and Score.
 
 ## Generated runners
 

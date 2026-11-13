@@ -1,0 +1,195 @@
+{
+  "incident_id": "ait-harrison-dnsteal",
+  "name": "AIT-ADS harrison/dnsteal",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "harrison/dnsteal",
+  "alert": {
+    "timestamp": "2022-02-08T10:06:46Z",
+    "host": "harrison",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on harrison: dnsteal"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-08T10:06:46Z",
+    "end": "2022-02-08T10:14:46Z",
+    "hosts": [
+      "harrison"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-ae4d3ed2",
+        "timestamp": "2022-02-08T10:06:46Z",
+        "host": "harrison",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.mannsmith.harrison.com:443 10.237.0.166 - - [08/Feb/2022:10:06:46 +0000] \"GET /index.php/logout?requesttoken=LSU0Ohw5eQw8CiUoDTQIJABOVjEsN386eD8LBzgELHw%3D:zBFkjK4ZdRcbzUdoD//rGX6k/eDoOUh8vedU%2BfAASaU%3D HTTP/1.1\" 303 4547 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "raw_alert": {
+          "timestamp": 1644314806.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "cloud.dmz.mannsmith.harrison.com:443 10.237.0.166 - - [08/Feb/2022:10:06:46 +0000] \"GET /index.php/logout?requesttoken=LSU0Ohw5eQw8CiUoDTQIJABOVjEsN386eD8LBzgELHw%3D:zBFkjK4ZdRcbzUdoD//rGX6k/eDoOUh8vedU%2BfAASaU%3D HTTP/1.1\" 303 4547 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\""
+        }
+      },
+      {
+        "event_id": "ait-0002-36852884",
+        "timestamp": "2022-02-08T10:06:46Z",
+        "host": "harrison",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.237.1.238 - - [08/Feb/2022:10:06:46 +0000] \"GET /index.php/logout?requesttoken=LSU0Ohw5eQw8CiUoDTQIJABOVjEsN386eD8LBzgELHw%3D:zBFkjK4ZdRcbzUdoD//rGX6k/eDoOUh8vedU%2BfAASaU%3D HTTP/1.1\" 303 2121 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "raw_alert": {
+          "timestamp": 1644314806.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.237.1.238 - - [08/Feb/2022:10:06:46 +0000] \"GET /index.php/logout?requesttoken=LSU0Ohw5eQw8CiUoDTQIJABOVjEsN386eD8LBzgELHw%3D:zBFkjK4ZdRcbzUdoD//rGX6k/eDoOUh8vedU%2BfAASaU%3D HTTP/1.1\" 303 2121 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\""
+        }
+      },
+      {
+        "event_id": "ait-0003-53118538",
+        "timestamp": "2022-02-08T10:14:46Z",
+        "host": "harrison",
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-08T10:14:46.130Z\",\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.1129}},\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.0321,\"norm\":{\"pct\":0.0321}},\"idle\":{\"pct\":0.8866,\"norm\":{\"pct\":0.8866}},\"system\":{\"pct\":0.0419,\"norm\":{\"pct\":0.0419}},\"user\":{\"pct\":0.038,\"norm\":{\"pct\":0.038}},\"softirq\":{\"pct\":9.0E-4,\"norm\":{\"pct\":9.0E-4}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"total\":{\"pct\":0.1129,\"norm\":{\"pct\":0.1129}},\"cores\":1,\"iowait\":{\"pct\":5.0E-4,\"norm\":{\"pct\":5.0E-4}}}},\"event\":{\"module\":\"system\",\"duration\":1694227,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}",
+        "raw_alert": {
+          "timestamp": 1644315286.13,
+          "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+          "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-08T10:14:46.130Z\",\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.1129}},\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.0321,\"norm\":{\"pct\":0.0321}},\"idle\":{\"pct\":0.8866,\"norm\":{\"pct\":0.8866}},\"system\":{\"pct\":0.0419,\"norm\":{\"pct\":0.0419}},\"user\":{\"pct\":0.038,\"norm\":{\"pct\":0.038}},\"softirq\":{\"pct\":9.0E-4,\"norm\":{\"pct\":9.0E-4}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"total\":{\"pct\":0.1129,\"norm\":{\"pct\":0.1129}},\"cores\":1,\"iowait\":{\"pct\":5.0E-4,\"norm\":{\"pct\":5.0E-4}}}},\"event\":{\"module\":\"system\",\"duration\":1694227,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}"
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-ae4d3ed2",
+      "source": "alerts",
+      "timestamp": "2022-02-08T10:06:46Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.mannsmith.harrison.com:443 10.237.0.166 - - [08/Feb/2022:10:06:46 +0000] \"GET /index.php/logout?requesttoken=LSU0Ohw5eQw8CiUoDTQIJABOVjEsN386eD8LBzgELHw%3D:zBFkjK4ZdRcbzUdoD//rGX6k/eDoOUh8vedU%2BfAASaU%3D HTTP/1.1\" 303 4547 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "raw_alert": {
+          "timestamp": 1644314806.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "cloud.dmz.mannsmith.harrison.com:443 10.237.0.166 - - [08/Feb/2022:10:06:46 +0000] \"GET /index.php/logout?requesttoken=LSU0Ohw5eQw8CiUoDTQIJABOVjEsN386eD8LBzgELHw%3D:zBFkjK4ZdRcbzUdoD//rGX6k/eDoOUh8vedU%2BfAASaU%3D HTTP/1.1\" 303 4547 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-36852884",
+      "source": "alerts",
+      "timestamp": "2022-02-08T10:06:46Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.237.1.238 - - [08/Feb/2022:10:06:46 +0000] \"GET /index.php/logout?requesttoken=LSU0Ohw5eQw8CiUoDTQIJABOVjEsN386eD8LBzgELHw%3D:zBFkjK4ZdRcbzUdoD//rGX6k/eDoOUh8vedU%2BfAASaU%3D HTTP/1.1\" 303 2121 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "raw_alert": {
+          "timestamp": 1644314806.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "10.237.1.238 - - [08/Feb/2022:10:06:46 +0000] \"GET /index.php/logout?requesttoken=LSU0Ohw5eQw8CiUoDTQIJABOVjEsN386eD8LBzgELHw%3D:zBFkjK4ZdRcbzUdoD//rGX6k/eDoOUh8vedU%2BfAASaU%3D HTTP/1.1\" 303 2121 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-53118538",
+      "source": "alerts",
+      "timestamp": "2022-02-08T10:14:46Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-08T10:14:46.130Z\",\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.1129}},\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.0321,\"norm\":{\"pct\":0.0321}},\"idle\":{\"pct\":0.8866,\"norm\":{\"pct\":0.8866}},\"system\":{\"pct\":0.0419,\"norm\":{\"pct\":0.0419}},\"user\":{\"pct\":0.038,\"norm\":{\"pct\":0.038}},\"softirq\":{\"pct\":9.0E-4,\"norm\":{\"pct\":9.0E-4}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"total\":{\"pct\":0.1129,\"norm\":{\"pct\":0.1129}},\"cores\":1,\"iowait\":{\"pct\":5.0E-4,\"norm\":{\"pct\":5.0E-4}}}},\"event\":{\"module\":\"system\",\"duration\":1694227,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}",
+        "raw_alert": {
+          "timestamp": 1644315286.13,
+          "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+          "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-08T10:14:46.130Z\",\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.1129}},\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.0321,\"norm\":{\"pct\":0.0321}},\"idle\":{\"pct\":0.8866,\"norm\":{\"pct\":0.8866}},\"system\":{\"pct\":0.0419,\"norm\":{\"pct\":0.0419}},\"user\":{\"pct\":0.038,\"norm\":{\"pct\":0.038}},\"softirq\":{\"pct\":9.0E-4,\"norm\":{\"pct\":9.0E-4}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"total\":{\"pct\":0.1129,\"norm\":{\"pct\":0.1129}},\"cores\":1,\"iowait\":{\"pct\":5.0E-4,\"norm\":{\"pct\":5.0E-4}}}},\"event\":{\"module\":\"system\",\"duration\":1694227,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}"
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on harrison: dnsteal",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on harrison: dnsteal",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "harrison/dnsteal",
+    "answer": "dnsteal",
+    "accept": [
+      "dnsteal",
+      "dnsteal"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

@@ -14,6 +14,7 @@ from app.experiment_report import render_markdown, summarize_run
 from app.orchestrator import Orchestrator, validate_pack
 from app.packs import merge_part, empty_pack, packs_present
 from app.policy import PolicyEngine
+from app.report import assign_evidence_confidence, compute_evidence_confidence
 from app.store import Store
 from app.bus import EventBus
 
@@ -56,6 +57,34 @@ def test_extract_json_from_fence():
     assert data["verdict"] == "benign"
     trailing = extract_json('{"verdict": "malicious", "confidence": 0.4} trailing text')
     assert trailing["verdict"] == "malicious"
+
+
+def test_confidence_is_evidence_derived_not_self_reported():
+    records = [
+        {
+            "evidence_id": "event-1021",
+            "source": "process_events",
+            "fields": {
+                "process_name": "powershell.exe",
+                "parent_process_name": "WINWORD.EXE",
+                "command_line": "powershell.exe -nop -w hidden -enc JABz",
+            },
+        },
+        {
+            "evidence_id": "event-1024",
+            "source": "network",
+            "fields": {"destination_ip": "203.0.113.18", "process_name": "powershell.exe"},
+        },
+    ]
+    scored = compute_evidence_confidence(records)
+    assert 0.7 <= scored <= 0.93
+    report = assign_evidence_confidence(
+        {"verdict": "malicious", "confidence": 0.99, "summary": "model self-report"},
+        {"observations": [{"records": records}], "state": {"known_evidence": ["event-1021"]}},
+    )
+    assert report["confidence"] == scored
+    assert report["confidence"] != 0.99
+    assert report["confidence_source"] == "evidence"
 
 
 def test_secrets_are_masked(tmp_path):
@@ -134,7 +163,7 @@ async def test_c0_and_c3_runs(tmp_path, monkeypatch):
         await orch.run(run_id)
         run = store.get_run(run_id)
         assert run["status"] == "completed"
-        assert run["report"]["verdict"] in {"malicious", "benign", "inconclusive"}
+        assert run["report"]["verdict"] in {"malicious", "benign"}
         kinds = [event["kind"] for event in store.list_events(run_id)]
         assert "report_validated" in kinds
         if condition == "C3":
@@ -155,7 +184,7 @@ def test_experiment_report_markdown():
             {
                 "condition": "C0",
                 "status": "completed",
-                "verdict": "inconclusive",
+                "verdict": "benign",
                 "confidence": 0.4,
                 "evidence_ids": [],
                 "tool_observations": 0,
@@ -172,7 +201,8 @@ def test_experiment_report_markdown():
     }
     markdown = render_markdown(suite)
     assert "ollama:llama3.2:1b" in markdown
-    assert "| C0 |" in markdown
+    assert "| Model | Condition |" in markdown
+    assert "| ollama:llama3.2:1b | C0 |" in markdown
     assert "C5 skipped" in markdown
     summary = summarize_run(
         {
@@ -220,3 +250,35 @@ async def test_lab_suite_reference_writes_report(tmp_path, monkeypatch):
     assert (tmp_path / "reports" / "experiment-report.md").read_text().count("| C0 |")
     c3 = suite["runs"][1]
     assert c3["tool_observations"] >= 1
+
+
+@pytest.mark.asyncio
+async def test_converted_cyber_packs_validate_and_load(tmp_path, monkeypatch):
+    manifest_path = ROOT / "data" / "packs" / "manifest.json"
+    if not manifest_path.exists():
+        pytest.skip("converted packs not generated")
+    monkeypatch.setattr("app.orchestrator.STEP_DELAY", 0)
+    manifest = json.loads(manifest_path.read_text())
+    assert manifest["counts"]["total"] == 133
+    assert manifest["counts"]["secops"] == 54
+    assert manifest["counts"]["ait_ads"] == 79
+    lab = Lab(db_path=tmp_path / "converted-packs.sqlite3")
+    for row in manifest["packs"]:
+        pack = json.loads((ROOT / row["path"]).read_text())
+        assert validate_pack(pack) == []
+        assert pack["incident_id"] == row["incident_id"]
+        loaded = lab.load_pack_file(row["path"])
+        assert loaded["incident_id"] == row["incident_id"]
+        assert sum(len(v) for v in loaded["pack"]["telemetry"].values()) == row["event_count"]
+    sample_path = next(
+        r["path"] for r in manifest["packs"] if r["dataset"] == "Cyber-SecOps-ES"
+    )
+    dataset = lab.load_pack_file(sample_path)
+    suite = await lab.run_suite(
+        dataset["id"],
+        provider="reference",
+        model="reference-investigator-v1",
+        report_dir=tmp_path / "reports",
+    )
+    assert len(suite["runs"]) == 8
+    assert all(row["status"] == "completed" for row in suite["runs"])

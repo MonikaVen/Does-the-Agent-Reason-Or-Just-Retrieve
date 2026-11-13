@@ -1,0 +1,195 @@
+{
+  "incident_id": "ait-santos-service_stop",
+  "name": "AIT-ADS santos/service_stop",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "santos/service_stop",
+  "alert": {
+    "timestamp": "2022-01-16T07:16:18Z",
+    "host": "santos",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on santos: service_stop"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-16T07:16:18Z",
+    "end": "2022-01-16T07:16:18Z",
+    "hosts": [
+      "santos"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-f79b1c43",
+        "timestamp": "2022-01-16T07:16:18Z",
+        "host": "santos",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 16 07:16:18 internal-share ut[29155]: dig: '3x6-.10-.M6TOLK6vTIuiMb1a77D9vXnYFoaY6n82j9bPDoPwr83DwMbe6I/2ERk3KtNL-.Dy/y6CmSIK0SuquEjExSClKCVRIgjBCS*aO40mxH7aHe7D2Le6UeQbvm9tcG-.R1Zw/HLuUCYPOpVkojszOA8YMl2g0umch*7Em8fkj6EEPbdS/Hvzmg3qNvHm-.DavisPooleAndMiller.docx.kiirjekuimkpcrcioastvkeodpnimx.biz' is not a legal name (ran out of space)",
+        "raw_alert": {
+          "timestamp": 1642317378.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 16 07:16:18 internal-share ut[29155]: dig: '3x6-.10-.M6TOLK6vTIuiMb1a77D9vXnYFoaY6n82j9bPDoPwr83DwMbe6I/2ERk3KtNL-.Dy/y6CmSIK0SuquEjExSClKCVRIgjBCS*aO40mxH7aHe7D2Le6UeQbvm9tcG-.R1Zw/HLuUCYPOpVkojszOA8YMl2g0umch*7Em8fkj6EEPbdS/Hvzmg3qNvHm-.DavisPooleAndMiller.docx.kiirjekuimkpcrcioastvkeodpnimx.biz' is not a legal name (ran out of space)"
+        }
+      },
+      {
+        "event_id": "ait-0002-e5d39b95",
+        "timestamp": "2022-01-16T07:16:18Z",
+        "host": "santos",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642317378.019:579): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=ut comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "raw_alert": {
+          "timestamp": 1642317378.02,
+          "detector": "AMiner: New service_start parameter combination in Audit logs.",
+          "message": "type=SERVICE_START msg=audit(1642317378.019:579): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=ut comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0003-cd3fb824",
+        "timestamp": "2022-01-16T07:16:18Z",
+        "host": "santos",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642317378.019:580): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=ut comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "raw_alert": {
+          "timestamp": 1642317378.02,
+          "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+          "message": "type=SERVICE_STOP msg=audit(1642317378.019:580): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=ut comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'"
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-f79b1c43",
+      "source": "alerts",
+      "timestamp": "2022-01-16T07:16:18Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 16 07:16:18 internal-share ut[29155]: dig: '3x6-.10-.M6TOLK6vTIuiMb1a77D9vXnYFoaY6n82j9bPDoPwr83DwMbe6I/2ERk3KtNL-.Dy/y6CmSIK0SuquEjExSClKCVRIgjBCS*aO40mxH7aHe7D2Le6UeQbvm9tcG-.R1Zw/HLuUCYPOpVkojszOA8YMl2g0umch*7Em8fkj6EEPbdS/Hvzmg3qNvHm-.DavisPooleAndMiller.docx.kiirjekuimkpcrcioastvkeodpnimx.biz' is not a legal name (ran out of space)",
+        "raw_alert": {
+          "timestamp": 1642317378.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 16 07:16:18 internal-share ut[29155]: dig: '3x6-.10-.M6TOLK6vTIuiMb1a77D9vXnYFoaY6n82j9bPDoPwr83DwMbe6I/2ERk3KtNL-.Dy/y6CmSIK0SuquEjExSClKCVRIgjBCS*aO40mxH7aHe7D2Le6UeQbvm9tcG-.R1Zw/HLuUCYPOpVkojszOA8YMl2g0umch*7Em8fkj6EEPbdS/Hvzmg3qNvHm-.DavisPooleAndMiller.docx.kiirjekuimkpcrcioastvkeodpnimx.biz' is not a legal name (ran out of space)"
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-e5d39b95",
+      "source": "alerts",
+      "timestamp": "2022-01-16T07:16:18Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642317378.019:579): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=ut comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "raw_alert": {
+          "timestamp": 1642317378.02,
+          "detector": "AMiner: New service_start parameter combination in Audit logs.",
+          "message": "type=SERVICE_START msg=audit(1642317378.019:579): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=ut comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'"
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-cd3fb824",
+      "source": "alerts",
+      "timestamp": "2022-01-16T07:16:18Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642317378.019:580): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=ut comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "raw_alert": {
+          "timestamp": 1642317378.02,
+          "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+          "message": "type=SERVICE_STOP msg=audit(1642317378.019:580): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=ut comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'"
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on santos: service_stop",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on santos: service_stop",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "santos/service_stop",
+    "answer": "service_stop",
+    "accept": [
+      "service_stop",
+      "service stop"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

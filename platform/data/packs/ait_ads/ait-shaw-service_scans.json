@@ -1,0 +1,168 @@
+{
+  "incident_id": "ait-shaw-service_scans",
+  "name": "AIT-ADS shaw/service_scans",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "shaw/service_scans",
+  "alert": {
+    "timestamp": "2022-01-29T14:38:38Z",
+    "host": "shaw",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on shaw: service_scans"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-29T14:38:38Z",
+    "end": "2022-01-29T14:38:44Z",
+    "hosts": [
+      "shaw"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-78b65d45",
+        "timestamp": "2022-01-29T14:38:38Z",
+        "host": "shaw",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 29 14:38:38 inet-dns sshd[21691]: Did not receive identification string from 10.70.33.202 port 58182",
+        "raw_alert": {
+          "timestamp": 1643467118.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 29 14:38:38 inet-dns sshd[21691]: Did not receive identification string from 10.70.33.202 port 58182"
+        }
+      },
+      {
+        "event_id": "ait-0002-a214e87c",
+        "timestamp": "2022-01-29T14:38:44Z",
+        "host": "shaw",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 29 14:38:44 dnsmasq[21690]: config version.bind is <TXT>",
+        "raw_alert": {
+          "timestamp": 1643467124.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 29 14:38:44 dnsmasq[21690]: config version.bind is <TXT>"
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-78b65d45",
+      "source": "alerts",
+      "timestamp": "2022-01-29T14:38:38Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 29 14:38:38 inet-dns sshd[21691]: Did not receive identification string from 10.70.33.202 port 58182",
+        "raw_alert": {
+          "timestamp": 1643467118.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 29 14:38:38 inet-dns sshd[21691]: Did not receive identification string from 10.70.33.202 port 58182"
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-a214e87c",
+      "source": "alerts",
+      "timestamp": "2022-01-29T14:38:44Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 29 14:38:44 dnsmasq[21690]: config version.bind is <TXT>",
+        "raw_alert": {
+          "timestamp": 1643467124.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 29 14:38:44 dnsmasq[21690]: config version.bind is <TXT>"
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on shaw: service_scans",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on shaw: service_scans",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "shaw/service_scans",
+    "answer": "service_scans",
+    "accept": [
+      "service_scans",
+      "service scans"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

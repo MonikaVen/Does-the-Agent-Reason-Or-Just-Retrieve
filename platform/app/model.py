@@ -2,9 +2,7 @@ from __future__ import annotations
 
 from typing import Any
 
-
-OFFICE_PARENTS = {"winword.exe", "excel.exe", "powerpnt.exe", "outlook.exe", "wscript.exe"}
-ADMIN_PARENTS = {"management-agent.exe", "sccm.exe", "intune.exe", "services.exe"}
+from .report import compute_evidence_confidence, evidence_beliefs
 
 
 class ReferenceInvestigator:
@@ -28,7 +26,7 @@ class ReferenceInvestigator:
         for obs in observations:
             records.extend(obs.get("records") or [])
 
-        malicious, admin = self._beliefs(records, known)
+        malicious, admin = evidence_beliefs(records, known)
         hypotheses = [
             {"hypothesis_id": "h1", "claim": "The alert represents malicious execution.", "confidence": malicious},
             {"hypothesis_id": "h2", "claim": "The activity is approved administration.", "confidence": admin},
@@ -141,8 +139,8 @@ class ReferenceInvestigator:
         if not records:
             records = list(context.get("raw_window") or [])
         known = [rec.get("evidence_id") for rec in records if rec.get("evidence_id")]
-        malicious, _admin = self._beliefs(records, known)
-        verdict = "malicious" if malicious >= 0.66 else "benign" if malicious <= 0.34 else "inconclusive"
+        malicious, _admin = evidence_beliefs(records, known)
+        verdict = "malicious" if malicious >= 0.5 else "benign"
         chain = []
         evidence_by_stage = {
             "Execution": [rec for rec in records if rec.get("source") == "process_events"],
@@ -194,7 +192,7 @@ class ReferenceInvestigator:
         summary = self._summary(verdict, records)
         return {
             "verdict": verdict,
-            "confidence": round(max(malicious, 1 - malicious), 2),
+            "confidence": compute_evidence_confidence(records, known),
             "summary": summary,
             "attack_chain": chain,
             "key_entities": {"hosts": hosts, "users": users, "ips": ips, "files": files},
@@ -227,26 +225,6 @@ class ReferenceInvestigator:
             "stop": stop,
             "stop_reason": stop_reason,
         }
-
-    def _beliefs(self, records: list[dict[str, Any]], known: list[str]) -> tuple[float, float]:
-        score = 0.5
-        if not records and not known:
-            return 0.5, 0.5
-        blob = str(records).lower()
-        if "-enc" in blob or "encodedcommand" in blob or "-w hidden" in blob:
-            score += 0.18
-        if any(parent in blob for parent in OFFICE_PARENTS):
-            score += 0.16
-        if any(parent in blob for parent in ADMIN_PARENTS):
-            score -= 0.2
-        if "203.0.113." in blob or "destination_ip" in blob and "powershell" in blob:
-            score += 0.08
-        if "currentversion\\\\run" in blob or "currentversion\\run" in blob:
-            score += 0.1
-        if "update.ps1" in blob:
-            score += 0.06
-        score = min(0.93, max(0.07, score))
-        return round(score, 2), round(1 - score, 2)
 
     def _evidence_rank(self, record: dict[str, Any]) -> tuple[int, str]:
         blob = str(record).lower()
@@ -289,6 +267,4 @@ class ReferenceInvestigator:
                 "Encoded PowerShell was launched from an office parent and followed by "
                 "staging, uncommon egress, and a Run-key persistence write."
             )
-        if verdict == "benign":
-            return "The available context is consistent with approved administration rather than an attack chain."
-        return f"Interpreted {len(records)} evidence records without a decisive parent/follow-on pattern."
+        return "The available context is consistent with approved administration rather than an attack chain."

