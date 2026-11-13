@@ -1,0 +1,2399 @@
+{
+  "incident_id": "excytin-incident_55-q056",
+  "name": "ExCyTIn incident_55 q056",
+  "source_benchmark": "ExCyTIn-Bench",
+  "source_scenario": "test/incident_55/q056",
+  "alert": {
+    "timestamp": "2026-01-01T00:00:00Z",
+    "host": "excytin-incident_55",
+    "user": "unknown",
+    "alert_type": "excytin_investigation",
+    "summary": "Based on this event series, there was an alert about a malicious URL being clicked on the device. Could you identify the malicious URL?",
+    "context": "During an investigation of a security incident, an alert was triggered when a process `powershell.exe` was injected with potentially malicious code on the host associated with `AadDeviceId`. This is a suspicious activity because code injection is often used to hide malicious code execution within a trusted process, leading to abnormal behaviors such as opening a listening port or connecting to a command and control server.",
+    "attck": []
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts",
+      "process_events",
+      "network",
+      "file"
+    ],
+    "start": "2026-01-01T00:00:00Z",
+    "end": "2026-01-01T00:00:00Z",
+    "hosts": [
+      "excytin-incident_55"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "exq-incident_55-0000-57e16516",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "incident_context",
+        "severity": "high",
+        "message": "During an investigation of a security incident, an alert was triggered when a process `powershell.exe` was injected with potentially malicious code on the host associated with `AadDeviceId`. This is a suspicious activity because code injection is often used to hide malicious code execution within a trusted process, leading to abnormal behaviors such as opening a listening port or connecting to a command and control server."
+      },
+      {
+        "event_id": "exq-incident_55-0001-a897a414",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "investigation_graph_step",
+        "severity": "medium",
+        "message": "Suspicious activity detected, as a process injection occurred on the device with AadDeviceId `7661dfd4-218f-4016-8a87-66d68a7f098e`."
+      },
+      {
+        "event_id": "exq-incident_55-0002-09f753eb",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "investigation_graph_step",
+        "severity": "medium",
+        "message": "A malicious URL `https://ym018491661.wittytree-b6f239d6.northeurope.azurecontainerapps.io/` was clicked from the same device."
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0001-cddfffb1",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0002-a7f4f707",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0003-c88e03fc",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0004-a88ce7d0",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0005-1465e10b",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0006-c29b5b52",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0007-177b0359",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0008-ba1a18ed",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0009-0e0cf5ec",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0010-e7c9cb77",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0011-78e1f0b8",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0012-7c66f791",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0013-79581528",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0014-d0b2d0c6",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0015-23c4188c",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0016-6b742413",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0017-f7e7bc8a",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0018-0b32ed11",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0019-f4c65de6",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0020-d665b544",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0021-2ad0663f",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0022-7d334e14",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0023-8c2ef27c",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0024-062f2eec",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0025-d37b678e",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0026-49526f4b",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0027-cdb0081d",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0028-30b796be",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0029-560a9ef2",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertInfo-0030-e2da4ec1",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0001-88e479b4",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0002-1adce233",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0003-3567703f",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0004-5381c0be",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0005-51a5228d",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0006-34b75d4f",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0007-8b543d7e",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0008-ce35937f",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0009-7dffe82f",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0010-0eeabc97",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0011-7dffe82f",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0012-289f5f0f",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0013-4b76b724",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0014-9dd9fed7",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0015-2e4bce6d",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0016-f418edd2",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0017-32cb03fd",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0018-c6ff88b9",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0019-c54e65c9",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0020-c5464d20",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0021-7dffe82f",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0022-efdf10b6",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0023-e612e580",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0024-8a06a67b",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0025-36284518",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0026-9d1e703b",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0027-8c93aca1",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0028-9b1a25c0",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0029-70fe40b8",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0030-7dffe82f",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0031-cd30f8b4",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0032-36284518",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0033-f1071ce6",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0034-7dffe82f",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0035-dcfac3bc",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0036-74e36ddd",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0037-d3ff2b0a",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0038-72e0b320",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0039-7598ceaf",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-SecurityAler-0040-0101b310",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertEvidenc-0001-f6cddc8b",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertEvidenc-0002-1d4cda0b",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertEvidenc-0003-47e10813",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertEvidenc-0004-83152a64",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertEvidenc-0005-7da829da",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertEvidenc-0006-2d201f91",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-AlertEvidenc-0007-0cfcb3ff",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "rule": "sentinel_alert",
+        "severity": null,
+        "message": "",
+        "fields": {}
+      }
+    ],
+    "process_events": [
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0001-1db820ae",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0002-566df710",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0003-189d24f0",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0004-6ce0cc39",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0005-ee348cdb",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0006-4c1fe284",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0007-5f7a25e9",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0008-aed6e9f6",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0009-7cb6eead",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0010-76c664a4",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0011-ba97ee77",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0012-deeecb8d",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0013-33b7100a",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0014-54b4c28b",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0015-5e631019",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0016-4dc0b16b",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0017-9469c8eb",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0018-02da67f3",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0019-97801f12",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0020-9fb196da",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0021-108bcf05",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0022-7d09d9ce",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0023-d28e2f5f",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0024-dd81cacf",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0025-4be64424",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0026-efb65acb",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0027-1a4098a2",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0028-d5432e67",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0029-084858b2",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceLogonE-0030-fa76a6a8",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0001-63ac0042",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0002-063af7b6",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0003-969ba64c",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0004-fbdcdb97",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0005-5e167801",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0006-ed09e700",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0007-a762653c",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0008-6feb9e96",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0009-b4478d00",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0010-4c5fe2ce",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0011-b415fbe9",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0012-12e928a6",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0013-a16a86ad",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0014-d1d1dc5f",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0015-23c619af",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0016-e1526de6",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0017-a3ed76bd",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0018-e08fda85",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0019-f7816c01",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0020-74628dd5",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0021-2b566ae9",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0022-3b420334",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0023-d1a68498",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0024-9a82c551",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0025-8a5b8aae",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0026-65c82127",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0027-f0636e5d",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0028-ec5e1673",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0029-5772fe00",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0030-480b8054",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0031-549129b4",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0032-54525f79",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0033-2f9b03cc",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0034-cafd3289",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0035-3ad7a503",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0036-b99e75ab",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0037-ba8cfdad",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0038-67aacd5b",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0039-c5aefd99",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceProces-0040-59d4df75",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "fields": {}
+      }
+    ],
+    "network": [
+      {
+        "event_id": "ex-incident_55-UrlClickEven-0001-875e244a",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-UrlClickEven-0002-aaa3fa9b",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-EmailEvents-0001-95fd7763",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-EmailEvents-0002-d8bc3d7e",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-EmailEvents-0003-95fd7763",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-EmailEvents-0004-95fd7763",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-EmailEvents-0005-d8bc3d7e",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-EmailEvents-0006-95fd7763",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-EmailEvents-0007-95fd7763",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-EmailEvents-0008-95fd7763",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-EmailEvents-0009-95fd7763",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-EmailEvents-0010-95fd7763",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-EmailEvents-0011-c74e0327",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-EmailEvents-0012-95fd7763",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-EmailEvents-0013-95fd7763",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-EmailEvents-0014-95fd7763",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-EmailEvents-0015-95fd7763",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-EmailEvents-0016-95fd7763",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-EmailEvents-0017-95fd7763",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-EmailEvents-0018-d8bc3d7e",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-EmailEvents-0019-95fd7763",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-EmailEvents-0020-d8bc3d7e",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0001-80d28d93",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0002-352d46ad",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0003-352d46ad",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0004-80d28d93",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0005-ff84da99",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0006-dd080e1a",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0007-d1258bd1",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0008-ff84da99",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0009-4d5f8a0f",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0010-4d5f8a0f",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0011-5853539e",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0012-80d28d93",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0013-352d46ad",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0014-80d28d93",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0015-dd080e1a",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0016-3b193695",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0017-cba81fcb",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0018-9693d9c4",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0019-9693d9c4",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0020-f443a876",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0021-f443a876",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0022-80d28d93",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0023-483662d1",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0024-ae524797",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0025-dd080e1a",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0026-9693d9c4",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0027-9693d9c4",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0028-80d28d93",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0029-b706d4be",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0030-dd080e1a",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0031-a0d89aa8",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0032-352d46ad",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0033-352d46ad",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0034-67350fe9",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0035-f84e50c8",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0036-109133a6",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0037-f84e50c8",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0038-3b193695",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0039-dd080e1a",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceNetwor-0040-80d28d93",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "destination_ip": "",
+        "destination_port": 443,
+        "protocol": "tcp",
+        "message": "",
+        "fields": {}
+      }
+    ],
+    "file": [
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0001-0caa42f2",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0002-df28796e",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0003-ff2ebff6",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0004-165f48dd",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0005-05ad5e8c",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0006-9a8d63f8",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0007-ed008484",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0008-6e69ef98",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0009-42da4271",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0010-afd7bde5",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0011-6b19b7d6",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0012-afada8bd",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0013-7aadcce6",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0014-485b0c5c",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0015-2c79cd00",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0016-a7da26af",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0017-8efc2e95",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0018-7b63b566",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0019-64896a75",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0020-a15979e6",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0021-dcb36142",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0022-84caff70",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0023-4e64e2cd",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0024-5815304f",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0025-627f4fbd",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0026-57ff13c5",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0027-9c515d05",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0028-abf19848",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0029-7d40a7ef",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      },
+      {
+        "event_id": "ex-incident_55-DeviceFileEv-0030-916f2594",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "host": "excytin-incident_55",
+        "path": "",
+        "file_name": "",
+        "message": "",
+        "fields": {}
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "exq-incident_55-0000-57e16516",
+      "source": "alerts",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "host": "excytin-incident_55",
+      "fields": {
+        "rule": "incident_context",
+        "severity": "high",
+        "message": "During an investigation of a security incident, an alert was triggered when a process `powershell.exe` was injected with potentially malicious code on the host associated with `AadDeviceId`. This is a suspicious activity because code injection is often used to hide malicious code execution within a trusted process, leading to abnormal behaviors such as opening a listening port or connecting to a command and control server."
+      }
+    },
+    {
+      "event_id": "exq-incident_55-0001-a897a414",
+      "source": "alerts",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "host": "excytin-incident_55",
+      "fields": {
+        "rule": "investigation_graph_step",
+        "severity": "medium",
+        "message": "Suspicious activity detected, as a process injection occurred on the device with AadDeviceId `7661dfd4-218f-4016-8a87-66d68a7f098e`."
+      }
+    },
+    {
+      "event_id": "exq-incident_55-0002-09f753eb",
+      "source": "alerts",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "host": "excytin-incident_55",
+      "fields": {
+        "rule": "investigation_graph_step",
+        "severity": "medium",
+        "message": "A malicious URL `https://ym018491661.wittytree-b6f239d6.northeurope.azurecontainerapps.io/` was clicked from the same device."
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "excytin-incident_55"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "network",
+        "filter": {
+          "host": "excytin-incident_55"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Based on this event series, there was an alert about a malicious URL being clicked on the device. Could you identify the malicious URL?",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "excytin-incident_55"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "network",
+          "filter": {
+            "host": "excytin-incident_55"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Based on this event series, there was an alert about a malicious URL being clicked on the device. Could you identify the malicious URL?",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ExCyTIn-Bench",
+    "scenario": "test/incident_55/q056",
+    "answer": "https://ym018491661.wittytree-b6f239d6.northeurope.azurecontainerapps.io/",
+    "accept": [
+      "https://ym018491661.wittytree-b6f239d6.northeurope.azurecontainerapps.io/"
+    ],
+    "grading": "exact_ci",
+    "solution": [
+      "Suspicious activity detected, as a process injection occurred on the device with AadDeviceId `7661dfd4-218f-4016-8a87-66d68a7f098e`.",
+      "A malicious URL `https://ym018491661.wittytree-b6f239d6.northeurope.azurecontainerapps.io/` was clicked from the same device."
+    ],
+    "label": "malicious",
+    "sealed": true
+  }
+}

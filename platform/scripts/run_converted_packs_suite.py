@@ -190,6 +190,9 @@ async def run_one(
 async def main_async(args: argparse.Namespace) -> int:
     manifest = load_manifest(Path(args.manifest))
     packs = list(manifest["packs"])
+    if args.datasets:
+        wanted = {item.strip() for item in args.datasets.split(",") if item.strip()}
+        packs = [p for p in packs if (p.get("dataset") or "") in wanted]
     if args.limit and args.limit > 0:
         packs = packs[: args.limit]
     out_dir = Path(args.out)
@@ -320,6 +323,11 @@ def main() -> int:
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--workers", type=int, default=1, help="parallel pack suites")
     parser.add_argument("--limit", type=int, default=0, help="optional pack cap for smoke runs")
+    parser.add_argument(
+        "--datasets",
+        default="",
+        help="Comma-separated dataset filters (e.g. SOC-AgentBench,ExCyTIn-Bench)",
+    )
     parser.add_argument("--resume", action="store_true", default=True)
     parser.add_argument("--no-resume", action="store_false", dest="resume")
     parser.add_argument("--force", action="store_true")

@@ -1,0 +1,368 @@
+{
+  "incident_id": "soc-soc-000010",
+  "name": "SOC-AgentBench backup_false_positive (soc-000010)",
+  "source_benchmark": "SOC-AgentBench",
+  "source_scenario": "train/backup_false_positive/soc-000010",
+  "alert": {
+    "timestamp": "2025-06-11T00:01:00Z",
+    "host": "WS-167",
+    "user": "svc_backup",
+    "alert_type": "soc_agent_bench",
+    "summary": "Automated detection: Large outbound data transfer detected. Investigate correlated telemetry.",
+    "title": "Large outbound data transfer detected",
+    "severity": "low",
+    "attck": [],
+    "assets": [
+      "WS-167",
+      "SRV-WEB-04"
+    ]
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts",
+      "network"
+    ],
+    "start": "2025-06-11T00:01:00Z",
+    "end": "2025-06-11T00:15:00Z",
+    "hosts": [
+      "WS-167"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "soc-000010-noise-0",
+        "timestamp": "2025-06-11T00:01:00Z",
+        "host": "WS-046",
+        "rule": "Large outbound data transfer detected",
+        "severity": "low",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000010-noise-0",
+          "timestamp": "2025-06-11T00:01:00+00:00",
+          "source": "windows_security",
+          "host": "WS-046",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000010-noise-1",
+        "timestamp": "2025-06-11T00:10:00Z",
+        "host": "WS-026",
+        "rule": "Large outbound data transfer detected",
+        "severity": "low",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000010-noise-1",
+          "timestamp": "2025-06-11T00:10:00+00:00",
+          "source": "windows_security",
+          "host": "WS-026",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000010-noise-2",
+        "timestamp": "2025-06-11T00:10:00Z",
+        "host": "WS-008",
+        "rule": "Large outbound data transfer detected",
+        "severity": "low",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000010-noise-2",
+          "timestamp": "2025-06-11T00:10:00+00:00",
+          "source": "windows_security",
+          "host": "WS-008",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000010-noise-3",
+        "timestamp": "2025-06-11T00:09:00Z",
+        "host": "WS-051",
+        "rule": "Large outbound data transfer detected",
+        "severity": "low",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000010-noise-3",
+          "timestamp": "2025-06-11T00:09:00+00:00",
+          "source": "windows_security",
+          "host": "WS-051",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "ev-soc-000010-0",
+        "timestamp": "2025-06-11T00:05:00Z",
+        "host": "WS-167",
+        "rule": "zeek",
+        "severity": "low",
+        "message": "Primary indicator on WS-167: Large outbound data transfer detected",
+        "supports": "context",
+        "raw_alert": {
+          "evidence_id": "ev-soc-000010-0",
+          "source": "zeek",
+          "log_type": "zeek",
+          "timestamp": "2025-06-11T00:05:00+00:00",
+          "host": "WS-167",
+          "message": "Primary indicator on WS-167: Large outbound data transfer detected",
+          "supports": "context"
+        }
+      },
+      {
+        "event_id": "ev-soc-000010-1",
+        "timestamp": "2025-06-11T00:08:00Z",
+        "host": "SRV-WEB-04",
+        "rule": "wazuh",
+        "severity": "low",
+        "message": "Correlated alert on SRV-WEB-04",
+        "supports": "context",
+        "raw_alert": {
+          "evidence_id": "ev-soc-000010-1",
+          "source": "wazuh",
+          "log_type": "wazuh",
+          "timestamp": "2025-06-11T00:08:00+00:00",
+          "host": "SRV-WEB-04",
+          "message": "Correlated alert on SRV-WEB-04",
+          "supports": "context"
+        }
+      },
+      {
+        "event_id": "ev-soc-000010-2",
+        "timestamp": "2025-06-11T00:12:00Z",
+        "host": "WS-167",
+        "rule": "suricata",
+        "severity": "low",
+        "message": "Network activity from 203.0.113.173 to WS-167",
+        "supports": "context",
+        "raw_alert": {
+          "evidence_id": "ev-soc-000010-2",
+          "source": "suricata",
+          "log_type": "suricata",
+          "timestamp": "2025-06-11T00:12:00+00:00",
+          "host": "WS-167",
+          "message": "Network activity from 203.0.113.173 to WS-167",
+          "supports": "context"
+        }
+      }
+    ],
+    "network": [
+      {
+        "event_id": "soc-000010-log-001",
+        "timestamp": "2025-06-11T00:05:00Z",
+        "host": "WS-167",
+        "destination_ip": "",
+        "protocol": "tcp",
+        "message": "Primary indicator on WS-167: Large outbound data transfer detected",
+        "raw_log": {
+          "log_id": "soc-000010-log-001",
+          "timestamp": "2025-06-11T00:05:00+00:00",
+          "source": "zeek",
+          "host": "WS-167",
+          "user": "svc_backup",
+          "message": "Primary indicator on WS-167: Large outbound data transfer detected"
+        }
+      },
+      {
+        "event_id": "soc-000010-log-002",
+        "timestamp": "2025-06-11T00:08:00Z",
+        "host": "SRV-WEB-04",
+        "destination_ip": "203.0.113.173",
+        "protocol": "tcp",
+        "message": "Correlated alert on SRV-WEB-04",
+        "raw_log": {
+          "log_id": "soc-000010-log-002",
+          "timestamp": "2025-06-11T00:08:00+00:00",
+          "source": "wazuh",
+          "host": "SRV-WEB-04",
+          "message": "Correlated alert on SRV-WEB-04",
+          "src_ip": "203.0.113.173"
+        }
+      },
+      {
+        "event_id": "soc-000010-log-003",
+        "timestamp": "2025-06-11T00:12:00Z",
+        "host": "WS-167",
+        "destination_ip": "203.0.113.173",
+        "protocol": "tcp",
+        "message": "Network activity from 203.0.113.173 to WS-167",
+        "raw_log": {
+          "log_id": "soc-000010-log-003",
+          "timestamp": "2025-06-11T00:12:00+00:00",
+          "source": "suricata",
+          "host": "WS-167",
+          "message": "Network activity from 203.0.113.173 to WS-167",
+          "src_ip": "203.0.113.173"
+        }
+      },
+      {
+        "event_id": "soc-ioc-0001-765db0f5",
+        "timestamp": "2025-06-11T00:15:00Z",
+        "host": "WS-167",
+        "destination_ip": "203.0.113.173",
+        "protocol": "tcp",
+        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
+        "reputation": "malicious"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "soc-000010-noise-0",
+      "source": "alerts",
+      "timestamp": "2025-06-11T00:01:00Z",
+      "host": "WS-046",
+      "fields": {
+        "rule": "Large outbound data transfer detected",
+        "severity": "low",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000010-noise-0",
+          "timestamp": "2025-06-11T00:01:00+00:00",
+          "source": "windows_security",
+          "host": "WS-046",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      }
+    },
+    {
+      "event_id": "soc-000010-noise-1",
+      "source": "alerts",
+      "timestamp": "2025-06-11T00:10:00Z",
+      "host": "WS-026",
+      "fields": {
+        "rule": "Large outbound data transfer detected",
+        "severity": "low",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000010-noise-1",
+          "timestamp": "2025-06-11T00:10:00+00:00",
+          "source": "windows_security",
+          "host": "WS-026",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      }
+    },
+    {
+      "event_id": "soc-000010-noise-2",
+      "source": "alerts",
+      "timestamp": "2025-06-11T00:10:00Z",
+      "host": "WS-008",
+      "fields": {
+        "rule": "Large outbound data transfer detected",
+        "severity": "low",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000010-noise-2",
+          "timestamp": "2025-06-11T00:10:00+00:00",
+          "source": "windows_security",
+          "host": "WS-008",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "WS-167"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "network",
+        "filter": {
+          "host": "WS-167"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Automated detection: Large outbound data transfer detected. Investigate correlated telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "WS-167"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "network",
+          "filter": {
+            "host": "WS-167"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Automated detection: Large outbound data transfer detected. Investigate correlated telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "SOC-AgentBench",
+    "scenario": "train/backup_false_positive/soc-000010",
+    "answer": "Scheduled backup job causing expected data transfer",
+    "accept": [
+      "Scheduled backup job causing expected data transfer",
+      "Scheduled backup job causing expected data transfer",
+      "benign_positive"
+    ],
+    "grading": "exact_ci",
+    "incident_type": "benign_positive",
+    "is_true_positive": false,
+    "label": "benign",
+    "attck": [],
+    "sealed": true
+  }
+}

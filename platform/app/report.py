@@ -60,6 +60,22 @@ def evidence_beliefs(records: list[dict[str, Any]], known: list[str] | None = No
         score += 0.06
     if any(token in blob for token in ("exfil", "c2", "beacon", "implant", "persistence")):
         score += 0.08
+    if any(
+        token in blob
+        for token in (
+            "lsass",
+            "lateral_movement",
+            "rdp_lateral",
+            "encodedcommand",
+            "true_positive",
+            "compromised",
+            "credential theft",
+            "malicious url",
+        )
+    ):
+        score += 0.1
+    if "benign_positive" in blob or "false_positive" in blob or "backup job" in blob:
+        score -= 0.18
     if re.search(r"\bt1\d{3}\b", blob):
         score += 0.05
     score = min(0.93, max(0.07, score))

@@ -1,0 +1,378 @@
+{
+  "incident_id": "soc-soc-000071",
+  "name": "SOC-AgentBench powershell_encoded_v5 (soc-000071)",
+  "source_benchmark": "SOC-AgentBench",
+  "source_scenario": "train/powershell_encoded_v5/soc-000071",
+  "alert": {
+    "timestamp": "2025-06-12T00:05:00Z",
+    "host": "WS-226",
+    "user": "svc_backup",
+    "alert_type": "soc_agent_bench",
+    "summary": "Automated detection: Encoded PowerShell command execution. Investigate correlated telemetry.",
+    "title": "Encoded PowerShell command execution",
+    "severity": "high",
+    "attck": [
+      "T1059.001",
+      "T1027"
+    ],
+    "assets": [
+      "WS-226",
+      "SRV-DB-02"
+    ]
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts",
+      "process_events",
+      "network"
+    ],
+    "start": "2025-06-12T00:05:00Z",
+    "end": "2025-06-12T00:15:00Z",
+    "hosts": [
+      "WS-226"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "soc-000071-noise-0",
+        "timestamp": "2025-06-12T00:06:00Z",
+        "host": "WS-025",
+        "rule": "Encoded PowerShell command execution",
+        "severity": "high",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000071-noise-0",
+          "timestamp": "2025-06-12T00:06:00+00:00",
+          "source": "windows_security",
+          "host": "WS-025",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000071-noise-1",
+        "timestamp": "2025-06-12T00:09:00Z",
+        "host": "WS-062",
+        "rule": "Encoded PowerShell command execution",
+        "severity": "high",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000071-noise-1",
+          "timestamp": "2025-06-12T00:09:00+00:00",
+          "source": "windows_security",
+          "host": "WS-062",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000071-noise-2",
+        "timestamp": "2025-06-12T00:14:00Z",
+        "host": "WS-003",
+        "rule": "Encoded PowerShell command execution",
+        "severity": "high",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000071-noise-2",
+          "timestamp": "2025-06-12T00:14:00+00:00",
+          "source": "windows_security",
+          "host": "WS-003",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000071-noise-3",
+        "timestamp": "2025-06-12T00:12:00Z",
+        "host": "WS-068",
+        "rule": "Encoded PowerShell command execution",
+        "severity": "high",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000071-noise-3",
+          "timestamp": "2025-06-12T00:12:00+00:00",
+          "source": "windows_security",
+          "host": "WS-068",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "ev-soc-000071-0",
+        "timestamp": "2025-06-12T00:05:00Z",
+        "host": "WS-226",
+        "rule": "sysmon",
+        "severity": "high",
+        "message": "Primary indicator on WS-226: Encoded PowerShell command execution",
+        "supports": "confirm",
+        "raw_alert": {
+          "evidence_id": "ev-soc-000071-0",
+          "source": "sysmon",
+          "log_type": "sysmon",
+          "timestamp": "2025-06-12T00:05:00+00:00",
+          "host": "WS-226",
+          "message": "Primary indicator on WS-226: Encoded PowerShell command execution",
+          "supports": "confirm"
+        }
+      },
+      {
+        "event_id": "ev-soc-000071-1",
+        "timestamp": "2025-06-12T00:08:00Z",
+        "host": "SRV-DB-02",
+        "rule": "wazuh",
+        "severity": "high",
+        "message": "Correlated alert on SRV-DB-02",
+        "supports": "confirm",
+        "raw_alert": {
+          "evidence_id": "ev-soc-000071-1",
+          "source": "wazuh",
+          "log_type": "wazuh",
+          "timestamp": "2025-06-12T00:08:00+00:00",
+          "host": "SRV-DB-02",
+          "message": "Correlated alert on SRV-DB-02",
+          "supports": "confirm"
+        }
+      },
+      {
+        "event_id": "ev-soc-000071-2",
+        "timestamp": "2025-06-12T00:12:00Z",
+        "host": "WS-226",
+        "rule": "suricata",
+        "severity": "high",
+        "message": "Network activity from 203.0.113.188 to WS-226",
+        "supports": "confirm",
+        "raw_alert": {
+          "evidence_id": "ev-soc-000071-2",
+          "source": "suricata",
+          "log_type": "suricata",
+          "timestamp": "2025-06-12T00:12:00+00:00",
+          "host": "WS-226",
+          "message": "Network activity from 203.0.113.188 to WS-226",
+          "supports": "confirm"
+        }
+      }
+    ],
+    "process_events": [
+      {
+        "event_id": "soc-000071-log-001",
+        "timestamp": "2025-06-12T00:05:00Z",
+        "host": "WS-226",
+        "process_name": "powershell.exe",
+        "parent_process_name": "",
+        "command_line": "Primary indicator on WS-226: Encoded PowerShell command execution",
+        "user": "svc_backup",
+        "raw_log": {
+          "log_id": "soc-000071-log-001",
+          "timestamp": "2025-06-12T00:05:00+00:00",
+          "source": "sysmon",
+          "host": "WS-226",
+          "user": "svc_backup",
+          "message": "Primary indicator on WS-226: Encoded PowerShell command execution"
+        }
+      }
+    ],
+    "network": [
+      {
+        "event_id": "soc-000071-log-002",
+        "timestamp": "2025-06-12T00:08:00Z",
+        "host": "SRV-DB-02",
+        "destination_ip": "203.0.113.188",
+        "protocol": "tcp",
+        "message": "Correlated alert on SRV-DB-02",
+        "raw_log": {
+          "log_id": "soc-000071-log-002",
+          "timestamp": "2025-06-12T00:08:00+00:00",
+          "source": "wazuh",
+          "host": "SRV-DB-02",
+          "message": "Correlated alert on SRV-DB-02",
+          "src_ip": "203.0.113.188"
+        }
+      },
+      {
+        "event_id": "soc-000071-log-003",
+        "timestamp": "2025-06-12T00:12:00Z",
+        "host": "WS-226",
+        "destination_ip": "203.0.113.188",
+        "protocol": "tcp",
+        "message": "Network activity from 203.0.113.188 to WS-226",
+        "raw_log": {
+          "log_id": "soc-000071-log-003",
+          "timestamp": "2025-06-12T00:12:00+00:00",
+          "source": "suricata",
+          "host": "WS-226",
+          "message": "Network activity from 203.0.113.188 to WS-226",
+          "src_ip": "203.0.113.188"
+        }
+      },
+      {
+        "event_id": "soc-ioc-0001-fb281b24",
+        "timestamp": "2025-06-12T00:15:00Z",
+        "host": "WS-226",
+        "destination_ip": "203.0.113.188",
+        "protocol": "tcp",
+        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
+        "reputation": "malicious"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "soc-000071-noise-0",
+      "source": "alerts",
+      "timestamp": "2025-06-12T00:06:00Z",
+      "host": "WS-025",
+      "fields": {
+        "rule": "Encoded PowerShell command execution",
+        "severity": "high",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000071-noise-0",
+          "timestamp": "2025-06-12T00:06:00+00:00",
+          "source": "windows_security",
+          "host": "WS-025",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      }
+    },
+    {
+      "event_id": "soc-000071-noise-1",
+      "source": "alerts",
+      "timestamp": "2025-06-12T00:09:00Z",
+      "host": "WS-062",
+      "fields": {
+        "rule": "Encoded PowerShell command execution",
+        "severity": "high",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000071-noise-1",
+          "timestamp": "2025-06-12T00:09:00+00:00",
+          "source": "windows_security",
+          "host": "WS-062",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      }
+    },
+    {
+      "event_id": "soc-000071-noise-2",
+      "source": "alerts",
+      "timestamp": "2025-06-12T00:14:00Z",
+      "host": "WS-003",
+      "fields": {
+        "rule": "Encoded PowerShell command execution",
+        "severity": "high",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000071-noise-2",
+          "timestamp": "2025-06-12T00:14:00+00:00",
+          "source": "windows_security",
+          "host": "WS-003",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "WS-226"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "network",
+        "filter": {
+          "host": "WS-226"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Automated detection: Encoded PowerShell command execution. Investigate correlated telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "WS-226"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "network",
+          "filter": {
+            "host": "WS-226"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Automated detection: Encoded PowerShell command execution. Investigate correlated telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "SOC-AgentBench",
+    "scenario": "train/powershell_encoded_v5/soc-000071",
+    "answer": "Obfuscated PowerShell download cradle",
+    "accept": [
+      "Obfuscated PowerShell download cradle",
+      "Obfuscated PowerShell download cradle",
+      "execution"
+    ],
+    "grading": "exact_ci",
+    "incident_type": "execution",
+    "is_true_positive": true,
+    "label": "malicious",
+    "attck": [
+      "T1059.001",
+      "T1027"
+    ],
+    "sealed": true
+  }
+}

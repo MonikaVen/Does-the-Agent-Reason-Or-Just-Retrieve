@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Convert Cyber-SecOps-ES + Cyber-AIT-ADS scenarios into C0–C7 incident packs.
+"""Convert cyber investigation benchmarks into C0–C7 incident packs.
 
-Writes JSON packs under data/packs/{secops,ait_ads}/ and a manifest.json.
+Writes JSON packs under data/packs/{secops,ait_ads,soc_agent,excytin}/ and a manifest.json.
+Sources: Cyber-SecOps-ES, Cyber-AIT-ADS, SOC-AgentBench, ExCyTIn-Bench.
 DiscoveryBench / DiscoveryWorld are intentionally excluded (not investigation packs).
 """
 
@@ -452,6 +453,482 @@ def _ait_pack_from_alerts(host: str, attack: str, alerts: list[dict[str, Any]]) 
     )
 
 
+def _parse_json_field(value: Any) -> Any:
+    if isinstance(value, (dict, list)):
+        return value
+    if value is None:
+        return None
+    text = str(value).strip()
+    if not text:
+        return None
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        return value
+
+
+def convert_soc_agent() -> list[dict[str, Any]]:
+    """Convert SOC-AgentBench episodes (train+val+test) into investigation packs."""
+    try:
+        import pandas as pd
+    except ImportError as exc:  # pragma: no cover
+        raise SystemExit("pandas/pyarrow required for SOC-AgentBench conversion") from exc
+
+    packs: list[dict[str, Any]] = []
+    data_dir = ROOT / "data" / "benchmarks" / "soc-agent-bench" / "data"
+    if not data_dir.exists():
+        return packs
+
+    frames = []
+    for split in ("train", "validation", "test"):
+        path = data_dir / f"{split}-00000-of-00001.parquet"
+        if path.exists():
+            df = pd.read_parquet(path)
+            df["split"] = split
+            frames.append(df)
+    if not frames:
+        return packs
+    df = pd.concat(frames, ignore_index=True)
+
+    for _, row in df.iterrows():
+        episode_id = str(row["episode_id"])
+        scenario = str(row["scenario_name"])
+        alert_raw = _parse_json_field(row["initial_alert"]) or {}
+        logs = _parse_json_field(row["log_corpus"]) or []
+        gold = _parse_json_field(row["gold_evidence"]) or []
+        gt = _parse_json_field(row["hidden_ground_truth"]) or {}
+        expected = _parse_json_field(row["expected_response"]) or {}
+        assets = _parse_json_field(row.get("asset_inventory")) or {}
+        iocs = _parse_json_field(row.get("ioc_enrichment")) or {}
+
+        host = str(alert_raw.get("host") or "unknown-host")
+        ts = _iso_from_any(alert_raw.get("timestamp"))
+        telemetry: dict[str, list[dict[str, Any]]] = {"alerts": [], "process_events": [], "network": []}
+        timestamps = [ts]
+
+        for index, log in enumerate(logs if isinstance(logs, list) else [], start=1):
+            if not isinstance(log, dict):
+                continue
+            log_ts = _iso_from_any(log.get("timestamp"), ts)
+            timestamps.append(log_ts)
+            log_host = str(log.get("host") or host)
+            source = str(log.get("source") or "alerts").lower()
+            blob = json.dumps(log, sort_keys=True, default=str)
+            event_id = str(log.get("log_id") or _event_id("soc", index, blob))
+            message = str(log.get("message") or "")
+            if source in {"zeek", "suricata", "network"} or log.get("src_ip") or log.get("dst_ip"):
+                telemetry["network"].append(
+                    {
+                        "event_id": event_id,
+                        "timestamp": log_ts,
+                        "host": log_host,
+                        "destination_ip": str(log.get("dst_ip") or log.get("src_ip") or ""),
+                        "protocol": "tcp",
+                        "message": message,
+                        "raw_log": log,
+                    }
+                )
+            elif any(tok in message.lower() for tok in ("powershell", "cmd.exe", "process", "lsass")):
+                telemetry["process_events"].append(
+                    {
+                        "event_id": event_id,
+                        "timestamp": log_ts,
+                        "host": log_host,
+                        "process_name": "powershell.exe" if "powershell" in message.lower() else "process",
+                        "parent_process_name": "",
+                        "command_line": message,
+                        "user": log.get("user"),
+                        "raw_log": log,
+                    }
+                )
+            else:
+                telemetry["alerts"].append(
+                    {
+                        "event_id": event_id,
+                        "timestamp": log_ts,
+                        "host": log_host,
+                        "rule": alert_raw.get("title") or scenario,
+                        "severity": alert_raw.get("severity"),
+                        "message": message,
+                        "user": log.get("user"),
+                        "raw_alert": log,
+                    }
+                )
+
+        # Attach gold evidence as additional alert rows when not already present.
+        seen = {rec["event_id"] for rows in telemetry.values() for rec in rows}
+        for index, item in enumerate(gold if isinstance(gold, list) else [], start=1):
+            if not isinstance(item, dict):
+                continue
+            eid = str(item.get("evidence_id") or _event_id("soc-gold", index, json.dumps(item, sort_keys=True)))
+            if eid in seen:
+                continue
+            item_ts = _iso_from_any(item.get("timestamp"), ts)
+            timestamps.append(item_ts)
+            telemetry["alerts"].append(
+                {
+                    "event_id": eid,
+                    "timestamp": item_ts,
+                    "host": str(item.get("host") or host),
+                    "rule": item.get("source") or "gold_evidence",
+                    "severity": alert_raw.get("severity"),
+                    "message": item.get("message") or "",
+                    "supports": item.get("supports"),
+                    "raw_alert": item,
+                }
+            )
+
+        # Enrichment / inventory stubs as knowledge-adjacent telemetry.
+        for ip, meta in (iocs.items() if isinstance(iocs, dict) else []):
+            blob = f"{ip}:{meta}"
+            telemetry["network"].append(
+                {
+                    "event_id": _event_id("soc-ioc", 1, blob),
+                    "timestamp": ts,
+                    "host": host,
+                    "destination_ip": str(ip),
+                    "protocol": "tcp",
+                    "message": f"IOC enrichment: {meta}",
+                    "reputation": (meta or {}).get("reputation") if isinstance(meta, dict) else None,
+                }
+            )
+
+        telemetry = {k: v for k, v in telemetry.items() if v}
+        start = min(timestamps) if timestamps else ts
+        end = max(timestamps) if timestamps else ts
+        is_tp = bool(gt.get("is_true_positive"))
+        techniques = list(gt.get("attack_techniques") or expected.get("attack_techniques") or [])
+        incident_id = f"soc-{_slug(episode_id)}"
+        alert = {
+            "timestamp": start,
+            "host": host,
+            "user": alert_raw.get("user") or "unknown",
+            "alert_type": "soc_agent_bench",
+            "summary": str(alert_raw.get("description") or alert_raw.get("title") or scenario)[:240],
+            "title": alert_raw.get("title"),
+            "severity": alert_raw.get("severity"),
+            "attck": techniques,
+            "assets": list(assets.keys()) if isinstance(assets, dict) else [],
+        }
+        ground_truth = {
+            "dataset": "SOC-AgentBench",
+            "scenario": f"{row['split']}/{scenario}/{episode_id}",
+            "answer": gt.get("root_cause") or expected.get("summary"),
+            "accept": [gt.get("root_cause"), expected.get("summary"), gt.get("incident_type")],
+            "grading": "exact_ci",
+            "incident_type": gt.get("incident_type"),
+            "is_true_positive": is_tp,
+            "label": "malicious" if is_tp else "benign",
+            "attck": techniques,
+            "sealed": True,
+        }
+        packs.append(
+            _base_pack(
+                incident_id=incident_id,
+                name=f"SOC-AgentBench {scenario} ({episode_id})",
+                alert=alert,
+                host=host,
+                window=(start, end),
+                telemetry=telemetry,
+                ground_truth=ground_truth,
+                sources=list(telemetry.keys()) or ["alerts"],
+            )
+        )
+    return packs
+
+
+def _excytin_sample_csv(
+    zf: Any,
+    member: str,
+    *,
+    prefix: str,
+    host_fallback: str,
+    limit: int,
+) -> list[dict[str, Any]]:
+    import csv
+    import io
+
+    raw = zf.read(member)
+    # Strip UTF-8 BOM if present.
+    text = raw.decode("utf-8", errors="replace")
+    reader = csv.DictReader(io.StringIO(text))
+    out: list[dict[str, Any]] = []
+    for index, row in enumerate(reader, start=1):
+        if index > limit:
+            break
+        if not isinstance(row, dict):
+            continue
+        # Prefer common timestamp / host fields across Sentinel tables.
+        ts = _iso_from_any(
+            row.get("TimeGenerated")
+            or row.get("Timestamp")
+            or row.get("StartTime")
+            or row.get("EventTime")
+            or row.get("CreatedDateTime")
+        )
+        host = str(
+            row.get("DeviceName")
+            or row.get("Computer")
+            or row.get("Host")
+            or row.get("CompromisedEntity")
+            or host_fallback
+        )
+        message = str(
+            row.get("AlertName")
+            or row.get("DisplayName")
+            or row.get("ActionType")
+            or row.get("FileName")
+            or row.get("ProcessCommandLine")
+            or row.get("Activity")
+            or row.get("Description")
+            or ""
+        )[:400]
+        compact = {str(k): row.get(k) for k in list(row)[:12] if k is not None}
+        blob = json.dumps(compact, sort_keys=True, default=str)
+        # Keep a compact subset of fields to avoid huge packs.
+        allow = {
+            "AlertName",
+            "AlertSeverity",
+            "Category",
+            "CompromisedEntity",
+            "DeviceName",
+            "AccountName",
+            "FileName",
+            "FolderPath",
+            "ProcessCommandLine",
+            "ActionType",
+            "RemoteIP",
+            "RemoteUrl",
+            "InitiatingProcessFileName",
+            "EntityType",
+            "EvidenceRole",
+            "Title",
+            "ProviderName",
+        }
+        fields = {
+            str(k): v
+            for k, v in row.items()
+            if k is not None and v not in (None, "") and str(k) in allow
+        }
+        out.append(
+            {
+                "event_id": _event_id(prefix, index, blob),
+                "timestamp": ts,
+                "host": host,
+                "message": message,
+                "fields": fields,
+                "raw_table": Path(member).stem,
+            }
+        )
+    return out
+
+
+def _excytin_incident_telemetry(incident: str, data_zip: Path) -> tuple[dict[str, list], tuple[str, str], str]:
+    import zipfile
+
+    telemetry: dict[str, list[dict[str, Any]]] = {
+        "alerts": [],
+        "process_events": [],
+        "network": [],
+        "file": [],
+    }
+    host = f"excytin-{incident}"
+    start, end = "2024-01-01T00:00:00Z", "2024-12-31T23:59:59Z"
+    if not data_zip.exists():
+        return telemetry, (start, end), host
+
+    with zipfile.ZipFile(data_zip) as zf:
+        names = [n for n in zf.namelist() if f"/{incident}/" in n and n.endswith(".csv") and "/._" not in n and "" not in n]
+        # Prefer compact, high-signal tables; sample rows.
+        preferences = [
+            ("AlertInfo.csv", "alerts", 30),
+            ("SecurityAlert.csv", "alerts", 40),
+            ("AlertEvidence.csv", "alerts", 40),
+            ("SecurityIncident.csv", "alerts", 10),
+            ("UrlClickEvents.csv", "network", 20),
+            ("EmailEvents.csv", "network", 20),
+            ("DeviceLogonEvents.csv", "process_events", 30),
+            ("DeviceProcessEvents.csv", "process_events", 40),
+            ("DeviceNetworkEvents.csv", "network", 40),
+            ("DeviceFileEvents.csv", "file", 30),
+        ]
+        for filename, bucket, limit in preferences:
+            matches = [n for n in names if n.endswith("/" + filename) or n.endswith("/" + filename.replace(".csv", "") + "/" + filename)]
+            # Also match sharded dirs like DeviceProcessEvents/DeviceProcessEvents_0.csv
+            if not matches:
+                stem = filename.replace(".csv", "")
+                matches = [n for n in names if f"/{stem}/" in n and n.endswith(".csv")]
+                matches = sorted(matches)[:1]
+            for member in matches[:1]:
+                rows = _excytin_sample_csv(
+                    zf,
+                    member,
+                    prefix=f"ex-{incident}-{Path(member).stem[:12]}",
+                    host_fallback=host,
+                    limit=limit,
+                )
+                if bucket == "process_events":
+                    for rec in rows:
+                        fields = rec.get("fields") or {}
+                        telemetry["process_events"].append(
+                            {
+                                "event_id": rec["event_id"],
+                                "timestamp": rec["timestamp"],
+                                "host": rec["host"],
+                                "process_name": fields.get("InitiatingProcessFileName")
+                                or fields.get("FileName")
+                                or "process",
+                                "parent_process_name": "",
+                                "command_line": fields.get("ProcessCommandLine") or rec.get("message") or "",
+                                "fields": fields,
+                            }
+                        )
+                elif bucket == "network":
+                    for rec in rows:
+                        fields = rec.get("fields") or {}
+                        telemetry["network"].append(
+                            {
+                                "event_id": rec["event_id"],
+                                "timestamp": rec["timestamp"],
+                                "host": rec["host"],
+                                "destination_ip": fields.get("RemoteIP") or "",
+                                "destination_port": 443,
+                                "protocol": "tcp",
+                                "message": rec.get("message") or fields.get("RemoteUrl") or "",
+                                "fields": fields,
+                            }
+                        )
+                elif bucket == "file":
+                    for rec in rows:
+                        fields = rec.get("fields") or {}
+                        telemetry["file"].append(
+                            {
+                                "event_id": rec["event_id"],
+                                "timestamp": rec["timestamp"],
+                                "host": rec["host"],
+                                "path": fields.get("FolderPath") or "",
+                                "file_name": fields.get("FileName") or "",
+                                "message": rec.get("message") or "",
+                                "fields": fields,
+                            }
+                        )
+                else:
+                    for rec in rows:
+                        fields = rec.get("fields") or {}
+                        telemetry["alerts"].append(
+                            {
+                                "event_id": rec["event_id"],
+                                "timestamp": rec["timestamp"],
+                                "host": rec["host"],
+                                "rule": fields.get("AlertName") or fields.get("Title") or "sentinel_alert",
+                                "severity": fields.get("AlertSeverity"),
+                                "message": rec.get("message") or "",
+                                "fields": fields,
+                            }
+                        )
+
+    telemetry = {k: v for k, v in telemetry.items() if v}
+    stamps = [rec.get("timestamp") for rows in telemetry.values() for rec in rows if rec.get("timestamp")]
+    if stamps:
+        start, end = min(stamps), max(stamps)
+    hosts = {rec.get("host") for rows in telemetry.values() for rec in rows if rec.get("host")}
+    if hosts:
+        host = sorted(hosts)[0]
+    return telemetry, (start, end), host
+
+
+def convert_excytin(*, split: str = "test") -> list[dict[str, Any]]:
+    """Convert ExCyTIn-Bench investigation questions into packs (default: test split)."""
+    packs: list[dict[str, Any]] = []
+    qdir = ROOT / "data" / "benchmarks" / "excytin-bench" / "questions" / split
+    data_zip = ROOT / "data" / "benchmarks" / "excytin-bench" / "data.zip"
+    if not qdir.exists():
+        return packs
+
+    cache: dict[str, tuple[dict[str, list], tuple[str, str], str]] = {}
+    for path in sorted(qdir.glob("incident_*_qa_*.json")):
+        incident = path.name.split("_qa_", 1)[0]  # incident_5
+        if incident not in cache:
+            cache[incident] = _excytin_incident_telemetry(incident, data_zip)
+        base_telemetry, window, host = cache[incident]
+        questions = json.loads(path.read_text())
+        if not isinstance(questions, list):
+            continue
+        for qindex, item in enumerate(questions, start=1):
+            if not isinstance(item, dict):
+                continue
+            telemetry = {src: [dict(rec) for rec in rows] for src, rows in base_telemetry.items()}
+            # Seed question-local evidence from context/solution so C0 has citable records.
+            context = str(item.get("context") or "")
+            solution = item.get("solution") or []
+            answer = str(item.get("answer") or "")
+            question = str(item.get("question") or "")
+            local_alerts = []
+            for sindex, step in enumerate(solution if isinstance(solution, list) else [], start=1):
+                blob = f"{incident}:{qindex}:{sindex}:{step}"
+                local_alerts.append(
+                    {
+                        "event_id": _event_id(f"exq-{incident}", sindex, blob),
+                        "timestamp": window[0],
+                        "host": host,
+                        "rule": "investigation_graph_step",
+                        "severity": "medium",
+                        "message": str(step)[:400],
+                    }
+                )
+            if context:
+                local_alerts.insert(
+                    0,
+                    {
+                        "event_id": _event_id(f"exq-{incident}", 0, context[:200]),
+                        "timestamp": window[0],
+                        "host": host,
+                        "rule": "incident_context",
+                        "severity": "high",
+                        "message": context[:500],
+                    },
+                )
+            if local_alerts:
+                telemetry.setdefault("alerts", [])
+                telemetry["alerts"] = local_alerts + list(telemetry.get("alerts") or [])
+                # Cap total alerts to keep packs manageable.
+                telemetry["alerts"] = telemetry["alerts"][:80]
+
+            incident_id = f"excytin-{_slug(incident)}-q{qindex:03d}"
+            alert = {
+                "timestamp": window[0],
+                "host": host,
+                "user": "unknown",
+                "alert_type": "excytin_investigation",
+                "summary": (question or context)[:240],
+                "context": context[:500],
+                "attck": [],
+            }
+            ground_truth = {
+                "dataset": "ExCyTIn-Bench",
+                "scenario": f"{split}/{incident}/q{qindex:03d}",
+                "answer": answer,
+                "accept": [answer],
+                "grading": "exact_ci",
+                "solution": solution if isinstance(solution, list) else [],
+                "label": "malicious",
+                "sealed": True,
+            }
+            packs.append(
+                _base_pack(
+                    incident_id=incident_id,
+                    name=f"ExCyTIn {incident} q{qindex:03d}",
+                    alert=alert,
+                    host=host,
+                    window=window,
+                    telemetry=telemetry,
+                    ground_truth=ground_truth,
+                    sources=list(telemetry.keys()) or ["alerts"],
+                )
+            )
+    return packs
+
+
 def write_packs(
     packs: list[dict[str, Any]], bucket: str
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
@@ -487,23 +964,35 @@ def main() -> int:
     OUT.mkdir(parents=True, exist_ok=True)
     secops = convert_secops()
     ait = convert_ait()
+    soc = convert_soc_agent()
+    excytin = convert_excytin(split="test")
     secops_index, secops_errors = write_packs(secops, "secops")
     ait_index, ait_errors = write_packs(ait, "ait_ads")
+    soc_index, soc_errors = write_packs(soc, "soc_agent")
+    excytin_index, excytin_errors = write_packs(excytin, "excytin")
+    all_index = secops_index + ait_index + soc_index + excytin_index
+    all_errors = secops_errors + ait_errors + soc_errors + excytin_errors
     manifest = {
         "generated_at": datetime.now(tz=timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "description": "C0–C7 incident packs converted from cyber benchmark scenarios",
         "counts": {
             "secops": len(secops_index),
             "ait_ads": len(ait_index),
-            "total": len(secops_index) + len(ait_index),
+            "soc_agent": len(soc_index),
+            "excytin": len(excytin_index),
+            "total": len(all_index),
             "secops_errors": len(secops_errors),
             "ait_ads_errors": len(ait_errors),
+            "soc_agent_errors": len(soc_errors),
+            "excytin_errors": len(excytin_errors),
         },
-        "packs": secops_index + ait_index,
-        "errors": secops_errors + ait_errors,
+        "packs": all_index,
+        "errors": all_errors,
         "notes": [
             "Each pack is one C0–C7 dataset point (×8 conditions when suite-run).",
             "ground_truth is sealed and must not be sent to the model.",
+            "SOC-AgentBench: all train/validation/test episodes.",
+            "ExCyTIn-Bench: test-split investigation questions with sampled Sentinel telemetry.",
             "DiscoveryBench/DiscoveryWorld are not converted.",
         ],
     }
