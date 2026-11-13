@@ -1,130 +1,227 @@
 {
-  "generated_at": "2026-11-13T08:18:42Z",
-  "packs_total": 133,
-  "condition_runs": 1064,
-  "completed_runs": 1059,
-  "skipped_runs": 0,
-  "failed_runs": 5,
-  "by_dataset": {
-    "Cyber-AIT-ADS": 79,
-    "Cyber-SecOps-ES": 54
-  },
-  "table": [
+  "generated_at": "2026-11-13T16:47:51.578Z",
+  "dataset_id": "ds-fe0e6148ab",
+  "incident_id": "soc-soc-000010",
+  "provider": "ollama",
+  "model": "qwen2.5:14b",
+  "runs": [
     {
+      "run_id": "run-fab396ff9d49",
       "condition": "C0",
-      "n": 133,
-      "completed": 131,
-      "skipped": 0,
-      "failed": 2,
-      "mean_confidence": 0.643,
-      "median_confidence": 0.64,
-      "mean_tools": 0.0,
-      "mean_kb": 0.0,
-      "verdicts": {
-        "malicious": 39,
-        "benign": 92
-      }
+      "status": "failed",
+      "error": "timed out",
+      "model": "ollama:qwen2.5:14b",
+      "verdict": null,
+      "confidence": null,
+      "summary": null,
+      "evidence_ids": [],
+      "event_count": 7,
+      "tool_observations": 0,
+      "knowledge_retrievals": 0,
+      "tools": [],
+      "started_at": "2026-11-13T16:20:21.739Z",
+      "completed_at": "2026-11-13T16:23:21.859Z",
+      "validation": null
     },
     {
+      "run_id": "run-afe292149b35",
       "condition": "C1",
-      "n": 133,
-      "completed": 133,
-      "skipped": 0,
-      "failed": 0,
-      "mean_confidence": 0.643,
-      "median_confidence": 0.64,
-      "mean_tools": 0.0,
-      "mean_kb": 1.0,
-      "verdicts": {
-        "benign": 125,
-        "malicious": 8
-      }
+      "status": "failed",
+      "error": "timed out",
+      "model": "ollama:qwen2.5:14b",
+      "verdict": null,
+      "confidence": null,
+      "summary": null,
+      "evidence_ids": [],
+      "event_count": 8,
+      "tool_observations": 0,
+      "knowledge_retrievals": 1,
+      "tools": [],
+      "started_at": "2026-11-13T16:23:21.867Z",
+      "completed_at": "2026-11-13T16:26:21.978Z",
+      "validation": null
     },
     {
+      "run_id": "run-0d0b47eb7fe2",
       "condition": "C2",
-      "n": 133,
-      "completed": 132,
-      "skipped": 0,
-      "failed": 1,
-      "mean_confidence": 0.64,
-      "median_confidence": 0.64,
-      "mean_tools": 1.84,
-      "mean_kb": 0.0,
-      "verdicts": {
-        "benign": 132
-      }
+      "status": "failed",
+      "error": "timed out",
+      "model": "ollama:qwen2.5:14b",
+      "verdict": null,
+      "confidence": null,
+      "summary": null,
+      "evidence_ids": [],
+      "event_count": 20,
+      "tool_observations": 1,
+      "knowledge_retrievals": 0,
+      "tools": [
+        "query_events",
+        "query_events"
+      ],
+      "started_at": "2026-11-13T16:26:21.989Z",
+      "completed_at": "2026-11-13T16:31:14.793Z",
+      "validation": null
     },
     {
+      "run_id": "run-2c05e5d6b5d4",
       "condition": "C3",
-      "n": 133,
-      "completed": 133,
-      "skipped": 0,
-      "failed": 0,
-      "mean_confidence": 0.64,
-      "median_confidence": 0.64,
-      "mean_tools": 1.85,
-      "mean_kb": 0.0,
-      "verdicts": {
-        "benign": 133
+      "status": "completed",
+      "error": null,
+      "model": "ollama:qwen2.5:14b",
+      "verdict": "malicious",
+      "confidence": 0.58,
+      "summary": "Large outbound data transfer detected from WS-167 to an external IP, suggesting potential exfiltration.",
+      "evidence_ids": [
+        "soc-000010-log-003",
+        "soc-ioc-0001-79d8a1fe"
+      ],
+      "event_count": 35,
+      "tool_observations": 2,
+      "knowledge_retrievals": 0,
+      "tools": [
+        "query_events",
+        "query_events",
+        "query_events",
+        "query_events"
+      ],
+      "started_at": "2026-11-13T16:31:14.798Z",
+      "completed_at": "2026-11-13T16:36:45.570Z",
+      "validation": {
+        "ok": true,
+        "errors": [],
+        "cited_evidence": [
+          "soc-000010-log-003",
+          "soc-ioc-0001-79d8a1fe"
+        ],
+        "unsupported_claim_rate": 0.0
       }
     },
     {
+      "run_id": "run-cc2f48e7e059",
       "condition": "C4",
-      "n": 133,
-      "completed": 133,
-      "skipped": 0,
-      "failed": 0,
-      "mean_confidence": 0.64,
-      "median_confidence": 0.64,
-      "mean_tools": 2.0,
-      "mean_kb": 1.0,
-      "verdicts": {
-        "benign": 133
+      "status": "completed",
+      "error": null,
+      "model": "ollama:qwen2.5:14b",
+      "verdict": "malicious",
+      "confidence": 0.58,
+      "summary": "Encoded PowerShell execution followed by an outbound connection to an uncommon IP address indicates potential malicious activity.",
+      "evidence_ids": [
+        "soc-000010-log-001",
+        "soc-ioc-0001-79d8a1fe",
+        "soc-000010-log-003"
+      ],
+      "event_count": 16,
+      "tool_observations": 2,
+      "knowledge_retrievals": 1,
+      "tools": [
+        "query_events",
+        "query_events"
+      ],
+      "started_at": "2026-11-13T16:36:45.579Z",
+      "completed_at": "2026-11-13T16:38:49.753Z",
+      "validation": {
+        "ok": true,
+        "errors": [],
+        "cited_evidence": [
+          "soc-000010-log-001",
+          "soc-000010-log-003",
+          "soc-ioc-0001-79d8a1fe"
+        ],
+        "unsupported_claim_rate": 0.0
       }
     },
     {
+      "run_id": "run-abbc4e378597",
       "condition": "C5",
-      "n": 133,
-      "completed": 133,
-      "skipped": 0,
-      "failed": 0,
-      "mean_confidence": 0.64,
-      "median_confidence": 0.64,
-      "mean_tools": 0.0,
-      "mean_kb": 1.0,
-      "verdicts": {
-        "benign": 133
+      "status": "completed",
+      "error": null,
+      "model": "ollama:qwen2.5:14b",
+      "verdict": "malicious",
+      "confidence": 0.58,
+      "summary": "Large outbound data transfer detected from WS-167 to an uncommon IP shortly after suspicious encoded PowerShell activity.",
+      "evidence_ids": [
+        "soc-ioc-0001-79d8a1fe",
+        "soc-000010-log-003",
+        "soc-000010-log-001",
+        "soc-000010-log-001"
+      ],
+      "event_count": 13,
+      "tool_observations": 0,
+      "knowledge_retrievals": 1,
+      "tools": [],
+      "started_at": "2026-11-13T16:38:49.759Z",
+      "completed_at": "2026-11-13T16:41:18.728Z",
+      "validation": {
+        "ok": true,
+        "errors": [],
+        "cited_evidence": [
+          "soc-000010-log-001",
+          "soc-000010-log-003",
+          "soc-ioc-0001-79d8a1fe"
+        ],
+        "unsupported_claim_rate": 0.0
       }
     },
     {
+      "run_id": "run-30c9fbbfe3af",
       "condition": "C6",
-      "n": 133,
-      "completed": 133,
-      "skipped": 0,
-      "failed": 0,
-      "mean_confidence": 0.57,
-      "median_confidence": 0.56,
-      "mean_tools": 0.0,
-      "mean_kb": 1.0,
-      "verdicts": {
-        "benign": 133
+      "status": "completed",
+      "error": null,
+      "model": "ollama:qwen2.5:14b",
+      "verdict": "benign",
+      "confidence": 0.58,
+      "summary": "Large outbound data transfer detected but no suspicious encoded PowerShell execution or persistence activity observed.",
+      "evidence_ids": [
+        "soc-ioc-rep-0001-765db0f5"
+      ],
+      "event_count": 13,
+      "tool_observations": 0,
+      "knowledge_retrievals": 1,
+      "tools": [],
+      "started_at": "2026-11-13T16:41:18.735Z",
+      "completed_at": "2026-11-13T16:42:48.538Z",
+      "validation": {
+        "ok": true,
+        "errors": [],
+        "cited_evidence": [
+          "soc-ioc-rep-0001-765db0f5"
+        ],
+        "unsupported_claim_rate": 0.0
       }
     },
     {
+      "run_id": "run-be7eda8b63d6",
       "condition": "C7",
-      "n": 133,
-      "completed": 131,
-      "skipped": 0,
-      "failed": 2,
-      "mean_confidence": 0.641,
-      "median_confidence": 0.64,
-      "mean_tools": 1.57,
-      "mean_kb": 0.0,
-      "verdicts": {
-        "benign": 131
+      "status": "completed",
+      "error": null,
+      "model": "ollama:qwen2.5:14b",
+      "verdict": "malicious",
+      "confidence": 0.58,
+      "summary": "Large outbound data transfer detected from WS-167 to an external IP, suggesting potential exfiltration.",
+      "evidence_ids": [
+        "soc-000010-log-003",
+        "soc-ioc-0001-79d8a1fe"
+      ],
+      "event_count": 35,
+      "tool_observations": 2,
+      "knowledge_retrievals": 0,
+      "tools": [
+        "query_events",
+        "query_events",
+        "query_events",
+        "query_events"
+      ],
+      "started_at": "2026-11-13T16:42:48.543Z",
+      "completed_at": "2026-11-13T16:47:51.575Z",
+      "validation": {
+        "ok": true,
+        "errors": [],
+        "cited_evidence": [
+          "soc-000010-log-003",
+          "soc-ioc-0001-79d8a1fe"
+        ],
+        "unsupported_claim_rate": 0.0
       }
     }
-  ],
-  "model": "llama3.2:1b",
-  "provider": "ollama"
+  ]
 }
