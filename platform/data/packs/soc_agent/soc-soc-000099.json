@@ -1,0 +1,311 @@
+{
+  "incident_id": "soc-soc-000099",
+  "name": "SOC-AgentBench s3_data_exfil_v8 (soc-000099)",
+  "source_benchmark": "SOC-AgentBench",
+  "source_scenario": "train/s3_data_exfil_v8/soc-000099",
+  "alert": {
+    "timestamp": "2025-07-10T00:01:00Z",
+    "host": "WS-165",
+    "user": "svc_backup",
+    "alert_type": "soc_agent_bench",
+    "summary": "Automated detection: Unusual S3 GetObject volume from IAM role. Investigate correlated telemetry.",
+    "title": "Unusual S3 GetObject volume from IAM role",
+    "severity": "critical",
+    "assets": [
+      "WS-165",
+      "SRV-FILE-04"
+    ]
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts",
+      "network"
+    ],
+    "start": "2025-07-10T00:01:00Z",
+    "end": "2025-07-10T00:20:00Z",
+    "hosts": [
+      "WS-165"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "soc-000099-log-001",
+        "timestamp": "2025-07-10T00:05:00Z",
+        "host": "WS-165",
+        "rule": "Unusual S3 GetObject volume from IAM role",
+        "severity": "critical",
+        "message": "Primary indicator on WS-165: Unusual S3 GetObject volume from IAM role",
+        "user": "svc_backup",
+        "raw_alert": {
+          "log_id": "soc-000099-log-001",
+          "timestamp": "2025-07-10T00:05:00+00:00",
+          "source": "aws_cloudtrail",
+          "host": "WS-165",
+          "user": "svc_backup",
+          "message": "Primary indicator on WS-165: Unusual S3 GetObject volume from IAM role"
+        }
+      },
+      {
+        "event_id": "soc-000099-noise-0",
+        "timestamp": "2025-07-10T00:20:00Z",
+        "host": "WS-080",
+        "rule": "Unusual S3 GetObject volume from IAM role",
+        "severity": "critical",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000099-noise-0",
+          "timestamp": "2025-07-10T00:20:00+00:00",
+          "source": "windows_security",
+          "host": "WS-080",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000099-noise-1",
+        "timestamp": "2025-07-10T00:04:00Z",
+        "host": "WS-037",
+        "rule": "Unusual S3 GetObject volume from IAM role",
+        "severity": "critical",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000099-noise-1",
+          "timestamp": "2025-07-10T00:04:00+00:00",
+          "source": "windows_security",
+          "host": "WS-037",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000099-noise-2",
+        "timestamp": "2025-07-10T00:01:00Z",
+        "host": "WS-042",
+        "rule": "Unusual S3 GetObject volume from IAM role",
+        "severity": "critical",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000099-noise-2",
+          "timestamp": "2025-07-10T00:01:00+00:00",
+          "source": "windows_security",
+          "host": "WS-042",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000099-noise-3",
+        "timestamp": "2025-07-10T00:03:00Z",
+        "host": "WS-057",
+        "rule": "Unusual S3 GetObject volume from IAM role",
+        "severity": "critical",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000099-noise-3",
+          "timestamp": "2025-07-10T00:03:00+00:00",
+          "source": "windows_security",
+          "host": "WS-057",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      }
+    ],
+    "network": [
+      {
+        "event_id": "soc-000099-log-002",
+        "timestamp": "2025-07-10T00:08:00Z",
+        "host": "SRV-FILE-04",
+        "destination_ip": "203.0.113.65",
+        "protocol": "tcp",
+        "message": "Correlated alert on SRV-FILE-04",
+        "raw_log": {
+          "log_id": "soc-000099-log-002",
+          "timestamp": "2025-07-10T00:08:00+00:00",
+          "source": "wazuh",
+          "host": "SRV-FILE-04",
+          "message": "Correlated alert on SRV-FILE-04",
+          "src_ip": "203.0.113.65"
+        }
+      },
+      {
+        "event_id": "soc-000099-log-003",
+        "timestamp": "2025-07-10T00:12:00Z",
+        "host": "WS-165",
+        "destination_ip": "203.0.113.65",
+        "protocol": "tcp",
+        "message": "Network activity from 203.0.113.65 to WS-165",
+        "raw_log": {
+          "log_id": "soc-000099-log-003",
+          "timestamp": "2025-07-10T00:12:00+00:00",
+          "source": "suricata",
+          "host": "WS-165",
+          "message": "Network activity from 203.0.113.65 to WS-165",
+          "src_ip": "203.0.113.65"
+        }
+      },
+      {
+        "event_id": "soc-ioc-0001-bbd00be1",
+        "timestamp": "2025-07-10T00:15:00Z",
+        "host": "WS-165",
+        "destination_ip": "203.0.113.65",
+        "protocol": "tcp",
+        "message": "Observed IP 203.0.113.65"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ev-soc-000099-0",
+      "source": "alerts",
+      "timestamp": "2025-07-10T00:05:00Z",
+      "host": "WS-165",
+      "fields": {
+        "rule": "aws_cloudtrail",
+        "severity": "critical",
+        "message": "Primary indicator on WS-165: Unusual S3 GetObject volume from IAM role",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "ev-soc-000099-1",
+      "source": "alerts",
+      "timestamp": "2025-07-10T00:08:00Z",
+      "host": "SRV-FILE-04",
+      "fields": {
+        "rule": "wazuh",
+        "severity": "critical",
+        "message": "Correlated alert on SRV-FILE-04",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "ev-soc-000099-2",
+      "source": "alerts",
+      "timestamp": "2025-07-10T00:12:00Z",
+      "host": "WS-165",
+      "fields": {
+        "rule": "suricata",
+        "severity": "critical",
+        "message": "Network activity from 203.0.113.65 to WS-165",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "soc-ioc-rep-0001-e7d1293d",
+      "source": "network",
+      "timestamp": "2025-07-10T00:15:00Z",
+      "host": "WS-165",
+      "fields": {
+        "destination_ip": "203.0.113.65",
+        "protocol": "tcp",
+        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
+        "reputation": "malicious"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "WS-165"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "network",
+        "filter": {
+          "host": "WS-165"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Automated detection: Unusual S3 GetObject volume from IAM role. Investigate correlated telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "WS-165"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "network",
+          "filter": {
+            "host": "WS-165"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Automated detection: Unusual S3 GetObject volume from IAM role. Investigate correlated telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "SOC-AgentBench",
+    "scenario": "train/s3_data_exfil_v8/soc-000099",
+    "answer": "Mass S3 object retrieval via compromised IAM role",
+    "accept": [
+      "Mass S3 object retrieval via compromised IAM role",
+      "Mass S3 object retrieval via compromised IAM role",
+      "data_exfiltration"
+    ],
+    "grading": "exact_ci",
+    "incident_type": "data_exfiltration",
+    "is_true_positive": true,
+    "label": "malicious",
+    "attck": [
+      "T1537",
+      "T1048.003"
+    ],
+    "ioc_enrichment": {
+      "203.0.113.65": {
+        "type": "ip",
+        "reputation": "malicious",
+        "category": "scanner"
+      }
+    },
+    "sealed": true
+  }
+}

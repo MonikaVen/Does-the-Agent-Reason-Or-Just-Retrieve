@@ -1,0 +1,310 @@
+{
+  "incident_id": "soc-soc-000092",
+  "name": "SOC-AgentBench log_clearing_v7 (soc-000092)",
+  "source_benchmark": "SOC-AgentBench",
+  "source_scenario": "validation/log_clearing_v7/soc-000092",
+  "alert": {
+    "timestamp": "2025-07-03T00:00:00Z",
+    "host": "WS-166",
+    "user": "admin_jdoe",
+    "alert_type": "soc_agent_bench",
+    "summary": "Automated detection: Windows event log clearing detected. Investigate correlated telemetry.",
+    "title": "Windows event log clearing detected",
+    "severity": "high",
+    "assets": [
+      "WS-166",
+      "SRV-WEB-04"
+    ]
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts",
+      "network"
+    ],
+    "start": "2025-07-03T00:00:00Z",
+    "end": "2025-07-03T00:19:00Z",
+    "hosts": [
+      "WS-166"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "soc-000092-log-001",
+        "timestamp": "2025-07-03T00:05:00Z",
+        "host": "WS-166",
+        "rule": "Windows event log clearing detected",
+        "severity": "high",
+        "message": "Primary indicator on WS-166: Windows event log clearing detected",
+        "user": "admin_jdoe",
+        "raw_alert": {
+          "log_id": "soc-000092-log-001",
+          "timestamp": "2025-07-03T00:05:00+00:00",
+          "source": "windows_security",
+          "host": "WS-166",
+          "user": "admin_jdoe",
+          "message": "Primary indicator on WS-166: Windows event log clearing detected"
+        }
+      },
+      {
+        "event_id": "soc-000092-noise-0",
+        "timestamp": "2025-07-03T00:00:00Z",
+        "host": "WS-033",
+        "rule": "Windows event log clearing detected",
+        "severity": "high",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000092-noise-0",
+          "timestamp": "2025-07-03T00:00:00+00:00",
+          "source": "windows_security",
+          "host": "WS-033",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000092-noise-1",
+        "timestamp": "2025-07-03T00:19:00Z",
+        "host": "WS-098",
+        "rule": "Windows event log clearing detected",
+        "severity": "high",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000092-noise-1",
+          "timestamp": "2025-07-03T00:19:00+00:00",
+          "source": "windows_security",
+          "host": "WS-098",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000092-noise-2",
+        "timestamp": "2025-07-03T00:12:00Z",
+        "host": "WS-049",
+        "rule": "Windows event log clearing detected",
+        "severity": "high",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000092-noise-2",
+          "timestamp": "2025-07-03T00:12:00+00:00",
+          "source": "windows_security",
+          "host": "WS-049",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000092-noise-3",
+        "timestamp": "2025-07-03T00:03:00Z",
+        "host": "WS-019",
+        "rule": "Windows event log clearing detected",
+        "severity": "high",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000092-noise-3",
+          "timestamp": "2025-07-03T00:03:00+00:00",
+          "source": "windows_security",
+          "host": "WS-019",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      }
+    ],
+    "network": [
+      {
+        "event_id": "soc-000092-log-002",
+        "timestamp": "2025-07-03T00:08:00Z",
+        "host": "SRV-WEB-04",
+        "destination_ip": "203.0.113.198",
+        "protocol": "tcp",
+        "message": "Correlated alert on SRV-WEB-04",
+        "raw_log": {
+          "log_id": "soc-000092-log-002",
+          "timestamp": "2025-07-03T00:08:00+00:00",
+          "source": "wazuh",
+          "host": "SRV-WEB-04",
+          "message": "Correlated alert on SRV-WEB-04",
+          "src_ip": "203.0.113.198"
+        }
+      },
+      {
+        "event_id": "soc-000092-log-003",
+        "timestamp": "2025-07-03T00:12:00Z",
+        "host": "WS-166",
+        "destination_ip": "203.0.113.198",
+        "protocol": "tcp",
+        "message": "Network activity from 203.0.113.198 to WS-166",
+        "raw_log": {
+          "log_id": "soc-000092-log-003",
+          "timestamp": "2025-07-03T00:12:00+00:00",
+          "source": "suricata",
+          "host": "WS-166",
+          "message": "Network activity from 203.0.113.198 to WS-166",
+          "src_ip": "203.0.113.198"
+        }
+      },
+      {
+        "event_id": "soc-ioc-0001-5f0629e5",
+        "timestamp": "2025-07-03T00:15:00Z",
+        "host": "WS-166",
+        "destination_ip": "203.0.113.198",
+        "protocol": "tcp",
+        "message": "Observed IP 203.0.113.198"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ev-soc-000092-0",
+      "source": "alerts",
+      "timestamp": "2025-07-03T00:05:00Z",
+      "host": "WS-166",
+      "fields": {
+        "rule": "windows_security",
+        "severity": "high",
+        "message": "Primary indicator on WS-166: Windows event log clearing detected",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "ev-soc-000092-1",
+      "source": "alerts",
+      "timestamp": "2025-07-03T00:08:00Z",
+      "host": "SRV-WEB-04",
+      "fields": {
+        "rule": "wazuh",
+        "severity": "high",
+        "message": "Correlated alert on SRV-WEB-04",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "ev-soc-000092-2",
+      "source": "alerts",
+      "timestamp": "2025-07-03T00:12:00Z",
+      "host": "WS-166",
+      "fields": {
+        "rule": "suricata",
+        "severity": "high",
+        "message": "Network activity from 203.0.113.198 to WS-166",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "soc-ioc-rep-0001-763333de",
+      "source": "network",
+      "timestamp": "2025-07-03T00:15:00Z",
+      "host": "WS-166",
+      "fields": {
+        "destination_ip": "203.0.113.198",
+        "protocol": "tcp",
+        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
+        "reputation": "malicious"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "WS-166"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "network",
+        "filter": {
+          "host": "WS-166"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Automated detection: Windows event log clearing detected. Investigate correlated telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "WS-166"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "network",
+          "filter": {
+            "host": "WS-166"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Automated detection: Windows event log clearing detected. Investigate correlated telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "SOC-AgentBench",
+    "scenario": "validation/log_clearing_v7/soc-000092",
+    "answer": "Security event logs cleared to evade detection",
+    "accept": [
+      "Security event logs cleared to evade detection",
+      "Security event logs cleared to evade detection",
+      "defense_evasion"
+    ],
+    "grading": "exact_ci",
+    "incident_type": "defense_evasion",
+    "is_true_positive": true,
+    "label": "malicious",
+    "attck": [
+      "T1070.001"
+    ],
+    "ioc_enrichment": {
+      "203.0.113.198": {
+        "type": "ip",
+        "reputation": "malicious",
+        "category": "scanner"
+      }
+    },
+    "sealed": true
+  }
+}

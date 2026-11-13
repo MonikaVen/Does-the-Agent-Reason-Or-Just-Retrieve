@@ -1,184 +1,114 @@
 {
-  "generated_at": "2026-09-16T20:01:55.315Z",
-  "dataset_id": "ds-sample-0042",
-  "incident_id": "incident-0042",
+  "generated_at": "2026-11-13T16:47:51.578Z",
+  "dataset_id": "ds-fe0e6148ab",
+  "incident_id": "soc-soc-000010",
   "provider": "ollama",
-  "model": "llama3.2:1b",
+  "model": "qwen2.5:14b",
   "runs": [
     {
-      "run_id": "run-6ca180c9914c",
+      "run_id": "run-fab396ff9d49",
       "condition": "C0",
-      "status": "completed",
-      "error": null,
-      "model": "ollama:llama3.2:1b",
-      "verdict": "malicious",
-      "confidence": 0.8,
-      "summary": "Encoded PowerShell execution detected on workstation-17, suggesting a potential attack.",
-      "evidence_ids": [
-        "event-1008",
-        "event-1019",
-        "event-1021",
-        "event-1024",
-        "event-1009",
-        "event-1026",
-        "event-1033"
-      ],
-      "event_count": 11,
+      "status": "failed",
+      "error": "timed out",
+      "model": "ollama:qwen2.5:14b",
+      "verdict": null,
+      "confidence": null,
+      "summary": null,
+      "evidence_ids": [],
+      "event_count": 7,
       "tool_observations": 0,
       "knowledge_retrievals": 0,
       "tools": [],
-      "started_at": "2026-09-16T19:57:33.430Z",
-      "completed_at": "2026-09-16T19:57:43.743Z",
-      "validation": {
-        "ok": true,
-        "errors": [],
-        "cited_evidence": [
-          "event-1008",
-          "event-1009",
-          "event-1019",
-          "event-1021",
-          "event-1024",
-          "event-1026",
-          "event-1033"
-        ],
-        "unsupported_claim_rate": 0.0
-      }
+      "started_at": "2026-11-13T16:20:21.739Z",
+      "completed_at": "2026-11-13T16:23:21.859Z",
+      "validation": null
     },
     {
-      "run_id": "run-d2ea2b38f286",
+      "run_id": "run-afe292149b35",
       "condition": "C1",
-      "status": "completed",
-      "error": null,
-      "model": "ollama:llama3.2:1b",
-      "verdict": "malicious",
-      "confidence": 0.9,
-      "summary": "The presence of encoded PowerShell execution and suspicious network activity suggests a malicious attack.",
-      "evidence_ids": [
-        "event-1008",
-        "event-1019",
-        "event-1021",
-        "event-1024",
-        "event-1026",
-        "event-1033"
-      ],
-      "event_count": 12,
+      "status": "failed",
+      "error": "timed out",
+      "model": "ollama:qwen2.5:14b",
+      "verdict": null,
+      "confidence": null,
+      "summary": null,
+      "evidence_ids": [],
+      "event_count": 8,
       "tool_observations": 0,
       "knowledge_retrievals": 1,
       "tools": [],
-      "started_at": "2026-09-16T19:57:43.749Z",
-      "completed_at": "2026-09-16T19:57:58.151Z",
-      "validation": {
-        "ok": true,
-        "errors": [],
-        "cited_evidence": [
-          "event-1008",
-          "event-1019",
-          "event-1021",
-          "event-1024",
-          "event-1026",
-          "event-1028",
-          "event-1033"
-        ],
-        "unsupported_claim_rate": 0.0
-      }
+      "started_at": "2026-11-13T16:23:21.867Z",
+      "completed_at": "2026-11-13T16:26:21.978Z",
+      "validation": null
     },
     {
-      "run_id": "run-817fe2c7ba9b",
+      "run_id": "run-0d0b47eb7fe2",
       "condition": "C2",
-      "status": "completed",
-      "error": null,
-      "model": "ollama:llama3.2:1b",
-      "verdict": "malicious",
-      "confidence": 0.8,
-      "summary": "The alerting process appears to have been launched by the execution of PowerShell on workstation-17.",
-      "evidence_ids": [
-        "event-1008",
-        "event-1019",
-        "event-1021",
-        "event-1028",
-        "event-1024",
-        "event-1009"
-      ],
-      "event_count": 27,
+      "status": "failed",
+      "error": "timed out",
+      "model": "ollama:qwen2.5:14b",
+      "verdict": null,
+      "confidence": null,
+      "summary": null,
+      "evidence_ids": [],
+      "event_count": 20,
       "tool_observations": 1,
       "knowledge_retrievals": 0,
       "tools": [
         "query_events",
         "query_events"
       ],
-      "started_at": "2026-09-16T19:57:58.157Z",
-      "completed_at": "2026-09-16T19:58:45.251Z",
-      "validation": {
-        "ok": true,
-        "errors": [],
-        "cited_evidence": [
-          "event-1008",
-          "event-1009",
-          "event-1019",
-          "event-1021",
-          "event-1024",
-          "event-1028"
-        ],
-        "unsupported_claim_rate": 0.0
-      }
+      "started_at": "2026-11-13T16:26:21.989Z",
+      "completed_at": "2026-11-13T16:31:14.793Z",
+      "validation": null
     },
     {
-      "run_id": "run-eee627a7cf00",
+      "run_id": "run-2c05e5d6b5d4",
       "condition": "C3",
       "status": "completed",
       "error": null,
-      "model": "ollama:llama3.2:1b",
+      "model": "ollama:qwen2.5:14b",
       "verdict": "malicious",
-      "confidence": 0.9,
-      "summary": "The ATT&CK technique T1059.001 was used to launch the alerting process.",
+      "confidence": 0.58,
+      "summary": "Large outbound data transfer detected from WS-167 to an external IP, suggesting potential exfiltration.",
       "evidence_ids": [
-        "event-1008",
-        "event-1019",
-        "event-1021",
-        "event-1028",
-        "event-1024",
-        "event-1009"
+        "soc-000010-log-003",
+        "soc-ioc-0001-79d8a1fe"
       ],
-      "event_count": 53,
-      "tool_observations": 3,
+      "event_count": 35,
+      "tool_observations": 2,
       "knowledge_retrievals": 0,
       "tools": [
         "query_events",
         "query_events",
         "query_events",
-        "query_events",
-        "query_events",
         "query_events"
       ],
-      "started_at": "2026-09-16T19:58:45.262Z",
-      "completed_at": "2026-09-16T20:00:02.463Z",
+      "started_at": "2026-11-13T16:31:14.798Z",
+      "completed_at": "2026-11-13T16:36:45.570Z",
       "validation": {
         "ok": true,
         "errors": [],
         "cited_evidence": [
-          "event-1008",
-          "event-1009",
-          "event-1019",
-          "event-1021",
-          "event-1024",
-          "event-1028"
+          "soc-000010-log-003",
+          "soc-ioc-0001-79d8a1fe"
         ],
         "unsupported_claim_rate": 0.0
       }
     },
     {
-      "run_id": "run-b03542008a1a",
+      "run_id": "run-cc2f48e7e059",
       "condition": "C4",
       "status": "completed",
       "error": null,
-      "model": "ollama:llama3.2:1b",
+      "model": "ollama:qwen2.5:14b",
       "verdict": "malicious",
-      "confidence": 0.8,
-      "summary": "Encoded PowerShell execution detected on workstation-17, suggesting malicious activity.",
+      "confidence": 0.58,
+      "summary": "Encoded PowerShell execution followed by an outbound connection to an uncommon IP address indicates potential malicious activity.",
       "evidence_ids": [
-        "event-1021",
-        "event-1028",
-        "event-1009"
+        "soc-000010-log-001",
+        "soc-ioc-0001-79d8a1fe",
+        "soc-000010-log-003"
       ],
       "event_count": 16,
       "tool_observations": 2,
@@ -187,117 +117,108 @@
         "query_events",
         "query_events"
       ],
-      "started_at": "2026-09-16T20:00:02.474Z",
-      "completed_at": "2026-09-16T20:00:13.306Z",
+      "started_at": "2026-11-13T16:36:45.579Z",
+      "completed_at": "2026-11-13T16:38:49.753Z",
       "validation": {
         "ok": true,
         "errors": [],
         "cited_evidence": [
-          "event-1009",
-          "event-1021",
-          "event-1028"
+          "soc-000010-log-001",
+          "soc-000010-log-003",
+          "soc-ioc-0001-79d8a1fe"
         ],
         "unsupported_claim_rate": 0.0
       }
     },
     {
-      "run_id": "run-92d2eb34d5d4",
+      "run_id": "run-abbc4e378597",
       "condition": "C5",
       "status": "completed",
       "error": null,
-      "model": "ollama:llama3.2:1b",
+      "model": "ollama:qwen2.5:14b",
       "verdict": "malicious",
-      "confidence": 0.8,
-      "summary": "Encoded PowerShell execution detected on workstation-17, suggesting malicious activity.",
+      "confidence": 0.58,
+      "summary": "Large outbound data transfer detected from WS-167 to an uncommon IP shortly after suspicious encoded PowerShell activity.",
       "evidence_ids": [
-        "event-1008",
-        "event-1009"
+        "soc-ioc-0001-79d8a1fe",
+        "soc-000010-log-003",
+        "soc-000010-log-001",
+        "soc-000010-log-001"
       ],
       "event_count": 13,
       "tool_observations": 0,
       "knowledge_retrievals": 1,
       "tools": [],
-      "started_at": "2026-09-16T20:00:13.312Z",
-      "completed_at": "2026-09-16T20:00:22.419Z",
+      "started_at": "2026-11-13T16:38:49.759Z",
+      "completed_at": "2026-11-13T16:41:18.728Z",
       "validation": {
         "ok": true,
         "errors": [],
         "cited_evidence": [
-          "event-1008",
-          "event-1009"
+          "soc-000010-log-001",
+          "soc-000010-log-003",
+          "soc-ioc-0001-79d8a1fe"
         ],
         "unsupported_claim_rate": 0.0
       }
     },
     {
-      "run_id": "run-3ad2cc1ca2f4",
+      "run_id": "run-30c9fbbfe3af",
       "condition": "C6",
       "status": "completed",
       "error": null,
-      "model": "ollama:llama3.2:1b",
-      "verdict": "malicious",
-      "confidence": 0.8,
-      "summary": "The presence of encoded PowerShell execution on workstation-17 suggests malicious activity.",
+      "model": "ollama:qwen2.5:14b",
+      "verdict": "benign",
+      "confidence": 0.58,
+      "summary": "Large outbound data transfer detected but no suspicious encoded PowerShell execution or persistence activity observed.",
       "evidence_ids": [
-        "event-1021",
-        "event-1024"
+        "soc-ioc-rep-0001-765db0f5"
       ],
       "event_count": 13,
       "tool_observations": 0,
       "knowledge_retrievals": 1,
       "tools": [],
-      "started_at": "2026-09-16T20:00:22.440Z",
-      "completed_at": "2026-09-16T20:00:30.368Z",
+      "started_at": "2026-11-13T16:41:18.735Z",
+      "completed_at": "2026-11-13T16:42:48.538Z",
       "validation": {
         "ok": true,
         "errors": [],
         "cited_evidence": [
-          "event-1021",
-          "event-1024"
+          "soc-ioc-rep-0001-765db0f5"
         ],
         "unsupported_claim_rate": 0.0
       }
     },
     {
-      "run_id": "run-2870d812a4d6",
+      "run_id": "run-be7eda8b63d6",
       "condition": "C7",
       "status": "completed",
       "error": null,
-      "model": "ollama:llama3.2:1b",
+      "model": "ollama:qwen2.5:14b",
       "verdict": "malicious",
-      "confidence": 0.8,
-      "summary": "The ATT&CK technique T1059.001 was used to launch the alerting process.",
+      "confidence": 0.58,
+      "summary": "Large outbound data transfer detected from WS-167 to an external IP, suggesting potential exfiltration.",
       "evidence_ids": [
-        "event-1008",
-        "event-1019",
-        "event-1021",
-        "event-1028",
-        "event-1024",
-        "event-1009"
+        "soc-000010-log-003",
+        "soc-ioc-0001-79d8a1fe"
       ],
-      "event_count": 53,
-      "tool_observations": 3,
+      "event_count": 35,
+      "tool_observations": 2,
       "knowledge_retrievals": 0,
       "tools": [
         "query_events",
         "query_events",
         "query_events",
-        "query_events",
-        "query_events",
         "query_events"
       ],
-      "started_at": "2026-09-16T20:00:30.378Z",
-      "completed_at": "2026-09-16T20:01:55.310Z",
+      "started_at": "2026-11-13T16:42:48.543Z",
+      "completed_at": "2026-11-13T16:47:51.575Z",
       "validation": {
         "ok": true,
         "errors": [],
         "cited_evidence": [
-          "event-1008",
-          "event-1009",
-          "event-1019",
-          "event-1021",
-          "event-1024",
-          "event-1028"
+          "soc-000010-log-003",
+          "soc-ioc-0001-79d8a1fe"
         ],
         "unsupported_claim_rate": 0.0
       }

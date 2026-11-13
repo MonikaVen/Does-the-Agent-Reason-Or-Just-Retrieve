@@ -1,0 +1,219 @@
+{
+  "incident_id": "ait-fox-cracking",
+  "name": "AIT-ADS fox/cracking",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "fox/cracking",
+  "alert": {
+    "timestamp": "2022-01-18T12:39:11Z",
+    "host": "fox",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on fox. Identify the attack stage from telemetry."
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-18T12:39:11Z",
+    "end": "2022-01-18T13:13:28Z",
+    "hosts": [
+      "fox"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-b6c1fb15",
+        "timestamp": "2022-01-18T12:39:11Z",
+        "host": "fox",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:39:11 +0000] \"GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyIuL3dwaGFzaGNyYWNrLTAuMS93cGhhc2hjcmFjay5zaCIsICItdyIsICIkUFdEL3JvY2t5b3UudHh0IiwgIi1qIiwgIi4vd3BoYXNoY3JhY2stMC4xL2pvaG4tMS43LjYtanVtYm8tMTItTGludXg2NC9ydW4iLCAiLXUiLCAicGhvcGtpbnMiXQ%3D%3D HTTP/1.1\" 200 506876 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642509551.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:39:11 +0000] \"GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyIuL3dwaGFzaGNyYWNrLTAuMS93cGhhc2hjcmFjay5zaCIsICItdyIsICIkUFdEL3JvY2t5b3UudHh0IiwgIi1qIiwgIi4vd3BoYXNoY3JhY2stMC4xL2pvaG4tMS43LjYtanVtYm8tMTItTGludXg2NC9ydW4iLCAiLXUiLCAicGhvcGtpbnMiXQ%3D%3D HTTP/1.1\" 200 506876 \"-\" \"python-requests/2.27.1\""
+        }
+      },
+      {
+        "event_id": "ait-0002-8b1c6f11",
+        "timestamp": "2022-01-18T12:40:15Z",
+        "host": "fox",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "192.168.131.234 - - [18/Jan/2022:12:40:15 +0000] \"POST /services/ajax.php/imp/poll HTTP/1.1\" 200 463 \"https://mailserver.taylorcruz.fox.org/imp/dynamic.php?page=mailbox\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "raw_alert": {
+          "timestamp": 1642509615.0,
+          "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+          "message": "192.168.131.234 - - [18/Jan/2022:12:40:15 +0000] \"POST /services/ajax.php/imp/poll HTTP/1.1\" 200 463 \"https://mailserver.taylorcruz.fox.org/imp/dynamic.php?page=mailbox\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\""
+        }
+      },
+      {
+        "event_id": "ait-0003-61b95952",
+        "timestamp": "2022-01-18T12:59:54Z",
+        "host": "fox",
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"@timestamp\":\"2022-01-18T12:59:54.321Z\",\"service\":{\"type\":\"system\"},\"tags\":[\"beats_input_raw_event\"],\"@version\":\"1\",\"agent\":{\"type\":\"metricbeat\",\"hostname\":\"intranet-server\",\"version\":\"7.13.2\",\"id\":\"a0c41e4e-ff4a-481f-adda-21fc96889b28\",\"name\":\"intranet-server\",\"ephemeral_id\":\"ae20c47b-0a81-4e05-a749-cbe0dacd5e36\"},\"system\":{\"cpu\":{\"softirq\":{\"pct\":4.0E-4,\"norm\":{\"pct\":4.0E-4}},\"iowait\":{\"pct\":0,\"norm\":{\"pct\":0}},\"nice\":{\"pct\":0.9362,\"norm\":{\"pct\":0.9362}},\"cores\":1,\"idle\":{\"pct\":0,\"norm\":{\"pct\":0}},\"system\":{\"pct\":0.0362,\"norm\":{\"pct\":0.0362}},\"steal\":{\"pct\":9.0E-4,\"norm\":{\"pct\":9.0E-4}},\"total\":{\"pct\":1,\"norm\":{\"pct\":1}},\"user\":{\"pct\":0.0262,\"norm\":{\"pct\":0.0262}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}}}},\"metricset\":{\"name\":\"cpu\",\"period\":45000},\"event\":{\"duration\":365552,\"dataset\":\"system.cpu\",\"module\":\"system\"},\"ecs\":{\"version\":\"1.9.0\"},\"host\":{\"cpu\":{\"pct\":1},\"name\":\"intranet-server\"}}",
+        "raw_alert": {
+          "timestamp": 1642510794.32,
+          "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+          "message": "{\"@timestamp\":\"2022-01-18T12:59:54.321Z\",\"service\":{\"type\":\"system\"},\"tags\":[\"beats_input_raw_event\"],\"@version\":\"1\",\"agent\":{\"type\":\"metricbeat\",\"hostname\":\"intranet-server\",\"version\":\"7.13.2\",\"id\":\"a0c41e4e-ff4a-481f-adda-21fc96889b28\",\"name\":\"intranet-server\",\"ephemeral_id\":\"ae20c47b-0a81-4e05-a749-cbe0dacd5e36\"},\"system\":{\"cpu\":{\"softirq\":{\"pct\":4.0E-4,\"norm\":{\"pct\":4.0E-4}},\"iowait\":{\"pct\":0,\"norm\":{\"pct\":0}},\"nice\":{\"pct\":0.9362,\"norm\":{\"pct\":0.9362}},\"cores\":1,\"idle\":{\"pct\":0,\"norm\":{\"pct\":0}},\"system\":{\"pct\":0.0362,\"norm\":{\"pct\":0.0362}},\"steal\":{\"pct\":9.0E-4,\"norm\":{\"pct\":9.0E-4}},\"total\":{\"pct\":1,\"norm\":{\"pct\":1}},\"user\":{\"pct\":0.0262,\"norm\":{\"pct\":0.0262}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}}}},\"metricset\":{\"name\":\"cpu\",\"period\":45000},\"event\":{\"duration\":365552,\"dataset\":\"system.cpu\",\"module\":\"system\"},\"ecs\":{\"version\":\"1.9.0\"},\"host\":{\"cpu\":{\"pct\":1},\"name\":\"intranet-server\"}}"
+        }
+      },
+      {
+        "event_id": "ait-0004-a5ca82eb",
+        "timestamp": "2022-01-18T13:00:31Z",
+        "host": "fox",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 18 13:00:31 dnsmasq[14460]: query[A] mmx-ds.cdn.whatsapp.net from 192.168.128.4",
+        "raw_alert": {
+          "timestamp": 1642510831.0,
+          "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+          "message": "Jan 18 13:00:31 dnsmasq[14460]: query[A] mmx-ds.cdn.whatsapp.net from 192.168.128.4"
+        }
+      },
+      {
+        "event_id": "ait-0005-f1647236",
+        "timestamp": "2022-01-18T13:13:28Z",
+        "host": "fox",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "172.17.130.196 - - [18/Jan/2022:13:13:28 +0000] \"GET / HTTP/1.1\" 200 6128 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "raw_alert": {
+          "timestamp": 1642511608.0,
+          "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+          "message": "172.17.130.196 - - [18/Jan/2022:13:13:28 +0000] \"GET / HTTP/1.1\" 200 6128 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\""
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-b6c1fb15",
+      "source": "alerts",
+      "timestamp": "2022-01-18T12:39:11Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:39:11 +0000] \"GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyIuL3dwaGFzaGNyYWNrLTAuMS93cGhhc2hjcmFjay5zaCIsICItdyIsICIkUFdEL3JvY2t5b3UudHh0IiwgIi1qIiwgIi4vd3BoYXNoY3JhY2stMC4xL2pvaG4tMS43LjYtanVtYm8tMTItTGludXg2NC9ydW4iLCAiLXUiLCAicGhvcGtpbnMiXQ%3D%3D HTTP/1.1\" 200 506876 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642509551.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:39:11 +0000] \"GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyIuL3dwaGFzaGNyYWNrLTAuMS93cGhhc2hjcmFjay5zaCIsICItdyIsICIkUFdEL3JvY2t5b3UudHh0IiwgIi1qIiwgIi4vd3BoYXNoY3JhY2stMC4xL2pvaG4tMS43LjYtanVtYm8tMTItTGludXg2NC9ydW4iLCAiLXUiLCAicGhvcGtpbnMiXQ%3D%3D HTTP/1.1\" 200 506876 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-8b1c6f11",
+      "source": "alerts",
+      "timestamp": "2022-01-18T12:40:15Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "192.168.131.234 - - [18/Jan/2022:12:40:15 +0000] \"POST /services/ajax.php/imp/poll HTTP/1.1\" 200 463 \"https://mailserver.taylorcruz.fox.org/imp/dynamic.php?page=mailbox\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "raw_alert": {
+          "timestamp": 1642509615.0,
+          "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+          "message": "192.168.131.234 - - [18/Jan/2022:12:40:15 +0000] \"POST /services/ajax.php/imp/poll HTTP/1.1\" 200 463 \"https://mailserver.taylorcruz.fox.org/imp/dynamic.php?page=mailbox\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-61b95952",
+      "source": "alerts",
+      "timestamp": "2022-01-18T12:59:54Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"@timestamp\":\"2022-01-18T12:59:54.321Z\",\"service\":{\"type\":\"system\"},\"tags\":[\"beats_input_raw_event\"],\"@version\":\"1\",\"agent\":{\"type\":\"metricbeat\",\"hostname\":\"intranet-server\",\"version\":\"7.13.2\",\"id\":\"a0c41e4e-ff4a-481f-adda-21fc96889b28\",\"name\":\"intranet-server\",\"ephemeral_id\":\"ae20c47b-0a81-4e05-a749-cbe0dacd5e36\"},\"system\":{\"cpu\":{\"softirq\":{\"pct\":4.0E-4,\"norm\":{\"pct\":4.0E-4}},\"iowait\":{\"pct\":0,\"norm\":{\"pct\":0}},\"nice\":{\"pct\":0.9362,\"norm\":{\"pct\":0.9362}},\"cores\":1,\"idle\":{\"pct\":0,\"norm\":{\"pct\":0}},\"system\":{\"pct\":0.0362,\"norm\":{\"pct\":0.0362}},\"steal\":{\"pct\":9.0E-4,\"norm\":{\"pct\":9.0E-4}},\"total\":{\"pct\":1,\"norm\":{\"pct\":1}},\"user\":{\"pct\":0.0262,\"norm\":{\"pct\":0.0262}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}}}},\"metricset\":{\"name\":\"cpu\",\"period\":45000},\"event\":{\"duration\":365552,\"dataset\":\"system.cpu\",\"module\":\"system\"},\"ecs\":{\"version\":\"1.9.0\"},\"host\":{\"cpu\":{\"pct\":1},\"name\":\"intranet-server\"}}",
+        "raw_alert": {
+          "timestamp": 1642510794.32,
+          "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+          "message": "{\"@timestamp\":\"2022-01-18T12:59:54.321Z\",\"service\":{\"type\":\"system\"},\"tags\":[\"beats_input_raw_event\"],\"@version\":\"1\",\"agent\":{\"type\":\"metricbeat\",\"hostname\":\"intranet-server\",\"version\":\"7.13.2\",\"id\":\"a0c41e4e-ff4a-481f-adda-21fc96889b28\",\"name\":\"intranet-server\",\"ephemeral_id\":\"ae20c47b-0a81-4e05-a749-cbe0dacd5e36\"},\"system\":{\"cpu\":{\"softirq\":{\"pct\":4.0E-4,\"norm\":{\"pct\":4.0E-4}},\"iowait\":{\"pct\":0,\"norm\":{\"pct\":0}},\"nice\":{\"pct\":0.9362,\"norm\":{\"pct\":0.9362}},\"cores\":1,\"idle\":{\"pct\":0,\"norm\":{\"pct\":0}},\"system\":{\"pct\":0.0362,\"norm\":{\"pct\":0.0362}},\"steal\":{\"pct\":9.0E-4,\"norm\":{\"pct\":9.0E-4}},\"total\":{\"pct\":1,\"norm\":{\"pct\":1}},\"user\":{\"pct\":0.0262,\"norm\":{\"pct\":0.0262}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}}}},\"metricset\":{\"name\":\"cpu\",\"period\":45000},\"event\":{\"duration\":365552,\"dataset\":\"system.cpu\",\"module\":\"system\"},\"ecs\":{\"version\":\"1.9.0\"},\"host\":{\"cpu\":{\"pct\":1},\"name\":\"intranet-server\"}}"
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on fox. Identify the attack stage from telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on fox. Identify the attack stage from telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "fox/cracking",
+    "answer": "cracking",
+    "accept": [
+      "cracking",
+      "cracking"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

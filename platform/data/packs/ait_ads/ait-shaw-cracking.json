@@ -1,0 +1,1119 @@
+{
+  "incident_id": "ait-shaw-cracking",
+  "name": "AIT-ADS shaw/cracking",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "shaw/cracking",
+  "alert": {
+    "timestamp": "2022-01-29T14:40:01Z",
+    "host": "shaw",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on shaw. Identify the attack stage from telemetry."
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-29T14:40:01Z",
+    "end": "2022-01-29T15:20:03Z",
+    "hosts": [
+      "shaw"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-38e34b22",
+        "timestamp": "2022-01-29T14:40:01Z",
+        "host": "shaw",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:40:01 +0000] \"GET /wp-content/uploads/2022/01/zrhrldsngi-1643467181.254.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506735 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1643467201.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:40:01 +0000] \"GET /wp-content/uploads/2022/01/zrhrldsngi-1643467181.254.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506735 \"-\" \"python-requests/2.27.1\""
+        }
+      },
+      {
+        "event_id": "ait-0002-ae981a85",
+        "timestamp": "2022-01-29T14:40:14Z",
+        "host": "shaw",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "192.168.188.32 - - [29/Jan/2022:14:40:14 +0000] \"GET /mnemo/memo.php?actionID=add_memo HTTP/1.1\" 200 6656 \"https://mail.thomasmurray.shaw.info/mnemo/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "raw_alert": {
+          "timestamp": 1643467214.0,
+          "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+          "message": "192.168.188.32 - - [29/Jan/2022:14:40:14 +0000] \"GET /mnemo/memo.php?actionID=add_memo HTTP/1.1\" 200 6656 \"https://mail.thomasmurray.shaw.info/mnemo/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\""
+        }
+      },
+      {
+        "event_id": "ait-0003-bf1ab100",
+        "timestamp": "2022-01-29T14:40:28Z",
+        "host": "shaw",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:40:28 +0000] \"GET /wp-content/uploads/2022/01/zrhrldsngi-1643467181.254.php?wp_meta=WyIuL3dwaGFzaGNyYWNrLTAuMS93cGhhc2hjcmFjay5zaCIsICItdyIsICIkUFdEL3JvY2t5b3UudHh0IiwgIi1qIiwgIi4vd3BoYXNoY3JhY2stMC4xL2pvaG4tMS43LjYtanVtYm8tMTItTGludXg2NC9ydW4iLCAiLXUiLCAiZ21hcnNoIl0%3D HTTP/1.1\" 200 506894 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1643467228.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:40:28 +0000] \"GET /wp-content/uploads/2022/01/zrhrldsngi-1643467181.254.php?wp_meta=WyIuL3dwaGFzaGNyYWNrLTAuMS93cGhhc2hjcmFjay5zaCIsICItdyIsICIkUFdEL3JvY2t5b3UudHh0IiwgIi1qIiwgIi4vd3BoYXNoY3JhY2stMC4xL2pvaG4tMS43LjYtanVtYm8tMTItTGludXg2NC9ydW4iLCAiLXUiLCAiZ21hcnNoIl0%3D HTTP/1.1\" 200 506894 \"-\" \"python-requests/2.27.1\""
+        }
+      },
+      {
+        "event_id": "ait-0004-624f0426",
+        "timestamp": "2022-01-29T14:41:53Z",
+        "host": "shaw",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"tags\":[\"beats_input_raw_event\"],\"service\":{\"type\":\"system\"},\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":1}},\"event\":{\"module\":\"system\",\"dataset\":\"system.cpu\",\"duration\":596549},\"system\":{\"cpu\":{\"total\":{\"pct\":1,\"norm\":{\"pct\":1}},\"user\":{\"pct\":0.028,\"norm\":{\"pct\":0.028}},\"iowait\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0,\"norm\":{\"pct\":0}},\"system\":{\"pct\":0.0398,\"norm\":{\"pct\":0.0398}},\"nice\":{\"pct\":0.93,\"norm\":{\"pct\":0.93}},\"cores\":1,\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":7.0E-4,\"norm\":{\"pct\":7.0E-4}},\"steal\":{\"pct\":0.0016,\"norm\":{\"pct\":0.0016}}}},\"@timestamp\":\"2022-01-29T14:41:53.304Z\",\"metricset\":{\"name\":\"cpu\",\"period\":45000},\"agent\":{\"ephemeral_id\":\"60467123-ae3b-4339-bc93-ff506807789c\",\"type\":\"metricbeat\",\"version\":\"7.13.2\",\"id\":\"fe2b129b-2792-44df-b7e6-ed5439c2b628\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\"},\"@version\":\"1\",\"ecs\":{\"version\":\"1.9.0\"}}",
+        "raw_alert": {
+          "timestamp": 1643467313.3,
+          "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+          "message": "{\"tags\":[\"beats_input_raw_event\"],\"service\":{\"type\":\"system\"},\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":1}},\"event\":{\"module\":\"system\",\"dataset\":\"system.cpu\",\"duration\":596549},\"system\":{\"cpu\":{\"total\":{\"pct\":1,\"norm\":{\"pct\":1}},\"user\":{\"pct\":0.028,\"norm\":{\"pct\":0.028}},\"iowait\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0,\"norm\":{\"pct\":0}},\"system\":{\"pct\":0.0398,\"norm\":{\"pct\":0.0398}},\"nice\":{\"pct\":0.93,\"norm\":{\"pct\":0.93}},\"cores\":1,\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":7.0E-4,\"norm\":{\"pct\":7.0E-4}},\"steal\":{\"pct\":0.0016,\"norm\":{\"pct\":0.0016}}}},\"@timestamp\":\"2022-01-29T14:41:53.304Z\",\"metricset\":{\"name\":\"cpu\",\"period\":45000},\"agent\":{\"ephemeral_id\":\"60467123-ae3b-4339-bc93-ff506807789c\",\"type\":\"metricbeat\",\"version\":\"7.13.2\",\"id\":\"fe2b129b-2792-44df-b7e6-ed5439c2b628\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\"},\"@version\":\"1\",\"ecs\":{\"version\":\"1.9.0\"}}"
+        }
+      },
+      {
+        "event_id": "ait-0005-7108e1f3",
+        "timestamp": "2022-01-29T15:14:53Z",
+        "host": "shaw",
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"tags\":[\"beats_input_raw_event\"],\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":1}},\"event\":{\"module\":\"system\",\"duration\":1004750,\"dataset\":\"system.cpu\"},\"metricset\":{\"name\":\"cpu\",\"period\":45000},\"service\":{\"type\":\"system\"},\"@timestamp\":\"2022-01-29T15:14:53.304Z\",\"system\":{\"cpu\":{\"total\":{\"pct\":1,\"norm\":{\"pct\":1}},\"user\":{\"pct\":0.0242,\"norm\":{\"pct\":0.0242}},\"iowait\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0,\"norm\":{\"pct\":0}},\"system\":{\"pct\":0.034,\"norm\":{\"pct\":0.034}},\"nice\":{\"pct\":0.9409,\"norm\":{\"pct\":0.9409}},\"cores\":1,\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":2.0E-4,\"norm\":{\"pct\":2.0E-4}},\"steal\":{\"pct\":7.0E-4,\"norm\":{\"pct\":7.0E-4}}}},\"agent\":{\"ephemeral_id\":\"60467123-ae3b-4339-bc93-ff506807789c\",\"type\":\"metricbeat\",\"version\":\"7.13.2\",\"id\":\"fe2b129b-2792-44df-b7e6-ed5439c2b628\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\"},\"@version\":\"1\",\"ecs\":{\"version\":\"1.9.0\"}}",
+        "raw_alert": {
+          "timestamp": 1643469293.3,
+          "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+          "message": "{\"tags\":[\"beats_input_raw_event\"],\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":1}},\"event\":{\"module\":\"system\",\"duration\":1004750,\"dataset\":\"system.cpu\"},\"metricset\":{\"name\":\"cpu\",\"period\":45000},\"service\":{\"type\":\"system\"},\"@timestamp\":\"2022-01-29T15:14:53.304Z\",\"system\":{\"cpu\":{\"total\":{\"pct\":1,\"norm\":{\"pct\":1}},\"user\":{\"pct\":0.0242,\"norm\":{\"pct\":0.0242}},\"iowait\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0,\"norm\":{\"pct\":0}},\"system\":{\"pct\":0.034,\"norm\":{\"pct\":0.034}},\"nice\":{\"pct\":0.9409,\"norm\":{\"pct\":0.9409}},\"cores\":1,\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":2.0E-4,\"norm\":{\"pct\":2.0E-4}},\"steal\":{\"pct\":7.0E-4,\"norm\":{\"pct\":7.0E-4}}}},\"agent\":{\"ephemeral_id\":\"60467123-ae3b-4339-bc93-ff506807789c\",\"type\":\"metricbeat\",\"version\":\"7.13.2\",\"id\":\"fe2b129b-2792-44df-b7e6-ed5439c2b628\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\"},\"@version\":\"1\",\"ecs\":{\"version\":\"1.9.0\"}}"
+        }
+      },
+      {
+        "event_id": "ait-0006-8cc264bb",
+        "timestamp": "2022-01-29T15:16:48Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:16:48 dnsmasq[14635]: query[A] example.org from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469408.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:16:48 dnsmasq[14635]: query[A] example.org from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0007-c0a2d7cc",
+        "timestamp": "2022-01-29T15:16:48Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:16:48 dnsmasq[14635]: query[AAAA] example.org from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469408.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:16:48 dnsmasq[14635]: query[AAAA] example.org from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0008-29a2886a",
+        "timestamp": "2022-01-29T15:16:48Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:16:48 dnsmasq[14635]: query[A] ipv4only.arpa from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469408.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:16:48 dnsmasq[14635]: query[A] ipv4only.arpa from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0009-e04f6df6",
+        "timestamp": "2022-01-29T15:16:48Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:16:48 dnsmasq[14635]: query[AAAA] ipv4only.arpa from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469408.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:16:48 dnsmasq[14635]: query[AAAA] ipv4only.arpa from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0010-245b5cc5",
+        "timestamp": "2022-01-29T15:16:48Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:16:48 dnsmasq[14635]: query[A] detectportal.firefox.com from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469408.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:16:48 dnsmasq[14635]: query[A] detectportal.firefox.com from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0011-4a28951a",
+        "timestamp": "2022-01-29T15:16:48Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:16:48 dnsmasq[14635]: query[AAAA] detectportal.firefox.com from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469408.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:16:48 dnsmasq[14635]: query[AAAA] detectportal.firefox.com from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0012-c3f6fd67",
+        "timestamp": "2022-01-29T15:18:03Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:03 dnsmasq[14635]: query[A] location.services.mozilla.com from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469483.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:03 dnsmasq[14635]: query[A] location.services.mozilla.com from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0013-b503d799",
+        "timestamp": "2022-01-29T15:18:03Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:03 dnsmasq[14635]: query[AAAA] location.services.mozilla.com from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469483.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:03 dnsmasq[14635]: query[AAAA] location.services.mozilla.com from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0014-3dde1b1d",
+        "timestamp": "2022-01-29T15:18:03Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:03 dnsmasq[14635]: query[AAAA] locprod2-elb-us-west-2.prod.mozaws.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469483.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:03 dnsmasq[14635]: query[AAAA] locprod2-elb-us-west-2.prod.mozaws.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0015-43ebf0fc",
+        "timestamp": "2022-01-29T15:18:04Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:04 dnsmasq[14635]: query[AAAA] firefox.settings.services.mozilla.com from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469484.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:04 dnsmasq[14635]: query[AAAA] firefox.settings.services.mozilla.com from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0016-a37716d8",
+        "timestamp": "2022-01-29T15:18:04Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:04 dnsmasq[14635]: query[A] firefox.settings.services.mozilla.com from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469484.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:04 dnsmasq[14635]: query[A] firefox.settings.services.mozilla.com from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0017-e73ddec5",
+        "timestamp": "2022-01-29T15:18:04Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:04 dnsmasq[14635]: query[A] ocsp.digicert.com from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469484.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:04 dnsmasq[14635]: query[A] ocsp.digicert.com from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0018-a523a932",
+        "timestamp": "2022-01-29T15:18:04Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:04 dnsmasq[14635]: query[AAAA] ocsp.digicert.com from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469484.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:04 dnsmasq[14635]: query[AAAA] ocsp.digicert.com from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0019-7794c310",
+        "timestamp": "2022-01-29T15:18:04Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:04 dnsmasq[14635]: query[AAAA] cs9.wac.phicdn.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469484.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:04 dnsmasq[14635]: query[AAAA] cs9.wac.phicdn.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0020-5d43f581",
+        "timestamp": "2022-01-29T15:18:04Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:04 dnsmasq[14635]: query[AAAA] ntp.ubuntu.com from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469484.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:04 dnsmasq[14635]: query[AAAA] ntp.ubuntu.com from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0021-d9899409",
+        "timestamp": "2022-01-29T15:18:04Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:04 dnsmasq[14635]: query[A] ntp.ubuntu.com from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469484.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:04 dnsmasq[14635]: query[A] ntp.ubuntu.com from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0022-d1d4fd29",
+        "timestamp": "2022-01-29T15:18:05Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:05 dnsmasq[14635]: query[A] content-signature-2.cdn.mozilla.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469485.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:05 dnsmasq[14635]: query[A] content-signature-2.cdn.mozilla.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0023-4110183b",
+        "timestamp": "2022-01-29T15:18:05Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:05 dnsmasq[14635]: query[AAAA] content-signature-2.cdn.mozilla.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469485.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:05 dnsmasq[14635]: query[AAAA] content-signature-2.cdn.mozilla.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0024-747fb366",
+        "timestamp": "2022-01-29T15:18:05Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:05 dnsmasq[14635]: query[A] shavar.services.mozilla.com from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469485.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:05 dnsmasq[14635]: query[A] shavar.services.mozilla.com from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0025-ae053a41",
+        "timestamp": "2022-01-29T15:18:05Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:05 dnsmasq[14635]: query[AAAA] shavar.services.mozilla.com from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469485.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:05 dnsmasq[14635]: query[AAAA] shavar.services.mozilla.com from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0026-fc5c7b03",
+        "timestamp": "2022-01-29T15:18:05Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:05 dnsmasq[14635]: query[AAAA] shavar.prod.mozaws.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469485.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:05 dnsmasq[14635]: query[AAAA] shavar.prod.mozaws.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0027-fc5c7b03",
+        "timestamp": "2022-01-29T15:18:05Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:05 dnsmasq[14635]: query[AAAA] shavar.prod.mozaws.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469485.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:05 dnsmasq[14635]: query[AAAA] shavar.prod.mozaws.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0028-38592661",
+        "timestamp": "2022-01-29T15:18:05Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:05 dnsmasq[14635]: query[A] push.services.mozilla.com from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469485.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:05 dnsmasq[14635]: query[A] push.services.mozilla.com from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0029-396da175",
+        "timestamp": "2022-01-29T15:18:05Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:05 dnsmasq[14635]: query[AAAA] push.services.mozilla.com from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469485.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:05 dnsmasq[14635]: query[AAAA] push.services.mozilla.com from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0030-53fd38af",
+        "timestamp": "2022-01-29T15:18:05Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:05 dnsmasq[14635]: query[AAAA] autopush.prod.mozaws.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469485.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:05 dnsmasq[14635]: query[AAAA] autopush.prod.mozaws.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0031-53fd38af",
+        "timestamp": "2022-01-29T15:18:05Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:05 dnsmasq[14635]: query[AAAA] autopush.prod.mozaws.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469485.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:05 dnsmasq[14635]: query[AAAA] autopush.prod.mozaws.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0032-53fd38af",
+        "timestamp": "2022-01-29T15:18:05Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:05 dnsmasq[14635]: query[AAAA] autopush.prod.mozaws.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469485.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:05 dnsmasq[14635]: query[AAAA] autopush.prod.mozaws.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0033-1f0f48c9",
+        "timestamp": "2022-01-29T15:18:06Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] cs9.wac.phicdn.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469486.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] cs9.wac.phicdn.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0034-8fc4df89",
+        "timestamp": "2022-01-29T15:18:06Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:06 dnsmasq[14635]: query[A] tracking-protection.cdn.mozilla.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469486.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:06 dnsmasq[14635]: query[A] tracking-protection.cdn.mozilla.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0035-ec0ae530",
+        "timestamp": "2022-01-29T15:18:06Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] tracking-protection.cdn.mozilla.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469486.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] tracking-protection.cdn.mozilla.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0036-93d50d34",
+        "timestamp": "2022-01-29T15:18:06Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469486.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0037-93d50d34",
+        "timestamp": "2022-01-29T15:18:06Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469486.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0038-93d50d34",
+        "timestamp": "2022-01-29T15:18:06Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469486.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0039-93d50d34",
+        "timestamp": "2022-01-29T15:18:06Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469486.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0040-93d50d34",
+        "timestamp": "2022-01-29T15:18:06Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469486.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0041-93d50d34",
+        "timestamp": "2022-01-29T15:18:06Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469486.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0042-93d50d34",
+        "timestamp": "2022-01-29T15:18:06Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469486.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0043-93d50d34",
+        "timestamp": "2022-01-29T15:18:06Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469486.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0044-93d50d34",
+        "timestamp": "2022-01-29T15:18:06Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469486.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0045-93d50d34",
+        "timestamp": "2022-01-29T15:18:06Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469486.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0046-93d50d34",
+        "timestamp": "2022-01-29T15:18:06Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469486.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0047-93d50d34",
+        "timestamp": "2022-01-29T15:18:06Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469486.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0048-93d50d34",
+        "timestamp": "2022-01-29T15:18:06Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469486.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:06 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0049-f42bd5b4",
+        "timestamp": "2022-01-29T15:18:07Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:07 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469487.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:07 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0050-f42bd5b4",
+        "timestamp": "2022-01-29T15:18:07Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:07 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469487.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:07 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0051-f42bd5b4",
+        "timestamp": "2022-01-29T15:18:07Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:07 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469487.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:07 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0052-f42bd5b4",
+        "timestamp": "2022-01-29T15:18:07Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:18:07 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469487.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:18:07 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0053-d65b1b7d",
+        "timestamp": "2022-01-29T15:19:12Z",
+        "host": "shaw",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643469552.170:12108): pid=24987 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "raw_alert": {
+          "timestamp": 1643469552.17,
+          "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+          "message": "type=USER_AUTH msg=audit(1643469552.170:12108): pid=24987 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0054-9da7b6a9",
+        "timestamp": "2022-01-29T15:19:12Z",
+        "host": "shaw",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643469552.174:12109): pid=24987 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "raw_alert": {
+          "timestamp": 1643469552.17,
+          "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+          "message": "type=USER_ACCT msg=audit(1643469552.174:12109): pid=24987 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0055-51bc8906",
+        "timestamp": "2022-01-29T15:19:12Z",
+        "host": "shaw",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643469552.214:12110): pid=24987 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "raw_alert": {
+          "timestamp": 1643469552.21,
+          "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+          "message": "type=USER_AUTH msg=audit(1643469552.214:12110): pid=24987 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0056-963789db",
+        "timestamp": "2022-01-29T15:19:12Z",
+        "host": "shaw",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643469552.214:12111): pid=24987 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "raw_alert": {
+          "timestamp": 1643469552.21,
+          "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+          "message": "type=USER_ACCT msg=audit(1643469552.214:12111): pid=24987 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0057-d202db03",
+        "timestamp": "2022-01-29T15:19:12Z",
+        "host": "shaw",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643469552.298:12112): pid=24987 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "raw_alert": {
+          "timestamp": 1643469552.3,
+          "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+          "message": "type=USER_AUTH msg=audit(1643469552.298:12112): pid=24987 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0058-cdd89842",
+        "timestamp": "2022-01-29T15:19:12Z",
+        "host": "shaw",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643469552.298:12113): pid=24987 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "raw_alert": {
+          "timestamp": 1643469552.3,
+          "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+          "message": "type=USER_ACCT msg=audit(1643469552.298:12113): pid=24987 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0059-5d052321",
+        "timestamp": "2022-01-29T15:19:13Z",
+        "host": "shaw",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643469553.318:12114): pid=24987 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "raw_alert": {
+          "timestamp": 1643469553.32,
+          "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+          "message": "type=USER_AUTH msg=audit(1643469553.318:12114): pid=24987 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0060-c41ef2b9",
+        "timestamp": "2022-01-29T15:19:13Z",
+        "host": "shaw",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643469553.322:12115): pid=24987 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "raw_alert": {
+          "timestamp": 1643469553.32,
+          "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+          "message": "type=USER_ACCT msg=audit(1643469553.322:12115): pid=24987 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0061-c3443e33",
+        "timestamp": "2022-01-29T15:19:57Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:19:57 dnsmasq[14635]: query[A] example.org from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469597.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:19:57 dnsmasq[14635]: query[A] example.org from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0062-e17af5bb",
+        "timestamp": "2022-01-29T15:19:57Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:19:57 dnsmasq[14635]: query[AAAA] example.org from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469597.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:19:57 dnsmasq[14635]: query[AAAA] example.org from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0063-596078ff",
+        "timestamp": "2022-01-29T15:19:57Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:19:57 dnsmasq[14635]: query[A] ipv4only.arpa from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469597.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:19:57 dnsmasq[14635]: query[A] ipv4only.arpa from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0064-82efed6b",
+        "timestamp": "2022-01-29T15:19:57Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:19:57 dnsmasq[14635]: query[AAAA] ipv4only.arpa from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469597.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:19:57 dnsmasq[14635]: query[AAAA] ipv4only.arpa from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0065-9a8c3faf",
+        "timestamp": "2022-01-29T15:19:57Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:19:57 dnsmasq[14635]: query[A] detectportal.firefox.com from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469597.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:19:57 dnsmasq[14635]: query[A] detectportal.firefox.com from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0066-d77ae0e1",
+        "timestamp": "2022-01-29T15:19:57Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:19:57 dnsmasq[14635]: query[AAAA] detectportal.firefox.com from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469597.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:19:57 dnsmasq[14635]: query[AAAA] detectportal.firefox.com from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0067-82efed6b",
+        "timestamp": "2022-01-29T15:19:57Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:19:57 dnsmasq[14635]: query[AAAA] ipv4only.arpa from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469597.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:19:57 dnsmasq[14635]: query[AAAA] ipv4only.arpa from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0068-82efed6b",
+        "timestamp": "2022-01-29T15:19:57Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:19:57 dnsmasq[14635]: query[AAAA] ipv4only.arpa from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469597.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:19:57 dnsmasq[14635]: query[AAAA] ipv4only.arpa from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0069-143549bb",
+        "timestamp": "2022-01-29T15:20:01Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:20:01 dnsmasq[14635]: query[A] location.services.mozilla.com from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469601.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:20:01 dnsmasq[14635]: query[A] location.services.mozilla.com from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0070-8e0dbe42",
+        "timestamp": "2022-01-29T15:20:01Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:20:01 dnsmasq[14635]: query[AAAA] location.services.mozilla.com from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469601.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:20:01 dnsmasq[14635]: query[AAAA] location.services.mozilla.com from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0071-45cf3ce2",
+        "timestamp": "2022-01-29T15:20:01Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:20:01 dnsmasq[14635]: query[AAAA] locprod2-elb-us-west-2.prod.mozaws.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469601.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:20:01 dnsmasq[14635]: query[AAAA] locprod2-elb-us-west-2.prod.mozaws.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0072-66ec088e",
+        "timestamp": "2022-01-29T15:20:02Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:20:02 dnsmasq[14635]: query[A] firefox.settings.services.mozilla.com from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469602.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:20:02 dnsmasq[14635]: query[A] firefox.settings.services.mozilla.com from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0073-3f34e052",
+        "timestamp": "2022-01-29T15:20:02Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:20:02 dnsmasq[14635]: query[AAAA] firefox.settings.services.mozilla.com from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469602.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:20:02 dnsmasq[14635]: query[AAAA] firefox.settings.services.mozilla.com from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0074-42707413",
+        "timestamp": "2022-01-29T15:20:02Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:20:02 dnsmasq[14635]: query[A] ocsp.digicert.com from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469602.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:20:02 dnsmasq[14635]: query[A] ocsp.digicert.com from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0075-0ffc29be",
+        "timestamp": "2022-01-29T15:20:02Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:20:02 dnsmasq[14635]: query[AAAA] ocsp.digicert.com from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469602.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:20:02 dnsmasq[14635]: query[AAAA] ocsp.digicert.com from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0076-ec0d46bc",
+        "timestamp": "2022-01-29T15:20:02Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:20:02 dnsmasq[14635]: query[AAAA] cs9.wac.phicdn.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469602.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:20:02 dnsmasq[14635]: query[AAAA] cs9.wac.phicdn.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0077-f0d7e36f",
+        "timestamp": "2022-01-29T15:20:03Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:20:03 dnsmasq[14635]: query[A] content-signature-2.cdn.mozilla.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469603.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:20:03 dnsmasq[14635]: query[A] content-signature-2.cdn.mozilla.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0078-d6ec8559",
+        "timestamp": "2022-01-29T15:20:03Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:20:03 dnsmasq[14635]: query[AAAA] content-signature-2.cdn.mozilla.net from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469603.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:20:03 dnsmasq[14635]: query[AAAA] content-signature-2.cdn.mozilla.net from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0079-e754ea6d",
+        "timestamp": "2022-01-29T15:20:03Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:20:03 dnsmasq[14635]: query[AAAA] shavar.services.mozilla.com from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469603.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:20:03 dnsmasq[14635]: query[AAAA] shavar.services.mozilla.com from 10.70.32.61"
+        }
+      },
+      {
+        "event_id": "ait-0080-620d6d8b",
+        "timestamp": "2022-01-29T15:20:03Z",
+        "host": "shaw",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 15:20:03 dnsmasq[14635]: query[A] shavar.services.mozilla.com from 10.70.32.61",
+        "raw_alert": {
+          "timestamp": 1643469603.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Jan 29 15:20:03 dnsmasq[14635]: query[A] shavar.services.mozilla.com from 10.70.32.61"
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-38e34b22",
+      "source": "alerts",
+      "timestamp": "2022-01-29T14:40:01Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:40:01 +0000] \"GET /wp-content/uploads/2022/01/zrhrldsngi-1643467181.254.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506735 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1643467201.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:40:01 +0000] \"GET /wp-content/uploads/2022/01/zrhrldsngi-1643467181.254.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506735 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-ae981a85",
+      "source": "alerts",
+      "timestamp": "2022-01-29T14:40:14Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "192.168.188.32 - - [29/Jan/2022:14:40:14 +0000] \"GET /mnemo/memo.php?actionID=add_memo HTTP/1.1\" 200 6656 \"https://mail.thomasmurray.shaw.info/mnemo/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "raw_alert": {
+          "timestamp": 1643467214.0,
+          "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+          "message": "192.168.188.32 - - [29/Jan/2022:14:40:14 +0000] \"GET /mnemo/memo.php?actionID=add_memo HTTP/1.1\" 200 6656 \"https://mail.thomasmurray.shaw.info/mnemo/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-bf1ab100",
+      "source": "alerts",
+      "timestamp": "2022-01-29T14:40:28Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:40:28 +0000] \"GET /wp-content/uploads/2022/01/zrhrldsngi-1643467181.254.php?wp_meta=WyIuL3dwaGFzaGNyYWNrLTAuMS93cGhhc2hjcmFjay5zaCIsICItdyIsICIkUFdEL3JvY2t5b3UudHh0IiwgIi1qIiwgIi4vd3BoYXNoY3JhY2stMC4xL2pvaG4tMS43LjYtanVtYm8tMTItTGludXg2NC9ydW4iLCAiLXUiLCAiZ21hcnNoIl0%3D HTTP/1.1\" 200 506894 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1643467228.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:40:28 +0000] \"GET /wp-content/uploads/2022/01/zrhrldsngi-1643467181.254.php?wp_meta=WyIuL3dwaGFzaGNyYWNrLTAuMS93cGhhc2hjcmFjay5zaCIsICItdyIsICIkUFdEL3JvY2t5b3UudHh0IiwgIi1qIiwgIi4vd3BoYXNoY3JhY2stMC4xL2pvaG4tMS43LjYtanVtYm8tMTItTGludXg2NC9ydW4iLCAiLXUiLCAiZ21hcnNoIl0%3D HTTP/1.1\" 200 506894 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on shaw. Identify the attack stage from telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on shaw. Identify the attack stage from telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "shaw/cracking",
+    "answer": "cracking",
+    "accept": [
+      "cracking",
+      "cracking"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

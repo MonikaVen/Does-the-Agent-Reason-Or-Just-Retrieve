@@ -1,0 +1,231 @@
+{
+  "incident_id": "ait-wardbeck-dnsteal",
+  "name": "AIT-ADS wardbeck/dnsteal",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "wardbeck/dnsteal",
+  "alert": {
+    "timestamp": "2022-01-20T22:31:12Z",
+    "host": "wardbeck",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on wardbeck. Identify the attack stage from telemetry."
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-20T22:31:12Z",
+    "end": "2022-01-20T23:11:12Z",
+    "hosts": [
+      "wardbeck"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-f5319b73",
+        "timestamp": "2022-01-20T22:31:12Z",
+        "host": "wardbeck",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 20 22:31:12 dnsmasq[14755]: query[A] intranet.hurstwong.wardbeck.info from 172.21.240.147",
+        "raw_alert": {
+          "timestamp": 1642717872.0,
+          "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+          "message": "Jan 20 22:31:12 dnsmasq[14755]: query[A] intranet.hurstwong.wardbeck.info from 172.21.240.147"
+        }
+      },
+      {
+        "event_id": "ait-0002-cbf6ff83",
+        "timestamp": "2022-01-20T22:40:17Z",
+        "host": "wardbeck",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 20 22:40:17 dnsmasq[14529]: query[TXT] current.cvd.clamav.net from 192.168.98.239",
+        "raw_alert": {
+          "timestamp": 1642718417.0,
+          "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+          "message": "Jan 20 22:40:17 dnsmasq[14529]: query[TXT] current.cvd.clamav.net from 192.168.98.239"
+        }
+      },
+      {
+        "event_id": "ait-0003-7baa1bf2",
+        "timestamp": "2022-01-20T22:53:56Z",
+        "host": "wardbeck",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 20 22:53:56 dnsmasq[14755]: query[TXT] current.cvd.clamav.net from 10.132.56.171",
+        "raw_alert": {
+          "timestamp": 1642719236.0,
+          "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+          "message": "Jan 20 22:53:56 dnsmasq[14755]: query[TXT] current.cvd.clamav.net from 10.132.56.171"
+        }
+      },
+      {
+        "event_id": "ait-0004-7baa1bf2",
+        "timestamp": "2022-01-20T22:53:56Z",
+        "host": "wardbeck",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 20 22:53:56 dnsmasq[14755]: query[TXT] current.cvd.clamav.net from 10.132.56.171",
+        "raw_alert": {
+          "timestamp": 1642719236.0,
+          "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+          "message": "Jan 20 22:53:56 dnsmasq[14755]: query[TXT] current.cvd.clamav.net from 10.132.56.171"
+        }
+      },
+      {
+        "event_id": "ait-0005-0eaf1189",
+        "timestamp": "2022-01-20T23:00:12Z",
+        "host": "wardbeck",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 20 23:00:12 dnsmasq[14755]: query[AAAA] intranet.hurstwong.wardbeck.info from 172.21.241.88",
+        "raw_alert": {
+          "timestamp": 1642719612.0,
+          "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+          "message": "Jan 20 23:00:12 dnsmasq[14755]: query[AAAA] intranet.hurstwong.wardbeck.info from 172.21.241.88"
+        }
+      },
+      {
+        "event_id": "ait-0006-8e656d46",
+        "timestamp": "2022-01-20T23:11:12Z",
+        "host": "wardbeck",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 20 23:11:12 dnsmasq[14755]: query[AAAA] intranet.hurstwong.wardbeck.info from 172.21.241.88",
+        "raw_alert": {
+          "timestamp": 1642720272.0,
+          "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+          "message": "Jan 20 23:11:12 dnsmasq[14755]: query[AAAA] intranet.hurstwong.wardbeck.info from 172.21.241.88"
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-f5319b73",
+      "source": "alerts",
+      "timestamp": "2022-01-20T22:31:12Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 20 22:31:12 dnsmasq[14755]: query[A] intranet.hurstwong.wardbeck.info from 172.21.240.147",
+        "raw_alert": {
+          "timestamp": 1642717872.0,
+          "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+          "message": "Jan 20 22:31:12 dnsmasq[14755]: query[A] intranet.hurstwong.wardbeck.info from 172.21.240.147"
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-cbf6ff83",
+      "source": "alerts",
+      "timestamp": "2022-01-20T22:40:17Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 20 22:40:17 dnsmasq[14529]: query[TXT] current.cvd.clamav.net from 192.168.98.239",
+        "raw_alert": {
+          "timestamp": 1642718417.0,
+          "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+          "message": "Jan 20 22:40:17 dnsmasq[14529]: query[TXT] current.cvd.clamav.net from 192.168.98.239"
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-7baa1bf2",
+      "source": "alerts",
+      "timestamp": "2022-01-20T22:53:56Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 20 22:53:56 dnsmasq[14755]: query[TXT] current.cvd.clamav.net from 10.132.56.171",
+        "raw_alert": {
+          "timestamp": 1642719236.0,
+          "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+          "message": "Jan 20 22:53:56 dnsmasq[14755]: query[TXT] current.cvd.clamav.net from 10.132.56.171"
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on wardbeck. Identify the attack stage from telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on wardbeck. Identify the attack stage from telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "wardbeck/dnsteal",
+    "answer": "dnsteal",
+    "accept": [
+      "dnsteal",
+      "dnsteal"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

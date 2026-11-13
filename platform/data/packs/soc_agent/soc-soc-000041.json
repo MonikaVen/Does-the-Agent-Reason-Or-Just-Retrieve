@@ -1,0 +1,310 @@
+{
+  "incident_id": "soc-soc-000041",
+  "name": "SOC-AgentBench azure_ad_spray_v3 (soc-000041)",
+  "source_benchmark": "SOC-AgentBench",
+  "source_scenario": "train/azure_ad_spray_v3/soc-000041",
+  "alert": {
+    "timestamp": "2025-07-12T00:05:00Z",
+    "host": "WS-185",
+    "user": "contractor_temp",
+    "alert_type": "soc_agent_bench",
+    "summary": "Automated detection: Password spray detected against Azure AD. Investigate correlated telemetry.",
+    "title": "Password spray detected against Azure AD",
+    "severity": "medium",
+    "assets": [
+      "WS-185",
+      "SRV-FILE-05"
+    ]
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts",
+      "network"
+    ],
+    "start": "2025-07-12T00:05:00Z",
+    "end": "2025-07-12T00:17:00Z",
+    "hosts": [
+      "WS-185"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "soc-000041-log-001",
+        "timestamp": "2025-07-12T00:05:00Z",
+        "host": "WS-185",
+        "rule": "Password spray detected against Azure AD",
+        "severity": "medium",
+        "message": "Primary indicator on WS-185: Password spray detected against Azure AD",
+        "user": "contractor_temp",
+        "raw_alert": {
+          "log_id": "soc-000041-log-001",
+          "timestamp": "2025-07-12T00:05:00+00:00",
+          "source": "azure_signin",
+          "host": "WS-185",
+          "user": "contractor_temp",
+          "message": "Primary indicator on WS-185: Password spray detected against Azure AD"
+        }
+      },
+      {
+        "event_id": "soc-000041-noise-0",
+        "timestamp": "2025-07-12T00:07:00Z",
+        "host": "WS-008",
+        "rule": "Password spray detected against Azure AD",
+        "severity": "medium",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000041-noise-0",
+          "timestamp": "2025-07-12T00:07:00+00:00",
+          "source": "windows_security",
+          "host": "WS-008",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000041-noise-1",
+        "timestamp": "2025-07-12T00:10:00Z",
+        "host": "WS-065",
+        "rule": "Password spray detected against Azure AD",
+        "severity": "medium",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000041-noise-1",
+          "timestamp": "2025-07-12T00:10:00+00:00",
+          "source": "windows_security",
+          "host": "WS-065",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000041-noise-2",
+        "timestamp": "2025-07-12T00:17:00Z",
+        "host": "WS-009",
+        "rule": "Password spray detected against Azure AD",
+        "severity": "medium",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000041-noise-2",
+          "timestamp": "2025-07-12T00:17:00+00:00",
+          "source": "windows_security",
+          "host": "WS-009",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000041-noise-3",
+        "timestamp": "2025-07-12T00:10:00Z",
+        "host": "WS-017",
+        "rule": "Password spray detected against Azure AD",
+        "severity": "medium",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000041-noise-3",
+          "timestamp": "2025-07-12T00:10:00+00:00",
+          "source": "windows_security",
+          "host": "WS-017",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      }
+    ],
+    "network": [
+      {
+        "event_id": "soc-000041-log-002",
+        "timestamp": "2025-07-12T00:08:00Z",
+        "host": "SRV-FILE-05",
+        "destination_ip": "203.0.113.11",
+        "protocol": "tcp",
+        "message": "Correlated alert on SRV-FILE-05",
+        "raw_log": {
+          "log_id": "soc-000041-log-002",
+          "timestamp": "2025-07-12T00:08:00+00:00",
+          "source": "wazuh",
+          "host": "SRV-FILE-05",
+          "message": "Correlated alert on SRV-FILE-05",
+          "src_ip": "203.0.113.11"
+        }
+      },
+      {
+        "event_id": "soc-000041-log-003",
+        "timestamp": "2025-07-12T00:12:00Z",
+        "host": "WS-185",
+        "destination_ip": "203.0.113.11",
+        "protocol": "tcp",
+        "message": "Network activity from 203.0.113.11 to WS-185",
+        "raw_log": {
+          "log_id": "soc-000041-log-003",
+          "timestamp": "2025-07-12T00:12:00+00:00",
+          "source": "suricata",
+          "host": "WS-185",
+          "message": "Network activity from 203.0.113.11 to WS-185",
+          "src_ip": "203.0.113.11"
+        }
+      },
+      {
+        "event_id": "soc-ioc-0001-aaa1c90a",
+        "timestamp": "2025-07-12T00:15:00Z",
+        "host": "WS-185",
+        "destination_ip": "203.0.113.11",
+        "protocol": "tcp",
+        "message": "Observed IP 203.0.113.11"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ev-soc-000041-0",
+      "source": "alerts",
+      "timestamp": "2025-07-12T00:05:00Z",
+      "host": "WS-185",
+      "fields": {
+        "rule": "azure_signin",
+        "severity": "medium",
+        "message": "Primary indicator on WS-185: Password spray detected against Azure AD",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "ev-soc-000041-1",
+      "source": "alerts",
+      "timestamp": "2025-07-12T00:08:00Z",
+      "host": "SRV-FILE-05",
+      "fields": {
+        "rule": "wazuh",
+        "severity": "medium",
+        "message": "Correlated alert on SRV-FILE-05",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "ev-soc-000041-2",
+      "source": "alerts",
+      "timestamp": "2025-07-12T00:12:00Z",
+      "host": "WS-185",
+      "fields": {
+        "rule": "suricata",
+        "severity": "medium",
+        "message": "Network activity from 203.0.113.11 to WS-185",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "soc-ioc-rep-0001-1bd9e0a4",
+      "source": "network",
+      "timestamp": "2025-07-12T00:15:00Z",
+      "host": "WS-185",
+      "fields": {
+        "destination_ip": "203.0.113.11",
+        "protocol": "tcp",
+        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
+        "reputation": "malicious"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "WS-185"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "network",
+        "filter": {
+          "host": "WS-185"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Automated detection: Password spray detected against Azure AD. Investigate correlated telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "WS-185"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "network",
+          "filter": {
+            "host": "WS-185"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Automated detection: Password spray detected against Azure AD. Investigate correlated telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "SOC-AgentBench",
+    "scenario": "train/azure_ad_spray_v3/soc-000041",
+    "answer": "Password spray from single external source IP",
+    "accept": [
+      "Password spray from single external source IP",
+      "Password spray from single external source IP",
+      "initial_access"
+    ],
+    "grading": "exact_ci",
+    "incident_type": "initial_access",
+    "is_true_positive": true,
+    "label": "malicious",
+    "attck": [
+      "T1110.003"
+    ],
+    "ioc_enrichment": {
+      "203.0.113.11": {
+        "type": "ip",
+        "reputation": "malicious",
+        "category": "scanner"
+      }
+    },
+    "sealed": true
+  }
+}

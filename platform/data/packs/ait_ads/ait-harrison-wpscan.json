@@ -1,0 +1,1119 @@
+{
+  "incident_id": "ait-harrison-wpscan",
+  "name": "AIT-ADS harrison/wpscan",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "harrison/wpscan",
+  "alert": {
+    "timestamp": "2022-02-08T07:28:41Z",
+    "host": "harrison",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on harrison. Identify the attack stage from telemetry."
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-08T07:28:41Z",
+    "end": "2022-02-08T07:28:53Z",
+    "hosts": [
+      "harrison"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-efac8b66",
+        "timestamp": "2022-02-08T07:28:41Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:41 +0000] \"HEAD / HTTP/1.1\" 200 232 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305321.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:41 +0000] \"HEAD / HTTP/1.1\" 200 232 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0002-e10cf818",
+        "timestamp": "2022-02-08T07:28:43Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:43 +0000] \"HEAD /robots.txt HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305323.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:43 +0000] \"HEAD /robots.txt HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0003-b75cdeca",
+        "timestamp": "2022-02-08T07:28:43Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:43 +0000] \"HEAD /fantastico_fileslist.txt HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305323.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:43 +0000] \"HEAD /fantastico_fileslist.txt HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0004-dae0391f",
+        "timestamp": "2022-02-08T07:28:43Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:43 +0000] \"HEAD /searchreplacedb2.php HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305323.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:43 +0000] \"HEAD /searchreplacedb2.php HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0005-51e0e85f",
+        "timestamp": "2022-02-08T07:28:43Z",
+        "host": "harrison",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Feb 08 07:28:43.765837 2022] [php7:error] [pid 27860] [client 10.237.1.238:49620] script '/var/www/intranet.mannsmith.harrison.com/searchreplacedb2.php' not found or unable to stat, referer: https://intranet.mannsmith.harrison.com",
+        "raw_alert": {
+          "timestamp": 1644305323.77,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Feb 08 07:28:43.765837 2022] [php7:error] [pid 27860] [client 10.237.1.238:49620] script '/var/www/intranet.mannsmith.harrison.com/searchreplacedb2.php' not found or unable to stat, referer: https://intranet.mannsmith.harrison.com"
+        }
+      },
+      {
+        "event_id": "ait-0006-54cf92cc",
+        "timestamp": "2022-02-08T07:28:44Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:44 +0000] \"HEAD /readme.html HTTP/1.1\" 200 3303 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305324.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:44 +0000] \"HEAD /readme.html HTTP/1.1\" 200 3303 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0007-002ee92c",
+        "timestamp": "2022-02-08T07:28:44Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:44 +0000] \"HEAD /wp-content/debug.log HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305324.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:44 +0000] \"HEAD /wp-content/debug.log HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0008-8c093a5c",
+        "timestamp": "2022-02-08T07:28:44Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:44 +0000] \"HEAD /wp-content/backup-db/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305324.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:44 +0000] \"HEAD /wp-content/backup-db/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0009-47e49042",
+        "timestamp": "2022-02-08T07:28:44Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:44 +0000] \"HEAD /installer-log.txt HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305324.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:44 +0000] \"HEAD /installer-log.txt HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0010-68790cb3",
+        "timestamp": "2022-02-08T07:28:44Z",
+        "host": "harrison",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:44 +0000] \"GET /wp-content/uploads/ HTTP/1.1\" 403 366 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305324.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:44 +0000] \"GET /wp-content/uploads/ HTTP/1.1\" 403 366 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0011-b321f4b2",
+        "timestamp": "2022-02-08T07:28:44Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:44 +0000] \"HEAD /wp-content/uploads/tmm_db_migrate/tmm_db_migrate.zip HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305324.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:44 +0000] \"HEAD /wp-content/uploads/tmm_db_migrate/tmm_db_migrate.zip HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0012-4033e583",
+        "timestamp": "2022-02-08T07:28:44Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:44 +0000] \"HEAD /wp-content/uploads/dump.sql HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305324.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:44 +0000] \"HEAD /wp-content/uploads/dump.sql HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0013-eea80295",
+        "timestamp": "2022-02-08T07:28:44Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:44 +0000] \"HEAD /emergency.php HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305324.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:44 +0000] \"HEAD /emergency.php HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0014-81963e9e",
+        "timestamp": "2022-02-08T07:28:44Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:44 +0000] \"HEAD /wp-includes/version.php HTTP/1.1\" 200 134 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305324.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:44 +0000] \"HEAD /wp-includes/version.php HTTP/1.1\" 200 134 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0015-a517bd82",
+        "timestamp": "2022-02-08T07:28:44Z",
+        "host": "harrison",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Feb 08 07:28:44.349443 2022] [autoindex:error] [pid 27717] [client 10.237.1.238:49622] AH01276: Cannot serve directory /var/www/intranet.mannsmith.harrison.com/wp-content/uploads/: No matching DirectoryIndex (index.html,index.cgi,index.pl,index.php,index.xhtml,index.htm) found, and server-generated directory index forbidden by Options directive, referer: https://intranet.mannsmith.harrison.com",
+        "raw_alert": {
+          "timestamp": 1644305324.35,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Feb 08 07:28:44.349443 2022] [autoindex:error] [pid 27717] [client 10.237.1.238:49622] AH01276: Cannot serve directory /var/www/intranet.mannsmith.harrison.com/wp-content/uploads/: No matching DirectoryIndex (index.html,index.cgi,index.pl,index.php,index.xhtml,index.htm) found, and server-generated directory index forbidden by Options directive, referer: https://intranet.mannsmith.harrison.com"
+        }
+      },
+      {
+        "event_id": "ait-0016-0a63393f",
+        "timestamp": "2022-02-08T07:28:44Z",
+        "host": "harrison",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Feb 08 07:28:44.372686 2022] [php7:error] [pid 27717] [client 10.237.1.238:49622] script '/var/www/intranet.mannsmith.harrison.com/emergency.php' not found or unable to stat, referer: https://intranet.mannsmith.harrison.com",
+        "raw_alert": {
+          "timestamp": 1644305324.37,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Feb 08 07:28:44.372686 2022] [php7:error] [pid 27717] [client 10.237.1.238:49622] script '/var/www/intranet.mannsmith.harrison.com/emergency.php' not found or unable to stat, referer: https://intranet.mannsmith.harrison.com"
+        }
+      },
+      {
+        "event_id": "ait-0017-a05ae3ae",
+        "timestamp": "2022-02-08T07:28:48Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:48 +0000] \"HEAD /wp-content/themes/go/readme.txt HTTP/1.1\" 200 289 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305328.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:48 +0000] \"HEAD /wp-content/themes/go/readme.txt HTTP/1.1\" 200 289 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0018-0107d093",
+        "timestamp": "2022-02-08T07:28:48Z",
+        "host": "harrison",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:48 +0000] \"GET /wp-content/themes/go/ HTTP/1.1\" 500 191 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305328.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:48 +0000] \"GET /wp-content/themes/go/ HTTP/1.1\" 500 191 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0019-20c5f812",
+        "timestamp": "2022-02-08T07:28:48Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:48 +0000] \"HEAD /wp-content/themes/go/error_log HTTP/1.1\" 404 3160 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305328.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:48 +0000] \"HEAD /wp-content/themes/go/error_log HTTP/1.1\" 404 3160 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0020-83c15eef",
+        "timestamp": "2022-02-08T07:28:48Z",
+        "host": "harrison",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Feb 08 07:28:48.732688 2022] [php7:error] [pid 27717] [client 10.237.1.238:49622] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /var/www/intranet.mannsmith.harrison.com/wp-content/themes/go/index.php:15\\nStack trace:\\n#0 {main}\\n  thrown in /var/www/intranet.mannsmith.harrison.com/wp-content/themes/go/index.php on line 15, referer: https://intranet.mannsmith.harrison.com",
+        "raw_alert": {
+          "timestamp": 1644305328.73,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Feb 08 07:28:48.732688 2022] [php7:error] [pid 27717] [client 10.237.1.238:49622] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /var/www/intranet.mannsmith.harrison.com/wp-content/themes/go/index.php:15\\nStack trace:\\n#0 {main}\\n  thrown in /var/www/intranet.mannsmith.harrison.com/wp-content/themes/go/index.php on line 15, referer: https://intranet.mannsmith.harrison.com"
+        }
+      },
+      {
+        "event_id": "ait-0021-140cca4e",
+        "timestamp": "2022-02-08T07:28:52Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/3d-flipbook-dflip-lite/ HTTP/1.1\" 404 3160 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305332.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/3d-flipbook-dflip-lite/ HTTP/1.1\" 404 3160 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0022-40fe6b16",
+        "timestamp": "2022-02-08T07:28:52Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/301-redirects/ HTTP/1.1\" 404 3160 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305332.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/301-redirects/ HTTP/1.1\" 404 3160 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0023-94879dc2",
+        "timestamp": "2022-02-08T07:28:52Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/404-to-301/ HTTP/1.1\" 404 3160 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305332.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/404-to-301/ HTTP/1.1\" 404 3160 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0024-ff9ecf7a",
+        "timestamp": "2022-02-08T07:28:52Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/404page/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305332.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/404page/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0025-19cf1064",
+        "timestamp": "2022-02-08T07:28:52Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/a2-optimized-wp/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305332.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/a2-optimized-wp/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0026-6021c75b",
+        "timestamp": "2022-02-08T07:28:52Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/a3-lazy-load/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305332.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/a3-lazy-load/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0027-ce058e3d",
+        "timestamp": "2022-02-08T07:28:52Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/404-to-homepage/ HTTP/1.1\" 404 3160 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305332.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/404-to-homepage/ HTTP/1.1\" 404 3160 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0028-1ac8125e",
+        "timestamp": "2022-02-08T07:28:52Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/404-to-start/ HTTP/1.1\" 404 3160 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305332.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/404-to-start/ HTTP/1.1\" 404 3160 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0029-7aafa6ec",
+        "timestamp": "2022-02-08T07:28:52Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/accelerated-mobile-pages/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305332.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/accelerated-mobile-pages/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0030-04f2d70d",
+        "timestamp": "2022-02-08T07:28:52Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/accesspress-social-icons/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305332.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/accesspress-social-icons/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0031-8e8ce092",
+        "timestamp": "2022-02-08T07:28:52Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/accesspress-social-share/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305332.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/accesspress-social-share/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0032-ccf69fcd",
+        "timestamp": "2022-02-08T07:28:52Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/accordions/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305332.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/accordions/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0033-1ef5b900",
+        "timestamp": "2022-02-08T07:28:52Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/accesspress-social-counter/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305332.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/accesspress-social-counter/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0034-c245b5b3",
+        "timestamp": "2022-02-08T07:28:52Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/acf-better-search/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305332.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/acf-better-search/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0035-5ad1b4ab",
+        "timestamp": "2022-02-08T07:28:52Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/acf-gravityforms-add-on/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305332.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/acf-gravityforms-add-on/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0036-98710e34",
+        "timestamp": "2022-02-08T07:28:52Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/acf-extended/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305332.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/acf-extended/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0037-78dbceb4",
+        "timestamp": "2022-02-08T07:28:52Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/acf-image-crop-add-on/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305332.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/acf-image-crop-add-on/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0038-b02c8581",
+        "timestamp": "2022-02-08T07:28:52Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/acf-content-analysis-for-yoast-seo/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305332.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/acf-content-analysis-for-yoast-seo/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0039-06afd9dc",
+        "timestamp": "2022-02-08T07:28:52Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/acf-to-rest-api/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305332.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:52 +0000] \"HEAD /wp-content/plugins/acf-to-rest-api/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0040-e7cae31a",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/ad-inserter/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/ad-inserter/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0041-2ddfe3a4",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/ad-invalid-click-protector/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/ad-invalid-click-protector/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0042-53565069",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/activecampaign-subscription-forms/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/activecampaign-subscription-forms/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0043-b704887f",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/acme-demo-setup/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/acme-demo-setup/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0044-2a6ceca1",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/adapta-rgpd/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/adapta-rgpd/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0045-2d3946e7",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/add-to-any/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/add-to-any/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0046-03f90a43",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/add-from-server/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/add-from-server/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0047-38e3e819",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/add-search-to-menu/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/add-search-to-menu/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0048-3dc4e649",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/add-category-to-pages/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/add-category-to-pages/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0049-08d96387",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/addfunc-head-footer-code/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/addfunc-head-footer-code/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0050-6a93a693",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/addquicktag/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/addquicktag/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0051-44051b52",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/addons-for-elementor/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/addons-for-elementor/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0052-54b43070",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/addons-for-visual-composer/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/addons-for-visual-composer/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0053-85002b40",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/addon-elements-for-elementor-page-builder/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/addon-elements-for-elementor-page-builder/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0054-916adaf9",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/addthis/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/addthis/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0055-12ae6f3b",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/admin-custom-login/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/admin-custom-login/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0056-dc7e0cfc",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/admin-menu-editor/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/admin-menu-editor/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0057-d80e71c6",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/admin-menu-tree-page-view/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/admin-menu-tree-page-view/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0058-fd7a3027",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/adrotate/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/adrotate/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0059-5ca36356",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/adminimize/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/adminimize/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0060-a96b1e3c",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-ads/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-ads/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0061-6afcf768",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-access-manager/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-access-manager/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0062-ee6da6a4",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/ads-txt/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/ads-txt/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0063-fd6fcb31",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-backgrounds/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-backgrounds/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0064-6e8ae8cb",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-cron-manager/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-cron-manager/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0065-a7e0b9b5",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-custom-fields-font-awesome/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-custom-fields-font-awesome/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0066-1b98f4e2",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-custom-fields-table-field/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-custom-fields-table-field/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0067-5781c142",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-custom-fields/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-custom-fields/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0068-4e5f82c9",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-database-cleaner/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-database-cleaner/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0069-a6d5bfbe",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-dynamic-pricing-for-woocommerce/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-dynamic-pricing-for-woocommerce/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0070-c6f101a3",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-iframe/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-iframe/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0071-3aaaf719",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-gutenberg/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-gutenberg/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0072-c6c80574",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-excerpt/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-excerpt/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0073-23f039b2",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-nocaptcha-recaptcha/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-nocaptcha-recaptcha/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0074-25d3a754",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-import/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-import/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0075-160ae6b2",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-responsive-video-embedder/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-responsive-video-embedder/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0076-c56ad60a",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-random-posts-widget/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-random-posts-widget/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0077-8bdb89d3",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-product-labels-for-woocommerce/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-product-labels-for-woocommerce/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0078-7a09c878",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-woo-search/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-woo-search/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0079-3b53665d",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-sidebar-menu/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/advanced-sidebar-menu/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0080-bbc23da3",
+        "timestamp": "2022-02-08T07:28:53Z",
+        "host": "harrison",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/ag-custom-admin/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305333.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:53 +0000] \"HEAD /wp-content/plugins/ag-custom-admin/ HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-efac8b66",
+      "source": "alerts",
+      "timestamp": "2022-02-08T07:28:41Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:41 +0000] \"HEAD / HTTP/1.1\" 200 232 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305321.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:41 +0000] \"HEAD / HTTP/1.1\" 200 232 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-e10cf818",
+      "source": "alerts",
+      "timestamp": "2022-02-08T07:28:43Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:43 +0000] \"HEAD /robots.txt HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305323.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:43 +0000] \"HEAD /robots.txt HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-b75cdeca",
+      "source": "alerts",
+      "timestamp": "2022-02-08T07:28:43Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:28:43 +0000] \"HEAD /fantastico_fileslist.txt HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1644305323.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:28:43 +0000] \"HEAD /fantastico_fileslist.txt HTTP/1.1\" 404 146 \"https://intranet.mannsmith.harrison.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on harrison. Identify the attack stage from telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on harrison. Identify the attack stage from telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "harrison/wpscan",
+    "answer": "wpscan",
+    "accept": [
+      "wpscan",
+      "wpscan"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

@@ -1,0 +1,1119 @@
+{
+  "incident_id": "ait-shaw-wpscan",
+  "name": "AIT-ADS shaw/wpscan",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "shaw/wpscan",
+  "alert": {
+    "timestamp": "2022-01-29T14:38:52Z",
+    "host": "shaw",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on shaw. Identify the attack stage from telemetry."
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-29T14:38:52Z",
+    "end": "2022-01-29T14:38:58Z",
+    "hosts": [
+      "shaw"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-6ecea15e",
+        "timestamp": "2022-01-29T14:38:52Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:52 +0000] \"HEAD / HTTP/1.1\" 200 232 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467132.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:52 +0000] \"HEAD / HTTP/1.1\" 200 232 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0002-7ee6c2f0",
+        "timestamp": "2022-01-29T14:38:53Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:53 +0000] \"HEAD /robots.txt HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467133.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:53 +0000] \"HEAD /robots.txt HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0003-e7282d21",
+        "timestamp": "2022-01-29T14:38:53Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:53 +0000] \"HEAD /fantastico_fileslist.txt HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467133.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:53 +0000] \"HEAD /fantastico_fileslist.txt HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0004-278a8756",
+        "timestamp": "2022-01-29T14:38:53Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:53 +0000] \"HEAD /searchreplacedb2.php HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467133.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:53 +0000] \"HEAD /searchreplacedb2.php HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0005-87aae987",
+        "timestamp": "2022-01-29T14:38:53Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:53 +0000] \"HEAD /readme.html HTTP/1.1\" 200 3303 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467133.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:53 +0000] \"HEAD /readme.html HTTP/1.1\" 200 3303 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0006-b6c0a7ad",
+        "timestamp": "2022-01-29T14:38:53Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:53 +0000] \"HEAD /wp-content/debug.log HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467133.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:53 +0000] \"HEAD /wp-content/debug.log HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0007-38b47054",
+        "timestamp": "2022-01-29T14:38:53Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:53 +0000] \"HEAD /wp-content/backup-db/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467133.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:53 +0000] \"HEAD /wp-content/backup-db/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0008-3150cefa",
+        "timestamp": "2022-01-29T14:38:53Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:53 +0000] \"HEAD /installer-log.txt HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467133.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:53 +0000] \"HEAD /installer-log.txt HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0009-69935a56",
+        "timestamp": "2022-01-29T14:38:53Z",
+        "host": "shaw",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:53 +0000] \"GET /wp-content/uploads/ HTTP/1.1\" 403 366 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467133.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:53 +0000] \"GET /wp-content/uploads/ HTTP/1.1\" 403 366 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0010-ae27d032",
+        "timestamp": "2022-01-29T14:38:53Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:53 +0000] \"HEAD /wp-content/uploads/tmm_db_migrate/tmm_db_migrate.zip HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467133.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:53 +0000] \"HEAD /wp-content/uploads/tmm_db_migrate/tmm_db_migrate.zip HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0011-51ced42f",
+        "timestamp": "2022-01-29T14:38:53Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:53 +0000] \"HEAD /wp-content/uploads/dump.sql HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467133.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:53 +0000] \"HEAD /wp-content/uploads/dump.sql HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0012-daf3f5dd",
+        "timestamp": "2022-01-29T14:38:53Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:53 +0000] \"HEAD /emergency.php HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467133.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:53 +0000] \"HEAD /emergency.php HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0013-d8b5499d",
+        "timestamp": "2022-01-29T14:38:53Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:53 +0000] \"HEAD /wp-includes/version.php HTTP/1.1\" 200 134 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467133.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:53 +0000] \"HEAD /wp-includes/version.php HTTP/1.1\" 200 134 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0014-d5ebc6ef",
+        "timestamp": "2022-01-29T14:38:53Z",
+        "host": "shaw",
+        "detector": "AMiner: New event type.",
+        "message": "[Sat Jan 29 14:38:53.302598 2022] [php7:error] [pid 28179] [client 172.24.249.224:57756] script '/var/www/intranet.thomasmurray.shaw.info/searchreplacedb2.php' not found or unable to stat, referer: https://intranet.thomasmurray.shaw.info",
+        "raw_alert": {
+          "timestamp": 1643467133.3,
+          "detector": "AMiner: New event type.",
+          "message": "[Sat Jan 29 14:38:53.302598 2022] [php7:error] [pid 28179] [client 172.24.249.224:57756] script '/var/www/intranet.thomasmurray.shaw.info/searchreplacedb2.php' not found or unable to stat, referer: https://intranet.thomasmurray.shaw.info"
+        }
+      },
+      {
+        "event_id": "ait-0015-182cb80b",
+        "timestamp": "2022-01-29T14:38:53Z",
+        "host": "shaw",
+        "detector": "AMiner: New event type.",
+        "message": "[Sat Jan 29 14:38:53.749892 2022] [autoindex:error] [pid 28261] [client 172.24.249.224:57758] AH01276: Cannot serve directory /var/www/intranet.thomasmurray.shaw.info/wp-content/uploads/: No matching DirectoryIndex (index.html,index.cgi,index.pl,index.php,index.xhtml,index.htm) found, and server-generated directory index forbidden by Options directive, referer: https://intranet.thomasmurray.shaw.info",
+        "raw_alert": {
+          "timestamp": 1643467133.75,
+          "detector": "AMiner: New event type.",
+          "message": "[Sat Jan 29 14:38:53.749892 2022] [autoindex:error] [pid 28261] [client 172.24.249.224:57758] AH01276: Cannot serve directory /var/www/intranet.thomasmurray.shaw.info/wp-content/uploads/: No matching DirectoryIndex (index.html,index.cgi,index.pl,index.php,index.xhtml,index.htm) found, and server-generated directory index forbidden by Options directive, referer: https://intranet.thomasmurray.shaw.info"
+        }
+      },
+      {
+        "event_id": "ait-0016-2c34722e",
+        "timestamp": "2022-01-29T14:38:53Z",
+        "host": "shaw",
+        "detector": "AMiner: New event type.",
+        "message": "[Sat Jan 29 14:38:53.762436 2022] [php7:error] [pid 28261] [client 172.24.249.224:57758] script '/var/www/intranet.thomasmurray.shaw.info/emergency.php' not found or unable to stat, referer: https://intranet.thomasmurray.shaw.info",
+        "raw_alert": {
+          "timestamp": 1643467133.76,
+          "detector": "AMiner: New event type.",
+          "message": "[Sat Jan 29 14:38:53.762436 2022] [php7:error] [pid 28261] [client 172.24.249.224:57758] script '/var/www/intranet.thomasmurray.shaw.info/emergency.php' not found or unable to stat, referer: https://intranet.thomasmurray.shaw.info"
+        }
+      },
+      {
+        "event_id": "ait-0017-1f291206",
+        "timestamp": "2022-01-29T14:38:56Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:56 +0000] \"HEAD /wp-content/themes/go/readme.txt HTTP/1.1\" 200 290 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467136.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:56 +0000] \"HEAD /wp-content/themes/go/readme.txt HTTP/1.1\" 200 290 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0018-9a3b554c",
+        "timestamp": "2022-01-29T14:38:56Z",
+        "host": "shaw",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:56 +0000] \"GET /wp-content/themes/go/ HTTP/1.1\" 500 191 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467136.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:56 +0000] \"GET /wp-content/themes/go/ HTTP/1.1\" 500 191 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0019-fbf6b96d",
+        "timestamp": "2022-01-29T14:38:56Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:56 +0000] \"HEAD /wp-content/themes/go/error_log HTTP/1.1\" 404 3160 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467136.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:56 +0000] \"HEAD /wp-content/themes/go/error_log HTTP/1.1\" 404 3160 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0020-c4cc7ed3",
+        "timestamp": "2022-01-29T14:38:56Z",
+        "host": "shaw",
+        "detector": "AMiner: New event type.",
+        "message": "[Sat Jan 29 14:38:56.198499 2022] [php7:error] [pid 28261] [client 172.24.249.224:57758] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /var/www/intranet.thomasmurray.shaw.info/wp-content/themes/go/index.php:15\\nStack trace:\\n#0 {main}\\n  thrown in /var/www/intranet.thomasmurray.shaw.info/wp-content/themes/go/index.php on line 15, referer: https://intranet.thomasmurray.shaw.info",
+        "raw_alert": {
+          "timestamp": 1643467136.2,
+          "detector": "AMiner: New event type.",
+          "message": "[Sat Jan 29 14:38:56.198499 2022] [php7:error] [pid 28261] [client 172.24.249.224:57758] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /var/www/intranet.thomasmurray.shaw.info/wp-content/themes/go/index.php:15\\nStack trace:\\n#0 {main}\\n  thrown in /var/www/intranet.thomasmurray.shaw.info/wp-content/themes/go/index.php on line 15, referer: https://intranet.thomasmurray.shaw.info"
+        }
+      },
+      {
+        "event_id": "ait-0021-477cdecc",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/5star/ HTTP/1.1\" 404 3160 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/5star/ HTTP/1.1\" 404 3160 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0022-63a0cc40",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/Divi/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/Divi/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0023-dc1ad09f",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/BuilderChild-Market/ HTTP/1.1\" 404 3160 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/BuilderChild-Market/ HTTP/1.1\" 404 3160 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0024-b5988c15",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/Avada/ HTTP/1.1\" 404 3160 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/Avada/ HTTP/1.1\" 404 3160 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0025-15a536ca",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/BuilderChild-Depot/ HTTP/1.1\" 404 3160 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/BuilderChild-Depot/ HTTP/1.1\" 404 3160 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0026-7a02c1d9",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/Centum/ HTTP/1.1\" 404 3160 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/Centum/ HTTP/1.1\" 404 3160 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0027-d8933c75",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/Extra/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/Extra/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0028-dd2def7c",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/NativeChurch/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/NativeChurch/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0029-7977d384",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/IncredibleWP/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/IncredibleWP/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0030-cd844fa1",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/Grimag/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/Grimag/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0031-939df6e6",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/GamesTheme/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/GamesTheme/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0032-28042b82",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/Newsmag/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/Newsmag/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0033-9d264caa",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/Newspaper/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/Newspaper/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0034-d26a378f",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/Realestate/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/Realestate/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0035-4ffda0d2",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/Paradise/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/Paradise/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0036-20a1f17e",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/accessbuddy/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/accessbuddy/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0037-7eeba1e8",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/abundance/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/abundance/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0038-a839f922",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/RedSteel/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/RedSteel/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0039-10c39664",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/accesspress-basic/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/accesspress-basic/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0040-ae4fa871",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/accesspress-lite/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/accesspress-lite/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0041-bdf9409f",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/accesspress-mag/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/accesspress-mag/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0042-56aefea6",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/accesspress-staple/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/accesspress-staple/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0043-8c4a4b15",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/accesspress-root/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/accesspress-root/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0044-bc700701",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/accesspress-ray/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/accesspress-ray/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0045-b46293ea",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/accesspress-parallax/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/accesspress-parallax/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0046-1bc91472",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/accesspress-store/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/accesspress-store/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0047-e24a22c5",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/accio/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/accio/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0048-d9ccb7ac",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/affluent/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/affluent/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0049-05c5d72e",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/activello/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/activello/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0050-64137671",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/akal/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/akal/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0051-36cbd987",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/agritourismo-theme/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/agritourismo-theme/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0052-5a8e2463",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/agency-lite/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/agency-lite/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0053-288fc167",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/allegiant/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/allegiant/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0054-33fe245c",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/alltuts/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/alltuts/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0055-07c5f223",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/almera/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/almera/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0056-074a87ac",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/allure-real-estate-theme-for-real-estate/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/allure-real-estate-theme-for-real-estate/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0057-631e4801",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/allure-real-estate-theme-for-placester/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/allure-real-estate-theme-for-placester/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0058-ed5161e2",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/amoveo/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/amoveo/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0059-c747f798",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/ambience/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/ambience/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0060-53d760dd",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/andyblue/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/andyblue/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0061-bd87d2b0",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/amplus/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/amplus/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0062-4ece5e18",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/anthology/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/anthology/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0063-2398a363",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/antisnews/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/antisnews/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0064-13f06b43",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/antioch/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/antioch/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0065-84cbb4c0",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/antreas/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/antreas/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0066-f93e8cdb",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/area53/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/area53/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0067-abe54d5f",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/archin/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/archin/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0068-7ef644ef",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/appius/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/appius/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0069-f13d0a04",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/aries/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/aries/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0070-9a07c703",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/aplite/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/aplite/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0071-67e4abb2",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/artificial-intelligence/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/artificial-intelligence/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0072-229bc860",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/avanix/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/avanix/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0073-f3e2da22",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/authentic/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/authentic/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0074-16d44167",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/auberge/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/auberge/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0075-67f4261a",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/awake/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/awake/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0076-f31e6ee8",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/atahualpa/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/atahualpa/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0077-79411011",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/axioma/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/axioma/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0078-4fc9dfbb",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/bello/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/bello/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0079-8986afd1",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/beauty-premium/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/beauty-premium/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0080-05ac1e96",
+        "timestamp": "2022-01-29T14:38:58Z",
+        "host": "shaw",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/bingle/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467138.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:58 +0000] \"HEAD /wp-content/themes/bingle/ HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-6ecea15e",
+      "source": "alerts",
+      "timestamp": "2022-01-29T14:38:52Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:52 +0000] \"HEAD / HTTP/1.1\" 200 232 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467132.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:52 +0000] \"HEAD / HTTP/1.1\" 200 232 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-7ee6c2f0",
+      "source": "alerts",
+      "timestamp": "2022-01-29T14:38:53Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:53 +0000] \"HEAD /robots.txt HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467133.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:53 +0000] \"HEAD /robots.txt HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-e7282d21",
+      "source": "alerts",
+      "timestamp": "2022-01-29T14:38:53Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [29/Jan/2022:14:38:53 +0000] \"HEAD /fantastico_fileslist.txt HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1643467133.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.24.249.224 - - [29/Jan/2022:14:38:53 +0000] \"HEAD /fantastico_fileslist.txt HTTP/1.1\" 404 146 \"https://intranet.thomasmurray.shaw.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on shaw. Identify the attack stage from telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on shaw. Identify the attack stage from telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "shaw/wpscan",
+    "answer": "wpscan",
+    "accept": [
+      "wpscan",
+      "wpscan"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

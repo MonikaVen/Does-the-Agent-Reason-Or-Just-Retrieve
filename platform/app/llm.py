@@ -23,8 +23,8 @@ PROVIDERS: list[dict[str, Any]] = [
         "label": "Ollama",
         "kind": "local",
         "needs_key": False,
-        "default_model": "llama3.2:1b",
-        "models": ["llama3.2:1b", "llama3.2:3b", "llama3.1", "mistral", "qwen2.5"],
+        "default_model": "qwen2.5:14b",
+        "models": ["qwen2.5:14b", "qwen2.5:3b", "llama3.2:1b", "llama3.2:3b", "llama3.1", "mistral", "qwen2.5"],
         "default_base_url": "http://127.0.0.1:11434",
         "blurb": "Local models. No cloud key. Set the Ollama base URL.",
     },
@@ -81,7 +81,7 @@ DECISION_SCHEMA = {
 }
 
 REPORT_SCHEMA = {
-    "verdict": "malicious | benign | inconclusive",
+    "verdict": "malicious | benign",
     "confidence": 0.0,
     "summary": "string",
     "attack_chain": [{"stage": "Execution", "technique": "T1059.001", "evidence_ids": ["event-id"]}],
@@ -121,7 +121,7 @@ def extract_json(text: str) -> dict[str, Any]:
     return value
 
 
-def _http_json(url: str, payload: dict[str, Any] | None, headers: dict[str, str], timeout: int = 180, method: str = "POST") -> dict[str, Any]:
+def _http_json(url: str, payload: dict[str, Any] | None, headers: dict[str, str], timeout: int = 900, method: str = "POST") -> dict[str, Any]:
     body = None if payload is None else json.dumps(payload).encode("utf-8")
     request = Request(url, data=body, headers={"Content-Type": "application/json", **headers}, method=method)
     try:
@@ -130,6 +130,8 @@ def _http_json(url: str, payload: dict[str, Any] | None, headers: dict[str, str]
     except HTTPError as exc:
         detail = exc.read().decode("utf-8", errors="replace")[:400]
         raise ModelError(f"{url} returned HTTP {exc.code}: {detail}") from exc
+    except TimeoutError as exc:
+        raise ModelError(f"Request to {url} timed out after {timeout}s") from exc
     except URLError as exc:
         raise ModelError(f"Could not reach {url}: {exc.reason}") from exc
     try:
@@ -244,10 +246,11 @@ class ModelGateway:
             return self.reference.generate_report(context)
         system = (
             "You write the final incident report. Reply with one JSON object only. "
-            "Keep it short: verdict, confidence, one-sentence summary, at most 4 supporting_evidence items. "
+            "Keep it short: verdict, one-sentence summary, at most 4 supporting_evidence items. "
             "Every factual claim must cite an evidence_id present in the supplied observations "
-            "or raw window. Do not invent evidence. verdict must be malicious, benign, or inconclusive. "
-            "confidence is in [0,1]. ATT&CK techniques look like T1059.001. No extra keys."
+            "or raw window. Do not invent evidence. verdict must be malicious or benign only. "
+            "Do not self-report confidence; the harness scores confidence from observed evidence. "
+            "You may omit confidence or set it to 0. ATT&CK techniques look like T1059.001. No extra keys."
         )
         user = (
             "Return a FinalReport JSON with this shape:\n"
@@ -333,16 +336,6 @@ class ModelGateway:
         return extract_json(text)
 
 
-def _coerce_confidence(value: Any, default: float = 0.5) -> float:
-    try:
-        number = float(value)
-    except (TypeError, ValueError):
-        return default
-    if number > 1:
-        number = number / 100.0 if number <= 100 else 1.0
-    return max(0.0, min(1.0, number))
-
-
 def _coerce_decision(data: dict[str, Any], tools: list[str]) -> dict[str, Any]:
     action = data.get("selected_action")
     if isinstance(action, str):
@@ -371,9 +364,9 @@ def _coerce_decision(data: dict[str, Any], tools: list[str]) -> dict[str, Any]:
 
 
 def _coerce_report(data: dict[str, Any]) -> dict[str, Any]:
-    verdict = str(data.get("verdict") or "inconclusive").strip().lower()
-    if verdict not in {"malicious", "benign", "inconclusive"}:
-        verdict = "inconclusive"
+    verdict = str(data.get("verdict") or "benign").strip().lower()
+    if verdict not in {"malicious", "benign"}:
+        verdict = "benign"
     evidence = data.get("supporting_evidence") or []
     if isinstance(evidence, dict):
         evidence = [evidence]
@@ -392,7 +385,8 @@ def _coerce_report(data: dict[str, Any]) -> dict[str, Any]:
     if not isinstance(entities, dict):
         entities = {"hosts": [], "users": [], "ips": [], "files": []}
     data["verdict"] = verdict
-    data["confidence"] = _coerce_confidence(data.get("confidence"))
+    # Placeholder only — orchestrator overwrites with evidence-derived confidence.
+    data["confidence"] = 0.0
     data["summary"] = str(data.get("summary") or "")
     data["attack_chain"] = data.get("attack_chain") if isinstance(data.get("attack_chain"), list) else []
     data["key_entities"] = entities

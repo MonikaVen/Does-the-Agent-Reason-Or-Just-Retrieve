@@ -1,0 +1,309 @@
+{
+  "incident_id": "soc-soc-000105",
+  "name": "SOC-AgentBench network_scan_v8 (soc-000105)",
+  "source_benchmark": "SOC-AgentBench",
+  "source_scenario": "train/network_scan_v8/soc-000105",
+  "alert": {
+    "timestamp": "2025-07-16T00:02:00Z",
+    "host": "WS-237",
+    "user": "svc_backup",
+    "alert_type": "soc_agent_bench",
+    "summary": "Automated detection: Internal port scan from workstation. Investigate correlated telemetry.",
+    "title": "Internal port scan from workstation",
+    "severity": "medium",
+    "assets": [
+      "WS-237",
+      "SRV-DB-01"
+    ]
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts",
+      "network"
+    ],
+    "start": "2025-07-16T00:02:00Z",
+    "end": "2025-07-16T00:19:00Z",
+    "hosts": [
+      "WS-237"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "soc-000105-noise-0",
+        "timestamp": "2025-07-16T00:15:00Z",
+        "host": "WS-084",
+        "rule": "Internal port scan from workstation",
+        "severity": "medium",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000105-noise-0",
+          "timestamp": "2025-07-16T00:15:00+00:00",
+          "source": "windows_security",
+          "host": "WS-084",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000105-noise-1",
+        "timestamp": "2025-07-16T00:03:00Z",
+        "host": "WS-075",
+        "rule": "Internal port scan from workstation",
+        "severity": "medium",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000105-noise-1",
+          "timestamp": "2025-07-16T00:03:00+00:00",
+          "source": "windows_security",
+          "host": "WS-075",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000105-noise-2",
+        "timestamp": "2025-07-16T00:19:00Z",
+        "host": "WS-017",
+        "rule": "Internal port scan from workstation",
+        "severity": "medium",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000105-noise-2",
+          "timestamp": "2025-07-16T00:19:00+00:00",
+          "source": "windows_security",
+          "host": "WS-017",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000105-noise-3",
+        "timestamp": "2025-07-16T00:02:00Z",
+        "host": "WS-047",
+        "rule": "Internal port scan from workstation",
+        "severity": "medium",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000105-noise-3",
+          "timestamp": "2025-07-16T00:02:00+00:00",
+          "source": "windows_security",
+          "host": "WS-047",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      }
+    ],
+    "network": [
+      {
+        "event_id": "soc-000105-log-001",
+        "timestamp": "2025-07-16T00:05:00Z",
+        "host": "WS-237",
+        "destination_ip": "",
+        "protocol": "tcp",
+        "message": "Primary indicator on WS-237: Internal port scan from workstation",
+        "raw_log": {
+          "log_id": "soc-000105-log-001",
+          "timestamp": "2025-07-16T00:05:00+00:00",
+          "source": "suricata",
+          "host": "WS-237",
+          "user": "svc_backup",
+          "message": "Primary indicator on WS-237: Internal port scan from workstation"
+        }
+      },
+      {
+        "event_id": "soc-000105-log-002",
+        "timestamp": "2025-07-16T00:08:00Z",
+        "host": "SRV-DB-01",
+        "destination_ip": "203.0.113.240",
+        "protocol": "tcp",
+        "message": "Correlated alert on SRV-DB-01",
+        "raw_log": {
+          "log_id": "soc-000105-log-002",
+          "timestamp": "2025-07-16T00:08:00+00:00",
+          "source": "wazuh",
+          "host": "SRV-DB-01",
+          "message": "Correlated alert on SRV-DB-01",
+          "src_ip": "203.0.113.240"
+        }
+      },
+      {
+        "event_id": "soc-000105-log-003",
+        "timestamp": "2025-07-16T00:12:00Z",
+        "host": "WS-237",
+        "destination_ip": "203.0.113.240",
+        "protocol": "tcp",
+        "message": "Network activity from 203.0.113.240 to WS-237",
+        "raw_log": {
+          "log_id": "soc-000105-log-003",
+          "timestamp": "2025-07-16T00:12:00+00:00",
+          "source": "suricata",
+          "host": "WS-237",
+          "message": "Network activity from 203.0.113.240 to WS-237",
+          "src_ip": "203.0.113.240"
+        }
+      },
+      {
+        "event_id": "soc-ioc-0001-2003beaf",
+        "timestamp": "2025-07-16T00:15:00Z",
+        "host": "WS-237",
+        "destination_ip": "203.0.113.240",
+        "protocol": "tcp",
+        "message": "Observed IP 203.0.113.240"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ev-soc-000105-0",
+      "source": "alerts",
+      "timestamp": "2025-07-16T00:05:00Z",
+      "host": "WS-237",
+      "fields": {
+        "rule": "suricata",
+        "severity": "medium",
+        "message": "Primary indicator on WS-237: Internal port scan from workstation",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "ev-soc-000105-1",
+      "source": "alerts",
+      "timestamp": "2025-07-16T00:08:00Z",
+      "host": "SRV-DB-01",
+      "fields": {
+        "rule": "wazuh",
+        "severity": "medium",
+        "message": "Correlated alert on SRV-DB-01",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "ev-soc-000105-2",
+      "source": "alerts",
+      "timestamp": "2025-07-16T00:12:00Z",
+      "host": "WS-237",
+      "fields": {
+        "rule": "suricata",
+        "severity": "medium",
+        "message": "Network activity from 203.0.113.240 to WS-237",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "soc-ioc-rep-0001-64923004",
+      "source": "network",
+      "timestamp": "2025-07-16T00:15:00Z",
+      "host": "WS-237",
+      "fields": {
+        "destination_ip": "203.0.113.240",
+        "protocol": "tcp",
+        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
+        "reputation": "malicious"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "WS-237"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "network",
+        "filter": {
+          "host": "WS-237"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Automated detection: Internal port scan from workstation. Investigate correlated telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "WS-237"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "network",
+          "filter": {
+            "host": "WS-237"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Automated detection: Internal port scan from workstation. Investigate correlated telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "SOC-AgentBench",
+    "scenario": "train/network_scan_v8/soc-000105",
+    "answer": "Internal port scan preceding lateral movement",
+    "accept": [
+      "Internal port scan preceding lateral movement",
+      "Internal port scan preceding lateral movement",
+      "discovery"
+    ],
+    "grading": "exact_ci",
+    "incident_type": "discovery",
+    "is_true_positive": true,
+    "label": "malicious",
+    "attck": [
+      "T1046"
+    ],
+    "ioc_enrichment": {
+      "203.0.113.240": {
+        "type": "ip",
+        "reputation": "malicious",
+        "category": "scanner"
+      }
+    },
+    "sealed": true
+  }
+}

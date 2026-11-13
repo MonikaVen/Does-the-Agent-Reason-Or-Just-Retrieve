@@ -1,0 +1,219 @@
+{
+  "incident_id": "ait-wilson-dnsteal",
+  "name": "AIT-ADS wilson/dnsteal",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "wilson/dnsteal",
+  "alert": {
+    "timestamp": "2022-02-06T11:12:56Z",
+    "host": "wilson",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on wilson. Identify the attack stage from telemetry."
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-06T11:12:56Z",
+    "end": "2022-02-06T11:14:12Z",
+    "hosts": [
+      "wilson"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-bf8971d3",
+        "timestamp": "2022-02-06T11:12:56Z",
+        "host": "wilson",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-06 11:12:56 cmiranda/192.168.225.116:59684 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)",
+        "raw_alert": {
+          "timestamp": 1644145976.0,
+          "detector": "AMiner: New event type.",
+          "message": "2022-02-06 11:12:56 cmiranda/192.168.225.116:59684 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)"
+        }
+      },
+      {
+        "event_id": "ait-0002-889f7305",
+        "timestamp": "2022-02-06T11:12:56Z",
+        "host": "wilson",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-06 11:12:56 cmiranda/192.168.225.116:59684 TLS Error: TLS handshake failed",
+        "raw_alert": {
+          "timestamp": 1644145976.0,
+          "detector": "AMiner: New event type.",
+          "message": "2022-02-06 11:12:56 cmiranda/192.168.225.116:59684 TLS Error: TLS handshake failed"
+        }
+      },
+      {
+        "event_id": "ait-0003-1500580d",
+        "timestamp": "2022-02-06T11:12:56Z",
+        "host": "wilson",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-06 11:12:56 cmiranda/192.168.225.116:59684 TLS: move_session: dest=TM_LAME_DUCK src=TM_ACTIVE reinit_src=1",
+        "raw_alert": {
+          "timestamp": 1644145976.0,
+          "detector": "AMiner: New event type.",
+          "message": "2022-02-06 11:12:56 cmiranda/192.168.225.116:59684 TLS: move_session: dest=TM_LAME_DUCK src=TM_ACTIVE reinit_src=1"
+        }
+      },
+      {
+        "event_id": "ait-0004-09d1f029",
+        "timestamp": "2022-02-06T11:14:12Z",
+        "host": "wilson",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-06 11:14:12 cmiranda/192.168.225.116:59684 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)",
+        "raw_alert": {
+          "timestamp": 1644146052.0,
+          "detector": "AMiner: New event type.",
+          "message": "2022-02-06 11:14:12 cmiranda/192.168.225.116:59684 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)"
+        }
+      },
+      {
+        "event_id": "ait-0005-cf47dacf",
+        "timestamp": "2022-02-06T11:14:12Z",
+        "host": "wilson",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-06 11:14:12 cmiranda/192.168.225.116:59684 TLS Error: TLS handshake failed",
+        "raw_alert": {
+          "timestamp": 1644146052.0,
+          "detector": "AMiner: New event type.",
+          "message": "2022-02-06 11:14:12 cmiranda/192.168.225.116:59684 TLS Error: TLS handshake failed"
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-bf8971d3",
+      "source": "alerts",
+      "timestamp": "2022-02-06T11:12:56Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-06 11:12:56 cmiranda/192.168.225.116:59684 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)",
+        "raw_alert": {
+          "timestamp": 1644145976.0,
+          "detector": "AMiner: New event type.",
+          "message": "2022-02-06 11:12:56 cmiranda/192.168.225.116:59684 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)"
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-889f7305",
+      "source": "alerts",
+      "timestamp": "2022-02-06T11:12:56Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-06 11:12:56 cmiranda/192.168.225.116:59684 TLS Error: TLS handshake failed",
+        "raw_alert": {
+          "timestamp": 1644145976.0,
+          "detector": "AMiner: New event type.",
+          "message": "2022-02-06 11:12:56 cmiranda/192.168.225.116:59684 TLS Error: TLS handshake failed"
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-1500580d",
+      "source": "alerts",
+      "timestamp": "2022-02-06T11:12:56Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-06 11:12:56 cmiranda/192.168.225.116:59684 TLS: move_session: dest=TM_LAME_DUCK src=TM_ACTIVE reinit_src=1",
+        "raw_alert": {
+          "timestamp": 1644145976.0,
+          "detector": "AMiner: New event type.",
+          "message": "2022-02-06 11:12:56 cmiranda/192.168.225.116:59684 TLS: move_session: dest=TM_LAME_DUCK src=TM_ACTIVE reinit_src=1"
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on wilson. Identify the attack stage from telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on wilson. Identify the attack stage from telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "wilson/dnsteal",
+    "answer": "dnsteal",
+    "accept": [
+      "dnsteal",
+      "dnsteal"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

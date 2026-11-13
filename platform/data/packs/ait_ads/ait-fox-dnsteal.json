@@ -1,0 +1,243 @@
+{
+  "incident_id": "ait-fox-dnsteal",
+  "name": "AIT-ADS fox/dnsteal",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "fox/dnsteal",
+  "alert": {
+    "timestamp": "2022-01-17T09:26:33Z",
+    "host": "fox",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on fox. Identify the attack stage from telemetry."
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-17T09:26:33Z",
+    "end": "2022-01-17T09:59:49Z",
+    "hosts": [
+      "fox"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-97301cce",
+        "timestamp": "2022-01-17T09:26:33Z",
+        "host": "fox",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 17 09:26:33 dnsmasq[14460]: query[A] youtu.be from 192.168.128.4",
+        "raw_alert": {
+          "timestamp": 1642411593.0,
+          "detector": "AMiner: High entropy in DNS domain.",
+          "message": "Jan 17 09:26:33 dnsmasq[14460]: query[A] youtu.be from 192.168.128.4"
+        }
+      },
+      {
+        "event_id": "ait-0002-1b7787c0",
+        "timestamp": "2022-01-17T09:26:33Z",
+        "host": "fox",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 17 09:26:33 dnsmasq[14460]: forwarded youtu.be to 8.8.8.8",
+        "raw_alert": {
+          "timestamp": 1642411593.0,
+          "detector": "AMiner: High entropy in DNS domain.",
+          "message": "Jan 17 09:26:33 dnsmasq[14460]: forwarded youtu.be to 8.8.8.8"
+        }
+      },
+      {
+        "event_id": "ait-0003-5dfc33ae",
+        "timestamp": "2022-01-17T09:26:33Z",
+        "host": "fox",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 17 09:26:33 dnsmasq[14522]: query[A] youtu.be from 172.17.130.196",
+        "raw_alert": {
+          "timestamp": 1642411593.0,
+          "detector": "AMiner: High entropy in DNS domain.",
+          "message": "Jan 17 09:26:33 dnsmasq[14522]: query[A] youtu.be from 172.17.130.196"
+        }
+      },
+      {
+        "event_id": "ait-0004-76d45674",
+        "timestamp": "2022-01-17T09:26:33Z",
+        "host": "fox",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 17 09:26:33 dnsmasq[14522]: forwarded youtu.be to 192.168.255.254",
+        "raw_alert": {
+          "timestamp": 1642411593.0,
+          "detector": "AMiner: High entropy in DNS domain.",
+          "message": "Jan 17 09:26:33 dnsmasq[14522]: forwarded youtu.be to 192.168.255.254"
+        }
+      },
+      {
+        "event_id": "ait-0005-e8cb565c",
+        "timestamp": "2022-01-17T09:26:34Z",
+        "host": "fox",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 17 09:26:34 dnsmasq[14460]: reply youtu.be is 172.217.20.14",
+        "raw_alert": {
+          "timestamp": 1642411594.0,
+          "detector": "AMiner: High entropy in DNS domain.",
+          "message": "Jan 17 09:26:34 dnsmasq[14460]: reply youtu.be is 172.217.20.14"
+        }
+      },
+      {
+        "event_id": "ait-0006-d5b12dca",
+        "timestamp": "2022-01-17T09:26:34Z",
+        "host": "fox",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 17 09:26:34 dnsmasq[14522]: reply youtu.be is 172.217.20.14",
+        "raw_alert": {
+          "timestamp": 1642411594.0,
+          "detector": "AMiner: High entropy in DNS domain.",
+          "message": "Jan 17 09:26:34 dnsmasq[14522]: reply youtu.be is 172.217.20.14"
+        }
+      },
+      {
+        "event_id": "ait-0007-b34bfaf6",
+        "timestamp": "2022-01-17T09:59:49Z",
+        "host": "fox",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 17 09:59:49 dnsmasq[14522]: query[A] mail.price.fox.org from 10.35.35.118",
+        "raw_alert": {
+          "timestamp": 1642413589.0,
+          "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+          "message": "Jan 17 09:59:49 dnsmasq[14522]: query[A] mail.price.fox.org from 10.35.35.118"
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-97301cce",
+      "source": "alerts",
+      "timestamp": "2022-01-17T09:26:33Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 17 09:26:33 dnsmasq[14460]: query[A] youtu.be from 192.168.128.4",
+        "raw_alert": {
+          "timestamp": 1642411593.0,
+          "detector": "AMiner: High entropy in DNS domain.",
+          "message": "Jan 17 09:26:33 dnsmasq[14460]: query[A] youtu.be from 192.168.128.4"
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-1b7787c0",
+      "source": "alerts",
+      "timestamp": "2022-01-17T09:26:33Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 17 09:26:33 dnsmasq[14460]: forwarded youtu.be to 8.8.8.8",
+        "raw_alert": {
+          "timestamp": 1642411593.0,
+          "detector": "AMiner: High entropy in DNS domain.",
+          "message": "Jan 17 09:26:33 dnsmasq[14460]: forwarded youtu.be to 8.8.8.8"
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-5dfc33ae",
+      "source": "alerts",
+      "timestamp": "2022-01-17T09:26:33Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 17 09:26:33 dnsmasq[14522]: query[A] youtu.be from 172.17.130.196",
+        "raw_alert": {
+          "timestamp": 1642411593.0,
+          "detector": "AMiner: High entropy in DNS domain.",
+          "message": "Jan 17 09:26:33 dnsmasq[14522]: query[A] youtu.be from 172.17.130.196"
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on fox. Identify the attack stage from telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on fox. Identify the attack stage from telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "fox/dnsteal",
+    "answer": "dnsteal",
+    "accept": [
+      "dnsteal",
+      "dnsteal"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

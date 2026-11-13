@@ -1,0 +1,310 @@
+{
+  "incident_id": "soc-soc-000102",
+  "name": "SOC-AgentBench ssh_bruteforce_v8 (soc-000102)",
+  "source_benchmark": "SOC-AgentBench",
+  "source_scenario": "train/ssh_bruteforce_v8/soc-000102",
+  "alert": {
+    "timestamp": "2025-07-13T00:05:00Z",
+    "host": "WS-013",
+    "user": "svc_backup",
+    "alert_type": "soc_agent_bench",
+    "summary": "Automated detection: SSH brute force attempts on jump host. Investigate correlated telemetry.",
+    "title": "SSH brute force attempts on jump host",
+    "severity": "medium",
+    "assets": [
+      "WS-013",
+      "SRV-DB-02"
+    ]
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts",
+      "network"
+    ],
+    "start": "2025-07-13T00:05:00Z",
+    "end": "2025-07-13T00:17:00Z",
+    "hosts": [
+      "WS-013"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "soc-000102-log-001",
+        "timestamp": "2025-07-13T00:05:00Z",
+        "host": "WS-013",
+        "rule": "SSH brute force attempts on jump host",
+        "severity": "medium",
+        "message": "Primary indicator on WS-013: SSH brute force attempts on jump host",
+        "user": "svc_backup",
+        "raw_alert": {
+          "log_id": "soc-000102-log-001",
+          "timestamp": "2025-07-13T00:05:00+00:00",
+          "source": "linux_auth",
+          "host": "WS-013",
+          "user": "svc_backup",
+          "message": "Primary indicator on WS-013: SSH brute force attempts on jump host"
+        }
+      },
+      {
+        "event_id": "soc-000102-noise-0",
+        "timestamp": "2025-07-13T00:05:00Z",
+        "host": "WS-070",
+        "rule": "SSH brute force attempts on jump host",
+        "severity": "medium",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000102-noise-0",
+          "timestamp": "2025-07-13T00:05:00+00:00",
+          "source": "windows_security",
+          "host": "WS-070",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000102-noise-1",
+        "timestamp": "2025-07-13T00:17:00Z",
+        "host": "WS-093",
+        "rule": "SSH brute force attempts on jump host",
+        "severity": "medium",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000102-noise-1",
+          "timestamp": "2025-07-13T00:17:00+00:00",
+          "source": "windows_security",
+          "host": "WS-093",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000102-noise-2",
+        "timestamp": "2025-07-13T00:11:00Z",
+        "host": "WS-089",
+        "rule": "SSH brute force attempts on jump host",
+        "severity": "medium",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000102-noise-2",
+          "timestamp": "2025-07-13T00:11:00+00:00",
+          "source": "windows_security",
+          "host": "WS-089",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000102-noise-3",
+        "timestamp": "2025-07-13T00:14:00Z",
+        "host": "WS-077",
+        "rule": "SSH brute force attempts on jump host",
+        "severity": "medium",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000102-noise-3",
+          "timestamp": "2025-07-13T00:14:00+00:00",
+          "source": "windows_security",
+          "host": "WS-077",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      }
+    ],
+    "network": [
+      {
+        "event_id": "soc-000102-log-002",
+        "timestamp": "2025-07-13T00:08:00Z",
+        "host": "SRV-DB-02",
+        "destination_ip": "203.0.113.196",
+        "protocol": "tcp",
+        "message": "Correlated alert on SRV-DB-02",
+        "raw_log": {
+          "log_id": "soc-000102-log-002",
+          "timestamp": "2025-07-13T00:08:00+00:00",
+          "source": "wazuh",
+          "host": "SRV-DB-02",
+          "message": "Correlated alert on SRV-DB-02",
+          "src_ip": "203.0.113.196"
+        }
+      },
+      {
+        "event_id": "soc-000102-log-003",
+        "timestamp": "2025-07-13T00:12:00Z",
+        "host": "WS-013",
+        "destination_ip": "203.0.113.196",
+        "protocol": "tcp",
+        "message": "Network activity from 203.0.113.196 to WS-013",
+        "raw_log": {
+          "log_id": "soc-000102-log-003",
+          "timestamp": "2025-07-13T00:12:00+00:00",
+          "source": "suricata",
+          "host": "WS-013",
+          "message": "Network activity from 203.0.113.196 to WS-013",
+          "src_ip": "203.0.113.196"
+        }
+      },
+      {
+        "event_id": "soc-ioc-0001-f0c897f9",
+        "timestamp": "2025-07-13T00:15:00Z",
+        "host": "WS-013",
+        "destination_ip": "203.0.113.196",
+        "protocol": "tcp",
+        "message": "Observed IP 203.0.113.196"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ev-soc-000102-0",
+      "source": "alerts",
+      "timestamp": "2025-07-13T00:05:00Z",
+      "host": "WS-013",
+      "fields": {
+        "rule": "linux_auth",
+        "severity": "medium",
+        "message": "Primary indicator on WS-013: SSH brute force attempts on jump host",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "ev-soc-000102-1",
+      "source": "alerts",
+      "timestamp": "2025-07-13T00:08:00Z",
+      "host": "SRV-DB-02",
+      "fields": {
+        "rule": "wazuh",
+        "severity": "medium",
+        "message": "Correlated alert on SRV-DB-02",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "ev-soc-000102-2",
+      "source": "alerts",
+      "timestamp": "2025-07-13T00:12:00Z",
+      "host": "WS-013",
+      "fields": {
+        "rule": "suricata",
+        "severity": "medium",
+        "message": "Network activity from 203.0.113.196 to WS-013",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "soc-ioc-rep-0001-cf2cb838",
+      "source": "network",
+      "timestamp": "2025-07-13T00:15:00Z",
+      "host": "WS-013",
+      "fields": {
+        "destination_ip": "203.0.113.196",
+        "protocol": "tcp",
+        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
+        "reputation": "malicious"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "WS-013"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "network",
+        "filter": {
+          "host": "WS-013"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Automated detection: SSH brute force attempts on jump host. Investigate correlated telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "WS-013"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "network",
+          "filter": {
+            "host": "WS-013"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Automated detection: SSH brute force attempts on jump host. Investigate correlated telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "SOC-AgentBench",
+    "scenario": "train/ssh_bruteforce_v8/soc-000102",
+    "answer": "SSH brute force against jump host",
+    "accept": [
+      "SSH brute force against jump host",
+      "SSH brute force against jump host",
+      "initial_access"
+    ],
+    "grading": "exact_ci",
+    "incident_type": "initial_access",
+    "is_true_positive": true,
+    "label": "malicious",
+    "attck": [
+      "T1110.001"
+    ],
+    "ioc_enrichment": {
+      "203.0.113.196": {
+        "type": "ip",
+        "reputation": "malicious",
+        "category": "scanner"
+      }
+    },
+    "sealed": true
+  }
+}

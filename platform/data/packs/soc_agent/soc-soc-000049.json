@@ -1,0 +1,310 @@
+{
+  "incident_id": "soc-soc-000049",
+  "name": "SOC-AgentBench rdp_lateral_movement_v4 (soc-000049)",
+  "source_benchmark": "SOC-AgentBench",
+  "source_scenario": "train/rdp_lateral_movement_v4/soc-000049",
+  "alert": {
+    "timestamp": "2025-07-20T00:01:00Z",
+    "host": "WS-071",
+    "user": "contractor_temp",
+    "alert_type": "soc_agent_bench",
+    "summary": "Automated detection: Anomalous RDP session from compromised workstation. Investigate correlated telemetry.",
+    "title": "Anomalous RDP session from compromised workstation",
+    "severity": "high",
+    "assets": [
+      "WS-071",
+      "SRV-WEB-02"
+    ]
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts",
+      "network"
+    ],
+    "start": "2025-07-20T00:01:00Z",
+    "end": "2025-07-20T00:15:00Z",
+    "hosts": [
+      "WS-071"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "soc-000049-log-001",
+        "timestamp": "2025-07-20T00:05:00Z",
+        "host": "WS-071",
+        "rule": "Anomalous RDP session from compromised workstation",
+        "severity": "high",
+        "message": "Primary indicator on WS-071: Anomalous RDP session from compromised workstation",
+        "user": "contractor_temp",
+        "raw_alert": {
+          "log_id": "soc-000049-log-001",
+          "timestamp": "2025-07-20T00:05:00+00:00",
+          "source": "windows_security",
+          "host": "WS-071",
+          "user": "contractor_temp",
+          "message": "Primary indicator on WS-071: Anomalous RDP session from compromised workstation"
+        }
+      },
+      {
+        "event_id": "soc-000049-noise-0",
+        "timestamp": "2025-07-20T00:01:00Z",
+        "host": "WS-061",
+        "rule": "Anomalous RDP session from compromised workstation",
+        "severity": "high",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000049-noise-0",
+          "timestamp": "2025-07-20T00:01:00+00:00",
+          "source": "windows_security",
+          "host": "WS-061",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000049-noise-1",
+        "timestamp": "2025-07-20T00:07:00Z",
+        "host": "WS-098",
+        "rule": "Anomalous RDP session from compromised workstation",
+        "severity": "high",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000049-noise-1",
+          "timestamp": "2025-07-20T00:07:00+00:00",
+          "source": "windows_security",
+          "host": "WS-098",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000049-noise-2",
+        "timestamp": "2025-07-20T00:10:00Z",
+        "host": "WS-058",
+        "rule": "Anomalous RDP session from compromised workstation",
+        "severity": "high",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000049-noise-2",
+          "timestamp": "2025-07-20T00:10:00+00:00",
+          "source": "windows_security",
+          "host": "WS-058",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000049-noise-3",
+        "timestamp": "2025-07-20T00:10:00Z",
+        "host": "WS-050",
+        "rule": "Anomalous RDP session from compromised workstation",
+        "severity": "high",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000049-noise-3",
+          "timestamp": "2025-07-20T00:10:00+00:00",
+          "source": "windows_security",
+          "host": "WS-050",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      }
+    ],
+    "network": [
+      {
+        "event_id": "soc-000049-log-002",
+        "timestamp": "2025-07-20T00:08:00Z",
+        "host": "SRV-WEB-02",
+        "destination_ip": "203.0.113.181",
+        "protocol": "tcp",
+        "message": "Correlated alert on SRV-WEB-02",
+        "raw_log": {
+          "log_id": "soc-000049-log-002",
+          "timestamp": "2025-07-20T00:08:00+00:00",
+          "source": "wazuh",
+          "host": "SRV-WEB-02",
+          "message": "Correlated alert on SRV-WEB-02",
+          "src_ip": "203.0.113.181"
+        }
+      },
+      {
+        "event_id": "soc-000049-log-003",
+        "timestamp": "2025-07-20T00:12:00Z",
+        "host": "WS-071",
+        "destination_ip": "203.0.113.181",
+        "protocol": "tcp",
+        "message": "Network activity from 203.0.113.181 to WS-071",
+        "raw_log": {
+          "log_id": "soc-000049-log-003",
+          "timestamp": "2025-07-20T00:12:00+00:00",
+          "source": "suricata",
+          "host": "WS-071",
+          "message": "Network activity from 203.0.113.181 to WS-071",
+          "src_ip": "203.0.113.181"
+        }
+      },
+      {
+        "event_id": "soc-ioc-0001-61c34de4",
+        "timestamp": "2025-07-20T00:15:00Z",
+        "host": "WS-071",
+        "destination_ip": "203.0.113.181",
+        "protocol": "tcp",
+        "message": "Observed IP 203.0.113.181"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ev-soc-000049-0",
+      "source": "alerts",
+      "timestamp": "2025-07-20T00:05:00Z",
+      "host": "WS-071",
+      "fields": {
+        "rule": "windows_security",
+        "severity": "high",
+        "message": "Primary indicator on WS-071: Anomalous RDP session from compromised workstation",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "ev-soc-000049-1",
+      "source": "alerts",
+      "timestamp": "2025-07-20T00:08:00Z",
+      "host": "SRV-WEB-02",
+      "fields": {
+        "rule": "wazuh",
+        "severity": "high",
+        "message": "Correlated alert on SRV-WEB-02",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "ev-soc-000049-2",
+      "source": "alerts",
+      "timestamp": "2025-07-20T00:12:00Z",
+      "host": "WS-071",
+      "fields": {
+        "rule": "suricata",
+        "severity": "high",
+        "message": "Network activity from 203.0.113.181 to WS-071",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "soc-ioc-rep-0001-2bef3cba",
+      "source": "network",
+      "timestamp": "2025-07-20T00:15:00Z",
+      "host": "WS-071",
+      "fields": {
+        "destination_ip": "203.0.113.181",
+        "protocol": "tcp",
+        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
+        "reputation": "malicious"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "WS-071"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "network",
+        "filter": {
+          "host": "WS-071"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Automated detection: Anomalous RDP session from compromised workstation. Investigate correlated telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "WS-071"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "network",
+          "filter": {
+            "host": "WS-071"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Automated detection: Anomalous RDP session from compromised workstation. Investigate correlated telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "SOC-AgentBench",
+    "scenario": "train/rdp_lateral_movement_v4/soc-000049",
+    "answer": "Lateral movement via RDP using stolen credentials",
+    "accept": [
+      "Lateral movement via RDP using stolen credentials",
+      "Lateral movement via RDP using stolen credentials",
+      "lateral_movement"
+    ],
+    "grading": "exact_ci",
+    "incident_type": "lateral_movement",
+    "is_true_positive": true,
+    "label": "malicious",
+    "attck": [
+      "T1021.001"
+    ],
+    "ioc_enrichment": {
+      "203.0.113.181": {
+        "type": "ip",
+        "reputation": "malicious",
+        "category": "scanner"
+      }
+    },
+    "sealed": true
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "incident_id": "ait-wheeler-dnsteal",
+  "name": "AIT-ADS wheeler/dnsteal",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "wheeler/dnsteal",
+  "alert": {
+    "timestamp": "2022-01-29T05:28:17Z",
+    "host": "wheeler",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on wheeler. Identify the attack stage from telemetry."
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-29T05:28:17Z",
+    "end": "2022-01-29T06:02:02Z",
+    "hosts": [
+      "wheeler"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-ae361e20",
+        "timestamp": "2022-01-29T05:28:17Z",
+        "host": "wheeler",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "172.27.183.131 - - [29/Jan/2022:05:28:17 +0000] \"GET / HTTP/1.1\" 302 3203 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "raw_alert": {
+          "timestamp": 1643434097.0,
+          "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+          "message": "172.27.183.131 - - [29/Jan/2022:05:28:17 +0000] \"GET / HTTP/1.1\" 302 3203 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\""
+        }
+      },
+      {
+        "event_id": "ait-0002-f3d44233",
+        "timestamp": "2022-01-29T05:40:45Z",
+        "host": "wheeler",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 29 05:40:45 dnsmasq[12225]: query[AAAA] motd.ubuntu.com from 172.27.182.162",
+        "raw_alert": {
+          "timestamp": 1643434845.0,
+          "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+          "message": "Jan 29 05:40:45 dnsmasq[12225]: query[AAAA] motd.ubuntu.com from 172.27.182.162"
+        }
+      },
+      {
+        "event_id": "ait-0003-32e4610f",
+        "timestamp": "2022-01-29T05:50:12Z",
+        "host": "wheeler",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 29 05:50:12 dnsmasq[12225]: query[TXT] current.cvd.clamav.net from 172.27.182.4",
+        "raw_alert": {
+          "timestamp": 1643435412.0,
+          "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+          "message": "Jan 29 05:50:12 dnsmasq[12225]: query[TXT] current.cvd.clamav.net from 172.27.182.4"
+        }
+      },
+      {
+        "event_id": "ait-0004-6da61949",
+        "timestamp": "2022-01-29T06:02:02Z",
+        "host": "wheeler",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 29 06:02:02 dnsmasq[12225]: query[A] motd.ubuntu.com from 172.27.180.4",
+        "raw_alert": {
+          "timestamp": 1643436122.0,
+          "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+          "message": "Jan 29 06:02:02 dnsmasq[12225]: query[A] motd.ubuntu.com from 172.27.180.4"
+        }
+      },
+      {
+        "event_id": "ait-0005-ea7c14a4",
+        "timestamp": "2022-01-29T06:02:02Z",
+        "host": "wheeler",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 29 06:02:02 dnsmasq[12225]: query[A] motd.ubuntu.com from 172.27.180.4",
+        "raw_alert": {
+          "timestamp": 1643436122.0,
+          "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+          "message": "Jan 29 06:02:02 dnsmasq[12225]: query[A] motd.ubuntu.com from 172.27.180.4"
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-ae361e20",
+      "source": "alerts",
+      "timestamp": "2022-01-29T05:28:17Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "172.27.183.131 - - [29/Jan/2022:05:28:17 +0000] \"GET / HTTP/1.1\" 302 3203 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "raw_alert": {
+          "timestamp": 1643434097.0,
+          "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+          "message": "172.27.183.131 - - [29/Jan/2022:05:28:17 +0000] \"GET / HTTP/1.1\" 302 3203 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-f3d44233",
+      "source": "alerts",
+      "timestamp": "2022-01-29T05:40:45Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 29 05:40:45 dnsmasq[12225]: query[AAAA] motd.ubuntu.com from 172.27.182.162",
+        "raw_alert": {
+          "timestamp": 1643434845.0,
+          "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+          "message": "Jan 29 05:40:45 dnsmasq[12225]: query[AAAA] motd.ubuntu.com from 172.27.182.162"
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-32e4610f",
+      "source": "alerts",
+      "timestamp": "2022-01-29T05:50:12Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 29 05:50:12 dnsmasq[12225]: query[TXT] current.cvd.clamav.net from 172.27.182.4",
+        "raw_alert": {
+          "timestamp": 1643435412.0,
+          "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+          "message": "Jan 29 05:50:12 dnsmasq[12225]: query[TXT] current.cvd.clamav.net from 172.27.182.4"
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on wheeler. Identify the attack stage from telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on wheeler. Identify the attack stage from telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "wheeler/dnsteal",
+    "answer": "dnsteal",
+    "accept": [
+      "dnsteal",
+      "dnsteal"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

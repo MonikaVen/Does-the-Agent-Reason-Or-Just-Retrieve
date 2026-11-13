@@ -1,0 +1,579 @@
+{
+  "incident_id": "ait-shaw-privilege_escalation",
+  "name": "AIT-ADS shaw/privilege_escalation",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "shaw/privilege_escalation",
+  "alert": {
+    "timestamp": "2022-01-29T15:20:51Z",
+    "host": "shaw",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on shaw. Identify the attack stage from telemetry."
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-29T15:20:51Z",
+    "end": "2022-01-29T15:21:09Z",
+    "hosts": [
+      "shaw"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-09a114ee",
+        "timestamp": "2022-01-29T15:20:51Z",
+        "host": "shaw",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 29 15:20:51 intranet-server su[28625]: Successful su for gmarsh by www-data",
+        "raw_alert": {
+          "timestamp": 1643469651.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 29 15:20:51 intranet-server su[28625]: Successful su for gmarsh by www-data"
+        }
+      },
+      {
+        "event_id": "ait-0002-6faaeb90",
+        "timestamp": "2022-01-29T15:20:51Z",
+        "host": "shaw",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 29 15:20:51 intranet-server su[28625]: + /dev/pts/0 www-data:gmarsh",
+        "raw_alert": {
+          "timestamp": 1643469651.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 29 15:20:51 intranet-server su[28625]: + /dev/pts/0 www-data:gmarsh"
+        }
+      },
+      {
+        "event_id": "ait-0003-768c36a4",
+        "timestamp": "2022-01-29T15:20:51Z",
+        "host": "shaw",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 29 15:20:51 intranet-server su[28625]: pam_unix(su:session): session opened for user gmarsh by (uid=33)",
+        "raw_alert": {
+          "timestamp": 1643469651.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 29 15:20:51 intranet-server su[28625]: pam_unix(su:session): session opened for user gmarsh by (uid=33)"
+        }
+      },
+      {
+        "event_id": "ait-0004-127df4af",
+        "timestamp": "2022-01-29T15:20:51Z",
+        "host": "shaw",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 29 15:20:51 intranet-server systemd-logind[948]: New session c1 of user gmarsh.",
+        "raw_alert": {
+          "timestamp": 1643469651.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 29 15:20:51 intranet-server systemd-logind[948]: New session c1 of user gmarsh."
+        }
+      },
+      {
+        "event_id": "ait-0005-33f2ceb5",
+        "timestamp": "2022-01-29T15:20:51Z",
+        "host": "shaw",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 29 15:20:51 intranet-server systemd: pam_unix(systemd-user:session): session opened for user gmarsh by (uid=0)",
+        "raw_alert": {
+          "timestamp": 1643469651.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 29 15:20:51 intranet-server systemd: pam_unix(systemd-user:session): session opened for user gmarsh by (uid=0)"
+        }
+      },
+      {
+        "event_id": "ait-0006-92767848",
+        "timestamp": "2022-01-29T15:20:51Z",
+        "host": "shaw",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643469651.212:2938): pid=28625 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gmarsh\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "raw_alert": {
+          "timestamp": 1643469651.21,
+          "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+          "message": "type=USER_AUTH msg=audit(1643469651.212:2938): pid=28625 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gmarsh\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/0 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0007-6767e3f1",
+        "timestamp": "2022-01-29T15:20:51Z",
+        "host": "shaw",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643469651.212:2939): pid=28625 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gmarsh\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "raw_alert": {
+          "timestamp": 1643469651.21,
+          "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+          "message": "type=USER_ACCT msg=audit(1643469651.212:2939): pid=28625 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gmarsh\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/0 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0008-0818ed21",
+        "timestamp": "2022-01-29T15:20:51Z",
+        "host": "shaw",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1643469651.216:2940): pid=28625 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"gmarsh\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "raw_alert": {
+          "timestamp": 1643469651.22,
+          "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+          "message": "type=CRED_ACQ msg=audit(1643469651.216:2940): pid=28625 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"gmarsh\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/0 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0009-a09e7290",
+        "timestamp": "2022-01-29T15:20:51Z",
+        "host": "shaw",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643469651.420:2941): pid=28626 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gmarsh\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "raw_alert": {
+          "timestamp": 1643469651.42,
+          "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+          "message": "type=USER_ACCT msg=audit(1643469651.420:2941): pid=28626 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gmarsh\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0010-c1d03872",
+        "timestamp": "2022-01-29T15:20:51Z",
+        "host": "shaw",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1643469651.420:2942): pid=28626 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"gmarsh\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "raw_alert": {
+          "timestamp": 1643469651.42,
+          "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+          "message": "type=CRED_ACQ msg=audit(1643469651.420:2942): pid=28626 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"gmarsh\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0011-22c09411",
+        "timestamp": "2022-01-29T15:20:51Z",
+        "host": "shaw",
+        "detector": "AMiner: New login parameter combination in Audit logs.",
+        "message": "type=LOGIN msg=audit(1643469651.420:2943): pid=28626 uid=0 old-auid=4294967295 auid=1001 tty=(none) old-ses=4294967295 ses=417 res=1",
+        "raw_alert": {
+          "timestamp": 1643469651.42,
+          "detector": "AMiner: New login parameter combination in Audit logs.",
+          "message": "type=LOGIN msg=audit(1643469651.420:2943): pid=28626 uid=0 old-auid=4294967295 auid=1001 tty=(none) old-ses=4294967295 ses=417 res=1"
+        }
+      },
+      {
+        "event_id": "ait-0012-234d7458",
+        "timestamp": "2022-01-29T15:20:51Z",
+        "host": "shaw",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1643469651.420:2944): pid=28626 uid=0 auid=1001 ses=417 msg='op=PAM:session_open acct=\"gmarsh\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "raw_alert": {
+          "timestamp": 1643469651.42,
+          "detector": "AMiner: New user_start parameter combination in Audit logs.",
+          "message": "type=USER_START msg=audit(1643469651.420:2944): pid=28626 uid=0 auid=1001 ses=417 msg='op=PAM:session_open acct=\"gmarsh\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0013-cb746b60",
+        "timestamp": "2022-01-29T15:20:51Z",
+        "host": "shaw",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1643469651.796:2945): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=user@1001 comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "raw_alert": {
+          "timestamp": 1643469651.8,
+          "detector": "AMiner: New service_start parameter combination in Audit logs.",
+          "message": "type=SERVICE_START msg=audit(1643469651.796:2945): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=user@1001 comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0014-487edff8",
+        "timestamp": "2022-01-29T15:20:51Z",
+        "host": "shaw",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1643469651.800:2946): pid=28625 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"gmarsh\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "raw_alert": {
+          "timestamp": 1643469651.8,
+          "detector": "AMiner: New user_start parameter combination in Audit logs.",
+          "message": "type=USER_START msg=audit(1643469651.800:2946): pid=28625 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"gmarsh\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/0 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0015-13953031",
+        "timestamp": "2022-01-29T15:21:02Z",
+        "host": "shaw",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 29 15:21:02 intranet-server sudo:   gmarsh : TTY=pts/0 ; PWD=/var/www/intranet.thomasmurray.shaw.info/wp-content/uploads/2022/01 ; USER=root ; COMMAND=list",
+        "raw_alert": {
+          "timestamp": 1643469662.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 29 15:21:02 intranet-server sudo:   gmarsh : TTY=pts/0 ; PWD=/var/www/intranet.thomasmurray.shaw.info/wp-content/uploads/2022/01 ; USER=root ; COMMAND=list"
+        }
+      },
+      {
+        "event_id": "ait-0016-891f737c",
+        "timestamp": "2022-01-29T15:21:04Z",
+        "host": "shaw",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 29 15:21:04 intranet-server sudo:   gmarsh : TTY=pts/0 ; PWD=/var/www/intranet.thomasmurray.shaw.info/wp-content/uploads/2022/01 ; USER=root ; COMMAND=/bin/ls -laR /root/",
+        "raw_alert": {
+          "timestamp": 1643469664.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 29 15:21:04 intranet-server sudo:   gmarsh : TTY=pts/0 ; PWD=/var/www/intranet.thomasmurray.shaw.info/wp-content/uploads/2022/01 ; USER=root ; COMMAND=/bin/ls -laR /root/"
+        }
+      },
+      {
+        "event_id": "ait-0017-cf963f7c",
+        "timestamp": "2022-01-29T15:21:04Z",
+        "host": "shaw",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 29 15:21:04 intranet-server sudo: pam_unix(sudo:session): session opened for user root by (uid=0)",
+        "raw_alert": {
+          "timestamp": 1643469664.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 29 15:21:04 intranet-server sudo: pam_unix(sudo:session): session opened for user root by (uid=0)"
+        }
+      },
+      {
+        "event_id": "ait-0018-80aae843",
+        "timestamp": "2022-01-29T15:21:04Z",
+        "host": "shaw",
+        "detector": "AMiner: New event type.",
+        "message": "type=USER_CMD msg=audit(1643469664.832:2947): pid=28649 uid=1001 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.thomasmurray.shaw.info/wp-content/uploads/2022/01\" cmd=6C73202D6C6152202F726F6F742F terminal=pts/0 res=success'",
+        "raw_alert": {
+          "timestamp": 1643469664.83,
+          "detector": "AMiner: New event type.",
+          "message": "type=USER_CMD msg=audit(1643469664.832:2947): pid=28649 uid=1001 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.thomasmurray.shaw.info/wp-content/uploads/2022/01\" cmd=6C73202D6C6152202F726F6F742F terminal=pts/0 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0019-a9f7f675",
+        "timestamp": "2022-01-29T15:21:04Z",
+        "host": "shaw",
+        "detector": "AMiner: New user_cmd parameter combination in Audit logs.",
+        "message": "type=USER_CMD msg=audit(1643469664.832:2947): pid=28649 uid=1001 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.thomasmurray.shaw.info/wp-content/uploads/2022/01\" cmd=6C73202D6C6152202F726F6F742F terminal=pts/0 res=success'",
+        "raw_alert": {
+          "timestamp": 1643469664.83,
+          "detector": "AMiner: New user_cmd parameter combination in Audit logs.",
+          "message": "type=USER_CMD msg=audit(1643469664.832:2947): pid=28649 uid=1001 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.thomasmurray.shaw.info/wp-content/uploads/2022/01\" cmd=6C73202D6C6152202F726F6F742F terminal=pts/0 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0020-58ddb496",
+        "timestamp": "2022-01-29T15:21:04Z",
+        "host": "shaw",
+        "detector": "AMiner: New event type.",
+        "message": "type=CRED_REFR msg=audit(1643469664.836:2948): pid=28649 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "raw_alert": {
+          "timestamp": 1643469664.84,
+          "detector": "AMiner: New event type.",
+          "message": "type=CRED_REFR msg=audit(1643469664.836:2948): pid=28649 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0021-39bf4521",
+        "timestamp": "2022-01-29T15:21:04Z",
+        "host": "shaw",
+        "detector": "AMiner: New cred_refr parameter combination in Audit logs.",
+        "message": "type=CRED_REFR msg=audit(1643469664.836:2948): pid=28649 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "raw_alert": {
+          "timestamp": 1643469664.84,
+          "detector": "AMiner: New cred_refr parameter combination in Audit logs.",
+          "message": "type=CRED_REFR msg=audit(1643469664.836:2948): pid=28649 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0022-ddcca639",
+        "timestamp": "2022-01-29T15:21:04Z",
+        "host": "shaw",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1643469664.836:2949): pid=28649 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "raw_alert": {
+          "timestamp": 1643469664.84,
+          "detector": "AMiner: New user_start parameter combination in Audit logs.",
+          "message": "type=USER_START msg=audit(1643469664.836:2949): pid=28649 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0023-a964000b",
+        "timestamp": "2022-01-29T15:21:05Z",
+        "host": "shaw",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 29 15:21:05 intranet-server sudo: pam_unix(sudo:session): session closed for user root",
+        "raw_alert": {
+          "timestamp": 1643469665.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 29 15:21:05 intranet-server sudo: pam_unix(sudo:session): session closed for user root"
+        }
+      },
+      {
+        "event_id": "ait-0024-6902f9f0",
+        "timestamp": "2022-01-29T15:21:05Z",
+        "host": "shaw",
+        "detector": "AMiner: New user_end parameter combination in Audit logs.",
+        "message": "type=USER_END msg=audit(1643469665.036:2950): pid=28649 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_close acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "raw_alert": {
+          "timestamp": 1643469665.04,
+          "detector": "AMiner: New user_end parameter combination in Audit logs.",
+          "message": "type=USER_END msg=audit(1643469665.036:2950): pid=28649 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_close acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0025-b2824372",
+        "timestamp": "2022-01-29T15:21:05Z",
+        "host": "shaw",
+        "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "message": "type=CRED_DISP msg=audit(1643469665.040:2951): pid=28649 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "raw_alert": {
+          "timestamp": 1643469665.04,
+          "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+          "message": "type=CRED_DISP msg=audit(1643469665.040:2951): pid=28649 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0026-29e80a6a",
+        "timestamp": "2022-01-29T15:21:09Z",
+        "host": "shaw",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 29 15:21:09 intranet-server sudo:   gmarsh : TTY=pts/0 ; PWD=/var/www/intranet.thomasmurray.shaw.info/wp-content/uploads/2022/01 ; USER=root ; COMMAND=/bin/cat /etc/shadow",
+        "raw_alert": {
+          "timestamp": 1643469669.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 29 15:21:09 intranet-server sudo:   gmarsh : TTY=pts/0 ; PWD=/var/www/intranet.thomasmurray.shaw.info/wp-content/uploads/2022/01 ; USER=root ; COMMAND=/bin/cat /etc/shadow"
+        }
+      },
+      {
+        "event_id": "ait-0027-6889429c",
+        "timestamp": "2022-01-29T15:21:09Z",
+        "host": "shaw",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 29 15:21:09 intranet-server sudo: pam_unix(sudo:session): session opened for user root by (uid=0)",
+        "raw_alert": {
+          "timestamp": 1643469669.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 29 15:21:09 intranet-server sudo: pam_unix(sudo:session): session opened for user root by (uid=0)"
+        }
+      },
+      {
+        "event_id": "ait-0028-9b2e7444",
+        "timestamp": "2022-01-29T15:21:09Z",
+        "host": "shaw",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 29 15:21:09 intranet-server sudo: pam_unix(sudo:session): session closed for user root",
+        "raw_alert": {
+          "timestamp": 1643469669.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 29 15:21:09 intranet-server sudo: pam_unix(sudo:session): session closed for user root"
+        }
+      },
+      {
+        "event_id": "ait-0029-1ac1ac1b",
+        "timestamp": "2022-01-29T15:21:09Z",
+        "host": "shaw",
+        "detector": "AMiner: New event type.",
+        "message": "type=USER_CMD msg=audit(1643469669.480:2952): pid=28652 uid=1001 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.thomasmurray.shaw.info/wp-content/uploads/2022/01\" cmd=636174202F6574632F736861646F77 terminal=pts/0 res=success'",
+        "raw_alert": {
+          "timestamp": 1643469669.48,
+          "detector": "AMiner: New event type.",
+          "message": "type=USER_CMD msg=audit(1643469669.480:2952): pid=28652 uid=1001 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.thomasmurray.shaw.info/wp-content/uploads/2022/01\" cmd=636174202F6574632F736861646F77 terminal=pts/0 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0030-92c4e18a",
+        "timestamp": "2022-01-29T15:21:09Z",
+        "host": "shaw",
+        "detector": "AMiner: New user_cmd parameter combination in Audit logs.",
+        "message": "type=USER_CMD msg=audit(1643469669.480:2952): pid=28652 uid=1001 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.thomasmurray.shaw.info/wp-content/uploads/2022/01\" cmd=636174202F6574632F736861646F77 terminal=pts/0 res=success'",
+        "raw_alert": {
+          "timestamp": 1643469669.48,
+          "detector": "AMiner: New user_cmd parameter combination in Audit logs.",
+          "message": "type=USER_CMD msg=audit(1643469669.480:2952): pid=28652 uid=1001 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.thomasmurray.shaw.info/wp-content/uploads/2022/01\" cmd=636174202F6574632F736861646F77 terminal=pts/0 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0031-9b13db2b",
+        "timestamp": "2022-01-29T15:21:09Z",
+        "host": "shaw",
+        "detector": "AMiner: New event type.",
+        "message": "type=CRED_REFR msg=audit(1643469669.480:2953): pid=28652 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "raw_alert": {
+          "timestamp": 1643469669.48,
+          "detector": "AMiner: New event type.",
+          "message": "type=CRED_REFR msg=audit(1643469669.480:2953): pid=28652 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0032-15a1c136",
+        "timestamp": "2022-01-29T15:21:09Z",
+        "host": "shaw",
+        "detector": "AMiner: New cred_refr parameter combination in Audit logs.",
+        "message": "type=CRED_REFR msg=audit(1643469669.480:2953): pid=28652 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "raw_alert": {
+          "timestamp": 1643469669.48,
+          "detector": "AMiner: New cred_refr parameter combination in Audit logs.",
+          "message": "type=CRED_REFR msg=audit(1643469669.480:2953): pid=28652 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0033-bdaf9d71",
+        "timestamp": "2022-01-29T15:21:09Z",
+        "host": "shaw",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1643469669.480:2954): pid=28652 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "raw_alert": {
+          "timestamp": 1643469669.48,
+          "detector": "AMiner: New user_start parameter combination in Audit logs.",
+          "message": "type=USER_START msg=audit(1643469669.480:2954): pid=28652 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0034-a01a4075",
+        "timestamp": "2022-01-29T15:21:09Z",
+        "host": "shaw",
+        "detector": "AMiner: New user_end parameter combination in Audit logs.",
+        "message": "type=USER_END msg=audit(1643469669.484:2955): pid=28652 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_close acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "raw_alert": {
+          "timestamp": 1643469669.48,
+          "detector": "AMiner: New user_end parameter combination in Audit logs.",
+          "message": "type=USER_END msg=audit(1643469669.484:2955): pid=28652 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_close acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0035-91a74a54",
+        "timestamp": "2022-01-29T15:21:09Z",
+        "host": "shaw",
+        "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "message": "type=CRED_DISP msg=audit(1643469669.484:2956): pid=28652 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "raw_alert": {
+          "timestamp": 1643469669.48,
+          "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+          "message": "type=CRED_DISP msg=audit(1643469669.484:2956): pid=28652 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'"
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-09a114ee",
+      "source": "alerts",
+      "timestamp": "2022-01-29T15:20:51Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 29 15:20:51 intranet-server su[28625]: Successful su for gmarsh by www-data",
+        "raw_alert": {
+          "timestamp": 1643469651.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 29 15:20:51 intranet-server su[28625]: Successful su for gmarsh by www-data"
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-6faaeb90",
+      "source": "alerts",
+      "timestamp": "2022-01-29T15:20:51Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 29 15:20:51 intranet-server su[28625]: + /dev/pts/0 www-data:gmarsh",
+        "raw_alert": {
+          "timestamp": 1643469651.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 29 15:20:51 intranet-server su[28625]: + /dev/pts/0 www-data:gmarsh"
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-768c36a4",
+      "source": "alerts",
+      "timestamp": "2022-01-29T15:20:51Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 29 15:20:51 intranet-server su[28625]: pam_unix(su:session): session opened for user gmarsh by (uid=33)",
+        "raw_alert": {
+          "timestamp": 1643469651.0,
+          "detector": "AMiner: New event type.",
+          "message": "Jan 29 15:20:51 intranet-server su[28625]: pam_unix(su:session): session opened for user gmarsh by (uid=33)"
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on shaw. Identify the attack stage from telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on shaw. Identify the attack stage from telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "shaw/privilege_escalation",
+    "answer": "privilege_escalation",
+    "accept": [
+      "privilege_escalation",
+      "privilege escalation"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

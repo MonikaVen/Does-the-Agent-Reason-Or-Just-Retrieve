@@ -1,0 +1,1119 @@
+{
+  "incident_id": "ait-harrison-network_scans",
+  "name": "AIT-ADS harrison/network_scans",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "harrison/network_scans",
+  "alert": {
+    "timestamp": "2022-02-04T00:00:01Z",
+    "host": "harrison",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on harrison. Identify the attack stage from telemetry."
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-04T00:00:01Z",
+    "end": "2022-02-04T01:01:20Z",
+    "hosts": [
+      "harrison"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-e10a6256",
+        "timestamp": "2022-02-04T00:00:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New event type.",
+        "message": "type=USER_ACCT msg=audit(1643932801.876:757): pid=6144 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"www-data\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'",
+        "raw_alert": {
+          "timestamp": 1643932801.88,
+          "detector": "AMiner: New event type.",
+          "message": "type=USER_ACCT msg=audit(1643932801.876:757): pid=6144 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"www-data\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0002-19be2234",
+        "timestamp": "2022-02-04T00:00:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643932801.876:757): pid=6144 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"www-data\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'",
+        "raw_alert": {
+          "timestamp": 1643932801.88,
+          "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+          "message": "type=USER_ACCT msg=audit(1643932801.876:757): pid=6144 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"www-data\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0003-7760a9d6",
+        "timestamp": "2022-02-04T00:00:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New event type.",
+        "message": "type=CRED_ACQ msg=audit(1643932801.876:758): pid=6144 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"www-data\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'",
+        "raw_alert": {
+          "timestamp": 1643932801.88,
+          "detector": "AMiner: New event type.",
+          "message": "type=CRED_ACQ msg=audit(1643932801.876:758): pid=6144 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"www-data\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0004-53f22bb2",
+        "timestamp": "2022-02-04T00:00:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1643932801.876:758): pid=6144 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"www-data\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'",
+        "raw_alert": {
+          "timestamp": 1643932801.88,
+          "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+          "message": "type=CRED_ACQ msg=audit(1643932801.876:758): pid=6144 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"www-data\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0005-bee01e36",
+        "timestamp": "2022-02-04T00:00:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New event type.",
+        "message": "type=LOGIN msg=audit(1643932801.876:759): pid=6144 uid=0 old-auid=4294967295 auid=33 tty=(none) old-ses=4294967295 ses=129 res=1",
+        "raw_alert": {
+          "timestamp": 1643932801.88,
+          "detector": "AMiner: New event type.",
+          "message": "type=LOGIN msg=audit(1643932801.876:759): pid=6144 uid=0 old-auid=4294967295 auid=33 tty=(none) old-ses=4294967295 ses=129 res=1"
+        }
+      },
+      {
+        "event_id": "ait-0006-9ed7246c",
+        "timestamp": "2022-02-04T00:00:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New login parameter combination in Audit logs.",
+        "message": "type=LOGIN msg=audit(1643932801.876:759): pid=6144 uid=0 old-auid=4294967295 auid=33 tty=(none) old-ses=4294967295 ses=129 res=1",
+        "raw_alert": {
+          "timestamp": 1643932801.88,
+          "detector": "AMiner: New login parameter combination in Audit logs.",
+          "message": "type=LOGIN msg=audit(1643932801.876:759): pid=6144 uid=0 old-auid=4294967295 auid=33 tty=(none) old-ses=4294967295 ses=129 res=1"
+        }
+      },
+      {
+        "event_id": "ait-0007-1b39fe37",
+        "timestamp": "2022-02-04T00:00:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New event type.",
+        "message": "type=USER_START msg=audit(1643932801.880:760): pid=6144 uid=0 auid=33 ses=129 msg='op=PAM:session_open acct=\"www-data\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'",
+        "raw_alert": {
+          "timestamp": 1643932801.88,
+          "detector": "AMiner: New event type.",
+          "message": "type=USER_START msg=audit(1643932801.880:760): pid=6144 uid=0 auid=33 ses=129 msg='op=PAM:session_open acct=\"www-data\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0008-84aed75e",
+        "timestamp": "2022-02-04T00:00:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1643932801.880:760): pid=6144 uid=0 auid=33 ses=129 msg='op=PAM:session_open acct=\"www-data\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'",
+        "raw_alert": {
+          "timestamp": 1643932801.88,
+          "detector": "AMiner: New user_start parameter combination in Audit logs.",
+          "message": "type=USER_START msg=audit(1643932801.880:760): pid=6144 uid=0 auid=33 ses=129 msg='op=PAM:session_open acct=\"www-data\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0009-4e0e12d4",
+        "timestamp": "2022-02-04T00:00:03Z",
+        "host": "harrison",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 00:00:03 cloud-share CRON[6144]: (CRON) info (No MTA installed, discarding output)",
+        "raw_alert": {
+          "timestamp": 1643932803.0,
+          "detector": "AMiner: New event type.",
+          "message": "Feb  4 00:00:03 cloud-share CRON[6144]: (CRON) info (No MTA installed, discarding output)"
+        }
+      },
+      {
+        "event_id": "ait-0010-f0113438",
+        "timestamp": "2022-02-04T00:00:03Z",
+        "host": "harrison",
+        "detector": "AMiner: New event type.",
+        "message": "type=CRED_DISP msg=audit(1643932803.668:761): pid=6144 uid=0 auid=33 ses=129 msg='op=PAM:setcred acct=\"www-data\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'",
+        "raw_alert": {
+          "timestamp": 1643932803.67,
+          "detector": "AMiner: New event type.",
+          "message": "type=CRED_DISP msg=audit(1643932803.668:761): pid=6144 uid=0 auid=33 ses=129 msg='op=PAM:setcred acct=\"www-data\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0011-7990505b",
+        "timestamp": "2022-02-04T00:00:03Z",
+        "host": "harrison",
+        "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "message": "type=CRED_DISP msg=audit(1643932803.668:761): pid=6144 uid=0 auid=33 ses=129 msg='op=PAM:setcred acct=\"www-data\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'",
+        "raw_alert": {
+          "timestamp": 1643932803.67,
+          "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+          "message": "type=CRED_DISP msg=audit(1643932803.668:761): pid=6144 uid=0 auid=33 ses=129 msg='op=PAM:setcred acct=\"www-data\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0012-25320ee6",
+        "timestamp": "2022-02-04T00:00:03Z",
+        "host": "harrison",
+        "detector": "AMiner: New event type.",
+        "message": "type=USER_END msg=audit(1643932803.668:762): pid=6144 uid=0 auid=33 ses=129 msg='op=PAM:session_close acct=\"www-data\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'",
+        "raw_alert": {
+          "timestamp": 1643932803.67,
+          "detector": "AMiner: New event type.",
+          "message": "type=USER_END msg=audit(1643932803.668:762): pid=6144 uid=0 auid=33 ses=129 msg='op=PAM:session_close acct=\"www-data\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0013-d20a82e5",
+        "timestamp": "2022-02-04T00:00:03Z",
+        "host": "harrison",
+        "detector": "AMiner: New user_end parameter combination in Audit logs.",
+        "message": "type=USER_END msg=audit(1643932803.668:762): pid=6144 uid=0 auid=33 ses=129 msg='op=PAM:session_close acct=\"www-data\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'",
+        "raw_alert": {
+          "timestamp": 1643932803.67,
+          "detector": "AMiner: New user_end parameter combination in Audit logs.",
+          "message": "type=USER_END msg=audit(1643932803.668:762): pid=6144 uid=0 auid=33 ses=129 msg='op=PAM:session_close acct=\"www-data\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0014-6ec7001a",
+        "timestamp": "2022-02-04T00:00:07Z",
+        "host": "harrison",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 00:00:07 dnsmasq[14453]: query[A] 3x6-.323-.c0MajfoD6d1cXxLVvXokd3VnZteXD7D6P7DgXHKfPmsFV9LdO0slAMhEgnaGLH-.9lbzkEjG1mRepfAtT/qbRpfPzU*S4aknu*mSeBGyeiN*8*yWa7SGAVFgS8nP5E-.customers_2013.xlsx.db-21.greer.biz from 172.28.192.4",
+        "raw_alert": {
+          "timestamp": 1643932807.0,
+          "detector": "AMiner: New event type.",
+          "message": "Feb  4 00:00:07 dnsmasq[14453]: query[A] 3x6-.323-.c0MajfoD6d1cXxLVvXokd3VnZteXD7D6P7DgXHKfPmsFV9LdO0slAMhEgnaGLH-.9lbzkEjG1mRepfAtT/qbRpfPzU*S4aknu*mSeBGyeiN*8*yWa7SGAVFgS8nP5E-.customers_2013.xlsx.db-21.greer.biz from 172.28.192.4"
+        }
+      },
+      {
+        "event_id": "ait-0015-64cab458",
+        "timestamp": "2022-02-04T00:00:07Z",
+        "host": "harrison",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  4 00:00:07 dnsmasq[14453]: query[A] 3x6-.323-.c0MajfoD6d1cXxLVvXokd3VnZteXD7D6P7DgXHKfPmsFV9LdO0slAMhEgnaGLH-.9lbzkEjG1mRepfAtT/qbRpfPzU*S4aknu*mSeBGyeiN*8*yWa7SGAVFgS8nP5E-.customers_2013.xlsx.db-21.greer.biz from 172.28.192.4",
+        "raw_alert": {
+          "timestamp": 1643932807.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Feb  4 00:00:07 dnsmasq[14453]: query[A] 3x6-.323-.c0MajfoD6d1cXxLVvXokd3VnZteXD7D6P7DgXHKfPmsFV9LdO0slAMhEgnaGLH-.9lbzkEjG1mRepfAtT/qbRpfPzU*S4aknu*mSeBGyeiN*8*yWa7SGAVFgS8nP5E-.customers_2013.xlsx.db-21.greer.biz from 172.28.192.4"
+        }
+      },
+      {
+        "event_id": "ait-0016-d1a1405f",
+        "timestamp": "2022-02-04T00:00:07Z",
+        "host": "harrison",
+        "detector": "AMiner: New query record in DNS logs.",
+        "message": "Feb  4 00:00:07 dnsmasq[14453]: query[A] 3x6-.323-.c0MajfoD6d1cXxLVvXokd3VnZteXD7D6P7DgXHKfPmsFV9LdO0slAMhEgnaGLH-.9lbzkEjG1mRepfAtT/qbRpfPzU*S4aknu*mSeBGyeiN*8*yWa7SGAVFgS8nP5E-.customers_2013.xlsx.db-21.greer.biz from 172.28.192.4",
+        "raw_alert": {
+          "timestamp": 1643932807.0,
+          "detector": "AMiner: New query record in DNS logs.",
+          "message": "Feb  4 00:00:07 dnsmasq[14453]: query[A] 3x6-.323-.c0MajfoD6d1cXxLVvXokd3VnZteXD7D6P7DgXHKfPmsFV9LdO0slAMhEgnaGLH-.9lbzkEjG1mRepfAtT/qbRpfPzU*S4aknu*mSeBGyeiN*8*yWa7SGAVFgS8nP5E-.customers_2013.xlsx.db-21.greer.biz from 172.28.192.4"
+        }
+      },
+      {
+        "event_id": "ait-0017-7bba117a",
+        "timestamp": "2022-02-04T00:00:07Z",
+        "host": "harrison",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 00:00:07 dnsmasq[14453]: query[A] 3x6-.323-.c0MajfoD6d1cXxLVvXokd3VnZteXD7D6P7DgXHKfPmsFV9LdO0slAMhEgnaGLH-.9lbzkEjG1mRepfAtT/qbRpfPzU*S4aknu*mSeBGyeiN*8*yWa7SGAVFgS8nP5E-.customers_2013.xlsx.db-21.greer.biz from 172.28.192.4",
+        "raw_alert": {
+          "timestamp": 1643932807.0,
+          "detector": "AMiner: High entropy in DNS domain.",
+          "message": "Feb  4 00:00:07 dnsmasq[14453]: query[A] 3x6-.323-.c0MajfoD6d1cXxLVvXokd3VnZteXD7D6P7DgXHKfPmsFV9LdO0slAMhEgnaGLH-.9lbzkEjG1mRepfAtT/qbRpfPzU*S4aknu*mSeBGyeiN*8*yWa7SGAVFgS8nP5E-.customers_2013.xlsx.db-21.greer.biz from 172.28.192.4"
+        }
+      },
+      {
+        "event_id": "ait-0018-ac069a7f",
+        "timestamp": "2022-02-04T00:00:07Z",
+        "host": "harrison",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 00:00:07 dnsmasq[14453]: forwarded 3x6-.323-.c0MajfoD6d1cXxLVvXokd3VnZteXD7D6P7DgXHKfPmsFV9LdO0slAMhEgnaGLH-.9lbzkEjG1mRepfAtT/qbRpfPzU*S4aknu*mSeBGyeiN*8*yWa7SGAVFgS8nP5E-.customers_2013.xlsx.db-21.greer.biz to 172.28.192.242",
+        "raw_alert": {
+          "timestamp": 1643932807.0,
+          "detector": "AMiner: New event type.",
+          "message": "Feb  4 00:00:07 dnsmasq[14453]: forwarded 3x6-.323-.c0MajfoD6d1cXxLVvXokd3VnZteXD7D6P7DgXHKfPmsFV9LdO0slAMhEgnaGLH-.9lbzkEjG1mRepfAtT/qbRpfPzU*S4aknu*mSeBGyeiN*8*yWa7SGAVFgS8nP5E-.customers_2013.xlsx.db-21.greer.biz to 172.28.192.242"
+        }
+      },
+      {
+        "event_id": "ait-0019-8d2d231e",
+        "timestamp": "2022-02-04T00:00:07Z",
+        "host": "harrison",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  4 00:00:07 dnsmasq[14453]: forwarded 3x6-.323-.c0MajfoD6d1cXxLVvXokd3VnZteXD7D6P7DgXHKfPmsFV9LdO0slAMhEgnaGLH-.9lbzkEjG1mRepfAtT/qbRpfPzU*S4aknu*mSeBGyeiN*8*yWa7SGAVFgS8nP5E-.customers_2013.xlsx.db-21.greer.biz to 172.28.192.242",
+        "raw_alert": {
+          "timestamp": 1643932807.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Feb  4 00:00:07 dnsmasq[14453]: forwarded 3x6-.323-.c0MajfoD6d1cXxLVvXokd3VnZteXD7D6P7DgXHKfPmsFV9LdO0slAMhEgnaGLH-.9lbzkEjG1mRepfAtT/qbRpfPzU*S4aknu*mSeBGyeiN*8*yWa7SGAVFgS8nP5E-.customers_2013.xlsx.db-21.greer.biz to 172.28.192.242"
+        }
+      },
+      {
+        "event_id": "ait-0020-3034773d",
+        "timestamp": "2022-02-04T00:00:07Z",
+        "host": "harrison",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 00:00:07 dnsmasq[14453]: reply 3x6-.323-.c0MajfoD6d1cXxLVvXokd3VnZteXD7D6P7DgXHKfPmsFV9LdO0slAMhEgnaGLH-.9lbzkEjG1mRepfAtT/qbRpfPzU*S4aknu*mSeBGyeiN*8*yWa7SGAVFgS8nP5E-.customers_2013.xlsx.db-21.greer.biz is 194.172.28.195",
+        "raw_alert": {
+          "timestamp": 1643932807.0,
+          "detector": "AMiner: New event type.",
+          "message": "Feb  4 00:00:07 dnsmasq[14453]: reply 3x6-.323-.c0MajfoD6d1cXxLVvXokd3VnZteXD7D6P7DgXHKfPmsFV9LdO0slAMhEgnaGLH-.9lbzkEjG1mRepfAtT/qbRpfPzU*S4aknu*mSeBGyeiN*8*yWa7SGAVFgS8nP5E-.customers_2013.xlsx.db-21.greer.biz is 194.172.28.195"
+        }
+      },
+      {
+        "event_id": "ait-0021-e59246c3",
+        "timestamp": "2022-02-04T00:00:07Z",
+        "host": "harrison",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  4 00:00:07 dnsmasq[14664]: query[A] 3x6-.323-.c0MajfoD6d1cXxLVvXokd3VnZteXD7D6P7DgXHKfPmsFV9LdO0slAMhEgnaGLH-.9lbzkEjG1mRepfAtT/qbRpfPzU*S4aknu*mSeBGyeiN*8*yWa7SGAVFgS8nP5E-.customers_2013.xlsx.db-21.greer.biz from 192.168.131.109",
+        "raw_alert": {
+          "timestamp": 1643932807.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Feb  4 00:00:07 dnsmasq[14664]: query[A] 3x6-.323-.c0MajfoD6d1cXxLVvXokd3VnZteXD7D6P7DgXHKfPmsFV9LdO0slAMhEgnaGLH-.9lbzkEjG1mRepfAtT/qbRpfPzU*S4aknu*mSeBGyeiN*8*yWa7SGAVFgS8nP5E-.customers_2013.xlsx.db-21.greer.biz from 192.168.131.109"
+        }
+      },
+      {
+        "event_id": "ait-0022-f781778e",
+        "timestamp": "2022-02-04T00:00:07Z",
+        "host": "harrison",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  4 00:00:07 dnsmasq[14664]: forwarded 3x6-.323-.c0MajfoD6d1cXxLVvXokd3VnZteXD7D6P7DgXHKfPmsFV9LdO0slAMhEgnaGLH-.9lbzkEjG1mRepfAtT/qbRpfPzU*S4aknu*mSeBGyeiN*8*yWa7SGAVFgS8nP5E-.customers_2013.xlsx.db-21.greer.biz to 172.28.255.254",
+        "raw_alert": {
+          "timestamp": 1643932807.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Feb  4 00:00:07 dnsmasq[14664]: forwarded 3x6-.323-.c0MajfoD6d1cXxLVvXokd3VnZteXD7D6P7DgXHKfPmsFV9LdO0slAMhEgnaGLH-.9lbzkEjG1mRepfAtT/qbRpfPzU*S4aknu*mSeBGyeiN*8*yWa7SGAVFgS8nP5E-.customers_2013.xlsx.db-21.greer.biz to 172.28.255.254"
+        }
+      },
+      {
+        "event_id": "ait-0023-a4ab709e",
+        "timestamp": "2022-02-04T00:00:10Z",
+        "host": "harrison",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  4 00:00:10 dnsmasq[14664]: query[AAAA] mail from 10.237.2.255",
+        "raw_alert": {
+          "timestamp": 1643932810.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Feb  4 00:00:10 dnsmasq[14664]: query[AAAA] mail from 10.237.2.255"
+        }
+      },
+      {
+        "event_id": "ait-0024-90a94edc",
+        "timestamp": "2022-02-04T00:00:19Z",
+        "host": "harrison",
+        "detector": "AMiner: New characters in DNS domain.",
+        "message": "Feb  4 00:00:19 dnsmasq[14453]: query[A] 3x6-.324-.a1ZLv7u/TfLd0vltFVsaov9/J6hXYrwhXMc90ry*r5OH6*tr2MLK6*2OT8u09n-.0MjWaqfHwibQxCFlYNe96vYIVsBHd9Ue3/F6l/CVD/skT9y2oKOHRSIor5i/Tl-.customers_2013.xlsx.db-21.greer.biz from 172.28.192.4",
+        "raw_alert": {
+          "timestamp": 1643932819.0,
+          "detector": "AMiner: New characters in DNS domain.",
+          "message": "Feb  4 00:00:19 dnsmasq[14453]: query[A] 3x6-.324-.a1ZLv7u/TfLd0vltFVsaov9/J6hXYrwhXMc90ry*r5OH6*tr2MLK6*2OT8u09n-.0MjWaqfHwibQxCFlYNe96vYIVsBHd9Ue3/F6l/CVD/skT9y2oKOHRSIor5i/Tl-.customers_2013.xlsx.db-21.greer.biz from 172.28.192.4"
+        }
+      },
+      {
+        "event_id": "ait-0025-a3af7c90",
+        "timestamp": "2022-02-04T00:00:31Z",
+        "host": "harrison",
+        "detector": "AMiner: New event type.",
+        "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-04T00:00:31.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0.8842,\"norm\":{\"pct\":0.8842}},\"steal\":{\"pct\":0.0428,\"norm\":{\"pct\":0.0428}},\"system\":{\"pct\":0.0364,\"norm\":{\"pct\":0.0364}},\"user\":{\"pct\":0.0332,\"norm\":{\"pct\":0.0332}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":0.0023,\"norm\":{\"pct\":0.0023}},\"total\":{\"pct\":0.1147,\"norm\":{\"pct\":0.1147}},\"cores\":1,\"iowait\":{\"pct\":0.0011,\"norm\":{\"pct\":0.0011}}}},\"host\":{\"cpu\":{\"pct\":0.1147},\"name\":\"intranet-server\"},\"event\":{\"module\":\"system\",\"duration\":580643,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"name\":\"intranet-server\",\"hostname\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}",
+        "raw_alert": {
+          "timestamp": 1643932831.13,
+          "detector": "AMiner: New event type.",
+          "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-04T00:00:31.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0.8842,\"norm\":{\"pct\":0.8842}},\"steal\":{\"pct\":0.0428,\"norm\":{\"pct\":0.0428}},\"system\":{\"pct\":0.0364,\"norm\":{\"pct\":0.0364}},\"user\":{\"pct\":0.0332,\"norm\":{\"pct\":0.0332}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":0.0023,\"norm\":{\"pct\":0.0023}},\"total\":{\"pct\":0.1147,\"norm\":{\"pct\":0.1147}},\"cores\":1,\"iowait\":{\"pct\":0.0011,\"norm\":{\"pct\":0.0011}}}},\"host\":{\"cpu\":{\"pct\":0.1147},\"name\":\"intranet-server\"},\"event\":{\"module\":\"system\",\"duration\":580643,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"name\":\"intranet-server\",\"hostname\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}"
+        }
+      },
+      {
+        "event_id": "ait-0026-8f86ab5e",
+        "timestamp": "2022-02-04T00:01:16Z",
+        "host": "harrison",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.1125}},\"@timestamp\":\"2022-02-04T00:01:16.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.0466,\"norm\":{\"pct\":0.0466}},\"idle\":{\"pct\":0.885,\"norm\":{\"pct\":0.885}},\"system\":{\"pct\":0.0329,\"norm\":{\"pct\":0.0329}},\"user\":{\"pct\":0.0306,\"norm\":{\"pct\":0.0306}},\"softirq\":{\"pct\":0.0023,\"norm\":{\"pct\":0.0023}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"total\":{\"pct\":0.1125,\"norm\":{\"pct\":0.1125}},\"cores\":1,\"iowait\":{\"pct\":0.0025,\"norm\":{\"pct\":0.0025}}}},\"ecs\":{\"version\":\"1.9.0\"},\"event\":{\"module\":\"system\",\"duration\":1346585,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}",
+        "raw_alert": {
+          "timestamp": 1643932876.13,
+          "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+          "message": "{\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.1125}},\"@timestamp\":\"2022-02-04T00:01:16.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.0466,\"norm\":{\"pct\":0.0466}},\"idle\":{\"pct\":0.885,\"norm\":{\"pct\":0.885}},\"system\":{\"pct\":0.0329,\"norm\":{\"pct\":0.0329}},\"user\":{\"pct\":0.0306,\"norm\":{\"pct\":0.0306}},\"softirq\":{\"pct\":0.0023,\"norm\":{\"pct\":0.0023}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"total\":{\"pct\":0.1125,\"norm\":{\"pct\":0.1125}},\"cores\":1,\"iowait\":{\"pct\":0.0025,\"norm\":{\"pct\":0.0025}}}},\"ecs\":{\"version\":\"1.9.0\"},\"event\":{\"module\":\"system\",\"duration\":1346585,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}"
+        }
+      },
+      {
+        "event_id": "ait-0027-714718b5",
+        "timestamp": "2022-02-04T00:02:01Z",
+        "host": "harrison",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.0949}},\"@timestamp\":\"2022-02-04T00:02:01.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.023,\"norm\":{\"pct\":0.023}},\"idle\":{\"pct\":0.9046,\"norm\":{\"pct\":0.9046}},\"system\":{\"pct\":0.0367,\"norm\":{\"pct\":0.0367}},\"user\":{\"pct\":0.0337,\"norm\":{\"pct\":0.0337}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":0.0016,\"norm\":{\"pct\":0.0016}},\"total\":{\"pct\":0.0949,\"norm\":{\"pct\":0.0949}},\"cores\":1,\"iowait\":{\"pct\":5.0E-4,\"norm\":{\"pct\":5.0E-4}}}},\"ecs\":{\"version\":\"1.9.0\"},\"event\":{\"module\":\"system\",\"duration\":344975,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}",
+        "raw_alert": {
+          "timestamp": 1643932921.13,
+          "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+          "message": "{\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.0949}},\"@timestamp\":\"2022-02-04T00:02:01.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.023,\"norm\":{\"pct\":0.023}},\"idle\":{\"pct\":0.9046,\"norm\":{\"pct\":0.9046}},\"system\":{\"pct\":0.0367,\"norm\":{\"pct\":0.0367}},\"user\":{\"pct\":0.0337,\"norm\":{\"pct\":0.0337}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":0.0016,\"norm\":{\"pct\":0.0016}},\"total\":{\"pct\":0.0949,\"norm\":{\"pct\":0.0949}},\"cores\":1,\"iowait\":{\"pct\":5.0E-4,\"norm\":{\"pct\":5.0E-4}}}},\"ecs\":{\"version\":\"1.9.0\"},\"event\":{\"module\":\"system\",\"duration\":344975,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}"
+        }
+      },
+      {
+        "event_id": "ait-0028-9edd7677",
+        "timestamp": "2022-02-04T00:04:41Z",
+        "host": "harrison",
+        "detector": "AMiner: New query record in DNS logs.",
+        "message": "Feb  4 00:04:41 dnsmasq[14453]: query[AAAA] motd.ubuntu.com from 172.28.192.4",
+        "raw_alert": {
+          "timestamp": 1643933081.0,
+          "detector": "AMiner: New query record in DNS logs.",
+          "message": "Feb  4 00:04:41 dnsmasq[14453]: query[AAAA] motd.ubuntu.com from 172.28.192.4"
+        }
+      },
+      {
+        "event_id": "ait-0029-0422374e",
+        "timestamp": "2022-02-04T00:04:41Z",
+        "host": "harrison",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  4 00:04:41 dnsmasq[14453]: forwarded motd.ubuntu.com to 8.8.8.8",
+        "raw_alert": {
+          "timestamp": 1643933081.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Feb  4 00:04:41 dnsmasq[14453]: forwarded motd.ubuntu.com to 8.8.8.8"
+        }
+      },
+      {
+        "event_id": "ait-0030-025abfbc",
+        "timestamp": "2022-02-04T00:04:41Z",
+        "host": "harrison",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  4 00:04:41 dnsmasq[14664]: query[AAAA] motd.ubuntu.com from 192.168.131.55",
+        "raw_alert": {
+          "timestamp": 1643933081.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Feb  4 00:04:41 dnsmasq[14664]: query[AAAA] motd.ubuntu.com from 192.168.131.55"
+        }
+      },
+      {
+        "event_id": "ait-0031-2adb9b3c",
+        "timestamp": "2022-02-04T00:04:50Z",
+        "host": "harrison",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  4 00:04:50 dnsmasq[14453]: query[AAAA] taylor-mail from 172.28.192.7",
+        "raw_alert": {
+          "timestamp": 1643933090.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Feb  4 00:04:50 dnsmasq[14453]: query[AAAA] taylor-mail from 172.28.192.7"
+        }
+      },
+      {
+        "event_id": "ait-0032-407f99c9",
+        "timestamp": "2022-02-04T00:04:50Z",
+        "host": "harrison",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 00:04:50 dnsmasq[14453]: query[AAAA] taylor-mail from 172.28.192.7",
+        "raw_alert": {
+          "timestamp": 1643933090.0,
+          "detector": "AMiner: High entropy in DNS domain.",
+          "message": "Feb  4 00:04:50 dnsmasq[14453]: query[AAAA] taylor-mail from 172.28.192.7"
+        }
+      },
+      {
+        "event_id": "ait-0033-4fda6237",
+        "timestamp": "2022-02-04T00:04:50Z",
+        "host": "harrison",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 00:04:50 dnsmasq[14453]: cached taylor-mail is NXDOMAIN",
+        "raw_alert": {
+          "timestamp": 1643933090.0,
+          "detector": "AMiner: New event type.",
+          "message": "Feb  4 00:04:50 dnsmasq[14453]: cached taylor-mail is NXDOMAIN"
+        }
+      },
+      {
+        "event_id": "ait-0034-ca1d2126",
+        "timestamp": "2022-02-04T00:05:01Z",
+        "host": "harrison",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-04T00:05:01.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0.9094,\"norm\":{\"pct\":0.9094}},\"steal\":{\"pct\":0.0176,\"norm\":{\"pct\":0.0176}},\"system\":{\"pct\":0.0363,\"norm\":{\"pct\":0.0363}},\"user\":{\"pct\":0.0344,\"norm\":{\"pct\":0.0344}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":0.0019,\"norm\":{\"pct\":0.0019}},\"total\":{\"pct\":0.0901,\"norm\":{\"pct\":0.0901}},\"cores\":1,\"iowait\":{\"pct\":5.0E-4,\"norm\":{\"pct\":5.0E-4}}}},\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.0901}},\"event\":{\"module\":\"system\",\"duration\":357725,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}",
+        "raw_alert": {
+          "timestamp": 1643933101.13,
+          "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+          "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-04T00:05:01.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0.9094,\"norm\":{\"pct\":0.9094}},\"steal\":{\"pct\":0.0176,\"norm\":{\"pct\":0.0176}},\"system\":{\"pct\":0.0363,\"norm\":{\"pct\":0.0363}},\"user\":{\"pct\":0.0344,\"norm\":{\"pct\":0.0344}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":0.0019,\"norm\":{\"pct\":0.0019}},\"total\":{\"pct\":0.0901,\"norm\":{\"pct\":0.0901}},\"cores\":1,\"iowait\":{\"pct\":5.0E-4,\"norm\":{\"pct\":5.0E-4}}}},\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.0901}},\"event\":{\"module\":\"system\",\"duration\":357725,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}"
+        }
+      },
+      {
+        "event_id": "ait-0035-49120d81",
+        "timestamp": "2022-02-04T00:05:23Z",
+        "host": "harrison",
+        "detector": "AMiner: New query record in DNS logs.",
+        "message": "Feb  4 00:05:23 dnsmasq[14453]: query[TXT] current.cvd.clamav.net from 172.28.192.4",
+        "raw_alert": {
+          "timestamp": 1643933123.0,
+          "detector": "AMiner: New query record in DNS logs.",
+          "message": "Feb  4 00:05:23 dnsmasq[14453]: query[TXT] current.cvd.clamav.net from 172.28.192.4"
+        }
+      },
+      {
+        "event_id": "ait-0036-988dc6c5",
+        "timestamp": "2022-02-04T00:05:46Z",
+        "host": "harrison",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.1229}},\"@timestamp\":\"2022-02-04T00:05:46.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.0524,\"norm\":{\"pct\":0.0524}},\"idle\":{\"pct\":0.8771,\"norm\":{\"pct\":0.8771}},\"system\":{\"pct\":0.0363,\"norm\":{\"pct\":0.0363}},\"user\":{\"pct\":0.0329,\"norm\":{\"pct\":0.0329}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":0.0014,\"norm\":{\"pct\":0.0014}},\"total\":{\"pct\":0.1229,\"norm\":{\"pct\":0.1229}},\"cores\":1,\"iowait\":{\"pct\":0,\"norm\":{\"pct\":0}}}},\"ecs\":{\"version\":\"1.9.0\"},\"event\":{\"module\":\"system\",\"duration\":1161596,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}",
+        "raw_alert": {
+          "timestamp": 1643933146.13,
+          "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+          "message": "{\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.1229}},\"@timestamp\":\"2022-02-04T00:05:46.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.0524,\"norm\":{\"pct\":0.0524}},\"idle\":{\"pct\":0.8771,\"norm\":{\"pct\":0.8771}},\"system\":{\"pct\":0.0363,\"norm\":{\"pct\":0.0363}},\"user\":{\"pct\":0.0329,\"norm\":{\"pct\":0.0329}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":0.0014,\"norm\":{\"pct\":0.0014}},\"total\":{\"pct\":0.1229,\"norm\":{\"pct\":0.1229}},\"cores\":1,\"iowait\":{\"pct\":0,\"norm\":{\"pct\":0}}}},\"ecs\":{\"version\":\"1.9.0\"},\"event\":{\"module\":\"system\",\"duration\":1161596,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}"
+        }
+      },
+      {
+        "event_id": "ait-0037-480f7987",
+        "timestamp": "2022-02-04T00:09:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 00:09:01 smith-mail CRON[3441]: pam_unix(cron:session): session opened for user root by (uid=0)",
+        "raw_alert": {
+          "timestamp": 1643933341.0,
+          "detector": "AMiner: New event type.",
+          "message": "Feb  4 00:09:01 smith-mail CRON[3441]: pam_unix(cron:session): session opened for user root by (uid=0)"
+        }
+      },
+      {
+        "event_id": "ait-0038-759dc4fd",
+        "timestamp": "2022-02-04T00:09:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "Feb  4 00:09:01 smith-mail CRON[3441]: pam_unix(cron:session): session opened for user root by (uid=0)",
+        "raw_alert": {
+          "timestamp": 1643933341.0,
+          "detector": "AMiner: New service_start parameter combination in Audit logs.",
+          "message": "Feb  4 00:09:01 smith-mail CRON[3441]: pam_unix(cron:session): session opened for user root by (uid=0)"
+        }
+      },
+      {
+        "event_id": "ait-0039-7e60bcdf",
+        "timestamp": "2022-02-04T00:09:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "Feb  4 00:09:01 smith-mail CRON[3441]: pam_unix(cron:session): session opened for user root by (uid=0)",
+        "raw_alert": {
+          "timestamp": 1643933341.0,
+          "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+          "message": "Feb  4 00:09:01 smith-mail CRON[3441]: pam_unix(cron:session): session opened for user root by (uid=0)"
+        }
+      },
+      {
+        "event_id": "ait-0040-9a21c882",
+        "timestamp": "2022-02-04T00:09:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New login parameter combination in Audit logs.",
+        "message": "Feb  4 00:09:01 smith-mail CRON[3441]: pam_unix(cron:session): session opened for user root by (uid=0)",
+        "raw_alert": {
+          "timestamp": 1643933341.0,
+          "detector": "AMiner: New login parameter combination in Audit logs.",
+          "message": "Feb  4 00:09:01 smith-mail CRON[3441]: pam_unix(cron:session): session opened for user root by (uid=0)"
+        }
+      },
+      {
+        "event_id": "ait-0041-bf0a2b42",
+        "timestamp": "2022-02-04T00:09:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New cred_refr parameter combination in Audit logs.",
+        "message": "Feb  4 00:09:01 smith-mail CRON[3441]: pam_unix(cron:session): session opened for user root by (uid=0)",
+        "raw_alert": {
+          "timestamp": 1643933341.0,
+          "detector": "AMiner: New cred_refr parameter combination in Audit logs.",
+          "message": "Feb  4 00:09:01 smith-mail CRON[3441]: pam_unix(cron:session): session opened for user root by (uid=0)"
+        }
+      },
+      {
+        "event_id": "ait-0042-7e9329eb",
+        "timestamp": "2022-02-04T00:09:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "Feb  4 00:09:01 smith-mail CRON[3441]: pam_unix(cron:session): session opened for user root by (uid=0)",
+        "raw_alert": {
+          "timestamp": 1643933341.0,
+          "detector": "AMiner: New user_start parameter combination in Audit logs.",
+          "message": "Feb  4 00:09:01 smith-mail CRON[3441]: pam_unix(cron:session): session opened for user root by (uid=0)"
+        }
+      },
+      {
+        "event_id": "ait-0043-7cd7022a",
+        "timestamp": "2022-02-04T00:09:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "Feb  4 00:09:01 smith-mail CRON[3441]: pam_unix(cron:session): session opened for user root by (uid=0)",
+        "raw_alert": {
+          "timestamp": 1643933341.0,
+          "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+          "message": "Feb  4 00:09:01 smith-mail CRON[3441]: pam_unix(cron:session): session opened for user root by (uid=0)"
+        }
+      },
+      {
+        "event_id": "ait-0044-349b25df",
+        "timestamp": "2022-02-04T00:09:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "Feb  4 00:09:01 smith-mail CRON[3441]: pam_unix(cron:session): session opened for user root by (uid=0)",
+        "raw_alert": {
+          "timestamp": 1643933341.0,
+          "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+          "message": "Feb  4 00:09:01 smith-mail CRON[3441]: pam_unix(cron:session): session opened for user root by (uid=0)"
+        }
+      },
+      {
+        "event_id": "ait-0045-b222bd2c",
+        "timestamp": "2022-02-04T00:09:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New user_login parameter combination in Audit logs.",
+        "message": "Feb  4 00:09:01 smith-mail CRON[3441]: pam_unix(cron:session): session opened for user root by (uid=0)",
+        "raw_alert": {
+          "timestamp": 1643933341.0,
+          "detector": "AMiner: New user_login parameter combination in Audit logs.",
+          "message": "Feb  4 00:09:01 smith-mail CRON[3441]: pam_unix(cron:session): session opened for user root by (uid=0)"
+        }
+      },
+      {
+        "event_id": "ait-0046-923cee18",
+        "timestamp": "2022-02-04T00:09:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "message": "Feb  4 00:09:01 smith-mail CRON[3441]: pam_unix(cron:session): session opened for user root by (uid=0)",
+        "raw_alert": {
+          "timestamp": 1643933341.0,
+          "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+          "message": "Feb  4 00:09:01 smith-mail CRON[3441]: pam_unix(cron:session): session opened for user root by (uid=0)"
+        }
+      },
+      {
+        "event_id": "ait-0047-899ca438",
+        "timestamp": "2022-02-04T00:09:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New user_end parameter combination in Audit logs.",
+        "message": "Feb  4 00:09:01 smith-mail CRON[3441]: pam_unix(cron:session): session opened for user root by (uid=0)",
+        "raw_alert": {
+          "timestamp": 1643933341.0,
+          "detector": "AMiner: New user_end parameter combination in Audit logs.",
+          "message": "Feb  4 00:09:01 smith-mail CRON[3441]: pam_unix(cron:session): session opened for user root by (uid=0)"
+        }
+      },
+      {
+        "event_id": "ait-0048-182c31a6",
+        "timestamp": "2022-02-04T00:09:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New user_cmd parameter combination in Audit logs.",
+        "message": "Feb  4 00:09:01 smith-mail CRON[3441]: pam_unix(cron:session): session opened for user root by (uid=0)",
+        "raw_alert": {
+          "timestamp": 1643933341.0,
+          "detector": "AMiner: New user_cmd parameter combination in Audit logs.",
+          "message": "Feb  4 00:09:01 smith-mail CRON[3441]: pam_unix(cron:session): session opened for user root by (uid=0)"
+        }
+      },
+      {
+        "event_id": "ait-0049-eb2de6b7",
+        "timestamp": "2022-02-04T00:09:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "Feb  4 00:09:01 smith-mail CRON[3441]: pam_unix(cron:session): session opened for user root by (uid=0)",
+        "raw_alert": {
+          "timestamp": 1643933341.0,
+          "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+          "message": "Feb  4 00:09:01 smith-mail CRON[3441]: pam_unix(cron:session): session opened for user root by (uid=0)"
+        }
+      },
+      {
+        "event_id": "ait-0050-819448c4",
+        "timestamp": "2022-02-04T00:09:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New apparmor parameter combination in Audit logs.",
+        "message": "Feb  4 00:09:01 smith-mail CRON[3441]: pam_unix(cron:session): session opened for user root by (uid=0)",
+        "raw_alert": {
+          "timestamp": 1643933341.0,
+          "detector": "AMiner: New apparmor parameter combination in Audit logs.",
+          "message": "Feb  4 00:09:01 smith-mail CRON[3441]: pam_unix(cron:session): session opened for user root by (uid=0)"
+        }
+      },
+      {
+        "event_id": "ait-0051-6d0cf299",
+        "timestamp": "2022-02-04T00:09:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 00:09:01 smith-mail CRON[3443]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)",
+        "raw_alert": {
+          "timestamp": 1643933341.0,
+          "detector": "AMiner: New event type.",
+          "message": "Feb  4 00:09:01 smith-mail CRON[3443]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)"
+        }
+      },
+      {
+        "event_id": "ait-0052-96dcf72d",
+        "timestamp": "2022-02-04T00:09:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643933341.679:763): pid=6179 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"root\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'",
+        "raw_alert": {
+          "timestamp": 1643933341.68,
+          "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+          "message": "type=USER_ACCT msg=audit(1643933341.679:763): pid=6179 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"root\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0053-de6442c5",
+        "timestamp": "2022-02-04T00:09:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1643933341.683:764): pid=6179 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'",
+        "raw_alert": {
+          "timestamp": 1643933341.68,
+          "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+          "message": "type=CRED_ACQ msg=audit(1643933341.683:764): pid=6179 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0054-7d2f274f",
+        "timestamp": "2022-02-04T00:09:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New login parameter combination in Audit logs.",
+        "message": "type=LOGIN msg=audit(1643933341.683:765): pid=6179 uid=0 old-auid=4294967295 auid=0 tty=(none) old-ses=4294967295 ses=130 res=1",
+        "raw_alert": {
+          "timestamp": 1643933341.68,
+          "detector": "AMiner: New login parameter combination in Audit logs.",
+          "message": "type=LOGIN msg=audit(1643933341.683:765): pid=6179 uid=0 old-auid=4294967295 auid=0 tty=(none) old-ses=4294967295 ses=130 res=1"
+        }
+      },
+      {
+        "event_id": "ait-0055-4e2608c8",
+        "timestamp": "2022-02-04T00:09:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1643933341.687:766): pid=6179 uid=0 auid=0 ses=130 msg='op=PAM:session_open acct=\"root\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'",
+        "raw_alert": {
+          "timestamp": 1643933341.69,
+          "detector": "AMiner: New user_start parameter combination in Audit logs.",
+          "message": "type=USER_START msg=audit(1643933341.687:766): pid=6179 uid=0 auid=0 ses=130 msg='op=PAM:session_open acct=\"root\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0056-c948806f",
+        "timestamp": "2022-02-04T00:09:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "message": "type=CRED_DISP msg=audit(1643933341.691:767): pid=6179 uid=0 auid=0 ses=130 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'",
+        "raw_alert": {
+          "timestamp": 1643933341.69,
+          "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+          "message": "type=CRED_DISP msg=audit(1643933341.691:767): pid=6179 uid=0 auid=0 ses=130 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0057-60053d97",
+        "timestamp": "2022-02-04T00:09:01Z",
+        "host": "harrison",
+        "detector": "AMiner: New user_end parameter combination in Audit logs.",
+        "message": "type=USER_END msg=audit(1643933341.695:768): pid=6179 uid=0 auid=0 ses=130 msg='op=PAM:session_close acct=\"root\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'",
+        "raw_alert": {
+          "timestamp": 1643933341.69,
+          "detector": "AMiner: New user_end parameter combination in Audit logs.",
+          "message": "type=USER_END msg=audit(1643933341.695:768): pid=6179 uid=0 auid=0 ses=130 msg='op=PAM:session_close acct=\"root\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0058-13bf7cb0",
+        "timestamp": "2022-02-04T00:09:02Z",
+        "host": "harrison",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 00:09:02 smith-mail systemd[1]: Starting Clean php session files...",
+        "raw_alert": {
+          "timestamp": 1643933342.0,
+          "detector": "AMiner: New event type.",
+          "message": "Feb  4 00:09:02 smith-mail systemd[1]: Starting Clean php session files..."
+        }
+      },
+      {
+        "event_id": "ait-0059-8dab7a12",
+        "timestamp": "2022-02-04T00:09:14Z",
+        "host": "harrison",
+        "detector": "AMiner: New event type.",
+        "message": "type=SERVICE_START msg=audit(1643933354.731:769): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=phpsessionclean comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "raw_alert": {
+          "timestamp": 1643933354.73,
+          "detector": "AMiner: New event type.",
+          "message": "type=SERVICE_START msg=audit(1643933354.731:769): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=phpsessionclean comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0060-27ef6f1e",
+        "timestamp": "2022-02-04T00:09:14Z",
+        "host": "harrison",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1643933354.731:769): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=phpsessionclean comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "raw_alert": {
+          "timestamp": 1643933354.73,
+          "detector": "AMiner: New service_start parameter combination in Audit logs.",
+          "message": "type=SERVICE_START msg=audit(1643933354.731:769): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=phpsessionclean comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0061-498b5b3b",
+        "timestamp": "2022-02-04T00:09:14Z",
+        "host": "harrison",
+        "detector": "AMiner: New event type.",
+        "message": "type=SERVICE_STOP msg=audit(1643933354.731:770): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=phpsessionclean comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "raw_alert": {
+          "timestamp": 1643933354.73,
+          "detector": "AMiner: New event type.",
+          "message": "type=SERVICE_STOP msg=audit(1643933354.731:770): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=phpsessionclean comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0062-0a651c17",
+        "timestamp": "2022-02-04T00:09:14Z",
+        "host": "harrison",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1643933354.731:770): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=phpsessionclean comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "raw_alert": {
+          "timestamp": 1643933354.73,
+          "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+          "message": "type=SERVICE_STOP msg=audit(1643933354.731:770): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=phpsessionclean comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0063-591a416a",
+        "timestamp": "2022-02-04T00:09:58Z",
+        "host": "harrison",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-04 00:09:58 Start queue run: pid=3500",
+        "raw_alert": {
+          "timestamp": 1643933398.0,
+          "detector": "AMiner: New event type.",
+          "message": "2022-02-04 00:09:58 Start queue run: pid=3500"
+        }
+      },
+      {
+        "event_id": "ait-0064-e9509caf",
+        "timestamp": "2022-02-04T00:09:58Z",
+        "host": "harrison",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-04 00:09:58 End queue run: pid=3500",
+        "raw_alert": {
+          "timestamp": 1643933398.0,
+          "detector": "AMiner: New event type.",
+          "message": "2022-02-04 00:09:58 End queue run: pid=3500"
+        }
+      },
+      {
+        "event_id": "ait-0065-1d19c3d8",
+        "timestamp": "2022-02-04T00:09:58Z",
+        "host": "harrison",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  4 00:09:58 dnsmasq[14453]: query[AAAA] smith-mail from 172.28.192.97",
+        "raw_alert": {
+          "timestamp": 1643933398.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Feb  4 00:09:58 dnsmasq[14453]: query[AAAA] smith-mail from 172.28.192.97"
+        }
+      },
+      {
+        "event_id": "ait-0066-423f2813",
+        "timestamp": "2022-02-04T00:10:09Z",
+        "host": "harrison",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  4 00:10:09 dnsmasq[14453]: query[A] 3x6-.364-.ru/HcIkIsOi*CXnEtFGKasFtKTiOvD5oaMhX4GUI3P*gj9xDwc*VUgS2yPxbgP-.m3JebfVhPAgVsmguqkm6CdVSMvN76hNOz6I9DF6xfWMC/ZWZ3egwzVbSlLOg/P-.customers_2013.xlsx.db-21.greer.biz from 172.28.192.4",
+        "raw_alert": {
+          "timestamp": 1643933409.0,
+          "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+          "message": "Feb  4 00:10:09 dnsmasq[14453]: query[A] 3x6-.364-.ru/HcIkIsOi*CXnEtFGKasFtKTiOvD5oaMhX4GUI3P*gj9xDwc*VUgS2yPxbgP-.m3JebfVhPAgVsmguqkm6CdVSMvN76hNOz6I9DF6xfWMC/ZWZ3egwzVbSlLOg/P-.customers_2013.xlsx.db-21.greer.biz from 172.28.192.4"
+        }
+      },
+      {
+        "event_id": "ait-0067-d7162edf",
+        "timestamp": "2022-02-04T00:10:16Z",
+        "host": "harrison",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-04T00:10:16.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.0615,\"norm\":{\"pct\":0.0615}},\"idle\":{\"pct\":0.8663,\"norm\":{\"pct\":0.8663}},\"system\":{\"pct\":0.0303,\"norm\":{\"pct\":0.0303}},\"user\":{\"pct\":0.0307,\"norm\":{\"pct\":0.0307}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":0.002,\"norm\":{\"pct\":0.002}},\"total\":{\"pct\":0.1246,\"norm\":{\"pct\":0.1246}},\"cores\":1,\"iowait\":{\"pct\":0.0091,\"norm\":{\"pct\":0.0091}}}},\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.1246}},\"event\":{\"module\":\"system\",\"duration\":1944133,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"name\":\"intranet-server\",\"hostname\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}",
+        "raw_alert": {
+          "timestamp": 1643933416.13,
+          "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+          "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-04T00:10:16.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.0615,\"norm\":{\"pct\":0.0615}},\"idle\":{\"pct\":0.8663,\"norm\":{\"pct\":0.8663}},\"system\":{\"pct\":0.0303,\"norm\":{\"pct\":0.0303}},\"user\":{\"pct\":0.0307,\"norm\":{\"pct\":0.0307}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":0.002,\"norm\":{\"pct\":0.002}},\"total\":{\"pct\":0.1246,\"norm\":{\"pct\":0.1246}},\"cores\":1,\"iowait\":{\"pct\":0.0091,\"norm\":{\"pct\":0.0091}}}},\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.1246}},\"event\":{\"module\":\"system\",\"duration\":1944133,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"name\":\"intranet-server\",\"hostname\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}"
+        }
+      },
+      {
+        "event_id": "ait-0068-e635895c",
+        "timestamp": "2022-02-04T00:11:36Z",
+        "host": "harrison",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 00:11:36 smith-mail freshclam[29544]: Fri Feb  4 00:11:36 2022 -> Received signal: wake up",
+        "raw_alert": {
+          "timestamp": 1643933496.0,
+          "detector": "AMiner: New event type.",
+          "message": "Feb  4 00:11:36 smith-mail freshclam[29544]: Fri Feb  4 00:11:36 2022 -> Received signal: wake up"
+        }
+      },
+      {
+        "event_id": "ait-0069-8d75cfdc",
+        "timestamp": "2022-02-04T00:12:31Z",
+        "host": "harrison",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-04T00:12:31.130Z\",\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.09}},\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0.9086,\"norm\":{\"pct\":0.9086}},\"steal\":{\"pct\":0.0374,\"norm\":{\"pct\":0.0374}},\"system\":{\"pct\":0.022,\"norm\":{\"pct\":0.022}},\"user\":{\"pct\":0.0292,\"norm\":{\"pct\":0.0292}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":0.0014,\"norm\":{\"pct\":0.0014}},\"total\":{\"pct\":0.09,\"norm\":{\"pct\":0.09}},\"cores\":1,\"iowait\":{\"pct\":0.0014,\"norm\":{\"pct\":0.0014}}}},\"event\":{\"module\":\"system\",\"duration\":505361,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}",
+        "raw_alert": {
+          "timestamp": 1643933551.13,
+          "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+          "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-04T00:12:31.130Z\",\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.09}},\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0.9086,\"norm\":{\"pct\":0.9086}},\"steal\":{\"pct\":0.0374,\"norm\":{\"pct\":0.0374}},\"system\":{\"pct\":0.022,\"norm\":{\"pct\":0.022}},\"user\":{\"pct\":0.0292,\"norm\":{\"pct\":0.0292}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":0.0014,\"norm\":{\"pct\":0.0014}},\"total\":{\"pct\":0.09,\"norm\":{\"pct\":0.09}},\"cores\":1,\"iowait\":{\"pct\":0.0014,\"norm\":{\"pct\":0.0014}}}},\"event\":{\"module\":\"system\",\"duration\":505361,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}"
+        }
+      },
+      {
+        "event_id": "ait-0070-32768644",
+        "timestamp": "2022-02-04T00:14:01Z",
+        "host": "harrison",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-04T00:14:01.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.022,\"norm\":{\"pct\":0.022}},\"idle\":{\"pct\":0.9135,\"norm\":{\"pct\":0.9135}},\"system\":{\"pct\":0.0298,\"norm\":{\"pct\":0.0298}},\"user\":{\"pct\":0.0312,\"norm\":{\"pct\":0.0312}},\"softirq\":{\"pct\":0.0014,\"norm\":{\"pct\":0.0014}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"total\":{\"pct\":0.0844,\"norm\":{\"pct\":0.0844}},\"cores\":1,\"iowait\":{\"pct\":0.0021,\"norm\":{\"pct\":0.0021}}}},\"host\":{\"cpu\":{\"pct\":0.0844},\"name\":\"intranet-server\"},\"event\":{\"module\":\"system\",\"duration\":464118,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"name\":\"intranet-server\",\"hostname\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}",
+        "raw_alert": {
+          "timestamp": 1643933641.13,
+          "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+          "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-04T00:14:01.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.022,\"norm\":{\"pct\":0.022}},\"idle\":{\"pct\":0.9135,\"norm\":{\"pct\":0.9135}},\"system\":{\"pct\":0.0298,\"norm\":{\"pct\":0.0298}},\"user\":{\"pct\":0.0312,\"norm\":{\"pct\":0.0312}},\"softirq\":{\"pct\":0.0014,\"norm\":{\"pct\":0.0014}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"total\":{\"pct\":0.0844,\"norm\":{\"pct\":0.0844}},\"cores\":1,\"iowait\":{\"pct\":0.0021,\"norm\":{\"pct\":0.0021}}}},\"host\":{\"cpu\":{\"pct\":0.0844},\"name\":\"intranet-server\"},\"event\":{\"module\":\"system\",\"duration\":464118,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"name\":\"intranet-server\",\"hostname\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}"
+        }
+      },
+      {
+        "event_id": "ait-0071-527f15b4",
+        "timestamp": "2022-02-04T00:14:46Z",
+        "host": "harrison",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.0812}},\"@timestamp\":\"2022-02-04T00:14:46.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.0137,\"norm\":{\"pct\":0.0137}},\"idle\":{\"pct\":0.9179,\"norm\":{\"pct\":0.9179}},\"system\":{\"pct\":0.0321,\"norm\":{\"pct\":0.0321}},\"user\":{\"pct\":0.0332,\"norm\":{\"pct\":0.0332}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":0.0021,\"norm\":{\"pct\":0.0021}},\"total\":{\"pct\":0.0812,\"norm\":{\"pct\":0.0812}},\"cores\":1,\"iowait\":{\"pct\":9.0E-4,\"norm\":{\"pct\":9.0E-4}}}},\"ecs\":{\"version\":\"1.9.0\"},\"event\":{\"module\":\"system\",\"duration\":940215,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"name\":\"intranet-server\",\"hostname\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}",
+        "raw_alert": {
+          "timestamp": 1643933686.13,
+          "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+          "message": "{\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.0812}},\"@timestamp\":\"2022-02-04T00:14:46.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.0137,\"norm\":{\"pct\":0.0137}},\"idle\":{\"pct\":0.9179,\"norm\":{\"pct\":0.9179}},\"system\":{\"pct\":0.0321,\"norm\":{\"pct\":0.0321}},\"user\":{\"pct\":0.0332,\"norm\":{\"pct\":0.0332}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":0.0021,\"norm\":{\"pct\":0.0021}},\"total\":{\"pct\":0.0812,\"norm\":{\"pct\":0.0812}},\"cores\":1,\"iowait\":{\"pct\":9.0E-4,\"norm\":{\"pct\":9.0E-4}}}},\"ecs\":{\"version\":\"1.9.0\"},\"event\":{\"module\":\"system\",\"duration\":940215,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"name\":\"intranet-server\",\"hostname\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}"
+        }
+      },
+      {
+        "event_id": "ait-0072-ff6bcfca",
+        "timestamp": "2022-02-04T00:39:58Z",
+        "host": "harrison",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 00:39:58 dnsmasq[14453]: query[AAAA] smith-mail from 172.28.192.97",
+        "raw_alert": {
+          "timestamp": 1643935198.0,
+          "detector": "AMiner: High entropy in DNS domain.",
+          "message": "Feb  4 00:39:58 dnsmasq[14453]: query[AAAA] smith-mail from 172.28.192.97"
+        }
+      },
+      {
+        "event_id": "ait-0073-23700fb4",
+        "timestamp": "2022-02-04T00:57:00Z",
+        "host": "harrison",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  4 00:57:00 dnsmasq[14664]: query[A] motd.ubuntu.com from 192.168.130.229",
+        "raw_alert": {
+          "timestamp": 1643936220.0,
+          "detector": "AMiner: New ip address in DNS logs.",
+          "message": "Feb  4 00:57:00 dnsmasq[14664]: query[A] motd.ubuntu.com from 192.168.130.229"
+        }
+      },
+      {
+        "event_id": "ait-0074-4c94f508",
+        "timestamp": "2022-02-04T00:57:31Z",
+        "host": "harrison",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.074}},\"@timestamp\":\"2022-02-04T00:57:31.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0.9253,\"norm\":{\"pct\":0.9253}},\"steal\":{\"pct\":0.0142,\"norm\":{\"pct\":0.0142}},\"system\":{\"pct\":0.0289,\"norm\":{\"pct\":0.0289}},\"user\":{\"pct\":0.0301,\"norm\":{\"pct\":0.0301}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":7.0E-4,\"norm\":{\"pct\":7.0E-4}},\"total\":{\"pct\":0.074,\"norm\":{\"pct\":0.074}},\"cores\":1,\"iowait\":{\"pct\":7.0E-4,\"norm\":{\"pct\":7.0E-4}}}},\"ecs\":{\"version\":\"1.9.0\"},\"event\":{\"module\":\"system\",\"duration\":368580,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}",
+        "raw_alert": {
+          "timestamp": 1643936251.13,
+          "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+          "message": "{\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.074}},\"@timestamp\":\"2022-02-04T00:57:31.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0.9253,\"norm\":{\"pct\":0.9253}},\"steal\":{\"pct\":0.0142,\"norm\":{\"pct\":0.0142}},\"system\":{\"pct\":0.0289,\"norm\":{\"pct\":0.0289}},\"user\":{\"pct\":0.0301,\"norm\":{\"pct\":0.0301}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":7.0E-4,\"norm\":{\"pct\":7.0E-4}},\"total\":{\"pct\":0.074,\"norm\":{\"pct\":0.074}},\"cores\":1,\"iowait\":{\"pct\":7.0E-4,\"norm\":{\"pct\":7.0E-4}}}},\"ecs\":{\"version\":\"1.9.0\"},\"event\":{\"module\":\"system\",\"duration\":368580,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}"
+        }
+      },
+      {
+        "event_id": "ait-0075-500a9c83",
+        "timestamp": "2022-02-04T00:59:01Z",
+        "host": "harrison",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-04T00:59:01.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0.9306,\"norm\":{\"pct\":0.9306}},\"steal\":{\"pct\":0.0148,\"norm\":{\"pct\":0.0148}},\"system\":{\"pct\":0.0262,\"norm\":{\"pct\":0.0262}},\"user\":{\"pct\":0.026,\"norm\":{\"pct\":0.026}},\"softirq\":{\"pct\":0.0021,\"norm\":{\"pct\":0.0021}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"total\":{\"pct\":0.0692,\"norm\":{\"pct\":0.0692}},\"cores\":1,\"iowait\":{\"pct\":2.0E-4,\"norm\":{\"pct\":2.0E-4}}}},\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.0692}},\"event\":{\"module\":\"system\",\"duration\":309364,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}",
+        "raw_alert": {
+          "timestamp": 1643936341.13,
+          "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+          "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-04T00:59:01.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0.9306,\"norm\":{\"pct\":0.9306}},\"steal\":{\"pct\":0.0148,\"norm\":{\"pct\":0.0148}},\"system\":{\"pct\":0.0262,\"norm\":{\"pct\":0.0262}},\"user\":{\"pct\":0.026,\"norm\":{\"pct\":0.026}},\"softirq\":{\"pct\":0.0021,\"norm\":{\"pct\":0.0021}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"total\":{\"pct\":0.0692,\"norm\":{\"pct\":0.0692}},\"cores\":1,\"iowait\":{\"pct\":2.0E-4,\"norm\":{\"pct\":2.0E-4}}}},\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.0692}},\"event\":{\"module\":\"system\",\"duration\":309364,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}"
+        }
+      },
+      {
+        "event_id": "ait-0076-12c261af",
+        "timestamp": "2022-02-04T01:00:08Z",
+        "host": "harrison",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Feb  4 01:00:08 dnsmasq[14453]: query[A] 3x6-.549-.X1V4fgWS4AOkLIBdeL6HNi1QM*CcqB/TYktnAAHw6uVf9HR1UMSYZrtiHcz/B6-.M1hwl37pZXItAidn5YpJnz9BXjmvtQAD9lZ7SdUR2XY66s2w1lopU1VTvDvX9p-.customers_2013.xlsx.db-21.greer.biz from 172.28.192.4",
+        "raw_alert": {
+          "timestamp": 1643936408.0,
+          "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+          "message": "Feb  4 01:00:08 dnsmasq[14453]: query[A] 3x6-.549-.X1V4fgWS4AOkLIBdeL6HNi1QM*CcqB/TYktnAAHw6uVf9HR1UMSYZrtiHcz/B6-.M1hwl37pZXItAidn5YpJnz9BXjmvtQAD9lZ7SdUR2XY66s2w1lopU1VTvDvX9p-.customers_2013.xlsx.db-21.greer.biz from 172.28.192.4"
+        }
+      },
+      {
+        "event_id": "ait-0077-32e453fa",
+        "timestamp": "2022-02-04T01:00:08Z",
+        "host": "harrison",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query records.",
+        "message": "Feb  4 01:00:08 dnsmasq[14453]: query[A] 3x6-.549-.X1V4fgWS4AOkLIBdeL6HNi1QM*CcqB/TYktnAAHw6uVf9HR1UMSYZrtiHcz/B6-.M1hwl37pZXItAidn5YpJnz9BXjmvtQAD9lZ7SdUR2XY66s2w1lopU1VTvDvX9p-.customers_2013.xlsx.db-21.greer.biz from 172.28.192.4",
+        "raw_alert": {
+          "timestamp": 1643936408.0,
+          "detector": "AMiner: Unusual occurrence frequencies of DNS query records.",
+          "message": "Feb  4 01:00:08 dnsmasq[14453]: query[A] 3x6-.549-.X1V4fgWS4AOkLIBdeL6HNi1QM*CcqB/TYktnAAHw6uVf9HR1UMSYZrtiHcz/B6-.M1hwl37pZXItAidn5YpJnz9BXjmvtQAD9lZ7SdUR2XY66s2w1lopU1VTvDvX9p-.customers_2013.xlsx.db-21.greer.biz from 172.28.192.4"
+        }
+      },
+      {
+        "event_id": "ait-0078-aae84113",
+        "timestamp": "2022-02-04T01:00:31Z",
+        "host": "harrison",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.0637}},\"@timestamp\":\"2022-02-04T01:00:31.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0.9361,\"norm\":{\"pct\":0.9361}},\"steal\":{\"pct\":0.016,\"norm\":{\"pct\":0.016}},\"system\":{\"pct\":0.0213,\"norm\":{\"pct\":0.0213}},\"user\":{\"pct\":0.0256,\"norm\":{\"pct\":0.0256}},\"softirq\":{\"pct\":7.0E-4,\"norm\":{\"pct\":7.0E-4}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"total\":{\"pct\":0.0637,\"norm\":{\"pct\":0.0637}},\"cores\":1,\"iowait\":{\"pct\":2.0E-4,\"norm\":{\"pct\":2.0E-4}}}},\"ecs\":{\"version\":\"1.9.0\"},\"event\":{\"module\":\"system\",\"duration\":350302,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}",
+        "raw_alert": {
+          "timestamp": 1643936431.13,
+          "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+          "message": "{\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.0637}},\"@timestamp\":\"2022-02-04T01:00:31.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0.9361,\"norm\":{\"pct\":0.9361}},\"steal\":{\"pct\":0.016,\"norm\":{\"pct\":0.016}},\"system\":{\"pct\":0.0213,\"norm\":{\"pct\":0.0213}},\"user\":{\"pct\":0.0256,\"norm\":{\"pct\":0.0256}},\"softirq\":{\"pct\":7.0E-4,\"norm\":{\"pct\":7.0E-4}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"total\":{\"pct\":0.0637,\"norm\":{\"pct\":0.0637}},\"cores\":1,\"iowait\":{\"pct\":2.0E-4,\"norm\":{\"pct\":2.0E-4}}}},\"ecs\":{\"version\":\"1.9.0\"},\"event\":{\"module\":\"system\",\"duration\":350302,\"dataset\":\"system.cpu\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"service\":{\"type\":\"system\"},\"agent\":{\"id\":\"5678ad34-b8df-4530-b464-514bae7f8c23\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"version\":\"7.13.2\",\"type\":\"metricbeat\",\"ephemeral_id\":\"a46565ab-4cd1-4805-9d31-9e7b3aff2b8a\"},\"@version\":\"1\"}"
+        }
+      },
+      {
+        "event_id": "ait-0079-939c9131",
+        "timestamp": "2022-02-04T01:01:20Z",
+        "host": "harrison",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 01:01:20 smith-mail dhclient[418]: DHCPREQUEST of 172.28.192.97 on eth0 to 172.28.192.2 port 67",
+        "raw_alert": {
+          "timestamp": 1643936480.0,
+          "detector": "AMiner: New event type.",
+          "message": "Feb  4 01:01:20 smith-mail dhclient[418]: DHCPREQUEST of 172.28.192.97 on eth0 to 172.28.192.2 port 67"
+        }
+      },
+      {
+        "event_id": "ait-0080-ef27f470",
+        "timestamp": "2022-02-04T01:01:20Z",
+        "host": "harrison",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 01:01:20 smith-mail dhclient[418]: DHCPACK of 172.28.192.97 from 172.28.192.2",
+        "raw_alert": {
+          "timestamp": 1643936480.0,
+          "detector": "AMiner: New event type.",
+          "message": "Feb  4 01:01:20 smith-mail dhclient[418]: DHCPACK of 172.28.192.97 from 172.28.192.2"
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-e10a6256",
+      "source": "alerts",
+      "timestamp": "2022-02-04T00:00:01Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "type=USER_ACCT msg=audit(1643932801.876:757): pid=6144 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"www-data\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'",
+        "raw_alert": {
+          "timestamp": 1643932801.88,
+          "detector": "AMiner: New event type.",
+          "message": "type=USER_ACCT msg=audit(1643932801.876:757): pid=6144 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"www-data\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'"
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-19be2234",
+      "source": "alerts",
+      "timestamp": "2022-02-04T00:00:01Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643932801.876:757): pid=6144 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"www-data\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'",
+        "raw_alert": {
+          "timestamp": 1643932801.88,
+          "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+          "message": "type=USER_ACCT msg=audit(1643932801.876:757): pid=6144 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"www-data\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'"
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-7760a9d6",
+      "source": "alerts",
+      "timestamp": "2022-02-04T00:00:01Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "type=CRED_ACQ msg=audit(1643932801.876:758): pid=6144 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"www-data\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'",
+        "raw_alert": {
+          "timestamp": 1643932801.88,
+          "detector": "AMiner: New event type.",
+          "message": "type=CRED_ACQ msg=audit(1643932801.876:758): pid=6144 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"www-data\" exe=\"/usr/sbin/cron\" hostname=? addr=? terminal=cron res=success'"
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on harrison. Identify the attack stage from telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on harrison. Identify the attack stage from telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "harrison/network_scans",
+    "answer": "network_scans",
+    "accept": [
+      "network_scans",
+      "network scans"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

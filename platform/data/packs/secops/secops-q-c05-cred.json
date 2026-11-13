@@ -1,0 +1,246 @@
+{
+  "incident_id": "secops-q-c05-cred",
+  "name": "SecOps case-05-lateral-movement/q-c05-cred",
+  "source_benchmark": "Cyber-SecOps-ES",
+  "source_scenario": "case-05-lateral-movement/q-c05-cred",
+  "alert": {
+    "timestamp": "2026-07-29T03:49:46Z",
+    "host": "ubuntu-2404-noble-amd64-base",
+    "user": "unknown",
+    "alert_type": "secops_investigation",
+    "summary": "What credential/key did the attacker use for the SSH lateral movement? Give the key file path seen on the command line."
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "process_events",
+      "network"
+    ],
+    "start": "2026-07-29T03:49:46Z",
+    "end": "2026-07-29T03:50:02Z",
+    "hosts": [
+      "ubuntu-2404-noble-amd64-base"
+    ]
+  },
+  "telemetry": {
+    "process_events": [
+      {
+        "event_id": "evidence-sour-0001-2252beeb",
+        "timestamp": "2026-07-29T03:49:46.664Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "ssh",
+        "parent_process_name": "bash",
+        "command_line": "ssh -i /tmp/.lat_key -o StrictHostKeyChecking=no root@46.224.159.210 'echo LATERAL_LANDED...'",
+        "action": "exec",
+        "attck": "T1021.004/T1552.004"
+      },
+      {
+        "event_id": "evidence-sour-0002-2d9af92b",
+        "timestamp": "2026-07-29T03:49:46.679Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "ssh",
+        "parent_process_name": "",
+        "command_line": "ssh",
+        "action": "network/connection_attempted",
+        "source.ip": "135.181.180.110",
+        "destination.ip": "46.224.159.210"
+      },
+      {
+        "event_id": "evidence-targ-0001-af2584f9",
+        "timestamp": "2026-07-29T03:49:47.500Z",
+        "host": "attacktrace",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "action": "sshd accept session",
+        "note": "inbound from 135.181.180.110"
+      },
+      {
+        "event_id": "evidence-targ-0002-d3fc810c",
+        "timestamp": "2026-07-29T03:49:48.157Z",
+        "host": "attacktrace",
+        "process_name": "hostname",
+        "parent_process_name": "bash",
+        "command_line": "hostname"
+      },
+      {
+        "event_id": "evidence-targ-0003-ff53b23c",
+        "timestamp": "2026-07-29T03:49:48.160Z",
+        "host": "attacktrace",
+        "process_name": "id",
+        "parent_process_name": "bash",
+        "command_line": "id"
+      },
+      {
+        "event_id": "evidence-targ-0004-16d3d567",
+        "timestamp": "2026-07-29T03:49:48.164Z",
+        "host": "attacktrace",
+        "process_name": "whoami",
+        "parent_process_name": "bash",
+        "command_line": "whoami"
+      },
+      {
+        "event_id": "evidence-targ-0005-f7288ef9",
+        "timestamp": "2026-07-29T03:49:48.167Z",
+        "host": "attacktrace",
+        "process_name": "uname",
+        "parent_process_name": "bash",
+        "command_line": "uname -a"
+      },
+      {
+        "event_id": "evidence-targ-0006-c8697d89",
+        "timestamp": "2026-07-29T03:49:48.202Z",
+        "host": "attacktrace",
+        "process_name": "ip",
+        "parent_process_name": "bash",
+        "command_line": "ip -4 addr show"
+      },
+      {
+        "event_id": "evidence-targ-0007-347d526e",
+        "timestamp": "2026-07-29T03:49:48.209Z",
+        "host": "attacktrace",
+        "process_name": "cat",
+        "parent_process_name": "bash",
+        "command_line": "cat /etc/passwd"
+      }
+    ],
+    "network": [
+      {
+        "event_id": "evidence-net-0001-07248840",
+        "timestamp": "2026-07-29T03:49:46Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "destination_ip": "204.168.178.42",
+        "destination_port": 443,
+        "protocol": "tcp"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "evidence-sour-0001-2252beeb",
+      "source": "alerts",
+      "timestamp": "2026-07-29T03:49:46.664Z",
+      "host": "ubuntu-2404-noble-amd64-base",
+      "fields": {
+        "process_name": "ssh",
+        "parent_process_name": "bash",
+        "command_line": "ssh -i /tmp/.lat_key -o StrictHostKeyChecking=no root@46.224.159.210 'echo LATERAL_LANDED...'",
+        "action": "exec",
+        "attck": "T1021.004/T1552.004"
+      }
+    },
+    {
+      "event_id": "evidence-sour-0002-2d9af92b",
+      "source": "alerts",
+      "timestamp": "2026-07-29T03:49:46.679Z",
+      "host": "ubuntu-2404-noble-amd64-base",
+      "fields": {
+        "process_name": "ssh",
+        "parent_process_name": "",
+        "command_line": "ssh",
+        "action": "network/connection_attempted",
+        "source.ip": "135.181.180.110",
+        "destination.ip": "46.224.159.210"
+      }
+    },
+    {
+      "event_id": "evidence-targ-0001-af2584f9",
+      "source": "alerts",
+      "timestamp": "2026-07-29T03:49:47.500Z",
+      "host": "attacktrace",
+      "fields": {
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "",
+        "action": "sshd accept session",
+        "note": "inbound from 135.181.180.110"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "process_events",
+        "filter": {
+          "host": "ubuntu-2404-noble-amd64-base"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "network",
+        "filter": {
+          "host": "ubuntu-2404-noble-amd64-base"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "What credential/key did the attacker use for the SSH lateral movement? Give the key file path seen on the command line.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "process_events",
+          "filter": {
+            "host": "ubuntu-2404-noble-amd64-base"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "network",
+          "filter": {
+            "host": "ubuntu-2404-noble-amd64-base"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "What credential/key did the attacker use for the SSH lateral movement? Give the key file path seen on the command line.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-SecOps-ES",
+    "scenario": "case-05-lateral-movement/q-c05-cred",
+    "answer": "/tmp/.lat_key",
+    "accept": [
+      "/tmp/.lat_key"
+    ],
+    "grading": "exact_ci",
+    "attck": [
+      "T1552.004"
+    ],
+    "sealed": true
+  }
+}

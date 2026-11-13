@@ -1,0 +1,1119 @@
+{
+  "incident_id": "ait-santos-wpscan",
+  "name": "AIT-ADS santos/wpscan",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "santos/wpscan",
+  "alert": {
+    "timestamp": "2022-01-17T11:22:23Z",
+    "host": "santos",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on santos. Identify the attack stage from telemetry."
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-17T11:22:23Z",
+    "end": "2022-01-17T11:22:30Z",
+    "hosts": [
+      "santos"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-d48b3963",
+        "timestamp": "2022-01-17T11:22:23Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:23 +0000] \"HEAD / HTTP/1.1\" 200 226 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418543.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:23 +0000] \"HEAD / HTTP/1.1\" 200 226 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0002-a7fc25e8",
+        "timestamp": "2022-01-17T11:22:24Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:24 +0000] \"HEAD /robots.txt HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418544.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:24 +0000] \"HEAD /robots.txt HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0003-2aab85b8",
+        "timestamp": "2022-01-17T11:22:24Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:24 +0000] \"HEAD /fantastico_fileslist.txt HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418544.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:24 +0000] \"HEAD /fantastico_fileslist.txt HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0004-8aebd2c1",
+        "timestamp": "2022-01-17T11:22:24Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:24 +0000] \"HEAD /searchreplacedb2.php HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418544.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:24 +0000] \"HEAD /searchreplacedb2.php HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0005-995d9e59",
+        "timestamp": "2022-01-17T11:22:24Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:24 +0000] \"HEAD /readme.html HTTP/1.1\" 200 3291 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418544.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:24 +0000] \"HEAD /readme.html HTTP/1.1\" 200 3291 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0006-c64ca4fe",
+        "timestamp": "2022-01-17T11:22:24Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:24 +0000] \"HEAD /wp-content/debug.log HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418544.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:24 +0000] \"HEAD /wp-content/debug.log HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0007-d0e40f32",
+        "timestamp": "2022-01-17T11:22:24Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:24 +0000] \"HEAD /wp-content/backup-db/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418544.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:24 +0000] \"HEAD /wp-content/backup-db/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0008-6edae074",
+        "timestamp": "2022-01-17T11:22:24Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:24 +0000] \"HEAD /installer-log.txt HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418544.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:24 +0000] \"HEAD /installer-log.txt HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0009-758e55b1",
+        "timestamp": "2022-01-17T11:22:24Z",
+        "host": "santos",
+        "detector": "AMiner: New event type.",
+        "message": "[Mon Jan 17 11:22:24.831750 2022] [php7:error] [pid 19481] [client 172.21.128.119:44590] script '/var/www/intranet.smith.santos.com/searchreplacedb2.php' not found or unable to stat, referer: https://intranet.smith.santos.com",
+        "raw_alert": {
+          "timestamp": 1642418544.83,
+          "detector": "AMiner: New event type.",
+          "message": "[Mon Jan 17 11:22:24.831750 2022] [php7:error] [pid 19481] [client 172.21.128.119:44590] script '/var/www/intranet.smith.santos.com/searchreplacedb2.php' not found or unable to stat, referer: https://intranet.smith.santos.com"
+        }
+      },
+      {
+        "event_id": "ait-0010-128d886c",
+        "timestamp": "2022-01-17T11:22:25Z",
+        "host": "santos",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:25 +0000] \"GET /wp-content/uploads/ HTTP/1.1\" 403 366 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418545.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:25 +0000] \"GET /wp-content/uploads/ HTTP/1.1\" 403 366 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0011-f193c7bf",
+        "timestamp": "2022-01-17T11:22:25Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:25 +0000] \"HEAD /wp-content/uploads/tmm_db_migrate/tmm_db_migrate.zip HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418545.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:25 +0000] \"HEAD /wp-content/uploads/tmm_db_migrate/tmm_db_migrate.zip HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0012-5fcf7111",
+        "timestamp": "2022-01-17T11:22:25Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:25 +0000] \"HEAD /wp-content/uploads/dump.sql HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418545.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:25 +0000] \"HEAD /wp-content/uploads/dump.sql HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0013-2b71b613",
+        "timestamp": "2022-01-17T11:22:25Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:25 +0000] \"HEAD /emergency.php HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418545.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:25 +0000] \"HEAD /emergency.php HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0014-9c4a8d94",
+        "timestamp": "2022-01-17T11:22:25Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:25 +0000] \"HEAD /wp-includes/version.php HTTP/1.1\" 200 134 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418545.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:25 +0000] \"HEAD /wp-includes/version.php HTTP/1.1\" 200 134 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0015-0a93674c",
+        "timestamp": "2022-01-17T11:22:25Z",
+        "host": "santos",
+        "detector": "AMiner: New event type.",
+        "message": "[Mon Jan 17 11:22:25.056593 2022] [autoindex:error] [pid 20172] [client 172.21.128.119:44592] AH01276: Cannot serve directory /var/www/intranet.smith.santos.com/wp-content/uploads/: No matching DirectoryIndex (index.html,index.cgi,index.pl,index.php,index.xhtml,index.htm) found, and server-generated directory index forbidden by Options directive, referer: https://intranet.smith.santos.com",
+        "raw_alert": {
+          "timestamp": 1642418545.06,
+          "detector": "AMiner: New event type.",
+          "message": "[Mon Jan 17 11:22:25.056593 2022] [autoindex:error] [pid 20172] [client 172.21.128.119:44592] AH01276: Cannot serve directory /var/www/intranet.smith.santos.com/wp-content/uploads/: No matching DirectoryIndex (index.html,index.cgi,index.pl,index.php,index.xhtml,index.htm) found, and server-generated directory index forbidden by Options directive, referer: https://intranet.smith.santos.com"
+        }
+      },
+      {
+        "event_id": "ait-0016-7b2e6041",
+        "timestamp": "2022-01-17T11:22:25Z",
+        "host": "santos",
+        "detector": "AMiner: New event type.",
+        "message": "[Mon Jan 17 11:22:25.067286 2022] [php7:error] [pid 20172] [client 172.21.128.119:44592] script '/var/www/intranet.smith.santos.com/emergency.php' not found or unable to stat, referer: https://intranet.smith.santos.com",
+        "raw_alert": {
+          "timestamp": 1642418545.07,
+          "detector": "AMiner: New event type.",
+          "message": "[Mon Jan 17 11:22:25.067286 2022] [php7:error] [pid 20172] [client 172.21.128.119:44592] script '/var/www/intranet.smith.santos.com/emergency.php' not found or unable to stat, referer: https://intranet.smith.santos.com"
+        }
+      },
+      {
+        "event_id": "ait-0017-b541a116",
+        "timestamp": "2022-01-17T11:22:27Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:27 +0000] \"HEAD /wp-content/themes/go/readme.txt HTTP/1.1\" 200 289 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418547.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:27 +0000] \"HEAD /wp-content/themes/go/readme.txt HTTP/1.1\" 200 289 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0018-b0794cf2",
+        "timestamp": "2022-01-17T11:22:27Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:27 +0000] \"HEAD /wp-content/themes/go/error_log HTTP/1.1\" 404 3148 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418547.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:27 +0000] \"HEAD /wp-content/themes/go/error_log HTTP/1.1\" 404 3148 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0019-1a7536d5",
+        "timestamp": "2022-01-17T11:22:27Z",
+        "host": "santos",
+        "detector": "AMiner: New event type.",
+        "message": "[Mon Jan 17 11:22:27.845097 2022] [php7:error] [pid 20172] [client 172.21.128.119:44592] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /var/www/intranet.smith.santos.com/wp-content/themes/go/index.php:15\\nStack trace:\\n#0 {main}\\n  thrown in /var/www/intranet.smith.santos.com/wp-content/themes/go/index.php on line 15, referer: https://intranet.smith.santos.com",
+        "raw_alert": {
+          "timestamp": 1642418547.85,
+          "detector": "AMiner: New event type.",
+          "message": "[Mon Jan 17 11:22:27.845097 2022] [php7:error] [pid 20172] [client 172.21.128.119:44592] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /var/www/intranet.smith.santos.com/wp-content/themes/go/index.php:15\\nStack trace:\\n#0 {main}\\n  thrown in /var/www/intranet.smith.santos.com/wp-content/themes/go/index.php on line 15, referer: https://intranet.smith.santos.com"
+        }
+      },
+      {
+        "event_id": "ait-0020-89dcc3c6",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/5star/ HTTP/1.1\" 404 3148 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/5star/ HTTP/1.1\" 404 3148 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0021-0875cf6f",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/Avada/ HTTP/1.1\" 404 3148 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/Avada/ HTTP/1.1\" 404 3148 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0022-5ec53258",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/Divi/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/Divi/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0023-e90b56bb",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/BuilderChild-Depot/ HTTP/1.1\" 404 3148 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/BuilderChild-Depot/ HTTP/1.1\" 404 3148 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0024-d4796a38",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/BuilderChild-Market/ HTTP/1.1\" 404 3148 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/BuilderChild-Market/ HTTP/1.1\" 404 3148 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0025-e0255236",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/Centum/ HTTP/1.1\" 404 3148 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/Centum/ HTTP/1.1\" 404 3148 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0026-d699edd1",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/Extra/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/Extra/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0027-4278c6b0",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/GamesTheme/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/GamesTheme/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0028-61bc98e3",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/Grimag/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/Grimag/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0029-20c3e8d5",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/IncredibleWP/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/IncredibleWP/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0030-56bee041",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/NativeChurch/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/NativeChurch/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0031-4a9f1eae",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/Newsmag/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/Newsmag/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0032-02b3cb65",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/Newspaper/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/Newspaper/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0033-41f3be36",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/Paradise/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/Paradise/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0034-299e028e",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/Realestate/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/Realestate/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0035-cbbec5f4",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/RedSteel/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/RedSteel/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0036-67a46c9c",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/abundance/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/abundance/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0037-79f96438",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/accio/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/accio/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0038-8e2e6f6d",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/activello/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/activello/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0039-2d4ebaea",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/affluent/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/affluent/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0040-8de483f8",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/agritourismo-theme/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/agritourismo-theme/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0041-a7c83cce",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/akal/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/akal/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0042-0fef48d3",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/allegiant/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/allegiant/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0043-defbfe13",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/alltuts/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/alltuts/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0044-18b2b102",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/allure-real-estate-theme-for-placester/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/allure-real-estate-theme-for-placester/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0045-f22bcc90",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/allure-real-estate-theme-for-real-estate/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/allure-real-estate-theme-for-real-estate/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0046-cd3d1a57",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/almera/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/almera/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0047-67dd288e",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/ambience/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/ambience/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0048-802aaa2b",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/amoveo/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/amoveo/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0049-7692c860",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/amplus/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/amplus/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0050-6922d051",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/andyblue/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/andyblue/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0051-05f6cc6c",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/anthology/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/anthology/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0052-f5872e82",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/antioch/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/antioch/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0053-f049913c",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/antisnews/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/antisnews/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0054-1ef7126d",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/antreas/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/antreas/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0055-8fb1040d",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/appius/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/appius/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0056-63c094c5",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/archin/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/archin/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0057-b0cb0848",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/area53/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/area53/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0058-ecc63f98",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/aries/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/aries/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0059-5dc6e871",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/atahualpa/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/atahualpa/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0060-710c5629",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/auberge/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/auberge/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0061-805bbe8a",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/artificial-intelligence/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/artificial-intelligence/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0062-9fd5c453",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/authentic/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/authentic/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0063-93ffd65c",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/avanix/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/avanix/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0064-06f5b716",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/axioma/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/axioma/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0065-110127f5",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/bbe/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/bbe/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0066-26c9e64e",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/awake/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/awake/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0067-ebc49379",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/beach_apollo/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/beach_apollo/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0068-9f26f07e",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/beauty-premium/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/beauty-premium/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0069-5b05884f",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/bello/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/bello/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0070-c2f96214",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/blessing/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/blessing/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0071-d73929d8",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/blaze/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/blaze/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0072-27a8d59f",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/black-letterhead/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/black-letterhead/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0073-b33e4d3e",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/blooog/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/blooog/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0074-c98e3567",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/boldy/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/boldy/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0075-e3634d90",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/bordeaux-theme/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/bordeaux-theme/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0076-c47f35b1",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/bonkers/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/bonkers/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0077-8d3485f6",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/brightbox/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/brightbox/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0078-7f37c78b",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/bridge/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/bridge/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0079-20f284df",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/bretheon/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/bretheon/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      },
+      {
+        "event_id": "ait-0080-d6518307",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "santos",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/brisk/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418550.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:30 +0000] \"HEAD /wp-content/themes/brisk/ HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-d48b3963",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:23Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:23 +0000] \"HEAD / HTTP/1.1\" 200 226 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418543.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:23 +0000] \"HEAD / HTTP/1.1\" 200 226 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-a7fc25e8",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:24Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:24 +0000] \"HEAD /robots.txt HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418544.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:24 +0000] \"HEAD /robots.txt HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-2aab85b8",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:24Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.21.128.119 - - [17/Jan/2022:11:22:24 +0000] \"HEAD /fantastico_fileslist.txt HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "raw_alert": {
+          "timestamp": 1642418544.0,
+          "detector": "AMiner: New request method in Apache Access log.",
+          "message": "172.21.128.119 - - [17/Jan/2022:11:22:24 +0000] \"HEAD /fantastico_fileslist.txt HTTP/1.1\" 404 146 \"https://intranet.smith.santos.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\""
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on santos. Identify the attack stage from telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on santos. Identify the attack stage from telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "santos/wpscan",
+    "answer": "wpscan",
+    "accept": [
+      "wpscan",
+      "wpscan"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

@@ -1,0 +1,310 @@
+{
+  "incident_id": "soc-soc-000091",
+  "name": "SOC-AgentBench scheduled_task_persist_v7 (soc-000091)",
+  "source_benchmark": "SOC-AgentBench",
+  "source_scenario": "train/scheduled_task_persist_v7/soc-000091",
+  "alert": {
+    "timestamp": "2025-07-02T00:05:00Z",
+    "host": "WS-038",
+    "user": "jsmith",
+    "alert_type": "soc_agent_bench",
+    "summary": "Automated detection: Suspicious scheduled task creation. Investigate correlated telemetry.",
+    "title": "Suspicious scheduled task creation",
+    "severity": "high",
+    "assets": [
+      "WS-038",
+      "SRV-FILE-01"
+    ]
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts",
+      "network"
+    ],
+    "start": "2025-07-02T00:05:00Z",
+    "end": "2025-07-02T00:20:00Z",
+    "hosts": [
+      "WS-038"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "soc-000091-log-001",
+        "timestamp": "2025-07-02T00:05:00Z",
+        "host": "WS-038",
+        "rule": "Suspicious scheduled task creation",
+        "severity": "high",
+        "message": "Primary indicator on WS-038: Suspicious scheduled task creation",
+        "user": "jsmith",
+        "raw_alert": {
+          "log_id": "soc-000091-log-001",
+          "timestamp": "2025-07-02T00:05:00+00:00",
+          "source": "sysmon",
+          "host": "WS-038",
+          "user": "jsmith",
+          "message": "Primary indicator on WS-038: Suspicious scheduled task creation"
+        }
+      },
+      {
+        "event_id": "soc-000091-noise-0",
+        "timestamp": "2025-07-02T00:11:00Z",
+        "host": "WS-051",
+        "rule": "Suspicious scheduled task creation",
+        "severity": "high",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000091-noise-0",
+          "timestamp": "2025-07-02T00:11:00+00:00",
+          "source": "windows_security",
+          "host": "WS-051",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000091-noise-1",
+        "timestamp": "2025-07-02T00:07:00Z",
+        "host": "WS-005",
+        "rule": "Suspicious scheduled task creation",
+        "severity": "high",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000091-noise-1",
+          "timestamp": "2025-07-02T00:07:00+00:00",
+          "source": "windows_security",
+          "host": "WS-005",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000091-noise-2",
+        "timestamp": "2025-07-02T00:20:00Z",
+        "host": "WS-023",
+        "rule": "Suspicious scheduled task creation",
+        "severity": "high",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000091-noise-2",
+          "timestamp": "2025-07-02T00:20:00+00:00",
+          "source": "windows_security",
+          "host": "WS-023",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000091-noise-3",
+        "timestamp": "2025-07-02T00:09:00Z",
+        "host": "WS-058",
+        "rule": "Suspicious scheduled task creation",
+        "severity": "high",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000091-noise-3",
+          "timestamp": "2025-07-02T00:09:00+00:00",
+          "source": "windows_security",
+          "host": "WS-058",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      }
+    ],
+    "network": [
+      {
+        "event_id": "soc-000091-log-002",
+        "timestamp": "2025-07-02T00:08:00Z",
+        "host": "SRV-FILE-01",
+        "destination_ip": "203.0.113.171",
+        "protocol": "tcp",
+        "message": "Correlated alert on SRV-FILE-01",
+        "raw_log": {
+          "log_id": "soc-000091-log-002",
+          "timestamp": "2025-07-02T00:08:00+00:00",
+          "source": "wazuh",
+          "host": "SRV-FILE-01",
+          "message": "Correlated alert on SRV-FILE-01",
+          "src_ip": "203.0.113.171"
+        }
+      },
+      {
+        "event_id": "soc-000091-log-003",
+        "timestamp": "2025-07-02T00:12:00Z",
+        "host": "WS-038",
+        "destination_ip": "203.0.113.171",
+        "protocol": "tcp",
+        "message": "Network activity from 203.0.113.171 to WS-038",
+        "raw_log": {
+          "log_id": "soc-000091-log-003",
+          "timestamp": "2025-07-02T00:12:00+00:00",
+          "source": "suricata",
+          "host": "WS-038",
+          "message": "Network activity from 203.0.113.171 to WS-038",
+          "src_ip": "203.0.113.171"
+        }
+      },
+      {
+        "event_id": "soc-ioc-0001-2ebba085",
+        "timestamp": "2025-07-02T00:15:00Z",
+        "host": "WS-038",
+        "destination_ip": "203.0.113.171",
+        "protocol": "tcp",
+        "message": "Observed IP 203.0.113.171"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ev-soc-000091-0",
+      "source": "alerts",
+      "timestamp": "2025-07-02T00:05:00Z",
+      "host": "WS-038",
+      "fields": {
+        "rule": "sysmon",
+        "severity": "high",
+        "message": "Primary indicator on WS-038: Suspicious scheduled task creation",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "ev-soc-000091-1",
+      "source": "alerts",
+      "timestamp": "2025-07-02T00:08:00Z",
+      "host": "SRV-FILE-01",
+      "fields": {
+        "rule": "wazuh",
+        "severity": "high",
+        "message": "Correlated alert on SRV-FILE-01",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "ev-soc-000091-2",
+      "source": "alerts",
+      "timestamp": "2025-07-02T00:12:00Z",
+      "host": "WS-038",
+      "fields": {
+        "rule": "suricata",
+        "severity": "high",
+        "message": "Network activity from 203.0.113.171 to WS-038",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "soc-ioc-rep-0001-54120fec",
+      "source": "network",
+      "timestamp": "2025-07-02T00:15:00Z",
+      "host": "WS-038",
+      "fields": {
+        "destination_ip": "203.0.113.171",
+        "protocol": "tcp",
+        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
+        "reputation": "malicious"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "WS-038"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "network",
+        "filter": {
+          "host": "WS-038"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Automated detection: Suspicious scheduled task creation. Investigate correlated telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "WS-038"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "network",
+          "filter": {
+            "host": "WS-038"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Automated detection: Suspicious scheduled task creation. Investigate correlated telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "SOC-AgentBench",
+    "scenario": "train/scheduled_task_persist_v7/soc-000091",
+    "answer": "Persistence via malicious scheduled task",
+    "accept": [
+      "Persistence via malicious scheduled task",
+      "Persistence via malicious scheduled task",
+      "persistence"
+    ],
+    "grading": "exact_ci",
+    "incident_type": "persistence",
+    "is_true_positive": true,
+    "label": "malicious",
+    "attck": [
+      "T1053.005"
+    ],
+    "ioc_enrichment": {
+      "203.0.113.171": {
+        "type": "ip",
+        "reputation": "malicious",
+        "category": "scanner"
+      }
+    },
+    "sealed": true
+  }
+}

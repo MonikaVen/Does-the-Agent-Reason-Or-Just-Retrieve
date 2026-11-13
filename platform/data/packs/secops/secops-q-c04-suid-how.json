@@ -1,0 +1,253 @@
+{
+  "incident_id": "secops-q-c04-suid-how",
+  "name": "SecOps case-04-privesc/q-c04-suid-how",
+  "source_benchmark": "Cyber-SecOps-ES",
+  "source_scenario": "case-04-privesc/q-c04-suid-how",
+  "alert": {
+    "timestamp": "2026-07-29T03:11:56Z",
+    "host": "ubuntu-2404-noble-amd64-base",
+    "user": "unknown",
+    "alert_type": "secops_investigation",
+    "summary": "How did the attacker build the setuid-root shell?"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "process_events",
+      "network",
+      "alerts"
+    ],
+    "start": "2026-07-29T03:11:56Z",
+    "end": "2026-07-29T03:11:59Z",
+    "hosts": [
+      "ubuntu-2404-noble-amd64-base"
+    ]
+  },
+  "telemetry": {
+    "process_events": [
+      {
+        "event_id": "evidence-pf-0001-4c732aac",
+        "timestamp": "2026-07-29T03:11:56.623Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "find",
+        "parent_process_name": "bash",
+        "command_line": "find /usr /bin /sbin -perm -4000 -type f",
+        "attck": "T1548.001"
+      },
+      {
+        "event_id": "evidence-pf-0002-b467801f",
+        "timestamp": "2026-07-29T03:11:57.750Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "cp",
+        "parent_process_name": "bash",
+        "command_line": "cp /bin/bash /tmp/.rootbash",
+        "attck": "T1548.001"
+      },
+      {
+        "event_id": "evidence-pf-0003-1e4f28c9",
+        "timestamp": "2026-07-29T03:11:57.752Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "cp",
+        "parent_process_name": "cp",
+        "command_line": "cp",
+        "file": "/tmp/.rootbash",
+        "cat": "file/creation"
+      },
+      {
+        "event_id": "evidence-pf-0004-23b3590b",
+        "timestamp": "2026-07-29T03:11:57.829Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "chmod",
+        "parent_process_name": "bash",
+        "command_line": "chmod 4755 /tmp/.rootbash"
+      },
+      {
+        "event_id": "evidence-pf-0005-50b7d10a",
+        "timestamp": "2026-07-29T03:11:57.840Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": ".rootbash",
+        "parent_process_name": "bash",
+        "command_line": "/tmp/.rootbash -p -c echo suid_shell_uid=$(id -u); id",
+        "note": "SUID-root shell executed, uid 0"
+      },
+      {
+        "event_id": "evidence-pf-0006-672b52bd",
+        "timestamp": "2026-07-29T03:11:57.846Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "sudo",
+        "parent_process_name": "bash",
+        "command_line": "sudo -n bash -c id; echo via_sudo",
+        "attck": "T1548.003",
+        "extra": "emits uid_change events"
+      },
+      {
+        "event_id": "evidence-pf-0007-d2b7898f",
+        "timestamp": "2026-07-29T03:11:57.898Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "sudo",
+        "parent_process_name": "bash",
+        "command_line": "sudo -n find /etc -maxdepth 1 -name hostname -exec /bin/sh -c id; echo via_find_exec ;",
+        "attck": "T1548.003 GTFOBins"
+      },
+      {
+        "event_id": "evidence-pf-0008-2417b1d2",
+        "timestamp": "2026-07-29T03:11:57.932Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "process_name": "sh",
+        "parent_process_name": "find",
+        "command_line": "/bin/sh -c id; echo via_find_exec"
+      }
+    ],
+    "network": [
+      {
+        "event_id": "evidence-net-0001-07248840",
+        "timestamp": "2026-07-29T03:11:56Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "destination_ip": "204.168.178.42",
+        "destination_port": 443,
+        "protocol": "tcp"
+      }
+    ],
+    "alerts": [
+      {
+        "event_id": "evidence-al-0001-1ad025cb",
+        "timestamp": "2026-07-29T03:12:58.519Z",
+        "host": "ubuntu-2404-noble-amd64-base",
+        "rule": "File Permission Modification in Writable Directory",
+        "severity": "low",
+        "message": "only LOW \u2014 classic SUID-root-bash under-scored (detection gap)",
+        "raw_alert": {
+          "ts": "2026-07-29T03:12:58.519Z",
+          "rule": "File Permission Modification in Writable Directory",
+          "severity": "low",
+          "note": "only LOW \u2014 classic SUID-root-bash under-scored (detection gap)"
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "evidence-pf-0001-4c732aac",
+      "source": "alerts",
+      "timestamp": "2026-07-29T03:11:56.623Z",
+      "host": "ubuntu-2404-noble-amd64-base",
+      "fields": {
+        "process_name": "find",
+        "parent_process_name": "bash",
+        "command_line": "find /usr /bin /sbin -perm -4000 -type f",
+        "attck": "T1548.001"
+      }
+    },
+    {
+      "event_id": "evidence-pf-0002-b467801f",
+      "source": "alerts",
+      "timestamp": "2026-07-29T03:11:57.750Z",
+      "host": "ubuntu-2404-noble-amd64-base",
+      "fields": {
+        "process_name": "cp",
+        "parent_process_name": "bash",
+        "command_line": "cp /bin/bash /tmp/.rootbash",
+        "attck": "T1548.001"
+      }
+    },
+    {
+      "event_id": "evidence-pf-0003-1e4f28c9",
+      "source": "alerts",
+      "timestamp": "2026-07-29T03:11:57.752Z",
+      "host": "ubuntu-2404-noble-amd64-base",
+      "fields": {
+        "process_name": "cp",
+        "parent_process_name": "cp",
+        "command_line": "cp",
+        "file": "/tmp/.rootbash",
+        "cat": "file/creation"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "process_events",
+        "filter": {
+          "host": "ubuntu-2404-noble-amd64-base"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "network",
+        "filter": {
+          "host": "ubuntu-2404-noble-amd64-base"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "How did the attacker build the setuid-root shell?",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "process_events",
+          "filter": {
+            "host": "ubuntu-2404-noble-amd64-base"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "network",
+          "filter": {
+            "host": "ubuntu-2404-noble-amd64-base"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "How did the attacker build the setuid-root shell?",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-SecOps-ES",
+    "scenario": "case-04-privesc/q-c04-suid-how",
+    "answer": "D",
+    "accept": [
+      "D"
+    ],
+    "grading": "mcq",
+    "attck": [
+      "T1548.001"
+    ],
+    "sealed": true
+  }
+}

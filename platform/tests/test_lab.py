@@ -14,6 +14,7 @@ from app.experiment_report import render_markdown, summarize_run
 from app.orchestrator import Orchestrator, validate_pack
 from app.packs import merge_part, empty_pack, packs_present
 from app.policy import PolicyEngine
+from app.report import assign_evidence_confidence, compute_evidence_confidence
 from app.store import Store
 from app.bus import EventBus
 
@@ -51,11 +52,120 @@ def test_typed_upload_and_sealed_ground_truth():
     assert present["alert"] and present["telemetry"] and present["knowledge"] and present["ground_truth"]
 
 
+def test_truth_labels_only_reach_oracle_evidence():
+    """Shared alert/telemetry must not carry sealed answers; C6 oracle_evidence may."""
+    from app.context import build_context, public_alert
+    from app.conditions import get_condition
+    from app.telemetry import TelemetryGateway, TelemetryStore
+
+    pack = {
+        "incident_id": "seal-1",
+        "alert": {
+            "host": "h1",
+            "summary": "Investigate anomalous session",
+            "attck": ["T1021.001"],
+            "label": "malicious",
+        },
+        "telemetry": {
+            "alerts": [
+                {
+                    "event_id": "pub-1",
+                    "host": "h1",
+                    "timestamp": "2025-01-01T00:00:00Z",
+                    "message": "public log",
+                    "supports": "confirm",
+                }
+            ]
+        },
+        "oracle_evidence": [
+            {
+                "event_id": "gold-1",
+                "source": "alerts",
+                "host": "h1",
+                "timestamp": "2025-01-01T00:00:00Z",
+                "fields": {"message": "decisive gold step", "supports": "confirm"},
+            }
+        ],
+        "ground_truth": {"answer": "secret-answer", "label": "malicious", "sealed": True},
+        "scope": {"allowed_log_sources": ["alerts"], "hosts": ["h1"]},
+    }
+    alert = public_alert(pack["alert"])
+    assert "attck" not in alert and "label" not in alert
+    ctx = build_context(
+        condition_id="C0",
+        profile=get_condition("C0"),
+        pack=pack,
+        state={},
+        observations=[],
+        knowledge=[],
+        tools=[],
+    )
+    blob = json.dumps(ctx)
+    assert "secret-answer" not in blob
+    assert "T1021.001" not in blob
+    assert '"label": "malicious"' not in blob
+    assert "ground_truth" not in blob
+
+    gateway = TelemetryGateway(TelemetryStore(pack))
+    obs = gateway.query_events({"source": "alerts", "limit": 10})
+    assert obs["records"]
+    assert "supports" not in (obs["records"][0].get("fields") or {})
+
+    # Converted packs: gold/solution rows live only under oracle_evidence.
+    manifest_path = ROOT / "data" / "packs" / "manifest.json"
+    if manifest_path.exists():
+        manifest = json.loads(manifest_path.read_text())
+        for dataset in ("SOC-AgentBench", "ExCyTIn-Bench", "Cyber-AIT-ADS"):
+            row = next(r for r in manifest["packs"] if r["dataset"] == dataset)
+            converted = json.loads((ROOT / row["path"]).read_text())
+            tele_blob = json.dumps(converted.get("telemetry") or {})
+            gt = converted.get("ground_truth") or {}
+            answer = str(gt.get("answer") or "")
+            if answer and dataset == "ExCyTIn-Bench":
+                assert answer not in tele_blob
+            assert "investigation_graph_step" not in tele_blob
+            assert '"supports"' not in tele_blob
+            assert "gold_evidence" not in tele_blob
+            if dataset == "Cyber-AIT-ADS":
+                assert answer not in str((converted.get("alert") or {}).get("summary") or "")
+            oracle = json.dumps(converted.get("oracle_evidence") or {})
+            if dataset == "ExCyTIn-Bench":
+                assert "investigation_graph_step" in oracle or converted.get("oracle_evidence")
+
+
 def test_extract_json_from_fence():
     data = extract_json("noise ```json\n{\"verdict\": \"benign\"}\n```")
     assert data["verdict"] == "benign"
     trailing = extract_json('{"verdict": "malicious", "confidence": 0.4} trailing text')
     assert trailing["verdict"] == "malicious"
+
+
+def test_confidence_is_evidence_derived_not_self_reported():
+    records = [
+        {
+            "evidence_id": "event-1021",
+            "source": "process_events",
+            "fields": {
+                "process_name": "powershell.exe",
+                "parent_process_name": "WINWORD.EXE",
+                "command_line": "powershell.exe -nop -w hidden -enc JABz",
+            },
+        },
+        {
+            "evidence_id": "event-1024",
+            "source": "network",
+            "fields": {"destination_ip": "203.0.113.18", "process_name": "powershell.exe"},
+        },
+    ]
+    scored = compute_evidence_confidence(records)
+    assert 0.7 <= scored <= 0.93
+    report = assign_evidence_confidence(
+        {"verdict": "malicious", "confidence": 0.99, "summary": "model self-report"},
+        {"observations": [{"records": records}], "state": {"known_evidence": ["event-1021"]}},
+    )
+    assert report["confidence"] == scored
+    assert report["confidence"] != 0.99
+    assert report["confidence_source"] == "evidence"
 
 
 def test_secrets_are_masked(tmp_path):
@@ -134,7 +244,7 @@ async def test_c0_and_c3_runs(tmp_path, monkeypatch):
         await orch.run(run_id)
         run = store.get_run(run_id)
         assert run["status"] == "completed"
-        assert run["report"]["verdict"] in {"malicious", "benign", "inconclusive"}
+        assert run["report"]["verdict"] in {"malicious", "benign"}
         kinds = [event["kind"] for event in store.list_events(run_id)]
         assert "report_validated" in kinds
         if condition == "C3":
@@ -155,7 +265,7 @@ def test_experiment_report_markdown():
             {
                 "condition": "C0",
                 "status": "completed",
-                "verdict": "inconclusive",
+                "verdict": "benign",
                 "confidence": 0.4,
                 "evidence_ids": [],
                 "tool_observations": 0,
@@ -172,7 +282,8 @@ def test_experiment_report_markdown():
     }
     markdown = render_markdown(suite)
     assert "ollama:llama3.2:1b" in markdown
-    assert "| C0 |" in markdown
+    assert "| Model | Condition |" in markdown
+    assert "| ollama:llama3.2:1b | C0 |" in markdown
     assert "C5 skipped" in markdown
     summary = summarize_run(
         {
@@ -220,3 +331,46 @@ async def test_lab_suite_reference_writes_report(tmp_path, monkeypatch):
     assert (tmp_path / "reports" / "experiment-report.md").read_text().count("| C0 |")
     c3 = suite["runs"][1]
     assert c3["tool_observations"] >= 1
+
+
+@pytest.mark.asyncio
+async def test_converted_cyber_packs_validate_and_load(tmp_path, monkeypatch):
+    manifest_path = ROOT / "data" / "packs" / "manifest.json"
+    if not manifest_path.exists():
+        pytest.skip("converted packs not generated")
+    monkeypatch.setattr("app.orchestrator.STEP_DELAY", 0)
+    manifest = json.loads(manifest_path.read_text())
+    assert manifest["counts"]["secops"] == 54
+    assert manifest["counts"]["ait_ads"] == 79
+    assert manifest["counts"]["soc_agent"] >= 1
+    assert manifest["counts"]["excytin"] >= 1
+    assert manifest["counts"]["total"] == (
+        manifest["counts"]["secops"]
+        + manifest["counts"]["ait_ads"]
+        + manifest["counts"]["soc_agent"]
+        + manifest["counts"]["excytin"]
+    )
+    lab = Lab(db_path=tmp_path / "converted-packs.sqlite3")
+    # Validate a sample from each dataset rather than every pack (ExCyTIn is large).
+    samples = []
+    for dataset in ("Cyber-SecOps-ES", "Cyber-AIT-ADS", "SOC-AgentBench", "ExCyTIn-Bench"):
+        samples.append(next(r for r in manifest["packs"] if r["dataset"] == dataset))
+    for row in samples:
+        pack = json.loads((ROOT / row["path"]).read_text())
+        assert validate_pack(pack) == []
+        assert pack["incident_id"] == row["incident_id"]
+        loaded = lab.load_pack_file(row["path"])
+        assert loaded["incident_id"] == row["incident_id"]
+        assert sum(len(v) for v in loaded["pack"]["telemetry"].values()) == row["event_count"]
+    sample_path = next(
+        r["path"] for r in manifest["packs"] if r["dataset"] == "Cyber-SecOps-ES"
+    )
+    dataset = lab.load_pack_file(sample_path)
+    suite = await lab.run_suite(
+        dataset["id"],
+        provider="reference",
+        model="reference-investigator-v1",
+        report_dir=tmp_path / "reports",
+    )
+    assert len(suite["runs"]) == 8
+    assert all(row["status"] == "completed" for row in suite["runs"])

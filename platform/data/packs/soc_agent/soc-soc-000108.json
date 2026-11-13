@@ -1,0 +1,313 @@
+{
+  "incident_id": "soc-soc-000108",
+  "name": "SOC-AgentBench lsass_memory_dump_v9 (soc-000108)",
+  "source_benchmark": "SOC-AgentBench",
+  "source_scenario": "validation/lsass_memory_dump_v9/soc-000108",
+  "alert": {
+    "timestamp": "2025-07-19T00:00:00Z",
+    "host": "WS-066",
+    "user": "svc_backup",
+    "alert_type": "soc_agent_bench",
+    "summary": "Automated detection: Suspicious LSASS memory access detected. Investigate correlated telemetry.",
+    "title": "Suspicious LSASS memory access detected",
+    "severity": "high",
+    "assets": [
+      "WS-066",
+      "SRV-WEB-01"
+    ]
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts",
+      "process_events",
+      "network"
+    ],
+    "start": "2025-07-19T00:00:00Z",
+    "end": "2025-07-19T00:19:00Z",
+    "hosts": [
+      "WS-066"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "soc-000108-noise-0",
+        "timestamp": "2025-07-19T00:11:00Z",
+        "host": "WS-079",
+        "rule": "Suspicious LSASS memory access detected",
+        "severity": "high",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000108-noise-0",
+          "timestamp": "2025-07-19T00:11:00+00:00",
+          "source": "windows_security",
+          "host": "WS-079",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000108-noise-1",
+        "timestamp": "2025-07-19T00:09:00Z",
+        "host": "WS-001",
+        "rule": "Suspicious LSASS memory access detected",
+        "severity": "high",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000108-noise-1",
+          "timestamp": "2025-07-19T00:09:00+00:00",
+          "source": "windows_security",
+          "host": "WS-001",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000108-noise-2",
+        "timestamp": "2025-07-19T00:00:00Z",
+        "host": "WS-015",
+        "rule": "Suspicious LSASS memory access detected",
+        "severity": "high",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000108-noise-2",
+          "timestamp": "2025-07-19T00:00:00+00:00",
+          "source": "windows_security",
+          "host": "WS-015",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000108-noise-3",
+        "timestamp": "2025-07-19T00:19:00Z",
+        "host": "WS-025",
+        "rule": "Suspicious LSASS memory access detected",
+        "severity": "high",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000108-noise-3",
+          "timestamp": "2025-07-19T00:19:00+00:00",
+          "source": "windows_security",
+          "host": "WS-025",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      }
+    ],
+    "process_events": [
+      {
+        "event_id": "soc-000108-log-001",
+        "timestamp": "2025-07-19T00:05:00Z",
+        "host": "WS-066",
+        "process_name": "process",
+        "parent_process_name": "",
+        "command_line": "Primary indicator on WS-066: Suspicious LSASS memory access detected",
+        "user": "svc_backup",
+        "raw_log": {
+          "log_id": "soc-000108-log-001",
+          "timestamp": "2025-07-19T00:05:00+00:00",
+          "source": "sysmon",
+          "host": "WS-066",
+          "user": "svc_backup",
+          "message": "Primary indicator on WS-066: Suspicious LSASS memory access detected"
+        }
+      }
+    ],
+    "network": [
+      {
+        "event_id": "soc-000108-log-002",
+        "timestamp": "2025-07-19T00:08:00Z",
+        "host": "SRV-WEB-01",
+        "destination_ip": "203.0.113.190",
+        "protocol": "tcp",
+        "message": "Correlated alert on SRV-WEB-01",
+        "raw_log": {
+          "log_id": "soc-000108-log-002",
+          "timestamp": "2025-07-19T00:08:00+00:00",
+          "source": "wazuh",
+          "host": "SRV-WEB-01",
+          "message": "Correlated alert on SRV-WEB-01",
+          "src_ip": "203.0.113.190"
+        }
+      },
+      {
+        "event_id": "soc-000108-log-003",
+        "timestamp": "2025-07-19T00:12:00Z",
+        "host": "WS-066",
+        "destination_ip": "203.0.113.190",
+        "protocol": "tcp",
+        "message": "Network activity from 203.0.113.190 to WS-066",
+        "raw_log": {
+          "log_id": "soc-000108-log-003",
+          "timestamp": "2025-07-19T00:12:00+00:00",
+          "source": "suricata",
+          "host": "WS-066",
+          "message": "Network activity from 203.0.113.190 to WS-066",
+          "src_ip": "203.0.113.190"
+        }
+      },
+      {
+        "event_id": "soc-ioc-0001-740202ca",
+        "timestamp": "2025-07-19T00:15:00Z",
+        "host": "WS-066",
+        "destination_ip": "203.0.113.190",
+        "protocol": "tcp",
+        "message": "Observed IP 203.0.113.190"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ev-soc-000108-0",
+      "source": "alerts",
+      "timestamp": "2025-07-19T00:05:00Z",
+      "host": "WS-066",
+      "fields": {
+        "rule": "sysmon",
+        "severity": "high",
+        "message": "Primary indicator on WS-066: Suspicious LSASS memory access detected",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "ev-soc-000108-1",
+      "source": "alerts",
+      "timestamp": "2025-07-19T00:08:00Z",
+      "host": "SRV-WEB-01",
+      "fields": {
+        "rule": "wazuh",
+        "severity": "high",
+        "message": "Correlated alert on SRV-WEB-01",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "ev-soc-000108-2",
+      "source": "alerts",
+      "timestamp": "2025-07-19T00:12:00Z",
+      "host": "WS-066",
+      "fields": {
+        "rule": "suricata",
+        "severity": "high",
+        "message": "Network activity from 203.0.113.190 to WS-066",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "soc-ioc-rep-0001-830e3dfb",
+      "source": "network",
+      "timestamp": "2025-07-19T00:15:00Z",
+      "host": "WS-066",
+      "fields": {
+        "destination_ip": "203.0.113.190",
+        "protocol": "tcp",
+        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
+        "reputation": "malicious"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "WS-066"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "network",
+        "filter": {
+          "host": "WS-066"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Automated detection: Suspicious LSASS memory access detected. Investigate correlated telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "WS-066"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "network",
+          "filter": {
+            "host": "WS-066"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Automated detection: Suspicious LSASS memory access detected. Investigate correlated telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "SOC-AgentBench",
+    "scenario": "validation/lsass_memory_dump_v9/soc-000108",
+    "answer": "Credential dumping via LSASS memory access using procdump",
+    "accept": [
+      "Credential dumping via LSASS memory access using procdump",
+      "Credential dumping via LSASS memory access using procdump",
+      "credential_access"
+    ],
+    "grading": "exact_ci",
+    "incident_type": "credential_access",
+    "is_true_positive": true,
+    "label": "malicious",
+    "attck": [
+      "T1003.001"
+    ],
+    "ioc_enrichment": {
+      "203.0.113.190": {
+        "type": "ip",
+        "reputation": "malicious",
+        "category": "scanner"
+      }
+    },
+    "sealed": true
+  }
+}

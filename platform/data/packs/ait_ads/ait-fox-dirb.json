@@ -1,0 +1,1119 @@
+{
+  "incident_id": "ait-fox-dirb",
+  "name": "AIT-ADS fox/dirb",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "fox/dirb",
+  "alert": {
+    "timestamp": "2022-01-18T12:18:30Z",
+    "host": "fox",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on fox. Identify the attack stage from telemetry."
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-18T12:18:30Z",
+    "end": "2022-01-18T12:18:43Z",
+    "hosts": [
+      "fox"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-94f24ba9",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /.hta HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /.hta HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0002-439c857e",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /.hta_ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /.hta_ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0003-46d836eb",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /.htaccess HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /.htaccess HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0004-a2da59d2",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /.htaccess_ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /.htaccess_ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0005-1f904735",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /.htpasswd HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /.htpasswd HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0006-bc11c52c",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /.htpasswd_ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /.htpasswd_ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0007-4cfcf748",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /@ HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /@ HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0008-f6b59bb1",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~adm HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~adm HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0009-aa6a1037",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~admin HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~admin HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0010-ca22894c",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~administrator HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~administrator HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0011-16a31309",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~amanda HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~amanda HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0012-5ad84235",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~apache HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~apache HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0013-c0043e06",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~bin HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~bin HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0014-a4735d19",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~ftp HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~ftp HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0015-0b8511ab",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~guest HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~guest HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0016-2e06e707",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~http HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~http HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0017-a86c86b4",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~httpd HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~httpd HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0018-a0530172",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~log HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~log HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0019-c2f2fc17",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~logs HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~logs HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0020-3240f166",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~lp HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~lp HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0021-0e46f393",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~mail HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~mail HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0022-b11bce82",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~nobody HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~nobody HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0023-103b127f",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~operator HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~operator HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0024-85a81b12",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~root HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~root HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0025-fc3056d3",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~sys HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~sys HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0026-9580f824",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~sysadm HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~sysadm HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0027-fc7a8b1d",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~sysadmin HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~sysadmin HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0028-a46f0fcb",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~test HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~test HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0029-74252875",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~tmp HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~tmp HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0030-2d556985",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~user HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~user HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0031-ff09a0a4",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~webmaster HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~webmaster HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0032-39d08bd3",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~www HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /~www HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0033-a3524fcf",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:30.415932 2022] [authz_core:error] [pid 28490] [client 172.17.130.196:55334] AH01630: client denied by server configuration: /var/www/intranet.price.fox.org/.hta",
+        "raw_alert": {
+          "timestamp": 1642508310.42,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:30.415932 2022] [authz_core:error] [pid 28490] [client 172.17.130.196:55334] AH01630: client denied by server configuration: /var/www/intranet.price.fox.org/.hta"
+        }
+      },
+      {
+        "event_id": "ait-0034-96c7c1d8",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:30.418330 2022] [authz_core:error] [pid 28490] [client 172.17.130.196:55334] AH01630: client denied by server configuration: /var/www/intranet.price.fox.org/.hta_",
+        "raw_alert": {
+          "timestamp": 1642508310.42,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:30.418330 2022] [authz_core:error] [pid 28490] [client 172.17.130.196:55334] AH01630: client denied by server configuration: /var/www/intranet.price.fox.org/.hta_"
+        }
+      },
+      {
+        "event_id": "ait-0035-6cf3fa35",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:30.420679 2022] [authz_core:error] [pid 28490] [client 172.17.130.196:55334] AH01630: client denied by server configuration: /var/www/intranet.price.fox.org/.htaccess",
+        "raw_alert": {
+          "timestamp": 1642508310.42,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:30.420679 2022] [authz_core:error] [pid 28490] [client 172.17.130.196:55334] AH01630: client denied by server configuration: /var/www/intranet.price.fox.org/.htaccess"
+        }
+      },
+      {
+        "event_id": "ait-0036-0309cecc",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:30.423135 2022] [authz_core:error] [pid 28490] [client 172.17.130.196:55334] AH01630: client denied by server configuration: /var/www/intranet.price.fox.org/.htaccess_",
+        "raw_alert": {
+          "timestamp": 1642508310.42,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:30.423135 2022] [authz_core:error] [pid 28490] [client 172.17.130.196:55334] AH01630: client denied by server configuration: /var/www/intranet.price.fox.org/.htaccess_"
+        }
+      },
+      {
+        "event_id": "ait-0037-06f20935",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:30.425785 2022] [authz_core:error] [pid 28490] [client 172.17.130.196:55334] AH01630: client denied by server configuration: /var/www/intranet.price.fox.org/.htpasswd",
+        "raw_alert": {
+          "timestamp": 1642508310.43,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:30.425785 2022] [authz_core:error] [pid 28490] [client 172.17.130.196:55334] AH01630: client denied by server configuration: /var/www/intranet.price.fox.org/.htpasswd"
+        }
+      },
+      {
+        "event_id": "ait-0038-fc2c409a",
+        "timestamp": "2022-01-18T12:18:30Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:30.428305 2022] [authz_core:error] [pid 28490] [client 172.17.130.196:55334] AH01630: client denied by server configuration: /var/www/intranet.price.fox.org/.htpasswd_",
+        "raw_alert": {
+          "timestamp": 1642508310.43,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:30.428305 2022] [authz_core:error] [pid 28490] [client 172.17.130.196:55334] AH01630: client denied by server configuration: /var/www/intranet.price.fox.org/.htpasswd_"
+        }
+      },
+      {
+        "event_id": "ait-0039-74c2d208",
+        "timestamp": "2022-01-18T12:18:31Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:31.135011 2022] [php7:error] [pid 28567] [client 172.17.130.196:55338] script '/var/www/intranet.price.fox.org/admin.php' not found or unable to stat",
+        "raw_alert": {
+          "timestamp": 1642508311.14,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:31.135011 2022] [php7:error] [pid 28567] [client 172.17.130.196:55338] script '/var/www/intranet.price.fox.org/admin.php' not found or unable to stat"
+        }
+      },
+      {
+        "event_id": "ait-0040-deac895e",
+        "timestamp": "2022-01-18T12:18:35Z",
+        "host": "fox",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:35 +0000] \"GET /index.php HTTP/1.1\" 301 237 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508315.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:35 +0000] \"GET /index.php HTTP/1.1\" 301 237 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0041-fc7cf421",
+        "timestamp": "2022-01-18T12:18:35Z",
+        "host": "fox",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:35 +0000] \"GET /javascript HTTP/1.1\" 301 479 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508315.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:35 +0000] \"GET /javascript HTTP/1.1\" 301 479 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0042-cff63e5e",
+        "timestamp": "2022-01-18T12:18:35Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:35.587088 2022] [negotiation:error] [pid 28576] [client 172.17.130.196:55372] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.price.fox.org/index (None could be negotiated).",
+        "raw_alert": {
+          "timestamp": 1642508315.59,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:35.587088 2022] [negotiation:error] [pid 28576] [client 172.17.130.196:55372] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.price.fox.org/index (None could be negotiated)."
+        }
+      },
+      {
+        "event_id": "ait-0043-378c0e5d",
+        "timestamp": "2022-01-18T12:18:35Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:35.702191 2022] [php7:error] [pid 28576] [client 172.17.130.196:55372] script '/var/www/intranet.price.fox.org/info.php' not found or unable to stat",
+        "raw_alert": {
+          "timestamp": 1642508315.7,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:35.702191 2022] [php7:error] [pid 28576] [client 172.17.130.196:55372] script '/var/www/intranet.price.fox.org/info.php' not found or unable to stat"
+        }
+      },
+      {
+        "event_id": "ait-0044-bccc6014",
+        "timestamp": "2022-01-18T12:18:36Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:36 +0000] \"GET /lost+found HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508316.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:36 +0000] \"GET /lost+found HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0045-f809ac84",
+        "timestamp": "2022-01-18T12:18:38Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:38.196715 2022] [php7:error] [pid 28492] [client 172.17.130.196:55390] script '/var/www/intranet.price.fox.org/phpinfo.php' not found or unable to stat",
+        "raw_alert": {
+          "timestamp": 1642508318.2,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:38.196715 2022] [php7:error] [pid 28492] [client 172.17.130.196:55390] script '/var/www/intranet.price.fox.org/phpinfo.php' not found or unable to stat"
+        }
+      },
+      {
+        "event_id": "ait-0046-e5a1f8d6",
+        "timestamp": "2022-01-18T12:18:39Z",
+        "host": "fox",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:39 +0000] \"GET /server-status HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508319.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:39 +0000] \"GET /server-status HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0047-65e3b499",
+        "timestamp": "2022-01-18T12:18:39Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:39.850565 2022] [authz_core:error] [pid 28409] [client 172.17.130.196:55402] AH01630: client denied by server configuration: /var/www/intranet.price.fox.org/server-status",
+        "raw_alert": {
+          "timestamp": 1642508319.85,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:39.850565 2022] [authz_core:error] [pid 28409] [client 172.17.130.196:55402] AH01630: client denied by server configuration: /var/www/intranet.price.fox.org/server-status"
+        }
+      },
+      {
+        "event_id": "ait-0048-f0b33d40",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:42 +0000] \"GET /wp-admin HTTP/1.1\" 301 475 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508322.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:42 +0000] \"GET /wp-admin HTTP/1.1\" 301 475 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0049-6c90d7bd",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:42 +0000] \"GET /wp-content HTTP/1.1\" 301 479 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508322.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:42 +0000] \"GET /wp-content HTTP/1.1\" 301 479 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0050-a3e3742e",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:42 +0000] \"GET /wp-includes HTTP/1.1\" 301 481 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508322.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:42 +0000] \"GET /wp-includes HTTP/1.1\" 301 481 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0051-be69652e",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:42 +0000] \"GET /xmlrpc.php HTTP/1.1\" 405 225 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508322.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:42 +0000] \"GET /xmlrpc.php HTTP/1.1\" 405 225 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0052-c0396446",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:42 +0000] \"GET /javascript/ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508322.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:42 +0000] \"GET /javascript/ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0053-c0d711ad",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:42 +0000] \"GET /javascript/.hta HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508322.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:42 +0000] \"GET /javascript/.hta HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0054-497bf6cf",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:42 +0000] \"GET /javascript/.hta_ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508322.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:42 +0000] \"GET /javascript/.hta_ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0055-32847bd8",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:42 +0000] \"GET /javascript/.htaccess HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508322.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:42 +0000] \"GET /javascript/.htaccess HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0056-d6d9ae33",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:42 +0000] \"GET /javascript/.htaccess_ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508322.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:42 +0000] \"GET /javascript/.htaccess_ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0057-d2acdc57",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:42 +0000] \"GET /javascript/.htpasswd HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508322.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:42 +0000] \"GET /javascript/.htpasswd HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0058-6b8e59d2",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:42 +0000] \"GET /javascript/.htpasswd_ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508322.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:42 +0000] \"GET /javascript/.htpasswd_ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0059-85d2ff86",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:42 +0000] \"GET /javascript/@ HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508322.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:42 +0000] \"GET /javascript/@ HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0060-c0c29c38",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:42.326553 2022] [negotiation:error] [pid 28567] [client 172.17.130.196:55418] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.price.fox.org/wp-blog-header (None could be negotiated).",
+        "raw_alert": {
+          "timestamp": 1642508322.33,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:42.326553 2022] [negotiation:error] [pid 28567] [client 172.17.130.196:55418] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.price.fox.org/wp-blog-header (None could be negotiated)."
+        }
+      },
+      {
+        "event_id": "ait-0061-0d59633b",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:42.363997 2022] [negotiation:error] [pid 28574] [client 172.17.130.196:55420] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.price.fox.org/wp-config (None could be negotiated).",
+        "raw_alert": {
+          "timestamp": 1642508322.36,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:42.363997 2022] [negotiation:error] [pid 28574] [client 172.17.130.196:55420] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.price.fox.org/wp-config (None could be negotiated)."
+        }
+      },
+      {
+        "event_id": "ait-0062-668b2184",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:42.371591 2022] [negotiation:error] [pid 28574] [client 172.17.130.196:55420] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.price.fox.org/wp-cron (None could be negotiated).",
+        "raw_alert": {
+          "timestamp": 1642508322.37,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:42.371591 2022] [negotiation:error] [pid 28574] [client 172.17.130.196:55420] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.price.fox.org/wp-cron (None could be negotiated)."
+        }
+      },
+      {
+        "event_id": "ait-0063-c49c12a4",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:42.386230 2022] [negotiation:error] [pid 28574] [client 172.17.130.196:55420] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.price.fox.org/wp-links-opml (None could be negotiated).",
+        "raw_alert": {
+          "timestamp": 1642508322.39,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:42.386230 2022] [negotiation:error] [pid 28574] [client 172.17.130.196:55420] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.price.fox.org/wp-links-opml (None could be negotiated)."
+        }
+      },
+      {
+        "event_id": "ait-0064-9327e0ea",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:42.388583 2022] [negotiation:error] [pid 28574] [client 172.17.130.196:55420] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.price.fox.org/wp-load (None could be negotiated).",
+        "raw_alert": {
+          "timestamp": 1642508322.39,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:42.388583 2022] [negotiation:error] [pid 28574] [client 172.17.130.196:55420] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.price.fox.org/wp-load (None could be negotiated)."
+        }
+      },
+      {
+        "event_id": "ait-0065-5cfcdd2f",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:42.391043 2022] [negotiation:error] [pid 28574] [client 172.17.130.196:55420] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.price.fox.org/wp-login (None could be negotiated).",
+        "raw_alert": {
+          "timestamp": 1642508322.39,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:42.391043 2022] [negotiation:error] [pid 28574] [client 172.17.130.196:55420] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.price.fox.org/wp-login (None could be negotiated)."
+        }
+      },
+      {
+        "event_id": "ait-0066-6a24a16e",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:42.393375 2022] [negotiation:error] [pid 28574] [client 172.17.130.196:55420] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.price.fox.org/wp-mail (None could be negotiated).",
+        "raw_alert": {
+          "timestamp": 1642508322.39,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:42.393375 2022] [negotiation:error] [pid 28574] [client 172.17.130.196:55420] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.price.fox.org/wp-mail (None could be negotiated)."
+        }
+      },
+      {
+        "event_id": "ait-0067-e00c7fab",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:42.409048 2022] [negotiation:error] [pid 28574] [client 172.17.130.196:55420] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.price.fox.org/wp-settings (None could be negotiated).",
+        "raw_alert": {
+          "timestamp": 1642508322.41,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:42.409048 2022] [negotiation:error] [pid 28574] [client 172.17.130.196:55420] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.price.fox.org/wp-settings (None could be negotiated)."
+        }
+      },
+      {
+        "event_id": "ait-0068-e6ade175",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:42.411385 2022] [negotiation:error] [pid 28574] [client 172.17.130.196:55420] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.price.fox.org/wp-signup (None could be negotiated).",
+        "raw_alert": {
+          "timestamp": 1642508322.41,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:42.411385 2022] [negotiation:error] [pid 28574] [client 172.17.130.196:55420] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.price.fox.org/wp-signup (None could be negotiated)."
+        }
+      },
+      {
+        "event_id": "ait-0069-849cee22",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:42.416200 2022] [negotiation:error] [pid 28574] [client 172.17.130.196:55420] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.price.fox.org/wp-trackback (None could be negotiated).",
+        "raw_alert": {
+          "timestamp": 1642508322.42,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:42.416200 2022] [negotiation:error] [pid 28574] [client 172.17.130.196:55420] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.price.fox.org/wp-trackback (None could be negotiated)."
+        }
+      },
+      {
+        "event_id": "ait-0070-738394b4",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:42.525855 2022] [negotiation:error] [pid 28574] [client 172.17.130.196:55420] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.price.fox.org/xmlrpc (None could be negotiated).",
+        "raw_alert": {
+          "timestamp": 1642508322.53,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:42.525855 2022] [negotiation:error] [pid 28574] [client 172.17.130.196:55420] AH00687: Negotiation: discovered file(s) matching request: /var/www/intranet.price.fox.org/xmlrpc (None could be negotiated)."
+        }
+      },
+      {
+        "event_id": "ait-0071-e0b8fcd7",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:42.597679 2022] [php7:error] [pid 28574] [client 172.17.130.196:55420] script '/var/www/intranet.price.fox.org/xmlrpc_server.php' not found or unable to stat",
+        "raw_alert": {
+          "timestamp": 1642508322.6,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:42.597679 2022] [php7:error] [pid 28574] [client 172.17.130.196:55420] script '/var/www/intranet.price.fox.org/xmlrpc_server.php' not found or unable to stat"
+        }
+      },
+      {
+        "event_id": "ait-0072-ceba08e3",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:42.727856 2022] [autoindex:error] [pid 28409] [client 172.17.130.196:55422] AH01276: Cannot serve directory /usr/share/javascript/: No matching DirectoryIndex (index.html,index.cgi,index.pl,index.php,index.xhtml,index.htm) found, and server-generated directory index forbidden by Options directive",
+        "raw_alert": {
+          "timestamp": 1642508322.73,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:42.727856 2022] [autoindex:error] [pid 28409] [client 172.17.130.196:55422] AH01276: Cannot serve directory /usr/share/javascript/: No matching DirectoryIndex (index.html,index.cgi,index.pl,index.php,index.xhtml,index.htm) found, and server-generated directory index forbidden by Options directive"
+        }
+      },
+      {
+        "event_id": "ait-0073-6f108117",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:42.748848 2022] [authz_core:error] [pid 28409] [client 172.17.130.196:55422] AH01630: client denied by server configuration: /usr/share/javascript/.hta",
+        "raw_alert": {
+          "timestamp": 1642508322.75,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:42.748848 2022] [authz_core:error] [pid 28409] [client 172.17.130.196:55422] AH01630: client denied by server configuration: /usr/share/javascript/.hta"
+        }
+      },
+      {
+        "event_id": "ait-0074-27f0eab6",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:42.751073 2022] [authz_core:error] [pid 28409] [client 172.17.130.196:55422] AH01630: client denied by server configuration: /usr/share/javascript/.hta_",
+        "raw_alert": {
+          "timestamp": 1642508322.75,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:42.751073 2022] [authz_core:error] [pid 28409] [client 172.17.130.196:55422] AH01630: client denied by server configuration: /usr/share/javascript/.hta_"
+        }
+      },
+      {
+        "event_id": "ait-0075-de952059",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:42.753267 2022] [authz_core:error] [pid 28409] [client 172.17.130.196:55422] AH01630: client denied by server configuration: /usr/share/javascript/.htaccess",
+        "raw_alert": {
+          "timestamp": 1642508322.75,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:42.753267 2022] [authz_core:error] [pid 28409] [client 172.17.130.196:55422] AH01630: client denied by server configuration: /usr/share/javascript/.htaccess"
+        }
+      },
+      {
+        "event_id": "ait-0076-e90bbc26",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:42.755331 2022] [authz_core:error] [pid 28409] [client 172.17.130.196:55422] AH01630: client denied by server configuration: /usr/share/javascript/.htaccess_",
+        "raw_alert": {
+          "timestamp": 1642508322.76,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:42.755331 2022] [authz_core:error] [pid 28409] [client 172.17.130.196:55422] AH01630: client denied by server configuration: /usr/share/javascript/.htaccess_"
+        }
+      },
+      {
+        "event_id": "ait-0077-b35413b7",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:42.757412 2022] [authz_core:error] [pid 28409] [client 172.17.130.196:55422] AH01630: client denied by server configuration: /usr/share/javascript/.htpasswd",
+        "raw_alert": {
+          "timestamp": 1642508322.76,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:42.757412 2022] [authz_core:error] [pid 28409] [client 172.17.130.196:55422] AH01630: client denied by server configuration: /usr/share/javascript/.htpasswd"
+        }
+      },
+      {
+        "event_id": "ait-0078-a3bcae32",
+        "timestamp": "2022-01-18T12:18:42Z",
+        "host": "fox",
+        "detector": "AMiner: New event type.",
+        "message": "[Tue Jan 18 12:18:42.759693 2022] [authz_core:error] [pid 28409] [client 172.17.130.196:55422] AH01630: client denied by server configuration: /usr/share/javascript/.htpasswd_",
+        "raw_alert": {
+          "timestamp": 1642508322.76,
+          "detector": "AMiner: New event type.",
+          "message": "[Tue Jan 18 12:18:42.759693 2022] [authz_core:error] [pid 28409] [client 172.17.130.196:55422] AH01630: client denied by server configuration: /usr/share/javascript/.htpasswd_"
+        }
+      },
+      {
+        "event_id": "ait-0079-e3ec67a6",
+        "timestamp": "2022-01-18T12:18:43Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:43 +0000] \"GET /javascript/~adm HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508323.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:43 +0000] \"GET /javascript/~adm HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      },
+      {
+        "event_id": "ait-0080-c1de18c6",
+        "timestamp": "2022-01-18T12:18:43Z",
+        "host": "fox",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:43 +0000] \"GET /javascript/~admin HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508323.0,
+          "detector": "AMiner: New characters in Apache Access request.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:43 +0000] \"GET /javascript/~admin HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-94f24ba9",
+      "source": "alerts",
+      "timestamp": "2022-01-18T12:18:30Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /.hta HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /.hta HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-439c857e",
+      "source": "alerts",
+      "timestamp": "2022-01-18T12:18:30Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /.hta_ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /.hta_ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      }
+    },
+    {
+      "event_id": "ait-0003-46d836eb",
+      "source": "alerts",
+      "timestamp": "2022-01-18T12:18:30Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /.htaccess HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "raw_alert": {
+          "timestamp": 1642508310.0,
+          "detector": "AMiner: New status code in Apache Access log.",
+          "message": "172.17.130.196 - - [18/Jan/2022:12:18:30 +0000] \"GET /.htaccess HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\""
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on fox. Identify the attack stage from telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on fox. Identify the attack stage from telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "fox/dirb",
+    "answer": "dirb",
+    "accept": [
+      "dirb",
+      "dirb"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

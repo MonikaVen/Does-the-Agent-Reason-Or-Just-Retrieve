@@ -1,0 +1,141 @@
+{
+  "incident_id": "ait-santos-dnsteal",
+  "name": "AIT-ADS santos/dnsteal",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "santos/dnsteal",
+  "alert": {
+    "timestamp": "2022-01-16T08:00:27Z",
+    "host": "santos",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on santos. Identify the attack stage from telemetry."
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-16T08:00:27Z",
+    "end": "2022-01-16T08:00:27Z",
+    "hosts": [
+      "santos"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-18849c83",
+        "timestamp": "2022-01-16T08:00:27Z",
+        "host": "santos",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 16 08:00:27 dnsmasq[14569]: query[PTR] 234.2.229.10.in-addr.arpa from 10.229.2.25",
+        "raw_alert": {
+          "timestamp": 1642320027.0,
+          "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+          "message": "Jan 16 08:00:27 dnsmasq[14569]: query[PTR] 234.2.229.10.in-addr.arpa from 10.229.2.25"
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-18849c83",
+      "source": "alerts",
+      "timestamp": "2022-01-16T08:00:27Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 16 08:00:27 dnsmasq[14569]: query[PTR] 234.2.229.10.in-addr.arpa from 10.229.2.25",
+        "raw_alert": {
+          "timestamp": 1642320027.0,
+          "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+          "message": "Jan 16 08:00:27 dnsmasq[14569]: query[PTR] 234.2.229.10.in-addr.arpa from 10.229.2.25"
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on santos. Identify the attack stage from telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on santos. Identify the attack stage from telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "santos/dnsteal",
+    "answer": "dnsteal",
+    "accept": [
+      "dnsteal",
+      "dnsteal"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

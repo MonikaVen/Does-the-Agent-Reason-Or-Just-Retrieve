@@ -1,0 +1,310 @@
+{
+  "incident_id": "soc-soc-000002",
+  "name": "SOC-AgentBench c2_beacon_dns (soc-000002)",
+  "source_benchmark": "SOC-AgentBench",
+  "source_scenario": "train/c2_beacon_dns/soc-000002",
+  "alert": {
+    "timestamp": "2025-06-03T00:04:00Z",
+    "host": "WS-209",
+    "user": "mwilliams",
+    "alert_type": "soc_agent_bench",
+    "summary": "Automated detection: DNS beaconing pattern to rare domain. Investigate correlated telemetry.",
+    "title": "DNS beaconing pattern to rare domain",
+    "severity": "critical",
+    "assets": [
+      "WS-209",
+      "SRV-WEB-02"
+    ]
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts",
+      "network"
+    ],
+    "start": "2025-06-03T00:04:00Z",
+    "end": "2025-06-03T00:17:00Z",
+    "hosts": [
+      "WS-209"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "soc-000002-noise-0",
+        "timestamp": "2025-06-03T00:06:00Z",
+        "host": "WS-099",
+        "rule": "DNS beaconing pattern to rare domain",
+        "severity": "critical",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000002-noise-0",
+          "timestamp": "2025-06-03T00:06:00+00:00",
+          "source": "windows_security",
+          "host": "WS-099",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000002-noise-1",
+        "timestamp": "2025-06-03T00:17:00Z",
+        "host": "WS-079",
+        "rule": "DNS beaconing pattern to rare domain",
+        "severity": "critical",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000002-noise-1",
+          "timestamp": "2025-06-03T00:17:00+00:00",
+          "source": "windows_security",
+          "host": "WS-079",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000002-noise-2",
+        "timestamp": "2025-06-03T00:04:00Z",
+        "host": "WS-003",
+        "rule": "DNS beaconing pattern to rare domain",
+        "severity": "critical",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000002-noise-2",
+          "timestamp": "2025-06-03T00:04:00+00:00",
+          "source": "windows_security",
+          "host": "WS-003",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      },
+      {
+        "event_id": "soc-000002-noise-3",
+        "timestamp": "2025-06-03T00:09:00Z",
+        "host": "WS-031",
+        "rule": "DNS beaconing pattern to rare domain",
+        "severity": "critical",
+        "message": "Routine logon event",
+        "user": null,
+        "raw_alert": {
+          "log_id": "soc-000002-noise-3",
+          "timestamp": "2025-06-03T00:09:00+00:00",
+          "source": "windows_security",
+          "host": "WS-031",
+          "message": "Routine logon event",
+          "noise": true
+        }
+      }
+    ],
+    "network": [
+      {
+        "event_id": "soc-000002-log-001",
+        "timestamp": "2025-06-03T00:05:00Z",
+        "host": "WS-209",
+        "destination_ip": "",
+        "protocol": "tcp",
+        "message": "Primary indicator on WS-209: DNS beaconing pattern to rare domain",
+        "raw_log": {
+          "log_id": "soc-000002-log-001",
+          "timestamp": "2025-06-03T00:05:00+00:00",
+          "source": "zeek",
+          "host": "WS-209",
+          "user": "mwilliams",
+          "message": "Primary indicator on WS-209: DNS beaconing pattern to rare domain"
+        }
+      },
+      {
+        "event_id": "soc-000002-log-002",
+        "timestamp": "2025-06-03T00:08:00Z",
+        "host": "SRV-WEB-02",
+        "destination_ip": "203.0.113.59",
+        "protocol": "tcp",
+        "message": "Correlated alert on SRV-WEB-02",
+        "raw_log": {
+          "log_id": "soc-000002-log-002",
+          "timestamp": "2025-06-03T00:08:00+00:00",
+          "source": "wazuh",
+          "host": "SRV-WEB-02",
+          "message": "Correlated alert on SRV-WEB-02",
+          "src_ip": "203.0.113.59"
+        }
+      },
+      {
+        "event_id": "soc-000002-log-003",
+        "timestamp": "2025-06-03T00:12:00Z",
+        "host": "WS-209",
+        "destination_ip": "203.0.113.59",
+        "protocol": "tcp",
+        "message": "Network activity from 203.0.113.59 to WS-209",
+        "raw_log": {
+          "log_id": "soc-000002-log-003",
+          "timestamp": "2025-06-03T00:12:00+00:00",
+          "source": "suricata",
+          "host": "WS-209",
+          "message": "Network activity from 203.0.113.59 to WS-209",
+          "src_ip": "203.0.113.59"
+        }
+      },
+      {
+        "event_id": "soc-ioc-0001-2b658a3d",
+        "timestamp": "2025-06-03T00:15:00Z",
+        "host": "WS-209",
+        "destination_ip": "203.0.113.59",
+        "protocol": "tcp",
+        "message": "Observed IP 203.0.113.59"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ev-soc-000002-0",
+      "source": "alerts",
+      "timestamp": "2025-06-03T00:05:00Z",
+      "host": "WS-209",
+      "fields": {
+        "rule": "zeek",
+        "severity": "critical",
+        "message": "Primary indicator on WS-209: DNS beaconing pattern to rare domain",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "ev-soc-000002-1",
+      "source": "alerts",
+      "timestamp": "2025-06-03T00:08:00Z",
+      "host": "SRV-WEB-02",
+      "fields": {
+        "rule": "wazuh",
+        "severity": "critical",
+        "message": "Correlated alert on SRV-WEB-02",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "ev-soc-000002-2",
+      "source": "alerts",
+      "timestamp": "2025-06-03T00:12:00Z",
+      "host": "WS-209",
+      "fields": {
+        "rule": "suricata",
+        "severity": "critical",
+        "message": "Network activity from 203.0.113.59 to WS-209",
+        "supports": "confirm"
+      }
+    },
+    {
+      "event_id": "soc-ioc-rep-0001-03d1c02b",
+      "source": "network",
+      "timestamp": "2025-06-03T00:15:00Z",
+      "host": "WS-209",
+      "fields": {
+        "destination_ip": "203.0.113.59",
+        "protocol": "tcp",
+        "message": "IOC enrichment: {'type': 'ip', 'reputation': 'malicious', 'category': 'scanner'}",
+        "reputation": "malicious"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "WS-209"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "network",
+        "filter": {
+          "host": "WS-209"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Automated detection: DNS beaconing pattern to rare domain. Investigate correlated telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "WS-209"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "network",
+          "filter": {
+            "host": "WS-209"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Automated detection: DNS beaconing pattern to rare domain. Investigate correlated telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "SOC-AgentBench",
+    "scenario": "train/c2_beacon_dns/soc-000002",
+    "answer": "Periodic DNS queries to DGA domain indicating C2 beaconing",
+    "accept": [
+      "Periodic DNS queries to DGA domain indicating C2 beaconing",
+      "Periodic DNS queries to DGA domain indicating C2 beaconing",
+      "command_and_control"
+    ],
+    "grading": "exact_ci",
+    "incident_type": "command_and_control",
+    "is_true_positive": true,
+    "label": "malicious",
+    "attck": [
+      "T1071.004",
+      "T1568.002"
+    ],
+    "ioc_enrichment": {
+      "203.0.113.59": {
+        "type": "ip",
+        "reputation": "malicious",
+        "category": "scanner"
+      }
+    },
+    "sealed": true
+  }
+}

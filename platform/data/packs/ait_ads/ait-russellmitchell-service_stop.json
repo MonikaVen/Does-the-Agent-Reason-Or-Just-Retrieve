@@ -1,0 +1,168 @@
+{
+  "incident_id": "ait-russellmitchell-service_stop",
+  "name": "AIT-ADS russellmitchell/service_stop",
+  "source_benchmark": "Cyber-AIT-ADS",
+  "source_scenario": "russellmitchell/service_stop",
+  "alert": {
+    "timestamp": "2022-01-24T13:50:39Z",
+    "host": "russellmitchell",
+    "user": "unknown",
+    "alert_type": "ait_ads_stage",
+    "summary": "AIT-ADS multi-step stage candidate on russellmitchell. Identify the attack stage from telemetry."
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-24T13:50:39Z",
+    "end": "2022-01-24T13:50:39Z",
+    "hosts": [
+      "russellmitchell"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-0001-3a811bc8",
+        "timestamp": "2022-01-24T13:50:39Z",
+        "host": "russellmitchell",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1643032239.298:807): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=put comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "raw_alert": {
+          "timestamp": 1643032239.3,
+          "detector": "AMiner: New service_start parameter combination in Audit logs.",
+          "message": "type=SERVICE_START msg=audit(1643032239.298:807): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=put comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'"
+        }
+      },
+      {
+        "event_id": "ait-0002-a9659b0c",
+        "timestamp": "2022-01-24T13:50:39Z",
+        "host": "russellmitchell",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1643032239.298:808): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=put comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "raw_alert": {
+          "timestamp": 1643032239.3,
+          "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+          "message": "type=SERVICE_STOP msg=audit(1643032239.298:808): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=put comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'"
+        }
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-0001-3a811bc8",
+      "source": "alerts",
+      "timestamp": "2022-01-24T13:50:39Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1643032239.298:807): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=put comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "raw_alert": {
+          "timestamp": 1643032239.3,
+          "detector": "AMiner: New service_start parameter combination in Audit logs.",
+          "message": "type=SERVICE_START msg=audit(1643032239.298:807): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=put comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'"
+        }
+      }
+    },
+    {
+      "event_id": "ait-0002-a9659b0c",
+      "source": "alerts",
+      "timestamp": "2022-01-24T13:50:39Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1643032239.298:808): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=put comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "raw_alert": {
+          "timestamp": 1643032239.3,
+          "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+          "message": "type=SERVICE_STOP msg=audit(1643032239.298:808): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=put comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'"
+        }
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "AIT-ADS multi-step stage candidate on russellmitchell. Identify the attack stage from telemetry.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "AIT-ADS multi-step stage candidate on russellmitchell. Identify the attack stage from telemetry.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "Cyber-AIT-ADS",
+    "scenario": "russellmitchell/service_stop",
+    "answer": "service_stop",
+    "accept": [
+      "service_stop",
+      "service stop"
+    ],
+    "grading": "exact_ci",
+    "sealed": true
+  }
+}

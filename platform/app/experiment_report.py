@@ -48,13 +48,15 @@ def render_markdown(suite: dict[str, Any]) -> str:
         "",
         "## Results",
         "",
-        "| Condition | Status | Verdict | Confidence | Evidence IDs | Tool observations | Knowledge |",
-        "|---|---|---|---|---|---|---|",
+        "| Model | Condition | Status | Verdict | Confidence | Evidence IDs | Tool observations | Knowledge |",
+        "|---|---|---|---|---|---|---|---|",
     ]
+    model_label = f"{suite.get('provider')}:{suite.get('model')}"
     for row in suite["runs"]:
         evidence = ", ".join(row.get("evidence_ids") or []) or "—"
+        row_model = row.get("model") or model_label
         lines.append(
-            f"| {row['condition']} | {row['status']} | {row.get('verdict') or '—'} | "
+            f"| {row_model} | {row['condition']} | {row['status']} | {row.get('verdict') or '—'} | "
             f"{row.get('confidence') if row.get('confidence') is not None else '—'} | `{evidence}` | "
             f"{row.get('tool_observations', 0)} | {row.get('knowledge_retrievals', 0)} |"
         )
@@ -98,8 +100,9 @@ def render_markdown(suite: dict[str, Any]) -> str:
         "C0/C1 cannot search telemetry. C2 searches without a knowledge service. "
         "C3 is the full adaptive loop. C4 uses a fixed query pack instead of agent-chosen tools. "
         "C5 receives C3's evidence without C3's search order. C6 is given oracle evidence; C7 is given an oracle plan. "
-        "A small local model may stop early, cite poorly, or return inconclusive after validation — "
-        "that is a measured outcome, not a reason to swap in the reference investigator."
+        "A small local model may stop early, cite poorly, or fail validation and fall back to an "
+        "evidence-based malicious/benign verdict — that is a measured outcome, not a reason to "
+        "swap in the reference investigator."
     )
     return "\n".join(lines) + "\n"
 
