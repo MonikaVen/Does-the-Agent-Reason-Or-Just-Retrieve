@@ -291,7 +291,12 @@ class ModelGateway:
             "messages": _messages(system, user),
             "stream": False,
             "format": "json",
-            "options": {"temperature": 0.1, "num_predict": num_predict},
+            # Cap context to limit KV-cache RAM on small VMs (14B was OOM-killed at 8k ctx).
+            "options": {
+                "temperature": 0.1,
+                "num_predict": num_predict,
+                "num_ctx": 4096,
+            },
         }
         data = _http_json(f"{base}/api/chat", payload, {})
         message = (data.get("message") or {}).get("content") or data.get("response") or ""
