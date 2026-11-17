@@ -1,0 +1,210 @@
+{
+  "incident_id": "ait-sess-shaw-shaw-0016",
+  "name": "ATTEST-AIT shaw/shaw session 16",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "shaw/shaw/session-0016",
+  "alert": {
+    "timestamp": "2022-01-25T12:13:44Z",
+    "host": "shaw",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (6 alerts; detectors: AMiner: New event type., AMiner: New request method in Apache Access log., AMiner: New status code in Apache Access log.).",
+    "scenario": "shaw"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-25T12:13:44Z",
+    "end": "2022-01-25T12:25:47Z",
+    "hosts": [
+      "shaw"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-3d5d9db2",
+        "timestamp": "2022-01-25T12:13:44Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 25 12:13:44 dnsmasq[14635]: query[PTR] 71.34.70.10.in-addr.arpa from 10.70.34.215",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-5cf54c68",
+        "timestamp": "2022-01-25T12:24:19Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "cloud.dmz.thomasmurray.shaw.info:443 172.24.251.86 - - [25/Jan/2022:12:24:19 +0000] \"DELETE /remote.php/dav/files/cortiz/Documents/Example.odt HTTP/1.1\" 204 3541 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-170c87af",
+        "timestamp": "2022-01-25T12:24:19Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "cloud.dmz.thomasmurray.shaw.info:443 172.24.251.86 - - [25/Jan/2022:12:24:19 +0000] \"DELETE /remote.php/dav/files/cortiz/Documents/Example.odt HTTP/1.1\" 204 3541 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-6323d3d6",
+        "timestamp": "2022-01-25T12:25:43Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 25 12:25:43 collinsbecker-mail auth: pam_unix(dovecot:auth): authentication failure; logname= uid=0 euid=0 tty=dovecot ruser=jamie.fuller rhost=10.70.34.215  user=jamie.fuller",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-5e6b52e2",
+        "timestamp": "2022-01-25T12:25:47Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 25 12:25:47 collinsbecker-mail dovecot: imap-login: Disconnected (auth failed, 1 attempts in 4 secs): user=<jamie.fuller>, method=PLAIN, rip=10.70.34.215, lip=10.70.34.215, TLS, session=<b58VL2fWrNsKRiLX>",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-9178925f",
+        "timestamp": "2022-01-25T12:25:47Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 25 12:25:47 collinsbecker-mail HORDE: [horde] FAILED LOGIN for jamie.fuller to horde (10.70.35.55) [pid 5957 on line 198 of \"/usr/share/horde/login.php\"]",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-3d5d9db2",
+      "source": "alerts",
+      "timestamp": "2022-01-25T12:13:44Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 25 12:13:44 dnsmasq[14635]: query[PTR] 71.34.70.10.in-addr.arpa from 10.70.34.215",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-5cf54c68",
+      "source": "alerts",
+      "timestamp": "2022-01-25T12:24:19Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "cloud.dmz.thomasmurray.shaw.info:443 172.24.251.86 - - [25/Jan/2022:12:24:19 +0000] \"DELETE /remote.php/dav/files/cortiz/Documents/Example.odt HTTP/1.1\" 204 3541 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-170c87af",
+      "source": "alerts",
+      "timestamp": "2022-01-25T12:24:19Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "cloud.dmz.thomasmurray.shaw.info:443 172.24.251.86 - - [25/Jan/2022:12:24:19 +0000] \"DELETE /remote.php/dav/files/cortiz/Documents/Example.odt HTTP/1.1\" 204 3541 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (6 alerts; detectors: AMiner: New event type., AMiner: New request method in Apache Access log., AMiner: New status code in Apache Access log.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (6 alerts; detectors: AMiner: New event type., AMiner: New request method in Apache Access log., AMiner: New status code in Apache Access log.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "shaw/shaw/session-0016",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 6,
+      "kept_alerts": 6
+    },
+    "sealed": true
+  }
+}

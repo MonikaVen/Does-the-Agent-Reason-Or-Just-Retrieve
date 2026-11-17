@@ -1,0 +1,163 @@
+{
+  "incident_id": "ait-sess-wheeler-wheeler-0039",
+  "name": "ATTEST-AIT wheeler/wheeler session 39",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wheeler/wheeler/session-0039",
+  "alert": {
+    "timestamp": "2022-01-27T22:47:17Z",
+    "host": "wheeler",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (2 alerts; detectors: AMiner: Unusual occurrence frequencies of Apache Access request methods.).",
+    "scenario": "wheeler"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-27T22:47:17Z",
+    "end": "2022-01-27T22:57:30Z",
+    "hosts": [
+      "wheeler"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-fda9dd97",
+        "timestamp": "2022-01-27T22:47:17Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "172.27.183.160 - - [27/Jan/2022:22:47:17 +0000] \"POST /services/ajax.php/imp/poll HTTP/1.1\" 200 617 \"https://smtp.williams.wheeler.biz/imp/dynamic.php?page=mailbox\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-7e20392a",
+        "timestamp": "2022-01-27T22:57:30Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "172.27.183.160 - - [27/Jan/2022:22:57:30 +0000] \"POST /services/ajax.php/horde/topbarUpdate HTTP/1.1\" 200 2405 \"https://smtp.williams.wheeler.biz/imp/dynamic.php?page=mailbox\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-fda9dd97",
+      "source": "alerts",
+      "timestamp": "2022-01-27T22:47:17Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "172.27.183.160 - - [27/Jan/2022:22:47:17 +0000] \"POST /services/ajax.php/imp/poll HTTP/1.1\" 200 617 \"https://smtp.williams.wheeler.biz/imp/dynamic.php?page=mailbox\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-7e20392a",
+      "source": "alerts",
+      "timestamp": "2022-01-27T22:57:30Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "172.27.183.160 - - [27/Jan/2022:22:57:30 +0000] \"POST /services/ajax.php/horde/topbarUpdate HTTP/1.1\" 200 2405 \"https://smtp.williams.wheeler.biz/imp/dynamic.php?page=mailbox\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (2 alerts; detectors: AMiner: Unusual occurrence frequencies of Apache Access request methods.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (2 alerts; detectors: AMiner: Unusual occurrence frequencies of Apache Access request methods.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wheeler/wheeler/session-0039",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 2,
+      "kept_alerts": 2
+    },
+    "sealed": true
+  }
+}

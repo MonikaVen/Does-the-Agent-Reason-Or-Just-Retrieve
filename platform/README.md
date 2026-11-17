@@ -69,13 +69,13 @@ Keys stay in the local SQLite store and never enter trajectories.
 
 ### Converted cyber packs (C0–C7 dataset points)
 
-After downloading benchmarks, convert SecOps-ES, AIT-ADS, SOC-AgentBench, and
-ExCyTIn-Bench scenarios into incident packs the suite can load:
+After downloading benchmarks, convert SecOps-ES, AIT-ADS (stage + ATTEST sessions),
+SOC-AgentBench, and ExCyTIn-Bench scenarios into incident packs the suite can load:
 
 ```bash
 python3 scripts/download_benchmarks.py
 python3 scripts/convert_benchmarks_to_packs.py
-# packs → data/packs/{secops,ait_ads,soc_agent,excytin}/ + data/packs/manifest.json
+# packs → data/packs/{secops,ait_ads,ait_sessions,soc_agent,excytin}/ + data/packs/manifest.json
 
 # Example: run the full C0–C7 matrix on one converted pack
 python3 -m app suite --pack data/packs/secops/secops-q-c01-root-cause.json --provider ollama --model qwen2.5:3b

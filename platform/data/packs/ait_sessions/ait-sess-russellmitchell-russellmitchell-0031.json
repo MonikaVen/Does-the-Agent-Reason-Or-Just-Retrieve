@@ -1,0 +1,192 @@
+{
+  "incident_id": "ait-sess-russellmitchell-russellmitchell-0031",
+  "name": "ATTEST-AIT russellmitchell/russellmitchell session 31",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "russellmitchell/russellmitchell/session-0031",
+  "alert": {
+    "timestamp": "2022-01-22T09:46:27Z",
+    "host": "russellmitchell",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (4 alerts; detectors: AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+    "scenario": "russellmitchell"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-22T09:46:27Z",
+    "end": "2022-01-22T09:57:43Z",
+    "hosts": [
+      "russellmitchell"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-df0f228c",
+        "timestamp": "2022-01-22T09:46:27Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 22 09:46:27 dnsmasq[3326]: query[MX] davey.russellmitchell.com from 192.168.230.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-8a2a51ec",
+        "timestamp": "2022-01-22T09:51:28Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 22 09:51:28 dnsmasq[3326]: query[PTR] 75.231.168.192.in-addr.arpa from 192.168.231.56",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-ae92fc2f",
+        "timestamp": "2022-01-22T09:57:43Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 22 09:57:43 dnsmasq[3468]: query[PTR] 56.231.168.192.in-addr.arpa from 172.19.130.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-b1de190f",
+        "timestamp": "2022-01-22T09:57:43Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 22 09:57:43 dnsmasq[3326]: query[MX] smith.russellmitchell.com from 192.168.231.56",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-df0f228c",
+      "source": "alerts",
+      "timestamp": "2022-01-22T09:46:27Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 22 09:46:27 dnsmasq[3326]: query[MX] davey.russellmitchell.com from 192.168.230.4",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-8a2a51ec",
+      "source": "alerts",
+      "timestamp": "2022-01-22T09:51:28Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 22 09:51:28 dnsmasq[3326]: query[PTR] 75.231.168.192.in-addr.arpa from 192.168.231.56",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-ae92fc2f",
+      "source": "alerts",
+      "timestamp": "2022-01-22T09:57:43Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 22 09:57:43 dnsmasq[3468]: query[PTR] 56.231.168.192.in-addr.arpa from 172.19.130.4",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (4 alerts; detectors: AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (4 alerts; detectors: AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "russellmitchell/russellmitchell/session-0031",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 4,
+      "kept_alerts": 4
+    },
+    "sealed": true
+  }
+}

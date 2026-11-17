@@ -1,0 +1,163 @@
+{
+  "incident_id": "ait-sess-harrison-harrison-0021",
+  "name": "ATTEST-AIT harrison/harrison session 21",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "harrison/harrison/session-0021",
+  "alert": {
+    "timestamp": "2022-02-04T17:29:46Z",
+    "host": "harrison",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (2 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New status code in Apache Access log.).",
+    "scenario": "harrison"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-04T17:29:46Z",
+    "end": "2022-02-04T17:32:20Z",
+    "hosts": [
+      "harrison"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-a2bd1d80",
+        "timestamp": "2022-02-04T17:29:46Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.114}},\"@timestamp\":\"2022-02-04T17:29:46.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0.8858,\"norm\":{\"pct\":0.8858}},\"steal\":{\"pct\":0.0345,\"norm\":{\"pct\":0.0345}},\"system\":{\"pct\":0.0372,\"norm\":{\"pct\":0.0372}},\"user\":{\"pct\":0.04,\"norm\":{\"pct\":0.04}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":0.0023,\"norm\":{\"pct\":0.0023}}",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-480694f0",
+        "timestamp": "2022-02-04T17:32:20Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.237.1.238 - - [04/Feb/2022:17:32:20 +0000] \"GET /wp-content/plugins/wpdiscuz/assets/third-party/font-awesome-5.13.0/webfonts/fa-brands-400.woff2 HTTP/1.1\" 304 188 \"https://intranet.mannsmith.harrison.com/wp-content/plugins/wpdiscuz/assets/third-party/font-awesome-5.13.0/css/fa.min.css?ver=7.0.4\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-a2bd1d80",
+      "source": "alerts",
+      "timestamp": "2022-02-04T17:29:46Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.114}},\"@timestamp\":\"2022-02-04T17:29:46.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0.8858,\"norm\":{\"pct\":0.8858}},\"steal\":{\"pct\":0.0345,\"norm\":{\"pct\":0.0345}},\"system\":{\"pct\":0.0372,\"norm\":{\"pct\":0.0372}},\"user\":{\"pct\":0.04,\"norm\":{\"pct\":0.04}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":0.0023,\"norm\":{\"pct\":0.0023}}",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-480694f0",
+      "source": "alerts",
+      "timestamp": "2022-02-04T17:32:20Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.237.1.238 - - [04/Feb/2022:17:32:20 +0000] \"GET /wp-content/plugins/wpdiscuz/assets/third-party/font-awesome-5.13.0/webfonts/fa-brands-400.woff2 HTTP/1.1\" 304 188 \"https://intranet.mannsmith.harrison.com/wp-content/plugins/wpdiscuz/assets/third-party/font-awesome-5.13.0/css/fa.min.css?ver=7.0.4\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (2 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New status code in Apache Access log.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (2 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New status code in Apache Access log.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "harrison/harrison/session-0021",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 2,
+      "kept_alerts": 2
+    },
+    "sealed": true
+  }
+}

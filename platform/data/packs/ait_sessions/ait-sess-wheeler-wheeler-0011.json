@@ -1,0 +1,372 @@
+{
+  "incident_id": "ait-sess-wheeler-wheeler-0011",
+  "name": "ATTEST-AIT wheeler/wheeler session 11",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wheeler/wheeler/session-0011",
+  "alert": {
+    "timestamp": "2022-01-26T07:17:54Z",
+    "host": "wheeler",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (24 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: High entropy in Apache Access request., AMiner: New event type.).",
+    "scenario": "wheeler"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-26T07:17:54Z",
+    "end": "2022-01-26T08:00:19Z",
+    "hosts": [
+      "wheeler"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-9cf41ca6",
+        "timestamp": "2022-01-26T07:17:54Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.38.243.125 - - [26/Jan/2022:07:17:54 +0000] \"GET /turba/contact.php?source=Fko1hLn3DvqJhJtcDb8ALog&key=Lui63uMkJXB2Sq1RSFW_wOa&view=Contact HTTP/1.1\" 200 18831 \"https://mail.flores.wheeler.biz/turba/add.php\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-67b0277e",
+        "timestamp": "2022-01-26T07:18:21Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.38.243.125 - - [26/Jan/2022:07:18:21 +0000] \"GET /turba/contact.php?source=Fko1hLn3DvqJhJtcDb8ALog&key=L2f0JWaib8-FG84xZjuhaqU HTTP/1.1\" 200 19337 \"https://mail.flores.wheeler.biz/turba/browse.php\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-a382d97e",
+        "timestamp": "2022-01-26T07:27:52Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "192.168.3.138 - - [26/Jan/2022:07:27:52 +0000] \"GET /favicon.ico HTTP/1.1\" 404 396 \"http://intranet.flores.wheeler.biz/\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-a3217c9a",
+        "timestamp": "2022-01-26T07:28:04Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 26 07:28:04 dnsmasq[14167]: query[A] mail.flores.wheeler.biz from 192.168.0.242",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-9d21772e",
+        "timestamp": "2022-01-26T07:28:16Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643182096.849:2700): pid=16615 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"heather.jones\" exe=\"/usr/lib/dovecot/auth\" hostname=10.38.242.195 addr=10.38.242.195 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-f4f9be8c",
+        "timestamp": "2022-01-26T07:28:16Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643182096.849:2701): pid=16615 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"heather.jones\" exe=\"/usr/lib/dovecot/auth\" hostname=10.38.242.195 addr=10.38.242.195 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-8a8fe382",
+        "timestamp": "2022-01-26T07:29:30Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"event\":{\"duration\":620236,\"dataset\":\"system.cpu\",\"module\":\"system\"},\"@version\":\"1\",\"tags\":[\"beats_input_raw_event\"],\"@timestamp\":\"2022-01-26T07:29:30.510Z\",\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.0599}},\"agent\":{\"ephemeral_id\":\"ff1ada7a-b5be-4a46-bf74-39dc388f9556\",\"hostname\":\"intranet-server\",\"version\":\"7.13.2\",\"id\":\"47b93423-92d0-4618-b91a-c441d675c426\",\"name\":\"intranet-server\",\"type\":",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-04ee79e4",
+        "timestamp": "2022-01-26T07:36:53Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643182613.398:2726): pid=16700 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"aaron.miah\" exe=\"/usr/lib/dovecot/auth\" hostname=10.38.242.195 addr=10.38.242.195 terminal=dovecot res=failed'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-dc20c453",
+        "timestamp": "2022-01-26T07:37:07Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643182627.070:2728): pid=16700 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"aaron.miah\" exe=\"/usr/lib/dovecot/auth\" hostname=10.38.242.195 addr=10.38.242.195 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-4126eb85",
+        "timestamp": "2022-01-26T07:40:05Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 26 07:40:05 dnsmasq[12225]: query[A] location.services.mozilla.com from 172.27.182.162",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-cb2814c7",
+        "timestamp": "2022-01-26T07:40:07Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 26 07:40:07 dnsmasq[12225]: query[A] content-signature-2.cdn.mozilla.net from 172.27.182.162",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-2625f404",
+        "timestamp": "2022-01-26T07:40:10Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 07:40:10 dnsmasq[12225]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 172.27.182.162",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-6f71bfb5",
+        "timestamp": "2022-01-26T07:54:02Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 07:54:02 dnsmasq[14167]: query[A] intranet.flores.wheeler.biz from 10.38.243.125",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-15f2b514",
+        "timestamp": "2022-01-26T07:55:20Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643183720.611:2767): pid=16928 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"victor.boyd\" exe=\"/usr/lib/dovecot/auth\" hostname=10.38.242.195 addr=10.38.242.195 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-58e711c9",
+        "timestamp": "2022-01-26T07:55:20Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643183720.611:2768): pid=16928 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"victor.boyd\" exe=\"/usr/lib/dovecot/auth\" hostname=10.38.242.195 addr=10.38.242.195 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-6d735b7f",
+        "timestamp": "2022-01-26T07:57:53Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-26 07:57:53 jwells/172.27.180.248:37823 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-5762c13f",
+        "timestamp": "2022-01-26T07:57:53Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-26 07:57:53 jwells/172.27.180.248:37823 TLS Error: TLS handshake failed",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-dd887376",
+        "timestamp": "2022-01-26T07:57:53Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-26 07:57:53 jwells/172.27.180.248:37823 TLS: move_session: dest=TM_LAME_DUCK src=TM_ACTIVE reinit_src=1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-7dadd62e",
+        "timestamp": "2022-01-26T07:59:34Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 07:59:34 dnsmasq[12225]: query[MX] flores.wheeler.biz from 172.27.181.174",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-026efebe",
+        "timestamp": "2022-01-26T07:59:39Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 07:59:39 dnsmasq[14167]: query[MX] khanwood.wheeler.biz from 10.38.242.195",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-e15b0aad",
+        "timestamp": "2022-01-26T07:59:40Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 07:59:40 dnsmasq[14167]: query[AAAA] d2nxq2uap88usk.cloudfront.net from 192.168.2.226",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-6e2af7da",
+        "timestamp": "2022-01-26T08:00:19Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 08:00:19 dnsmasq[12225]: query[A] 3x6-.454-.Dcy1arr3FIiwCAl**/0OMfldlsG3b0wSSG5lfhhzFevtr4ZER3R-.mptY0ZLWBMLrpy5*eIi30tQqmKzGvRpwIYG*hZsP9MV3dMBfX83-.wzIzS/I8fkLw*LrA4x89dbaZAdTAmVigUhcgffXlYv4eKgcH6O3-.customers_2020.xlsx.mttydlmfikviqpumsexff.info from 172.27.180.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-40f47700",
+        "timestamp": "2022-01-26T08:00:19Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 26 08:00:19 dnsmasq[12225]: query[A] 3x6-.454-.Dcy1arr3FIiwCAl**/0OMfldlsG3b0wSSG5lfhhzFevtr4ZER3R-.mptY0ZLWBMLrpy5*eIi30tQqmKzGvRpwIYG*hZsP9MV3dMBfX83-.wzIzS/I8fkLw*LrA4x89dbaZAdTAmVigUhcgffXlYv4eKgcH6O3-.customers_2020.xlsx.mttydlmfikviqpumsexff.info from 172.27.180.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-0c235a38",
+        "timestamp": "2022-01-26T08:00:19Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query records.",
+        "message": "Jan 26 08:00:19 dnsmasq[12225]: query[A] 3x6-.454-.Dcy1arr3FIiwCAl**/0OMfldlsG3b0wSSG5lfhhzFevtr4ZER3R-.mptY0ZLWBMLrpy5*eIi30tQqmKzGvRpwIYG*hZsP9MV3dMBfX83-.wzIzS/I8fkLw*LrA4x89dbaZAdTAmVigUhcgffXlYv4eKgcH6O3-.customers_2020.xlsx.mttydlmfikviqpumsexff.info from 172.27.180.4",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-9cf41ca6",
+      "source": "alerts",
+      "timestamp": "2022-01-26T07:17:54Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.38.243.125 - - [26/Jan/2022:07:17:54 +0000] \"GET /turba/contact.php?source=Fko1hLn3DvqJhJtcDb8ALog&key=Lui63uMkJXB2Sq1RSFW_wOa&view=Contact HTTP/1.1\" 200 18831 \"https://mail.flores.wheeler.biz/turba/add.php\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-67b0277e",
+      "source": "alerts",
+      "timestamp": "2022-01-26T07:18:21Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.38.243.125 - - [26/Jan/2022:07:18:21 +0000] \"GET /turba/contact.php?source=Fko1hLn3DvqJhJtcDb8ALog&key=L2f0JWaib8-FG84xZjuhaqU HTTP/1.1\" 200 19337 \"https://mail.flores.wheeler.biz/turba/browse.php\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-a382d97e",
+      "source": "alerts",
+      "timestamp": "2022-01-26T07:27:52Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "192.168.3.138 - - [26/Jan/2022:07:27:52 +0000] \"GET /favicon.ico HTTP/1.1\" 404 396 \"http://intranet.flores.wheeler.biz/\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (24 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: High entropy in Apache Access request., AMiner: New event type.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (24 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: High entropy in Apache Access request., AMiner: New event type.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wheeler/wheeler/session-0011",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 24,
+      "kept_alerts": 24
+    },
+    "sealed": true
+  }
+}

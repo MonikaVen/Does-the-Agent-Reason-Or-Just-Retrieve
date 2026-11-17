@@ -1,0 +1,183 @@
+{
+  "incident_id": "ait-sess-wheeler-wheeler-0064",
+  "name": "ATTEST-AIT wheeler/wheeler session 64",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wheeler/wheeler/session-0064",
+  "alert": {
+    "timestamp": "2022-01-30T04:12:28Z",
+    "host": "wheeler",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (3 alerts; detectors: AMiner: Unusual occurrence frequencies of DNS log events., AMiner: Unusual occurrence frequencies of DNS query IPs., AMiner: Unusual occurren",
+    "scenario": "wheeler"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-30T04:12:28Z",
+    "end": "2022-01-30T04:12:28Z",
+    "hosts": [
+      "wheeler"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-10568fcd",
+        "timestamp": "2022-01-30T04:12:28Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 30 04:12:28 dnsmasq[12225]: query[SRV] _http._tcp.security.ubuntu.com from 172.27.181.245",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-d6d7e642",
+        "timestamp": "2022-01-30T04:12:28Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 30 04:12:28 dnsmasq[12225]: query[SRV] _http._tcp.security.ubuntu.com from 172.27.181.245",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-c33aabc7",
+        "timestamp": "2022-01-30T04:12:28Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query records.",
+        "message": "Jan 30 04:12:28 dnsmasq[12225]: query[SRV] _http._tcp.security.ubuntu.com from 172.27.181.245",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-10568fcd",
+      "source": "alerts",
+      "timestamp": "2022-01-30T04:12:28Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 30 04:12:28 dnsmasq[12225]: query[SRV] _http._tcp.security.ubuntu.com from 172.27.181.245",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-d6d7e642",
+      "source": "alerts",
+      "timestamp": "2022-01-30T04:12:28Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 30 04:12:28 dnsmasq[12225]: query[SRV] _http._tcp.security.ubuntu.com from 172.27.181.245",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-c33aabc7",
+      "source": "alerts",
+      "timestamp": "2022-01-30T04:12:28Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query records.",
+        "message": "Jan 30 04:12:28 dnsmasq[12225]: query[SRV] _http._tcp.security.ubuntu.com from 172.27.181.245",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (3 alerts; detectors: AMiner: Unusual occurrence frequencies of DNS log events., AMiner: Unusual occurrence frequencies of DNS query IPs., AMiner: Unusual occurren",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (3 alerts; detectors: AMiner: Unusual occurrence frequencies of DNS log events., AMiner: Unusual occurrence frequencies of DNS query IPs., AMiner: Unusual occurren",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wheeler/wheeler/session-0064",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 3,
+      "kept_alerts": 3
+    },
+    "sealed": true
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "incident_id": "ait-sess-shaw-shaw-0006",
+  "name": "ATTEST-AIT shaw/shaw session 6",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "shaw/shaw/session-0006",
+  "alert": {
+    "timestamp": "2022-01-25T03:22:37Z",
+    "host": "shaw",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (3 alerts; detectors: AMiner: New event type., AMiner: New service_start parameter combination in Audit logs., AMiner: New service_stop parameter combination in Audit",
+    "scenario": "shaw"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-25T03:22:37Z",
+    "end": "2022-01-25T03:29:10Z",
+    "hosts": [
+      "shaw"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-507c4db6",
+        "timestamp": "2022-01-25T03:22:37Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1643080957.599:177): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=ua-messaging comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-60d03989",
+        "timestamp": "2022-01-25T03:22:37Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1643080957.599:178): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=ua-messaging comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-bd85586f",
+        "timestamp": "2022-01-25T03:29:10Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 25 03:29:10 internal-share kernel: [68656.566424] hrtimer: interrupt took 16611149 ns",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-507c4db6",
+      "source": "alerts",
+      "timestamp": "2022-01-25T03:22:37Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1643080957.599:177): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=ua-messaging comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-60d03989",
+      "source": "alerts",
+      "timestamp": "2022-01-25T03:22:37Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1643080957.599:178): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=ua-messaging comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-bd85586f",
+      "source": "alerts",
+      "timestamp": "2022-01-25T03:29:10Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 25 03:29:10 internal-share kernel: [68656.566424] hrtimer: interrupt took 16611149 ns",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (3 alerts; detectors: AMiner: New event type., AMiner: New service_start parameter combination in Audit logs., AMiner: New service_stop parameter combination in Audit",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (3 alerts; detectors: AMiner: New event type., AMiner: New service_start parameter combination in Audit logs., AMiner: New service_stop parameter combination in Audit",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "shaw/shaw/session-0006",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 3,
+      "kept_alerts": 3
+    },
+    "sealed": true
+  }
+}

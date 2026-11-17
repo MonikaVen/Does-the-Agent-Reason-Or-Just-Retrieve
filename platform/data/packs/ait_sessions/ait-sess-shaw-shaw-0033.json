@@ -1,0 +1,237 @@
+{
+  "incident_id": "ait-sess-shaw-shaw-0033",
+  "name": "ATTEST-AIT shaw/shaw session 33",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "shaw/shaw/session-0033",
+  "alert": {
+    "timestamp": "2022-01-26T06:21:16Z",
+    "host": "shaw",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (9 alerts; detectors: AMiner: New event type., AMiner: New service_start parameter combination in Audit logs., AMiner: New service_stop parameter combination in Audit",
+    "scenario": "shaw"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-26T06:21:16Z",
+    "end": "2022-01-26T06:39:12Z",
+    "hosts": [
+      "shaw"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-c343491f",
+        "timestamp": "2022-01-26T06:21:16Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 26 06:21:16 inet-firewall polkitd[24002]: started daemon version 0.105 using authority implementation `local' version `0.105'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-d3db165a",
+        "timestamp": "2022-01-26T06:21:16Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1643178076.338:373): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=polkit comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-26d3c448",
+        "timestamp": "2022-01-26T06:21:16Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1643178076.338:374): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=polkit comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-8eeac0fe",
+        "timestamp": "2022-01-26T06:25:02Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 26 06:25:02 mail liblogging-stdlog:  [origin software=\"rsyslogd\" swVersion=\"8.24.0\" x-pid=\"502\" x-info=\"http://www.rsyslog.com\"] rsyslogd was HUPed",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-e39f4324",
+        "timestamp": "2022-01-26T06:25:04Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 26 06:25:04 webserver apachectl[5393]: AH00548: NameVirtualHost has no effect and will be removed in the next release /etc/apache2/sites-enabled/000-catch-all.conf:1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-3811b164",
+        "timestamp": "2022-01-26T06:25:04Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 26 06:25:04 webserver rsyslogd:  [origin software=\"rsyslogd\" swVersion=\"8.32.0\" x-pid=\"975\" x-info=\"http://www.rsyslog.com\"] rsyslogd was HUPed",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-6f584abb",
+        "timestamp": "2022-01-26T06:25:05Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "[Wed Jan 26 06:25:05.242761 2022] [ssl:warn] [pid 29274] AH01909: 000-catch-all:443:0 server certificate does NOT include an ID which matches the server name",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-ba234abe",
+        "timestamp": "2022-01-26T06:33:37Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 06:33:37 dnsmasq[14596]: query[A] w.iplsc.com from 192.168.188.66",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-8493a193",
+        "timestamp": "2022-01-26T06:39:12Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 06:39:12 dnsmasq[14596]: query[AAAA] adservice.google.at from 192.168.188.66",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-c343491f",
+      "source": "alerts",
+      "timestamp": "2022-01-26T06:21:16Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 26 06:21:16 inet-firewall polkitd[24002]: started daemon version 0.105 using authority implementation `local' version `0.105'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-d3db165a",
+      "source": "alerts",
+      "timestamp": "2022-01-26T06:21:16Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1643178076.338:373): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=polkit comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-26d3c448",
+      "source": "alerts",
+      "timestamp": "2022-01-26T06:21:16Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1643178076.338:374): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=polkit comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (9 alerts; detectors: AMiner: New event type., AMiner: New service_start parameter combination in Audit logs., AMiner: New service_stop parameter combination in Audit",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (9 alerts; detectors: AMiner: New event type., AMiner: New service_start parameter combination in Audit logs., AMiner: New service_stop parameter combination in Audit",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "shaw/shaw/session-0033",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 9,
+      "kept_alerts": 9
+    },
+    "sealed": true
+  }
+}

@@ -1,0 +1,453 @@
+{
+  "incident_id": "ait-sess-shaw-shaw-0010",
+  "name": "ATTEST-AIT shaw/shaw session 10",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "shaw/shaw/session-0010",
+  "alert": {
+    "timestamp": "2022-01-25T06:34:02Z",
+    "host": "shaw",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (33 alerts; detectors: AMiner: New characters in Apache Access referer., AMiner: New characters in Apache Access request., AMiner: New event type.).",
+    "scenario": "shaw"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-25T06:34:02Z",
+    "end": "2022-01-25T07:32:41Z",
+    "hosts": [
+      "shaw"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-c104fc4a",
+        "timestamp": "2022-01-25T06:34:02Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.24.249.224 - - [25/Jan/2022:06:34:02 +0000] \"GET /mnemo/memo.php?memo=1zXr0S4sgS6vmZX7ppdXGBO&memolist=5Y1Q63N-3ZwGCWLbafXSieM&actionID=modify_memo HTTP/1.1\" 200 6798 \"https://mail.thomasmurray.shaw.info/mnemo/list.php\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-eb975775",
+        "timestamp": "2022-01-25T06:34:39Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "172.24.249.224 - - [25/Jan/2022:06:34:39 +0000] \"GET /mnemo/memo.php?memo=1zXr0S4sgS6vmZX7ppdXGBO&memolist=5Y1Q63N-3ZwGCWLbafXSieM&actionID=delete_memos HTTP/1.1\" 302 1043 \"https://mail.thomasmurray.shaw.info/mnemo/memo.php?memo=1zXr0S4sgS6vmZX7ppdXGBO&memolist=5Y1Q63N-3ZwGCWLbafXSieM&actionID=modify_memo\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-ad7dbebd",
+        "timestamp": "2022-01-25T06:34:47Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.24.249.224 - - [25/Jan/2022:06:34:47 +0000] \"GET /mnemo/memo.php?memo=xzsomDmRBFykRLIBVOqj86w&memolist=5Y1Q63N-3ZwGCWLbafXSieM&actionID=modify_memo HTTP/1.1\" 200 6922 \"https://mail.thomasmurray.shaw.info/mnemo/list.php\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-13c2a845",
+        "timestamp": "2022-01-25T06:35:13Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "172.24.249.224 - - [25/Jan/2022:06:35:13 +0000] \"GET /mnemo/memo.php?memo=xzsomDmRBFykRLIBVOqj86w&memolist=5Y1Q63N-3ZwGCWLbafXSieM&actionID=delete_memos HTTP/1.1\" 302 1043 \"https://mail.thomasmurray.shaw.info/mnemo/memo.php?memo=xzsomDmRBFykRLIBVOqj86w&memolist=5Y1Q63N-3ZwGCWLbafXSieM&actionID=modify_memo\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-fd0ccb24",
+        "timestamp": "2022-01-25T06:39:34Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 25 06:39:34 mail HORDE: [nag] PHP ERROR: Declaration of Horde_Form_Type_country::init($prompt = NULL) should be compatible with Horde_Form_Type_enum::init($values, $prompt = NULL) [pid 3647 on line 0 of \"/usr/share/php/Horde/Form/Type.php\"]",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-5569b413",
+        "timestamp": "2022-01-25T06:51:08Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "172.24.249.224 - - [25/Jan/2022:06:51:08 +0000] \"POST /services/ajax.php/horde/topbarUpdate HTTP/1.1\" 200 2787 \"https://mail.thomasmurray.shaw.info/kronolith/\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-1d7024a3",
+        "timestamp": "2022-01-25T06:51:57Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 25 06:51:57 dnsmasq[14596]: query[A] motd.ubuntu.com from 192.168.188.162",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-ffbd16db",
+        "timestamp": "2022-01-25T07:01:57Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "172.24.249.224 - - [25/Jan/2022:07:01:57 +0000] \"GET /imp/js/message-dimp.js?v=b2b582864b8fa969bd5860bc72f0d3da HTTP/1.1\" 200 3039 \"https://mail.thomasmurray.shaw.info/imp/dynamic.php?page=message&buid=12&mailbox=SU5CT1g&token=ZZ3pkMNOsrWIc-0KoOV9X7F&uniq=1643094116953\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-97ceb4d7",
+        "timestamp": "2022-01-25T07:03:20Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 25 07:03:20 dnsmasq[14596]: query[A] mailserver.thomasmurray.shaw.info from 172.24.251.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-427e1ba8",
+        "timestamp": "2022-01-25T07:03:21Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.24.249.224 - - [25/Jan/2022:07:03:21 +0000] \"GET /imp/view.php?imp_img_view=view_thumbnail&actionID=view_attach&id=2&muid=%7B5%7DINBOX9&view_token=ZZ3pkMNOsrWIc-0KoOV9X7F HTTP/1.1\" 200 1217 \"https://mail.thomasmurray.shaw.info/imp/dynamic.php?page=mailbox\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-72907295",
+        "timestamp": "2022-01-25T07:03:33Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 25 07:03:33 dnsmasq[14635]: query[AAAA] collinsbecker-mail from 10.70.34.215",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-e293dad3",
+        "timestamp": "2022-01-25T07:03:33Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 25 07:03:33 dnsmasq[14635]: query[AAAA] collinsbecker-mail from 10.70.34.215",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-f922e1c0",
+        "timestamp": "2022-01-25T07:10:11Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "cloud.dmz.thomasmurray.shaw.info:443 172.24.251.86 - - [25/Jan/2022:07:10:11 +0000] \"GET / HTTP/1.1\" 302 4111 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-b9cd74fe",
+        "timestamp": "2022-01-25T07:10:16Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "cloud.dmz.thomasmurray.shaw.info:443 172.24.251.86 - - [25/Jan/2022:07:10:16 +0000] \"POST /index.php/login HTTP/1.1\" 303 915 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-727e13cc",
+        "timestamp": "2022-01-25T07:10:20Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "cloud.dmz.thomasmurray.shaw.info:443 172.24.251.86 - - [25/Jan/2022:07:10:20 +0000] \"PROPFIND /remote.php/dav/files/cortiz/ HTTP/1.1\" 207 5079 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-d02591c9",
+        "timestamp": "2022-01-25T07:10:20Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "cloud.dmz.thomasmurray.shaw.info:443 172.24.251.86 - - [25/Jan/2022:07:10:20 +0000] \"PROPFIND /remote.php/dav/files/cortiz/ HTTP/1.1\" 207 5079 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-50dd6553",
+        "timestamp": "2022-01-25T07:10:29Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "cloud.dmz.thomasmurray.shaw.info:80 ::1 - - [25/Jan/2022:07:10:29 +0000] \"OPTIONS * HTTP/1.0\" 200 126 \"-\" \"Apache/2.4.29 (Ubuntu) PHP/7.4.27 OpenSSL/1.1.1 (internal dummy connection)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-797719a1",
+        "timestamp": "2022-01-25T07:13:23Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "cloud.dmz.thomasmurray.shaw.info:443 172.24.251.86 - - [25/Jan/2022:07:13:23 +0000] \"REPORT /remote.php/dav/comments/files/184/ HTTP/1.1\" 207 729 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-e88f1d29",
+        "timestamp": "2022-01-25T07:13:35Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.thomasmurray.shaw.info:443 172.24.251.86 - - [25/Jan/2022:07:13:35 +0000] \"GET /ocs/v2.php/apps/files_sharing/api/v1/shares?format=json&path=%2FPhotos&reshares=true HTTP/1.1\" 200 3872 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-9ed7a71e",
+        "timestamp": "2022-01-25T07:16:57Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 25 07:16:57 collinsbecker-mail HORDE: User michael.sutton is not authorized for Mail (Host: 10.70.34.71). [pid 29301 on line 324 of \"/usr/share/php/Horde/Registry.php\"]",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-97a84583",
+        "timestamp": "2022-01-25T07:16:57Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "10.70.34.71 - - [25/Jan/2022:07:16:57 +0000] \"GET /imp/js/login.js?v=b2b582864b8fa969bd5860bc72f0d3da HTTP/1.1\" 200 658 \"https://mailserver.collinsbecker.shaw.info/login.php?url=https%3A%2F%2Fmailserver.collinsbecker.shaw.info%2Fimp%2F&app=imp\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-e234f855",
+        "timestamp": "2022-01-25T07:17:51Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "172.24.249.224 - - [25/Jan/2022:07:17:51 +0000] \"GET /imp/js/message-dimp.js?v=b2b582864b8fa969bd5860bc72f0d3da HTTP/1.1\" 200 3039 \"https://mail.thomasmurray.shaw.info/imp/dynamic.php?page=message&buid=4&mailbox=SU5CT1g&token=z-JEdPjwOImORqlv6R1uSoq&uniq=1643095071432\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-db963578",
+        "timestamp": "2022-01-25T07:19:50Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 25 07:19:50 dnsmasq[14635]: query[PTR] 71.34.70.10.in-addr.arpa from 10.70.34.215",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-c7b1558e",
+        "timestamp": "2022-01-25T07:20:05Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-25 07:20:05 cortiz/10.70.35.111:36943 [cortiz] Inactivity timeout (--ping-restart), restarting",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0025-f64d0932",
+        "timestamp": "2022-01-25T07:20:05Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-25 07:20:05 cortiz/10.70.35.111:36943 SIGUSR1[soft,ping-restart] received, client-instance restarting",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0026-313321e4",
+        "timestamp": "2022-01-25T07:20:14Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "10.70.34.71 - - [25/Jan/2022:07:20:14 +0000] \"GET /themes/default/graphics/button-active-bg.png HTTP/1.1\" 200 566 \"https://mailserver.collinsbecker.shaw.info/themes/default/screen.css\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0027-36c41bc4",
+        "timestamp": "2022-01-25T07:21:05Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "192.168.188.169 - - [25/Jan/2022:07:21:05 +0000] \"GET /favicon.ico HTTP/1.1\" 404 396 \"http://intranet.thomasmurray.shaw.info/\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0028-6d3f43b8",
+        "timestamp": "2022-01-25T07:25:40Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643095540.831:1364): pid=7946 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"frank.rios\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0029-208f0384",
+        "timestamp": "2022-01-25T07:25:40Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643095540.831:1365): pid=7946 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"frank.rios\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0030-adc6a6b7",
+        "timestamp": "2022-01-25T07:26:15Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "192.168.188.169 - - [25/Jan/2022:07:26:15 +0000] \"GET /imp/dynamic.php?page=compose&type=new&token=AZKgh7EN37q8ej2jcHxIHMO&uniq=1643095575259 HTTP/1.1\" 200 5681 \"https://mail.thomasmurray.shaw.info/imp/dynamic.php?page=mailbox\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0031-c8582dbc",
+        "timestamp": "2022-01-25T07:26:15Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "192.168.188.169 - - [25/Jan/2022:07:26:15 +0000] \"GET /js/keynavlist.js?v=d0d0749382c4cc649651134fc974b2e8 HTTP/1.1\" 200 2916 \"https://mail.thomasmurray.shaw.info/imp/dynamic.php?page=compose&type=new&token=AZKgh7EN37q8ej2jcHxIHMO&uniq=1643095575259\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0032-e4083cea",
+        "timestamp": "2022-01-25T07:31:22Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 25 07:31:22 dnsmasq[14635]: query[MX] collinsbecker.shaw.info from 10.70.32.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0033-2e87c848",
+        "timestamp": "2022-01-25T07:32:41Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 25 07:32:41 dnsmasq[14596]: query[MX] collinsbecker.shaw.info from 172.24.251.90",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-c104fc4a",
+      "source": "alerts",
+      "timestamp": "2022-01-25T06:34:02Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.24.249.224 - - [25/Jan/2022:06:34:02 +0000] \"GET /mnemo/memo.php?memo=1zXr0S4sgS6vmZX7ppdXGBO&memolist=5Y1Q63N-3ZwGCWLbafXSieM&actionID=modify_memo HTTP/1.1\" 200 6798 \"https://mail.thomasmurray.shaw.info/mnemo/list.php\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-eb975775",
+      "source": "alerts",
+      "timestamp": "2022-01-25T06:34:39Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "172.24.249.224 - - [25/Jan/2022:06:34:39 +0000] \"GET /mnemo/memo.php?memo=1zXr0S4sgS6vmZX7ppdXGBO&memolist=5Y1Q63N-3ZwGCWLbafXSieM&actionID=delete_memos HTTP/1.1\" 302 1043 \"https://mail.thomasmurray.shaw.info/mnemo/memo.php?memo=1zXr0S4sgS6vmZX7ppdXGBO&memolist=5Y1Q63N-3ZwGCWLbafXSieM&actionID=modify_memo\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-ad7dbebd",
+      "source": "alerts",
+      "timestamp": "2022-01-25T06:34:47Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.24.249.224 - - [25/Jan/2022:06:34:47 +0000] \"GET /mnemo/memo.php?memo=xzsomDmRBFykRLIBVOqj86w&memolist=5Y1Q63N-3ZwGCWLbafXSieM&actionID=modify_memo HTTP/1.1\" 200 6922 \"https://mail.thomasmurray.shaw.info/mnemo/list.php\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (33 alerts; detectors: AMiner: New characters in Apache Access referer., AMiner: New characters in Apache Access request., AMiner: New event type.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (33 alerts; detectors: AMiner: New characters in Apache Access referer., AMiner: New characters in Apache Access request., AMiner: New event type.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "shaw/shaw/session-0010",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 33,
+      "kept_alerts": 33
+    },
+    "sealed": true
+  }
+}

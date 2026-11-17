@@ -1,0 +1,606 @@
+{
+  "incident_id": "ait-sess-harrison-harrison-0008",
+  "name": "ATTEST-AIT harrison/harrison session 8",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "harrison/harrison/session-0008",
+  "alert": {
+    "timestamp": "2022-02-04T05:36:33Z",
+    "host": "harrison",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (50 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: CPU value out of expected range in monitoring logs., AMiner: High entr",
+    "scenario": "harrison"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-04T05:36:33Z",
+    "end": "2022-02-04T06:31:43Z",
+    "hosts": [
+      "harrison"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-f700ed90",
+        "timestamp": "2022-02-04T05:36:33Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.237.1.238 - - [04/Feb/2022:05:36:33 +0000] \"GET /mnemo/memo.php?memo=SPWcvBQtCosXUq4IFjcYPn-&memolist=BrwT3XIdC-rhhJZsODpEzhK&actionID=modify_memo HTTP/1.1\" 200 6943 \"https://mail.mannsmith.harrison.com/mnemo/list.php\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-435a8c20",
+        "timestamp": "2022-02-04T05:39:46Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.237.1.238 - - [04/Feb/2022:05:39:46 +0000] \"GET /turba/contact.php?source=2hL6zJ6J-GO6EH8qrnKGBn6&key=CYOdA2T2VNnbJP9Q9LVT8YP&view=Contact HTTP/1.1\" 200 21153 \"https://mail.mannsmith.harrison.com/turba/add.php\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-71f721fe",
+        "timestamp": "2022-02-04T05:40:16Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.1811}},\"@timestamp\":\"2022-02-04T05:40:16.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.1025,\"norm\":{\"pct\":0.1025}},\"idle\":{\"pct\":0.8176,\"norm\":{\"pct\":0.8176}},\"system\":{\"pct\":0.0406,\"norm\":{\"pct\":0.0406}},\"user\":{\"pct\":0.0369,\"norm\":{\"pct\":0.0369}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":0.0011,\"norm\":{\"pct\":0.0",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-45203369",
+        "timestamp": "2022-02-04T05:46:16Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-04T05:46:16.130Z\",\"host\":{\"cpu\":{\"pct\":0.1962},\"name\":\"intranet-server\"},\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.1291,\"norm\":{\"pct\":0.1291}},\"idle\":{\"pct\":0.8034,\"norm\":{\"pct\":0.8034}},\"system\":{\"pct\":0.0349,\"norm\":{\"pct\":0.0349}},\"user\":{\"pct\":0.0313,\"norm\":{\"pct\":0.0313}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-e8aff8cf",
+        "timestamp": "2022-02-04T05:53:38Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 05:53:38 dnsmasq[14453]: query[A] s.w.org from 172.28.192.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-9c63a6a5",
+        "timestamp": "2022-02-04T05:53:38Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 05:53:38 dnsmasq[14453]: forwarded s.w.org to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-cf0dc27b",
+        "timestamp": "2022-02-04T05:53:38Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 05:53:38 dnsmasq[14453]: reply s.w.org is NODATA-IPv6",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-f8b2bed3",
+        "timestamp": "2022-02-04T05:53:38Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 05:53:38 dnsmasq[14664]: query[AAAA] s.w.org from 10.237.1.238",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-6c0c0579",
+        "timestamp": "2022-02-04T05:53:38Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 05:53:38 dnsmasq[14664]: reply s.w.org is 192.0.77.48",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-a923550e",
+        "timestamp": "2022-02-04T05:57:33Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Feb  4 05:57:33 dnsmasq[14664]: query[AAAA] mail.mannsmith.harrison.com from 10.237.1.238",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-b3e1ace1",
+        "timestamp": "2022-02-04T06:00:07Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Feb  4 06:00:07 dnsmasq[14453]: query[A] 3x6-.564-.py8AAHWWr7f5MvEwsAA8Sjeb/cZHkQHwZPsLPeW1dJy8e/c1MFDnNgzZxbV1x7-.Ru1Fn9bthh3fOzZ9YZXl2y8Pb5jra*8qKLgEeBFkZqGRL5h2AeRfNL15t8TzZM-.customers_2018.xlsx.db-21.greer.biz from 172.28.192.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-4a7edabd",
+        "timestamp": "2022-02-04T06:05:29Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 06:05:29 dnsmasq[14453]: query[A] s.w.org from 172.28.192.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-ee641de7",
+        "timestamp": "2022-02-04T06:05:29Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 06:05:29 dnsmasq[14664]: query[A] s.w.org from 10.237.1.238",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-0a7a8033",
+        "timestamp": "2022-02-04T06:05:29Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 06:05:29 dnsmasq[14664]: reply s.w.org is 192.0.77.48",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-b5fff8e2",
+        "timestamp": "2022-02-04T06:10:22Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.mannsmith.harrison.com:443 10.237.0.166 - - [04/Feb/2022:06:10:22 +0000] \"GET /core/vendor/jsTimezoneDetect/jstz.js?v=57925bad04b2781b22d97b514bc2161d HTTP/1.1\" 200 4518 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-6b6ef729",
+        "timestamp": "2022-02-04T06:10:22Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.mannsmith.harrison.com:443 10.237.0.166 - - [04/Feb/2022:06:10:22 +0000] \"GET /core/fonts/OpenSans-Regular.woff HTTP/1.1\" 200 21124 \"https://cloud.mannsmith.harrison.com/core/css/fonts.css?v=57925bad04b2781b22d97b514bc2161d\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-871649ab",
+        "timestamp": "2022-02-04T06:10:36Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "cloud.dmz.mannsmith.harrison.com:80 ::1 - - [04/Feb/2022:06:10:36 +0000] \"OPTIONS * HTTP/1.0\" 200 126 \"-\" \"Apache/2.4.29 (Ubuntu) PHP/7.4.27 OpenSSL/1.1.1 (internal dummy connection)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-4f73f0ff",
+        "timestamp": "2022-02-04T06:10:36Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "cloud.dmz.mannsmith.harrison.com:80 ::1 - - [04/Feb/2022:06:10:36 +0000] \"OPTIONS * HTTP/1.0\" 200 126 \"-\" \"Apache/2.4.29 (Ubuntu) PHP/7.4.27 OpenSSL/1.1.1 (internal dummy connection)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-8cf042b2",
+        "timestamp": "2022-02-04T06:12:32Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 06:12:32 dnsmasq[14453]: query[A] example.org from 172.28.193.59",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-48c944ea",
+        "timestamp": "2022-02-04T06:12:40Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 06:12:40 dnsmasq[14664]: query[AAAA] example.org from 10.237.1.238",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-35a56668",
+        "timestamp": "2022-02-04T06:13:28Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 06:13:28 dnsmasq[14664]: reply 10.237.2.255 is mail.dmz.mannsmith.harrison.com",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-ae1a53fa",
+        "timestamp": "2022-02-04T06:14:46Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.2162}},\"@timestamp\":\"2022-02-04T06:14:46.138Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0.7834,\"norm\":{\"pct\":0.7834}},\"steal\":{\"pct\":0.1526,\"norm\":{\"pct\":0.1526}},\"system\":{\"pct\":0.0357,\"norm\":{\"pct\":0.0357}},\"user\":{\"pct\":0.0272,\"norm\":{\"pct\":0.0272}},\"softirq\":{\"pct\":8.0E-4,\"norm\":{\"pct\":8.0E-4}},\"irq\":{\"pct\":0,\"norm\":{\"pct",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-faaa73d1",
+        "timestamp": "2022-02-04T06:14:53Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 06:14:53 dnsmasq[14664]: reply 10.237.2.255 is mailserver.mannsmith.harrison.com",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-a03b1789",
+        "timestamp": "2022-02-04T06:15:13Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 06:15:13 dnsmasq[14664]: query[A] example.org from 10.237.1.238",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0025-1fe2d8c6",
+        "timestamp": "2022-02-04T06:15:31Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.2253}},\"@timestamp\":\"2022-02-04T06:15:31.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0.7735,\"norm\":{\"pct\":0.7735}},\"steal\":{\"pct\":0.157,\"norm\":{\"pct\":0.157}},\"system\":{\"pct\":0.0374,\"norm\":{\"pct\":0.0374}},\"user\":{\"pct\":0.0298,\"norm\":{\"pct\":0.0298}},\"softirq\":{\"pct\":0.001,\"norm\":{\"pct\":0.001}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0026-97e2de86",
+        "timestamp": "2022-02-04T06:15:55Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-04 06:15:55 1nFrsx-0001o8-7T PRDR R=<alan.gonzalez@taylor.harrison.com> acceptance",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0027-d326286b",
+        "timestamp": "2022-02-04T06:16:16Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-04T06:16:16.130Z\",\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.2299}},\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.1625,\"norm\":{\"pct\":0.1625}},\"idle\":{\"pct\":0.7691,\"norm\":{\"pct\":0.7691}},\"system\":{\"pct\":0.0346,\"norm\":{\"pct\":0.0346}},\"user\":{\"pct\":0.0322,\"norm\":{\"pct\":0.0322}},\"softirq\":{\"pct\":6.0E-4,\"norm\":{\"pct\":6.0E-4}},\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0028-9c652397",
+        "timestamp": "2022-02-04T06:16:24Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-04 06:16:24 jmoreno/172.28.193.59:41276 SIGUSR1[soft,ping-restart] received, client-instance restarting",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0029-e48c02d0",
+        "timestamp": "2022-02-04T06:17:08Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 06:17:08 dnsmasq[14664]: reply 10.237.2.255 is mailserver.mannsmith.harrison.com",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0030-2db50efb",
+        "timestamp": "2022-02-04T06:18:48Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 06:18:48 dnsmasq[14664]: reply 10.237.2.255 is mail.dmz.mannsmith.harrison.com",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0031-56e8970c",
+        "timestamp": "2022-02-04T06:18:53Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1643955533.599:1069): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=apport comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0032-6b2ac6f1",
+        "timestamp": "2022-02-04T06:19:52Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 06:19:52 cloud-share sshd[1195]: Received signal 15; terminating.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0033-cf8ae6a8",
+        "timestamp": "2022-02-04T06:19:53Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 06:19:53 cloud-share sshd[29789]: Server listening on 0.0.0.0 port 22.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0034-cf1654aa",
+        "timestamp": "2022-02-04T06:20:06Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 06:20:06 cloud-share polkitd[30201]: started daemon version 0.105 using authority implementation `local' version `0.105'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0035-37556c11",
+        "timestamp": "2022-02-04T06:20:06Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1643955606.674:1076): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=polkit comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0036-2b28f3de",
+        "timestamp": "2022-02-04T06:20:12Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "type=SYSCALL msg=audit(1643955612.493:213): arch=c000003e syscall=1 success=yes exit=44953 a0=6 a1=558b74991d70 a2=af99 a3=0 items=0 ppid=13983 pid=13984 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=4294967295 comm=\"apparmor_parser\" exe=\"/sbin/apparmor_parser\" key=(null)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0037-6bd0709d",
+        "timestamp": "2022-02-04T06:20:12Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "type=PROCTITLE msg=audit(1643955612.493:213): proctitle=61707061726D6F725F706172736572002D72002D54002D57002F6574632F61707061726D6F722E642F7362696E2E6468636C69656E74",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0038-5ebee27a",
+        "timestamp": "2022-02-04T06:21:25Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 06:21:25 cloud-share 05efi: debug: Not on UEFI platform",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0039-3b0693e2",
+        "timestamp": "2022-02-04T06:21:25Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 06:21:25 cloud-share 10qnx: debug: /dev/vda15 is not a QNX4 partition: exiting",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0040-a48949d3",
+        "timestamp": "2022-02-04T06:21:25Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 06:21:25 cloud-share 30utility: debug: /dev/vda15 is a FAT32 partition",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0041-622be982",
+        "timestamp": "2022-02-04T06:21:50Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1643955710.781:1081): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=apt-daily-upgrade comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0042-ff3b251f",
+        "timestamp": "2022-02-04T06:21:52Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "02/04/2022-06:21:52.460190  [**] [1:2013504:6] ET POLICY GNU/Linux APT User-Agent Outbound likely related to package management [**] [Classification: Not Suspicious Traffic] [Priority: 3] {TCP} 10.237.0.4:59876 -> 91.189.95.85:80",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0043-f366e39c",
+        "timestamp": "2022-02-04T06:22:09Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1643955729.416:1084): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=apt-daily comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0044-2a4582f9",
+        "timestamp": "2022-02-04T06:27:20Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1643956040.934:227): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-udevd comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0045-88608fd2",
+        "timestamp": "2022-02-04T06:28:25Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1643956105.945:235): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-resolved comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0046-dec3cca7",
+        "timestamp": "2022-02-04T06:28:26Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 06:28:26 internal-share systemd-hostnamed[31448]: Changed host name to 'host-192-168-131-109'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0047-ae3e1132",
+        "timestamp": "2022-02-04T06:28:26Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1643956106.117:240): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-timesyncd comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0048-2590a929",
+        "timestamp": "2022-02-04T06:28:26Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1643956106.213:243): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-journal-flush comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0049-ca9deb49",
+        "timestamp": "2022-02-04T06:28:56Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1643956136.107:255): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-hostnamed comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0050-91687c90",
+        "timestamp": "2022-02-04T06:29:00Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1643956140.391:257): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=grub-common comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-f700ed90",
+      "source": "alerts",
+      "timestamp": "2022-02-04T05:36:33Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.237.1.238 - - [04/Feb/2022:05:36:33 +0000] \"GET /mnemo/memo.php?memo=SPWcvBQtCosXUq4IFjcYPn-&memolist=BrwT3XIdC-rhhJZsODpEzhK&actionID=modify_memo HTTP/1.1\" 200 6943 \"https://mail.mannsmith.harrison.com/mnemo/list.php\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-435a8c20",
+      "source": "alerts",
+      "timestamp": "2022-02-04T05:39:46Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.237.1.238 - - [04/Feb/2022:05:39:46 +0000] \"GET /turba/contact.php?source=2hL6zJ6J-GO6EH8qrnKGBn6&key=CYOdA2T2VNnbJP9Q9LVT8YP&view=Contact HTTP/1.1\" 200 21153 \"https://mail.mannsmith.harrison.com/turba/add.php\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-71f721fe",
+      "source": "alerts",
+      "timestamp": "2022-02-04T05:40:16Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.1811}},\"@timestamp\":\"2022-02-04T05:40:16.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.1025,\"norm\":{\"pct\":0.1025}},\"idle\":{\"pct\":0.8176,\"norm\":{\"pct\":0.8176}},\"system\":{\"pct\":0.0406,\"norm\":{\"pct\":0.0406}},\"user\":{\"pct\":0.0369,\"norm\":{\"pct\":0.0369}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":0.0011,\"norm\":{\"pct\":0.0",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (50 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: CPU value out of expected range in monitoring logs., AMiner: High entr",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (50 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: CPU value out of expected range in monitoring logs., AMiner: High entr",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "harrison/harrison/session-0008",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 122,
+      "kept_alerts": 50
+    },
+    "sealed": true
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "incident_id": "ait-sess-wardbeck-wardbeck-0132",
+  "name": "ATTEST-AIT wardbeck/wardbeck session 132",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wardbeck/wardbeck/session-0132",
+  "alert": {
+    "timestamp": "2022-01-23T20:43:35Z",
+    "host": "wardbeck",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (3 alerts; detectors: AMiner: Unusual occurrence frequencies of DNS log events., AMiner: Unusual occurrence frequencies of DNS query IPs.).",
+    "scenario": "wardbeck"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-23T20:43:35Z",
+    "end": "2022-01-23T21:03:32Z",
+    "hosts": [
+      "wardbeck"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-7d227322",
+        "timestamp": "2022-01-23T20:43:35Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 23 20:43:35 dnsmasq[14529]: query[AAAA] watkins-mail from 192.168.96.99",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-353fcac9",
+        "timestamp": "2022-01-23T20:50:07Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 23 20:50:07 dnsmasq[14529]: query[AAAA] shavar.services.mozilla.com from 192.168.98.15",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-601705c1",
+        "timestamp": "2022-01-23T21:03:32Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 23 21:03:32 dnsmasq[14529]: query[AAAA] motd.ubuntu.com from 192.168.96.4",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-7d227322",
+      "source": "alerts",
+      "timestamp": "2022-01-23T20:43:35Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 23 20:43:35 dnsmasq[14529]: query[AAAA] watkins-mail from 192.168.96.99",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-353fcac9",
+      "source": "alerts",
+      "timestamp": "2022-01-23T20:50:07Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 23 20:50:07 dnsmasq[14529]: query[AAAA] shavar.services.mozilla.com from 192.168.98.15",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-601705c1",
+      "source": "alerts",
+      "timestamp": "2022-01-23T21:03:32Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 23 21:03:32 dnsmasq[14529]: query[AAAA] motd.ubuntu.com from 192.168.96.4",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (3 alerts; detectors: AMiner: Unusual occurrence frequencies of DNS log events., AMiner: Unusual occurrence frequencies of DNS query IPs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (3 alerts; detectors: AMiner: Unusual occurrence frequencies of DNS log events., AMiner: Unusual occurrence frequencies of DNS query IPs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wardbeck/wardbeck/session-0132",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 3,
+      "kept_alerts": 3
+    },
+    "sealed": true
+  }
+}

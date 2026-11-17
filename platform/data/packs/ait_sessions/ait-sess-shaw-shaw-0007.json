@@ -1,0 +1,192 @@
+{
+  "incident_id": "ait-sess-shaw-shaw-0007",
+  "name": "ATTEST-AIT shaw/shaw session 7",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "shaw/shaw/session-0007",
+  "alert": {
+    "timestamp": "2022-01-25T03:44:53Z",
+    "host": "shaw",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (4 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New characters in DNS domain., AMiner: New event type.).",
+    "scenario": "shaw"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-25T03:44:53Z",
+    "end": "2022-01-25T03:54:57Z",
+    "hosts": [
+      "shaw"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-0a7016b9",
+        "timestamp": "2022-01-25T03:44:53Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"name\":\"cpu\",\"period\":45000},\"service\":{\"type\":\"system\"},\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.0607}},\"system\":{\"cpu\":{\"total\":{\"pct\":0.0607,\"norm\":{\"pct\":0.0607}},\"user\":{\"pct\":0.0293,\"norm\":{\"pct\":0.0293}},\"iowait\":{\"pct\":0.001,\"norm\":{\"pct\":0.001}},\"idle\":{\"pct\":0.9383,\"norm\":{\"pct\":0.9383}},\"system\":{\"pct\":0.0283,\"norm\":{\"pct\":0.0283}},\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-8a25d9c6",
+        "timestamp": "2022-01-25T03:53:39Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 25 03:53:39 inet-dns systemd-resolved[665]: Grace period over, resuming full feature set (UDP+EDNS0) for DNS server 10.70.63.254.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-3e24b3b3",
+        "timestamp": "2022-01-25T03:54:52Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in DNS domain.",
+        "message": "Jan 25 03:54:52 dnsmasq[14635]: query[A] main.0.93.0.0.6810DB54.ping.clamav.net from 10.70.32.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-f65878ec",
+        "timestamp": "2022-01-25T03:54:57Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in DNS domain.",
+        "message": "Jan 25 03:54:57 dnsmasq[14635]: query[A] main.0.93.0.0.6810DA54.ping.clamav.net from 10.70.32.4",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-0a7016b9",
+      "source": "alerts",
+      "timestamp": "2022-01-25T03:44:53Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"name\":\"cpu\",\"period\":45000},\"service\":{\"type\":\"system\"},\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.0607}},\"system\":{\"cpu\":{\"total\":{\"pct\":0.0607,\"norm\":{\"pct\":0.0607}},\"user\":{\"pct\":0.0293,\"norm\":{\"pct\":0.0293}},\"iowait\":{\"pct\":0.001,\"norm\":{\"pct\":0.001}},\"idle\":{\"pct\":0.9383,\"norm\":{\"pct\":0.9383}},\"system\":{\"pct\":0.0283,\"norm\":{\"pct\":0.0283}},\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-8a25d9c6",
+      "source": "alerts",
+      "timestamp": "2022-01-25T03:53:39Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 25 03:53:39 inet-dns systemd-resolved[665]: Grace period over, resuming full feature set (UDP+EDNS0) for DNS server 10.70.63.254.",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-3e24b3b3",
+      "source": "alerts",
+      "timestamp": "2022-01-25T03:54:52Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New characters in DNS domain.",
+        "message": "Jan 25 03:54:52 dnsmasq[14635]: query[A] main.0.93.0.0.6810DB54.ping.clamav.net from 10.70.32.4",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (4 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New characters in DNS domain., AMiner: New event type.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (4 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New characters in DNS domain., AMiner: New event type.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "shaw/shaw/session-0007",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 4,
+      "kept_alerts": 4
+    },
+    "sealed": true
+  }
+}

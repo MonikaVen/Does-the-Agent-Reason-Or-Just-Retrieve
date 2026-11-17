@@ -1,0 +1,192 @@
+{
+  "incident_id": "ait-sess-harrison-harrison-0011",
+  "name": "ATTEST-AIT harrison/harrison session 11",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "harrison/harrison/session-0011",
+  "alert": {
+    "timestamp": "2022-02-04T08:49:56Z",
+    "host": "harrison",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (4 alerts; detectors: AMiner: New event type.).",
+    "scenario": "harrison"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-04T08:49:56Z",
+    "end": "2022-02-04T08:50:44Z",
+    "hosts": [
+      "harrison"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-5ecca146",
+        "timestamp": "2022-02-04T08:49:56Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-04 08:49:56 1nFuI0-0001YC-66 <= root@mailserver.smith.harrison.com U=root P=local S=617934",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-99bb17f4",
+        "timestamp": "2022-02-04T08:50:40Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 08:50:40 taylor-mail auth: pam_unix(dovecot:auth): authentication failure; logname= uid=0 euid=0 tty=dovecot ruser=kerry.smith rhost=172.28.192.7  user=kerry.smith",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-b63fd24f",
+        "timestamp": "2022-02-04T08:50:44Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 08:50:44 taylor-mail dovecot: imap-login: Disconnected (auth failed, 1 attempts in 4 secs): user=<kerry.smith>, method=PLAIN, rip=172.28.192.7, lip=172.28.192.7, TLS, session=<OcdsWC3X7sOsHMAH>",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-8da69ca3",
+        "timestamp": "2022-02-04T08:50:44Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 08:50:44 taylor-mail HORDE: [horde] FAILED LOGIN for kerry.smith to horde (172.28.193.70) [pid 7919 on line 198 of \"/usr/share/horde/login.php\"]",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-5ecca146",
+      "source": "alerts",
+      "timestamp": "2022-02-04T08:49:56Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-04 08:49:56 1nFuI0-0001YC-66 <= root@mailserver.smith.harrison.com U=root P=local S=617934",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-99bb17f4",
+      "source": "alerts",
+      "timestamp": "2022-02-04T08:50:40Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 08:50:40 taylor-mail auth: pam_unix(dovecot:auth): authentication failure; logname= uid=0 euid=0 tty=dovecot ruser=kerry.smith rhost=172.28.192.7  user=kerry.smith",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-b63fd24f",
+      "source": "alerts",
+      "timestamp": "2022-02-04T08:50:44Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 08:50:44 taylor-mail dovecot: imap-login: Disconnected (auth failed, 1 attempts in 4 secs): user=<kerry.smith>, method=PLAIN, rip=172.28.192.7, lip=172.28.192.7, TLS, session=<OcdsWC3X7sOsHMAH>",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (4 alerts; detectors: AMiner: New event type.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (4 alerts; detectors: AMiner: New event type.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "harrison/harrison/session-0011",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 4,
+      "kept_alerts": 4
+    },
+    "sealed": true
+  }
+}

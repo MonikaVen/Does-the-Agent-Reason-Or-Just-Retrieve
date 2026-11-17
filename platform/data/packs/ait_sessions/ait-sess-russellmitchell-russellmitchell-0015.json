@@ -1,0 +1,417 @@
+{
+  "incident_id": "ait-sess-russellmitchell-russellmitchell-0015",
+  "name": "ATTEST-AIT russellmitchell/russellmitchell session 15",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "russellmitchell/russellmitchell/session-0015",
+  "alert": {
+    "timestamp": "2022-01-21T09:40:06Z",
+    "host": "russellmitchell",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (29 alerts; detectors: AMiner: New cred_acq parameter combination in Audit logs., AMiner: New event type., AMiner: New ip address in DNS logs.).",
+    "scenario": "russellmitchell"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-21T09:40:06Z",
+    "end": "2022-01-21T10:39:53Z",
+    "hosts": [
+      "russellmitchell"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-60c97a8d",
+        "timestamp": "2022-01-21T09:40:06Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 09:40:06 mail sshd[10046]: Accepted publickey for jhall from 172.19.131.174 port 36256 ssh2: RSA SHA256:8wFbiaYPevKS/wYKnePO20v0iymTcrRh4Kr+1uRS1UM",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-b002186d",
+        "timestamp": "2022-01-21T09:40:06Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 09:40:06 mail sshd[10046]: pam_unix(sshd:session): session opened for user jhall by (uid=0)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-6e512e21",
+        "timestamp": "2022-01-21T09:40:06Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 09:40:06 mail systemd-logind[521]: New session 89 of user jhall.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-591a9c0f",
+        "timestamp": "2022-01-21T09:40:06Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 09:40:06 mail systemd: pam_unix(systemd-user:session): session opened for user jhall by (uid=0)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-3a4b514c",
+        "timestamp": "2022-01-21T09:40:06Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642758006.162:1815): pid=10046 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"jhall\" exe=\"/usr/sbin/sshd\" hostname=172.19.131.174 addr=172.19.131.174 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-7d27e02a",
+        "timestamp": "2022-01-21T09:40:06Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1642758006.166:1816): pid=10046 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"jhall\" exe=\"/usr/sbin/sshd\" hostname=172.19.131.174 addr=172.19.131.174 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-a023e896",
+        "timestamp": "2022-01-21T09:40:06Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New login parameter combination in Audit logs.",
+        "message": "type=LOGIN msg=audit(1642758006.166:1817): pid=10046 uid=0 old-auid=4294967295 auid=1003 tty=(none) old-ses=4294967295 ses=89 res=1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-0fee8daa",
+        "timestamp": "2022-01-21T09:40:06Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642758006.202:1818): pid=10052 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"jhall\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-59411634",
+        "timestamp": "2022-01-21T09:40:06Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1642758006.206:1820): pid=10052 uid=0 auid=1003 ses=90 msg='op=PAM:session_open acct=\"jhall\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-bb6e6711",
+        "timestamp": "2022-01-21T09:40:06Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642758006.230:1821): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=user@1003 comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-4004f360",
+        "timestamp": "2022-01-21T09:40:06Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1642758006.246:1822): pid=10046 uid=0 auid=1003 ses=89 msg='op=PAM:session_open acct=\"jhall\" exe=\"/usr/sbin/sshd\" hostname=172.19.131.174 addr=172.19.131.174 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-e2b565b3",
+        "timestamp": "2022-01-21T09:40:06Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "type=USER_LOGIN msg=audit(1642758006.298:1824): pid=10046 uid=0 auid=1003 ses=89 msg='op=login id=1003 exe=\"/usr/sbin/sshd\" hostname=172.19.131.174 addr=172.19.131.174 terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-d76a080f",
+        "timestamp": "2022-01-21T09:40:06Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New user_login parameter combination in Audit logs.",
+        "message": "type=USER_LOGIN msg=audit(1642758006.298:1824): pid=10046 uid=0 auid=1003 ses=89 msg='op=login id=1003 exe=\"/usr/sbin/sshd\" hostname=172.19.131.174 addr=172.19.131.174 terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-39515a54",
+        "timestamp": "2022-01-21T09:40:40Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 09:40:40 mail sshd[10059]: Received disconnect from 172.19.131.174 port 36256:11: disconnected by user",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-79688ff6",
+        "timestamp": "2022-01-21T09:40:40Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 09:40:40 mail sshd[10059]: Disconnected from 172.19.131.174 port 36256",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-8af13ead",
+        "timestamp": "2022-01-21T09:40:40Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642758040.109:1827): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=user@1003 comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-73a487ae",
+        "timestamp": "2022-01-21T09:50:54Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 09:50:54 dnsmasq[3326]: query[A] thehill.com from 192.168.230.95",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-4e39185a",
+        "timestamp": "2022-01-21T09:57:41Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 21 09:57:41 dnsmasq[3326]: query[MX] smith.russellmitchell.com from 192.168.231.56",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-4e39185a",
+        "timestamp": "2022-01-21T09:57:41Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 21 09:57:41 dnsmasq[3326]: query[MX] smith.russellmitchell.com from 192.168.231.56",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-2dffd944",
+        "timestamp": "2022-01-21T10:00:13Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 21 10:00:13 dnsmasq[3326]: query[A] firefox.settings.services.mozilla.com from 192.168.230.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-6c101d40",
+        "timestamp": "2022-01-21T10:10:16Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 21 10:10:16 dnsmasq[3326]: query[A] 3x6-.646-.XZ3lW*2is7/CQLe/E08F/E8adGGEF1PoYs-.IDW7TWJ458VBGNEhYVrnhrGCrdvKZE2GV9-.SpPIDPSYaVTp55ZbziA3T//xbW19XmXLQp-.Kparq/kSO4*gZPKpSqfk/fvbc/oHbvBi3a-.customers_2018.xlsx.email-19.kennedy-mendoza.info from 192.168.230.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-9c774fa8",
+        "timestamp": "2022-01-21T10:15:44Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642760144.072:1848): pid=10280 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"dorothy.ellis\" exe=\"/usr/lib/dovecot/auth\" hostname=172.19.130.4 addr=172.19.130.4 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-ae7f2cd3",
+        "timestamp": "2022-01-21T10:15:44Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642760144.072:1849): pid=10280 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"dorothy.ellis\" exe=\"/usr/lib/dovecot/auth\" hostname=172.19.130.4 addr=172.19.130.4 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-4db673c1",
+        "timestamp": "2022-01-21T10:30:24Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 10:30:24 davey-mail auth: pam_unix(dovecot:auth): authentication failure; logname= uid=0 euid=0 tty=dovecot ruser=andrea.moss rhost=192.168.231.56  user=andrea.moss",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0025-651abeb6",
+        "timestamp": "2022-01-21T10:30:28Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 10:30:28 davey-mail dovecot: imap-login: Disconnected (auth failed, 1 attempts in 4 secs): user=<andrea.moss>, method=PLAIN, rip=192.168.231.56, lip=192.168.231.56, TLS, session=<80JOGxXW1OfAqOc4>",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0026-308b8c10",
+        "timestamp": "2022-01-21T10:30:28Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 10:30:28 davey-mail HORDE: [horde] FAILED LOGIN for andrea.moss to horde (192.168.231.180) [pid 6884 on line 198 of \"/usr/share/horde/login.php\"]",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0027-5147e2a8",
+        "timestamp": "2022-01-21T10:39:33Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New login parameter combination in Audit logs.",
+        "message": "type=LOGIN msg=audit(1642761573.424:675): pid=14362 uid=0 old-auid=4294967295 auid=1002 tty=(none) old-ses=4294967295 ses=100 res=1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0028-b9853517",
+        "timestamp": "2022-01-21T10:39:33Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1642761573.460:677): pid=14371 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"jhall\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0029-faf801b7",
+        "timestamp": "2022-01-21T10:39:53Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 10:39:53 intranet-server sshd[14489]: Disconnected from user jhall 172.19.131.174 port 38526",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-60c97a8d",
+      "source": "alerts",
+      "timestamp": "2022-01-21T09:40:06Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 09:40:06 mail sshd[10046]: Accepted publickey for jhall from 172.19.131.174 port 36256 ssh2: RSA SHA256:8wFbiaYPevKS/wYKnePO20v0iymTcrRh4Kr+1uRS1UM",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-b002186d",
+      "source": "alerts",
+      "timestamp": "2022-01-21T09:40:06Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 09:40:06 mail sshd[10046]: pam_unix(sshd:session): session opened for user jhall by (uid=0)",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-6e512e21",
+      "source": "alerts",
+      "timestamp": "2022-01-21T09:40:06Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 09:40:06 mail systemd-logind[521]: New session 89 of user jhall.",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (29 alerts; detectors: AMiner: New cred_acq parameter combination in Audit logs., AMiner: New event type., AMiner: New ip address in DNS logs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (29 alerts; detectors: AMiner: New cred_acq parameter combination in Audit logs., AMiner: New event type., AMiner: New ip address in DNS logs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "russellmitchell/russellmitchell/session-0015",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 29,
+      "kept_alerts": 29
+    },
+    "sealed": true
+  }
+}

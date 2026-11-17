@@ -1,0 +1,201 @@
+{
+  "incident_id": "ait-sess-wardbeck-wardbeck-0018",
+  "name": "ATTEST-AIT wardbeck/wardbeck session 18",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wardbeck/wardbeck/session-0018",
+  "alert": {
+    "timestamp": "2022-01-19T14:56:22Z",
+    "host": "wardbeck",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (5 alerts; detectors: AMiner: New cred_acq parameter combination in Audit logs., AMiner: New event type., AMiner: New login parameter combination in Audit logs.).",
+    "scenario": "wardbeck"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-19T14:56:22Z",
+    "end": "2022-01-19T14:57:10Z",
+    "hosts": [
+      "wardbeck"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-18ce78d0",
+        "timestamp": "2022-01-19T14:56:22Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New login parameter combination in Audit logs.",
+        "message": "type=LOGIN msg=audit(1642604182.012:687): pid=8019 uid=0 old-auid=4294967295 auid=1001 tty=(none) old-ses=4294967295 ses=112 res=1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-9685bacd",
+        "timestamp": "2022-01-19T14:56:22Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1642604182.116:689): pid=8030 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"blord\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-ba258757",
+        "timestamp": "2022-01-19T14:56:22Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642604182.316:692): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=user@1001 comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-9a82961d",
+        "timestamp": "2022-01-19T14:57:10Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 19 14:57:10 intranet-server sshd[8134]: Disconnected from user blord 172.21.240.147 port 34962",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-9abfd9f4",
+        "timestamp": "2022-01-19T14:57:10Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642604230.747:698): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=user@1001 comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-18ce78d0",
+      "source": "alerts",
+      "timestamp": "2022-01-19T14:56:22Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New login parameter combination in Audit logs.",
+        "message": "type=LOGIN msg=audit(1642604182.012:687): pid=8019 uid=0 old-auid=4294967295 auid=1001 tty=(none) old-ses=4294967295 ses=112 res=1",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-9685bacd",
+      "source": "alerts",
+      "timestamp": "2022-01-19T14:56:22Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1642604182.116:689): pid=8030 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"blord\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-ba258757",
+      "source": "alerts",
+      "timestamp": "2022-01-19T14:56:22Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642604182.316:692): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=user@1001 comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (5 alerts; detectors: AMiner: New cred_acq parameter combination in Audit logs., AMiner: New event type., AMiner: New login parameter combination in Audit logs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (5 alerts; detectors: AMiner: New cred_acq parameter combination in Audit logs., AMiner: New event type., AMiner: New login parameter combination in Audit logs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wardbeck/wardbeck/session-0018",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 5,
+      "kept_alerts": 5
+    },
+    "sealed": true
+  }
+}

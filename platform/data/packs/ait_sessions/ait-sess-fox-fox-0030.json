@@ -1,0 +1,192 @@
+{
+  "incident_id": "ait-sess-fox-fox-0030",
+  "name": "ATTEST-AIT fox/fox session 30",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "fox/fox/session-0030",
+  "alert": {
+    "timestamp": "2022-01-16T07:45:05Z",
+    "host": "fox",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (4 alerts; detectors: AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+    "scenario": "fox"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-16T07:45:05Z",
+    "end": "2022-01-16T08:00:08Z",
+    "hosts": [
+      "fox"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-81405cb2",
+        "timestamp": "2022-01-16T07:45:05Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 16 07:45:05 dnsmasq[14460]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 192.168.131.156",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-6b98576f",
+        "timestamp": "2022-01-16T07:56:03Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 16 07:56:03 dnsmasq[14460]: query[A] ads.servenobid.com from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-45005006",
+        "timestamp": "2022-01-16T07:59:21Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 16 07:59:21 dnsmasq[14522]: query[AAAA] mailserver.whittaker.fox.org from 172.17.131.81",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-5a7e644e",
+        "timestamp": "2022-01-16T08:00:08Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 16 08:00:08 dnsmasq[14460]: query[A] 3x6-.575-.9*Uaq1Q1Dfp9swLbeXe5NAobYykijs9Q1LZxVvU56RYuMQ/v9yIZhTPaGQy7-.vehS*b9MtQe5ss5Ke1Gigx4mYja2ol7PQXaO41VsMGU9JV02AHhVXcOPfi3z-.HxtF*AsvJN5adUH*GJAB7ZtwNn2oEZsqA3MC/sXveFkPkIUL9AIQOeAy7B8r-.payroll_2015.xlsx.ycgjslfptkev.com from 192.168.128.4",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-81405cb2",
+      "source": "alerts",
+      "timestamp": "2022-01-16T07:45:05Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 16 07:45:05 dnsmasq[14460]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 192.168.131.156",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-6b98576f",
+      "source": "alerts",
+      "timestamp": "2022-01-16T07:56:03Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 16 07:56:03 dnsmasq[14460]: query[A] ads.servenobid.com from 192.168.128.4",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-45005006",
+      "source": "alerts",
+      "timestamp": "2022-01-16T07:59:21Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 16 07:59:21 dnsmasq[14522]: query[AAAA] mailserver.whittaker.fox.org from 172.17.131.81",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (4 alerts; detectors: AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (4 alerts; detectors: AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "fox/fox/session-0030",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 4,
+      "kept_alerts": 4
+    },
+    "sealed": true
+  }
+}

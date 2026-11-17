@@ -1,0 +1,381 @@
+{
+  "incident_id": "ait-sess-harrison-harrison-0010",
+  "name": "ATTEST-AIT harrison/harrison session 10",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "harrison/harrison/session-0010",
+  "alert": {
+    "timestamp": "2022-02-04T07:41:21Z",
+    "host": "harrison",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (25 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New characters in Apache Access referer., AMiner: New characters in Apache Access request.).",
+    "scenario": "harrison"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-04T07:41:21Z",
+    "end": "2022-02-04T08:27:52Z",
+    "hosts": [
+      "harrison"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-3c33a8d8",
+        "timestamp": "2022-02-04T07:41:21Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643960481.063:1455): pid=9770 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"ryan.chambers\" exe=\"/usr/lib/dovecot/auth\" hostname=10.237.2.255 addr=10.237.2.255 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-deb0cd4f",
+        "timestamp": "2022-02-04T07:41:21Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643960481.063:1456): pid=9770 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"ryan.chambers\" exe=\"/usr/lib/dovecot/auth\" hostname=10.237.2.255 addr=10.237.2.255 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-c75b518c",
+        "timestamp": "2022-02-04T07:43:53Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 07:43:53 dnsmasq[14664]: reply 10.237.2.255 is mail.dmz.mannsmith.harrison.com",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-855cbbe1",
+        "timestamp": "2022-02-04T07:43:53Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 07:43:53 dnsmasq[14664]: reply 10.237.2.255 is mailserver.mannsmith.harrison.com",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-f884434c",
+        "timestamp": "2022-02-04T07:45:04Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "cloud.dmz.mannsmith.harrison.com:443 10.237.0.166 - - [04/Feb/2022:07:45:04 +0000] \"REPORT /remote.php/dav/comments/files/109/ HTTP/1.1\" 207 3731 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-1c682278",
+        "timestamp": "2022-02-04T07:45:12Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "cloud.dmz.mannsmith.harrison.com:443 10.237.0.166 - - [04/Feb/2022:07:45:12 +0000] \"GET /core/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1\" 200 578 \"https://cloud.mannsmith.harrison.com/core/css/jquery-ui-fixes.css?v=57925bad04b2781b22d97b514bc2161d\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-fc6bc683",
+        "timestamp": "2022-02-04T07:45:58Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 07:45:58 dnsmasq[14664]: reply 10.237.2.255 is mail.dmz.mannsmith.harrison.com",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-c2d76be3",
+        "timestamp": "2022-02-04T07:45:58Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 07:45:58 dnsmasq[14664]: reply 10.237.2.255 is mailserver.mannsmith.harrison.com",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-32267cd5",
+        "timestamp": "2022-02-04T07:46:44Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "cloud.dmz.mannsmith.harrison.com:443 10.237.0.166 - - [04/Feb/2022:07:46:44 +0000] \"DELETE /ocs/v2.php/apps/files_sharing/api/v1/shares/3?format=json HTTP/1.1\" 200 870 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-dd58257b",
+        "timestamp": "2022-02-04T07:51:32Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Feb  4 07:51:32 dnsmasq[14453]: query[AAAA] cue.v.fwmrm.net from 172.28.192.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-461385aa",
+        "timestamp": "2022-02-04T07:51:36Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Feb  4 07:51:36 dnsmasq[14453]: query[A] ocsp.entrust.net from 172.28.192.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-3dc93016",
+        "timestamp": "2022-02-04T07:52:25Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 07:52:25 dnsmasq[14664]: reply 10.237.2.255 is mail.dmz.mannsmith.harrison.com",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-76b84734",
+        "timestamp": "2022-02-04T07:57:07Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Feb  4 07:57:07 dnsmasq[14453]: query[MX] smith.harrison.com from 172.28.192.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-f667a8a3",
+        "timestamp": "2022-02-04T07:59:51Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Feb  4 07:59:51 dnsmasq[14453]: query[MX] mannsmith.harrison.com from 172.28.192.7",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-f1d34dc0",
+        "timestamp": "2022-02-04T07:59:52Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Feb  4 07:59:52 dnsmasq[14453]: query[PTR] 110.193.28.172.in-addr.arpa from 172.28.192.7",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-b47abb08",
+        "timestamp": "2022-02-04T08:00:05Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Feb  4 08:00:05 dnsmasq[14664]: query[A] 3x6-.1008-.HGwZgA6TnYuWBcgvyz00/9Z6K43P5rYuRPgHHgsCewLgQcSEHsaM9x9jFozbAz-.bWtEYUMdmWMwsCYQ3MBl2oQNftq3kobs4MzX*yXqwyh2YPwKKttEr8S4L4Pz7z-.customers_2018.xlsx.db-21.greer.biz from 192.168.131.109",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-f68969ab",
+        "timestamp": "2022-02-04T08:00:10Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Feb  4 08:00:10 dnsmasq[14664]: query[AAAA] mail from 10.237.2.255",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-2cb8729c",
+        "timestamp": "2022-02-04T08:00:10Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Feb  4 08:00:10 dnsmasq[14664]: query[AAAA] mail from 10.237.2.255",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-e8d4769b",
+        "timestamp": "2022-02-04T08:03:16Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643961796.439:1567): pid=9972 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"hunter.smith\" exe=\"/usr/lib/dovecot/auth\" hostname=10.237.2.255 addr=10.237.2.255 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-fd08819e",
+        "timestamp": "2022-02-04T08:03:16Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643961796.439:1568): pid=9972 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"hunter.smith\" exe=\"/usr/lib/dovecot/auth\" hostname=10.237.2.255 addr=10.237.2.255 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-805f975a",
+        "timestamp": "2022-02-04T08:17:35Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "cloud.dmz.mannsmith.harrison.com:443 10.237.0.166 - - [04/Feb/2022:08:17:35 +0000] \"PUT /remote.php/dav/files/jfoster/Documents/Harris-gutierrez.pdf HTTP/1.1\" 201 3739 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-b79f3b54",
+        "timestamp": "2022-02-04T08:17:35Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "cloud.dmz.mannsmith.harrison.com:443 10.237.0.166 - - [04/Feb/2022:08:17:35 +0000] \"PUT /remote.php/dav/files/jfoster/Documents/Harris-gutierrez.pdf HTTP/1.1\" 201 3739 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-5bae12fc",
+        "timestamp": "2022-02-04T08:17:35Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.mannsmith.harrison.com:443 10.237.0.166 - - [04/Feb/2022:08:17:35 +0000] \"PUT /remote.php/dav/files/jfoster/Documents/Harris-gutierrez.pdf HTTP/1.1\" 201 3739 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-a92c7435",
+        "timestamp": "2022-02-04T08:27:52Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643963272.861:1669): pid=10448 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"megan.oliver\" exe=\"/usr/lib/dovecot/auth\" hostname=10.237.2.255 addr=10.237.2.255 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0025-0a8f05b6",
+        "timestamp": "2022-02-04T08:27:52Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643963272.865:1670): pid=10448 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"megan.oliver\" exe=\"/usr/lib/dovecot/auth\" hostname=10.237.2.255 addr=10.237.2.255 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-3c33a8d8",
+      "source": "alerts",
+      "timestamp": "2022-02-04T07:41:21Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643960481.063:1455): pid=9770 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"ryan.chambers\" exe=\"/usr/lib/dovecot/auth\" hostname=10.237.2.255 addr=10.237.2.255 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-deb0cd4f",
+      "source": "alerts",
+      "timestamp": "2022-02-04T07:41:21Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643960481.063:1456): pid=9770 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"ryan.chambers\" exe=\"/usr/lib/dovecot/auth\" hostname=10.237.2.255 addr=10.237.2.255 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-c75b518c",
+      "source": "alerts",
+      "timestamp": "2022-02-04T07:43:53Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 07:43:53 dnsmasq[14664]: reply 10.237.2.255 is mail.dmz.mannsmith.harrison.com",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (25 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New characters in Apache Access referer., AMiner: New characters in Apache Access request.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (25 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New characters in Apache Access referer., AMiner: New characters in Apache Access request.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "harrison/harrison/session-0010",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 25,
+      "kept_alerts": 25
+    },
+    "sealed": true
+  }
+}

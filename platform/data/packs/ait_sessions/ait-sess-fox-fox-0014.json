@@ -1,0 +1,183 @@
+{
+  "incident_id": "ait-sess-fox-fox-0014",
+  "name": "ATTEST-AIT fox/fox session 14",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "fox/fox/session-0014",
+  "alert": {
+    "timestamp": "2022-01-15T10:59:07Z",
+    "host": "fox",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (3 alerts; detectors: AMiner: New characters in Apache Access referer., AMiner: New event type., AMiner: Unusual occurrence frequencies of Apache Access request method",
+    "scenario": "fox"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-15T10:59:07Z",
+    "end": "2022-01-15T11:20:18Z",
+    "hosts": [
+      "fox"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-6775c437",
+        "timestamp": "2022-01-15T10:59:07Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "172.17.130.196 - - [15/Jan/2022:10:59:07 +0000] \"GET /wp-includes/images/spinner.gif HTTP/1.1\" 200 3969 \"https://intranet.price.fox.org/wp-admin/load-styles.php?c=0&dir=ltr&load%5Bchunk_0%5D=dashicons,admin-bar,buttons,media-views,common,forms,admin-menu,dashboard,list-tables,edit,revisions,media,themes,about,nav-menu&load%5Bchunk_1%5D=s,wp-pointer,widgets,site-icon,l10n,wp-auth-check&ver=5.8.3\" \"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-0e478671",
+        "timestamp": "2022-01-15T11:09:49Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-15 11:09:49 hwarren/192.168.129.254:34841 TLS: soft reset sec=3412/3411 bytes=47220/-1 pkts=670/0",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-c30ea969",
+        "timestamp": "2022-01-15T11:20:18Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "172.17.130.196 - - [15/Jan/2022:11:20:18 +0000] \"POST /wp-admin/admin-ajax.php HTTP/1.1\" 200 1168 \"https://intranet.price.fox.org/wp-admin/edit.php\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-6775c437",
+      "source": "alerts",
+      "timestamp": "2022-01-15T10:59:07Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "172.17.130.196 - - [15/Jan/2022:10:59:07 +0000] \"GET /wp-includes/images/spinner.gif HTTP/1.1\" 200 3969 \"https://intranet.price.fox.org/wp-admin/load-styles.php?c=0&dir=ltr&load%5Bchunk_0%5D=dashicons,admin-bar,buttons,media-views,common,forms,admin-menu,dashboard,list-tables,edit,revisions,media,themes,about,nav-menu&load%5Bchunk_1%5D=s,wp-pointer,widgets,site-icon,l10n,wp-auth-check&ver=5.8.3\" \"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-0e478671",
+      "source": "alerts",
+      "timestamp": "2022-01-15T11:09:49Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-15 11:09:49 hwarren/192.168.129.254:34841 TLS: soft reset sec=3412/3411 bytes=47220/-1 pkts=670/0",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-c30ea969",
+      "source": "alerts",
+      "timestamp": "2022-01-15T11:20:18Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "172.17.130.196 - - [15/Jan/2022:11:20:18 +0000] \"POST /wp-admin/admin-ajax.php HTTP/1.1\" 200 1168 \"https://intranet.price.fox.org/wp-admin/edit.php\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (3 alerts; detectors: AMiner: New characters in Apache Access referer., AMiner: New event type., AMiner: Unusual occurrence frequencies of Apache Access request method",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (3 alerts; detectors: AMiner: New characters in Apache Access referer., AMiner: New event type., AMiner: Unusual occurrence frequencies of Apache Access request method",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "fox/fox/session-0014",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 3,
+      "kept_alerts": 3
+    },
+    "sealed": true
+  }
+}

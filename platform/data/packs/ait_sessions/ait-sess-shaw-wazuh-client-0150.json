@@ -1,0 +1,765 @@
+{
+  "incident_id": "ait-sess-shaw-wazuh-client-0150",
+  "name": "ATTEST-AIT shaw/wazuh-client session 150",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "shaw/wazuh-client/session-0150",
+  "alert": {
+    "timestamp": "2022-01-30T10:25:14Z",
+    "host": "wazuh-client",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wazuh-client (50 alerts; detectors: wazuh:20101, wazuh:20152, wazuh:52507).",
+    "scenario": "shaw"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-30T10:25:14Z",
+    "end": "2022-01-30T11:25:14Z",
+    "hosts": [
+      "wazuh-client"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-66ef5f8f",
+        "timestamp": "2022-01-30T10:25:14Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:52507",
+        "message": "ClamAV database update",
+        "rule_level": 3,
+        "decoder": "freshclam",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0002-70d09c33",
+        "timestamp": "2022-01-30T10:25:36Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:20101",
+        "message": "IDS event.",
+        "rule_level": 6,
+        "decoder": "snort",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0003-6d5d839b",
+        "timestamp": "2022-01-30T10:27:58Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:9701",
+        "message": "Dovecot Authentication Success.",
+        "rule_level": 3,
+        "decoder": "dovecot",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0004-c007817f",
+        "timestamp": "2022-01-30T10:28:51Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:86601",
+        "message": "Suricata: Alert - SURICATA TLS invalid record/traffic",
+        "rule_level": 3,
+        "decoder": "json",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0005-d911d10a",
+        "timestamp": "2022-01-30T10:28:52Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:20101",
+        "message": "IDS event.",
+        "rule_level": 6,
+        "decoder": "snort",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0006-360c37c1",
+        "timestamp": "2022-01-30T10:28:55Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:20101",
+        "message": "IDS event.",
+        "rule_level": 6,
+        "decoder": "snort",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0007-d72c2095",
+        "timestamp": "2022-01-30T10:29:57Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:9701",
+        "message": "Dovecot Authentication Success.",
+        "rule_level": 3,
+        "decoder": "dovecot",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0008-b5965d70",
+        "timestamp": "2022-01-30T10:33:55Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:20101",
+        "message": "IDS event.",
+        "rule_level": 6,
+        "decoder": "snort",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0009-228b8824",
+        "timestamp": "2022-01-30T10:33:58Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:86601",
+        "message": "Suricata: Alert - SURICATA TLS invalid handshake message",
+        "rule_level": 3,
+        "decoder": "json",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0010-228b8824",
+        "timestamp": "2022-01-30T10:33:58Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:86601",
+        "message": "Suricata: Alert - SURICATA TLS invalid handshake message",
+        "rule_level": 3,
+        "decoder": "json",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0011-efa29ccb",
+        "timestamp": "2022-01-30T10:36:25Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:9701",
+        "message": "Dovecot Authentication Success.",
+        "rule_level": 3,
+        "decoder": "dovecot",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0012-8ca932dc",
+        "timestamp": "2022-01-30T10:40:54Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:9701",
+        "message": "Dovecot Authentication Success.",
+        "rule_level": 3,
+        "decoder": "dovecot",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0013-677a3b6e",
+        "timestamp": "2022-01-30T10:41:01Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:20101",
+        "message": "IDS event.",
+        "rule_level": 6,
+        "decoder": "snort",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0014-fd48ab66",
+        "timestamp": "2022-01-30T10:41:07Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:20152",
+        "message": "Multiple IDS alerts for same id.",
+        "rule_level": 10,
+        "decoder": "snort",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0015-6f58241c",
+        "timestamp": "2022-01-30T10:41:18Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:20101",
+        "message": "IDS event.",
+        "rule_level": 6,
+        "decoder": "snort",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0016-6f58241c",
+        "timestamp": "2022-01-30T10:41:18Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:20101",
+        "message": "IDS event.",
+        "rule_level": 6,
+        "decoder": "snort",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0017-978ff6f9",
+        "timestamp": "2022-01-30T10:41:19Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:86601",
+        "message": "Suricata: Alert - SURICATA TLS invalid handshake message",
+        "rule_level": 3,
+        "decoder": "json",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0018-1b36a63b",
+        "timestamp": "2022-01-30T10:41:20Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:9701",
+        "message": "Dovecot Authentication Success.",
+        "rule_level": 3,
+        "decoder": "dovecot",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0019-bc3f6a5c",
+        "timestamp": "2022-01-30T10:41:21Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:86601",
+        "message": "Suricata: Alert - SURICATA TLS invalid handshake message",
+        "rule_level": 3,
+        "decoder": "json",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0020-caff64e0",
+        "timestamp": "2022-01-30T10:41:22Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:20101",
+        "message": "IDS event.",
+        "rule_level": 6,
+        "decoder": "snort",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0021-563c3553",
+        "timestamp": "2022-01-30T10:41:23Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:86601",
+        "message": "Suricata: Alert - SURICATA TLS invalid record/traffic",
+        "rule_level": 3,
+        "decoder": "json",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0022-a453cb7a",
+        "timestamp": "2022-01-30T10:41:24Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:86601",
+        "message": "Suricata: Alert - SURICATA TLS invalid handshake message",
+        "rule_level": 3,
+        "decoder": "json",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0023-9f386d05",
+        "timestamp": "2022-01-30T10:41:32Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:86601",
+        "message": "Suricata: Alert - SURICATA TLS invalid record/traffic",
+        "rule_level": 3,
+        "decoder": "json",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0024-608def82",
+        "timestamp": "2022-01-30T10:43:18Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:9701",
+        "message": "Dovecot Authentication Success.",
+        "rule_level": 3,
+        "decoder": "dovecot",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0025-93f0891b",
+        "timestamp": "2022-01-30T10:45:40Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:20101",
+        "message": "IDS event.",
+        "rule_level": 6,
+        "decoder": "snort",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0026-d78fa35b",
+        "timestamp": "2022-01-30T10:45:41Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:86601",
+        "message": "Suricata: Alert - SURICATA TLS invalid handshake message",
+        "rule_level": 3,
+        "decoder": "json",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0027-a0e46034",
+        "timestamp": "2022-01-30T10:45:46Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:20101",
+        "message": "IDS event.",
+        "rule_level": 6,
+        "decoder": "snort",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0028-2544d525",
+        "timestamp": "2022-01-30T10:47:31Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:86601",
+        "message": "Suricata: Alert - SURICATA TLS invalid record/traffic",
+        "rule_level": 3,
+        "decoder": "json",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0029-009b488d",
+        "timestamp": "2022-01-30T10:47:34Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:20101",
+        "message": "IDS event.",
+        "rule_level": 6,
+        "decoder": "snort",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0030-46085cc3",
+        "timestamp": "2022-01-30T10:49:05Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:9701",
+        "message": "Dovecot Authentication Success.",
+        "rule_level": 3,
+        "decoder": "dovecot",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0031-90a79a27",
+        "timestamp": "2022-01-30T10:50:04Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:9701",
+        "message": "Dovecot Authentication Success.",
+        "rule_level": 3,
+        "decoder": "dovecot",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0032-8ba1da63",
+        "timestamp": "2022-01-30T10:50:07Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:86601",
+        "message": "Suricata: Alert - SURICATA TLS invalid record/traffic",
+        "rule_level": 3,
+        "decoder": "json",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0033-6b72414a",
+        "timestamp": "2022-01-30T10:50:08Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:20101",
+        "message": "IDS event.",
+        "rule_level": 6,
+        "decoder": "snort",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0034-5a38866c",
+        "timestamp": "2022-01-30T10:51:46Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:20101",
+        "message": "IDS event.",
+        "rule_level": 6,
+        "decoder": "snort",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0035-3aaf4ba0",
+        "timestamp": "2022-01-30T10:52:45Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:86601",
+        "message": "Suricata: Alert - SURICATA TLS invalid record/traffic",
+        "rule_level": 3,
+        "decoder": "json",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0036-6b18a418",
+        "timestamp": "2022-01-30T10:54:53Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:20101",
+        "message": "IDS event.",
+        "rule_level": 6,
+        "decoder": "snort",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0037-2af7ba02",
+        "timestamp": "2022-01-30T10:56:17Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:9701",
+        "message": "Dovecot Authentication Success.",
+        "rule_level": 3,
+        "decoder": "dovecot",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0038-c6e9311e",
+        "timestamp": "2022-01-30T10:59:07Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:20101",
+        "message": "IDS event.",
+        "rule_level": 6,
+        "decoder": "snort",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0039-50de9d79",
+        "timestamp": "2022-01-30T11:04:36Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:9701",
+        "message": "Dovecot Authentication Success.",
+        "rule_level": 3,
+        "decoder": "dovecot",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0040-290000ea",
+        "timestamp": "2022-01-30T11:08:40Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:20101",
+        "message": "IDS event.",
+        "rule_level": 6,
+        "decoder": "snort",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0041-f003784e",
+        "timestamp": "2022-01-30T11:08:41Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:20101",
+        "message": "IDS event.",
+        "rule_level": 6,
+        "decoder": "snort",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0042-aa87aca6",
+        "timestamp": "2022-01-30T11:11:45Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:9701",
+        "message": "Dovecot Authentication Success.",
+        "rule_level": 3,
+        "decoder": "dovecot",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0043-625462eb",
+        "timestamp": "2022-01-30T11:14:26Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:86601",
+        "message": "Suricata: Alert - SURICATA TLS invalid handshake message",
+        "rule_level": 3,
+        "decoder": "json",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0044-20940f21",
+        "timestamp": "2022-01-30T11:18:36Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:9701",
+        "message": "Dovecot Authentication Success.",
+        "rule_level": 3,
+        "decoder": "dovecot",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0045-36f40356",
+        "timestamp": "2022-01-30T11:19:15Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:9701",
+        "message": "Dovecot Authentication Success.",
+        "rule_level": 3,
+        "decoder": "dovecot",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0046-c6787e5c",
+        "timestamp": "2022-01-30T11:20:04Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:86601",
+        "message": "Suricata: Alert - SURICATA TLS invalid record/traffic",
+        "rule_level": 3,
+        "decoder": "json",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0047-f86f37c7",
+        "timestamp": "2022-01-30T11:21:55Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:9701",
+        "message": "Dovecot Authentication Success.",
+        "rule_level": 3,
+        "decoder": "dovecot",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0048-25852b9d",
+        "timestamp": "2022-01-30T11:22:55Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:20101",
+        "message": "IDS event.",
+        "rule_level": 6,
+        "decoder": "snort",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0049-b45efb89",
+        "timestamp": "2022-01-30T11:22:56Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:86601",
+        "message": "Suricata: Alert - SURICATA TLS invalid record/traffic",
+        "rule_level": 3,
+        "decoder": "json",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0050-64eca272",
+        "timestamp": "2022-01-30T11:23:02Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:20152",
+        "message": "Multiple IDS alerts for same id.",
+        "rule_level": 10,
+        "decoder": "snort",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-66ef5f8f",
+      "source": "alerts",
+      "timestamp": "2022-01-30T10:25:14Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:52507",
+        "message": "ClamAV database update",
+        "rule_level": 3,
+        "decoder": "freshclam",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-70d09c33",
+      "source": "alerts",
+      "timestamp": "2022-01-30T10:25:36Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:20101",
+        "message": "IDS event.",
+        "rule_level": 6,
+        "decoder": "snort",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-6d5d839b",
+      "source": "alerts",
+      "timestamp": "2022-01-30T10:27:58Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:9701",
+        "message": "Dovecot Authentication Success.",
+        "rule_level": 3,
+        "decoder": "dovecot",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wazuh-client"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wazuh-client"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wazuh-client (50 alerts; detectors: wazuh:20101, wazuh:20152, wazuh:52507).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wazuh-client"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wazuh-client"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wazuh-client (50 alerts; detectors: wazuh:20101, wazuh:20152, wazuh:52507).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "shaw/wazuh-client/session-0150",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 1130,
+      "kept_alerts": 50
+    },
+    "sealed": true
+  }
+}

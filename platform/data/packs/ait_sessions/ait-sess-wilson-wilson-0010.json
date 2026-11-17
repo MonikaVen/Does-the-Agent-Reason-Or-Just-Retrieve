@@ -1,0 +1,525 @@
+{
+  "incident_id": "ait-sess-wilson-wilson-0010",
+  "name": "ATTEST-AIT wilson/wilson session 10",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wilson/wilson/session-0010",
+  "alert": {
+    "timestamp": "2022-02-03T08:22:51Z",
+    "host": "wilson",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (41 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New cred_acq parameter combination in Audit logs., AMiner: New event type.).",
+    "scenario": "wilson"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-03T08:22:51Z",
+    "end": "2022-02-03T09:22:09Z",
+    "hosts": [
+      "wilson"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-93ad3e28",
+        "timestamp": "2022-02-03T08:22:51Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643876571.725:1973): pid=13009 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"james.wilkinson\" exe=\"/usr/lib/dovecot/auth\" hostname=10.182.193.181 addr=10.182.193.181 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-68117f51",
+        "timestamp": "2022-02-03T08:22:51Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643876571.725:1974): pid=13009 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"james.wilkinson\" exe=\"/usr/lib/dovecot/auth\" hostname=10.182.193.181 addr=10.182.193.181 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-03cec948",
+        "timestamp": "2022-02-03T08:32:05Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Feb  3 08:32:05 dnsmasq[14306]: query[MX] wilsonahmed.wilson.com from 192.168.224.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-4a3daf57",
+        "timestamp": "2022-02-03T08:39:44Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 08:39:44 dnsmasq[14306]: query[A] weforum.org from 192.168.224.45",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-2d5ee720",
+        "timestamp": "2022-02-03T08:39:44Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 08:39:44 dnsmasq[14306]: forwarded weforum.org to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-e1f57c49",
+        "timestamp": "2022-02-03T08:39:44Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 08:39:44 dnsmasq[14306]: reply weforum.org is 52.49.102.146",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-a0148561",
+        "timestamp": "2022-02-03T08:39:44Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 08:39:44 dnsmasq[14306]: reply weforum.org is 34.251.235.89",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-6c0dca2c",
+        "timestamp": "2022-02-03T08:42:22Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  3 08:42:22 dnsmasq[14306]: query[A] example.org from 192.168.224.233",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-ae4bfed2",
+        "timestamp": "2022-02-03T08:55:25Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  3 08:55:25 lane-mail HORDE: [gollem] PHP ERROR: Invalid argument supplied for foreach() [pid 811 on line 338 of \"/usr/share/horde/gollem/lib/Auth.php\"]",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-4f79608a",
+        "timestamp": "2022-02-03T08:56:21Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  3 08:56:21 dnsmasq[14306]: query[A] dell.com from 192.168.226.96",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-f915e520",
+        "timestamp": "2022-02-03T08:58:54Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Feb  3 08:58:54 dnsmasq[14306]: query[MX] hallbrown.wilson.com from 192.168.224.185",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-574e098e",
+        "timestamp": "2022-02-03T09:00:06Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Feb  3 09:00:06 dnsmasq[14306]: query[PTR] 65.227.168.192.in-addr.arpa from 192.168.226.198",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-feb05831",
+        "timestamp": "2022-02-03T09:07:53Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  3 09:07:53 mail sshd[13756]: Accepted publickey for ckhan from 10.182.193.78 port 51852 ssh2: RSA SHA256:8wFbiaYPevKS/wYKnePO20v0iymTcrRh4Kr+1uRS1UM",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-72c07c7b",
+        "timestamp": "2022-02-03T09:07:53Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  3 09:07:53 mail sshd[13756]: pam_unix(sshd:session): session opened for user ckhan by (uid=0)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-35099a21",
+        "timestamp": "2022-02-03T09:07:53Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  3 09:07:53 mail systemd-logind[497]: New session 102 of user ckhan.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-d7d3642f",
+        "timestamp": "2022-02-03T09:07:53Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  3 09:07:53 mail systemd: pam_unix(systemd-user:session): session opened for user ckhan by (uid=0)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-1ad2b1d3",
+        "timestamp": "2022-02-03T09:07:53Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643879273.819:2213): pid=13756 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"ckhan\" exe=\"/usr/sbin/sshd\" hostname=10.182.193.78 addr=10.182.193.78 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-b8e9c38c",
+        "timestamp": "2022-02-03T09:07:53Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1643879273.819:2214): pid=13756 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"ckhan\" exe=\"/usr/sbin/sshd\" hostname=10.182.193.78 addr=10.182.193.78 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-b40bf2ac",
+        "timestamp": "2022-02-03T09:07:53Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New login parameter combination in Audit logs.",
+        "message": "type=LOGIN msg=audit(1643879273.819:2215): pid=13756 uid=0 old-auid=4294967295 auid=1003 tty=(none) old-ses=4294967295 ses=102 res=1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-d302155b",
+        "timestamp": "2022-02-03T09:07:53Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643879273.843:2216): pid=13762 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"ckhan\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-a41be70d",
+        "timestamp": "2022-02-03T09:07:53Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1643879273.843:2218): pid=13762 uid=0 auid=1003 ses=103 msg='op=PAM:session_open acct=\"ckhan\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-eda59c0d",
+        "timestamp": "2022-02-03T09:07:53Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1643879273.855:2219): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=user@1003 comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-da43f6a3",
+        "timestamp": "2022-02-03T09:07:53Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1643879273.863:2220): pid=13756 uid=0 auid=1003 ses=102 msg='op=PAM:session_open acct=\"ckhan\" exe=\"/usr/sbin/sshd\" hostname=10.182.193.78 addr=10.182.193.78 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-0ca1139d",
+        "timestamp": "2022-02-03T09:07:53Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "type=USER_LOGIN msg=audit(1643879273.911:2222): pid=13756 uid=0 auid=1003 ses=102 msg='op=login id=1003 exe=\"/usr/sbin/sshd\" hostname=10.182.193.78 addr=10.182.193.78 terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0025-04cc211c",
+        "timestamp": "2022-02-03T09:07:53Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New user_login parameter combination in Audit logs.",
+        "message": "type=USER_LOGIN msg=audit(1643879273.911:2222): pid=13756 uid=0 auid=1003 ses=102 msg='op=login id=1003 exe=\"/usr/sbin/sshd\" hostname=10.182.193.78 addr=10.182.193.78 terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0026-97031f59",
+        "timestamp": "2022-02-03T09:08:36Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  3 09:08:36 mail sshd[13769]: Received disconnect from 10.182.193.78 port 51852:11: disconnected by user",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0027-0685f6d1",
+        "timestamp": "2022-02-03T09:08:36Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  3 09:08:36 mail sshd[13769]: Disconnected from 10.182.193.78 port 51852",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0028-ce3d96d1",
+        "timestamp": "2022-02-03T09:18:07Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 09:18:07 dnsmasq[14306]: query[A] nytm.org from 192.168.224.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0029-6371a787",
+        "timestamp": "2022-02-03T09:18:07Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 09:18:07 dnsmasq[14306]: forwarded nytm.org to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0030-ae6c602a",
+        "timestamp": "2022-02-03T09:18:07Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 09:18:07 dnsmasq[14306]: reply nytm.org is 157.230.7.81",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0031-09104fc6",
+        "timestamp": "2022-02-03T09:18:07Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 09:18:07 dnsmasq[14306]: query[A] nytech.org from 192.168.224.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0032-48eea918",
+        "timestamp": "2022-02-03T09:18:07Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 09:18:07 dnsmasq[14306]: forwarded nytech.org to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0033-f6b21edd",
+        "timestamp": "2022-02-03T09:18:07Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 09:18:07 dnsmasq[14306]: reply nytech.org is 157.230.7.81",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0034-14c7b0e9",
+        "timestamp": "2022-02-03T09:18:07Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 09:18:07 dnsmasq[14481]: query[A] nytm.org from 10.182.193.78",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0035-897eea55",
+        "timestamp": "2022-02-03T09:18:07Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 09:18:07 dnsmasq[14481]: forwarded nytm.org to 192.168.239.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0036-cc5cbafe",
+        "timestamp": "2022-02-03T09:18:07Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 09:18:07 dnsmasq[14481]: reply nytm.org is 157.230.7.81",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0037-b42a6e5c",
+        "timestamp": "2022-02-03T09:18:07Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 09:18:07 dnsmasq[14481]: query[A] nytech.org from 10.182.193.78",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0038-5266d378",
+        "timestamp": "2022-02-03T09:18:07Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 09:18:07 dnsmasq[14481]: forwarded nytech.org to 192.168.239.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0039-e93c77da",
+        "timestamp": "2022-02-03T09:18:07Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 09:18:07 dnsmasq[14481]: reply nytech.org is 157.230.7.81",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0040-8596acbe",
+        "timestamp": "2022-02-03T09:22:09Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643880129.906:2276): pid=14022 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"amy.anderson\" exe=\"/usr/lib/dovecot/auth\" hostname=10.182.193.181 addr=10.182.193.181 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0041-bfa5fdb5",
+        "timestamp": "2022-02-03T09:22:09Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643880129.906:2277): pid=14022 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"amy.anderson\" exe=\"/usr/lib/dovecot/auth\" hostname=10.182.193.181 addr=10.182.193.181 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-93ad3e28",
+      "source": "alerts",
+      "timestamp": "2022-02-03T08:22:51Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643876571.725:1973): pid=13009 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"james.wilkinson\" exe=\"/usr/lib/dovecot/auth\" hostname=10.182.193.181 addr=10.182.193.181 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-68117f51",
+      "source": "alerts",
+      "timestamp": "2022-02-03T08:22:51Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643876571.725:1974): pid=13009 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"james.wilkinson\" exe=\"/usr/lib/dovecot/auth\" hostname=10.182.193.181 addr=10.182.193.181 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-03cec948",
+      "source": "alerts",
+      "timestamp": "2022-02-03T08:32:05Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Feb  3 08:32:05 dnsmasq[14306]: query[MX] wilsonahmed.wilson.com from 192.168.224.4",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (41 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New cred_acq parameter combination in Audit logs., AMiner: New event type.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (41 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New cred_acq parameter combination in Audit logs., AMiner: New event type.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wilson/wilson/session-0010",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 41,
+      "kept_alerts": 41
+    },
+    "sealed": true
+  }
+}

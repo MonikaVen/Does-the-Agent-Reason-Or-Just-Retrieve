@@ -1,0 +1,219 @@
+{
+  "incident_id": "ait-sess-santos-santos-0086",
+  "name": "ATTEST-AIT santos/santos session 86",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "santos/santos/session-0086",
+  "alert": {
+    "timestamp": "2022-01-17T12:59:28Z",
+    "host": "santos",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (7 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New characters in Apache Access request.).",
+    "scenario": "santos"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-17T12:59:28Z",
+    "end": "2022-01-17T13:09:21Z",
+    "hosts": [
+      "santos"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-ec640dc1",
+        "timestamp": "2022-01-17T12:59:28Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"agent\":{\"id\":\"ab5616c7-58c0-4480-a883-359041057b74\",\"hostname\":\"intranet-server\",\"ephemeral_id\":\"c1899c21-6022-4ee2-9f06-2248c8a823cf\",\"type\":\"metricbeat\",\"version\":\"7.13.2\",\"name\":\"intranet-server\"},\"tags\":[\"beats_input_raw_event\"],\"host\":{\"cpu\":{\"pct\":0.0755},\"name\":\"intranet-server\"},\"@version\":\"1\",\"system\":{\"cpu\":{\"cores\":1,\"steal\":{\"norm\":{\"pct\":0.0",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-77c1dc20",
+        "timestamp": "2022-01-17T13:07:12Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.smith.santos.com:443 172.21.129.224 - - [17/Jan/2022:13:07:12 +0000] \"GET /ocs/v2.php/apps/files_sharing/api/v1/shares?format=json&path=%2FDocuments%20(2)&reshares=true HTTP/1.1\" 200 870 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-f948dc5c",
+        "timestamp": "2022-01-17T13:07:12Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.smith.santos.com:443 172.21.129.224 - - [17/Jan/2022:13:07:12 +0000] \"GET /ocs/v2.php/apps/files_sharing/api/v1/shares?format=json&path=%2FDocuments%20(2)&shared_with_me=true HTTP/1.1\" 200 4478 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-715ffbb6",
+        "timestamp": "2022-01-17T13:07:12Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "192.168.104.81 - - [17/Jan/2022:13:07:12 +0000] \"GET /ocs/v2.php/apps/files_sharing/api/v1/shares?format=json&path=%2FDocuments%20(2)&reshares=true HTTP/1.1\" 200 870 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-fe0f8d7d",
+        "timestamp": "2022-01-17T13:07:12Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "192.168.104.81 - - [17/Jan/2022:13:07:12 +0000] \"GET /ocs/v2.php/apps/files_sharing/api/v1/shares?format=json&path=%2FDocuments%20(2)&shared_with_me=true HTTP/1.1\" 200 2096 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-f03ad6fb",
+        "timestamp": "2022-01-17T13:09:21Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.smith.santos.com:443 172.21.129.224 - - [17/Jan/2022:13:09:21 +0000] \"GET /index.php/apps/files/ajax/download.php?dir=%2F&files=Documents%20(2)&downloadStartSecret=ftlouqbx2ht HTTP/1.1\" 200 18782 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-dd9718a7",
+        "timestamp": "2022-01-17T13:09:21Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "192.168.104.81 - - [17/Jan/2022:13:09:21 +0000] \"GET /index.php/apps/files/ajax/download.php?dir=%2F&files=Documents%20(2)&downloadStartSecret=ftlouqbx2ht HTTP/1.1\" 200 16417 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-ec640dc1",
+      "source": "alerts",
+      "timestamp": "2022-01-17T12:59:28Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"agent\":{\"id\":\"ab5616c7-58c0-4480-a883-359041057b74\",\"hostname\":\"intranet-server\",\"ephemeral_id\":\"c1899c21-6022-4ee2-9f06-2248c8a823cf\",\"type\":\"metricbeat\",\"version\":\"7.13.2\",\"name\":\"intranet-server\"},\"tags\":[\"beats_input_raw_event\"],\"host\":{\"cpu\":{\"pct\":0.0755},\"name\":\"intranet-server\"},\"@version\":\"1\",\"system\":{\"cpu\":{\"cores\":1,\"steal\":{\"norm\":{\"pct\":0.0",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-77c1dc20",
+      "source": "alerts",
+      "timestamp": "2022-01-17T13:07:12Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.smith.santos.com:443 172.21.129.224 - - [17/Jan/2022:13:07:12 +0000] \"GET /ocs/v2.php/apps/files_sharing/api/v1/shares?format=json&path=%2FDocuments%20(2)&reshares=true HTTP/1.1\" 200 870 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-f948dc5c",
+      "source": "alerts",
+      "timestamp": "2022-01-17T13:07:12Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.smith.santos.com:443 172.21.129.224 - - [17/Jan/2022:13:07:12 +0000] \"GET /ocs/v2.php/apps/files_sharing/api/v1/shares?format=json&path=%2FDocuments%20(2)&shared_with_me=true HTTP/1.1\" 200 4478 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (7 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New characters in Apache Access request.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (7 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New characters in Apache Access request.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "santos/santos/session-0086",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 7,
+      "kept_alerts": 7
+    },
+    "sealed": true
+  }
+}

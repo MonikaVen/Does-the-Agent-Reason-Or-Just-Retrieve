@@ -1,0 +1,192 @@
+{
+  "incident_id": "ait-sess-fox-fox-0099",
+  "name": "ATTEST-AIT fox/fox session 99",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "fox/fox/session-0099",
+  "alert": {
+    "timestamp": "2022-01-19T05:30:22Z",
+    "host": "fox",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (4 alerts; detectors: AMiner: Unusual occurrence frequencies of Apache Access request methods., AMiner: Unusual occurrence frequencies of DNS query IPs.).",
+    "scenario": "fox"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-19T05:30:22Z",
+    "end": "2022-01-19T06:00:12Z",
+    "hosts": [
+      "fox"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-872c131e",
+        "timestamp": "2022-01-19T05:30:22Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "192.168.130.110 - - [19/Jan/2022:05:30:22 +0000] \"GET /imp/dynamic.php?page=message&buid=66&mailbox=SU5CT1g&token=jMcwcHhGo-lVi-7BtAS3LvU&uniq=1642570222537 HTTP/1.1\" 200 7534 \"https://smtp.jonesmorgan.fox.org/imp/dynamic.php?page=mailbox\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-6c51bd88",
+        "timestamp": "2022-01-19T05:40:24Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "192.168.130.110 - - [19/Jan/2022:05:40:24 +0000] \"GET /imp/dynamic.php?page=message&buid=66&mailbox=SU5CT1g&token=jMcwcHhGo-lVi-7BtAS3LvU&uniq=1642570824383 HTTP/1.1\" 200 7601 \"https://smtp.jonesmorgan.fox.org/imp/dynamic.php?page=mailbox\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-446fdc0b",
+        "timestamp": "2022-01-19T05:50:19Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "192.168.130.110 - - [19/Jan/2022:05:50:19 +0000] \"POST /services/ajax.php/imp/sendMessage HTTP/1.1\" 200 662 \"https://smtp.jonesmorgan.fox.org/imp/dynamic.php?page=compose&type=new&token=jMcwcHhGo-lVi-7BtAS3LvU&uniq=1642571360018\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-8a31410a",
+        "timestamp": "2022-01-19T06:00:12Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 19 06:00:12 dnsmasq[14460]: query[PTR] 156.131.168.192.in-addr.arpa from 192.168.129.212",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-872c131e",
+      "source": "alerts",
+      "timestamp": "2022-01-19T05:30:22Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "192.168.130.110 - - [19/Jan/2022:05:30:22 +0000] \"GET /imp/dynamic.php?page=message&buid=66&mailbox=SU5CT1g&token=jMcwcHhGo-lVi-7BtAS3LvU&uniq=1642570222537 HTTP/1.1\" 200 7534 \"https://smtp.jonesmorgan.fox.org/imp/dynamic.php?page=mailbox\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-6c51bd88",
+      "source": "alerts",
+      "timestamp": "2022-01-19T05:40:24Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "192.168.130.110 - - [19/Jan/2022:05:40:24 +0000] \"GET /imp/dynamic.php?page=message&buid=66&mailbox=SU5CT1g&token=jMcwcHhGo-lVi-7BtAS3LvU&uniq=1642570824383 HTTP/1.1\" 200 7601 \"https://smtp.jonesmorgan.fox.org/imp/dynamic.php?page=mailbox\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-446fdc0b",
+      "source": "alerts",
+      "timestamp": "2022-01-19T05:50:19Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "192.168.130.110 - - [19/Jan/2022:05:50:19 +0000] \"POST /services/ajax.php/imp/sendMessage HTTP/1.1\" 200 662 \"https://smtp.jonesmorgan.fox.org/imp/dynamic.php?page=compose&type=new&token=jMcwcHhGo-lVi-7BtAS3LvU&uniq=1642571360018\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (4 alerts; detectors: AMiner: Unusual occurrence frequencies of Apache Access request methods., AMiner: Unusual occurrence frequencies of DNS query IPs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (4 alerts; detectors: AMiner: Unusual occurrence frequencies of Apache Access request methods., AMiner: Unusual occurrence frequencies of DNS query IPs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "fox/fox/session-0099",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 4,
+      "kept_alerts": 4
+    },
+    "sealed": true
+  }
+}

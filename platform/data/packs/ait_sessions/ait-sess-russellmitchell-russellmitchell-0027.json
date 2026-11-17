@@ -1,0 +1,192 @@
+{
+  "incident_id": "ait-sess-russellmitchell-russellmitchell-0027",
+  "name": "ATTEST-AIT russellmitchell/russellmitchell session 27",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "russellmitchell/russellmitchell/session-0027",
+  "alert": {
+    "timestamp": "2022-01-22T06:25:01Z",
+    "host": "russellmitchell",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (4 alerts; detectors: AMiner: New event type.).",
+    "scenario": "russellmitchell"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-22T06:25:01Z",
+    "end": "2022-01-22T06:25:13Z",
+    "hosts": [
+      "russellmitchell"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-ad43bd08",
+        "timestamp": "2022-01-22T06:25:01Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 22 06:25:01 inet-dns rsyslogd:  [origin software=\"rsyslogd\" swVersion=\"8.32.0\" x-pid=\"845\" x-info=\"http://www.rsyslog.com\"] rsyslogd was HUPed",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-421a55cb",
+        "timestamp": "2022-01-22T06:25:03Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 22 06:25:03 mail liblogging-stdlog:  [origin software=\"rsyslogd\" swVersion=\"8.24.0\" x-pid=\"516\" x-info=\"http://www.rsyslog.com\"] rsyslogd was HUPed",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-28bdb7ed",
+        "timestamp": "2022-01-22T06:25:12Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 22 06:25:12 webserver apachectl[11884]: AH00548: NameVirtualHost has no effect and will be removed in the next release /etc/apache2/sites-enabled/000-catch-all.conf:1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-a0b7f40f",
+        "timestamp": "2022-01-22T06:25:13Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "[Sat Jan 22 06:25:13.739376 2022] [ssl:warn] [pid 29640] AH01909: 000-catch-all:443:0 server certificate does NOT include an ID which matches the server name",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-ad43bd08",
+      "source": "alerts",
+      "timestamp": "2022-01-22T06:25:01Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 22 06:25:01 inet-dns rsyslogd:  [origin software=\"rsyslogd\" swVersion=\"8.32.0\" x-pid=\"845\" x-info=\"http://www.rsyslog.com\"] rsyslogd was HUPed",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-421a55cb",
+      "source": "alerts",
+      "timestamp": "2022-01-22T06:25:03Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 22 06:25:03 mail liblogging-stdlog:  [origin software=\"rsyslogd\" swVersion=\"8.24.0\" x-pid=\"516\" x-info=\"http://www.rsyslog.com\"] rsyslogd was HUPed",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-28bdb7ed",
+      "source": "alerts",
+      "timestamp": "2022-01-22T06:25:12Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 22 06:25:12 webserver apachectl[11884]: AH00548: NameVirtualHost has no effect and will be removed in the next release /etc/apache2/sites-enabled/000-catch-all.conf:1",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (4 alerts; detectors: AMiner: New event type.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (4 alerts; detectors: AMiner: New event type.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "russellmitchell/russellmitchell/session-0027",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 4,
+      "kept_alerts": 4
+    },
+    "sealed": true
+  }
+}

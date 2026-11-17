@@ -1,0 +1,381 @@
+{
+  "incident_id": "ait-sess-wardbeck-wardbeck-0055",
+  "name": "ATTEST-AIT wardbeck/wardbeck session 55",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wardbeck/wardbeck/session-0055",
+  "alert": {
+    "timestamp": "2022-01-21T08:43:34Z",
+    "host": "wardbeck",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (25 alerts; detectors: AMiner: New cred_acq parameter combination in Audit logs., AMiner: New cred_disp parameter combination in Audit logs., AMiner: New cred_ref",
+    "scenario": "wardbeck"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-21T08:43:34Z",
+    "end": "2022-01-21T09:00:30Z",
+    "hosts": [
+      "wardbeck"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-bfd9a4b5",
+        "timestamp": "2022-01-21T08:43:34Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-21 08:43:34 1nApWA-0005r9-9l Spool file is locked (another process is handling this message)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-50e5be01",
+        "timestamp": "2022-01-21T08:48:45Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642754925.077:1699): pid=17492 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"hwhite\" exe=\"/usr/sbin/sshd\" hostname=10.132.56.81 addr=10.132.56.81 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-45fb0fc7",
+        "timestamp": "2022-01-21T08:48:45Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1642754925.081:1700): pid=17492 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"hwhite\" exe=\"/usr/sbin/sshd\" hostname=10.132.56.81 addr=10.132.56.81 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-abdc71b6",
+        "timestamp": "2022-01-21T08:48:45Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New login parameter combination in Audit logs.",
+        "message": "type=LOGIN msg=audit(1642754925.081:1701): pid=17492 uid=0 old-auid=4294967295 auid=1003 tty=(none) old-ses=4294967295 ses=246 res=1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-5573dc52",
+        "timestamp": "2022-01-21T08:48:45Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642754925.145:1702): pid=17494 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"hwhite\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-a8eb27c0",
+        "timestamp": "2022-01-21T08:48:45Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1642754925.149:1703): pid=17494 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"hwhite\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-43b65a5f",
+        "timestamp": "2022-01-21T08:48:45Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New login parameter combination in Audit logs.",
+        "message": "type=LOGIN msg=audit(1642754925.149:1704): pid=17494 uid=0 old-auid=4294967295 auid=1003 tty=(none) old-ses=4294967295 ses=247 res=1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-75e5d43e",
+        "timestamp": "2022-01-21T08:48:45Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1642754925.149:1705): pid=17494 uid=0 auid=1003 ses=247 msg='op=PAM:session_open acct=\"hwhite\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-e5a2867d",
+        "timestamp": "2022-01-21T08:48:45Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642754925.537:1706): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=user@1003 comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-227be8a9",
+        "timestamp": "2022-01-21T08:48:47Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1642754927.593:1707): pid=17492 uid=0 auid=1003 ses=246 msg='op=PAM:session_open acct=\"hwhite\" exe=\"/usr/sbin/sshd\" hostname=10.132.56.81 addr=10.132.56.81 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-555ecdc7",
+        "timestamp": "2022-01-21T08:48:47Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1642754927.597:1708): pid=17598 uid=0 auid=1003 ses=246 msg='op=PAM:setcred acct=\"hwhite\" exe=\"/usr/sbin/sshd\" hostname=10.132.56.81 addr=10.132.56.81 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-298c349a",
+        "timestamp": "2022-01-21T08:49:32Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 08:49:32 intranet-server sudo:   hwhite : TTY=pts/0 ; PWD=/home/hwhite ; USER=root ; COMMAND=/usr/bin/tail /var/log/syslog",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-83c22ef1",
+        "timestamp": "2022-01-21T08:49:32Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 08:49:32 intranet-server sudo: pam_unix(sudo:session): session opened for user root by hwhite(uid=0)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-07ac2f7c",
+        "timestamp": "2022-01-21T08:49:32Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 08:49:32 intranet-server sudo: pam_unix(sudo:session): session closed for user root",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-226839fd",
+        "timestamp": "2022-01-21T08:49:32Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "type=USER_CMD msg=audit(1642754972.384:1710): pid=17619 uid=1003 auid=1003 ses=246 msg='cwd=\"/home/hwhite\" cmd=7461696C202F7661722F6C6F672F7379736C6F67 terminal=pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-650e12ac",
+        "timestamp": "2022-01-21T08:49:32Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_cmd parameter combination in Audit logs.",
+        "message": "type=USER_CMD msg=audit(1642754972.384:1710): pid=17619 uid=1003 auid=1003 ses=246 msg='cwd=\"/home/hwhite\" cmd=7461696C202F7661722F6C6F672F7379736C6F67 terminal=pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-bd0628bd",
+        "timestamp": "2022-01-21T08:49:32Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "type=CRED_REFR msg=audit(1642754972.384:1711): pid=17619 uid=0 auid=1003 ses=246 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-a6d017f7",
+        "timestamp": "2022-01-21T08:49:32Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New cred_refr parameter combination in Audit logs.",
+        "message": "type=CRED_REFR msg=audit(1642754972.384:1711): pid=17619 uid=0 auid=1003 ses=246 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-2af8d7e3",
+        "timestamp": "2022-01-21T08:49:32Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1642754972.384:1712): pid=17619 uid=0 auid=1003 ses=246 msg='op=PAM:session_open acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-ff1e2cc7",
+        "timestamp": "2022-01-21T08:49:32Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_end parameter combination in Audit logs.",
+        "message": "type=USER_END msg=audit(1642754972.512:1713): pid=17619 uid=0 auid=1003 ses=246 msg='op=PAM:session_close acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-5a67e20d",
+        "timestamp": "2022-01-21T08:49:32Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "message": "type=CRED_DISP msg=audit(1642754972.512:1714): pid=17619 uid=0 auid=1003 ses=246 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-14fe8117",
+        "timestamp": "2022-01-21T08:51:19Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_end parameter combination in Audit logs.",
+        "message": "type=USER_END msg=audit(1642755079.319:1715): pid=17492 uid=0 auid=1003 ses=246 msg='op=PAM:session_close acct=\"hwhite\" exe=\"/usr/sbin/sshd\" hostname=10.132.56.81 addr=10.132.56.81 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-99822998",
+        "timestamp": "2022-01-21T08:51:19Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "message": "type=CRED_DISP msg=audit(1642755079.319:1716): pid=17492 uid=0 auid=1003 ses=246 msg='op=PAM:setcred acct=\"hwhite\" exe=\"/usr/sbin/sshd\" hostname=10.132.56.81 addr=10.132.56.81 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-8a4114bf",
+        "timestamp": "2022-01-21T08:51:19Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642755079.391:1717): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=user@1003 comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0025-96e5581c",
+        "timestamp": "2022-01-21T09:00:30Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 21 09:00:30 dnsmasq[14529]: query[A] secure.gravatar.com from 192.168.96.4",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-bfd9a4b5",
+      "source": "alerts",
+      "timestamp": "2022-01-21T08:43:34Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-21 08:43:34 1nApWA-0005r9-9l Spool file is locked (another process is handling this message)",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-50e5be01",
+      "source": "alerts",
+      "timestamp": "2022-01-21T08:48:45Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642754925.077:1699): pid=17492 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"hwhite\" exe=\"/usr/sbin/sshd\" hostname=10.132.56.81 addr=10.132.56.81 terminal=ssh res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-45fb0fc7",
+      "source": "alerts",
+      "timestamp": "2022-01-21T08:48:45Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1642754925.081:1700): pid=17492 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"hwhite\" exe=\"/usr/sbin/sshd\" hostname=10.132.56.81 addr=10.132.56.81 terminal=ssh res=success'",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (25 alerts; detectors: AMiner: New cred_acq parameter combination in Audit logs., AMiner: New cred_disp parameter combination in Audit logs., AMiner: New cred_ref",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (25 alerts; detectors: AMiner: New cred_acq parameter combination in Audit logs., AMiner: New cred_disp parameter combination in Audit logs., AMiner: New cred_ref",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wardbeck/wardbeck/session-0055",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 25,
+      "kept_alerts": 25
+    },
+    "sealed": true
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "incident_id": "ait-sess-wardbeck-wardbeck-0011",
+  "name": "ATTEST-AIT wardbeck/wardbeck session 11",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wardbeck/wardbeck/session-0011",
+  "alert": {
+    "timestamp": "2022-01-19T08:53:54Z",
+    "host": "wardbeck",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (4 alerts; detectors: AMiner: Unusual occurrence frequencies of Apache Access logs., AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+    "scenario": "wardbeck"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-19T08:53:54Z",
+    "end": "2022-01-19T09:02:36Z",
+    "hosts": [
+      "wardbeck"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-50d39722",
+        "timestamp": "2022-01-19T08:53:54Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 19 08:53:54 dnsmasq[14755]: query[MX] walker.wardbeck.info from 10.132.56.171",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-cd87fb20",
+        "timestamp": "2022-01-19T08:58:53Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 19 08:58:53 dnsmasq[14755]: query[AAAA] mail from 10.132.56.171",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-ddb96257",
+        "timestamp": "2022-01-19T08:58:53Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 19 08:58:53 dnsmasq[14755]: query[PTR] 171.56.132.10.in-addr.arpa from 10.132.56.171",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-fb85650e",
+        "timestamp": "2022-01-19T09:02:36Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access logs.",
+        "message": "10.132.56.81 - - [19/Jan/2022:09:02:36 +0000] \"POST /services/ajax.php/horde/topbarUpdate HTTP/1.1\" 200 1090 \"https://mail.hurstwong.wardbeck.info/nag/list.php\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-50d39722",
+      "source": "alerts",
+      "timestamp": "2022-01-19T08:53:54Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 19 08:53:54 dnsmasq[14755]: query[MX] walker.wardbeck.info from 10.132.56.171",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-cd87fb20",
+      "source": "alerts",
+      "timestamp": "2022-01-19T08:58:53Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 19 08:58:53 dnsmasq[14755]: query[AAAA] mail from 10.132.56.171",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-ddb96257",
+      "source": "alerts",
+      "timestamp": "2022-01-19T08:58:53Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 19 08:58:53 dnsmasq[14755]: query[PTR] 171.56.132.10.in-addr.arpa from 10.132.56.171",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (4 alerts; detectors: AMiner: Unusual occurrence frequencies of Apache Access logs., AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (4 alerts; detectors: AMiner: Unusual occurrence frequencies of Apache Access logs., AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wardbeck/wardbeck/session-0011",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 4,
+      "kept_alerts": 4
+    },
+    "sealed": true
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "incident_id": "ait-sess-wilson-wilson-0108",
+  "name": "ATTEST-AIT wilson/wilson session 108",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wilson/wilson/session-0108",
+  "alert": {
+    "timestamp": "2022-02-08T19:19:37Z",
+    "host": "wilson",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (3 alerts; detectors: AMiner: New ip address in DNS logs., AMiner: Unusual occurrence frequencies of DNS log events.).",
+    "scenario": "wilson"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-08T19:19:37Z",
+    "end": "2022-02-08T19:21:05Z",
+    "hosts": [
+      "wilson"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-55a51cef",
+        "timestamp": "2022-02-08T19:19:37Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  8 19:19:37 dnsmasq[14306]: query[A] ntp.ubuntu.com from 192.168.225.175",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-179f0536",
+        "timestamp": "2022-02-08T19:19:37Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  8 19:19:37 dnsmasq[14306]: query[AAAA] ntp.ubuntu.com from 192.168.225.175",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-14083028",
+        "timestamp": "2022-02-08T19:21:05Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  8 19:21:05 dnsmasq[14306]: query[AAAA] example.org from 192.168.224.4",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-55a51cef",
+      "source": "alerts",
+      "timestamp": "2022-02-08T19:19:37Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  8 19:19:37 dnsmasq[14306]: query[A] ntp.ubuntu.com from 192.168.225.175",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-179f0536",
+      "source": "alerts",
+      "timestamp": "2022-02-08T19:19:37Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  8 19:19:37 dnsmasq[14306]: query[AAAA] ntp.ubuntu.com from 192.168.225.175",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-14083028",
+      "source": "alerts",
+      "timestamp": "2022-02-08T19:21:05Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  8 19:21:05 dnsmasq[14306]: query[AAAA] example.org from 192.168.224.4",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (3 alerts; detectors: AMiner: New ip address in DNS logs., AMiner: Unusual occurrence frequencies of DNS log events.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (3 alerts; detectors: AMiner: New ip address in DNS logs., AMiner: Unusual occurrence frequencies of DNS log events.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wilson/wilson/session-0108",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 3,
+      "kept_alerts": 3
+    },
+    "sealed": true
+  }
+}

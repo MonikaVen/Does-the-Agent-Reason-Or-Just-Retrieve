@@ -1,0 +1,309 @@
+{
+  "incident_id": "ait-sess-santos-santos-0069",
+  "name": "ATTEST-AIT santos/santos session 69",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "santos/santos/session-0069",
+  "alert": {
+    "timestamp": "2022-01-16T23:50:07Z",
+    "host": "santos",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (17 alerts; detectors: AMiner: New service_start parameter combination in Audit logs., AMiner: New service_stop parameter combination in Audit logs., AMiner: Unusua",
+    "scenario": "santos"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-16T23:50:07Z",
+    "end": "2022-01-17T00:04:41Z",
+    "hosts": [
+      "santos"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-11faa7d9",
+        "timestamp": "2022-01-16T23:50:07Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 16 23:50:07 dnsmasq[14569]: query[A] motd.ubuntu.com from 10.229.0.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-c38c6007",
+        "timestamp": "2022-01-16T23:58:36Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 16 23:58:36 dnsmasq[14919]: query[AAAA] mail from 172.21.131.50",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-061041f7",
+        "timestamp": "2022-01-17T00:00:01Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642377601.719:3955): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=fstrim comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-49c5b237",
+        "timestamp": "2022-01-17T00:00:01Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642377601.719:3956): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=fstrim comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-6130979e",
+        "timestamp": "2022-01-17T00:00:02Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642377602.403:689): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=fstrim comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-d3657469",
+        "timestamp": "2022-01-17T00:00:02Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642377602.403:690): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=fstrim comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-7737cf9f",
+        "timestamp": "2022-01-17T00:00:13Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642377613.603:1990): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=fstrim comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-003701f8",
+        "timestamp": "2022-01-17T00:00:13Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642377613.603:1991): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=fstrim comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-f1e223e6",
+        "timestamp": "2022-01-17T00:00:23Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642377623.147:693): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=fstrim comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-e3db313d",
+        "timestamp": "2022-01-17T00:00:23Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642377623.147:694): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=fstrim comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-117e8c9d",
+        "timestamp": "2022-01-17T00:00:41Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642377641.476:1981): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=fstrim comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-2c99f962",
+        "timestamp": "2022-01-17T00:00:41Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642377641.476:1982): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=fstrim comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-2f1e1a31",
+        "timestamp": "2022-01-17T00:01:08Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642377668.611:677): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=fstrim comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-55a26ac0",
+        "timestamp": "2022-01-17T00:01:08Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642377668.611:678): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=fstrim comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-621b61d8",
+        "timestamp": "2022-01-17T00:04:41Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 17 00:04:41 dnsmasq[14569]: query[AAAA] rogersturnbull-mail from 10.229.0.32",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-adbef161",
+        "timestamp": "2022-01-17T00:04:41Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 17 00:04:41 dnsmasq[14569]: query[AAAA] rogersturnbull-mail from 10.229.0.32",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-fe6417e5",
+        "timestamp": "2022-01-17T00:04:41Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query records.",
+        "message": "Jan 17 00:04:41 dnsmasq[14569]: query[AAAA] rogersturnbull-mail from 10.229.0.32",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-11faa7d9",
+      "source": "alerts",
+      "timestamp": "2022-01-16T23:50:07Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 16 23:50:07 dnsmasq[14569]: query[A] motd.ubuntu.com from 10.229.0.4",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-c38c6007",
+      "source": "alerts",
+      "timestamp": "2022-01-16T23:58:36Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 16 23:58:36 dnsmasq[14919]: query[AAAA] mail from 172.21.131.50",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-061041f7",
+      "source": "alerts",
+      "timestamp": "2022-01-17T00:00:01Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642377601.719:3955): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=fstrim comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (17 alerts; detectors: AMiner: New service_start parameter combination in Audit logs., AMiner: New service_stop parameter combination in Audit logs., AMiner: Unusua",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (17 alerts; detectors: AMiner: New service_start parameter combination in Audit logs., AMiner: New service_stop parameter combination in Audit logs., AMiner: Unusua",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "santos/santos/session-0069",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 17,
+      "kept_alerts": 17
+    },
+    "sealed": true
+  }
+}

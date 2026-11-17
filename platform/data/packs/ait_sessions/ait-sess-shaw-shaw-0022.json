@@ -1,0 +1,163 @@
+{
+  "incident_id": "ait-sess-shaw-shaw-0022",
+  "name": "ATTEST-AIT shaw/shaw session 22",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "shaw/shaw/session-0022",
+  "alert": {
+    "timestamp": "2022-01-25T18:38:57Z",
+    "host": "shaw",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (2 alerts; detectors: AMiner: New characters in Apache Access referer., AMiner: New characters in Apache Access request.).",
+    "scenario": "shaw"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-25T18:38:57Z",
+    "end": "2022-01-25T18:44:53Z",
+    "hosts": [
+      "shaw"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-0361a21e",
+        "timestamp": "2022-01-25T18:38:57Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.thomasmurray.shaw.info:443 172.24.251.86 - - [25/Jan/2022:18:38:57 +0000] \"GET /ocs/v2.php/apps/files_sharing/api/v1/shares?format=json&path=%2FPhotos%20(2)&reshares=true HTTP/1.1\" 200 3872 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-be895fc0",
+        "timestamp": "2022-01-25T18:44:53Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "cloud.dmz.thomasmurray.shaw.info:443 172.24.251.86 - - [25/Jan/2022:18:44:53 +0000] \"GET /core/img/filetypes/image.svg HTTP/1.1\" 200 4244 \"https://cloud.thomasmurray.shaw.info/index.php/apps/files/?dir=/Photos%20(2)&fileid=184\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-0361a21e",
+      "source": "alerts",
+      "timestamp": "2022-01-25T18:38:57Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.thomasmurray.shaw.info:443 172.24.251.86 - - [25/Jan/2022:18:38:57 +0000] \"GET /ocs/v2.php/apps/files_sharing/api/v1/shares?format=json&path=%2FPhotos%20(2)&reshares=true HTTP/1.1\" 200 3872 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-be895fc0",
+      "source": "alerts",
+      "timestamp": "2022-01-25T18:44:53Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "cloud.dmz.thomasmurray.shaw.info:443 172.24.251.86 - - [25/Jan/2022:18:44:53 +0000] \"GET /core/img/filetypes/image.svg HTTP/1.1\" 200 4244 \"https://cloud.thomasmurray.shaw.info/index.php/apps/files/?dir=/Photos%20(2)&fileid=184\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (2 alerts; detectors: AMiner: New characters in Apache Access referer., AMiner: New characters in Apache Access request.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (2 alerts; detectors: AMiner: New characters in Apache Access referer., AMiner: New characters in Apache Access request.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "shaw/shaw/session-0022",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 2,
+      "kept_alerts": 2
+    },
+    "sealed": true
+  }
+}

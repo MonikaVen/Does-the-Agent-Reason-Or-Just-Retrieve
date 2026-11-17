@@ -1,0 +1,255 @@
+{
+  "incident_id": "ait-sess-harrison-harrison-0120",
+  "name": "ATTEST-AIT harrison/harrison session 120",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "harrison/harrison/session-0120",
+  "alert": {
+    "timestamp": "2022-02-08T18:55:09Z",
+    "host": "harrison",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (11 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New request method in Apache Access log., AMiner: Unusual occurrence f",
+    "scenario": "harrison"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-08T18:55:09Z",
+    "end": "2022-02-08T19:43:42Z",
+    "hosts": [
+      "harrison"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-5021f44e",
+        "timestamp": "2022-02-08T18:55:09Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "cloud.dmz.mannsmith.harrison.com:443 10.237.0.166 - - [08/Feb/2022:18:55:09 +0000] \"MKCOL /remote.php/dav/files/hsmith/Documents/him HTTP/1.1\" 201 628 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-386db9a0",
+        "timestamp": "2022-02-08T18:55:09Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "192.168.129.2 - - [08/Feb/2022:18:55:09 +0000] \"MKCOL /remote.php/dav/files/hsmith/Documents/him HTTP/1.1\" 201 628 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-ea62d8b4",
+        "timestamp": "2022-02-08T18:55:30Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "cloud.dmz.mannsmith.harrison.com:443 10.237.0.166 - - [08/Feb/2022:18:55:30 +0000] \"MKCOL /remote.php/dav/files/hsmith/Documents/agree HTTP/1.1\" 201 3630 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-45193e23",
+        "timestamp": "2022-02-08T18:55:30Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "192.168.129.2 - - [08/Feb/2022:18:55:30 +0000] \"MKCOL /remote.php/dav/files/hsmith/Documents/agree HTTP/1.1\" 201 1204 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-5309c26f",
+        "timestamp": "2022-02-08T18:59:46Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-08T18:59:46.134Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.018,\"norm\":{\"pct\":0.018}},\"idle\":{\"pct\":0.8988,\"norm\":{\"pct\":0.8988}},\"system\":{\"pct\":0.0443,\"norm\":{\"pct\":0.0443}},\"user\":{\"pct\":0.0378,\"norm\":{\"pct\":0.0378}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":9.0E-4,\"norm\":{\"pct\":9.0E-4}},\"total\":{\"pct\":0.101,\"nor",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-23621625",
+        "timestamp": "2022-02-08T19:00:11Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  8 19:00:11 dnsmasq[14664]: query[AAAA] mail from 10.237.2.255",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-5828fc22",
+        "timestamp": "2022-02-08T19:00:11Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Feb  8 19:00:11 dnsmasq[14664]: query[AAAA] mail from 10.237.2.255",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-f00be571",
+        "timestamp": "2022-02-08T19:13:31Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  8 19:13:31 dnsmasq[14664]: query[AAAA] mail.dmz.mannsmith.harrison.com from 10.237.0.166",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-dc9fe672",
+        "timestamp": "2022-02-08T19:20:14Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  8 19:20:14 dnsmasq[14664]: query[AAAA] cloud.dmz.mannsmith.harrison.com from 10.237.0.166",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-b3d9d3e3",
+        "timestamp": "2022-02-08T19:30:11Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  8 19:30:11 dnsmasq[14664]: query[AAAA] mail from 10.237.2.255",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-3460913f",
+        "timestamp": "2022-02-08T19:43:42Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  8 19:43:42 dnsmasq[14453]: query[A] secure.gravatar.com from 172.28.192.4",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-5021f44e",
+      "source": "alerts",
+      "timestamp": "2022-02-08T18:55:09Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "cloud.dmz.mannsmith.harrison.com:443 10.237.0.166 - - [08/Feb/2022:18:55:09 +0000] \"MKCOL /remote.php/dav/files/hsmith/Documents/him HTTP/1.1\" 201 628 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-386db9a0",
+      "source": "alerts",
+      "timestamp": "2022-02-08T18:55:09Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "192.168.129.2 - - [08/Feb/2022:18:55:09 +0000] \"MKCOL /remote.php/dav/files/hsmith/Documents/him HTTP/1.1\" 201 628 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-ea62d8b4",
+      "source": "alerts",
+      "timestamp": "2022-02-08T18:55:30Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "cloud.dmz.mannsmith.harrison.com:443 10.237.0.166 - - [08/Feb/2022:18:55:30 +0000] \"MKCOL /remote.php/dav/files/hsmith/Documents/agree HTTP/1.1\" 201 3630 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (11 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New request method in Apache Access log., AMiner: Unusual occurrence f",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (11 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New request method in Apache Access log., AMiner: Unusual occurrence f",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "harrison/harrison/session-0120",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 11,
+      "kept_alerts": 11
+    },
+    "sealed": true
+  }
+}

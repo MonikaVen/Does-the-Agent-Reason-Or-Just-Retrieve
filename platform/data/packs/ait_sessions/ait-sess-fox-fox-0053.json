@@ -1,0 +1,273 @@
+{
+  "incident_id": "ait-sess-fox-fox-0053",
+  "name": "ATTEST-AIT fox/fox session 53",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "fox/fox/session-0053",
+  "alert": {
+    "timestamp": "2022-01-17T18:56:50Z",
+    "host": "fox",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (13 alerts; detectors: AMiner: New user_acct parameter combination in Audit logs., AMiner: New user_auth parameter combination in Audit logs., AMiner: Unusual occurren",
+    "scenario": "fox"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-17T18:56:50Z",
+    "end": "2022-01-17T19:00:20Z",
+    "hosts": [
+      "fox"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-04d57528",
+        "timestamp": "2022-01-17T18:56:50Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642445810.413:7555): pid=4864 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"hannah.warren\" exe=\"/usr/lib/dovecot/auth\" hostname=172.17.131.81 addr=172.17.131.81 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-823fb0c1",
+        "timestamp": "2022-01-17T18:56:50Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642445810.413:7556): pid=4864 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"hannah.warren\" exe=\"/usr/lib/dovecot/auth\" hostname=172.17.131.81 addr=172.17.131.81 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-b970994f",
+        "timestamp": "2022-01-17T18:56:50Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642445810.449:7557): pid=4864 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"hannah.warren\" exe=\"/usr/lib/dovecot/auth\" hostname=172.17.131.81 addr=172.17.131.81 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-484d1c92",
+        "timestamp": "2022-01-17T18:56:50Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642445810.449:7558): pid=4864 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"hannah.warren\" exe=\"/usr/lib/dovecot/auth\" hostname=172.17.131.81 addr=172.17.131.81 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-674ffe66",
+        "timestamp": "2022-01-17T18:56:50Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642445810.525:7559): pid=4864 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"hannah.warren\" exe=\"/usr/lib/dovecot/auth\" hostname=172.17.131.81 addr=172.17.131.81 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-3b599a77",
+        "timestamp": "2022-01-17T18:56:50Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642445810.525:7560): pid=4864 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"hannah.warren\" exe=\"/usr/lib/dovecot/auth\" hostname=172.17.131.81 addr=172.17.131.81 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-6d76b4af",
+        "timestamp": "2022-01-17T18:56:51Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642445811.785:7561): pid=4864 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"hannah.warren\" exe=\"/usr/lib/dovecot/auth\" hostname=172.17.131.81 addr=172.17.131.81 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-0402fa2b",
+        "timestamp": "2022-01-17T18:56:51Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642445811.789:7562): pid=4864 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"hannah.warren\" exe=\"/usr/lib/dovecot/auth\" hostname=172.17.131.81 addr=172.17.131.81 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-6a934039",
+        "timestamp": "2022-01-17T18:57:31Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642445851.320:7567): pid=4864 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"hannah.warren\" exe=\"/usr/lib/dovecot/auth\" hostname=172.17.131.81 addr=172.17.131.81 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-04f1844c",
+        "timestamp": "2022-01-17T18:57:31Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642445851.320:7568): pid=4864 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"hannah.warren\" exe=\"/usr/lib/dovecot/auth\" hostname=172.17.131.81 addr=172.17.131.81 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-ab46db3d",
+        "timestamp": "2022-01-17T18:59:26Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642445966.276:7569): pid=4909 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"hannah.warren\" exe=\"/usr/lib/dovecot/auth\" hostname=172.17.131.81 addr=172.17.131.81 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-31778fc4",
+        "timestamp": "2022-01-17T18:59:26Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642445966.276:7570): pid=4909 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"hannah.warren\" exe=\"/usr/lib/dovecot/auth\" hostname=172.17.131.81 addr=172.17.131.81 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-ae564e30",
+        "timestamp": "2022-01-17T19:00:20Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 17 19:00:20 dnsmasq[14460]: query[MX] miller.fox.org from 192.168.128.4",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-04d57528",
+      "source": "alerts",
+      "timestamp": "2022-01-17T18:56:50Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642445810.413:7555): pid=4864 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"hannah.warren\" exe=\"/usr/lib/dovecot/auth\" hostname=172.17.131.81 addr=172.17.131.81 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-823fb0c1",
+      "source": "alerts",
+      "timestamp": "2022-01-17T18:56:50Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642445810.413:7556): pid=4864 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"hannah.warren\" exe=\"/usr/lib/dovecot/auth\" hostname=172.17.131.81 addr=172.17.131.81 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-b970994f",
+      "source": "alerts",
+      "timestamp": "2022-01-17T18:56:50Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642445810.449:7557): pid=4864 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"hannah.warren\" exe=\"/usr/lib/dovecot/auth\" hostname=172.17.131.81 addr=172.17.131.81 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (13 alerts; detectors: AMiner: New user_acct parameter combination in Audit logs., AMiner: New user_auth parameter combination in Audit logs., AMiner: Unusual occurren",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (13 alerts; detectors: AMiner: New user_acct parameter combination in Audit logs., AMiner: New user_auth parameter combination in Audit logs., AMiner: Unusual occurren",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "fox/fox/session-0053",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 13,
+      "kept_alerts": 13
+    },
+    "sealed": true
+  }
+}

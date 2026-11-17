@@ -1,0 +1,163 @@
+{
+  "incident_id": "ait-sess-wardbeck-wardbeck-0027",
+  "name": "ATTEST-AIT wardbeck/wardbeck session 27",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wardbeck/wardbeck/session-0027",
+  "alert": {
+    "timestamp": "2022-01-20T06:00:16Z",
+    "host": "wardbeck",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (2 alerts; detectors: AMiner: Unusual occurrence frequencies of Apache Access logs., AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+    "scenario": "wardbeck"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-20T06:00:16Z",
+    "end": "2022-01-20T06:03:11Z",
+    "hosts": [
+      "wardbeck"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-b35baff0",
+        "timestamp": "2022-01-20T06:00:16Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 20 06:00:16 dnsmasq[14529]: query[A] 3x6-.712-.5oWoQmhhgdCiBqEFqP/15l5AfLqZWUtE20jY-.mmRFYSfRQPl3UkqXP5pv5sz*9SWZeOYPAGOD-.DpNERKb6gwtOmKRmYA6LiFC7E4g/vAlMI9z3-.nB69sT2uCgITZd2qdqjdng87DlVF08KCpkUN-.TQs/3nTuZKBNRKazTmsVRxtJB9l4nDgwI5Au-.payroll_2020.xlsx.db-99.brown.com from 192.168.96.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-deb8ccc2",
+        "timestamp": "2022-01-20T06:03:11Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access logs.",
+        "message": "172.21.240.147 - - [20/Jan/2022:06:03:11 +0000] \"POST /wp-admin/admin-ajax.php HTTP/1.1\" 200 1178 \"https://intranet.hurstwong.wardbeck.info/wp-admin/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-b35baff0",
+      "source": "alerts",
+      "timestamp": "2022-01-20T06:00:16Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 20 06:00:16 dnsmasq[14529]: query[A] 3x6-.712-.5oWoQmhhgdCiBqEFqP/15l5AfLqZWUtE20jY-.mmRFYSfRQPl3UkqXP5pv5sz*9SWZeOYPAGOD-.DpNERKb6gwtOmKRmYA6LiFC7E4g/vAlMI9z3-.nB69sT2uCgITZd2qdqjdng87DlVF08KCpkUN-.TQs/3nTuZKBNRKazTmsVRxtJB9l4nDgwI5Au-.payroll_2020.xlsx.db-99.brown.com from 192.168.96.4",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-deb8ccc2",
+      "source": "alerts",
+      "timestamp": "2022-01-20T06:03:11Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access logs.",
+        "message": "172.21.240.147 - - [20/Jan/2022:06:03:11 +0000] \"POST /wp-admin/admin-ajax.php HTTP/1.1\" 200 1178 \"https://intranet.hurstwong.wardbeck.info/wp-admin/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (2 alerts; detectors: AMiner: Unusual occurrence frequencies of Apache Access logs., AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (2 alerts; detectors: AMiner: Unusual occurrence frequencies of Apache Access logs., AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wardbeck/wardbeck/session-0027",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 2,
+      "kept_alerts": 2
+    },
+    "sealed": true
+  }
+}

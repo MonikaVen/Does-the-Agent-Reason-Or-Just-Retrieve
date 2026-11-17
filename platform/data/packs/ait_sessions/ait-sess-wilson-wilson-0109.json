@@ -1,0 +1,228 @@
+{
+  "incident_id": "ait-sess-wilson-wilson-0109",
+  "name": "ATTEST-AIT wilson/wilson session 109",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wilson/wilson/session-0109",
+  "alert": {
+    "timestamp": "2022-02-08T19:55:26Z",
+    "host": "wilson",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (8 alerts; detectors: AMiner: New event type., AMiner: Unusual occurrence frequencies of DNS query IPs.).",
+    "scenario": "wilson"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-08T19:55:26Z",
+    "end": "2022-02-08T20:01:09Z",
+    "hosts": [
+      "wilson"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-cc89f08c",
+        "timestamp": "2022-02-08T19:55:26Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-08 19:55:26 cmiranda/192.168.225.116:42865 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-d98f8322",
+        "timestamp": "2022-02-08T19:55:26Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-08 19:55:26 cmiranda/192.168.225.116:42865 TLS Error: TLS handshake failed",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-ed9bf345",
+        "timestamp": "2022-02-08T19:55:26Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-08 19:55:26 cmiranda/192.168.225.116:42865 TLS: move_session: dest=TM_LAME_DUCK src=TM_ACTIVE reinit_src=1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-f20cbed4",
+        "timestamp": "2022-02-08T19:56:41Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-08 19:56:41 cmiranda/192.168.225.116:42865 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-aa803e1c",
+        "timestamp": "2022-02-08T19:56:41Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-08 19:56:41 cmiranda/192.168.225.116:42865 TLS Error: TLS handshake failed",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-39b1aa06",
+        "timestamp": "2022-02-08T19:57:56Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-08 19:57:56 cmiranda/192.168.225.116:42865 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-9673cb57",
+        "timestamp": "2022-02-08T19:57:56Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-08 19:57:56 cmiranda/192.168.225.116:42865 TLS Error: TLS handshake failed",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-50636d52",
+        "timestamp": "2022-02-08T20:01:09Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Feb  8 20:01:09 dnsmasq[14306]: query[PTR] 13.226.168.192.in-addr.arpa from 192.168.224.185",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-cc89f08c",
+      "source": "alerts",
+      "timestamp": "2022-02-08T19:55:26Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-08 19:55:26 cmiranda/192.168.225.116:42865 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-d98f8322",
+      "source": "alerts",
+      "timestamp": "2022-02-08T19:55:26Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-08 19:55:26 cmiranda/192.168.225.116:42865 TLS Error: TLS handshake failed",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-ed9bf345",
+      "source": "alerts",
+      "timestamp": "2022-02-08T19:55:26Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-08 19:55:26 cmiranda/192.168.225.116:42865 TLS: move_session: dest=TM_LAME_DUCK src=TM_ACTIVE reinit_src=1",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (8 alerts; detectors: AMiner: New event type., AMiner: Unusual occurrence frequencies of DNS query IPs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (8 alerts; detectors: AMiner: New event type., AMiner: Unusual occurrence frequencies of DNS query IPs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wilson/wilson/session-0109",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 8,
+      "kept_alerts": 8
+    },
+    "sealed": true
+  }
+}

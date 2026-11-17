@@ -1,0 +1,435 @@
+{
+  "incident_id": "ait-sess-fox-fox-0008",
+  "name": "ATTEST-AIT fox/fox session 8",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "fox/fox/session-0008",
+  "alert": {
+    "timestamp": "2022-01-15T04:59:54Z",
+    "host": "fox",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (31 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: CPU value out of expected range in monitoring logs., AMiner: High entropy i",
+    "scenario": "fox"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-15T04:59:54Z",
+    "end": "2022-01-15T05:41:47Z",
+    "hosts": [
+      "fox"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-cf3bc8fa",
+        "timestamp": "2022-01-15T04:59:54Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"@timestamp\":\"2022-01-15T04:59:54.322Z\",\"service\":{\"type\":\"system\"},\"tags\":[\"beats_input_raw_event\"],\"@version\":\"1\",\"agent\":{\"type\":\"metricbeat\",\"hostname\":\"intranet-server\",\"version\":\"7.13.2\",\"id\":\"a0c41e4e-ff4a-481f-adda-21fc96889b28\",\"name\":\"intranet-server\",\"ephemeral_id\":\"ae20c47b-0a81-4e05-a749-cbe0dacd5e36\"},\"system\":{\"cpu\":{\"softirq\":{\"pct\":0.0019,\"norm\":{\"pct\":0.0019}},\"iowait\":{\"pct\":0.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-9d5141c0",
+        "timestamp": "2022-01-15T05:01:16Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 05:01:16 dnsmasq[14460]: query[AAAA] taylorcruz-mail from 192.168.128.195",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-1f8d5151",
+        "timestamp": "2022-01-15T05:07:26Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 15 05:07:26 inet-firewall kernel: [76398.724224] hrtimer: interrupt took 15172948 ns",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-7d157c51",
+        "timestamp": "2022-01-15T05:09:39Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"@timestamp\":\"2022-01-15T05:09:39.322Z\",\"service\":{\"type\":\"system\"},\"tags\":[\"beats_input_raw_event\"],\"@version\":\"1\",\"agent\":{\"type\":\"metricbeat\",\"hostname\":\"intranet-server\",\"version\":\"7.13.2\",\"id\":\"a0c41e4e-ff4a-481f-adda-21fc96889b28\",\"name\":\"intranet-server\",\"ephemeral_id\":\"ae20c47b-0a81-4e05-a749-cbe0dacd5e36\"},\"system\":{\"cpu\":{\"softirq\":{\"pct\":0.0019,\"norm\":{\"pct\":0.0019}},\"iowait\":{\"pct\":0.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-80899994",
+        "timestamp": "2022-01-15T05:11:47Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 05:11:47 dnsmasq[14460]: query[AAAA] jonesmorgan-mail from 192.168.128.170",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-3597bda4",
+        "timestamp": "2022-01-15T05:23:03Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 15 05:23:03 dnsmasq[14460]: query[A] location.services.mozilla.com from 192.168.130.84",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-8337bf46",
+        "timestamp": "2022-01-15T05:26:26Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 05:26:26 dnsmasq[14460]: query[SRV] _http._tcp.ppa.launchpad.net from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-10d48a69",
+        "timestamp": "2022-01-15T05:26:26Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 05:26:26 dnsmasq[14460]: forwarded _http._tcp.ppa.launchpad.net to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-8337bf46",
+        "timestamp": "2022-01-15T05:26:26Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 05:26:26 dnsmasq[14460]: query[SRV] _http._tcp.ppa.launchpad.net from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-10d48a69",
+        "timestamp": "2022-01-15T05:26:26Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 05:26:26 dnsmasq[14460]: forwarded _http._tcp.ppa.launchpad.net to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-8337bf46",
+        "timestamp": "2022-01-15T05:26:26Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 05:26:26 dnsmasq[14460]: query[SRV] _http._tcp.ppa.launchpad.net from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-10d48a69",
+        "timestamp": "2022-01-15T05:26:26Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 05:26:26 dnsmasq[14460]: forwarded _http._tcp.ppa.launchpad.net to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-8337bf46",
+        "timestamp": "2022-01-15T05:26:26Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 05:26:26 dnsmasq[14460]: query[SRV] _http._tcp.ppa.launchpad.net from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-10d48a69",
+        "timestamp": "2022-01-15T05:26:26Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 05:26:26 dnsmasq[14460]: forwarded _http._tcp.ppa.launchpad.net to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-8337bf46",
+        "timestamp": "2022-01-15T05:26:26Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 05:26:26 dnsmasq[14460]: query[SRV] _http._tcp.ppa.launchpad.net from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-10d48a69",
+        "timestamp": "2022-01-15T05:26:26Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 05:26:26 dnsmasq[14460]: forwarded _http._tcp.ppa.launchpad.net to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-8337bf46",
+        "timestamp": "2022-01-15T05:26:26Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 05:26:26 dnsmasq[14460]: query[SRV] _http._tcp.ppa.launchpad.net from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-10d48a69",
+        "timestamp": "2022-01-15T05:26:26Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 05:26:26 dnsmasq[14460]: forwarded _http._tcp.ppa.launchpad.net to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-71f14a54",
+        "timestamp": "2022-01-15T05:26:26Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 05:26:26 dnsmasq[14522]: query[SRV] _http._tcp.ppa.launchpad.net from 172.17.128.1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-8b420f61",
+        "timestamp": "2022-01-15T05:26:26Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 05:26:26 dnsmasq[14522]: forwarded _http._tcp.ppa.launchpad.net to 192.168.255.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-91759eff",
+        "timestamp": "2022-01-15T05:26:26Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 05:26:26 dnsmasq[14522]: query[SRV] _http._tcp.ppa.launchpad.net from 10.35.32.1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-8b420f61",
+        "timestamp": "2022-01-15T05:26:26Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 05:26:26 dnsmasq[14522]: forwarded _http._tcp.ppa.launchpad.net to 192.168.255.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-71f14a54",
+        "timestamp": "2022-01-15T05:26:26Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 05:26:26 dnsmasq[14522]: query[SRV] _http._tcp.ppa.launchpad.net from 172.17.128.1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-8b420f61",
+        "timestamp": "2022-01-15T05:26:26Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 05:26:26 dnsmasq[14522]: forwarded _http._tcp.ppa.launchpad.net to 192.168.255.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0025-91759eff",
+        "timestamp": "2022-01-15T05:26:26Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 05:26:26 dnsmasq[14522]: query[SRV] _http._tcp.ppa.launchpad.net from 10.35.32.1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0026-8b420f61",
+        "timestamp": "2022-01-15T05:26:26Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 05:26:26 dnsmasq[14522]: forwarded _http._tcp.ppa.launchpad.net to 192.168.255.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0027-447ed41c",
+        "timestamp": "2022-01-15T05:29:02Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 15 05:29:02 dnsmasq[14460]: query[AAAA] archive.ubuntu.com from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0028-60667cc2",
+        "timestamp": "2022-01-15T05:29:02Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 15 05:29:02 dnsmasq[14522]: query[SRV] _http._tcp.archive.ubuntu.com from 10.35.32.1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0029-60667cc2",
+        "timestamp": "2022-01-15T05:29:02Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 15 05:29:02 dnsmasq[14522]: query[SRV] _http._tcp.archive.ubuntu.com from 10.35.32.1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0030-0f0f8b77",
+        "timestamp": "2022-01-15T05:31:16Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 05:31:16 dnsmasq[14460]: query[AAAA] taylorcruz-mail from 192.168.128.195",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0031-5ee693af",
+        "timestamp": "2022-01-15T05:41:47Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 05:41:47 dnsmasq[14460]: query[AAAA] jonesmorgan-mail from 192.168.128.170",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-cf3bc8fa",
+      "source": "alerts",
+      "timestamp": "2022-01-15T04:59:54Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"@timestamp\":\"2022-01-15T04:59:54.322Z\",\"service\":{\"type\":\"system\"},\"tags\":[\"beats_input_raw_event\"],\"@version\":\"1\",\"agent\":{\"type\":\"metricbeat\",\"hostname\":\"intranet-server\",\"version\":\"7.13.2\",\"id\":\"a0c41e4e-ff4a-481f-adda-21fc96889b28\",\"name\":\"intranet-server\",\"ephemeral_id\":\"ae20c47b-0a81-4e05-a749-cbe0dacd5e36\"},\"system\":{\"cpu\":{\"softirq\":{\"pct\":0.0019,\"norm\":{\"pct\":0.0019}},\"iowait\":{\"pct\":0.",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-9d5141c0",
+      "source": "alerts",
+      "timestamp": "2022-01-15T05:01:16Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 05:01:16 dnsmasq[14460]: query[AAAA] taylorcruz-mail from 192.168.128.195",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-1f8d5151",
+      "source": "alerts",
+      "timestamp": "2022-01-15T05:07:26Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 15 05:07:26 inet-firewall kernel: [76398.724224] hrtimer: interrupt took 15172948 ns",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (31 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: CPU value out of expected range in monitoring logs., AMiner: High entropy i",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (31 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: CPU value out of expected range in monitoring logs., AMiner: High entropy i",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "fox/fox/session-0008",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 31,
+      "kept_alerts": 31
+    },
+    "sealed": true
+  }
+}

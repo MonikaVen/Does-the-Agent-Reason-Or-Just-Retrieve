@@ -1,0 +1,228 @@
+{
+  "incident_id": "ait-sess-wilson-wilson-0035",
+  "name": "ATTEST-AIT wilson/wilson session 35",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wilson/wilson/session-0035",
+  "alert": {
+    "timestamp": "2022-02-04T15:15:03Z",
+    "host": "wilson",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (8 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New characters in Apache Access referer., AMiner: New characters in Apache Access request.).",
+    "scenario": "wilson"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-04T15:15:03Z",
+    "end": "2022-02-04T15:16:53Z",
+    "hosts": [
+      "wilson"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-0ef86511",
+        "timestamp": "2022-02-04T15:15:03Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 15:15:03 dnsmasq[14306]: query[A] um.simpli.fi from 192.168.224.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-f642a2ee",
+        "timestamp": "2022-02-04T15:15:03Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 15:15:03 dnsmasq[14306]: forwarded um.simpli.fi to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-4a314286",
+        "timestamp": "2022-02-04T15:15:03Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 15:15:03 dnsmasq[14306]: reply um.simpli.fi is <CNAME>",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-1c879709",
+        "timestamp": "2022-02-04T15:15:03Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 15:15:03 dnsmasq[14481]: query[A] um.simpli.fi from 10.182.193.78",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-9a4fe606",
+        "timestamp": "2022-02-04T15:15:03Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 15:15:03 dnsmasq[14481]: forwarded um.simpli.fi to 192.168.239.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-f665c927",
+        "timestamp": "2022-02-04T15:15:03Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 15:15:03 dnsmasq[14481]: reply um.simpli.fi is <CNAME>",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-50c19e1e",
+        "timestamp": "2022-02-04T15:16:53Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "cloud.dmz.hallbrown.wilson.com:443 10.182.194.5 - - [04/Feb/2022:15:16:53 +0000] \"GET /core/img/loading.gif HTTP/1.1\" 200 5798 \"https://cloud.hallbrown.wilson.com/index.php/apps/files/?dir=/Photos%20(2)&fileid=131\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-fb8a7883",
+        "timestamp": "2022-02-04T15:16:53Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.hallbrown.wilson.com:443 10.182.194.5 - - [04/Feb/2022:15:16:53 +0000] \"PROPFIND /remote.php/dav/files/kobrien/Photos%20(2) HTTP/1.1\" 207 3599 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-0ef86511",
+      "source": "alerts",
+      "timestamp": "2022-02-04T15:15:03Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 15:15:03 dnsmasq[14306]: query[A] um.simpli.fi from 192.168.224.4",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-f642a2ee",
+      "source": "alerts",
+      "timestamp": "2022-02-04T15:15:03Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 15:15:03 dnsmasq[14306]: forwarded um.simpli.fi to 8.8.8.8",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-4a314286",
+      "source": "alerts",
+      "timestamp": "2022-02-04T15:15:03Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 15:15:03 dnsmasq[14306]: reply um.simpli.fi is <CNAME>",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (8 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New characters in Apache Access referer., AMiner: New characters in Apache Access request.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (8 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New characters in Apache Access referer., AMiner: New characters in Apache Access request.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wilson/wilson/session-0035",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 8,
+      "kept_alerts": 8
+    },
+    "sealed": true
+  }
+}

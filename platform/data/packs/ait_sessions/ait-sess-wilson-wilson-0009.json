@@ -1,0 +1,606 @@
+{
+  "incident_id": "ait-sess-wilson-wilson-0009",
+  "name": "ATTEST-AIT wilson/wilson session 9",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wilson/wilson/session-0009",
+  "alert": {
+    "timestamp": "2022-02-03T07:00:11Z",
+    "host": "wilson",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (50 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New characters in Apache Access request., AMiner: New event type.).",
+    "scenario": "wilson"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-03T07:00:11Z",
+    "end": "2022-02-03T08:00:11Z",
+    "hosts": [
+      "wilson"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-4035e6a1",
+        "timestamp": "2022-02-03T07:00:11Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access logs.",
+        "message": "cloud.dmz.hallbrown.wilson.com:443 10.182.194.5 - - [03/Feb/2022:07:00:11 +0000] \"GET /ocs/v2.php/apps/notifications/api/v1/notifications?format=json HTTP/1.1\" 200 3876 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-6f561216",
+        "timestamp": "2022-02-03T07:00:36Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.182.193.78 - - [03/Feb/2022:07:00:36 +0000] \"GET /favicon.ico HTTP/1.1\" 404 396 \"http://intranet.hallbrown.wilson.com/\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-de7cb93b",
+        "timestamp": "2022-02-03T07:00:37Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:00:37 dnsmasq[14306]: forwarded s.w.org to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-de7cb93b",
+        "timestamp": "2022-02-03T07:00:37Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:00:37 dnsmasq[14306]: forwarded s.w.org to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-ee802362",
+        "timestamp": "2022-02-03T07:00:37Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:00:37 dnsmasq[14306]: reply s.w.org is NODATA-IPv6",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-db4596b7",
+        "timestamp": "2022-02-03T07:00:37Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:00:37 dnsmasq[14481]: forwarded s.w.org to 192.168.239.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-04843381",
+        "timestamp": "2022-02-03T07:00:37Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:00:37 dnsmasq[14481]: query[AAAA] s.w.org from 10.182.193.78",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-5055598b",
+        "timestamp": "2022-02-03T07:00:37Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:00:37 dnsmasq[14481]: reply s.w.org is 192.0.77.48",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-fab7081e",
+        "timestamp": "2022-02-03T07:03:26Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "cloud.dmz.hallbrown.wilson.com:443 10.182.194.5 - - [03/Feb/2022:07:03:26 +0000] \"DELETE /remote.php/dav/files/sbrooks/Documents/Example.odt HTTP/1.1\" 204 3505 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-1d6452f2",
+        "timestamp": "2022-02-03T07:08:03Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:08:03 dnsmasq[14306]: query[A] thenai.org from 192.168.224.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-f10a7750",
+        "timestamp": "2022-02-03T07:08:03Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:08:03 dnsmasq[14306]: query[AAAA] thenai.org from 192.168.224.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-60645371",
+        "timestamp": "2022-02-03T07:08:03Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:08:03 dnsmasq[14306]: reply thenai.org is NODATA-IPv6",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-ff3f2714",
+        "timestamp": "2022-02-03T07:08:03Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:08:03 dnsmasq[14306]: reply thenai.org is 141.193.213.11",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-66c8adec",
+        "timestamp": "2022-02-03T07:08:03Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:08:03 dnsmasq[14481]: query[A] thenai.org from 172.26.242.84",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-fe5d6732",
+        "timestamp": "2022-02-03T07:08:03Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:08:03 dnsmasq[14481]: query[AAAA] thenai.org from 172.26.242.84",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-d6f6e920",
+        "timestamp": "2022-02-03T07:08:03Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:08:03 dnsmasq[14481]: reply thenai.org is NODATA-IPv6",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-4e9bcb5c",
+        "timestamp": "2022-02-03T07:08:03Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:08:03 dnsmasq[14481]: reply thenai.org is 141.193.213.10",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-0d0bdad8",
+        "timestamp": "2022-02-03T07:09:22Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.182.193.78 - - [03/Feb/2022:07:09:22 +0000] \"GET /wp-admin/load-scripts.php?c=0&load%5Bchunk_0%5D=jquery-core,jquery-migrate,utils&ver=5.9 HTTP/1.1\" 200 35417 \"https://intranet.hallbrown.wilson.com/wp-admin/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-6e254783",
+        "timestamp": "2022-02-03T07:09:23Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:09:23 dnsmasq[14306]: forwarded api.wordpress.org to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-5ef89c9b",
+        "timestamp": "2022-02-03T07:09:23Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:09:23 dnsmasq[14306]: query[AAAA] api.wordpress.org from 192.168.224.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-f825618e",
+        "timestamp": "2022-02-03T07:12:33Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643872353.936:1824): pid=12373 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gregory.allen\" exe=\"/usr/lib/dovecot/auth\" hostname=10.182.193.181 addr=10.182.193.181 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-2cbb012f",
+        "timestamp": "2022-02-03T07:18:09Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:18:09 dnsmasq[14306]: query[A] apache.org from 192.168.224.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-4d713a31",
+        "timestamp": "2022-02-03T07:19:18Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:19:18 dnsmasq[14306]: query[A] example.org from 192.168.224.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-25c5ea9d",
+        "timestamp": "2022-02-03T07:19:18Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:19:18 dnsmasq[14306]: forwarded example.org to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0025-25c5ea9d",
+        "timestamp": "2022-02-03T07:19:18Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:19:18 dnsmasq[14306]: forwarded example.org to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0026-fc88b074",
+        "timestamp": "2022-02-03T07:19:18Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:19:18 dnsmasq[14306]: reply example.org is 2606:2800:220:1:248:1893:25c8:1946",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0027-2461d5d9",
+        "timestamp": "2022-02-03T07:19:18Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:19:18 dnsmasq[14481]: forwarded example.org to 192.168.239.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0028-2461d5d9",
+        "timestamp": "2022-02-03T07:19:18Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:19:18 dnsmasq[14481]: forwarded example.org to 192.168.239.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0029-a70f90f3",
+        "timestamp": "2022-02-03T07:19:18Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:19:18 dnsmasq[14481]: reply example.org is 93.184.216.34",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0030-bef16b9d",
+        "timestamp": "2022-02-03T07:19:25Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:19:25 dnsmasq[14306]: query[AAAA] example.org from 192.168.225.152",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0031-d1cfa0f8",
+        "timestamp": "2022-02-03T07:20:01Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:20:01 dnsmasq[14481]: query[AAAA] example.org from 10.182.193.78",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0032-0165eee0",
+        "timestamp": "2022-02-03T07:20:13Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:20:13 dnsmasq[14481]: query[A] example.org from 172.26.242.84",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0033-009eb1ae",
+        "timestamp": "2022-02-03T07:20:18Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:20:18 dnsmasq[14481]: query[AAAA] example.org from 10.182.193.78",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0034-60a48bda",
+        "timestamp": "2022-02-03T07:20:42Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:20:42 dnsmasq[14306]: query[A] example.org from 192.168.224.100",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0035-f0138db0",
+        "timestamp": "2022-02-03T07:20:42Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:20:42 dnsmasq[14306]: query[AAAA] example.org from 192.168.224.100",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0036-24494f34",
+        "timestamp": "2022-02-03T07:20:44Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:20:44 dnsmasq[14306]: query[A] example.org from 192.168.227.65",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0037-29bf6fec",
+        "timestamp": "2022-02-03T07:21:05Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:21:05 dnsmasq[14481]: query[AAAA] example.org from 10.182.193.78",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0038-9629dec2",
+        "timestamp": "2022-02-03T07:24:20Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:24:20 dnsmasq[14306]: forwarded www.apache.org to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0039-0d69b77e",
+        "timestamp": "2022-02-03T07:24:20Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:24:20 dnsmasq[14481]: query[A] www.apache.org from 10.182.193.78",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0040-f9a03764",
+        "timestamp": "2022-02-03T07:24:20Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:24:20 dnsmasq[14481]: forwarded www.apache.org to 192.168.239.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0041-bfd8cf86",
+        "timestamp": "2022-02-03T07:30:48Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1643873448.442:275): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-tmpfiles-clean comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0042-de9ffc22",
+        "timestamp": "2022-02-03T07:37:24Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-03 07:37:24 cmiranda/192.168.225.116:33758 [cmiranda] Inactivity timeout (--ping-restart), restarting",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0043-3fdbabc4",
+        "timestamp": "2022-02-03T07:38:54Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643873934.530:1851): pid=12498 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"cheryl.miranda\" exe=\"/usr/lib/dovecot/auth\" hostname=10.182.193.181 addr=10.182.193.181 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0044-4fbf28cb",
+        "timestamp": "2022-02-03T07:40:20Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643874020.605:1867): pid=12582 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"kristi.obrien\" exe=\"/usr/lib/dovecot/auth\" hostname=10.182.193.181 addr=10.182.193.181 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0045-3a55a8c9",
+        "timestamp": "2022-02-03T07:42:25Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Feb  3 07:42:25 dnsmasq[14306]: query[PTR] 209.225.168.192.in-addr.arpa from 192.168.226.198",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0046-f99c189d",
+        "timestamp": "2022-02-03T07:49:04Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  3 07:49:04 dnsmasq[14306]: query[A] mailserver.wilsonahmed.wilson.com from 192.168.226.13",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0047-2581195e",
+        "timestamp": "2022-02-03T07:54:02Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  3 07:54:02 dnsmasq[14481]: query[A] ntp.ubuntu.com from 172.26.241.183",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0048-449295be",
+        "timestamp": "2022-02-03T07:57:12Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643875032.015:1875): pid=12677 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"donald.ryan\" exe=\"/usr/lib/dovecot/auth\" hostname=10.182.193.181 addr=10.182.193.181 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0049-02adf9ae",
+        "timestamp": "2022-02-03T07:59:59Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Feb  3 07:59:59 dnsmasq[14306]: query[PTR] 62.224.168.192.in-addr.arpa from 192.168.224.185",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0050-d69bd864",
+        "timestamp": "2022-02-03T08:00:04Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Feb  3 08:00:04 dnsmasq[14306]: query[A] 3x6-.469-.TcYG*Y4OOQJw/blStyIsUvYhQSGHJco*BOy1x7agPv4LTXIB-.4Fn*tqTvSC0E3Uw*sJOX2nuyTP9KpzSVCoap9z/K0FxhRyjY-.8O5JsvtWr8WuLruXTF01nmgTI/V3VGi4DEKlIxWWGC4wEe*2-.customers_2018.xlsx.jagwgfpkvsawgaysmkwcilvqcp.com from 192.168.224.4",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-4035e6a1",
+      "source": "alerts",
+      "timestamp": "2022-02-03T07:00:11Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access logs.",
+        "message": "cloud.dmz.hallbrown.wilson.com:443 10.182.194.5 - - [03/Feb/2022:07:00:11 +0000] \"GET /ocs/v2.php/apps/notifications/api/v1/notifications?format=json HTTP/1.1\" 200 3876 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-6f561216",
+      "source": "alerts",
+      "timestamp": "2022-02-03T07:00:36Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.182.193.78 - - [03/Feb/2022:07:00:36 +0000] \"GET /favicon.ico HTTP/1.1\" 404 396 \"http://intranet.hallbrown.wilson.com/\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-de7cb93b",
+      "source": "alerts",
+      "timestamp": "2022-02-03T07:00:37Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  3 07:00:37 dnsmasq[14306]: forwarded s.w.org to 8.8.8.8",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (50 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New characters in Apache Access request., AMiner: New event type.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (50 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New characters in Apache Access request., AMiner: New event type.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wilson/wilson/session-0009",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 91,
+      "kept_alerts": 50
+    },
+    "sealed": true
+  }
+}

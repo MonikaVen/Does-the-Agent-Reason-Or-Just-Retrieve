@@ -1,0 +1,228 @@
+{
+  "incident_id": "ait-sess-fox-fox-0062",
+  "name": "ATTEST-AIT fox/fox session 62",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "fox/fox/session-0062",
+  "alert": {
+    "timestamp": "2022-01-18T01:56:57Z",
+    "host": "fox",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (8 alerts; detectors: AMiner: Unusual occurrence frequencies of DNS log events., AMiner: Unusual occurrence frequencies of DNS query IPs., AMiner: Unusual occurrence f",
+    "scenario": "fox"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-18T01:56:57Z",
+    "end": "2022-01-18T02:40:06Z",
+    "hosts": [
+      "fox"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-6855c9a0",
+        "timestamp": "2022-01-18T01:56:57Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 18 01:56:57 dnsmasq[14522]: query[AAAA] mail from 172.17.131.81",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-69190ad2",
+        "timestamp": "2022-01-18T02:01:16Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 18 02:01:16 dnsmasq[14460]: query[AAAA] taylorcruz-mail from 192.168.128.195",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-c32de4e7",
+        "timestamp": "2022-01-18T02:01:16Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 18 02:01:16 dnsmasq[14460]: query[AAAA] taylorcruz-mail from 192.168.128.195",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-8920ece0",
+        "timestamp": "2022-01-18T02:01:16Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query records.",
+        "message": "Jan 18 02:01:16 dnsmasq[14460]: query[AAAA] taylorcruz-mail from 192.168.128.195",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-163aad64",
+        "timestamp": "2022-01-18T02:11:48Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 18 02:11:48 dnsmasq[14460]: query[AAAA] jonesmorgan-mail from 192.168.128.170",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-45505927",
+        "timestamp": "2022-01-18T02:25:23Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 18 02:25:23 dnsmasq[14460]: query[TXT] current.cvd.clamav.net from 192.168.131.228",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-472d5b8d",
+        "timestamp": "2022-01-18T02:31:16Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 18 02:31:16 dnsmasq[14460]: query[AAAA] taylorcruz-mail from 192.168.128.195",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-06ceb8a4",
+        "timestamp": "2022-01-18T02:40:06Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 18 02:40:06 dnsmasq[14460]: query[TXT] current.cvd.clamav.net from 192.168.128.4",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-6855c9a0",
+      "source": "alerts",
+      "timestamp": "2022-01-18T01:56:57Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 18 01:56:57 dnsmasq[14522]: query[AAAA] mail from 172.17.131.81",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-69190ad2",
+      "source": "alerts",
+      "timestamp": "2022-01-18T02:01:16Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 18 02:01:16 dnsmasq[14460]: query[AAAA] taylorcruz-mail from 192.168.128.195",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-c32de4e7",
+      "source": "alerts",
+      "timestamp": "2022-01-18T02:01:16Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 18 02:01:16 dnsmasq[14460]: query[AAAA] taylorcruz-mail from 192.168.128.195",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (8 alerts; detectors: AMiner: Unusual occurrence frequencies of DNS log events., AMiner: Unusual occurrence frequencies of DNS query IPs., AMiner: Unusual occurrence f",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (8 alerts; detectors: AMiner: Unusual occurrence frequencies of DNS log events., AMiner: Unusual occurrence frequencies of DNS query IPs., AMiner: Unusual occurrence f",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "fox/fox/session-0062",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 8,
+      "kept_alerts": 8
+    },
+    "sealed": true
+  }
+}

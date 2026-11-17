@@ -1,0 +1,291 @@
+{
+  "incident_id": "ait-sess-santos-santos-0095",
+  "name": "ATTEST-AIT santos/santos session 95",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "santos/santos/session-0095",
+  "alert": {
+    "timestamp": "2022-01-17T20:47:06Z",
+    "host": "santos",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (15 alerts; detectors: AMiner: New characters in Apache Access request., AMiner: Unusual occurrence frequencies of DNS log events., AMiner: Unusual occurrence frequ",
+    "scenario": "santos"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-17T20:47:06Z",
+    "end": "2022-01-17T21:44:22Z",
+    "hosts": [
+      "santos"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-5e3e2fe3",
+        "timestamp": "2022-01-17T20:47:06Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.smith.santos.com:443 172.21.129.224 - - [17/Jan/2022:20:47:06 +0000] \"POST /index.php/apps/files/api/v1/files/Documents%20(2) HTTP/1.1\" 200 3758 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-ee12d0b3",
+        "timestamp": "2022-01-17T20:47:06Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "192.168.104.81 - - [17/Jan/2022:20:47:06 +0000] \"POST /index.php/apps/files/api/v1/files/Documents%20(2) HTTP/1.1\" 200 1376 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-03b011d9",
+        "timestamp": "2022-01-17T21:00:52Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 17 21:00:52 dnsmasq[14919]: query[AAAA] cloud.smith.santos.com from 192.168.104.81",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-34b744e9",
+        "timestamp": "2022-01-17T21:00:52Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 17 21:00:52 dnsmasq[14919]: query[AAAA] cloud.smith.santos.com from 192.168.104.81",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-4b82020b",
+        "timestamp": "2022-01-17T21:00:52Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query records.",
+        "message": "Jan 17 21:00:52 dnsmasq[14919]: query[AAAA] cloud.smith.santos.com from 192.168.104.81",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-7f0cac11",
+        "timestamp": "2022-01-17T21:11:52Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.smith.santos.com:443 172.21.129.224 - - [17/Jan/2022:21:11:52 +0000] \"GET /index.php/apps/files/ajax/download.php?dir=%2F&files=Documents%20(2)&downloadStartSecret=nodkdl35bx HTTP/1.1\" 200 1665 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-07ce82c8",
+        "timestamp": "2022-01-17T21:11:52Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "192.168.104.81 - - [17/Jan/2022:21:11:52 +0000] \"GET /index.php/apps/files/ajax/download.php?dir=%2F&files=Documents%20(2)&downloadStartSecret=nodkdl35bx HTTP/1.1\" 200 1653 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-d8960249",
+        "timestamp": "2022-01-17T21:11:52Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 17 21:11:52 dnsmasq[14919]: query[AAAA] cloud.smith.santos.com from 192.168.104.81",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-019f0439",
+        "timestamp": "2022-01-17T21:13:00Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.smith.santos.com:443 172.21.129.224 - - [17/Jan/2022:21:13:00 +0000] \"GET /ocs/v2.php/apps/files_sharing/api/v1/shares?format=json&path=%2FDocuments%20(2)&shared_with_me=true HTTP/1.1\" 200 4478 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-ed3d593f",
+        "timestamp": "2022-01-17T21:13:00Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.smith.santos.com:443 172.21.129.224 - - [17/Jan/2022:21:13:00 +0000] \"GET /ocs/v2.php/apps/files_sharing/api/v1/shares?format=json&path=%2FDocuments%20(2)&reshares=true HTTP/1.1\" 200 3828 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-e9ab87b9",
+        "timestamp": "2022-01-17T21:13:00Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "192.168.104.81 - - [17/Jan/2022:21:13:00 +0000] \"GET /ocs/v2.php/apps/files_sharing/api/v1/shares?format=json&path=%2FDocuments%20(2)&shared_with_me=true HTTP/1.1\" 200 2096 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-c40472b8",
+        "timestamp": "2022-01-17T21:13:00Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "192.168.104.81 - - [17/Jan/2022:21:13:00 +0000] \"GET /ocs/v2.php/apps/files_sharing/api/v1/shares?format=json&path=%2FDocuments%20(2)&reshares=true HTTP/1.1\" 200 1446 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-562da9f2",
+        "timestamp": "2022-01-17T21:22:52Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 17 21:22:52 dnsmasq[14919]: query[AAAA] cloud.smith.santos.com from 192.168.104.81",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-15959010",
+        "timestamp": "2022-01-17T21:33:52Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 17 21:33:52 dnsmasq[14919]: query[AAAA] cloud.smith.santos.com from 192.168.104.81",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-36707907",
+        "timestamp": "2022-01-17T21:44:22Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 17 21:44:22 dnsmasq[14919]: query[AAAA] cloud.smith.santos.com from 192.168.104.81",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-5e3e2fe3",
+      "source": "alerts",
+      "timestamp": "2022-01-17T20:47:06Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.smith.santos.com:443 172.21.129.224 - - [17/Jan/2022:20:47:06 +0000] \"POST /index.php/apps/files/api/v1/files/Documents%20(2) HTTP/1.1\" 200 3758 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-ee12d0b3",
+      "source": "alerts",
+      "timestamp": "2022-01-17T20:47:06Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "192.168.104.81 - - [17/Jan/2022:20:47:06 +0000] \"POST /index.php/apps/files/api/v1/files/Documents%20(2) HTTP/1.1\" 200 1376 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-03b011d9",
+      "source": "alerts",
+      "timestamp": "2022-01-17T21:00:52Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 17 21:00:52 dnsmasq[14919]: query[AAAA] cloud.smith.santos.com from 192.168.104.81",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (15 alerts; detectors: AMiner: New characters in Apache Access request., AMiner: Unusual occurrence frequencies of DNS log events., AMiner: Unusual occurrence frequ",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (15 alerts; detectors: AMiner: New characters in Apache Access request., AMiner: Unusual occurrence frequencies of DNS log events., AMiner: Unusual occurrence frequ",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "santos/santos/session-0095",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 15,
+      "kept_alerts": 15
+    },
+    "sealed": true
+  }
+}

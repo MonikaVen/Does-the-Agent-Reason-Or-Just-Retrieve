@@ -1,0 +1,606 @@
+{
+  "incident_id": "ait-sess-wardbeck-wardbeck-0056",
+  "name": "ATTEST-AIT wardbeck/wardbeck session 56",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wardbeck/wardbeck/session-0056",
+  "alert": {
+    "timestamp": "2022-01-21T09:22:04Z",
+    "host": "wardbeck",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (50 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New cred_disp parameter combination in Audit logs., AMiner: New ip address in DNS logs.).",
+    "scenario": "wardbeck"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-21T09:22:04Z",
+    "end": "2022-01-21T10:16:18Z",
+    "hosts": [
+      "wardbeck"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-862ef3f3",
+        "timestamp": "2022-01-21T09:22:04Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642756924.734:9415): pid=9269 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"henry.white\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-b2e6892d",
+        "timestamp": "2022-01-21T09:22:32Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642756952.030:9422): pid=9269 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"henry.white\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-32ca0af1",
+        "timestamp": "2022-01-21T09:23:17Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642756997.067:9434): pid=9269 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"henry.white\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-f08a91f4",
+        "timestamp": "2022-01-21T09:24:45Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642757085.399:9450): pid=9269 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"henry.white\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-8c0d520c",
+        "timestamp": "2022-01-21T09:26:01Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642757161.228:9474): pid=9269 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"henry.white\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-ede36d31",
+        "timestamp": "2022-01-21T09:28:27Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642757307.104:9479): pid=9403 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"henry.white\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-6ead0ae5",
+        "timestamp": "2022-01-21T09:29:23Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642757363.821:9483): pid=9403 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"henry.white\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-e6f9d4cf",
+        "timestamp": "2022-01-21T09:32:47Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642757567.110:9499): pid=9463 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"henry.white\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-8d75dd22",
+        "timestamp": "2022-01-21T09:34:00Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642757640.546:9509): pid=9463 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"henry.white\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-38a5a04e",
+        "timestamp": "2022-01-21T09:34:00Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642757640.762:9512): pid=9463 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"henry.white\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-e1184a0d",
+        "timestamp": "2022-01-21T09:40:23Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 21 09:40:23 dnsmasq[14529]: forwarded um.simpli.fi to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-4d2997d6",
+        "timestamp": "2022-01-21T09:40:23Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 21 09:40:23 dnsmasq[14755]: forwarded um.simpli.fi to 192.168.127.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-18a4eea4",
+        "timestamp": "2022-01-21T09:42:56Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642758176.761:9574): pid=9673 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"henry.white\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-0fce3ebb",
+        "timestamp": "2022-01-21T09:44:44Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New login parameter combination in Audit logs.",
+        "message": "type=LOGIN msg=audit(1642758284.318:9595): pid=9747 uid=0 old-auid=4294967295 auid=1005 tty=(none) old-ses=4294967295 ses=253 res=1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-a46c2eae",
+        "timestamp": "2022-01-21T09:44:44Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642758284.366:9599): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=user@1005 comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-215e542c",
+        "timestamp": "2022-01-21T09:45:00Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "message": "type=CRED_DISP msg=audit(1642758300.738:9604): pid=9747 uid=0 auid=1005 ses=253 msg='op=PAM:setcred acct=\"kwhite\" exe=\"/usr/sbin/sshd\" hostname=10.132.56.81 addr=10.132.56.81 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-07f911ad",
+        "timestamp": "2022-01-21T09:49:23Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 09:49:23 dnsmasq[14529]: query[A] ipv4only.arpa from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-5bd99186",
+        "timestamp": "2022-01-21T09:49:23Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 09:49:23 dnsmasq[14529]: query[AAAA] detectportal.firefox.com from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-e7e2b5c6",
+        "timestamp": "2022-01-21T09:49:30Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 09:49:30 dnsmasq[14529]: query[A] firefox.settings.services.mozilla.com from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-9f9a332c",
+        "timestamp": "2022-01-21T09:49:30Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 09:49:30 dnsmasq[14529]: query[AAAA] cs9.wac.phicdn.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-f41948f7",
+        "timestamp": "2022-01-21T09:49:31Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 09:49:31 dnsmasq[14529]: query[AAAA] shavar.services.mozilla.com from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-3cf04f21",
+        "timestamp": "2022-01-21T09:49:31Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 09:49:31 dnsmasq[14529]: query[AAAA] push.services.mozilla.com from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-22e5b99d",
+        "timestamp": "2022-01-21T09:49:32Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 09:49:32 dnsmasq[14529]: query[A] tracking-protection.cdn.mozilla.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-63ab9449",
+        "timestamp": "2022-01-21T09:49:32Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 09:49:32 dnsmasq[14529]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0025-63ab9449",
+        "timestamp": "2022-01-21T09:49:32Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 09:49:32 dnsmasq[14529]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0026-63ab9449",
+        "timestamp": "2022-01-21T09:49:32Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 09:49:32 dnsmasq[14529]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0027-63ab9449",
+        "timestamp": "2022-01-21T09:49:32Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 09:49:32 dnsmasq[14529]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0028-330af318",
+        "timestamp": "2022-01-21T09:49:50Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642758590.995:9608): pid=9823 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"henry.white\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0029-17b263ff",
+        "timestamp": "2022-01-21T09:49:51Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642758591.163:9612): pid=9823 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"henry.white\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0030-b38ed7b5",
+        "timestamp": "2022-01-21T09:52:36Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642758756.880:9620): pid=9860 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"henry.white\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0031-8adb2651",
+        "timestamp": "2022-01-21T09:54:17Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642758857.589:9627): pid=9871 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"henry.white\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0032-db8fc00b",
+        "timestamp": "2022-01-21T09:55:15Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642758915.401:9639): pid=9871 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"henry.white\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0033-10f3b204",
+        "timestamp": "2022-01-21T09:57:04Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642759024.166:9667): pid=9871 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"henry.white\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0034-a8a5e81f",
+        "timestamp": "2022-01-21T09:58:46Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642759126.514:9675): pid=9871 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"henry.white\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0035-14dd7108",
+        "timestamp": "2022-01-21T09:59:34Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642759174.387:9680): pid=9871 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"henry.white\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0036-ed34c7b6",
+        "timestamp": "2022-01-21T10:00:23Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642759223.071:9687): pid=9871 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"henry.white\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0037-71a4c9e9",
+        "timestamp": "2022-01-21T10:02:00Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642759320.799:9697): pid=9871 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"henry.white\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0038-0d9ff4fd",
+        "timestamp": "2022-01-21T10:09:46Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 10:09:46 dnsmasq[14529]: query[AAAA] ipv4only.arpa from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0039-4e889ea2",
+        "timestamp": "2022-01-21T10:09:49Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 10:09:49 dnsmasq[14529]: query[A] location.services.mozilla.com from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0040-e0f678ee",
+        "timestamp": "2022-01-21T10:09:50Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 10:09:50 dnsmasq[14529]: query[AAAA] firefox.settings.services.mozilla.com from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0041-04fcd7d8",
+        "timestamp": "2022-01-21T10:09:50Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 10:09:50 dnsmasq[14529]: query[A] content-signature-2.cdn.mozilla.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0042-817c817e",
+        "timestamp": "2022-01-21T10:09:51Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 10:09:51 dnsmasq[14529]: query[AAAA] shavar.prod.mozaws.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0043-fda6e7de",
+        "timestamp": "2022-01-21T10:09:51Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 10:09:51 dnsmasq[14529]: query[AAAA] autopush.prod.mozaws.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0044-f4c34b3e",
+        "timestamp": "2022-01-21T10:09:51Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 10:09:51 dnsmasq[14529]: query[A] tracking-protection.cdn.mozilla.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0045-fc96a5cf",
+        "timestamp": "2022-01-21T10:09:51Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 10:09:51 dnsmasq[14529]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0046-bfbed7c7",
+        "timestamp": "2022-01-21T10:09:52Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 10:09:52 dnsmasq[14529]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0047-bfbed7c7",
+        "timestamp": "2022-01-21T10:09:52Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 10:09:52 dnsmasq[14529]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0048-bfbed7c7",
+        "timestamp": "2022-01-21T10:09:52Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 10:09:52 dnsmasq[14529]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0049-27a28432",
+        "timestamp": "2022-01-21T10:14:18Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 10:14:18 dnsmasq[14529]: query[A] firefox.settings.services.mozilla.com from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0050-aef558ad",
+        "timestamp": "2022-01-21T10:16:18Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 10:16:18 dnsmasq[14529]: query[A] aus5.mozilla.org from 192.168.98.90",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-862ef3f3",
+      "source": "alerts",
+      "timestamp": "2022-01-21T09:22:04Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642756924.734:9415): pid=9269 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"henry.white\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-b2e6892d",
+      "source": "alerts",
+      "timestamp": "2022-01-21T09:22:32Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642756952.030:9422): pid=9269 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"henry.white\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-32ca0af1",
+      "source": "alerts",
+      "timestamp": "2022-01-21T09:23:17Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642756997.067:9434): pid=9269 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"henry.white\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (50 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New cred_disp parameter combination in Audit logs., AMiner: New ip address in DNS logs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (50 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New cred_disp parameter combination in Audit logs., AMiner: New ip address in DNS logs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wardbeck/wardbeck/session-0056",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 188,
+      "kept_alerts": 50
+    },
+    "sealed": true
+  }
+}

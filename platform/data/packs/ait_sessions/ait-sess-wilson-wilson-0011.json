@@ -1,0 +1,291 @@
+{
+  "incident_id": "ait-sess-wilson-wilson-0011",
+  "name": "ATTEST-AIT wilson/wilson session 11",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wilson/wilson/session-0011",
+  "alert": {
+    "timestamp": "2022-02-03T09:26:00Z",
+    "host": "wilson",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (15 alerts; detectors: AMiner: New cred_acq parameter combination in Audit logs., AMiner: New event type., AMiner: New login parameter combination in Audit logs.).",
+    "scenario": "wilson"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-03T09:26:00Z",
+    "end": "2022-02-03T09:49:21Z",
+    "hosts": [
+      "wilson"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-4ba0a8bf",
+        "timestamp": "2022-02-03T09:26:00Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-03 09:26:00 cmiranda/192.168.225.116:58097 TLS: soft reset sec=3375/3374 bytes=3452352/-1 pkts=5602/0",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-c1c2466d",
+        "timestamp": "2022-02-03T09:26:19Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643880379.124:2286): pid=14093 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"connie.khan\" exe=\"/usr/lib/dovecot/auth\" hostname=10.182.193.181 addr=10.182.193.181 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-3affd1ec",
+        "timestamp": "2022-02-03T09:26:19Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643880379.124:2287): pid=14093 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"connie.khan\" exe=\"/usr/lib/dovecot/auth\" hostname=10.182.193.181 addr=10.182.193.181 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-6a66fed1",
+        "timestamp": "2022-02-03T09:32:04Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643880724.574:2294): pid=14146 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"jwilkinson\" exe=\"/usr/sbin/sshd\" hostname=10.182.193.78 addr=10.182.193.78 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-ca756b69",
+        "timestamp": "2022-02-03T09:32:04Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1643880724.578:2295): pid=14146 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"jwilkinson\" exe=\"/usr/sbin/sshd\" hostname=10.182.193.78 addr=10.182.193.78 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-b2cd48c3",
+        "timestamp": "2022-02-03T09:32:04Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New login parameter combination in Audit logs.",
+        "message": "type=LOGIN msg=audit(1643880724.582:2296): pid=14146 uid=0 old-auid=4294967295 auid=1004 tty=(none) old-ses=4294967295 ses=106 res=1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-62063d6a",
+        "timestamp": "2022-02-03T09:32:04Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643880724.602:2297): pid=14152 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"jwilkinson\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-fb1333d5",
+        "timestamp": "2022-02-03T09:32:04Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1643880724.606:2299): pid=14152 uid=0 auid=1004 ses=107 msg='op=PAM:session_open acct=\"jwilkinson\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-c23821eb",
+        "timestamp": "2022-02-03T09:32:04Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1643880724.618:2300): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=user@1004 comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-87c2ee9b",
+        "timestamp": "2022-02-03T09:32:04Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1643880724.626:2301): pid=14146 uid=0 auid=1004 ses=106 msg='op=PAM:session_open acct=\"jwilkinson\" exe=\"/usr/sbin/sshd\" hostname=10.182.193.78 addr=10.182.193.78 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-7632f4b0",
+        "timestamp": "2022-02-03T09:43:15Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  3 09:43:15 wilsonahmed-mail auth: pam_unix(dovecot:auth): authentication failure; logname= uid=0 euid=0 tty=dovecot ruser=ronald.porter rhost=192.168.224.185  user=ronald.porter",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-79abb269",
+        "timestamp": "2022-02-03T09:43:19Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  3 09:43:19 wilsonahmed-mail dovecot: imap-login: Disconnected (auth failed, 1 attempts in 4 secs): user=<ronald.porter>, method=PLAIN, rip=192.168.224.185, lip=192.168.224.185, TLS, session=<2R6g9hnXwJnAqOC5>",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-6aa20468",
+        "timestamp": "2022-02-03T09:43:19Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  3 09:43:19 wilsonahmed-mail HORDE: [horde] FAILED LOGIN for ronald.porter to horde (192.168.224.62) [pid 8562 on line 198 of \"/usr/share/horde/login.php\"]",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-c83e4f9d",
+        "timestamp": "2022-02-03T09:49:21Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643881761.399:2418): pid=14224 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"nicole.cantu\" exe=\"/usr/lib/dovecot/auth\" hostname=10.182.193.181 addr=10.182.193.181 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-889ac076",
+        "timestamp": "2022-02-03T09:49:21Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643881761.399:2419): pid=14224 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"nicole.cantu\" exe=\"/usr/lib/dovecot/auth\" hostname=10.182.193.181 addr=10.182.193.181 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-4ba0a8bf",
+      "source": "alerts",
+      "timestamp": "2022-02-03T09:26:00Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-03 09:26:00 cmiranda/192.168.225.116:58097 TLS: soft reset sec=3375/3374 bytes=3452352/-1 pkts=5602/0",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-c1c2466d",
+      "source": "alerts",
+      "timestamp": "2022-02-03T09:26:19Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643880379.124:2286): pid=14093 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"connie.khan\" exe=\"/usr/lib/dovecot/auth\" hostname=10.182.193.181 addr=10.182.193.181 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-3affd1ec",
+      "source": "alerts",
+      "timestamp": "2022-02-03T09:26:19Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643880379.124:2287): pid=14093 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"connie.khan\" exe=\"/usr/lib/dovecot/auth\" hostname=10.182.193.181 addr=10.182.193.181 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (15 alerts; detectors: AMiner: New cred_acq parameter combination in Audit logs., AMiner: New event type., AMiner: New login parameter combination in Audit logs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (15 alerts; detectors: AMiner: New cred_acq parameter combination in Audit logs., AMiner: New event type., AMiner: New login parameter combination in Audit logs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wilson/wilson/session-0011",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 15,
+      "kept_alerts": 15
+    },
+    "sealed": true
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "incident_id": "ait-sess-wheeler-wheeler-0021",
+  "name": "ATTEST-AIT wheeler/wheeler session 21",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wheeler/wheeler/session-0021",
+  "alert": {
+    "timestamp": "2022-01-26T13:53:50Z",
+    "host": "wheeler",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (2 alerts; detectors: AMiner: New status code in Apache Access log., AMiner: Unusual occurrence frequencies of Apache Access request methods.).",
+    "scenario": "wheeler"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-26T13:53:50Z",
+    "end": "2022-01-26T14:07:48Z",
+    "hosts": [
+      "wheeler"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-e2081d6e",
+        "timestamp": "2022-01-26T13:53:50Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "192.168.3.138 - - [26/Jan/2022:13:53:50 +0000] \"GET /wp-content/plugins/wpdiscuz/themes/default/css/fonts/sqr721c-webfont.woff2 HTTP/1.1\" 304 187 \"https://intranet.flores.wheeler.biz/wp-content/plugins/wpdiscuz/themes/default/style.css?ver=7.0.4\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-37a038ee",
+        "timestamp": "2022-01-26T14:07:48Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "192.168.3.138 - - [26/Jan/2022:14:07:48 +0000] \"POST /wp-admin/admin-ajax.php HTTP/1.1\" 200 5660 \"https://intranet.flores.wheeler.biz/?p=5\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-e2081d6e",
+      "source": "alerts",
+      "timestamp": "2022-01-26T13:53:50Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "192.168.3.138 - - [26/Jan/2022:13:53:50 +0000] \"GET /wp-content/plugins/wpdiscuz/themes/default/css/fonts/sqr721c-webfont.woff2 HTTP/1.1\" 304 187 \"https://intranet.flores.wheeler.biz/wp-content/plugins/wpdiscuz/themes/default/style.css?ver=7.0.4\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-37a038ee",
+      "source": "alerts",
+      "timestamp": "2022-01-26T14:07:48Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "192.168.3.138 - - [26/Jan/2022:14:07:48 +0000] \"POST /wp-admin/admin-ajax.php HTTP/1.1\" 200 5660 \"https://intranet.flores.wheeler.biz/?p=5\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (2 alerts; detectors: AMiner: New status code in Apache Access log., AMiner: Unusual occurrence frequencies of Apache Access request methods.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (2 alerts; detectors: AMiner: New status code in Apache Access log., AMiner: Unusual occurrence frequencies of Apache Access request methods.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wheeler/wheeler/session-0021",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 2,
+      "kept_alerts": 2
+    },
+    "sealed": true
+  }
+}

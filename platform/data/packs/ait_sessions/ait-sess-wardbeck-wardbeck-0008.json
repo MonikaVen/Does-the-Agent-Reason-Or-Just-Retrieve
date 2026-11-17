@@ -1,0 +1,606 @@
+{
+  "incident_id": "ait-sess-wardbeck-wardbeck-0008",
+  "name": "ATTEST-AIT wardbeck/wardbeck session 8",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wardbeck/wardbeck/session-0008",
+  "alert": {
+    "timestamp": "2022-01-19T05:35:58Z",
+    "host": "wardbeck",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (50 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New characters in Apache Access referer., AMiner: New characters in Apache Access request.).",
+    "scenario": "wardbeck"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-19T05:35:58Z",
+    "end": "2022-01-19T06:33:49Z",
+    "hosts": [
+      "wardbeck"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-0b49451f",
+        "timestamp": "2022-01-19T05:35:58Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [19/Jan/2022:05:35:58 +0000] \"GET /mnemo/memo.php?memo=s8GquSf1iQMufdxYrqqPQSw&memolist=UXKkPG-CizQWDQGxnYZoYWL&actionID=modify_memo HTTP/1.1\" 200 6834 \"https://mail.hurstwong.wardbeck.info/mnemo/list.php\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-65b1ad68",
+        "timestamp": "2022-01-19T05:36:54Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "10.132.56.81 - - [19/Jan/2022:05:36:54 +0000] \"POST /mnemo/memo.php HTTP/1.1\" 302 1044 \"https://mail.hurstwong.wardbeck.info/mnemo/memo.php?memo=s8GquSf1iQMufdxYrqqPQSw&memolist=UXKkPG-CizQWDQGxnYZoYWL&actionID=modify_memo\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-54a917fa",
+        "timestamp": "2022-01-19T05:42:48Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [19/Jan/2022:05:42:48 +0000] \"POST /services/ajax.php/imp/getReplyData HTTP/1.1\" 200 1289 \"https://mail.hurstwong.wardbeck.info/imp/dynamic.php?page=message&buid=18&mailbox=SU5CT1g&token=kgEm51XgK6hme2BrO0M-rEM&uniq=1642570954972\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-d27f1058",
+        "timestamp": "2022-01-19T05:52:36Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "10.132.56.81 - - [19/Jan/2022:05:52:36 +0000] \"POST /services/ajax.php/horde/topbarUpdate HTTP/1.1\" 200 3494 \"https://mail.hurstwong.wardbeck.info/nag/list.php\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-b2a555a3",
+        "timestamp": "2022-01-19T05:54:55Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 19 05:54:55 dnsmasq[14755]: query[A] intranet.hurstwong.wardbeck.info from 172.21.241.70",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-07ab9476",
+        "timestamp": "2022-01-19T05:55:00Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 05:55:00 dnsmasq[14529]: forwarded api.wordpress.org to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-07ab9476",
+        "timestamp": "2022-01-19T05:55:00Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 05:55:00 dnsmasq[14529]: forwarded api.wordpress.org to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-5a92c1dc",
+        "timestamp": "2022-01-19T05:55:00Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 05:55:00 dnsmasq[14529]: reply api.wordpress.org is 198.143.164.251",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-667db5b8",
+        "timestamp": "2022-01-19T05:55:00Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 05:55:00 dnsmasq[14755]: query[A] api.wordpress.org from 172.21.241.88",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-4d9393ff",
+        "timestamp": "2022-01-19T05:55:00Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 05:55:00 dnsmasq[14755]: query[AAAA] api.wordpress.org from 172.21.241.88",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-3c50d52b",
+        "timestamp": "2022-01-19T05:55:00Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 05:55:00 dnsmasq[14755]: forwarded api.wordpress.org to 192.168.127.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-6374aa65",
+        "timestamp": "2022-01-19T05:55:00Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 05:55:00 dnsmasq[14755]: reply api.wordpress.org is NODATA-IPv6",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-8ad9565a",
+        "timestamp": "2022-01-19T06:00:03Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 19 06:00:03 dnsmasq[14529]: query[A] location.services.mozilla.com from 192.168.98.15",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-95abc308",
+        "timestamp": "2022-01-19T06:00:04Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 19 06:00:04 dnsmasq[14529]: query[A] push.services.mozilla.com from 192.168.98.15",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-67940f1a",
+        "timestamp": "2022-01-19T06:00:05Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query records.",
+        "message": "Jan 19 06:00:05 dnsmasq[14529]: query[AAAA] cs9.wac.phicdn.net from 192.168.98.15",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-4b5b65d7",
+        "timestamp": "2022-01-19T06:00:12Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "10.132.56.81 - - [19/Jan/2022:06:00:12 +0000] \"GET /nag/js/task.js?v=1c1ea9cb7680a625043f90fc61ea7261 HTTP/1.1\" 200 1086 \"https://mail.hurstwong.wardbeck.info/nag/task.php?tasklist=r1uzMS2iu0tASD5tlEZ-M42&task=VpVCv4zzVagJl4Xx3Rj6YFO&actionID=modify_task&have_search&tab_name=1&url=%2Fnag%2F\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-c60b6508",
+        "timestamp": "2022-01-19T06:00:27Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 19 06:00:27 watkins-mail HORDE: User jean.hughes is not authorized for Mail (Host: 192.168.98.15). [pid 30509 on line 324 of \"/usr/share/php/Horde/Registry.php\"]",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-6e033a4f",
+        "timestamp": "2022-01-19T06:00:53Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [19/Jan/2022:06:00:53 +0000] \"GET /nag/task.php?tasklist=r1uzMS2iu0tASD5tlEZ-M42&task=udsHL2EKXcqGL6ZcNV0HC1B&actionID=modify_task&have_search&tab_name=1&url=%2Fnag%2Flist.php HTTP/1.1\" 200 9928 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-3af1333f",
+        "timestamp": "2022-01-19T06:02:36Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access logs.",
+        "message": "10.132.56.81 - - [19/Jan/2022:06:02:36 +0000] \"POST /services/ajax.php/horde/topbarUpdate HTTP/1.1\" 200 1061 \"https://mail.hurstwong.wardbeck.info/nag/list.php\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-f5996f19",
+        "timestamp": "2022-01-19T06:03:15Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 19 06:03:15 inet-dns apport[4240]:  * Stopping automatic crash report generation: apport",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-6412cd17",
+        "timestamp": "2022-01-19T06:03:37Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 19 06:03:37 inet-dns sshd[9641]: Server listening on 0.0.0.0 port 22.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-c30e869a",
+        "timestamp": "2022-01-19T06:04:06Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 19 06:04:06 inet-dns os-prober: debug: running /usr/lib/os-probes/50mounted-tests on /dev/vda14",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-ebf51380",
+        "timestamp": "2022-01-19T06:04:06Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 19 06:04:06 inet-dns 50mounted-tests: debug: /dev/vda14 type not recognised; skipping",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-e118cbe2",
+        "timestamp": "2022-01-19T06:04:06Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 19 06:04:06 inet-dns 10freedos: debug: /dev/vda15 is a FAT32 partition",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0025-c8ad55d8",
+        "timestamp": "2022-01-19T06:04:06Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 19 06:04:06 inet-dns macosx-prober: debug: /dev/vda15 is not an HFS+ partition: exiting",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0026-ed32d43a",
+        "timestamp": "2022-01-19T06:04:06Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 19 06:04:06 inet-dns 30utility: debug: /dev/vda15 is a FAT32 partition",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0027-fd9e98ee",
+        "timestamp": "2022-01-19T06:04:06Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 19 06:04:06 inet-dns 83haiku: debug: /dev/vda15 is not a BeFS partition: exiting",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0028-a7ec6563",
+        "timestamp": "2022-01-19T06:07:04Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642572424.195:2301): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=apt-daily-upgrade comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0029-0f55363d",
+        "timestamp": "2022-01-19T06:13:00Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 19 06:13:00 intranet-server systemd-networkd[1364]: ens3: Configured",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0030-c57d3bd1",
+        "timestamp": "2022-01-19T06:14:06Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642572846.040:872): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=apport comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0031-f0a3b531",
+        "timestamp": "2022-01-19T06:14:37Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642572877.348:875): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=ssh comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0032-8b8eacc0",
+        "timestamp": "2022-01-19T06:15:46Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 19 06:15:46 dnsmasq[14529]: query[AAAA] motd.ubuntu.com from 192.168.99.189",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0033-9477f986",
+        "timestamp": "2022-01-19T06:25:05Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-19 06:25:05 1nA4P3-0003Gd-OS <= root@mailserver.hurstwong.wardbeck.info U=root P=local S=2253",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0034-7690a843",
+        "timestamp": "2022-01-19T06:29:01Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "type=AVC msg=audit(1642573741.537:195): apparmor=\"STATUS\" operation=\"profile_replace\" profile=\"unconfined\" name=\"/sbin/dhclient\" pid=23999 comm=\"apparmor_parser\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0035-5ba0a640",
+        "timestamp": "2022-01-19T06:29:01Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "type=SYSCALL msg=audit(1642573741.537:195): arch=c000003e syscall=1 success=yes exit=44953 a0=6 a1=55fe4cd56200 a2=af99 a3=0 items=0 ppid=23998 pid=23999 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=4294967295 comm=\"apparmor_parser\" exe=\"/sbin/apparmor_parser\" key=(null)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0036-7d67ae8a",
+        "timestamp": "2022-01-19T06:29:01Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New syscall parameter combination in Audit logs.",
+        "message": "type=SYSCALL msg=audit(1642573741.537:195): arch=c000003e syscall=1 success=yes exit=44953 a0=6 a1=55fe4cd56200 a2=af99 a3=0 items=0 ppid=23998 pid=23999 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=4294967295 comm=\"apparmor_parser\" exe=\"/sbin/apparmor_parser\" key=(null)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0037-f89b882c",
+        "timestamp": "2022-01-19T06:30:38Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642573838.654:2352): pid=12615 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"jeffrey.thompson\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0038-5a2345f3",
+        "timestamp": "2022-01-19T06:31:24Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "172.21.241.70 - - [19/Jan/2022:06:31:24 +0000] \"-\" 408 575 \"-\" \"-\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0039-3b2a0821",
+        "timestamp": "2022-01-19T06:31:24Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.21.241.70 - - [19/Jan/2022:06:31:24 +0000] \"-\" 408 575 \"-\" \"-\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0040-012e7573",
+        "timestamp": "2022-01-19T06:32:31Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642573951.554:202): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-udevd comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0041-01107c2a",
+        "timestamp": "2022-01-19T06:33:11Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642573991.946:208): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-networkd comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0042-8a05d9ad",
+        "timestamp": "2022-01-19T06:33:11Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642573991.946:209): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-networkd comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0043-69847c17",
+        "timestamp": "2022-01-19T06:33:12Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642573992.102:211): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-resolved comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0044-a3780a27",
+        "timestamp": "2022-01-19T06:33:12Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642573992.206:213): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-hostnamed comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0045-67f23db7",
+        "timestamp": "2022-01-19T06:33:12Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642573992.266:215): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-timesyncd comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0046-8ebe0a48",
+        "timestamp": "2022-01-19T06:33:12Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642573992.338:218): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-journal-flush comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0047-8175798e",
+        "timestamp": "2022-01-19T06:33:12Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642573992.362:220): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-journald comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0048-8677ae73",
+        "timestamp": "2022-01-19T06:33:12Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642573992.362:221): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-journald comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0049-14f53cc0",
+        "timestamp": "2022-01-19T06:33:31Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642574011.646:225): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=grub-common comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0050-1b8b9de7",
+        "timestamp": "2022-01-19T06:33:42Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642574022.254:228): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-hostnamed comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-0b49451f",
+      "source": "alerts",
+      "timestamp": "2022-01-19T05:35:58Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [19/Jan/2022:05:35:58 +0000] \"GET /mnemo/memo.php?memo=s8GquSf1iQMufdxYrqqPQSw&memolist=UXKkPG-CizQWDQGxnYZoYWL&actionID=modify_memo HTTP/1.1\" 200 6834 \"https://mail.hurstwong.wardbeck.info/mnemo/list.php\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-65b1ad68",
+      "source": "alerts",
+      "timestamp": "2022-01-19T05:36:54Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "10.132.56.81 - - [19/Jan/2022:05:36:54 +0000] \"POST /mnemo/memo.php HTTP/1.1\" 302 1044 \"https://mail.hurstwong.wardbeck.info/mnemo/memo.php?memo=s8GquSf1iQMufdxYrqqPQSw&memolist=UXKkPG-CizQWDQGxnYZoYWL&actionID=modify_memo\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-54a917fa",
+      "source": "alerts",
+      "timestamp": "2022-01-19T05:42:48Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [19/Jan/2022:05:42:48 +0000] \"POST /services/ajax.php/imp/getReplyData HTTP/1.1\" 200 1289 \"https://mail.hurstwong.wardbeck.info/imp/dynamic.php?page=message&buid=18&mailbox=SU5CT1g&token=kgEm51XgK6hme2BrO0M-rEM&uniq=1642570954972\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (50 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New characters in Apache Access referer., AMiner: New characters in Apache Access request.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (50 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New characters in Apache Access referer., AMiner: New characters in Apache Access request.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wardbeck/wardbeck/session-0008",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 84,
+      "kept_alerts": 50
+    },
+    "sealed": true
+  }
+}

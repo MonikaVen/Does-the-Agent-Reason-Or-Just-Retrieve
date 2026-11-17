@@ -1,0 +1,219 @@
+{
+  "incident_id": "ait-sess-harrison-harrison-0126",
+  "name": "ATTEST-AIT harrison/harrison session 126",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "harrison/harrison/session-0126",
+  "alert": {
+    "timestamp": "2022-02-08T22:46:44Z",
+    "host": "harrison",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (7 alerts; detectors: AMiner: Unusual occurrence frequencies of DNS log events., AMiner: Unusual occurrence frequencies of DNS query IPs., AMiner: Unusual occurre",
+    "scenario": "harrison"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-08T22:46:44Z",
+    "end": "2022-02-08T23:30:11Z",
+    "hosts": [
+      "harrison"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-0d71f52f",
+        "timestamp": "2022-02-08T22:46:44Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  8 22:46:44 dnsmasq[14453]: query[TXT] current.cvd.clamav.net from 172.28.192.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-e9d282fa",
+        "timestamp": "2022-02-08T23:00:11Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  8 23:00:11 dnsmasq[14664]: query[AAAA] mail from 10.237.2.255",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-b73d5972",
+        "timestamp": "2022-02-08T23:00:11Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Feb  8 23:00:11 dnsmasq[14664]: query[AAAA] mail from 10.237.2.255",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-67ca4d6e",
+        "timestamp": "2022-02-08T23:00:11Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query records.",
+        "message": "Feb  8 23:00:11 dnsmasq[14664]: query[AAAA] mail from 10.237.2.255",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-16126161",
+        "timestamp": "2022-02-08T23:13:26Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  8 23:13:26 dnsmasq[14453]: query[AAAA] motd.ubuntu.com from 172.28.193.196",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-c3edb529",
+        "timestamp": "2022-02-08T23:23:31Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  8 23:23:31 dnsmasq[14453]: query[A] motd.ubuntu.com from 172.28.193.59",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-e485c589",
+        "timestamp": "2022-02-08T23:30:11Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  8 23:30:11 dnsmasq[14664]: query[AAAA] mail from 10.237.2.255",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-0d71f52f",
+      "source": "alerts",
+      "timestamp": "2022-02-08T22:46:44Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  8 22:46:44 dnsmasq[14453]: query[TXT] current.cvd.clamav.net from 172.28.192.4",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-e9d282fa",
+      "source": "alerts",
+      "timestamp": "2022-02-08T23:00:11Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  8 23:00:11 dnsmasq[14664]: query[AAAA] mail from 10.237.2.255",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-b73d5972",
+      "source": "alerts",
+      "timestamp": "2022-02-08T23:00:11Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Feb  8 23:00:11 dnsmasq[14664]: query[AAAA] mail from 10.237.2.255",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (7 alerts; detectors: AMiner: Unusual occurrence frequencies of DNS log events., AMiner: Unusual occurrence frequencies of DNS query IPs., AMiner: Unusual occurre",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (7 alerts; detectors: AMiner: Unusual occurrence frequencies of DNS log events., AMiner: Unusual occurrence frequencies of DNS query IPs., AMiner: Unusual occurre",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "harrison/harrison/session-0126",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 7,
+      "kept_alerts": 7
+    },
+    "sealed": true
+  }
+}

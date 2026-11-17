@@ -1,0 +1,291 @@
+{
+  "incident_id": "ait-sess-shaw-shaw-0086",
+  "name": "ATTEST-AIT shaw/shaw session 86",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "shaw/shaw/session-0086",
+  "alert": {
+    "timestamp": "2022-01-29T13:03:34Z",
+    "host": "shaw",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (15 alerts; detectors: AMiner: New cred_disp parameter combination in Audit logs., AMiner: New event type., AMiner: New service_stop parameter combination in Audit lo",
+    "scenario": "shaw"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-29T13:03:34Z",
+    "end": "2022-01-29T13:12:41Z",
+    "hosts": [
+      "shaw"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-ad541f2e",
+        "timestamp": "2022-01-29T13:03:34Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 29 13:03:34 dnsmasq[14635]: query[AAAA] collinsbecker-mail from 10.70.34.215",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-ce43ad1b",
+        "timestamp": "2022-01-29T13:05:51Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-29 13:05:51 gmarsh/10.70.32.61:59572 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-1185cf00",
+        "timestamp": "2022-01-29T13:05:51Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-29 13:05:51 gmarsh/10.70.32.61:59572 TLS Error: TLS handshake failed",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-2e707330",
+        "timestamp": "2022-01-29T13:05:51Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-29 13:05:51 gmarsh/10.70.32.61:59572 TLS: move_session: dest=TM_LAME_DUCK src=TM_ACTIVE reinit_src=1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-026efbc6",
+        "timestamp": "2022-01-29T13:07:06Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-29 13:07:06 gmarsh/10.70.32.61:59572 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-27c4d374",
+        "timestamp": "2022-01-29T13:07:06Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-29 13:07:06 gmarsh/10.70.32.61:59572 TLS Error: TLS handshake failed",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-7d0ff9cf",
+        "timestamp": "2022-01-29T13:08:21Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-29 13:08:21 gmarsh/10.70.32.61:59572 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-da627cfa",
+        "timestamp": "2022-01-29T13:08:21Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-29 13:08:21 gmarsh/10.70.32.61:59572 TLS Error: TLS handshake failed",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-2b9ae10f",
+        "timestamp": "2022-01-29T13:12:41Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 29 13:12:41 mail sshd[29546]: Timeout, client not responding.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-7f8d2c3a",
+        "timestamp": "2022-01-29T13:12:41Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 29 13:12:41 mail sshd[29533]: pam_unix(sshd:session): session closed for user gmarsh",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-a791ba25",
+        "timestamp": "2022-01-29T13:12:41Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 29 13:12:41 mail systemd-logind[496]: Removed session 243.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-a7c3abd5",
+        "timestamp": "2022-01-29T13:12:41Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 29 13:12:41 mail systemd: pam_unix(systemd-user:session): session closed for user gmarsh",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-143d3d0b",
+        "timestamp": "2022-01-29T13:12:41Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_end parameter combination in Audit logs.",
+        "message": "type=USER_END msg=audit(1643461961.435:11683): pid=29533 uid=0 auid=1002 ses=243 msg='op=PAM:session_close acct=\"gmarsh\" exe=\"/usr/sbin/sshd\" hostname=172.24.249.224 addr=172.24.249.224 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-b65222cb",
+        "timestamp": "2022-01-29T13:12:41Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "message": "type=CRED_DISP msg=audit(1643461961.435:11684): pid=29533 uid=0 auid=1002 ses=243 msg='op=PAM:setcred acct=\"gmarsh\" exe=\"/usr/sbin/sshd\" hostname=172.24.249.224 addr=172.24.249.224 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-a14436cc",
+        "timestamp": "2022-01-29T13:12:41Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1643461961.471:11685): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=user@1002 comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-ad541f2e",
+      "source": "alerts",
+      "timestamp": "2022-01-29T13:03:34Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 29 13:03:34 dnsmasq[14635]: query[AAAA] collinsbecker-mail from 10.70.34.215",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-ce43ad1b",
+      "source": "alerts",
+      "timestamp": "2022-01-29T13:05:51Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-29 13:05:51 gmarsh/10.70.32.61:59572 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-1185cf00",
+      "source": "alerts",
+      "timestamp": "2022-01-29T13:05:51Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-29 13:05:51 gmarsh/10.70.32.61:59572 TLS Error: TLS handshake failed",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (15 alerts; detectors: AMiner: New cred_disp parameter combination in Audit logs., AMiner: New event type., AMiner: New service_stop parameter combination in Audit lo",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (15 alerts; detectors: AMiner: New cred_disp parameter combination in Audit logs., AMiner: New event type., AMiner: New service_stop parameter combination in Audit lo",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "shaw/shaw/session-0086",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 15,
+      "kept_alerts": 15
+    },
+    "sealed": true
+  }
+}

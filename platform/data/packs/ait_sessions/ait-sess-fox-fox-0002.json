@@ -1,0 +1,363 @@
+{
+  "incident_id": "ait-sess-fox-fox-0002",
+  "name": "ATTEST-AIT fox/fox session 2",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "fox/fox/session-0002",
+  "alert": {
+    "timestamp": "2022-01-15T01:00:11Z",
+    "host": "fox",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (23 alerts; detectors: AMiner: CPU value out of expected range in monitoring logs., AMiner: High entropy in DNS domain., AMiner: New event type.).",
+    "scenario": "fox"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-15T01:00:11Z",
+    "end": "2022-01-15T01:56:56Z",
+    "hosts": [
+      "fox"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-3420d12c",
+        "timestamp": "2022-01-15T01:00:11Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 15 01:00:11 dnsmasq[14460]: query[A] 3x6-.97-.ZCQRhpsTmsNYWJ8IgBtV9oGyx5Y9FcRwL/lgFbb5Jdq/WWQ05ZUaEvREiFoQ-.66503vY2X9wemzaiPq2ylGsry26f5XFuwRfG9jMVeAPtoqzZH1V4sXHAG*Jn-.ku/4WajV17adtCXvrpm*gNCvcHEnG2pbPbrKzZHcyIszza2fdy59Lf4w7xEM-.customers_2020.xlsx.ycgjslfptkev.com from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-7379b4f5",
+        "timestamp": "2022-01-15T01:00:11Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 15 01:00:11 dnsmasq[14460]: query[A] 3x6-.97-.ZCQRhpsTmsNYWJ8IgBtV9oGyx5Y9FcRwL/lgFbb5Jdq/WWQ05ZUaEvREiFoQ-.66503vY2X9wemzaiPq2ylGsry26f5XFuwRfG9jMVeAPtoqzZH1V4sXHAG*Jn-.ku/4WajV17adtCXvrpm*gNCvcHEnG2pbPbrKzZHcyIszza2fdy59Lf4w7xEM-.customers_2020.xlsx.ycgjslfptkev.com from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-14a86aaa",
+        "timestamp": "2022-01-15T01:00:11Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query records.",
+        "message": "Jan 15 01:00:11 dnsmasq[14460]: query[A] 3x6-.97-.ZCQRhpsTmsNYWJ8IgBtV9oGyx5Y9FcRwL/lgFbb5Jdq/WWQ05ZUaEvREiFoQ-.66503vY2X9wemzaiPq2ylGsry26f5XFuwRfG9jMVeAPtoqzZH1V4sXHAG*Jn-.ku/4WajV17adtCXvrpm*gNCvcHEnG2pbPbrKzZHcyIszza2fdy59Lf4w7xEM-.customers_2020.xlsx.ycgjslfptkev.com from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-b9959ae0",
+        "timestamp": "2022-01-15T01:01:16Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 01:01:16 dnsmasq[14460]: query[AAAA] taylorcruz-mail from 192.168.128.195",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-b0e61f28",
+        "timestamp": "2022-01-15T01:11:47Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 01:11:47 dnsmasq[14460]: query[AAAA] jonesmorgan-mail from 192.168.128.170",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-2bfe3648",
+        "timestamp": "2022-01-15T01:12:33Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New query record in DNS logs.",
+        "message": "Jan 15 01:12:33 dnsmasq[14460]: query[SRV] _http._tcp.security.ubuntu.com from 192.168.130.77",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-0b1dd9ee",
+        "timestamp": "2022-01-15T01:20:09Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"@timestamp\":\"2022-01-15T01:20:09.321Z\",\"service\":{\"type\":\"system\"},\"tags\":[\"beats_input_raw_event\"],\"@version\":\"1\",\"agent\":{\"type\":\"metricbeat\",\"hostname\":\"intranet-server\",\"version\":\"7.13.2\",\"id\":\"a0c41e4e-ff4a-481f-adda-21fc96889b28\",\"name\":\"intranet-server\",\"ephemeral_id\":\"ae20c47b-0a81-4e05-a749-cbe0dacd5e36\"},\"system\":{\"cpu\":{\"cores\":1,\"iowait\":{\"pct\":5.0E-4,\"norm\":{\"pct\":5.0E-4}},\"nice\":{\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-a7eb7271",
+        "timestamp": "2022-01-15T01:23:09Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"@timestamp\":\"2022-01-15T01:23:09.321Z\",\"service\":{\"type\":\"system\"},\"tags\":[\"beats_input_raw_event\"],\"@version\":\"1\",\"agent\":{\"type\":\"metricbeat\",\"hostname\":\"intranet-server\",\"version\":\"7.13.2\",\"id\":\"a0c41e4e-ff4a-481f-adda-21fc96889b28\",\"name\":\"intranet-server\",\"ephemeral_id\":\"ae20c47b-0a81-4e05-a749-cbe0dacd5e36\"},\"system\":{\"cpu\":{\"softirq\":{\"pct\":0.0023,\"norm\":{\"pct\":0.0023}},\"cores\":1,\"nice\":{",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-b7fe55aa",
+        "timestamp": "2022-01-15T01:23:54Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"@timestamp\":\"2022-01-15T01:23:54.321Z\",\"service\":{\"type\":\"system\"},\"tags\":[\"beats_input_raw_event\"],\"@version\":\"1\",\"agent\":{\"type\":\"metricbeat\",\"hostname\":\"intranet-server\",\"version\":\"7.13.2\",\"id\":\"a0c41e4e-ff4a-481f-adda-21fc96889b28\",\"name\":\"intranet-server\",\"ephemeral_id\":\"ae20c47b-0a81-4e05-a749-cbe0dacd5e36\"},\"system\":{\"cpu\":{\"cores\":1,\"softirq\":{\"pct\":0.0014,\"norm\":{\"pct\":0.0014}},\"iowait\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-6d5e1a16",
+        "timestamp": "2022-01-15T01:26:56Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 01:26:56 dnsmasq[14522]: query[AAAA] mail from 172.17.131.81",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-d2d5c337",
+        "timestamp": "2022-01-15T01:31:16Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 01:31:16 dnsmasq[14460]: query[AAAA] taylorcruz-mail from 192.168.128.195",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-6f3a152e",
+        "timestamp": "2022-01-15T01:36:39Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"@timestamp\":\"2022-01-15T01:36:39.321Z\",\"service\":{\"type\":\"system\"},\"tags\":[\"beats_input_raw_event\"],\"@version\":\"1\",\"agent\":{\"type\":\"metricbeat\",\"hostname\":\"intranet-server\",\"version\":\"7.13.2\",\"id\":\"a0c41e4e-ff4a-481f-adda-21fc96889b28\",\"name\":\"intranet-server\",\"ephemeral_id\":\"ae20c47b-0a81-4e05-a749-cbe0dacd5e36\"},\"system\":{\"cpu\":{\"softirq\":{\"pct\":0.0021,\"norm\":{\"pct\":0.0021}},\"iowait\":{\"pct\":2.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-c6e3b923",
+        "timestamp": "2022-01-15T01:38:54Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"@timestamp\":\"2022-01-15T01:38:54.322Z\",\"service\":{\"type\":\"system\"},\"tags\":[\"beats_input_raw_event\"],\"@version\":\"1\",\"agent\":{\"type\":\"metricbeat\",\"hostname\":\"intranet-server\",\"version\":\"7.13.2\",\"id\":\"a0c41e4e-ff4a-481f-adda-21fc96889b28\",\"name\":\"intranet-server\",\"ephemeral_id\":\"ae20c47b-0a81-4e05-a749-cbe0dacd5e36\"},\"system\":{\"cpu\":{\"softirq\":{\"pct\":0.0026,\"norm\":{\"pct\":0.0026}},\"cores\":1,\"iowait\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-d40c350e",
+        "timestamp": "2022-01-15T01:39:25Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 15 01:39:25 dnsmasq[14522]: query[A] motd.ubuntu.com from 172.17.128.1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-6b7bea8b",
+        "timestamp": "2022-01-15T01:39:25Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 15 01:39:25 dnsmasq[14522]: query[A] motd.ubuntu.com from 10.35.32.1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-d9e1a624",
+        "timestamp": "2022-01-15T01:39:39Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"@timestamp\":\"2022-01-15T01:39:39.321Z\",\"service\":{\"type\":\"system\"},\"tags\":[\"beats_input_raw_event\"],\"@version\":\"1\",\"agent\":{\"type\":\"metricbeat\",\"hostname\":\"intranet-server\",\"version\":\"7.13.2\",\"id\":\"a0c41e4e-ff4a-481f-adda-21fc96889b28\",\"name\":\"intranet-server\",\"ephemeral_id\":\"ae20c47b-0a81-4e05-a749-cbe0dacd5e36\"},\"system\":{\"cpu\":{\"cores\":1,\"iowait\":{\"pct\":0.0028,\"norm\":{\"pct\":0.0028}},\"nice\":{\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-1e336d57",
+        "timestamp": "2022-01-15T01:40:28Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642210828.962:167): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=motd-news comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-9f7a2963",
+        "timestamp": "2022-01-15T01:40:28Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642210828.962:168): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=motd-news comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-93cbd9d6",
+        "timestamp": "2022-01-15T01:41:47Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 01:41:47 dnsmasq[14460]: query[AAAA] jonesmorgan-mail from 192.168.128.170",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-0ea1adcb",
+        "timestamp": "2022-01-15T01:49:24Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"@timestamp\":\"2022-01-15T01:49:24.322Z\",\"service\":{\"type\":\"system\"},\"tags\":[\"beats_input_raw_event\"],\"@version\":\"1\",\"agent\":{\"type\":\"metricbeat\",\"hostname\":\"intranet-server\",\"version\":\"7.13.2\",\"id\":\"a0c41e4e-ff4a-481f-adda-21fc96889b28\",\"name\":\"intranet-server\",\"ephemeral_id\":\"ae20c47b-0a81-4e05-a749-cbe0dacd5e36\"},\"system\":{\"cpu\":{\"softirq\":{\"pct\":0.0019,\"norm\":{\"pct\":0.0019}},\"cores\":1,\"nice\":{",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-d580e69c",
+        "timestamp": "2022-01-15T01:53:10Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 15 01:53:10 dnsmasq[14522]: query[A] motd.ubuntu.com from 172.17.130.196",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-99bf023e",
+        "timestamp": "2022-01-15T01:54:30Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 15 01:54:30 vpn 50-motd-news[27616]:  * Super-optimized for small spaces - read how we shrank the memory",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-28600a3d",
+        "timestamp": "2022-01-15T01:56:56Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 01:56:56 dnsmasq[14522]: query[AAAA] mail from 172.17.131.81",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-3420d12c",
+      "source": "alerts",
+      "timestamp": "2022-01-15T01:00:11Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 15 01:00:11 dnsmasq[14460]: query[A] 3x6-.97-.ZCQRhpsTmsNYWJ8IgBtV9oGyx5Y9FcRwL/lgFbb5Jdq/WWQ05ZUaEvREiFoQ-.66503vY2X9wemzaiPq2ylGsry26f5XFuwRfG9jMVeAPtoqzZH1V4sXHAG*Jn-.ku/4WajV17adtCXvrpm*gNCvcHEnG2pbPbrKzZHcyIszza2fdy59Lf4w7xEM-.customers_2020.xlsx.ycgjslfptkev.com from 192.168.128.4",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-7379b4f5",
+      "source": "alerts",
+      "timestamp": "2022-01-15T01:00:11Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 15 01:00:11 dnsmasq[14460]: query[A] 3x6-.97-.ZCQRhpsTmsNYWJ8IgBtV9oGyx5Y9FcRwL/lgFbb5Jdq/WWQ05ZUaEvREiFoQ-.66503vY2X9wemzaiPq2ylGsry26f5XFuwRfG9jMVeAPtoqzZH1V4sXHAG*Jn-.ku/4WajV17adtCXvrpm*gNCvcHEnG2pbPbrKzZHcyIszza2fdy59Lf4w7xEM-.customers_2020.xlsx.ycgjslfptkev.com from 192.168.128.4",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-14a86aaa",
+      "source": "alerts",
+      "timestamp": "2022-01-15T01:00:11Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query records.",
+        "message": "Jan 15 01:00:11 dnsmasq[14460]: query[A] 3x6-.97-.ZCQRhpsTmsNYWJ8IgBtV9oGyx5Y9FcRwL/lgFbb5Jdq/WWQ05ZUaEvREiFoQ-.66503vY2X9wemzaiPq2ylGsry26f5XFuwRfG9jMVeAPtoqzZH1V4sXHAG*Jn-.ku/4WajV17adtCXvrpm*gNCvcHEnG2pbPbrKzZHcyIszza2fdy59Lf4w7xEM-.customers_2020.xlsx.ycgjslfptkev.com from 192.168.128.4",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (23 alerts; detectors: AMiner: CPU value out of expected range in monitoring logs., AMiner: High entropy in DNS domain., AMiner: New event type.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (23 alerts; detectors: AMiner: CPU value out of expected range in monitoring logs., AMiner: High entropy in DNS domain., AMiner: New event type.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "fox/fox/session-0002",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 23,
+      "kept_alerts": 23
+    },
+    "sealed": true
+  }
+}

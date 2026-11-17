@@ -1,0 +1,228 @@
+{
+  "incident_id": "ait-sess-shaw-shaw-0056",
+  "name": "ATTEST-AIT shaw/shaw session 56",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "shaw/shaw/session-0056",
+  "alert": {
+    "timestamp": "2022-01-27T10:41:44Z",
+    "host": "shaw",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (8 alerts; detectors: AMiner: New characters in DNS domain.).",
+    "scenario": "shaw"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-27T10:41:44Z",
+    "end": "2022-01-27T10:54:26Z",
+    "hosts": [
+      "shaw"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-38aa9c10",
+        "timestamp": "2022-01-27T10:41:44Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in DNS domain.",
+        "message": "Jan 27 10:41:44 dnsmasq[14635]: reply WWW.R53.cmu.edu is 128.2.42.52",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-9ad492d6",
+        "timestamp": "2022-01-27T10:41:44Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in DNS domain.",
+        "message": "Jan 27 10:41:44 dnsmasq[14596]: reply WWW.R53.cmu.edu is 128.2.42.52",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-bb57d498",
+        "timestamp": "2022-01-27T10:46:42Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in DNS domain.",
+        "message": "Jan 27 10:46:42 dnsmasq[14635]: reply WWW.R53.cmu.edu is 128.2.42.52",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-7ad8372e",
+        "timestamp": "2022-01-27T10:46:42Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in DNS domain.",
+        "message": "Jan 27 10:46:42 dnsmasq[14596]: reply WWW.R53.cmu.edu is 128.2.42.52",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-98199983",
+        "timestamp": "2022-01-27T10:50:55Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in DNS domain.",
+        "message": "Jan 27 10:50:55 dnsmasq[14635]: reply WWW.R53.cmu.edu is 128.2.42.52",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-729b443d",
+        "timestamp": "2022-01-27T10:50:55Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in DNS domain.",
+        "message": "Jan 27 10:50:55 dnsmasq[14596]: reply WWW.R53.cmu.edu is 128.2.42.52",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-b2a630f0",
+        "timestamp": "2022-01-27T10:54:26Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in DNS domain.",
+        "message": "Jan 27 10:54:26 dnsmasq[14635]: reply WWW.R53.cmu.edu is 128.2.42.52",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-8fe4e2c1",
+        "timestamp": "2022-01-27T10:54:26Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in DNS domain.",
+        "message": "Jan 27 10:54:26 dnsmasq[14596]: reply WWW.R53.cmu.edu is 128.2.42.52",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-38aa9c10",
+      "source": "alerts",
+      "timestamp": "2022-01-27T10:41:44Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New characters in DNS domain.",
+        "message": "Jan 27 10:41:44 dnsmasq[14635]: reply WWW.R53.cmu.edu is 128.2.42.52",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-9ad492d6",
+      "source": "alerts",
+      "timestamp": "2022-01-27T10:41:44Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New characters in DNS domain.",
+        "message": "Jan 27 10:41:44 dnsmasq[14596]: reply WWW.R53.cmu.edu is 128.2.42.52",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-bb57d498",
+      "source": "alerts",
+      "timestamp": "2022-01-27T10:46:42Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New characters in DNS domain.",
+        "message": "Jan 27 10:46:42 dnsmasq[14635]: reply WWW.R53.cmu.edu is 128.2.42.52",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (8 alerts; detectors: AMiner: New characters in DNS domain.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (8 alerts; detectors: AMiner: New characters in DNS domain.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "shaw/shaw/session-0056",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 8,
+      "kept_alerts": 8
+    },
+    "sealed": true
+  }
+}

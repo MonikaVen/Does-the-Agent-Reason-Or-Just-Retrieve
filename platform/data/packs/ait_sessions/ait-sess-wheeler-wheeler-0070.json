@@ -1,0 +1,1117 @@
+{
+  "incident_id": "ait-sess-wheeler-wheeler-0070",
+  "name": "ATTEST-AIT wheeler/wheeler session 70",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wheeler/wheeler/session-0070",
+  "alert": {
+    "timestamp": "2022-01-30T07:39:03Z",
+    "host": "wheeler",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (50 alerts; detectors: AMiner: New characters in Apache Access request., AMiner: New event type., AMiner: New request method in Apache Access log.).",
+    "scenario": "wheeler"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-30T07:39:03Z",
+    "end": "2022-01-30T08:00:21Z",
+    "hosts": [
+      "wheeler"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-f72d1bbf",
+        "timestamp": "2022-01-30T07:39:03Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 07:39:03 khanwood-mail dovecot: imap-login: Disconnected (disconnected before auth was ready, waited 0 secs): user=<>, rip=172.27.181.218, lip=172.27.181.253, session=<GSgYw8fWBrusG7Xa>",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-1b6a24a1",
+        "timestamp": "2022-01-30T07:39:40Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 30 07:39:40.559104 2022] [authz_core:error] [pid 4984] [client 10.38.243.125:53956] AH01630: client denied by server configuration: /usr/share/javascript/.hta",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-e8fcf148",
+        "timestamp": "2022-01-30T07:40:25Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:40:25 +0000] \"GET /javascript/jquery/.hta_ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-ed77a9e5",
+        "timestamp": "2022-01-30T07:41:08Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:41:08 +0000] \"GET /wp-admin/js/~guest HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-17dffcbf",
+        "timestamp": "2022-01-30T07:41:50Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 30 07:41:50.534638 2022] [authz_core:error] [pid 4738] [client 10.38.243.125:55054] AH01630: client denied by server configuration: /var/www/intranet.flores.wheeler.biz/wp-content/plugins/.htaccess",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-9c63991c",
+        "timestamp": "2022-01-30T07:42:42Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:42:42 +0000] \"GET /wp-includes/blocks/~tmp HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-24da5b8f",
+        "timestamp": "2022-01-30T07:43:25Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 30 07:43:25.475887 2022] [authz_core:error] [pid 5153] [client 10.38.243.125:55880] AH01630: client denied by server configuration: /var/www/intranet.flores.wheeler.biz/wp-includes/fonts/.htaccess",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-68ca8520",
+        "timestamp": "2022-01-30T07:44:18Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:44:18 +0000] \"GET /wp-admin/js/widgets/~nobody HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-d7095e0a",
+        "timestamp": "2022-01-30T07:45:12Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:45:12 +0000] \"GET /wp-includes/blocks/button/ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-248178a1",
+        "timestamp": "2022-01-30T07:45:55Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 30 07:45:55.371738 2022] [authz_core:error] [pid 5162] [client 10.38.243.125:57164] AH01630: client denied by server configuration: /var/www/intranet.flores.wheeler.biz/wp-includes/blocks/code/.htaccess",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-d8d33999",
+        "timestamp": "2022-01-30T07:46:48Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:46:48 +0000] \"GET /wp-includes/blocks/gallery/~sysadmin HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-c4d90ba2",
+        "timestamp": "2022-01-30T07:47:43Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:47:43 +0000] \"GET /wp-includes/blocks/missing/~lp HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-ddf7ea1b",
+        "timestamp": "2022-01-30T07:48:35Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:48:35 +0000] \"GET /wp-includes/blocks/rss/~amanda HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-db1d01af",
+        "timestamp": "2022-01-30T07:49:29Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:49:29 +0000] \"GET /wp-includes/css/dist/.hta_ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-3262c221",
+        "timestamp": "2022-01-30T07:50:14Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 30 07:50:14.504285 2022] [authz_core:error] [pid 5153] [client 10.38.243.125:59360] AH01630: client denied by server configuration: /var/www/intranet.flores.wheeler.biz/wp-includes/js/jquery/.hta_",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-14afa343",
+        "timestamp": "2022-01-30T07:51:07Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:51:07 +0000] \"GET /wp-content/themes/go/includes/~log HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-ada91e90",
+        "timestamp": "2022-01-30T07:51:58Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 30 07:51:58.743121 2022] [php7:error] [pid 4740] [client 10.38.243.125:60272] script '/var/www/intranet.flores.wheeler.biz/wp-includes/js/dist/vendor/xmlrpc.php' not found or unable to stat",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-0510929c",
+        "timestamp": "2022-01-30T07:52:41Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 30 07:52:41.588246 2022] [authz_core:error] [pid 5153] [client 10.38.243.125:60640] AH01630: client denied by server configuration: /var/www/intranet.flores.wheeler.biz/wp-includes/js/tinymce/themes/.htaccess_",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-b2f78bad",
+        "timestamp": "2022-01-30T07:53:34Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:53:34 +0000] \"GET /wp-content/themes/go/includes/classes/~operator HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-7b2d33de",
+        "timestamp": "2022-01-30T07:54:25Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:54:25 +0000] \"GET /wp-includes/js/tinymce/plugins/media/~log HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-6ffef8bd",
+        "timestamp": "2022-01-30T07:55:17Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:55:17 +0000] \"GET /wp-content/themes/go/dist/images/social/~adm HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-8eacd1cc",
+        "timestamp": "2022-01-30T07:56:15Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:15 +0000] \"HEAD /wp-content/plugins/acurax-social-media-widget/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-d2ef6688",
+        "timestamp": "2022-01-30T07:56:15Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:15 +0000] \"HEAD /wp-content/plugins/beefbind/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-afeabcc3",
+        "timestamp": "2022-01-30T07:56:16Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:16 +0000] \"HEAD /wp-content/plugins/cm-registration-pro/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0025-e1f496ed",
+        "timestamp": "2022-01-30T07:56:17Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:17 +0000] \"HEAD /wp-content/plugins/donate-button/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0026-5436664c",
+        "timestamp": "2022-01-30T07:56:18Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:18 +0000] \"HEAD /wp-content/plugins/facebook-messenger-customer-chat/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0027-e6e24b26",
+        "timestamp": "2022-01-30T07:56:18Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:18 +0000] \"HEAD /wp-content/plugins/grand-media/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0028-7461e917",
+        "timestamp": "2022-01-30T07:56:19Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:19 +0000] \"HEAD /wp-content/plugins/konnichiwa/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0029-9988b86d",
+        "timestamp": "2022-01-30T07:56:19Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:19 +0000] \"HEAD /wp-content/plugins/mwp-forms/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0030-2351bb1a",
+        "timestamp": "2022-01-30T07:56:20Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:20 +0000] \"HEAD /wp-content/plugins/popup-anything-on-click/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0031-5d9022ea",
+        "timestamp": "2022-01-30T07:56:21Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:21 +0000] \"HEAD /wp-content/plugins/s2member-secure-file-browser/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0032-a8eeb35e",
+        "timestamp": "2022-01-30T07:56:21Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:21 +0000] \"HEAD /wp-content/plugins/snazzy-maps/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0033-0bd9db76",
+        "timestamp": "2022-01-30T07:56:22Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:22 +0000] \"HEAD /wp-content/plugins/translatepress-multilingual/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0034-77701c09",
+        "timestamp": "2022-01-30T07:56:23Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:23 +0000] \"HEAD /wp-content/plugins/woo-advanced-shipment-tracking/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0035-267523be",
+        "timestamp": "2022-01-30T07:56:23Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:23 +0000] \"HEAD /wp-content/plugins/wp-fancybox/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0036-0d914826",
+        "timestamp": "2022-01-30T07:56:24Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:24 +0000] \"HEAD /wp-content/plugins/wp-table-builder/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0037-eacd6048",
+        "timestamp": "2022-01-30T07:56:25Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:25 +0000] \"HEAD /wp-content/themes/Paradise/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0038-7ed72a4b",
+        "timestamp": "2022-01-30T07:56:25Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:25 +0000] \"HEAD /wp-content/themes/nexos/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0039-de5a3a75",
+        "timestamp": "2022-01-30T07:56:26Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:26 +0000] \"HEAD /wp-content/themes/abstract//timthumb.php HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0040-950035e5",
+        "timestamp": "2022-01-30T07:56:27Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:27 +0000] \"HEAD /wp-content/themes/bloggingstream/lib/thumb/thumb.php HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0041-9ea8c75b",
+        "timestamp": "2022-01-30T07:56:28Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:28 +0000] \"HEAD /wp-content/themes/continuum/includes/thumb/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0042-fa94332d",
+        "timestamp": "2022-01-30T07:56:28Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:28 +0000] \"HEAD /wp-content/themes/deliciousmagazine/custom/thumb.php HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0043-7d923099",
+        "timestamp": "2022-01-30T07:56:29Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:29 +0000] \"HEAD /wp-content/themes/evr-green/scripts/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0044-87cefd9f",
+        "timestamp": "2022-01-30T07:56:29Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:29 +0000] \"HEAD /wp-content/themes/introvert/thumb.php HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0045-ef4b982f",
+        "timestamp": "2022-01-30T07:56:30Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:30 +0000] \"HEAD /wp-content/themes/modularity/library/thumb.php HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0046-2f697843",
+        "timestamp": "2022-01-30T07:56:31Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:31 +0000] \"HEAD /wp-content/themes/pbv_multi/scripts/thumb.php HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0047-4d63d894",
+        "timestamp": "2022-01-30T07:56:31Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:31 +0000] \"HEAD /wp-content/themes/rttheme13/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0048-19946677",
+        "timestamp": "2022-01-30T07:56:32Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:32 +0000] \"HEAD /wp-content/themes/swatch/functions/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0049-3d7d504d",
+        "timestamp": "2022-01-30T07:56:33Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:33 +0000] \"HEAD /wp-content/themes/wp-creativix/scripts/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0050-3a9b4b78",
+        "timestamp": "2022-01-30T07:56:33Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:33 +0000] \"HEAD /wp-content/plugins/wp_rokintroscroller/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0002-1b6a24a1",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:39:40Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 30 07:39:40.559104 2022] [authz_core:error] [pid 4984] [client 10.38.243.125:53956] AH01630: client denied by server configuration: /usr/share/javascript/.hta",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-e8fcf148",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:40:25Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:40:25 +0000] \"GET /javascript/jquery/.hta_ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0004-ed77a9e5",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:41:08Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:41:08 +0000] \"GET /wp-admin/js/~guest HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0005-17dffcbf",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:41:50Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 30 07:41:50.534638 2022] [authz_core:error] [pid 4738] [client 10.38.243.125:55054] AH01630: client denied by server configuration: /var/www/intranet.flores.wheeler.biz/wp-content/plugins/.htaccess",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0006-9c63991c",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:42:42Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:42:42 +0000] \"GET /wp-includes/blocks/~tmp HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0007-24da5b8f",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:43:25Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 30 07:43:25.475887 2022] [authz_core:error] [pid 5153] [client 10.38.243.125:55880] AH01630: client denied by server configuration: /var/www/intranet.flores.wheeler.biz/wp-includes/fonts/.htaccess",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0008-68ca8520",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:44:18Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:44:18 +0000] \"GET /wp-admin/js/widgets/~nobody HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0009-d7095e0a",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:45:12Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:45:12 +0000] \"GET /wp-includes/blocks/button/ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0010-248178a1",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:45:55Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 30 07:45:55.371738 2022] [authz_core:error] [pid 5162] [client 10.38.243.125:57164] AH01630: client denied by server configuration: /var/www/intranet.flores.wheeler.biz/wp-includes/blocks/code/.htaccess",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0011-d8d33999",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:46:48Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:46:48 +0000] \"GET /wp-includes/blocks/gallery/~sysadmin HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0012-c4d90ba2",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:47:43Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:47:43 +0000] \"GET /wp-includes/blocks/missing/~lp HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0013-ddf7ea1b",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:48:35Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:48:35 +0000] \"GET /wp-includes/blocks/rss/~amanda HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0014-db1d01af",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:49:29Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:49:29 +0000] \"GET /wp-includes/css/dist/.hta_ HTTP/1.1\" 403 366 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0015-3262c221",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:50:14Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 30 07:50:14.504285 2022] [authz_core:error] [pid 5153] [client 10.38.243.125:59360] AH01630: client denied by server configuration: /var/www/intranet.flores.wheeler.biz/wp-includes/js/jquery/.hta_",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0016-14afa343",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:51:07Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:51:07 +0000] \"GET /wp-content/themes/go/includes/~log HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0017-ada91e90",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:51:58Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 30 07:51:58.743121 2022] [php7:error] [pid 4740] [client 10.38.243.125:60272] script '/var/www/intranet.flores.wheeler.biz/wp-includes/js/dist/vendor/xmlrpc.php' not found or unable to stat",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0018-0510929c",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:52:41Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "[Sun Jan 30 07:52:41.588246 2022] [authz_core:error] [pid 5153] [client 10.38.243.125:60640] AH01630: client denied by server configuration: /var/www/intranet.flores.wheeler.biz/wp-includes/js/tinymce/themes/.htaccess_",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0019-b2f78bad",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:53:34Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:53:34 +0000] \"GET /wp-content/themes/go/includes/classes/~operator HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0020-7b2d33de",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:54:25Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:54:25 +0000] \"GET /wp-includes/js/tinymce/plugins/media/~log HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0021-6ffef8bd",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:55:17Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:55:17 +0000] \"GET /wp-content/themes/go/dist/images/social/~adm HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0022-8eacd1cc",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:15Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:15 +0000] \"HEAD /wp-content/plugins/acurax-social-media-widget/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0023-d2ef6688",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:15Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:15 +0000] \"HEAD /wp-content/plugins/beefbind/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0024-afeabcc3",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:16Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:16 +0000] \"HEAD /wp-content/plugins/cm-registration-pro/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0025-e1f496ed",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:17Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:17 +0000] \"HEAD /wp-content/plugins/donate-button/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0026-5436664c",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:18Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:18 +0000] \"HEAD /wp-content/plugins/facebook-messenger-customer-chat/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0027-e6e24b26",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:18Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:18 +0000] \"HEAD /wp-content/plugins/grand-media/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0028-7461e917",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:19Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:19 +0000] \"HEAD /wp-content/plugins/konnichiwa/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0029-9988b86d",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:19Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:19 +0000] \"HEAD /wp-content/plugins/mwp-forms/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0030-2351bb1a",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:20Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:20 +0000] \"HEAD /wp-content/plugins/popup-anything-on-click/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0031-5d9022ea",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:21Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:21 +0000] \"HEAD /wp-content/plugins/s2member-secure-file-browser/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0032-a8eeb35e",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:21Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:21 +0000] \"HEAD /wp-content/plugins/snazzy-maps/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0033-0bd9db76",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:22Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:22 +0000] \"HEAD /wp-content/plugins/translatepress-multilingual/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0034-77701c09",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:23Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:23 +0000] \"HEAD /wp-content/plugins/woo-advanced-shipment-tracking/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0035-267523be",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:23Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:23 +0000] \"HEAD /wp-content/plugins/wp-fancybox/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0036-0d914826",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:24Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:24 +0000] \"HEAD /wp-content/plugins/wp-table-builder/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0037-eacd6048",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:25Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:25 +0000] \"HEAD /wp-content/themes/Paradise/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0038-7ed72a4b",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:25Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:25 +0000] \"HEAD /wp-content/themes/nexos/ HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0039-de5a3a75",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:26Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:26 +0000] \"HEAD /wp-content/themes/abstract//timthumb.php HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0040-950035e5",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:27Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:27 +0000] \"HEAD /wp-content/themes/bloggingstream/lib/thumb/thumb.php HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0041-9ea8c75b",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:28Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:28 +0000] \"HEAD /wp-content/themes/continuum/includes/thumb/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0042-fa94332d",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:28Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:28 +0000] \"HEAD /wp-content/themes/deliciousmagazine/custom/thumb.php HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0043-7d923099",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:29Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:29 +0000] \"HEAD /wp-content/themes/evr-green/scripts/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0044-87cefd9f",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:29Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:29 +0000] \"HEAD /wp-content/themes/introvert/thumb.php HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0045-ef4b982f",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:30Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:30 +0000] \"HEAD /wp-content/themes/modularity/library/thumb.php HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0046-2f697843",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:31Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:31 +0000] \"HEAD /wp-content/themes/pbv_multi/scripts/thumb.php HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0047-4d63d894",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:31Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:31 +0000] \"HEAD /wp-content/themes/rttheme13/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0048-19946677",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:32Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:32 +0000] \"HEAD /wp-content/themes/swatch/functions/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0049-3d7d504d",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:33Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:33 +0000] \"HEAD /wp-content/themes/wp-creativix/scripts/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0050-3a9b4b78",
+      "source": "alerts",
+      "timestamp": "2022-01-30T07:56:33Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.38.243.125 - - [30/Jan/2022:07:56:33 +0000] \"HEAD /wp-content/plugins/wp_rokintroscroller/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.flores.wheeler.biz\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (50 alerts; detectors: AMiner: New characters in Apache Access request., AMiner: New event type., AMiner: New request method in Apache Access log.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (50 alerts; detectors: AMiner: New characters in Apache Access request., AMiner: New event type., AMiner: New request method in Apache Access log.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wheeler/wheeler/session-0070",
+    "answer": "malicious",
+    "accept": [
+      "malicious"
+    ],
+    "grading": "exact_ci",
+    "label": "malicious",
+    "is_true_positive": true,
+    "attack_stages": [
+      "dirb",
+      "service_scans",
+      "webshell",
+      "wpscan"
+    ],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 11319,
+      "kept_alerts": 50
+    },
+    "sealed": true
+  }
+}

@@ -1,17 +1,20 @@
 #!/usr/bin/env python3
 """Convert cyber investigation benchmarks into C0–C7 incident packs.
 
-Writes JSON packs under data/packs/{secops,ait_ads,soc_agent,excytin}/ and a manifest.json.
-Sources: Cyber-SecOps-ES, Cyber-AIT-ADS, SOC-AgentBench, ExCyTIn-Bench.
+Writes JSON packs under data/packs/{secops,ait_ads,ait_sessions,soc_agent,excytin}/ and a manifest.json.
+Sources: Cyber-SecOps-ES, Cyber-AIT-ADS (stage + ATTEST-style sessions), SOC-AgentBench, ExCyTIn-Bench.
 DiscoveryBench / DiscoveryWorld are intentionally excluded (not investigation packs).
 """
 
 from __future__ import annotations
 
 import hashlib
+import io
 import json
 import re
 import sys
+import zipfile
+from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -467,6 +470,288 @@ def _ait_pack_from_alerts(host: str, attack: str, alerts: list[dict[str, Any]]) 
         ground_truth=ground_truth,
         sources=["alerts"],
     )
+
+
+# ATTEST-style sessionization (Landauer AIT-ADS alerts):
+# 15-minute inactivity gap, 60-minute max duration; attack if window overlaps labels.csv.
+_AIT_SESSION_GAP_SEC = 15 * 60
+_AIT_SESSION_MAX_SEC = 60 * 60
+_AIT_SESSION_MIN_ALERTS = 2
+_AIT_SESSION_MAX_ALERTS = 50
+# Full Wazuh dumps are multi-GB; stream only compact scenario files from the zip.
+_AIT_SESSION_WAZUH_SCENARIOS = frozenset({"russellmitchell", "santos", "shaw", "wardbeck"})
+
+
+def _epoch_to_iso(ts: float) -> str:
+    return datetime.fromtimestamp(float(ts), tz=timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def _aminer_alert_ts(item: dict[str, Any]) -> float | None:
+    log = item.get("LogData") if isinstance(item.get("LogData"), dict) else {}
+    for candidate in (
+        (log.get("Timestamps") or [None])[0],
+        (log.get("DetectionTimestamp") or [None])[0],
+        item.get("timestamp"),
+    ):
+        try:
+            return float(candidate)
+        except (TypeError, ValueError):
+            continue
+    return None
+
+
+def _wazuh_alert_ts(item: dict[str, Any]) -> float | None:
+    # Prefer ISO @timestamp (COMIDDS / AIT-ADS guidance).
+    value = item.get("@timestamp") or item.get("timestamp")
+    if isinstance(value, str) and "T" in value:
+        try:
+            return datetime.fromisoformat(value.replace("Z", "+00:00")).timestamp()
+        except ValueError:
+            return None
+    try:
+        return float(value)  # type: ignore[arg-type]
+    except (TypeError, ValueError):
+        return None
+
+
+def _sessionize_alerts(
+    rows: list[tuple[float, dict[str, Any]]],
+    *,
+    gap_sec: float = _AIT_SESSION_GAP_SEC,
+    max_sec: float = _AIT_SESSION_MAX_SEC,
+) -> list[list[tuple[float, dict[str, Any]]]]:
+    rows = sorted(rows, key=lambda item: item[0])
+    sessions: list[list[tuple[float, dict[str, Any]]]] = []
+    current: list[tuple[float, dict[str, Any]]] = []
+    for ts, rec in rows:
+        if not current:
+            current = [(ts, rec)]
+            continue
+        if (ts - current[-1][0]) > gap_sec or (ts - current[0][0]) > max_sec:
+            sessions.append(current)
+            current = [(ts, rec)]
+        else:
+            current.append((ts, rec))
+    if current:
+        sessions.append(current)
+    return sessions
+
+
+def _subsample_rows(rows: list[Any], limit: int) -> list[Any]:
+    if len(rows) <= limit:
+        return rows
+    step = len(rows) / float(limit)
+    return [rows[int(index * step)] for index in range(limit)]
+
+
+def _compact_aminer_record(index: int, ts: float, host: str, item: dict[str, Any]) -> dict[str, Any]:
+    log = item.get("LogData") if isinstance(item.get("LogData"), dict) else {}
+    analysis = item.get("AnalysisComponent") if isinstance(item.get("AnalysisComponent"), dict) else {}
+    raw_logs = log.get("RawLogData") or []
+    message = str(raw_logs[0] if raw_logs else "")[:400]
+    detector = (
+        analysis.get("AnalysisComponentName")
+        or analysis.get("AnalysisComponentType")
+        or "AMiner"
+    )
+    blob = json.dumps(
+        {"detector": detector, "message": message, "ts": ts},
+        sort_keys=True,
+        default=str,
+    )
+    return {
+        "event_id": _event_id("ait-sess-am", index, blob),
+        "timestamp": _epoch_to_iso(ts),
+        "host": host,
+        "source": "alerts",
+        "detector": detector,
+        "message": message,
+        "sensor": "aminer",
+    }
+
+
+def _compact_wazuh_record(index: int, ts: float, host: str, item: dict[str, Any]) -> dict[str, Any]:
+    rule = item.get("rule") if isinstance(item.get("rule"), dict) else {}
+    decoder = item.get("decoder") if isinstance(item.get("decoder"), dict) else {}
+    description = str(rule.get("description") or item.get("full_log") or "")[:400]
+    level = rule.get("level")
+    rule_id = rule.get("id")
+    blob = json.dumps(
+        {"rule": rule_id, "level": level, "description": description, "ts": ts},
+        sort_keys=True,
+        default=str,
+    )
+    return {
+        "event_id": _event_id("ait-sess-wz", index, blob),
+        "timestamp": _epoch_to_iso(ts),
+        "host": host,
+        "source": "alerts",
+        "detector": f"wazuh:{rule_id}" if rule_id is not None else "wazuh",
+        "message": description,
+        "rule_level": level,
+        "decoder": decoder.get("name"),
+        "sensor": "wazuh",
+        "agent": ((item.get("agent") or {}) if isinstance(item.get("agent"), dict) else {}).get("name"),
+    }
+
+
+def convert_ait_sessions() -> list[dict[str, Any]]:
+    """ATTEST-style AIT-ADS sessions labeled malicious/benign via attack-window overlap.
+
+    Keeps stage-identification packs (convert_ait) separate. Uses on-disk AMiner NDJSON
+    plus compact Wazuh scenario files streamed from ait_ads.zip when present.
+    """
+    labels_path = ROOT / "data" / "benchmarks" / "ait_labels.csv"
+    ads_dir = ROOT / "data" / "benchmarks" / "ait-ads"
+    zip_path = ROOT / "data" / "benchmarks" / "ait_ads.zip"
+    if not labels_path.exists() or not ads_dir.exists():
+        return []
+
+    import csv
+
+    with labels_path.open(newline="", encoding="utf-8") as fh:
+        label_rows = list(csv.DictReader(fh))
+    windows_by_scenario: dict[str, list[tuple[float, float, str]]] = defaultdict(list)
+    for row in label_rows:
+        windows_by_scenario[row["scenario"]].append(
+            (float(row["start"]), float(row["end"]), row["attack"])
+        )
+
+    zf = zipfile.ZipFile(zip_path) if zip_path.exists() else None
+    packs: list[dict[str, Any]] = []
+    try:
+        for scenario, windows in sorted(windows_by_scenario.items()):
+            by_host: dict[str, list[tuple[float, dict[str, Any]]]] = defaultdict(list)
+            aminer_path = ads_dir / f"{scenario}_aminer.json"
+            if aminer_path.exists():
+                for item in ait_ads_eval._iter_alerts(aminer_path):
+                    if not isinstance(item, dict):
+                        continue
+                    ts = _aminer_alert_ts(item)
+                    if ts is None:
+                        continue
+                    by_host[scenario].append(
+                        (ts, _compact_aminer_record(len(by_host[scenario]) + 1, ts, scenario, item))
+                    )
+
+            wazuh_name = f"{scenario}_wazuh.json"
+            if (
+                zf is not None
+                and scenario in _AIT_SESSION_WAZUH_SCENARIOS
+                and wazuh_name in zf.namelist()
+            ):
+                with zf.open(wazuh_name) as handle:
+                    for line in io.TextIOWrapper(handle, encoding="utf-8", errors="replace"):
+                        line = line.strip()
+                        if not line:
+                            continue
+                        try:
+                            item = json.loads(line)
+                        except json.JSONDecodeError:
+                            continue
+                        if not isinstance(item, dict):
+                            continue
+                        ts = _wazuh_alert_ts(item)
+                        if ts is None:
+                            continue
+                        agent = item.get("agent") if isinstance(item.get("agent"), dict) else {}
+                        pre = item.get("predecoder") if isinstance(item.get("predecoder"), dict) else {}
+                        host = str(agent.get("name") or pre.get("hostname") or scenario)
+                        by_host[host].append(
+                            (ts, _compact_wazuh_record(len(by_host[host]) + 1, ts, host, item))
+                        )
+
+            for host, rows in sorted(by_host.items()):
+                for session_index, session in enumerate(_sessionize_alerts(rows), start=1):
+                    if len(session) < _AIT_SESSION_MIN_ALERTS:
+                        continue
+                    start_ts, end_ts = session[0][0], session[-1][0]
+                    stages = sorted(
+                        {
+                            attack
+                            for win_start, win_end, attack in windows
+                            if start_ts < win_end and win_start < end_ts
+                        }
+                    )
+                    is_malicious = bool(stages)
+                    sampled = _subsample_rows(session, _AIT_SESSION_MAX_ALERTS)
+                    records = [rec for _, rec in sampled]
+                    # Re-number event ids after subsample for stable compact packs.
+                    for index, rec in enumerate(records, start=1):
+                        sensor = rec.get("sensor") or "alert"
+                        blob = json.dumps(
+                            {
+                                "detector": rec.get("detector"),
+                                "message": rec.get("message"),
+                                "ts": rec.get("timestamp"),
+                                "sensor": sensor,
+                            },
+                            sort_keys=True,
+                            default=str,
+                        )
+                        rec["event_id"] = _event_id("ait-sess", index, blob)
+                        rec["host"] = host
+
+                    oracle_src = [
+                        rec
+                        for ts, rec in sampled
+                        if is_malicious
+                        and any(ts < win_end and win_start < ts for win_start, win_end, _ in windows)
+                    ] or [rec for _, rec in sampled[:3]]
+                    start_iso = _epoch_to_iso(start_ts)
+                    end_iso = _epoch_to_iso(end_ts)
+                    incident_id = f"ait-sess-{_slug(scenario)}-{_slug(host)}-{session_index:04d}"
+                    detectors = sorted(
+                        {str(rec.get("detector") or "") for rec in records if rec.get("detector")}
+                    )[:3]
+                    summary = (
+                        f"Decide malicious vs benign for ATTEST-style AIT-ADS alert session "
+                        f"on {host} ({len(records)} alerts"
+                        + (f"; detectors: {', '.join(detectors)}" if detectors else "")
+                        + ")."
+                    )
+                    alert = {
+                        "timestamp": start_iso,
+                        "host": host,
+                        "user": "unknown",
+                        "alert_type": "ait_ads_session",
+                        "summary": summary[:240],
+                        "scenario": scenario,
+                    }
+                    ground_truth = {
+                        "dataset": "ATTEST-AIT-ADS",
+                        "scenario": f"{scenario}/{host}/session-{session_index:04d}",
+                        "answer": "malicious" if is_malicious else "benign",
+                        "accept": ["malicious" if is_malicious else "benign"],
+                        "grading": "exact_ci",
+                        "label": "malicious" if is_malicious else "benign",
+                        "is_true_positive": is_malicious,
+                        "attack_stages": stages,
+                        "session": {
+                            "gap_sec": _AIT_SESSION_GAP_SEC,
+                            "max_sec": _AIT_SESSION_MAX_SEC,
+                            "alert_count": len(session),
+                            "kept_alerts": len(records),
+                        },
+                        "sealed": True,
+                    }
+                    packs.append(
+                        _base_pack(
+                            incident_id=incident_id,
+                            name=f"ATTEST-AIT {scenario}/{host} session {session_index}",
+                            alert=alert,
+                            host=host,
+                            window=(start_iso, end_iso),
+                            telemetry={"alerts": records},
+                            ground_truth=ground_truth,
+                            sources=["alerts"],
+                            oracle_evidence=_as_oracle_records(oracle_src, host=host, default_source="alerts"),
+                        )
+                    )
+    finally:
+        if zf is not None:
+            zf.close()
+    return packs
 
 
 def _parse_json_field(value: Any) -> Any:
@@ -998,25 +1283,29 @@ def main() -> int:
     OUT.mkdir(parents=True, exist_ok=True)
     secops = convert_secops()
     ait = convert_ait()
+    ait_sessions = convert_ait_sessions()
     soc = convert_soc_agent()
     excytin = convert_excytin(split="test")
     secops_index, secops_errors = write_packs(secops, "secops")
     ait_index, ait_errors = write_packs(ait, "ait_ads")
+    ait_sess_index, ait_sess_errors = write_packs(ait_sessions, "ait_sessions")
     soc_index, soc_errors = write_packs(soc, "soc_agent")
     excytin_index, excytin_errors = write_packs(excytin, "excytin")
-    all_index = secops_index + ait_index + soc_index + excytin_index
-    all_errors = secops_errors + ait_errors + soc_errors + excytin_errors
+    all_index = secops_index + ait_index + ait_sess_index + soc_index + excytin_index
+    all_errors = secops_errors + ait_errors + ait_sess_errors + soc_errors + excytin_errors
     manifest = {
         "generated_at": datetime.now(tz=timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "description": "C0–C7 incident packs converted from cyber benchmark scenarios",
         "counts": {
             "secops": len(secops_index),
             "ait_ads": len(ait_index),
+            "ait_sessions": len(ait_sess_index),
             "soc_agent": len(soc_index),
             "excytin": len(excytin_index),
             "total": len(all_index),
             "secops_errors": len(secops_errors),
             "ait_ads_errors": len(ait_errors),
+            "ait_sessions_errors": len(ait_sess_errors),
             "soc_agent_errors": len(soc_errors),
             "excytin_errors": len(excytin_errors),
         },
@@ -1027,6 +1316,7 @@ def main() -> int:
             "ground_truth is sealed and must not be sent to the model.",
             "SOC-AgentBench: all train/validation/test episodes.",
             "ExCyTIn-Bench: test-split investigation questions with sampled Sentinel telemetry.",
+            "ATTEST-AIT-ADS: AIT-ADS alerts sessionized (15m gap / 60m max); label by attack-window overlap.",
             "DiscoveryBench/DiscoveryWorld are not converted.",
         ],
     }

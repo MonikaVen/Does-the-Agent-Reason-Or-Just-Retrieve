@@ -336,7 +336,7 @@ def main() -> int:
     parser.add_argument(
         "--datasets",
         default="",
-        help="Comma-separated dataset filters (e.g. SOC-AgentBench,ExCyTIn-Bench)",
+        help="Comma-separated dataset filters (e.g. SOC-AgentBench,ExCyTIn-Bench,ATTEST-AIT-ADS)",
     )
     parser.add_argument("--resume", action="store_true", default=True)
     parser.add_argument("--no-resume", action="store_false", dest="resume")

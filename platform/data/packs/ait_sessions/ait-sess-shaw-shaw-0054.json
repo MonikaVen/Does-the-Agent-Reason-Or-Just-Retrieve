@@ -1,0 +1,606 @@
+{
+  "incident_id": "ait-sess-shaw-shaw-0054",
+  "name": "ATTEST-AIT shaw/shaw session 54",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "shaw/shaw/session-0054",
+  "alert": {
+    "timestamp": "2022-01-27T06:20:23Z",
+    "host": "shaw",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (50 alerts; detectors: AMiner: New event type., AMiner: New ip address in DNS logs., AMiner: New login parameter combination in Audit logs.).",
+    "scenario": "shaw"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-27T06:20:23Z",
+    "end": "2022-01-27T06:39:22Z",
+    "hosts": [
+      "shaw"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-099b704c",
+        "timestamp": "2022-01-27T06:20:23Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643264423.590:5689): pid=29240 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-4b0fe49a",
+        "timestamp": "2022-01-27T06:20:23Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643264423.590:5690): pid=29240 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-6a72afe8",
+        "timestamp": "2022-01-27T06:20:58Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643264458.029:5692): pid=29240 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-b48dbcba",
+        "timestamp": "2022-01-27T06:22:37Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643264557.197:5694): pid=29263 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-4c184933",
+        "timestamp": "2022-01-27T06:24:25Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643264665.504:5695): pid=29269 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-7165ca01",
+        "timestamp": "2022-01-27T06:25:14Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643264714.528:5703): pid=29269 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-fcb5769f",
+        "timestamp": "2022-01-27T06:25:14Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643264714.852:5705): pid=29269 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-409ae50a",
+        "timestamp": "2022-01-27T06:25:14Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643264714.852:5706): pid=29269 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-327d4d56",
+        "timestamp": "2022-01-27T06:26:10Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643264770.079:5708): pid=29269 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-388e7640",
+        "timestamp": "2022-01-27T06:26:47Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643264807.155:5710): pid=29269 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-2c9e4331",
+        "timestamp": "2022-01-27T06:27:15Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643264835.079:5711): pid=29269 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-81767e86",
+        "timestamp": "2022-01-27T06:27:59Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643264879.059:5713): pid=29269 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-402e2787",
+        "timestamp": "2022-01-27T06:28:50Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643264930.666:5715): pid=29269 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-ff64b271",
+        "timestamp": "2022-01-27T06:28:50Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643264930.670:5716): pid=29269 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-5b214221",
+        "timestamp": "2022-01-27T06:29:18Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643264958.894:5718): pid=29269 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-a24cf927",
+        "timestamp": "2022-01-27T06:31:27Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643265087.613:5720): pid=29461 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-4dc6d9e2",
+        "timestamp": "2022-01-27T06:34:04Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 27 06:34:04 dnsmasq[14635]: query[A] example.org from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-3a7d0099",
+        "timestamp": "2022-01-27T06:34:04Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 27 06:34:04 dnsmasq[14635]: query[AAAA] ipv4only.arpa from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-e2ff6023",
+        "timestamp": "2022-01-27T06:34:04Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 27 06:34:04 dnsmasq[14635]: query[A] detectportal.firefox.com from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-38841a97",
+        "timestamp": "2022-01-27T06:34:04Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 27 06:34:04 dnsmasq[14635]: query[AAAA] detectportal.firefox.com from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-fe704a7b",
+        "timestamp": "2022-01-27T06:34:09Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 27 06:34:09 dnsmasq[14635]: query[AAAA] location.services.mozilla.com from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-ce880477",
+        "timestamp": "2022-01-27T06:34:09Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 27 06:34:09 dnsmasq[14635]: query[A] firefox.settings.services.mozilla.com from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-04da7c78",
+        "timestamp": "2022-01-27T06:34:09Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 27 06:34:09 dnsmasq[14635]: query[AAAA] firefox.settings.services.mozilla.com from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-375a09e3",
+        "timestamp": "2022-01-27T06:34:09Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 27 06:34:09 dnsmasq[14635]: query[A] ocsp.digicert.com from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0025-6bd98cc0",
+        "timestamp": "2022-01-27T06:34:10Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 27 06:34:10 dnsmasq[14635]: query[AAAA] content-signature-2.cdn.mozilla.net from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0026-d5ed3a56",
+        "timestamp": "2022-01-27T06:34:10Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 27 06:34:10 dnsmasq[14635]: query[A] shavar.services.mozilla.com from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0027-5f99ac04",
+        "timestamp": "2022-01-27T06:34:10Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 27 06:34:10 dnsmasq[14635]: query[AAAA] shavar.services.mozilla.com from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0028-3b319d06",
+        "timestamp": "2022-01-27T06:34:11Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 27 06:34:11 dnsmasq[14635]: query[A] push.services.mozilla.com from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0029-ddaa6105",
+        "timestamp": "2022-01-27T06:34:11Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 27 06:34:11 dnsmasq[14635]: query[AAAA] autopush.prod.mozaws.net from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0030-ddaa6105",
+        "timestamp": "2022-01-27T06:34:11Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 27 06:34:11 dnsmasq[14635]: query[AAAA] autopush.prod.mozaws.net from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0031-e42e9874",
+        "timestamp": "2022-01-27T06:34:11Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 27 06:34:11 dnsmasq[14635]: query[A] tracking-protection.cdn.mozilla.net from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0032-f20e93f9",
+        "timestamp": "2022-01-27T06:34:11Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 27 06:34:11 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0033-f20e93f9",
+        "timestamp": "2022-01-27T06:34:11Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 27 06:34:11 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0034-f20e93f9",
+        "timestamp": "2022-01-27T06:34:11Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 27 06:34:11 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0035-f20e93f9",
+        "timestamp": "2022-01-27T06:34:11Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 27 06:34:11 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0036-5e034925",
+        "timestamp": "2022-01-27T06:34:12Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 27 06:34:12 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0037-5e034925",
+        "timestamp": "2022-01-27T06:34:12Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 27 06:34:12 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0038-5e034925",
+        "timestamp": "2022-01-27T06:34:12Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 27 06:34:12 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0039-5e034925",
+        "timestamp": "2022-01-27T06:34:12Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 27 06:34:12 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0040-5e034925",
+        "timestamp": "2022-01-27T06:34:12Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 27 06:34:12 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0041-5e034925",
+        "timestamp": "2022-01-27T06:34:12Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 27 06:34:12 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0042-5e034925",
+        "timestamp": "2022-01-27T06:34:12Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 27 06:34:12 dnsmasq[14635]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0043-3fd9e8a4",
+        "timestamp": "2022-01-27T06:39:22Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 27 06:39:22 mail sshd[29533]: pam_unix(sshd:session): session opened for user gmarsh by (uid=0)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0044-89ce0311",
+        "timestamp": "2022-01-27T06:39:22Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 27 06:39:22 mail systemd: pam_unix(systemd-user:session): session opened for user gmarsh by (uid=0)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0045-ebe87c8b",
+        "timestamp": "2022-01-27T06:39:22Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643265562.650:5729): pid=29533 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gmarsh\" exe=\"/usr/sbin/sshd\" hostname=172.24.249.224 addr=172.24.249.224 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0046-664b0c4b",
+        "timestamp": "2022-01-27T06:39:22Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New login parameter combination in Audit logs.",
+        "message": "type=LOGIN msg=audit(1643265562.650:5731): pid=29533 uid=0 old-auid=4294967295 auid=1002 tty=(none) old-ses=4294967295 ses=243 res=1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0047-5ce706ab",
+        "timestamp": "2022-01-27T06:39:22Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New login parameter combination in Audit logs.",
+        "message": "type=LOGIN msg=audit(1643265562.674:5733): pid=29539 uid=0 old-auid=4294967295 auid=1002 tty=(none) old-ses=4294967295 ses=244 res=1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0048-8e7aaf8f",
+        "timestamp": "2022-01-27T06:39:22Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1643265562.674:5734): pid=29539 uid=0 auid=1002 ses=244 msg='op=PAM:session_open acct=\"gmarsh\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0049-252cf5a8",
+        "timestamp": "2022-01-27T06:39:22Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1643265562.690:5736): pid=29533 uid=0 auid=1002 ses=243 msg='op=PAM:session_open acct=\"gmarsh\" exe=\"/usr/sbin/sshd\" hostname=172.24.249.224 addr=172.24.249.224 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0050-3111c373",
+        "timestamp": "2022-01-27T06:39:22Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "type=USER_LOGIN msg=audit(1643265562.742:5738): pid=29533 uid=0 auid=1002 ses=243 msg='op=login id=1002 exe=\"/usr/sbin/sshd\" hostname=172.24.249.224 addr=172.24.249.224 terminal=/dev/pts/0 res=success'",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-099b704c",
+      "source": "alerts",
+      "timestamp": "2022-01-27T06:20:23Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643264423.590:5689): pid=29240 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-4b0fe49a",
+      "source": "alerts",
+      "timestamp": "2022-01-27T06:20:23Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643264423.590:5690): pid=29240 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-6a72afe8",
+      "source": "alerts",
+      "timestamp": "2022-01-27T06:20:58Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643264458.029:5692): pid=29240 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (50 alerts; detectors: AMiner: New event type., AMiner: New ip address in DNS logs., AMiner: New login parameter combination in Audit logs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (50 alerts; detectors: AMiner: New event type., AMiner: New ip address in DNS logs., AMiner: New login parameter combination in Audit logs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "shaw/shaw/session-0054",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 84,
+      "kept_alerts": 50
+    },
+    "sealed": true
+  }
+}

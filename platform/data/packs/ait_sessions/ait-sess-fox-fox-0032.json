@@ -1,0 +1,516 @@
+{
+  "incident_id": "ait-sess-fox-fox-0032",
+  "name": "ATTEST-AIT fox/fox session 32",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "fox/fox/session-0032",
+  "alert": {
+    "timestamp": "2022-01-16T09:26:33Z",
+    "host": "fox",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (40 alerts; detectors: AMiner: High entropy in Apache Access request., AMiner: High entropy in DNS domain., AMiner: New characters in Apache Access request.).",
+    "scenario": "fox"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-16T09:26:33Z",
+    "end": "2022-01-16T09:56:26Z",
+    "hosts": [
+      "fox"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-bd534237",
+        "timestamp": "2022-01-16T09:26:33Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 16 09:26:33 dnsmasq[14460]: query[TXT] current.cvd.clamav.net from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-a6797d14",
+        "timestamp": "2022-01-16T09:26:33Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 16 09:26:33 dnsmasq[14522]: query[TXT] current.cvd.clamav.net from 172.17.131.81",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-c2b9ac77",
+        "timestamp": "2022-01-16T09:36:45Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:36:45 dnsmasq[14460]: query[A] i.li.ru from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-f8137a8a",
+        "timestamp": "2022-01-16T09:36:45Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:36:45 dnsmasq[14460]: forwarded i.li.ru to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-4508338f",
+        "timestamp": "2022-01-16T09:36:45Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:36:45 dnsmasq[14460]: query[AAAA] i.li.ru from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-f8137a8a",
+        "timestamp": "2022-01-16T09:36:45Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:36:45 dnsmasq[14460]: forwarded i.li.ru to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-842938ce",
+        "timestamp": "2022-01-16T09:36:45Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:36:45 dnsmasq[14460]: reply i.li.ru is 88.212.202.50",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-7bee2e11",
+        "timestamp": "2022-01-16T09:36:45Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:36:45 dnsmasq[14460]: reply i.li.ru is NODATA-IPv6",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-c411030c",
+        "timestamp": "2022-01-16T09:36:45Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:36:45 dnsmasq[14522]: query[A] i.li.ru from 10.35.32.164",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-d98164a0",
+        "timestamp": "2022-01-16T09:36:45Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:36:45 dnsmasq[14522]: forwarded i.li.ru to 192.168.255.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-75d7a400",
+        "timestamp": "2022-01-16T09:36:45Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:36:45 dnsmasq[14522]: query[AAAA] i.li.ru from 10.35.32.164",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-d98164a0",
+        "timestamp": "2022-01-16T09:36:45Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:36:45 dnsmasq[14522]: forwarded i.li.ru to 192.168.255.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-9d2132b6",
+        "timestamp": "2022-01-16T09:36:45Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:36:45 dnsmasq[14522]: reply i.li.ru is 88.212.202.50",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-7000f672",
+        "timestamp": "2022-01-16T09:36:45Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:36:45 dnsmasq[14522]: reply i.li.ru is NODATA-IPv6",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-ab7b3ebf",
+        "timestamp": "2022-01-16T09:40:53Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:40:53 dnsmasq[14460]: query[A] api.viqeo.tv from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-422d3699",
+        "timestamp": "2022-01-16T09:40:53Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:40:53 dnsmasq[14460]: forwarded api.viqeo.tv to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-707df947",
+        "timestamp": "2022-01-16T09:40:53Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:40:53 dnsmasq[14460]: query[AAAA] api.viqeo.tv from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-422d3699",
+        "timestamp": "2022-01-16T09:40:53Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:40:53 dnsmasq[14460]: forwarded api.viqeo.tv to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-ebc4b652",
+        "timestamp": "2022-01-16T09:40:53Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:40:53 dnsmasq[14460]: reply api.viqeo.tv is 83.222.109.50",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-55bd62e6",
+        "timestamp": "2022-01-16T09:40:53Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:40:53 dnsmasq[14460]: reply api.viqeo.tv is 83.222.109.51",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-6e9fc687",
+        "timestamp": "2022-01-16T09:40:53Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:40:53 dnsmasq[14460]: reply api.viqeo.tv is 2a02:878:2:9:0:1:1:21",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-54994d07",
+        "timestamp": "2022-01-16T09:40:53Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:40:53 dnsmasq[14460]: reply api.viqeo.tv is 2a02:878:2:9:0:1:2:21",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-5432fccb",
+        "timestamp": "2022-01-16T09:40:53Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:40:53 dnsmasq[14522]: query[A] api.viqeo.tv from 10.35.32.164",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-5c801c22",
+        "timestamp": "2022-01-16T09:40:53Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:40:53 dnsmasq[14522]: forwarded api.viqeo.tv to 192.168.255.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0025-9d265f26",
+        "timestamp": "2022-01-16T09:40:53Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:40:53 dnsmasq[14522]: query[AAAA] api.viqeo.tv from 10.35.32.164",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0026-5c801c22",
+        "timestamp": "2022-01-16T09:40:53Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:40:53 dnsmasq[14522]: forwarded api.viqeo.tv to 192.168.255.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0027-a5955099",
+        "timestamp": "2022-01-16T09:40:53Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:40:53 dnsmasq[14522]: reply api.viqeo.tv is 83.222.109.50",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0028-3c53838a",
+        "timestamp": "2022-01-16T09:40:53Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:40:53 dnsmasq[14522]: reply api.viqeo.tv is 83.222.109.51",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0029-f5e9a37e",
+        "timestamp": "2022-01-16T09:40:53Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:40:53 dnsmasq[14522]: reply api.viqeo.tv is 2a02:878:2:9:0:1:1:21",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0030-982fb91d",
+        "timestamp": "2022-01-16T09:40:53Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:40:53 dnsmasq[14522]: reply api.viqeo.tv is 2a02:878:2:9:0:1:2:21",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0031-9cab8e06",
+        "timestamp": "2022-01-16T09:44:00Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:44:00 dnsmasq[14460]: query[AAAA] api.viqeo.tv from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0032-7f0d694c",
+        "timestamp": "2022-01-16T09:44:00Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:44:00 dnsmasq[14460]: forwarded api.viqeo.tv to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0033-cd5ea953",
+        "timestamp": "2022-01-16T09:44:00Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:44:00 dnsmasq[14460]: reply api.viqeo.tv is 2a02:878:2:9:0:1:2:21",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0034-3cfb9b4b",
+        "timestamp": "2022-01-16T09:44:00Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:44:00 dnsmasq[14460]: reply api.viqeo.tv is 2a02:878:2:9:0:1:1:21",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0035-0d436b1a",
+        "timestamp": "2022-01-16T09:44:00Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:44:00 dnsmasq[14522]: query[AAAA] api.viqeo.tv from 10.35.32.164",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0036-db8b2410",
+        "timestamp": "2022-01-16T09:44:00Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:44:00 dnsmasq[14522]: forwarded api.viqeo.tv to 192.168.255.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0037-32aa2a32",
+        "timestamp": "2022-01-16T09:44:00Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:44:00 dnsmasq[14522]: reply api.viqeo.tv is 2a02:878:2:9:0:1:2:21",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0038-260c313d",
+        "timestamp": "2022-01-16T09:44:00Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:44:00 dnsmasq[14522]: reply api.viqeo.tv is 2a02:878:2:9:0:1:1:21",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0039-0ecdb432",
+        "timestamp": "2022-01-16T09:56:26Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "cloud.dmz.price.fox.org:443 172.17.130.37 - - [16/Jan/2022:09:56:26 +0000] \"GET /index.php/logout?requesttoken=GQUFDgNaDQAvIjY7GBQxER8EbSUoEkQIKisCHDA1QR8%3D:KcJBU0w3VaOCWYDXxq5GZV50NHW3QS7wGhxwWc3a5VE%3D HTTP/1.1\" 303 4488 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0040-838d1ce8",
+        "timestamp": "2022-01-16T09:56:26Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.price.fox.org:443 172.17.130.37 - - [16/Jan/2022:09:56:26 +0000] \"GET /index.php/logout?requesttoken=GQUFDgNaDQAvIjY7GBQxER8EbSUoEkQIKisCHDA1QR8%3D:KcJBU0w3VaOCWYDXxq5GZV50NHW3QS7wGhxwWc3a5VE%3D HTTP/1.1\" 303 4488 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-bd534237",
+      "source": "alerts",
+      "timestamp": "2022-01-16T09:26:33Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 16 09:26:33 dnsmasq[14460]: query[TXT] current.cvd.clamav.net from 192.168.128.4",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-a6797d14",
+      "source": "alerts",
+      "timestamp": "2022-01-16T09:26:33Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 16 09:26:33 dnsmasq[14522]: query[TXT] current.cvd.clamav.net from 172.17.131.81",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-c2b9ac77",
+      "source": "alerts",
+      "timestamp": "2022-01-16T09:36:45Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 16 09:36:45 dnsmasq[14460]: query[A] i.li.ru from 192.168.128.4",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (40 alerts; detectors: AMiner: High entropy in Apache Access request., AMiner: High entropy in DNS domain., AMiner: New characters in Apache Access request.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (40 alerts; detectors: AMiner: High entropy in Apache Access request., AMiner: High entropy in DNS domain., AMiner: New characters in Apache Access request.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "fox/fox/session-0032",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 40,
+      "kept_alerts": 40
+    },
+    "sealed": true
+  }
+}

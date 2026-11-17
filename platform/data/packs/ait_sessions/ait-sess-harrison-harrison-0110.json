@@ -1,0 +1,185 @@
+{
+  "incident_id": "ait-sess-harrison-harrison-0110",
+  "name": "ATTEST-AIT harrison/harrison session 110",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "harrison/harrison/session-0110",
+  "alert": {
+    "timestamp": "2022-02-08T10:06:46Z",
+    "host": "harrison",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (3 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New characters in Apache Access request.).",
+    "scenario": "harrison"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-08T10:06:46Z",
+    "end": "2022-02-08T10:14:46Z",
+    "hosts": [
+      "harrison"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-2d7998fc",
+        "timestamp": "2022-02-08T10:06:46Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.mannsmith.harrison.com:443 10.237.0.166 - - [08/Feb/2022:10:06:46 +0000] \"GET /index.php/logout?requesttoken=LSU0Ohw5eQw8CiUoDTQIJABOVjEsN386eD8LBzgELHw%3D:zBFkjK4ZdRcbzUdoD//rGX6k/eDoOUh8vedU%2BfAASaU%3D HTTP/1.1\" 303 4547 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-10b3289a",
+        "timestamp": "2022-02-08T10:06:46Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.237.1.238 - - [08/Feb/2022:10:06:46 +0000] \"GET /index.php/logout?requesttoken=LSU0Ohw5eQw8CiUoDTQIJABOVjEsN386eD8LBzgELHw%3D:zBFkjK4ZdRcbzUdoD//rGX6k/eDoOUh8vedU%2BfAASaU%3D HTTP/1.1\" 303 2121 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-be852c4f",
+        "timestamp": "2022-02-08T10:14:46Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-08T10:14:46.130Z\",\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.1129}},\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.0321,\"norm\":{\"pct\":0.0321}},\"idle\":{\"pct\":0.8866,\"norm\":{\"pct\":0.8866}},\"system\":{\"pct\":0.0419,\"norm\":{\"pct\":0.0419}},\"user\":{\"pct\":0.038,\"norm\":{\"pct\":0.038}},\"softirq\":{\"pct\":9.0E-4,\"norm\":{\"pct\":9.0E-4}},\"ir",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-2d7998fc",
+      "source": "alerts",
+      "timestamp": "2022-02-08T10:06:46Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.mannsmith.harrison.com:443 10.237.0.166 - - [08/Feb/2022:10:06:46 +0000] \"GET /index.php/logout?requesttoken=LSU0Ohw5eQw8CiUoDTQIJABOVjEsN386eD8LBzgELHw%3D:zBFkjK4ZdRcbzUdoD//rGX6k/eDoOUh8vedU%2BfAASaU%3D HTTP/1.1\" 303 4547 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-10b3289a",
+      "source": "alerts",
+      "timestamp": "2022-02-08T10:06:46Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.237.1.238 - - [08/Feb/2022:10:06:46 +0000] \"GET /index.php/logout?requesttoken=LSU0Ohw5eQw8CiUoDTQIJABOVjEsN386eD8LBzgELHw%3D:zBFkjK4ZdRcbzUdoD//rGX6k/eDoOUh8vedU%2BfAASaU%3D HTTP/1.1\" 303 2121 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-be852c4f",
+      "source": "alerts",
+      "timestamp": "2022-02-08T10:14:46Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-08T10:14:46.130Z\",\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.1129}},\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.0321,\"norm\":{\"pct\":0.0321}},\"idle\":{\"pct\":0.8866,\"norm\":{\"pct\":0.8866}},\"system\":{\"pct\":0.0419,\"norm\":{\"pct\":0.0419}},\"user\":{\"pct\":0.038,\"norm\":{\"pct\":0.038}},\"softirq\":{\"pct\":9.0E-4,\"norm\":{\"pct\":9.0E-4}},\"ir",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (3 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New characters in Apache Access request.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (3 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New characters in Apache Access request.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "harrison/harrison/session-0110",
+    "answer": "malicious",
+    "accept": [
+      "malicious"
+    ],
+    "grading": "exact_ci",
+    "label": "malicious",
+    "is_true_positive": true,
+    "attack_stages": [
+      "dnsteal"
+    ],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 3,
+      "kept_alerts": 3
+    },
+    "sealed": true
+  }
+}

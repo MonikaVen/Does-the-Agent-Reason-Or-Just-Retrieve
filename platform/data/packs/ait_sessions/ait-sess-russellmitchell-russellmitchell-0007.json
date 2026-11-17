@@ -1,0 +1,210 @@
+{
+  "incident_id": "ait-sess-russellmitchell-russellmitchell-0007",
+  "name": "ATTEST-AIT russellmitchell/russellmitchell session 7",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "russellmitchell/russellmitchell/session-0007",
+  "alert": {
+    "timestamp": "2022-01-21T03:30:34Z",
+    "host": "russellmitchell",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (6 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: CPU value out of expected range in monitoring logs., AMiner: New",
+    "scenario": "russellmitchell"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-21T03:30:34Z",
+    "end": "2022-01-21T03:49:44Z",
+    "hosts": [
+      "russellmitchell"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-7c3c4322",
+        "timestamp": "2022-01-21T03:30:34Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 03:30:34 dnsmasq[3326]: query[AAAA] motd.ubuntu.com from 192.168.231.180",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-276c9b6c",
+        "timestamp": "2022-01-21T03:41:37Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"agent\":{\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"id\":\"d8e6f857-ec88-4cf5-bc5e-7b72a6fd1e33\",\"ephemeral_id\":\"c6b20ae2-38c0-4ada-8be2-2d607fddf7e9\",\"version\":\"7.13.2\",\"type\":\"metricbeat\"},\"service\":{\"type\":\"system\"},\"event\":{\"module\":\"system\",\"dataset\":\"system.cpu\",\"duration\":334086},\"@version\":\"1\",\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"ecs\":{\"version\":\"1.9.0\"},\"host\":{\"cpu\":{\"pc",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-95e68e17",
+        "timestamp": "2022-01-21T03:42:22Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"service\":{\"type\":\"system\"},\"agent\":{\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"id\":\"d8e6f857-ec88-4cf5-bc5e-7b72a6fd1e33\",\"ephemeral_id\":\"c6b20ae2-38c0-4ada-8be2-2d607fddf7e9\",\"version\":\"7.13.2\",\"type\":\"metricbeat\"},\"event\":{\"module\":\"system\",\"dataset\":\"system.cpu\",\"duration\":5846205},\"@version\":\"1\",\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"ecs\":{\"version\":\"1.9.0\"},\"host\":{\"cpu\":{\"p",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-99439858",
+        "timestamp": "2022-01-21T03:43:53Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 03:43:53 inet-firewall kernel: [59517.044231] IPv4: martian source 255.255.255.255 from 169.254.169.254, on dev ens7",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-004e27e1",
+        "timestamp": "2022-01-21T03:44:37Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"agent\":{\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"id\":\"d8e6f857-ec88-4cf5-bc5e-7b72a6fd1e33\",\"ephemeral_id\":\"c6b20ae2-38c0-4ada-8be2-2d607fddf7e9\",\"version\":\"7.13.2\",\"type\":\"metricbeat\"},\"service\":{\"type\":\"system\"},\"event\":{\"module\":\"system\",\"dataset\":\"system.cpu\",\"duration\":178798},\"@version\":\"1\",\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"host\":{\"cpu\":{\"pct\":0.0694},\"name\":\"intrane",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-51089816",
+        "timestamp": "2022-01-21T03:49:44Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-21 03:49:44 jhall/192.168.230.165:46011 TLS: soft reset sec=3309/3308 bytes=45892/-1 pkts=651/0",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-7c3c4322",
+      "source": "alerts",
+      "timestamp": "2022-01-21T03:30:34Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 03:30:34 dnsmasq[3326]: query[AAAA] motd.ubuntu.com from 192.168.231.180",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-276c9b6c",
+      "source": "alerts",
+      "timestamp": "2022-01-21T03:41:37Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"agent\":{\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"id\":\"d8e6f857-ec88-4cf5-bc5e-7b72a6fd1e33\",\"ephemeral_id\":\"c6b20ae2-38c0-4ada-8be2-2d607fddf7e9\",\"version\":\"7.13.2\",\"type\":\"metricbeat\"},\"service\":{\"type\":\"system\"},\"event\":{\"module\":\"system\",\"dataset\":\"system.cpu\",\"duration\":334086},\"@version\":\"1\",\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"ecs\":{\"version\":\"1.9.0\"},\"host\":{\"cpu\":{\"pc",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-95e68e17",
+      "source": "alerts",
+      "timestamp": "2022-01-21T03:42:22Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"service\":{\"type\":\"system\"},\"agent\":{\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"id\":\"d8e6f857-ec88-4cf5-bc5e-7b72a6fd1e33\",\"ephemeral_id\":\"c6b20ae2-38c0-4ada-8be2-2d607fddf7e9\",\"version\":\"7.13.2\",\"type\":\"metricbeat\"},\"event\":{\"module\":\"system\",\"dataset\":\"system.cpu\",\"duration\":5846205},\"@version\":\"1\",\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"ecs\":{\"version\":\"1.9.0\"},\"host\":{\"cpu\":{\"p",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (6 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: CPU value out of expected range in monitoring logs., AMiner: New",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (6 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: CPU value out of expected range in monitoring logs., AMiner: New",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "russellmitchell/russellmitchell/session-0007",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 6,
+      "kept_alerts": 6
+    },
+    "sealed": true
+  }
+}

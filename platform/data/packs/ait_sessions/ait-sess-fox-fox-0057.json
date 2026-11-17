@@ -1,0 +1,183 @@
+{
+  "incident_id": "ait-sess-fox-fox-0057",
+  "name": "ATTEST-AIT fox/fox session 57",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "fox/fox/session-0057",
+  "alert": {
+    "timestamp": "2022-01-17T21:31:16Z",
+    "host": "fox",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (3 alerts; detectors: AMiner: Unusual occurrence frequencies of Apache Access request methods., AMiner: Unusual occurrence frequencies of DNS log events.).",
+    "scenario": "fox"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-17T21:31:16Z",
+    "end": "2022-01-17T21:42:24Z",
+    "hosts": [
+      "fox"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-3dcf2fee",
+        "timestamp": "2022-01-17T21:31:16Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 17 21:31:16 dnsmasq[14460]: query[AAAA] taylorcruz-mail from 192.168.128.195",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-3ff3f4cf",
+        "timestamp": "2022-01-17T21:31:36Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "10.35.35.118 - - [17/Jan/2022:21:31:36 +0000] \"GET /login.php?horde_logout_token=qYWcOl2o0cK8oDjd0cWkZ_B&logout_reason=4 HTTP/1.1\" 200 4476 \"https://mail.price.fox.org/nag/list.php\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-0a1285f6",
+        "timestamp": "2022-01-17T21:42:24Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "10.35.35.118 - - [17/Jan/2022:21:42:24 +0000] \"GET /?p=5 HTTP/1.1\" 200 41742 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-3dcf2fee",
+      "source": "alerts",
+      "timestamp": "2022-01-17T21:31:16Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 17 21:31:16 dnsmasq[14460]: query[AAAA] taylorcruz-mail from 192.168.128.195",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-3ff3f4cf",
+      "source": "alerts",
+      "timestamp": "2022-01-17T21:31:36Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "10.35.35.118 - - [17/Jan/2022:21:31:36 +0000] \"GET /login.php?horde_logout_token=qYWcOl2o0cK8oDjd0cWkZ_B&logout_reason=4 HTTP/1.1\" 200 4476 \"https://mail.price.fox.org/nag/list.php\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-0a1285f6",
+      "source": "alerts",
+      "timestamp": "2022-01-17T21:42:24Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "10.35.35.118 - - [17/Jan/2022:21:42:24 +0000] \"GET /?p=5 HTTP/1.1\" 200 41742 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (3 alerts; detectors: AMiner: Unusual occurrence frequencies of Apache Access request methods., AMiner: Unusual occurrence frequencies of DNS log events.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (3 alerts; detectors: AMiner: Unusual occurrence frequencies of Apache Access request methods., AMiner: Unusual occurrence frequencies of DNS log events.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "fox/fox/session-0057",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 3,
+      "kept_alerts": 3
+    },
+    "sealed": true
+  }
+}

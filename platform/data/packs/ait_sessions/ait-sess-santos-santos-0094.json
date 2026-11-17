@@ -1,0 +1,183 @@
+{
+  "incident_id": "ait-sess-santos-santos-0094",
+  "name": "ATTEST-AIT santos/santos session 94",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "santos/santos/session-0094",
+  "alert": {
+    "timestamp": "2022-01-17T20:17:40Z",
+    "host": "santos",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (3 alerts; detectors: AMiner: New characters in Apache Access request., AMiner: Unusual occurrence frequencies of DNS log events.).",
+    "scenario": "santos"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-17T20:17:40Z",
+    "end": "2022-01-17T20:20:59Z",
+    "hosts": [
+      "santos"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-19ae9510",
+        "timestamp": "2022-01-17T20:17:40Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.smith.santos.com:443 172.21.129.224 - - [17/Jan/2022:20:17:40 +0000] \"GET /index.php/apps/files/ajax/download.php?dir=%2F&files=Documents%20(2)&downloadStartSecret=mlg10ta7mnd HTTP/1.1\" 200 4624 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-dad4d5a4",
+        "timestamp": "2022-01-17T20:17:40Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "192.168.104.81 - - [17/Jan/2022:20:17:40 +0000] \"GET /index.php/apps/files/ajax/download.php?dir=%2F&files=Documents%20(2)&downloadStartSecret=mlg10ta7mnd HTTP/1.1\" 200 2230 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-1c510166",
+        "timestamp": "2022-01-17T20:20:59Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 17 20:20:59 dnsmasq[14919]: query[A] intranet.smith.santos.com from 172.21.128.119",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-19ae9510",
+      "source": "alerts",
+      "timestamp": "2022-01-17T20:17:40Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.smith.santos.com:443 172.21.129.224 - - [17/Jan/2022:20:17:40 +0000] \"GET /index.php/apps/files/ajax/download.php?dir=%2F&files=Documents%20(2)&downloadStartSecret=mlg10ta7mnd HTTP/1.1\" 200 4624 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-dad4d5a4",
+      "source": "alerts",
+      "timestamp": "2022-01-17T20:17:40Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "192.168.104.81 - - [17/Jan/2022:20:17:40 +0000] \"GET /index.php/apps/files/ajax/download.php?dir=%2F&files=Documents%20(2)&downloadStartSecret=mlg10ta7mnd HTTP/1.1\" 200 2230 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-1c510166",
+      "source": "alerts",
+      "timestamp": "2022-01-17T20:20:59Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 17 20:20:59 dnsmasq[14919]: query[A] intranet.smith.santos.com from 172.21.128.119",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (3 alerts; detectors: AMiner: New characters in Apache Access request., AMiner: Unusual occurrence frequencies of DNS log events.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (3 alerts; detectors: AMiner: New characters in Apache Access request., AMiner: Unusual occurrence frequencies of DNS log events.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "santos/santos/session-0094",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 3,
+      "kept_alerts": 3
+    },
+    "sealed": true
+  }
+}

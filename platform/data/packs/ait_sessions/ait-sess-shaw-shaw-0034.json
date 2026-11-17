@@ -1,0 +1,210 @@
+{
+  "incident_id": "ait-sess-shaw-shaw-0034",
+  "name": "ATTEST-AIT shaw/shaw session 34",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "shaw/shaw/session-0034",
+  "alert": {
+    "timestamp": "2022-01-26T07:01:30Z",
+    "host": "shaw",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (6 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New event type., AMiner: Unusual occurrence frequencies of DNS query IPs.).",
+    "scenario": "shaw"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-26T07:01:30Z",
+    "end": "2022-01-26T07:14:53Z",
+    "hosts": [
+      "shaw"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-07a3d006",
+        "timestamp": "2022-01-26T07:01:30Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "[Wed Jan 26 07:01:30.236915 2022] [:error] [pid 18780] [client 172.24.251.86:60094] PHP Warning:  Declaration of Horde_Form_Type_pgp::init($gpg, $temp_dir = NULL, $rows = NULL, $cols = NULL) should be compatible with Horde_Form_Type_longtext::init($rows = 8, $cols = 80, $helper = Array) in /usr/share/php/Horde/Form/Type.php on line 863, referer: https://mail.thomasmurray.shaw.info/nag/",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-78ffa276",
+        "timestamp": "2022-01-26T07:01:30Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "[Wed Jan 26 07:01:30.244390 2022] [:error] [pid 18780] [client 172.24.251.86:60094] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Horde_Form_Variable has a deprecated constructor in /usr/share/php/Horde/Form/Variable.php on line 9, referer: https://mail.thomasmurray.shaw.info/nag/",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-fbc58c42",
+        "timestamp": "2022-01-26T07:02:28Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 07:02:28 dnsmasq[14596]: query[A] archive.ubuntu.com from 172.24.249.212",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-06965b9b",
+        "timestamp": "2022-01-26T07:03:33Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 07:03:33 dnsmasq[14635]: query[AAAA] collinsbecker-mail from 10.70.34.215",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-78d2be20",
+        "timestamp": "2022-01-26T07:03:33Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 26 07:03:33 dnsmasq[14635]: query[AAAA] collinsbecker-mail from 10.70.34.215",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-d3c1ccaf",
+        "timestamp": "2022-01-26T07:14:53Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"tags\":[\"beats_input_raw_event\"],\"service\":{\"type\":\"system\"},\"agent\":{\"ephemeral_id\":\"60467123-ae3b-4339-bc93-ff506807789c\",\"type\":\"metricbeat\",\"version\":\"7.13.2\",\"id\":\"fe2b129b-2792-44df-b7e6-ed5439c2b628\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\"},\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.0917}},\"system\":{\"cpu\":{\"total\":{\"pct\":0.0917,\"norm\":{\"pct\":0.0917}},\"user\":{\"pct\":0.0341",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-07a3d006",
+      "source": "alerts",
+      "timestamp": "2022-01-26T07:01:30Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "[Wed Jan 26 07:01:30.236915 2022] [:error] [pid 18780] [client 172.24.251.86:60094] PHP Warning:  Declaration of Horde_Form_Type_pgp::init($gpg, $temp_dir = NULL, $rows = NULL, $cols = NULL) should be compatible with Horde_Form_Type_longtext::init($rows = 8, $cols = 80, $helper = Array) in /usr/share/php/Horde/Form/Type.php on line 863, referer: https://mail.thomasmurray.shaw.info/nag/",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-78ffa276",
+      "source": "alerts",
+      "timestamp": "2022-01-26T07:01:30Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "[Wed Jan 26 07:01:30.244390 2022] [:error] [pid 18780] [client 172.24.251.86:60094] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Horde_Form_Variable has a deprecated constructor in /usr/share/php/Horde/Form/Variable.php on line 9, referer: https://mail.thomasmurray.shaw.info/nag/",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-fbc58c42",
+      "source": "alerts",
+      "timestamp": "2022-01-26T07:02:28Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 07:02:28 dnsmasq[14596]: query[A] archive.ubuntu.com from 172.24.249.212",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (6 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New event type., AMiner: Unusual occurrence frequencies of DNS query IPs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (6 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New event type., AMiner: Unusual occurrence frequencies of DNS query IPs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "shaw/shaw/session-0034",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 6,
+      "kept_alerts": 6
+    },
+    "sealed": true
+  }
+}

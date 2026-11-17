@@ -1,0 +1,163 @@
+{
+  "incident_id": "ait-sess-harrison-harrison-0070",
+  "name": "ATTEST-AIT harrison/harrison session 70",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "harrison/harrison/session-0070",
+  "alert": {
+    "timestamp": "2022-02-06T21:59:46Z",
+    "host": "harrison",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (2 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: CPU value out of expected range in monitoring logs.).",
+    "scenario": "harrison"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-06T21:59:46Z",
+    "end": "2022-02-06T22:01:16Z",
+    "hosts": [
+      "harrison"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-e8793d24",
+        "timestamp": "2022-02-06T21:59:46Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-06T21:59:46.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0.9089,\"norm\":{\"pct\":0.9089}},\"steal\":{\"pct\":0.0122,\"norm\":{\"pct\":0.0122}},\"system\":{\"pct\":0.0408,\"norm\":{\"pct\":0.0408}},\"user\":{\"pct\":0.0359,\"norm\":{\"pct\":0.0359}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":0.0012,\"norm\":{\"pct\":0.0012}},\"total\":{\"pct\":0.0902,\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-301b59b4",
+        "timestamp": "2022-02-06T22:01:16Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-06T22:01:16.130Z\",\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.0559}},\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.0175,\"norm\":{\"pct\":0.0175}},\"idle\":{\"pct\":0.9439,\"norm\":{\"pct\":0.9439}},\"system\":{\"pct\":0.0134,\"norm\":{\"pct\":0.0134}},\"user\":{\"pct\":0.0238,\"norm\":{\"pct\":0.0238}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-e8793d24",
+      "source": "alerts",
+      "timestamp": "2022-02-06T21:59:46Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-06T21:59:46.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0.9089,\"norm\":{\"pct\":0.9089}},\"steal\":{\"pct\":0.0122,\"norm\":{\"pct\":0.0122}},\"system\":{\"pct\":0.0408,\"norm\":{\"pct\":0.0408}},\"user\":{\"pct\":0.0359,\"norm\":{\"pct\":0.0359}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":0.0012,\"norm\":{\"pct\":0.0012}},\"total\":{\"pct\":0.0902,\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-301b59b4",
+      "source": "alerts",
+      "timestamp": "2022-02-06T22:01:16Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-06T22:01:16.130Z\",\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.0559}},\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.0175,\"norm\":{\"pct\":0.0175}},\"idle\":{\"pct\":0.9439,\"norm\":{\"pct\":0.9439}},\"system\":{\"pct\":0.0134,\"norm\":{\"pct\":0.0134}},\"user\":{\"pct\":0.0238,\"norm\":{\"pct\":0.0238}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (2 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: CPU value out of expected range in monitoring logs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (2 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: CPU value out of expected range in monitoring logs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "harrison/harrison/session-0070",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 2,
+      "kept_alerts": 2
+    },
+    "sealed": true
+  }
+}

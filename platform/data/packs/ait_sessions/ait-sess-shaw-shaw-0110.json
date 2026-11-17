@@ -1,0 +1,534 @@
+{
+  "incident_id": "ait-sess-shaw-shaw-0110",
+  "name": "ATTEST-AIT shaw/shaw session 110",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "shaw/shaw/session-0110",
+  "alert": {
+    "timestamp": "2022-01-30T11:29:26Z",
+    "host": "shaw",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (42 alerts; detectors: AMiner: New user_acct parameter combination in Audit logs., AMiner: New user_auth parameter combination in Audit logs.).",
+    "scenario": "shaw"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-30T11:29:26Z",
+    "end": "2022-01-30T12:01:42Z",
+    "hosts": [
+      "shaw"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-79302406",
+        "timestamp": "2022-01-30T11:29:26Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643542166.742:14086): pid=1704 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-9f8304ce",
+        "timestamp": "2022-01-30T11:29:26Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643542166.746:14087): pid=1704 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-9a3d2c3f",
+        "timestamp": "2022-01-30T11:29:26Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643542166.782:14088): pid=1704 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-9254dc25",
+        "timestamp": "2022-01-30T11:29:26Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643542166.786:14089): pid=1704 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-7d7ec22d",
+        "timestamp": "2022-01-30T11:29:26Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643542166.858:14090): pid=1704 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-1b026451",
+        "timestamp": "2022-01-30T11:29:26Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643542166.858:14091): pid=1704 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-8d50beee",
+        "timestamp": "2022-01-30T11:29:27Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643542167.862:14092): pid=1704 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-dfb90d46",
+        "timestamp": "2022-01-30T11:29:27Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643542167.866:14093): pid=1704 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-38142542",
+        "timestamp": "2022-01-30T11:42:44Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643542964.096:14140): pid=1905 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-c9eb1ad4",
+        "timestamp": "2022-01-30T11:42:44Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643542964.096:14141): pid=1905 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-228bd110",
+        "timestamp": "2022-01-30T11:45:15Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643543115.043:14150): pid=1935 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-03b2b40a",
+        "timestamp": "2022-01-30T11:45:15Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643543115.043:14151): pid=1935 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-1884602d",
+        "timestamp": "2022-01-30T11:45:15Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643543115.963:14152): pid=1935 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-3020dded",
+        "timestamp": "2022-01-30T11:45:15Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643543115.963:14153): pid=1935 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-0451afbd",
+        "timestamp": "2022-01-30T11:45:41Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643543141.911:14154): pid=1935 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-d15e77e6",
+        "timestamp": "2022-01-30T11:45:41Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643543141.911:14155): pid=1935 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-a25ec27f",
+        "timestamp": "2022-01-30T11:46:09Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643543169.611:14156): pid=1935 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-3d9edd1b",
+        "timestamp": "2022-01-30T11:46:09Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643543169.615:14157): pid=1935 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-cf2bf689",
+        "timestamp": "2022-01-30T11:47:33Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643543253.583:14158): pid=1974 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-d1e82673",
+        "timestamp": "2022-01-30T11:47:33Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643543253.583:14159): pid=1974 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-9c003ec1",
+        "timestamp": "2022-01-30T11:47:34Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643543254.675:14160): pid=1974 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-383e02ef",
+        "timestamp": "2022-01-30T11:47:34Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643543254.675:14161): pid=1974 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-065b5a30",
+        "timestamp": "2022-01-30T11:48:01Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643543281.718:14162): pid=1974 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-fff817f2",
+        "timestamp": "2022-01-30T11:48:01Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643543281.718:14163): pid=1974 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0025-810dd7d9",
+        "timestamp": "2022-01-30T11:51:07Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643543467.989:14164): pid=2001 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0026-2301172f",
+        "timestamp": "2022-01-30T11:51:07Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643543467.993:14165): pid=2001 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0027-7ddf51eb",
+        "timestamp": "2022-01-30T11:52:47Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643543567.489:14166): pid=2009 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0028-af94f3f1",
+        "timestamp": "2022-01-30T11:52:47Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643543567.489:14167): pid=2009 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0029-553a5f11",
+        "timestamp": "2022-01-30T11:54:46Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643543686.552:14168): pid=2033 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0030-73225211",
+        "timestamp": "2022-01-30T11:54:46Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643543686.552:14169): pid=2033 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0031-48973d0a",
+        "timestamp": "2022-01-30T11:56:21Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643543781.159:14170): pid=2048 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0032-472f0b78",
+        "timestamp": "2022-01-30T11:56:21Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643543781.159:14171): pid=2048 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0033-ed50ff68",
+        "timestamp": "2022-01-30T11:58:21Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643543901.774:14172): pid=2069 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0034-67bd2a81",
+        "timestamp": "2022-01-30T11:58:21Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643543901.774:14173): pid=2069 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0035-7553e2e8",
+        "timestamp": "2022-01-30T11:59:34Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643543974.814:14174): pid=2081 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0036-6feac862",
+        "timestamp": "2022-01-30T11:59:34Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643543974.814:14175): pid=2081 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0037-872845ee",
+        "timestamp": "2022-01-30T12:00:28Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643544028.766:14176): pid=2081 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0038-ad7b91ae",
+        "timestamp": "2022-01-30T12:00:28Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643544028.766:14177): pid=2081 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0039-8729f974",
+        "timestamp": "2022-01-30T12:00:55Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643544055.817:14178): pid=2081 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0040-7ea63f27",
+        "timestamp": "2022-01-30T12:00:55Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643544055.817:14179): pid=2081 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0041-456cd18c",
+        "timestamp": "2022-01-30T12:01:42Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643544102.741:14180): pid=2081 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0042-b19660e9",
+        "timestamp": "2022-01-30T12:01:42Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643544102.741:14181): pid=2081 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-79302406",
+      "source": "alerts",
+      "timestamp": "2022-01-30T11:29:26Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643542166.742:14086): pid=1704 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-9f8304ce",
+      "source": "alerts",
+      "timestamp": "2022-01-30T11:29:26Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643542166.746:14087): pid=1704 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-9a3d2c3f",
+      "source": "alerts",
+      "timestamp": "2022-01-30T11:29:26Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643542166.782:14088): pid=1704 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (42 alerts; detectors: AMiner: New user_acct parameter combination in Audit logs., AMiner: New user_auth parameter combination in Audit logs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (42 alerts; detectors: AMiner: New user_acct parameter combination in Audit logs., AMiner: New user_auth parameter combination in Audit logs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "shaw/shaw/session-0110",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 42,
+      "kept_alerts": 42
+    },
+    "sealed": true
+  }
+}

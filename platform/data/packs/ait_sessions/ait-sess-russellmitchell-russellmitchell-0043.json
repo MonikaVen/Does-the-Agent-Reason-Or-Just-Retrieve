@@ -1,0 +1,1129 @@
+{
+  "incident_id": "ait-sess-russellmitchell-russellmitchell-0043",
+  "name": "ATTEST-AIT russellmitchell/russellmitchell session 43",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "russellmitchell/russellmitchell/session-0043",
+  "alert": {
+    "timestamp": "2022-01-24T03:56:47Z",
+    "host": "russellmitchell",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (50 alerts; detectors: AMiner: New characters in Apache Access request., AMiner: New event type., AMiner: New request method in Apache Access log.).",
+    "scenario": "russellmitchell"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-24T03:56:47Z",
+    "end": "2022-01-24T04:14:37Z",
+    "hosts": [
+      "russellmitchell"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-8cb666a2",
+        "timestamp": "2022-01-24T03:56:47Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 24 03:56:47 inet-dns sshd[15085]: Did not receive identification string from 192.168.230.122 port 44004",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-f142590a",
+        "timestamp": "2022-01-24T03:56:59Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "[Mon Jan 24 03:56:59.619809 2022] [authz_core:error] [pid 20182] [client 192.168.230.122:48936] AH01630: client denied by server configuration: /var/www/html/",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-3fa79a79",
+        "timestamp": "2022-01-24T03:57:10Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 24 03:57:10 davey-mail dovecot: imap-login: Disconnected (no auth attempts in 6 secs): user=<>, rip=192.168.230.122, lip=192.168.231.56, TLS handshaking: SSL_accept() failed: error:1417D18C:SSL routines:tls_process_client_hello:version too low, session=<PCmC9kvWULHAqOZ6>",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-df8f85ba",
+        "timestamp": "2022-01-24T03:57:26Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:57:26 +0000] \"GET /~adm HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-843ab76b",
+        "timestamp": "2022-01-24T03:57:54Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:57:54 +0000] \"HEAD /wp-includes/version.php HTTP/1.1\" 200 134 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-3aeb923f",
+        "timestamp": "2022-01-24T03:57:59Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:57:59 +0000] \"HEAD /wp-content/themes/beauty-premium/ HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-0a96e693",
+        "timestamp": "2022-01-24T03:57:59Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:57:59 +0000] \"HEAD /wp-content/themes/elegant-grunge/ HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-be1b3c8b",
+        "timestamp": "2022-01-24T03:58:00Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:00 +0000] \"HEAD /wp-content/themes/konzept/ HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-d535f17c",
+        "timestamp": "2022-01-24T03:58:00Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:00 +0000] \"HEAD /wp-content/themes/pinfinity/ HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-a24157b8",
+        "timestamp": "2022-01-24T03:58:00Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:00 +0000] \"HEAD /wp-content/themes/striking_r/ HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-f1188682",
+        "timestamp": "2022-01-24T03:58:01Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:01 +0000] \"HEAD /wp-content/themes/8q/scripts/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-bee8008e",
+        "timestamp": "2022-01-24T03:58:01Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:01 +0000] \"HEAD /wp-content/themes/aerial/lib/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-a32ccaa7",
+        "timestamp": "2022-01-24T03:58:01Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:01 +0000] \"HEAD /wp-content/themes/askit_v1.6/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-edbb5e7e",
+        "timestamp": "2022-01-24T03:58:01Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:01 +0000] \"HEAD /wp-content/themes/backstage/scripts/thumb/thumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-088e7cbd",
+        "timestamp": "2022-01-24T03:58:02Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:02 +0000] \"HEAD /wp-content/themes/bloggingstream/library/thumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-8cd48c54",
+        "timestamp": "2022-01-24T03:58:02Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:02 +0000] \"HEAD /wp-content/themes/bueno/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-0ab3b1f9",
+        "timestamp": "2022-01-24T03:58:02Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:02 +0000] \"HEAD /wp-content/themes/canvas/scripts/timthumb/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-f67a75ae",
+        "timestamp": "2022-01-24T03:58:03Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:03 +0000] \"HEAD /wp-content/themes/comfy-3.0.9/tools/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-36caafe6",
+        "timestamp": "2022-01-24T03:58:03Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:03 +0000] \"HEAD /wp-content/themes/continuum/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-682bc63c",
+        "timestamp": "2022-01-24T03:58:03Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:03 +0000] \"HEAD /wp-content/themes/DailyNotes/lib/thumb/timthumb.php HTTP/1.1\" 404 3166 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-cd96a618",
+        "timestamp": "2022-01-24T03:58:03Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:03 +0000] \"HEAD /wp-content/themes/DelicateNews/layouts/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-b1445b7e",
+        "timestamp": "2022-01-24T03:58:03Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:03 +0000] \"HEAD /wp-content/themes/deliciousmagazine/lib/custom/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-80b19133",
+        "timestamp": "2022-01-24T03:58:04Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:04 +0000] \"HEAD /wp-content/themes/duotive-three/scripts/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-065bf649",
+        "timestamp": "2022-01-24T03:58:04Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:04 +0000] \"HEAD /wp-content/themes/ecobiz/thumb/thumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0025-a13047b9",
+        "timestamp": "2022-01-24T03:58:04Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:04 +0000] \"HEAD /wp-content/themes/famous/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0026-9b9450f1",
+        "timestamp": "2022-01-24T03:58:04Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:04 +0000] \"HEAD /wp-content/themes/groovyblog/functions/timthumb/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0027-75847a82",
+        "timestamp": "2022-01-24T03:58:05Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:05 +0000] \"HEAD /wp-content/themes/headlines/tools/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0028-3a1614ef",
+        "timestamp": "2022-01-24T03:58:05Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:05 +0000] \"HEAD /wp-content/themes/horizon/extensions/tools/timthumb/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0029-ca4777f2",
+        "timestamp": "2022-01-24T03:58:05Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:05 +0000] \"HEAD /wp-content/themes/LondonLive/framework/includes/thumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0030-ab7de51b",
+        "timestamp": "2022-01-24T03:58:05Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:05 +0000] \"HEAD /wp-content/themes/magazinum/scripts/cache/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0031-bee0ee2b",
+        "timestamp": "2022-01-24T03:58:05Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:05 +0000] \"HEAD /wp-content/themes/mobilephonecomparision/thumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0032-bffb9b30",
+        "timestamp": "2022-01-24T03:58:06Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:06 +0000] \"HEAD /wp-content/themes/MoneyTheme/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0033-5284b037",
+        "timestamp": "2022-01-24T03:58:06Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:06 +0000] \"HEAD /wp-content/themes/newsworld/functions/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0034-9137817f",
+        "timestamp": "2022-01-24T03:58:06Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:06 +0000] \"HEAD /wp-content/themes/Nova/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0035-d92e1044",
+        "timestamp": "2022-01-24T03:58:06Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:06 +0000] \"HEAD /wp-content/themes/photofeature/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0036-75a25cf4",
+        "timestamp": "2022-01-24T03:58:06Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:06 +0000] \"HEAD /wp-content/themes/premiumnews/modules/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0037-8b42ed40",
+        "timestamp": "2022-01-24T03:58:07Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:07 +0000] \"HEAD /wp-content/themes/purevision/lib/custom/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0038-0eb52335",
+        "timestamp": "2022-01-24T03:58:07Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:07 +0000] \"HEAD /wp-content/themes/rttheme13/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0039-16f506d9",
+        "timestamp": "2022-01-24T03:58:07Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:07 +0000] \"HEAD /wp-content/themes/sealight/tools/thumb/thumb.php HTTP/1.1\" 404 165 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0040-a9c9133b",
+        "timestamp": "2022-01-24T03:58:08Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:08 +0000] \"HEAD /wp-content/themes/simplepress/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0041-19dd205e",
+        "timestamp": "2022-01-24T03:58:08Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:08 +0000] \"HEAD /wp-content/themes/statua/thumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0042-1307ffd3",
+        "timestamp": "2022-01-24T03:58:08Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:08 +0000] \"HEAD /wp-content/themes/TheSource/thumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0043-c7caf89f",
+        "timestamp": "2022-01-24T03:58:08Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:08 +0000] \"HEAD /wp-content/themes/typebased/functions/timthumb/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0044-96ec0fea",
+        "timestamp": "2022-01-24T03:58:08Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:08 +0000] \"HEAD /wp-content/themes/versitility/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0045-85179984",
+        "timestamp": "2022-01-24T03:58:09Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:09 +0000] \"HEAD /wp-content/themes/zenko/scripts/thumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0046-caf54286",
+        "timestamp": "2022-01-24T03:58:09Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:09 +0000] \"HEAD /wp-content/plugins/image-symlinks/functions/timthumb/timthumb.php HTTP/1.1\" 404 3166 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0047-08cf6b10",
+        "timestamp": "2022-01-24T03:58:09Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:09 +0000] \"HEAD /wp-content/plugins/sh-slideshow/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0048-4c142fc0",
+        "timestamp": "2022-01-24T03:58:09Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:09 +0000] \"HEAD /wp-content/plugins/wp_rokstories/thumb.phpthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0049-41bd4613",
+        "timestamp": "2022-01-24T03:58:09Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "[Mon Jan 24 03:58:09.793533 2022] [php7:error] [pid 23059] [client 172.19.131.174:36228] script '/var/www/intranet.smith.russellmitchell.com/wp-content/themes/go/timthumb.php' not found or unable to stat, referer: https://intranet.smith.russellmitchell.com",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0050-78797928",
+        "timestamp": "2022-01-24T03:58:11Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:11 +0000] \"HEAD /?attachment_id=36 HTTP/1.1\" 404 335 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-8cb666a2",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:56:47Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 24 03:56:47 inet-dns sshd[15085]: Did not receive identification string from 192.168.230.122 port 44004",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-f142590a",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:56:59Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "[Mon Jan 24 03:56:59.619809 2022] [authz_core:error] [pid 20182] [client 192.168.230.122:48936] AH01630: client denied by server configuration: /var/www/html/",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-3fa79a79",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:57:10Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 24 03:57:10 davey-mail dovecot: imap-login: Disconnected (no auth attempts in 6 secs): user=<>, rip=192.168.230.122, lip=192.168.231.56, TLS handshaking: SSL_accept() failed: error:1417D18C:SSL routines:tls_process_client_hello:version too low, session=<PCmC9kvWULHAqOZ6>",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0004-df8f85ba",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:57:26Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:57:26 +0000] \"GET /~adm HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0005-843ab76b",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:57:54Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:57:54 +0000] \"HEAD /wp-includes/version.php HTTP/1.1\" 200 134 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0006-3aeb923f",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:57:59Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:57:59 +0000] \"HEAD /wp-content/themes/beauty-premium/ HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0007-0a96e693",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:57:59Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:57:59 +0000] \"HEAD /wp-content/themes/elegant-grunge/ HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0008-be1b3c8b",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:00Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:00 +0000] \"HEAD /wp-content/themes/konzept/ HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0009-d535f17c",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:00Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:00 +0000] \"HEAD /wp-content/themes/pinfinity/ HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0010-a24157b8",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:00Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:00 +0000] \"HEAD /wp-content/themes/striking_r/ HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0011-f1188682",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:01Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:01 +0000] \"HEAD /wp-content/themes/8q/scripts/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0012-bee8008e",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:01Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:01 +0000] \"HEAD /wp-content/themes/aerial/lib/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0013-a32ccaa7",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:01Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:01 +0000] \"HEAD /wp-content/themes/askit_v1.6/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0014-edbb5e7e",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:01Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:01 +0000] \"HEAD /wp-content/themes/backstage/scripts/thumb/thumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0015-088e7cbd",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:02Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:02 +0000] \"HEAD /wp-content/themes/bloggingstream/library/thumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0016-8cd48c54",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:02Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:02 +0000] \"HEAD /wp-content/themes/bueno/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0017-0ab3b1f9",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:02Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:02 +0000] \"HEAD /wp-content/themes/canvas/scripts/timthumb/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0018-f67a75ae",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:03Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:03 +0000] \"HEAD /wp-content/themes/comfy-3.0.9/tools/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0019-36caafe6",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:03Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:03 +0000] \"HEAD /wp-content/themes/continuum/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0020-682bc63c",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:03Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:03 +0000] \"HEAD /wp-content/themes/DailyNotes/lib/thumb/timthumb.php HTTP/1.1\" 404 3166 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0021-cd96a618",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:03Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:03 +0000] \"HEAD /wp-content/themes/DelicateNews/layouts/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0022-b1445b7e",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:03Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:03 +0000] \"HEAD /wp-content/themes/deliciousmagazine/lib/custom/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0023-80b19133",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:04Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:04 +0000] \"HEAD /wp-content/themes/duotive-three/scripts/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0024-065bf649",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:04Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:04 +0000] \"HEAD /wp-content/themes/ecobiz/thumb/thumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0025-a13047b9",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:04Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:04 +0000] \"HEAD /wp-content/themes/famous/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0026-9b9450f1",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:04Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:04 +0000] \"HEAD /wp-content/themes/groovyblog/functions/timthumb/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0027-75847a82",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:05Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:05 +0000] \"HEAD /wp-content/themes/headlines/tools/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0028-3a1614ef",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:05Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:05 +0000] \"HEAD /wp-content/themes/horizon/extensions/tools/timthumb/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0029-ca4777f2",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:05Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:05 +0000] \"HEAD /wp-content/themes/LondonLive/framework/includes/thumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0030-ab7de51b",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:05Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:05 +0000] \"HEAD /wp-content/themes/magazinum/scripts/cache/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0031-bee0ee2b",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:05Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:05 +0000] \"HEAD /wp-content/themes/mobilephonecomparision/thumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0032-bffb9b30",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:06Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:06 +0000] \"HEAD /wp-content/themes/MoneyTheme/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0033-5284b037",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:06Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:06 +0000] \"HEAD /wp-content/themes/newsworld/functions/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0034-9137817f",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:06Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:06 +0000] \"HEAD /wp-content/themes/Nova/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0035-d92e1044",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:06Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:06 +0000] \"HEAD /wp-content/themes/photofeature/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0036-75a25cf4",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:06Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:06 +0000] \"HEAD /wp-content/themes/premiumnews/modules/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0037-8b42ed40",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:07Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:07 +0000] \"HEAD /wp-content/themes/purevision/lib/custom/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0038-0eb52335",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:07Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:07 +0000] \"HEAD /wp-content/themes/rttheme13/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0039-16f506d9",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:07Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:07 +0000] \"HEAD /wp-content/themes/sealight/tools/thumb/thumb.php HTTP/1.1\" 404 165 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0040-a9c9133b",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:08Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:08 +0000] \"HEAD /wp-content/themes/simplepress/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0041-19dd205e",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:08Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:08 +0000] \"HEAD /wp-content/themes/statua/thumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0042-1307ffd3",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:08Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:08 +0000] \"HEAD /wp-content/themes/TheSource/thumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0043-c7caf89f",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:08Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:08 +0000] \"HEAD /wp-content/themes/typebased/functions/timthumb/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0044-96ec0fea",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:08Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:08 +0000] \"HEAD /wp-content/themes/versitility/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0045-85179984",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:09Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:09 +0000] \"HEAD /wp-content/themes/zenko/scripts/thumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0046-caf54286",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:09Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:09 +0000] \"HEAD /wp-content/plugins/image-symlinks/functions/timthumb/timthumb.php HTTP/1.1\" 404 3166 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0047-08cf6b10",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:09Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:09 +0000] \"HEAD /wp-content/plugins/sh-slideshow/timthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0048-4c142fc0",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:09Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:09 +0000] \"HEAD /wp-content/plugins/wp_rokstories/thumb.phpthumb.php HTTP/1.1\" 404 146 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0049-41bd4613",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:09Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "[Mon Jan 24 03:58:09.793533 2022] [php7:error] [pid 23059] [client 172.19.131.174:36228] script '/var/www/intranet.smith.russellmitchell.com/wp-content/themes/go/timthumb.php' not found or unable to stat, referer: https://intranet.smith.russellmitchell.com",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0050-78797928",
+      "source": "alerts",
+      "timestamp": "2022-01-24T03:58:11Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.19.131.174 - - [24/Jan/2022:03:58:11 +0000] \"HEAD /?attachment_id=36 HTTP/1.1\" 404 335 \"https://intranet.smith.russellmitchell.com\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (50 alerts; detectors: AMiner: New characters in Apache Access request., AMiner: New event type., AMiner: New request method in Apache Access log.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (50 alerts; detectors: AMiner: New characters in Apache Access request., AMiner: New event type., AMiner: New request method in Apache Access log.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "russellmitchell/russellmitchell/session-0043",
+    "answer": "malicious",
+    "accept": [
+      "malicious"
+    ],
+    "grading": "exact_ci",
+    "label": "malicious",
+    "is_true_positive": true,
+    "attack_stages": [
+      "cracking",
+      "dirb",
+      "service_scans",
+      "webshell",
+      "wpscan"
+    ],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 3455,
+      "kept_alerts": 50
+    },
+    "sealed": true
+  }
+}

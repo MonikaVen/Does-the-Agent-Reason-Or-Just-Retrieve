@@ -1,0 +1,163 @@
+{
+  "incident_id": "ait-sess-santos-santos-0031",
+  "name": "ATTEST-AIT santos/santos session 31",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "santos/santos/session-0031",
+  "alert": {
+    "timestamp": "2022-01-15T05:59:07Z",
+    "host": "santos",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (2 alerts; detectors: AMiner: New event type., AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+    "scenario": "santos"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-15T05:59:07Z",
+    "end": "2022-01-15T06:08:36Z",
+    "hosts": [
+      "santos"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-0eef30a1",
+        "timestamp": "2022-01-15T05:59:07Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 15 05:59:07 dnsmasq[14569]: query[AAAA] rogersturnbull-mail from 10.229.0.32",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-f2e199eb",
+        "timestamp": "2022-01-15T06:08:36Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 15 06:08:36 rogersturnbull-mail HORDE: User jennifer.villegas is not authorized for Mail (Host: 10.229.0.80). [pid 30944 on line 324 of \"/usr/share/php/Horde/Registry.php\"]",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-0eef30a1",
+      "source": "alerts",
+      "timestamp": "2022-01-15T05:59:07Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 15 05:59:07 dnsmasq[14569]: query[AAAA] rogersturnbull-mail from 10.229.0.32",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-f2e199eb",
+      "source": "alerts",
+      "timestamp": "2022-01-15T06:08:36Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 15 06:08:36 rogersturnbull-mail HORDE: User jennifer.villegas is not authorized for Mail (Host: 10.229.0.80). [pid 30944 on line 324 of \"/usr/share/php/Horde/Registry.php\"]",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (2 alerts; detectors: AMiner: New event type., AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (2 alerts; detectors: AMiner: New event type., AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "santos/santos/session-0031",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 2,
+      "kept_alerts": 2
+    },
+    "sealed": true
+  }
+}

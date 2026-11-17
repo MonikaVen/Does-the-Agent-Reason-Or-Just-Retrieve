@@ -1,0 +1,1097 @@
+{
+  "incident_id": "ait-sess-wardbeck-wardbeck-0122",
+  "name": "ATTEST-AIT wardbeck/wardbeck session 122",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wardbeck/wardbeck/session-0122",
+  "alert": {
+    "timestamp": "2022-01-23T12:00:09Z",
+    "host": "wardbeck",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (50 alerts; detectors: AMiner: New characters in Apache Access request., AMiner: New event type., AMiner: New request method in Apache Access log.).",
+    "scenario": "wardbeck"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-23T12:00:09Z",
+    "end": "2022-01-23T12:15:04Z",
+    "hosts": [
+      "wardbeck"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-ea20e649",
+        "timestamp": "2022-01-23T12:00:09Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 23 12:00:09 dnsmasq[14529]: query[PTR] 187.98.168.192.in-addr.arpa from 192.168.99.0",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-79644a0b",
+        "timestamp": "2022-01-23T12:11:01Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-23 12:11:01 TLS error on connection from [192.168.96.3] (gnutls_handshake): Error in the pull function.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-bead50c1",
+        "timestamp": "2022-01-23T12:11:01Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 23 12:11:01 intranet-server sshd[28473]: Did not receive identification string from 10.132.56.81 port 41728",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-ae6feb22",
+        "timestamp": "2022-01-23T12:11:07Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-23 12:11:07 TLS error on connection from [192.168.96.3] (gnutls_handshake): A packet with illegal or unsupported version was received.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-171a4384",
+        "timestamp": "2022-01-23T12:11:12Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-23 12:11:12 no host name found for IP address 192.168.96.3",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-c2b591b3",
+        "timestamp": "2022-01-23T12:11:13Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-23 12:11:13 TLS error on connection from [192.168.96.3] (gnutls_handshake): An unexpected TLS packet was received.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-a04d3a07",
+        "timestamp": "2022-01-23T12:11:30Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:30 +0000] \"HEAD /readme.html HTTP/1.1\" 200 3305 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-4940a658",
+        "timestamp": "2022-01-23T12:11:35Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/BuilderChild-Market/ HTTP/1.1\" 404 3162 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-42d8302b",
+        "timestamp": "2022-01-23T12:11:35Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/accesspress-lite/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-dca7f21d",
+        "timestamp": "2022-01-23T12:11:35Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/ambience/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-3c5d8754",
+        "timestamp": "2022-01-23T12:11:35Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/bbe/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-fe1a58be",
+        "timestamp": "2022-01-23T12:11:35Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/broadscope/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-9a8afa54",
+        "timestamp": "2022-01-23T12:11:35Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/coldfusion/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-f9793f88",
+        "timestamp": "2022-01-23T12:11:35Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/dejavu/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-e14b5b10",
+        "timestamp": "2022-01-23T12:11:35Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/enfold/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-743e7c9f",
+        "timestamp": "2022-01-23T12:11:35Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/feather12/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-b17a9ba4",
+        "timestamp": "2022-01-23T12:11:35Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/golo/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-6bfafca1",
+        "timestamp": "2022-01-23T12:11:35Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/imperial-fairytale/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-99534660",
+        "timestamp": "2022-01-23T12:11:35Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/mTheme-Unus/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-5aa94dc4",
+        "timestamp": "2022-01-23T12:11:35Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/monalisa/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-c73104ce",
+        "timestamp": "2022-01-23T12:11:35Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/nova-lite/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-04e3eef8",
+        "timestamp": "2022-01-23T12:11:35Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/photocrati-theme-v4/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-7378ab61",
+        "timestamp": "2022-01-23T12:11:35Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/quasar/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-8fdaf420",
+        "timestamp": "2022-01-23T12:11:35Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/sahifa/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0025-3b0e7791",
+        "timestamp": "2022-01-23T12:11:35Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/simplecart/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0026-bf1b2131",
+        "timestamp": "2022-01-23T12:11:35Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/studiozen/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0027-4c48379c",
+        "timestamp": "2022-01-23T12:11:35Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/traveler/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0028-8aa4296e",
+        "timestamp": "2022-01-23T12:11:35Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/webfolio/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0029-be0915f4",
+        "timestamp": "2022-01-23T12:11:35Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/zigcy-baby/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0030-a3defffc",
+        "timestamp": "2022-01-23T12:11:35Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-config-sample.php~ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0031-13b4688a",
+        "timestamp": "2022-01-23T12:11:35Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-config.orig HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0032-751ac9d6",
+        "timestamp": "2022-01-23T12:11:36Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:36 +0000] \"HEAD /wp-config.php_bk HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0033-0c5bbc91",
+        "timestamp": "2022-01-23T12:11:36Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:36 +0000] \"HEAD /wp-config.php.1 HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0034-f9b0d138",
+        "timestamp": "2022-01-23T12:11:36Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:36 +0000] \"HEAD /wp-config.php.cust HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0035-fd875a00",
+        "timestamp": "2022-01-23T12:11:36Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:36 +0000] \"HEAD /wp-config.php.production HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0036-52e1cb43",
+        "timestamp": "2022-01-23T12:11:36Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:36 +0000] \"HEAD /wp-config.php~~~ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0037-688d84be",
+        "timestamp": "2022-01-23T12:11:36Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:36 +0000] \"HEAD /wp-config~ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0038-7017d362",
+        "timestamp": "2022-01-23T12:11:36Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:36 +0000] \"HEAD /backup/db_backup.sql HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0039-797debb5",
+        "timestamp": "2022-01-23T12:11:36Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:36 +0000] \"HEAD /backups/wardbeck.sql HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0040-799d1402",
+        "timestamp": "2022-01-23T12:11:36Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:36 +0000] \"HEAD /mysql-dump.sql HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0041-f0cd740f",
+        "timestamp": "2022-01-23T12:11:36Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:36 +0000] \"HEAD /www.sql HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0042-d356c644",
+        "timestamp": "2022-01-23T12:11:36Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:36 +0000] \"HEAD /?attachment_id=7 HTTP/1.1\" 404 333 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0043-dcdfd0ee",
+        "timestamp": "2022-01-23T12:11:37Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:37 +0000] \"HEAD /?attachment_id=28 HTTP/1.1\" 404 333 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0044-dc7fcdc7",
+        "timestamp": "2022-01-23T12:11:38Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:38 +0000] \"HEAD /?attachment_id=50 HTTP/1.1\" 404 333 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0045-98e13229",
+        "timestamp": "2022-01-23T12:11:38Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:38 +0000] \"HEAD /?attachment_id=67 HTTP/1.1\" 404 333 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0046-130e3c5b",
+        "timestamp": "2022-01-23T12:11:39Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:39 +0000] \"HEAD /?attachment_id=84 HTTP/1.1\" 404 333 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0047-8b3a47af",
+        "timestamp": "2022-01-23T12:11:39Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:39 +0000] \"HEAD /?author=2 HTTP/1.1\" 200 361 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0048-90263d08",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~apache HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0049-217eae77",
+        "timestamp": "2022-01-23T12:11:49Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:49 +0000] \"GET /~webmaster HTTP/1.1\" 404 363 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0050-ffc7fbdb",
+        "timestamp": "2022-01-23T12:12:02Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:12:02 +0000] \"GET /wp-includes HTTP/1.1\" 301 501 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0002-79644a0b",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:01Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-23 12:11:01 TLS error on connection from [192.168.96.3] (gnutls_handshake): Error in the pull function.",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-bead50c1",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:01Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 23 12:11:01 intranet-server sshd[28473]: Did not receive identification string from 10.132.56.81 port 41728",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0004-ae6feb22",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:07Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-23 12:11:07 TLS error on connection from [192.168.96.3] (gnutls_handshake): A packet with illegal or unsupported version was received.",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0005-171a4384",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:12Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-23 12:11:12 no host name found for IP address 192.168.96.3",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0006-c2b591b3",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:13Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-23 12:11:13 TLS error on connection from [192.168.96.3] (gnutls_handshake): An unexpected TLS packet was received.",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0007-a04d3a07",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:30Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:30 +0000] \"HEAD /readme.html HTTP/1.1\" 200 3305 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0008-4940a658",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:35Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/BuilderChild-Market/ HTTP/1.1\" 404 3162 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0009-42d8302b",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:35Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/accesspress-lite/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0010-dca7f21d",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:35Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/ambience/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0011-3c5d8754",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:35Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/bbe/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0012-fe1a58be",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:35Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/broadscope/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0013-9a8afa54",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:35Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/coldfusion/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0014-f9793f88",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:35Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/dejavu/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0015-e14b5b10",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:35Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/enfold/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0016-743e7c9f",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:35Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/feather12/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0017-b17a9ba4",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:35Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/golo/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0018-6bfafca1",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:35Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/imperial-fairytale/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0019-99534660",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:35Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/mTheme-Unus/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0020-5aa94dc4",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:35Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/monalisa/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0021-c73104ce",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:35Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/nova-lite/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0022-04e3eef8",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:35Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/photocrati-theme-v4/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0023-7378ab61",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:35Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/quasar/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0024-8fdaf420",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:35Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/sahifa/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0025-3b0e7791",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:35Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/simplecart/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0026-bf1b2131",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:35Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/studiozen/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0027-4c48379c",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:35Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/traveler/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0028-8aa4296e",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:35Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/webfolio/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0029-be0915f4",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:35Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-content/themes/zigcy-baby/ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0030-a3defffc",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:35Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-config-sample.php~ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0031-13b4688a",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:35Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:35 +0000] \"HEAD /wp-config.orig HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0032-751ac9d6",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:36Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:36 +0000] \"HEAD /wp-config.php_bk HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0033-0c5bbc91",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:36Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:36 +0000] \"HEAD /wp-config.php.1 HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0034-f9b0d138",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:36Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:36 +0000] \"HEAD /wp-config.php.cust HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0035-fd875a00",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:36Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:36 +0000] \"HEAD /wp-config.php.production HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0036-52e1cb43",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:36Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:36 +0000] \"HEAD /wp-config.php~~~ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0037-688d84be",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:36Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:36 +0000] \"HEAD /wp-config~ HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0038-7017d362",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:36Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:36 +0000] \"HEAD /backup/db_backup.sql HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0039-797debb5",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:36Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:36 +0000] \"HEAD /backups/wardbeck.sql HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0040-799d1402",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:36Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:36 +0000] \"HEAD /mysql-dump.sql HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0041-f0cd740f",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:36Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:36 +0000] \"HEAD /www.sql HTTP/1.1\" 404 146 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0042-d356c644",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:36Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:36 +0000] \"HEAD /?attachment_id=7 HTTP/1.1\" 404 333 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0043-dcdfd0ee",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:37Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:37 +0000] \"HEAD /?attachment_id=28 HTTP/1.1\" 404 333 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0044-dc7fcdc7",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:38Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:38 +0000] \"HEAD /?attachment_id=50 HTTP/1.1\" 404 333 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0045-98e13229",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:38Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:38 +0000] \"HEAD /?attachment_id=67 HTTP/1.1\" 404 333 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0046-130e3c5b",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:39Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:39 +0000] \"HEAD /?attachment_id=84 HTTP/1.1\" 404 333 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0047-8b3a47af",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:11:39Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:11:39 +0000] \"HEAD /?author=2 HTTP/1.1\" 200 361 \"https://intranet.hurstwong.wardbeck.info\" \"WPScan v3.8.20 (https://wpscan.com/wordpress-security-scanner)\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0050-ffc7fbdb",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:12:02Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.132.56.81 - - [23/Jan/2022:12:12:02 +0000] \"GET /wp-includes HTTP/1.1\" 301 501 \"-\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (50 alerts; detectors: AMiner: New characters in Apache Access request., AMiner: New event type., AMiner: New request method in Apache Access log.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (50 alerts; detectors: AMiner: New characters in Apache Access request., AMiner: New event type., AMiner: New request method in Apache Access log.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wardbeck/wardbeck/session-0122",
+    "answer": "malicious",
+    "accept": [
+      "malicious"
+    ],
+    "grading": "exact_ci",
+    "label": "malicious",
+    "is_true_positive": true,
+    "attack_stages": [
+      "cracking",
+      "dirb",
+      "network_scans",
+      "service_scans",
+      "webshell",
+      "wpscan"
+    ],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 935,
+      "kept_alerts": 50
+    },
+    "sealed": true
+  }
+}

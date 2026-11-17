@@ -1,0 +1,183 @@
+{
+  "incident_id": "ait-sess-wilson-wilson-0073",
+  "name": "ATTEST-AIT wilson/wilson session 73",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wilson/wilson/session-0073",
+  "alert": {
+    "timestamp": "2022-02-07T08:54:36Z",
+    "host": "wilson",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (3 alerts; detectors: AMiner: New event type.).",
+    "scenario": "wilson"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-07T08:54:36Z",
+    "end": "2022-02-07T08:54:36Z",
+    "hosts": [
+      "wilson"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-3b5d2e3b",
+        "timestamp": "2022-02-07T08:54:36Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-07 08:54:36 kobrien/192.168.226.96:34616 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-64352ec7",
+        "timestamp": "2022-02-07T08:54:36Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-07 08:54:36 kobrien/192.168.226.96:34616 TLS Error: TLS handshake failed",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-dd9044b5",
+        "timestamp": "2022-02-07T08:54:36Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-07 08:54:36 kobrien/192.168.226.96:34616 TLS: move_session: dest=TM_LAME_DUCK src=TM_ACTIVE reinit_src=1",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-3b5d2e3b",
+      "source": "alerts",
+      "timestamp": "2022-02-07T08:54:36Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-07 08:54:36 kobrien/192.168.226.96:34616 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-64352ec7",
+      "source": "alerts",
+      "timestamp": "2022-02-07T08:54:36Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-07 08:54:36 kobrien/192.168.226.96:34616 TLS Error: TLS handshake failed",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-dd9044b5",
+      "source": "alerts",
+      "timestamp": "2022-02-07T08:54:36Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-07 08:54:36 kobrien/192.168.226.96:34616 TLS: move_session: dest=TM_LAME_DUCK src=TM_ACTIVE reinit_src=1",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (3 alerts; detectors: AMiner: New event type.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (3 alerts; detectors: AMiner: New event type.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wilson/wilson/session-0073",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 3,
+      "kept_alerts": 3
+    },
+    "sealed": true
+  }
+}

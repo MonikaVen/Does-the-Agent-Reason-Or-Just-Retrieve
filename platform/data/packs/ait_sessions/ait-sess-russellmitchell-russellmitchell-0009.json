@@ -1,0 +1,606 @@
+{
+  "incident_id": "ait-sess-russellmitchell-russellmitchell-0009",
+  "name": "ATTEST-AIT russellmitchell/russellmitchell session 9",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "russellmitchell/russellmitchell/session-0009",
+  "alert": {
+    "timestamp": "2022-01-21T05:20:07Z",
+    "host": "russellmitchell",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (50 alerts; detectors: AMiner: High entropy in Apache Access referer., AMiner: High entropy in Apache Access request., AMiner: High entropy in Apache Acces",
+    "scenario": "russellmitchell"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-21T05:20:07Z",
+    "end": "2022-01-21T05:30:09Z",
+    "hosts": [
+      "russellmitchell"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-123b5da9",
+        "timestamp": "2022-01-21T05:20:07Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 05:20:07 dnsmasq[3326]: forwarded smtp.davey.russellmitchell.com to 127.0.0.1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-88aba278",
+        "timestamp": "2022-01-21T05:20:07Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 05:20:07 dnsmasq[3326]: nameserver 127.0.0.1 refused to do a recursive query",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-e55b4fca",
+        "timestamp": "2022-01-21T05:20:12Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "192.168.231.180 - - [21/Jan/2022:05:20:12 +0000] \"GET / HTTP/1.1\" 302 3229 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-78c45188",
+        "timestamp": "2022-01-21T05:20:12Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "192.168.231.180 - - [21/Jan/2022:05:20:12 +0000] \"GET / HTTP/1.1\" 302 3229 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-df35af70",
+        "timestamp": "2022-01-21T05:20:12Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "192.168.231.180 - - [21/Jan/2022:05:20:12 +0000] \"GET / HTTP/1.1\" 302 3229 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-e36c817d",
+        "timestamp": "2022-01-21T05:20:12Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in Apache Access referer.",
+        "message": "192.168.231.180 - - [21/Jan/2022:05:20:12 +0000] \"GET / HTTP/1.1\" 302 3229 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-0f882269",
+        "timestamp": "2022-01-21T05:20:12Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in Apache Access user agent.",
+        "message": "192.168.231.180 - - [21/Jan/2022:05:20:12 +0000] \"GET / HTTP/1.1\" 302 3229 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-33c6eb0d",
+        "timestamp": "2022-01-21T05:20:12Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "192.168.231.180 - - [21/Jan/2022:05:20:12 +0000] \"GET /login.php HTTP/1.1\" 200 2465 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-76900ef5",
+        "timestamp": "2022-01-21T05:20:12Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "192.168.231.180 - - [21/Jan/2022:05:20:12 +0000] \"GET /themes/default/screen.css HTTP/1.1\" 200 9699 \"https://smtp.davey.russellmitchell.com/login.php\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-cd7289cc",
+        "timestamp": "2022-01-21T05:20:12Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in Apache Access referer.",
+        "message": "192.168.231.180 - - [21/Jan/2022:05:20:12 +0000] \"GET /themes/default/screen.css HTTP/1.1\" 200 9699 \"https://smtp.davey.russellmitchell.com/login.php\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-eb3d4938",
+        "timestamp": "2022-01-21T05:20:12Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "192.168.231.180 - - [21/Jan/2022:05:20:12 +0000] \"GET /themes/default/mozilla.css HTTP/1.1\" 200 657 \"https://smtp.davey.russellmitchell.com/login.php\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-a306a35d",
+        "timestamp": "2022-01-21T05:20:12Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "192.168.231.180 - - [21/Jan/2022:05:20:12 +0000] \"GET /js/login.js?v=d0d0749382c4cc649651134fc974b2e8 HTTP/1.1\" 200 1650 \"https://smtp.davey.russellmitchell.com/login.php\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-c382c14f",
+        "timestamp": "2022-01-21T05:20:12Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "192.168.231.180 - - [21/Jan/2022:05:20:12 +0000] \"GET /themes/default/graphics/locked-inv.png HTTP/1.1\" 200 632 \"https://smtp.davey.russellmitchell.com/themes/default/screen.css\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-3f51c04b",
+        "timestamp": "2022-01-21T05:20:12Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "192.168.231.180 - - [21/Jan/2022:05:20:12 +0000] \"GET /js/accesskeys.js?v=d0d0749382c4cc649651134fc974b2e8 HTTP/1.1\" 200 1537 \"https://smtp.davey.russellmitchell.com/login.php\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-462b8641",
+        "timestamp": "2022-01-21T05:20:12Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "192.168.231.180 - - [21/Jan/2022:05:20:12 +0000] \"GET /themes/default/graphics/horde-power1.png HTTP/1.1\" 200 2601 \"https://smtp.davey.russellmitchell.com/login.php\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-86186e87",
+        "timestamp": "2022-01-21T05:20:17Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 05:20:17 davey-mail dovecot: imap-login: Login: user=<andrea.moss>, method=PLAIN, rip=192.168.231.56, lip=192.168.231.56, mpid=6298, TLS, session=<b8lFxhDWlObAqOc4>",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-7210ce90",
+        "timestamp": "2022-01-21T05:20:17Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 05:20:17 davey-mail HORDE: [horde] Login success for andrea.moss to horde (192.168.231.180) [pid 32661 on line 163 of \"/usr/share/horde/login.php\"]",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-6d25bacd",
+        "timestamp": "2022-01-21T05:20:17Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 05:20:17 davey-mail HORDE: [imp] Login success for andrea.moss (192.168.231.180) to {imap://smtp.davey.russellmitchell.com/} [pid 32661 on line 156 of \"/usr/share/horde/imp/lib/Auth.php\"]",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-5dcb4565",
+        "timestamp": "2022-01-21T05:20:17Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "192.168.231.180 - - [21/Jan/2022:05:20:17 +0000] \"POST /login.php HTTP/1.1\" 302 731 \"https://smtp.davey.russellmitchell.com/login.php\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-144bf7b6",
+        "timestamp": "2022-01-21T05:20:17Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New query record in DNS logs.",
+        "message": "Jan 21 05:20:17 dnsmasq[3326]: query[PTR] 180.231.168.192.in-addr.arpa from 192.168.231.56",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-e233dd74",
+        "timestamp": "2022-01-21T05:20:18Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "192.168.231.180 - - [21/Jan/2022:05:20:18 +0000] \"GET /imp/themes/default/mime.css HTTP/1.1\" 200 501 \"https://smtp.davey.russellmitchell.com/imp/dynamic.php?page=mailbox\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-9bfffc87",
+        "timestamp": "2022-01-21T05:20:18Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "192.168.231.180 - - [21/Jan/2022:05:20:18 +0000] \"GET /imp/js/viewport_utils.js?v=b2b582864b8fa969bd5860bc72f0d3da HTTP/1.1\" 200 1264 \"https://smtp.davey.russellmitchell.com/imp/dynamic.php?page=mailbox\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-c054ffc7",
+        "timestamp": "2022-01-21T05:20:18Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "192.168.231.180 - - [21/Jan/2022:05:20:18 +0000] \"GET /js/date/en-US.js?v=d0d0749382c4cc649651134fc974b2e8 HTTP/1.1\" 200 2735 \"https://smtp.davey.russellmitchell.com/imp/dynamic.php?page=mailbox\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-7b1014cd",
+        "timestamp": "2022-01-21T05:20:18Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "192.168.231.180 - - [21/Jan/2022:05:20:18 +0000] \"POST /services/ajax.php/imp/dynamicInit HTTP/1.1\" 200 1626 \"https://smtp.davey.russellmitchell.com/imp/dynamic.php?page=mailbox\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0025-d481737d",
+        "timestamp": "2022-01-21T05:21:33Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "192.168.231.180 - - [21/Jan/2022:05:21:33 +0000] \"GET /login.php?horde_logout_token=ZSAI31cPNKHk3ZCSRMLcoau&logout_reason=4 HTTP/1.1\" 200 3997 \"https://smtp.davey.russellmitchell.com/imp/dynamic.php?page=mailbox\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0026-2504c760",
+        "timestamp": "2022-01-21T05:24:02Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 05:24:02 dnsmasq[3468]: query[A] location.services.mozilla.com from 10.143.3.65",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0027-155a06f5",
+        "timestamp": "2022-01-21T05:24:04Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 21 05:24:04 dnsmasq[3326]: query[A] worldbank.org from 192.168.230.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0028-94e8f8ad",
+        "timestamp": "2022-01-21T05:24:04Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 21 05:24:04 dnsmasq[3326]: forwarded worldbank.org to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0029-e55f6dfd",
+        "timestamp": "2022-01-21T05:24:04Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 21 05:24:04 dnsmasq[3326]: query[AAAA] worldbank.org from 192.168.230.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0030-5f0f8cac",
+        "timestamp": "2022-01-21T05:24:04Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 21 05:24:04 dnsmasq[3326]: reply worldbank.org is NODATA-IPv6",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0031-c1b2112f",
+        "timestamp": "2022-01-21T05:24:04Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 21 05:24:04 dnsmasq[3326]: reply worldbank.org is 99.86.237.62",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0032-1a71f3ac",
+        "timestamp": "2022-01-21T05:24:04Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 21 05:24:04 dnsmasq[3326]: reply worldbank.org is 99.86.237.45",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0033-6700156a",
+        "timestamp": "2022-01-21T05:24:04Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 21 05:24:04 dnsmasq[3326]: reply worldbank.org is 99.86.237.60",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0034-d178b99d",
+        "timestamp": "2022-01-21T05:24:04Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 21 05:24:04 dnsmasq[3468]: query[A] worldbank.org from 10.143.3.65",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0035-739c4246",
+        "timestamp": "2022-01-21T05:24:04Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 21 05:24:04 dnsmasq[3468]: forwarded worldbank.org to 192.168.231.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0036-739c4246",
+        "timestamp": "2022-01-21T05:24:04Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 21 05:24:04 dnsmasq[3468]: forwarded worldbank.org to 192.168.231.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0037-5afb71f3",
+        "timestamp": "2022-01-21T05:24:04Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 21 05:24:04 dnsmasq[3468]: reply worldbank.org is NODATA-IPv6",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0038-20e92d69",
+        "timestamp": "2022-01-21T05:24:04Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 21 05:24:04 dnsmasq[3468]: reply worldbank.org is 99.86.237.62",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0039-065e8b2c",
+        "timestamp": "2022-01-21T05:24:04Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 21 05:24:04 dnsmasq[3468]: reply worldbank.org is 99.86.237.89",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0040-2fcb24b3",
+        "timestamp": "2022-01-21T05:24:04Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 21 05:24:04 dnsmasq[3468]: reply worldbank.org is 99.86.237.60",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0041-c0f9a21e",
+        "timestamp": "2022-01-21T05:24:06Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 21 05:24:06 dnsmasq[3326]: query[A] ocsp.pki.goog from 192.168.230.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0042-5399fc9b",
+        "timestamp": "2022-01-21T05:24:06Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 21 05:24:06 dnsmasq[3326]: query[AAAA] ocsp.pki.goog from 192.168.230.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0043-f642f6dc",
+        "timestamp": "2022-01-21T05:24:06Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 21 05:24:06 dnsmasq[3326]: forwarded ocsp.pki.goog to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0044-9bb6c52e",
+        "timestamp": "2022-01-21T05:24:06Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 21 05:24:06 dnsmasq[3326]: reply ocsp.pki.goog is <CNAME>",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0045-8075a2ed",
+        "timestamp": "2022-01-21T05:24:06Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 21 05:24:06 dnsmasq[3468]: query[A] ocsp.pki.goog from 10.143.3.65",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0046-f2402960",
+        "timestamp": "2022-01-21T05:24:06Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 21 05:24:06 dnsmasq[3468]: forwarded ocsp.pki.goog to 192.168.231.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0047-4c7ae231",
+        "timestamp": "2022-01-21T05:24:06Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 21 05:24:06 dnsmasq[3468]: query[AAAA] ocsp.pki.goog from 10.143.3.65",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0048-f4176112",
+        "timestamp": "2022-01-21T05:24:06Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 21 05:24:06 dnsmasq[3468]: reply ocsp.pki.goog is <CNAME>",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0049-f4176112",
+        "timestamp": "2022-01-21T05:24:06Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 21 05:24:06 dnsmasq[3468]: reply ocsp.pki.goog is <CNAME>",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0050-94c390df",
+        "timestamp": "2022-01-21T05:27:23Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 05:27:23 dnsmasq[3326]: query[A] motd.ubuntu.com from 192.168.231.68",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-123b5da9",
+      "source": "alerts",
+      "timestamp": "2022-01-21T05:20:07Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 05:20:07 dnsmasq[3326]: forwarded smtp.davey.russellmitchell.com to 127.0.0.1",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-88aba278",
+      "source": "alerts",
+      "timestamp": "2022-01-21T05:20:07Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 05:20:07 dnsmasq[3326]: nameserver 127.0.0.1 refused to do a recursive query",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-e55b4fca",
+      "source": "alerts",
+      "timestamp": "2022-01-21T05:20:12Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "192.168.231.180 - - [21/Jan/2022:05:20:12 +0000] \"GET / HTTP/1.1\" 302 3229 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (50 alerts; detectors: AMiner: High entropy in Apache Access referer., AMiner: High entropy in Apache Access request., AMiner: High entropy in Apache Acces",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (50 alerts; detectors: AMiner: High entropy in Apache Access referer., AMiner: High entropy in Apache Access request., AMiner: High entropy in Apache Acces",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "russellmitchell/russellmitchell/session-0009",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 66,
+      "kept_alerts": 50
+    },
+    "sealed": true
+  }
+}

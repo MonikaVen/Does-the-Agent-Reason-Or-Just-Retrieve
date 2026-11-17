@@ -1,0 +1,210 @@
+{
+  "incident_id": "ait-sess-wheeler-wheeler-0029",
+  "name": "ATTEST-AIT wheeler/wheeler session 29",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wheeler/wheeler/session-0029",
+  "alert": {
+    "timestamp": "2022-01-27T06:25:01Z",
+    "host": "wheeler",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (6 alerts; detectors: AMiner: New event type.).",
+    "scenario": "wheeler"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-27T06:25:01Z",
+    "end": "2022-01-27T06:34:37Z",
+    "hosts": [
+      "wheeler"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-4a465381",
+        "timestamp": "2022-01-27T06:25:01Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 27 06:25:01 inet-dns rsyslogd:  [origin software=\"rsyslogd\" swVersion=\"8.32.0\" x-pid=\"829\" x-info=\"http://www.rsyslog.com\"] rsyslogd was HUPed",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-4951c0c9",
+        "timestamp": "2022-01-27T06:25:02Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 27 06:25:02 mail liblogging-stdlog:  [origin software=\"rsyslogd\" swVersion=\"8.24.0\" x-pid=\"506\" x-info=\"http://www.rsyslog.com\"] rsyslogd was HUPed",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-84fb502c",
+        "timestamp": "2022-01-27T06:25:07Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 27 06:25:07 webserver apachectl[16552]: AH00548: NameVirtualHost has no effect and will be removed in the next release /etc/apache2/sites-enabled/000-catch-all.conf:1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-9490cbf9",
+        "timestamp": "2022-01-27T06:25:08Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "[Thu Jan 27 06:25:08.039387 2022] [ssl:warn] [pid 31152] AH01909: 000-catch-all:443:0 server certificate does NOT include an ID which matches the server name",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-378025ac",
+        "timestamp": "2022-01-27T06:34:37Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "[Thu Jan 27 06:34:37.965319 2022] [:error] [pid 29719] [client 10.38.243.24:39580] PHP Warning:  Declaration of Horde_Form_Type_pgp::init($gpg, $temp_dir = NULL, $rows = NULL, $cols = NULL) should be compatible with Horde_Form_Type_longtext::init($rows = 8, $cols = 80, $helper = Array) in /usr/share/php/Horde/Form/Type.php on line 863",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-e8776137",
+        "timestamp": "2022-01-27T06:34:37Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "[Thu Jan 27 06:34:37.972713 2022] [:error] [pid 29719] [client 10.38.243.24:39580] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Horde_Form_Variable has a deprecated constructor in /usr/share/php/Horde/Form/Variable.php on line 9",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-4a465381",
+      "source": "alerts",
+      "timestamp": "2022-01-27T06:25:01Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 27 06:25:01 inet-dns rsyslogd:  [origin software=\"rsyslogd\" swVersion=\"8.32.0\" x-pid=\"829\" x-info=\"http://www.rsyslog.com\"] rsyslogd was HUPed",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-4951c0c9",
+      "source": "alerts",
+      "timestamp": "2022-01-27T06:25:02Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 27 06:25:02 mail liblogging-stdlog:  [origin software=\"rsyslogd\" swVersion=\"8.24.0\" x-pid=\"506\" x-info=\"http://www.rsyslog.com\"] rsyslogd was HUPed",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-84fb502c",
+      "source": "alerts",
+      "timestamp": "2022-01-27T06:25:07Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 27 06:25:07 webserver apachectl[16552]: AH00548: NameVirtualHost has no effect and will be removed in the next release /etc/apache2/sites-enabled/000-catch-all.conf:1",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (6 alerts; detectors: AMiner: New event type.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (6 alerts; detectors: AMiner: New event type.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wheeler/wheeler/session-0029",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 6,
+      "kept_alerts": 6
+    },
+    "sealed": true
+  }
+}

@@ -1,0 +1,606 @@
+{
+  "incident_id": "ait-sess-wheeler-wheeler-0010",
+  "name": "ATTEST-AIT wheeler/wheeler session 10",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wheeler/wheeler/session-0010",
+  "alert": {
+    "timestamp": "2022-01-26T06:17:27Z",
+    "host": "wheeler",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (50 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New characters in Apache Access referer., AMiner: New characters in Apache Access request.).",
+    "scenario": "wheeler"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-26T06:17:27Z",
+    "end": "2022-01-26T07:11:40Z",
+    "hosts": [
+      "wheeler"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-ce14062e",
+        "timestamp": "2022-01-26T06:17:27Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 26 06:17:27 inet-dns dbus-daemon[831]: [system] Reloaded configuration",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-e824dfe7",
+        "timestamp": "2022-01-26T06:18:34Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "192.168.2.157 - - [26/Jan/2022:06:18:34 +0000] \"GET /nag/task.php?tasklist=gfEGUoFQQR_sIGW3DOSFnHO&task=s6XYvabjA7ixjnvJxfKe3GM&actionID=modify_task&have_search&tab_name=1&url=%2Fnag%2Flist.php HTTP/1.1\" 200 9917 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-9c2154c3",
+        "timestamp": "2022-01-26T06:19:33Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 26 06:19:33 inet-dns sshd[1048]: Received signal 15; terminating.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-1edda890",
+        "timestamp": "2022-01-26T06:19:39Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 26 06:19:39 inet-dns systemd-networkd[6278]: ens3: Gained IPv6LL",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-dea0064c",
+        "timestamp": "2022-01-26T06:19:57Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 26 06:19:57 inet-dns grub-common[7988]:  * Recording successful boot for GRUB",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-418cb1d6",
+        "timestamp": "2022-01-26T06:19:59Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 26 06:19:59 inet-dns 10freedos: debug: /dev/vda15 is a FAT32 partition",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-070a7176",
+        "timestamp": "2022-01-26T06:19:59Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 26 06:19:59 inet-dns 30utility: debug: /dev/vda15 is a FAT32 partition",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-4c2cd35c",
+        "timestamp": "2022-01-26T06:22:20Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "type=SYSCALL msg=audit(1643178140.516:185): arch=c000003e syscall=1 success=yes exit=44953 a0=6 a1=5613c7e48300 a2=af99 a3=0 items=0 ppid=9520 pid=9521 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=4294967295 comm=\"apparmor_parser\" exe=\"/sbin/apparmor_parser\" key=(null)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-9ec92fd1",
+        "timestamp": "2022-01-26T06:23:30Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1643178210.316:189): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=apport comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-09294a3e",
+        "timestamp": "2022-01-26T06:23:53Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 26 06:23:53 dnsmasq[12225]: reply iso.org is 138.81.131.132",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-87470612",
+        "timestamp": "2022-01-26T06:23:53Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 26 06:23:53 dnsmasq[14167]: forwarded iso.org to 172.27.183.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-87470612",
+        "timestamp": "2022-01-26T06:23:53Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 26 06:23:53 dnsmasq[14167]: forwarded iso.org to 172.27.183.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-0492c2e0",
+        "timestamp": "2022-01-26T06:23:54Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 26 06:23:54 dnsmasq[12225]: reply ocsp.pki.goog is <CNAME>",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-25aeb642",
+        "timestamp": "2022-01-26T06:23:54Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 26 06:23:54 dnsmasq[14167]: reply ocsp.pki.goog is <CNAME>",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-a7a4ea0a",
+        "timestamp": "2022-01-26T06:24:07Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1643178247.128:196): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=ssh comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-5a33b6ec",
+        "timestamp": "2022-01-26T06:24:12Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1643178252.864:201): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-resolved comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-0f421cb8",
+        "timestamp": "2022-01-26T06:24:12Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1643178252.992:206): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-timesyncd comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-b55eaeb1",
+        "timestamp": "2022-01-26T06:24:13Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1643178253.076:211): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-journald comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-0ae10bfd",
+        "timestamp": "2022-01-26T06:24:29Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1643178269.687:220): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=grub-common comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-9c297c05",
+        "timestamp": "2022-01-26T06:25:01Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-26 06:25:01 1nCbjp-00044j-8M <= root@mailserver.flores.wheeler.biz U=root P=local S=840",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-55447052",
+        "timestamp": "2022-01-26T06:25:16Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1643178316.391:229): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=apt-daily-upgrade comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-f40e1481",
+        "timestamp": "2022-01-26T06:26:18Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 06:26:18 dnsmasq[12225]: query[PTR] 56.183.27.172.in-addr.arpa from 172.27.181.253",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-de70970b",
+        "timestamp": "2022-01-26T06:29:12Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 26 06:29:12 intranet-server sshd[13154]: Accepted publickey for gburke from 192.168.0.91 port 56188 ssh2: RSA SHA256:8wFbiaYPevKS/wYKnePO20v0iymTcrRh4Kr+1uRS1UM",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-72b15304",
+        "timestamp": "2022-01-26T06:29:12Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643178552.733:561): pid=13154 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gburke\" exe=\"/usr/sbin/sshd\" hostname=192.168.0.91 addr=192.168.0.91 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0025-55f8adda",
+        "timestamp": "2022-01-26T06:29:12Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1643178552.761:565): pid=13156 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"gburke\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0026-fa4677bb",
+        "timestamp": "2022-01-26T06:29:13Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "type=USER_LOGIN msg=audit(1643178553.681:571): pid=13154 uid=0 auid=1002 ses=99 msg='op=login id=1002 exe=\"/usr/sbin/sshd\" hostname=192.168.0.91 addr=192.168.0.91 terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0027-7f3b8ede",
+        "timestamp": "2022-01-26T06:32:41Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643178761.418:2462): pid=15774 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"april.jackson\" exe=\"/usr/lib/dovecot/auth\" hostname=10.38.242.195 addr=10.38.242.195 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0028-fdb2366f",
+        "timestamp": "2022-01-26T06:36:09Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-26 06:36:09 ajackson/172.27.181.43:39888 [ajackson] Inactivity timeout (--ping-restart), restarting",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0029-6fad494a",
+        "timestamp": "2022-01-26T06:40:03Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "10.38.243.125 - - [26/Jan/2022:06:40:03 +0000] \"GET /imp/themes/default/mime.css HTTP/1.1\" 200 494 \"https://mail.flores.wheeler.biz/imp/dynamic.php?page=message&buid=10&mailbox=SU5CT1g&token=9qr9sgILMWub60b3imcOWwk&uniq=1643179203019\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0030-a3a58103",
+        "timestamp": "2022-01-26T06:45:24Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 26 06:45:24 dnsmasq[12225]: query[A] ocsp.pki.goog from 172.27.180.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0031-b05d13f1",
+        "timestamp": "2022-01-26T06:45:24Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 26 06:45:24 dnsmasq[12225]: reply ocsp.pki.goog is <CNAME>",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0032-f36ce4cf",
+        "timestamp": "2022-01-26T06:45:24Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 26 06:45:24 dnsmasq[14167]: query[AAAA] ocsp.pki.goog from 192.168.3.138",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0033-b228dda6",
+        "timestamp": "2022-01-26T06:46:25Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 06:46:25 dnsmasq[12225]: query[MX] sanchez.wheeler.biz from 172.27.180.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0034-e75f4d8b",
+        "timestamp": "2022-01-26T06:48:33Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 06:48:33 dnsmasq[12225]: query[SRV] _http._tcp.archive.ubuntu.com from 172.27.180.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0035-e8c160df",
+        "timestamp": "2022-01-26T06:54:10Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 26 06:54:10 dnsmasq[12225]: reply ipv4only.arpa is NODATA-IPv6",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0036-7c165a21",
+        "timestamp": "2022-01-26T06:54:10Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 26 06:54:10 dnsmasq[14167]: reply ipv4only.arpa is NODATA-IPv6",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0037-0ec60eef",
+        "timestamp": "2022-01-26T06:56:43Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 06:56:43 dnsmasq[12225]: query[MX] flores.wheeler.biz from 172.27.181.253",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0038-68484951",
+        "timestamp": "2022-01-26T06:58:12Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 26 06:58:12 dnsmasq[12225]: forwarded ocsp.pki.goog to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0039-58f3c57c",
+        "timestamp": "2022-01-26T06:58:12Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 26 06:58:12 dnsmasq[14167]: forwarded ocsp.pki.goog to 172.27.183.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0040-15f780a4",
+        "timestamp": "2022-01-26T06:58:12Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 26 06:58:12 dnsmasq[14167]: reply ocsp.pki.goog is <CNAME>",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0041-29eea4ed",
+        "timestamp": "2022-01-26T06:58:57Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 26 06:58:57 dnsmasq[12225]: forwarded yale.edu to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0042-8d82d115",
+        "timestamp": "2022-01-26T06:58:57Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 26 06:58:57 dnsmasq[12225]: reply yale.edu is 151.101.66.133",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0043-a6a3aac6",
+        "timestamp": "2022-01-26T07:01:12Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "cloud.dmz.flores.wheeler.biz:443 10.38.243.24 - - [26/Jan/2022:07:01:12 +0000] \"DELETE /ocs/v2.php/apps/files_sharing/api/v1/shares/3?format=json HTTP/1.1\" 200 3832 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0044-262e2df8",
+        "timestamp": "2022-01-26T07:05:01Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643180701.942:2602): pid=16281 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"robert.rogers\" exe=\"/usr/lib/dovecot/auth\" hostname=10.38.242.195 addr=10.38.242.195 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0045-5bc7ed4c",
+        "timestamp": "2022-01-26T07:07:30Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 26 07:07:30 dnsmasq[12225]: forwarded europa.eu to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0046-7621b9e5",
+        "timestamp": "2022-01-26T07:07:30Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 26 07:07:30 dnsmasq[14167]: forwarded europa.eu to 172.27.183.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0047-caf17123",
+        "timestamp": "2022-01-26T07:07:31Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 26 07:07:31 dnsmasq[12225]: forwarded ec.europa.eu to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0048-6a65a0e3",
+        "timestamp": "2022-01-26T07:07:31Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 26 07:07:31 dnsmasq[14167]: query[A] ec.europa.eu from 10.38.243.125",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0049-609ee78e",
+        "timestamp": "2022-01-26T07:11:40Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 26 07:11:40 dnsmasq[12225]: query[A] edpb.europa.eu from 172.27.180.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0050-b7939702",
+        "timestamp": "2022-01-26T07:11:40Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 26 07:11:40 dnsmasq[14167]: query[A] edpb.europa.eu from 10.38.243.125",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-ce14062e",
+      "source": "alerts",
+      "timestamp": "2022-01-26T06:17:27Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 26 06:17:27 inet-dns dbus-daemon[831]: [system] Reloaded configuration",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-e824dfe7",
+      "source": "alerts",
+      "timestamp": "2022-01-26T06:18:34Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "192.168.2.157 - - [26/Jan/2022:06:18:34 +0000] \"GET /nag/task.php?tasklist=gfEGUoFQQR_sIGW3DOSFnHO&task=s6XYvabjA7ixjnvJxfKe3GM&actionID=modify_task&have_search&tab_name=1&url=%2Fnag%2Flist.php HTTP/1.1\" 200 9917 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-9c2154c3",
+      "source": "alerts",
+      "timestamp": "2022-01-26T06:19:33Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 26 06:19:33 inet-dns sshd[1048]: Received signal 15; terminating.",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (50 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New characters in Apache Access referer., AMiner: New characters in Apache Access request.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (50 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New characters in Apache Access referer., AMiner: New characters in Apache Access request.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wheeler/wheeler/session-0010",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 186,
+      "kept_alerts": 50
+    },
+    "sealed": true
+  }
+}

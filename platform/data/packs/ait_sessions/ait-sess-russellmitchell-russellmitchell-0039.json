@@ -1,0 +1,219 @@
+{
+  "incident_id": "ait-sess-russellmitchell-russellmitchell-0039",
+  "name": "ATTEST-AIT russellmitchell/russellmitchell session 39",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "russellmitchell/russellmitchell/session-0039",
+  "alert": {
+    "timestamp": "2022-01-23T14:54:54Z",
+    "host": "russellmitchell",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (7 alerts; detectors: AMiner: New event type.).",
+    "scenario": "russellmitchell"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-23T14:54:54Z",
+    "end": "2022-01-23T14:57:24Z",
+    "hosts": [
+      "russellmitchell"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-801c1292",
+        "timestamp": "2022-01-23T14:54:54Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-23 14:54:54 jhall/192.168.230.165:59814 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-35c588eb",
+        "timestamp": "2022-01-23T14:54:54Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-23 14:54:54 jhall/192.168.230.165:59814 TLS Error: TLS handshake failed",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-6ccf09c2",
+        "timestamp": "2022-01-23T14:54:54Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-23 14:54:54 jhall/192.168.230.165:59814 TLS: move_session: dest=TM_LAME_DUCK src=TM_ACTIVE reinit_src=1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-469be3c1",
+        "timestamp": "2022-01-23T14:56:09Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-23 14:56:09 jhall/192.168.230.165:59814 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-95341e2b",
+        "timestamp": "2022-01-23T14:56:09Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-23 14:56:09 jhall/192.168.230.165:59814 TLS Error: TLS handshake failed",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-b31fd9e7",
+        "timestamp": "2022-01-23T14:57:24Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-23 14:57:24 jhall/192.168.230.165:59814 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-8a17772d",
+        "timestamp": "2022-01-23T14:57:24Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-23 14:57:24 jhall/192.168.230.165:59814 TLS Error: TLS handshake failed",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-801c1292",
+      "source": "alerts",
+      "timestamp": "2022-01-23T14:54:54Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-23 14:54:54 jhall/192.168.230.165:59814 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-35c588eb",
+      "source": "alerts",
+      "timestamp": "2022-01-23T14:54:54Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-23 14:54:54 jhall/192.168.230.165:59814 TLS Error: TLS handshake failed",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-6ccf09c2",
+      "source": "alerts",
+      "timestamp": "2022-01-23T14:54:54Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-23 14:54:54 jhall/192.168.230.165:59814 TLS: move_session: dest=TM_LAME_DUCK src=TM_ACTIVE reinit_src=1",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (7 alerts; detectors: AMiner: New event type.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (7 alerts; detectors: AMiner: New event type.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "russellmitchell/russellmitchell/session-0039",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 7,
+      "kept_alerts": 7
+    },
+    "sealed": true
+  }
+}

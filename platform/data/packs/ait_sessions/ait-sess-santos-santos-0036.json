@@ -1,0 +1,201 @@
+{
+  "incident_id": "ait-sess-santos-santos-0036",
+  "name": "ATTEST-AIT santos/santos session 36",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "santos/santos/session-0036",
+  "alert": {
+    "timestamp": "2022-01-15T08:43:11Z",
+    "host": "santos",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (5 alerts; detectors: AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+    "scenario": "santos"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-15T08:43:11Z",
+    "end": "2022-01-15T08:59:51Z",
+    "hosts": [
+      "santos"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-db8c0989",
+        "timestamp": "2022-01-15T08:43:11Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 15 08:43:11 dnsmasq[14919]: query[MX] rogersturnbull.santos.com from 172.21.131.50",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-7de7bbd6",
+        "timestamp": "2022-01-15T08:56:28Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 15 08:56:28 dnsmasq[14569]: query[PTR] 25.2.229.10.in-addr.arpa from 10.229.2.25",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-4ca9608a",
+        "timestamp": "2022-01-15T08:59:33Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 15 08:59:33 dnsmasq[14569]: query[MX] smith.santos.com from 10.229.2.25",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-aee62c64",
+        "timestamp": "2022-01-15T08:59:49Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 15 08:59:49 dnsmasq[14569]: query[PTR] 80.0.229.10.in-addr.arpa from 10.229.0.32",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-228a2444",
+        "timestamp": "2022-01-15T08:59:51Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 15 08:59:51 dnsmasq[14919]: query[AAAA] xp.itunes-apple.com.akadns.net from 192.168.104.95",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-db8c0989",
+      "source": "alerts",
+      "timestamp": "2022-01-15T08:43:11Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 15 08:43:11 dnsmasq[14919]: query[MX] rogersturnbull.santos.com from 172.21.131.50",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-7de7bbd6",
+      "source": "alerts",
+      "timestamp": "2022-01-15T08:56:28Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 15 08:56:28 dnsmasq[14569]: query[PTR] 25.2.229.10.in-addr.arpa from 10.229.2.25",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-4ca9608a",
+      "source": "alerts",
+      "timestamp": "2022-01-15T08:59:33Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 15 08:59:33 dnsmasq[14569]: query[MX] smith.santos.com from 10.229.2.25",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (5 alerts; detectors: AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (5 alerts; detectors: AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "santos/santos/session-0036",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 5,
+      "kept_alerts": 5
+    },
+    "sealed": true
+  }
+}

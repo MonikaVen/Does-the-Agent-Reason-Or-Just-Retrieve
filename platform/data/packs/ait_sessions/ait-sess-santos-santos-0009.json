@@ -1,0 +1,336 @@
+{
+  "incident_id": "ait-sess-santos-santos-0009",
+  "name": "ATTEST-AIT santos/santos session 9",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "santos/santos/session-0009",
+  "alert": {
+    "timestamp": "2022-01-14T06:34:34Z",
+    "host": "santos",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (20 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New event type., AMiner: New status code in Apache Access log.).",
+    "scenario": "santos"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-14T06:34:34Z",
+    "end": "2022-01-14T06:40:47Z",
+    "hosts": [
+      "santos"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-a56f865c",
+        "timestamp": "2022-01-14T06:34:34Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "cloud.dmz.smith.santos.com:443 172.21.129.224 - - [14/Jan/2022:06:34:34 +0000] \"GET / HTTP/1.1\" 302 4065 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-0199986d",
+        "timestamp": "2022-01-14T06:34:42Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "cloud.dmz.smith.santos.com:443 172.21.129.224 - - [14/Jan/2022:06:34:42 +0000] \"POST /index.php/login HTTP/1.1\" 303 3848 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-f47c938c",
+        "timestamp": "2022-01-14T06:34:50Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "cloud.dmz.smith.santos.com:80 ::1 - - [14/Jan/2022:06:34:50 +0000] \"OPTIONS * HTTP/1.0\" 200 126 \"-\" \"Apache/2.4.29 (Ubuntu) PHP/7.4.27 OpenSSL/1.1.1 (internal dummy connection)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-2fa05983",
+        "timestamp": "2022-01-14T06:39:16Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642142356.097:1697): pid=8873 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"carol.mckenzie\" exe=\"/usr/lib/dovecot/auth\" hostname=172.21.131.50 addr=172.21.131.50 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-3d234448",
+        "timestamp": "2022-01-14T06:39:16Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642142356.097:1698): pid=8873 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"carol.mckenzie\" exe=\"/usr/lib/dovecot/auth\" hostname=172.21.131.50 addr=172.21.131.50 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-f3f464a9",
+        "timestamp": "2022-01-14T06:40:17Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 14 06:40:17 dnsmasq[14569]: query[A] 3x6-.482-.c0tOudaB6pZZR*otiKagBrbrn3wdUQeKg/EQ5uNvcXb3Qn**AWFxpDMOHxh6-.Llchu*zQleX16CHOTAnPqmD0OHOm/yJdy4r7nrNqmnclVYX9CSlu8feGYDZy-.wlbpwpsXzN*nIK8H*x7bnBPZhT2olf7QRlcU9bMIuqLYEWxycX0ikhDiXALw-.customers_2020.xlsx.kiirjekuimkpcrcioastvkeodpnimx.biz from 10.229.0.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-75f09fb1",
+        "timestamp": "2022-01-14T06:40:39Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-14 06:40:39 sfitzgerald/10.229.3.237:60223 [sfitzgerald] Inactivity timeout (--ping-restart), restarting",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-20f52003",
+        "timestamp": "2022-01-14T06:40:39Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-14 06:40:39 sfitzgerald/10.229.3.237:60223 SIGUSR1[soft,ping-restart] received, client-instance restarting",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-e57b3e32",
+        "timestamp": "2022-01-14T06:40:47Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 14 06:40:47 dnsmasq[14569]: query[A] www.google.at from 10.229.0.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-a0fa2cdf",
+        "timestamp": "2022-01-14T06:40:47Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 14 06:40:47 dnsmasq[14569]: forwarded www.google.at to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-22d1ad16",
+        "timestamp": "2022-01-14T06:40:47Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 14 06:40:47 dnsmasq[14569]: query[AAAA] www.google.at from 10.229.0.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-a0fa2cdf",
+        "timestamp": "2022-01-14T06:40:47Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 14 06:40:47 dnsmasq[14569]: forwarded www.google.at to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-e5ec48f3",
+        "timestamp": "2022-01-14T06:40:47Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 14 06:40:47 dnsmasq[14569]: reply www.google.at is 142.250.180.195",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-57fb501e",
+        "timestamp": "2022-01-14T06:40:47Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 14 06:40:47 dnsmasq[14569]: reply www.google.at is 2a00:1450:400d:806::2003",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-bbb51002",
+        "timestamp": "2022-01-14T06:40:47Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 14 06:40:47 dnsmasq[14919]: query[A] www.google.at from 192.168.104.95",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-959e9227",
+        "timestamp": "2022-01-14T06:40:47Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 14 06:40:47 dnsmasq[14919]: forwarded www.google.at to 10.229.255.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-3f7d1430",
+        "timestamp": "2022-01-14T06:40:47Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 14 06:40:47 dnsmasq[14919]: query[AAAA] www.google.at from 192.168.104.95",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-959e9227",
+        "timestamp": "2022-01-14T06:40:47Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 14 06:40:47 dnsmasq[14919]: forwarded www.google.at to 10.229.255.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-f01d3a34",
+        "timestamp": "2022-01-14T06:40:47Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 14 06:40:47 dnsmasq[14919]: reply www.google.at is 142.250.180.195",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-822b4138",
+        "timestamp": "2022-01-14T06:40:47Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 14 06:40:47 dnsmasq[14919]: reply www.google.at is 2a00:1450:400d:806::2003",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-a56f865c",
+      "source": "alerts",
+      "timestamp": "2022-01-14T06:34:34Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "cloud.dmz.smith.santos.com:443 172.21.129.224 - - [14/Jan/2022:06:34:34 +0000] \"GET / HTTP/1.1\" 302 4065 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-0199986d",
+      "source": "alerts",
+      "timestamp": "2022-01-14T06:34:42Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "cloud.dmz.smith.santos.com:443 172.21.129.224 - - [14/Jan/2022:06:34:42 +0000] \"POST /index.php/login HTTP/1.1\" 303 3848 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-f47c938c",
+      "source": "alerts",
+      "timestamp": "2022-01-14T06:34:50Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "cloud.dmz.smith.santos.com:80 ::1 - - [14/Jan/2022:06:34:50 +0000] \"OPTIONS * HTTP/1.0\" 200 126 \"-\" \"Apache/2.4.29 (Ubuntu) PHP/7.4.27 OpenSSL/1.1.1 (internal dummy connection)\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (20 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New event type., AMiner: New status code in Apache Access log.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (20 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New event type., AMiner: New status code in Apache Access log.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "santos/santos/session-0009",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 20,
+      "kept_alerts": 20
+    },
+    "sealed": true
+  }
+}

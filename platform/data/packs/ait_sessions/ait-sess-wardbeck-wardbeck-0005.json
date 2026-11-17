@@ -1,0 +1,192 @@
+{
+  "incident_id": "ait-sess-wardbeck-wardbeck-0005",
+  "name": "ATTEST-AIT wardbeck/wardbeck session 5",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wardbeck/wardbeck/session-0005",
+  "alert": {
+    "timestamp": "2022-01-19T03:08:21Z",
+    "host": "wardbeck",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (4 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New service_start parameter combination in Audit logs., AMiner: New service_stop parameter comb",
+    "scenario": "wardbeck"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-19T03:08:21Z",
+    "end": "2022-01-19T03:22:57Z",
+    "hosts": [
+      "wardbeck"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-d63efc46",
+        "timestamp": "2022-01-19T03:08:21Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 03:08:21 dnsmasq[14529]: query[AAAA] smith-mail from 192.168.98.239",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-dbecaf8e",
+        "timestamp": "2022-01-19T03:13:34Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 03:13:34 dnsmasq[14529]: query[AAAA] watkins-mail from 192.168.96.99",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-2932aa06",
+        "timestamp": "2022-01-19T03:22:57Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642562577.286:191): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=ua-messaging comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-c4d49798",
+        "timestamp": "2022-01-19T03:22:57Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642562577.286:192): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=ua-messaging comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-d63efc46",
+      "source": "alerts",
+      "timestamp": "2022-01-19T03:08:21Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 03:08:21 dnsmasq[14529]: query[AAAA] smith-mail from 192.168.98.239",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-dbecaf8e",
+      "source": "alerts",
+      "timestamp": "2022-01-19T03:13:34Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 03:13:34 dnsmasq[14529]: query[AAAA] watkins-mail from 192.168.96.99",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-2932aa06",
+      "source": "alerts",
+      "timestamp": "2022-01-19T03:22:57Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642562577.286:191): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=ua-messaging comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (4 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New service_start parameter combination in Audit logs., AMiner: New service_stop parameter comb",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (4 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New service_start parameter combination in Audit logs., AMiner: New service_stop parameter comb",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wardbeck/wardbeck/session-0005",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 4,
+      "kept_alerts": 4
+    },
+    "sealed": true
+  }
+}

@@ -1,0 +1,606 @@
+{
+  "incident_id": "ait-sess-wardbeck-wardbeck-0063",
+  "name": "ATTEST-AIT wardbeck/wardbeck session 63",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wardbeck/wardbeck/session-0063",
+  "alert": {
+    "timestamp": "2022-01-21T14:00:21Z",
+    "host": "wardbeck",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (50 alerts; detectors: AMiner: New cred_acq parameter combination in Audit logs., AMiner: New ip address in DNS logs., AMiner: New login parameter combination in ",
+    "scenario": "wardbeck"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-21T14:00:21Z",
+    "end": "2022-01-21T14:16:37Z",
+    "hosts": [
+      "wardbeck"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-97699e3b",
+        "timestamp": "2022-01-21T14:00:21Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 21 14:00:21 dnsmasq[14529]: query[PTR] 187.98.168.192.in-addr.arpa from 192.168.99.0",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-45e6b64f",
+        "timestamp": "2022-01-21T14:07:05Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642774025.791:1861): pid=18815 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"kwhite\" exe=\"/usr/sbin/sshd\" hostname=10.132.56.81 addr=10.132.56.81 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-a1cc4902",
+        "timestamp": "2022-01-21T14:07:05Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1642774025.795:1862): pid=18815 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"kwhite\" exe=\"/usr/sbin/sshd\" hostname=10.132.56.81 addr=10.132.56.81 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-cd63dc0e",
+        "timestamp": "2022-01-21T14:07:05Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New login parameter combination in Audit logs.",
+        "message": "type=LOGIN msg=audit(1642774025.795:1863): pid=18815 uid=0 old-auid=4294967295 auid=1004 tty=(none) old-ses=4294967295 ses=267 res=1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-823b96b3",
+        "timestamp": "2022-01-21T14:07:05Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642774025.835:1864): pid=18817 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"kwhite\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-a7f93d71",
+        "timestamp": "2022-01-21T14:07:05Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New login parameter combination in Audit logs.",
+        "message": "type=LOGIN msg=audit(1642774025.835:1866): pid=18817 uid=0 old-auid=4294967295 auid=1004 tty=(none) old-ses=4294967295 ses=268 res=1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-7300db4e",
+        "timestamp": "2022-01-21T14:07:05Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1642774025.839:1867): pid=18817 uid=0 auid=1004 ses=268 msg='op=PAM:session_open acct=\"kwhite\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-e18b7d21",
+        "timestamp": "2022-01-21T14:07:05Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642774025.903:1868): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=user@1004 comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-d724bdb6",
+        "timestamp": "2022-01-21T14:07:06Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1642774026.679:1869): pid=18815 uid=0 auid=1004 ses=267 msg='op=PAM:session_open acct=\"kwhite\" exe=\"/usr/sbin/sshd\" hostname=10.132.56.81 addr=10.132.56.81 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-7e3f8b42",
+        "timestamp": "2022-01-21T14:10:02Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:02 dnsmasq[14529]: query[A] example.org from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-53294e4b",
+        "timestamp": "2022-01-21T14:10:02Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:02 dnsmasq[14529]: query[AAAA] example.org from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-3f578448",
+        "timestamp": "2022-01-21T14:10:02Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:02 dnsmasq[14529]: query[A] ipv4only.arpa from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-a64f176a",
+        "timestamp": "2022-01-21T14:10:02Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:02 dnsmasq[14529]: query[AAAA] ipv4only.arpa from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-6fbcc76a",
+        "timestamp": "2022-01-21T14:10:02Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:02 dnsmasq[14529]: query[AAAA] detectportal.firefox.com from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-393d9499",
+        "timestamp": "2022-01-21T14:10:08Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:08 dnsmasq[14529]: query[A] location.services.mozilla.com from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-a181b5cc",
+        "timestamp": "2022-01-21T14:10:08Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:08 dnsmasq[14529]: query[AAAA] location.services.mozilla.com from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-0e074ec5",
+        "timestamp": "2022-01-21T14:10:08Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:08 dnsmasq[14529]: query[AAAA] locprod2-elb-us-west-2.prod.mozaws.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-53bb7d3c",
+        "timestamp": "2022-01-21T14:10:09Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:09 dnsmasq[14529]: query[AAAA] firefox.settings.services.mozilla.com from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-f4795211",
+        "timestamp": "2022-01-21T14:10:09Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:09 dnsmasq[14529]: query[A] ocsp.digicert.com from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-4b0aa251",
+        "timestamp": "2022-01-21T14:10:09Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:09 dnsmasq[14529]: query[AAAA] ocsp.digicert.com from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-70ecd713",
+        "timestamp": "2022-01-21T14:10:09Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:09 dnsmasq[14529]: query[AAAA] cs9.wac.phicdn.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-eb8daf14",
+        "timestamp": "2022-01-21T14:10:09Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:09 dnsmasq[14529]: query[AAAA] content-signature-2.cdn.mozilla.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-715d9a6e",
+        "timestamp": "2022-01-21T14:10:10Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:10 dnsmasq[14529]: query[A] shavar.services.mozilla.com from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-dd25b2ae",
+        "timestamp": "2022-01-21T14:10:10Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:10 dnsmasq[14529]: query[AAAA] shavar.services.mozilla.com from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0025-f45fad54",
+        "timestamp": "2022-01-21T14:10:10Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:10 dnsmasq[14529]: query[AAAA] shavar.prod.mozaws.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0026-496ec54e",
+        "timestamp": "2022-01-21T14:10:10Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:10 dnsmasq[14529]: query[AAAA] push.services.mozilla.com from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0027-ce627658",
+        "timestamp": "2022-01-21T14:10:10Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:10 dnsmasq[14529]: query[AAAA] autopush.prod.mozaws.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0028-ce627658",
+        "timestamp": "2022-01-21T14:10:10Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:10 dnsmasq[14529]: query[AAAA] autopush.prod.mozaws.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0029-ce627658",
+        "timestamp": "2022-01-21T14:10:10Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:10 dnsmasq[14529]: query[AAAA] autopush.prod.mozaws.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0030-1f962498",
+        "timestamp": "2022-01-21T14:10:11Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:11 dnsmasq[14529]: query[AAAA] cs9.wac.phicdn.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0031-ad6658b9",
+        "timestamp": "2022-01-21T14:10:11Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:11 dnsmasq[14529]: query[AAAA] tracking-protection.cdn.mozilla.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0032-75bebcb4",
+        "timestamp": "2022-01-21T14:10:11Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:11 dnsmasq[14529]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0033-75bebcb4",
+        "timestamp": "2022-01-21T14:10:11Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:11 dnsmasq[14529]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0034-75bebcb4",
+        "timestamp": "2022-01-21T14:10:11Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:11 dnsmasq[14529]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0035-75bebcb4",
+        "timestamp": "2022-01-21T14:10:11Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:11 dnsmasq[14529]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0036-75bebcb4",
+        "timestamp": "2022-01-21T14:10:11Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:11 dnsmasq[14529]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0037-75bebcb4",
+        "timestamp": "2022-01-21T14:10:11Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:11 dnsmasq[14529]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0038-75bebcb4",
+        "timestamp": "2022-01-21T14:10:11Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:11 dnsmasq[14529]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0039-75bebcb4",
+        "timestamp": "2022-01-21T14:10:11Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:11 dnsmasq[14529]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0040-75bebcb4",
+        "timestamp": "2022-01-21T14:10:11Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:11 dnsmasq[14529]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0041-75bebcb4",
+        "timestamp": "2022-01-21T14:10:11Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:11 dnsmasq[14529]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0042-75bebcb4",
+        "timestamp": "2022-01-21T14:10:11Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:11 dnsmasq[14529]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0043-2a5159b8",
+        "timestamp": "2022-01-21T14:10:12Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:12 dnsmasq[14529]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0044-2a5159b8",
+        "timestamp": "2022-01-21T14:10:12Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:12 dnsmasq[14529]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0045-2a5159b8",
+        "timestamp": "2022-01-21T14:10:12Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:10:12 dnsmasq[14529]: query[AAAA] d1zkz3k4cclnv6.cloudfront.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0046-79506cf0",
+        "timestamp": "2022-01-21T14:14:37Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:14:37 dnsmasq[14529]: query[A] firefox.settings.services.mozilla.com from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0047-7fde4682",
+        "timestamp": "2022-01-21T14:14:37Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:14:37 dnsmasq[14529]: query[AAAA] d2nxq2uap88usk.cloudfront.net from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0048-6c434944",
+        "timestamp": "2022-01-21T14:16:37Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:16:37 dnsmasq[14529]: query[AAAA] aus5.mozilla.org from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0049-ddc239b8",
+        "timestamp": "2022-01-21T14:16:37Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:16:37 dnsmasq[14529]: query[A] aus5.mozilla.org from 192.168.98.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0050-e3f86bc4",
+        "timestamp": "2022-01-21T14:16:37Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 14:16:37 dnsmasq[14529]: query[AAAA] prod.balrog.prod.cloudops.mozgcp.net from 192.168.98.90",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-97699e3b",
+      "source": "alerts",
+      "timestamp": "2022-01-21T14:00:21Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 21 14:00:21 dnsmasq[14529]: query[PTR] 187.98.168.192.in-addr.arpa from 192.168.99.0",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-45e6b64f",
+      "source": "alerts",
+      "timestamp": "2022-01-21T14:07:05Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642774025.791:1861): pid=18815 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"kwhite\" exe=\"/usr/sbin/sshd\" hostname=10.132.56.81 addr=10.132.56.81 terminal=ssh res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-a1cc4902",
+      "source": "alerts",
+      "timestamp": "2022-01-21T14:07:05Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1642774025.795:1862): pid=18815 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"kwhite\" exe=\"/usr/sbin/sshd\" hostname=10.132.56.81 addr=10.132.56.81 terminal=ssh res=success'",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (50 alerts; detectors: AMiner: New cred_acq parameter combination in Audit logs., AMiner: New ip address in DNS logs., AMiner: New login parameter combination in ",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (50 alerts; detectors: AMiner: New cred_acq parameter combination in Audit logs., AMiner: New ip address in DNS logs., AMiner: New login parameter combination in ",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wardbeck/wardbeck/session-0063",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 62,
+      "kept_alerts": 50
+    },
+    "sealed": true
+  }
+}

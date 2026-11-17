@@ -1,0 +1,210 @@
+{
+  "incident_id": "ait-sess-shaw-shaw-0118",
+  "name": "ATTEST-AIT shaw/shaw session 118",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "shaw/shaw/session-0118",
+  "alert": {
+    "timestamp": "2022-01-30T21:40:47Z",
+    "host": "shaw",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (6 alerts; detectors: AMiner: Unusual occurrence frequencies of Apache Access request methods., AMiner: Unusual occurrence frequencies of DNS query records.).",
+    "scenario": "shaw"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-30T21:40:47Z",
+    "end": "2022-01-30T22:20:47Z",
+    "hosts": [
+      "shaw"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-a8686ec5",
+        "timestamp": "2022-01-30T21:40:47Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "192.168.188.169 - - [30/Jan/2022:21:40:47 +0000] \"POST /services/ajax.php/horde/topbarUpdate HTTP/1.1\" 200 1061 \"https://mail.thomasmurray.shaw.info/imp/dynamic.php?page=mailbox\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-dea5e05d",
+        "timestamp": "2022-01-30T21:50:47Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "192.168.188.169 - - [30/Jan/2022:21:50:47 +0000] \"POST /services/ajax.php/horde/topbarUpdate HTTP/1.1\" 200 1061 \"https://mail.thomasmurray.shaw.info/imp/dynamic.php?page=mailbox\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-fdb5871e",
+        "timestamp": "2022-01-30T22:00:47Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "192.168.188.169 - - [30/Jan/2022:22:00:47 +0000] \"POST /services/ajax.php/horde/topbarUpdate HTTP/1.1\" 200 1061 \"https://mail.thomasmurray.shaw.info/imp/dynamic.php?page=mailbox\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-22b69b24",
+        "timestamp": "2022-01-30T22:03:34Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query records.",
+        "message": "Jan 30 22:03:34 dnsmasq[14635]: query[AAAA] collinsbecker-mail from 10.70.34.215",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-d16fdd83",
+        "timestamp": "2022-01-30T22:10:47Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "192.168.188.169 - - [30/Jan/2022:22:10:47 +0000] \"POST /services/ajax.php/horde/topbarUpdate HTTP/1.1\" 200 1061 \"https://mail.thomasmurray.shaw.info/imp/dynamic.php?page=mailbox\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-5d76e25e",
+        "timestamp": "2022-01-30T22:20:47Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "192.168.188.169 - - [30/Jan/2022:22:20:47 +0000] \"POST /services/ajax.php/horde/topbarUpdate HTTP/1.1\" 200 1061 \"https://mail.thomasmurray.shaw.info/imp/dynamic.php?page=mailbox\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-a8686ec5",
+      "source": "alerts",
+      "timestamp": "2022-01-30T21:40:47Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "192.168.188.169 - - [30/Jan/2022:21:40:47 +0000] \"POST /services/ajax.php/horde/topbarUpdate HTTP/1.1\" 200 1061 \"https://mail.thomasmurray.shaw.info/imp/dynamic.php?page=mailbox\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-dea5e05d",
+      "source": "alerts",
+      "timestamp": "2022-01-30T21:50:47Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "192.168.188.169 - - [30/Jan/2022:21:50:47 +0000] \"POST /services/ajax.php/horde/topbarUpdate HTTP/1.1\" 200 1061 \"https://mail.thomasmurray.shaw.info/imp/dynamic.php?page=mailbox\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-fdb5871e",
+      "source": "alerts",
+      "timestamp": "2022-01-30T22:00:47Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "192.168.188.169 - - [30/Jan/2022:22:00:47 +0000] \"POST /services/ajax.php/horde/topbarUpdate HTTP/1.1\" 200 1061 \"https://mail.thomasmurray.shaw.info/imp/dynamic.php?page=mailbox\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (6 alerts; detectors: AMiner: Unusual occurrence frequencies of Apache Access request methods., AMiner: Unusual occurrence frequencies of DNS query records.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (6 alerts; detectors: AMiner: Unusual occurrence frequencies of Apache Access request methods., AMiner: Unusual occurrence frequencies of DNS query records.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "shaw/shaw/session-0118",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 6,
+      "kept_alerts": 6
+    },
+    "sealed": true
+  }
+}

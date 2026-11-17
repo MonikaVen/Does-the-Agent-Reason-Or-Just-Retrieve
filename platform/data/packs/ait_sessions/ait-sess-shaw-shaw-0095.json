@@ -1,0 +1,282 @@
+{
+  "incident_id": "ait-sess-shaw-shaw-0095",
+  "name": "ATTEST-AIT shaw/shaw session 95",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "shaw/shaw/session-0095",
+  "alert": {
+    "timestamp": "2022-01-29T19:49:40Z",
+    "host": "shaw",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (14 alerts; detectors: AMiner: New event type., AMiner: New ip address in DNS logs., AMiner: New user_acct parameter combination in Audit logs.).",
+    "scenario": "shaw"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-29T19:49:40Z",
+    "end": "2022-01-29T20:09:30Z",
+    "hosts": [
+      "shaw"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-1ae0cf77",
+        "timestamp": "2022-01-29T19:49:40Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643485780.811:12893): pid=27759 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-046cbc52",
+        "timestamp": "2022-01-29T19:49:40Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643485780.811:12894): pid=27759 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-6e9c282f",
+        "timestamp": "2022-01-29T20:03:34Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 29 20:03:34 dnsmasq[14635]: query[AAAA] collinsbecker-mail from 10.70.34.215",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-abd79e6c",
+        "timestamp": "2022-01-29T20:05:39Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 20:05:39 dnsmasq[14635]: query[A] example.org from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-025932d2",
+        "timestamp": "2022-01-29T20:05:39Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 20:05:39 dnsmasq[14635]: query[A] ipv4only.arpa from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-bfaa5f58",
+        "timestamp": "2022-01-29T20:05:39Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 20:05:39 dnsmasq[14635]: query[AAAA] example.org from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-d06aaf26",
+        "timestamp": "2022-01-29T20:05:39Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 20:05:39 dnsmasq[14635]: query[A] detectportal.firefox.com from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-ff7ce02b",
+        "timestamp": "2022-01-29T20:05:39Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 20:05:39 dnsmasq[14635]: query[AAAA] ipv4only.arpa from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-73d0f0c9",
+        "timestamp": "2022-01-29T20:05:39Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 29 20:05:39 dnsmasq[14635]: query[AAAA] prod.detectportal.prod.cloudops.mozgcp.net from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-02155823",
+        "timestamp": "2022-01-29T20:08:15Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-29 20:08:15 gmarsh/10.70.32.61:58199 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-bed0bdff",
+        "timestamp": "2022-01-29T20:08:15Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-29 20:08:15 gmarsh/10.70.32.61:58199 TLS Error: TLS handshake failed",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-313ea4bf",
+        "timestamp": "2022-01-29T20:08:15Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-29 20:08:15 gmarsh/10.70.32.61:58199 TLS: move_session: dest=TM_LAME_DUCK src=TM_ACTIVE reinit_src=1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-b821771c",
+        "timestamp": "2022-01-29T20:09:30Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-29 20:09:30 gmarsh/10.70.32.61:58199 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-03c8c5c3",
+        "timestamp": "2022-01-29T20:09:30Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-29 20:09:30 gmarsh/10.70.32.61:58199 TLS Error: TLS handshake failed",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-1ae0cf77",
+      "source": "alerts",
+      "timestamp": "2022-01-29T19:49:40Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643485780.811:12893): pid=27759 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-046cbc52",
+      "source": "alerts",
+      "timestamp": "2022-01-29T19:49:40Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643485780.811:12894): pid=27759 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gemma.marsh\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-6e9c282f",
+      "source": "alerts",
+      "timestamp": "2022-01-29T20:03:34Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 29 20:03:34 dnsmasq[14635]: query[AAAA] collinsbecker-mail from 10.70.34.215",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (14 alerts; detectors: AMiner: New event type., AMiner: New ip address in DNS logs., AMiner: New user_acct parameter combination in Audit logs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (14 alerts; detectors: AMiner: New event type., AMiner: New ip address in DNS logs., AMiner: New user_acct parameter combination in Audit logs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "shaw/shaw/session-0095",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 14,
+      "kept_alerts": 14
+    },
+    "sealed": true
+  }
+}

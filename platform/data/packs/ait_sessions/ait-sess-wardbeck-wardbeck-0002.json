@@ -1,0 +1,453 @@
+{
+  "incident_id": "ait-sess-wardbeck-wardbeck-0002",
+  "name": "ATTEST-AIT wardbeck/wardbeck session 2",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wardbeck/wardbeck/session-0002",
+  "alert": {
+    "timestamp": "2022-01-19T00:38:02Z",
+    "host": "wardbeck",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (33 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New event type., AMiner: New ip address in DNS logs.).",
+    "scenario": "wardbeck"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-19T00:38:02Z",
+    "end": "2022-01-19T01:13:34Z",
+    "hosts": [
+      "wardbeck"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-46d84b6d",
+        "timestamp": "2022-01-19T00:38:02Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New query record in DNS logs.",
+        "message": "Jan 19 00:38:02 dnsmasq[14529]: query[TXT] current.cvd.clamav.net from 192.168.96.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-526ec839",
+        "timestamp": "2022-01-19T00:38:02Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 19 00:38:02 mail freshclam[432]: Wed Jan 19 00:38:02 2022 -> Received signal: wake up",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-056a3655",
+        "timestamp": "2022-01-19T00:38:21Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 00:38:21 dnsmasq[14529]: query[AAAA] smith-mail from 192.168.98.239",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-da980bed",
+        "timestamp": "2022-01-19T00:40:11Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 19 00:40:11 dnsmasq[14529]: query[A] 3x6-.152-.yZCsPLt8Dt9QQsC*D0ODDS0OLvcBbGKJJclG-.mukOnYUlRrq56*TygIzGJ7eEHrQ5uYCtDAre-.9/VJ/Ezm1luqGykJkA4EV8i/kdgfYZE0nqoq-.7StA2lcNaV9h0n7AqOLYSbHMtoH1EXnh1Fcq-.D4ivCLtcTed7WKxai3SbrdNInjukrcFIaGKV-.customers_2020.xlsx.db-99.brown.com from 192.168.96.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-4dcdb407",
+        "timestamp": "2022-01-19T00:42:36Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "10.132.56.81 - - [19/Jan/2022:00:42:36 +0000] \"POST /services/ajax.php/horde/topbarUpdate HTTP/1.1\" 200 1061 \"https://mail.hurstwong.wardbeck.info/nag/list.php\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-736d3474",
+        "timestamp": "2022-01-19T00:42:57Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-19 00:42:57 hwhite/192.168.98.90:56753 TLS: soft reset sec=3553/3553 bytes=107004/-1 pkts=927/0",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-bd36d94a",
+        "timestamp": "2022-01-19T00:42:57Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-19 00:42:57 hwhite/192.168.98.90:56753 VERIFY OK: depth=1, C=AT, ST=Vienna, L=Vienna, O=Some Organisation GmbH, CN=OpenVPN CA, emailAddress=admin@organisation.cyberrange.at",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-d70857f4",
+        "timestamp": "2022-01-19T00:42:57Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-19 00:42:57 hwhite/192.168.98.90:56753 VERIFY KU OK",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-f54a054c",
+        "timestamp": "2022-01-19T00:42:57Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-19 00:42:57 hwhite/192.168.98.90:56753 Validating certificate extended key usage",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-58ff4b41",
+        "timestamp": "2022-01-19T00:42:57Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-19 00:42:57 hwhite/192.168.98.90:56753 ++ Certificate has EKU (str) TLS Web Client Authentication, expects TLS Web Client Authentication",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-c48d09eb",
+        "timestamp": "2022-01-19T00:42:57Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-19 00:42:57 hwhite/192.168.98.90:56753 peer info: IV_VER=2.4.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-fe25b719",
+        "timestamp": "2022-01-19T00:42:57Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-19 00:42:57 hwhite/192.168.98.90:56753 peer info: IV_PLAT=linux",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-48e8286c",
+        "timestamp": "2022-01-19T00:42:57Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-19 00:42:57 hwhite/192.168.98.90:56753 peer info: IV_PROTO=2",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-64cca36d",
+        "timestamp": "2022-01-19T00:42:57Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-19 00:42:57 hwhite/192.168.98.90:56753 peer info: IV_LZ4=1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-57b2c3a9",
+        "timestamp": "2022-01-19T00:42:57Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-19 00:42:57 hwhite/192.168.98.90:56753 peer info: IV_COMP_STUB=1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-2e1b9e48",
+        "timestamp": "2022-01-19T00:42:57Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-19 00:42:57 hwhite/192.168.98.90:56753 peer info: IV_TCPNL=1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-783f61de",
+        "timestamp": "2022-01-19T00:42:57Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-19 00:42:57 hwhite/192.168.98.90:56753 Outgoing Data Channel: Cipher 'AES-256-CBC' initialized with 256 bit key",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-66051df6",
+        "timestamp": "2022-01-19T00:43:34Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 00:43:34 dnsmasq[14529]: query[AAAA] watkins-mail from 192.168.96.99",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-0694b924",
+        "timestamp": "2022-01-19T00:54:38Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 19 00:54:38 dnsmasq[14529]: query[AAAA] motd.ubuntu.com from 192.168.97.122",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-143fb906",
+        "timestamp": "2022-01-19T00:55:16Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 19 00:55:16 dnsmasq[14529]: query[A] motd.ubuntu.com from 192.168.98.187",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-e9d42cdd",
+        "timestamp": "2022-01-19T01:00:18Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 19 01:00:18 dnsmasq[14529]: query[A] 3x6-.260-.x4q8MUIOsVSJkL5oTSKEPUwf3kN9CPpg4Guq-.KyaIYDR96bJRVUVm13zFqEBS9nq5AgjE83yR-.U7Xj24hsu3WOFsMQ*T7boWZ*TOQhaqw1MpIl-.Pv*TjqSPEHNWp4xQzszckhnp5IGRl8XJsZcm-.kcpX4YqUiOLqeomOKQLWBr6/NN/k6ZKdFNmK-.customers_2020.xlsx.db-99.brown.com from 192.168.96.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-f2addfc0",
+        "timestamp": "2022-01-19T01:00:18Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query records.",
+        "message": "Jan 19 01:00:18 dnsmasq[14529]: query[A] 3x6-.260-.x4q8MUIOsVSJkL5oTSKEPUwf3kN9CPpg4Guq-.KyaIYDR96bJRVUVm13zFqEBS9nq5AgjE83yR-.U7Xj24hsu3WOFsMQ*T7boWZ*TOQhaqw1MpIl-.Pv*TjqSPEHNWp4xQzszckhnp5IGRl8XJsZcm-.kcpX4YqUiOLqeomOKQLWBr6/NN/k6ZKdFNmK-.customers_2020.xlsx.db-99.brown.com from 192.168.96.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-9fc2e525",
+        "timestamp": "2022-01-19T01:02:04Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New query record in DNS logs.",
+        "message": "Jan 19 01:02:04 dnsmasq[14529]: query[SRV] _https._tcp.artifacts.elastic.co from 192.168.96.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-51d4e77d",
+        "timestamp": "2022-01-19T01:02:04Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 01:02:04 dnsmasq[14529]: query[SRV] _http._tcp.ppa.launchpad.net from 192.168.96.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0025-b4833010",
+        "timestamp": "2022-01-19T01:02:04Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 01:02:04 dnsmasq[14529]: forwarded _http._tcp.ppa.launchpad.net to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0026-51d4e77d",
+        "timestamp": "2022-01-19T01:02:04Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 01:02:04 dnsmasq[14529]: query[SRV] _http._tcp.ppa.launchpad.net from 192.168.96.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0027-b4833010",
+        "timestamp": "2022-01-19T01:02:04Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 01:02:04 dnsmasq[14529]: forwarded _http._tcp.ppa.launchpad.net to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0028-8c7c5c1c",
+        "timestamp": "2022-01-19T01:02:04Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 19 01:02:04 dnsmasq[14755]: query[SRV] _https._tcp.artifacts.elastic.co from 172.21.240.106",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0029-818f5af8",
+        "timestamp": "2022-01-19T01:02:04Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 01:02:04 dnsmasq[14755]: query[SRV] _http._tcp.ppa.launchpad.net from 172.21.240.106",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0030-c45be8f9",
+        "timestamp": "2022-01-19T01:02:04Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 01:02:04 dnsmasq[14755]: forwarded _http._tcp.ppa.launchpad.net to 192.168.127.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0031-fba835a2",
+        "timestamp": "2022-01-19T01:02:04Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "01/19/2022-01:02:04.669876  [**] [1:2013504:6] ET POLICY GNU/Linux APT User-Agent Outbound likely related to package management [**] [Classification: Not Suspicious Traffic] [Priority: 3] {TCP} 192.168.96.4:44602 -> 91.189.95.85:80",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0032-8c81cf10",
+        "timestamp": "2022-01-19T01:10:09Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 19 01:10:09 dnsmasq[14529]: query[A] 3x6-.312-.BhIADbS/YeSL/kXOJ4u5L9pMy2XEGH9lEHa*-.fiylrVRZ7KGX1yakA2xd4W*AtkbDWsMq6/6a-.quBa0f01CNwPSLIAay62*TLgk6Ear7QkBrD0-.Lf1IZ0eckoN2TkaRWyEjZ1nSWsuMWxiZ1lIw-.OqKaHmO/NArBrftVnbj*e5Vc0MT4I3TjFoDg-.customers_2020.xlsx.db-99.brown.com from 192.168.96.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0033-063549da",
+        "timestamp": "2022-01-19T01:13:34Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 01:13:34 dnsmasq[14529]: query[AAAA] watkins-mail from 192.168.96.99",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-46d84b6d",
+      "source": "alerts",
+      "timestamp": "2022-01-19T00:38:02Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New query record in DNS logs.",
+        "message": "Jan 19 00:38:02 dnsmasq[14529]: query[TXT] current.cvd.clamav.net from 192.168.96.4",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-526ec839",
+      "source": "alerts",
+      "timestamp": "2022-01-19T00:38:02Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 19 00:38:02 mail freshclam[432]: Wed Jan 19 00:38:02 2022 -> Received signal: wake up",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-056a3655",
+      "source": "alerts",
+      "timestamp": "2022-01-19T00:38:21Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 00:38:21 dnsmasq[14529]: query[AAAA] smith-mail from 192.168.98.239",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (33 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New event type., AMiner: New ip address in DNS logs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (33 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New event type., AMiner: New ip address in DNS logs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wardbeck/wardbeck/session-0002",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 33,
+      "kept_alerts": 33
+    },
+    "sealed": true
+  }
+}

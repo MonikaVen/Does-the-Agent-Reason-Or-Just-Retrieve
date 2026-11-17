@@ -1,0 +1,246 @@
+{
+  "incident_id": "ait-sess-fox-fox-0072",
+  "name": "ATTEST-AIT fox/fox session 72",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "fox/fox/session-0072",
+  "alert": {
+    "timestamp": "2022-01-18T09:21:06Z",
+    "host": "fox",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (10 alerts; detectors: AMiner: High entropy in DNS domain.).",
+    "scenario": "fox"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-18T09:21:06Z",
+    "end": "2022-01-18T09:21:06Z",
+    "hosts": [
+      "fox"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-75265e53",
+        "timestamp": "2022-01-18T09:21:06Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 18 09:21:06 dnsmasq[14460]: query[A] ok.ru from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-f9df767a",
+        "timestamp": "2022-01-18T09:21:06Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 18 09:21:06 dnsmasq[14460]: forwarded ok.ru to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-70cc1264",
+        "timestamp": "2022-01-18T09:21:06Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 18 09:21:06 dnsmasq[14460]: reply ok.ru is 217.20.155.13",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-4758743a",
+        "timestamp": "2022-01-18T09:21:06Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 18 09:21:06 dnsmasq[14460]: reply ok.ru is 217.20.147.1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-cdf8cf5a",
+        "timestamp": "2022-01-18T09:21:06Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 18 09:21:06 dnsmasq[14460]: reply ok.ru is 5.61.23.11",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-f28a8554",
+        "timestamp": "2022-01-18T09:21:06Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 18 09:21:06 dnsmasq[14522]: query[A] ok.ru from 172.17.130.196",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-d9bf0c99",
+        "timestamp": "2022-01-18T09:21:06Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 18 09:21:06 dnsmasq[14522]: forwarded ok.ru to 192.168.255.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-c55bd943",
+        "timestamp": "2022-01-18T09:21:06Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 18 09:21:06 dnsmasq[14522]: reply ok.ru is 217.20.155.13",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-b6e847ab",
+        "timestamp": "2022-01-18T09:21:06Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 18 09:21:06 dnsmasq[14522]: reply ok.ru is 217.20.147.1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-76e32755",
+        "timestamp": "2022-01-18T09:21:06Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 18 09:21:06 dnsmasq[14522]: reply ok.ru is 5.61.23.11",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-75265e53",
+      "source": "alerts",
+      "timestamp": "2022-01-18T09:21:06Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 18 09:21:06 dnsmasq[14460]: query[A] ok.ru from 192.168.128.4",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-f9df767a",
+      "source": "alerts",
+      "timestamp": "2022-01-18T09:21:06Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 18 09:21:06 dnsmasq[14460]: forwarded ok.ru to 8.8.8.8",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-70cc1264",
+      "source": "alerts",
+      "timestamp": "2022-01-18T09:21:06Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 18 09:21:06 dnsmasq[14460]: reply ok.ru is 217.20.155.13",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (10 alerts; detectors: AMiner: High entropy in DNS domain.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (10 alerts; detectors: AMiner: High entropy in DNS domain.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "fox/fox/session-0072",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 10,
+      "kept_alerts": 10
+    },
+    "sealed": true
+  }
+}

@@ -1,0 +1,228 @@
+{
+  "incident_id": "ait-sess-harrison-harrison-0013",
+  "name": "ATTEST-AIT harrison/harrison session 13",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "harrison/harrison/session-0013",
+  "alert": {
+    "timestamp": "2022-02-04T09:36:09Z",
+    "host": "harrison",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (8 alerts; detectors: AMiner: New characters in Apache Access referer., AMiner: New user_acct parameter combination in Audit logs., AMiner: New user_auth paramete",
+    "scenario": "harrison"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-04T09:36:09Z",
+    "end": "2022-02-04T10:20:41Z",
+    "hosts": [
+      "harrison"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-bbe7a220",
+        "timestamp": "2022-02-04T09:36:09Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "10.237.1.238 - - [04/Feb/2022:09:36:09 +0000] \"GET /wp-admin/images/spinner.gif HTTP/1.1\" 200 3969 \"https://intranet.mannsmith.harrison.com/wp-admin/load-styles.php?c=0&dir=ltr&load%5Bchunk_0%5D=dashicons,admin-bar,common,forms,admin-menu,dashboard,list-tables,edit,revisions,media,themes,about,nav-menus,wp-pointer,widgets&load%5Bchunk_1%5D=,site-icon,l10n,buttons,wp-auth-check&ver=5.9\" \"Mozilla/5.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-8116fa38",
+        "timestamp": "2022-02-04T09:48:14Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643968094.652:1825): pid=11304 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"jeffrey.green\" exe=\"/usr/lib/dovecot/auth\" hostname=10.237.2.255 addr=10.237.2.255 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-dbe5ccfe",
+        "timestamp": "2022-02-04T09:48:14Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643968094.656:1826): pid=11304 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"jeffrey.green\" exe=\"/usr/lib/dovecot/auth\" hostname=10.237.2.255 addr=10.237.2.255 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-24fa8396",
+        "timestamp": "2022-02-04T09:59:52Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Feb  4 09:59:52 dnsmasq[14453]: query[PTR] 110.193.28.172.in-addr.arpa from 172.28.192.7",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-561f6099",
+        "timestamp": "2022-02-04T09:59:52Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Feb  4 09:59:52 dnsmasq[14664]: query[PTR] 255.2.237.10.in-addr.arpa from 10.237.2.255",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-e4e5c446",
+        "timestamp": "2022-02-04T10:09:45Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "172.28.192.250 - - [04/Feb/2022:10:09:45 +0000] \"GET / HTTP/1.1\" 302 3224 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-dff6d5a6",
+        "timestamp": "2022-02-04T10:10:30Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "10.237.1.238 - - [04/Feb/2022:10:10:30 +0000] \"POST /services/ajax.php/imp/getReplyData HTTP/1.1\" 200 1557 \"https://mail.mannsmith.harrison.com/imp/dynamic.php?page=message&buid=7&mailbox=SU5CT1g&token=X1FCwn2Imuj68AvtLbLBS-D&uniq=1643969377542\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-180240c2",
+        "timestamp": "2022-02-04T10:20:41Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "10.237.1.238 - - [04/Feb/2022:10:20:41 +0000] \"POST /services/ajax.php/imp/showMessage HTTP/1.1\" 200 3112 \"https://mail.mannsmith.harrison.com/imp/dynamic.php?page=mailbox\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-bbe7a220",
+      "source": "alerts",
+      "timestamp": "2022-02-04T09:36:09Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "10.237.1.238 - - [04/Feb/2022:09:36:09 +0000] \"GET /wp-admin/images/spinner.gif HTTP/1.1\" 200 3969 \"https://intranet.mannsmith.harrison.com/wp-admin/load-styles.php?c=0&dir=ltr&load%5Bchunk_0%5D=dashicons,admin-bar,common,forms,admin-menu,dashboard,list-tables,edit,revisions,media,themes,about,nav-menus,wp-pointer,widgets&load%5Bchunk_1%5D=,site-icon,l10n,buttons,wp-auth-check&ver=5.9\" \"Mozilla/5.",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-8116fa38",
+      "source": "alerts",
+      "timestamp": "2022-02-04T09:48:14Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643968094.652:1825): pid=11304 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"jeffrey.green\" exe=\"/usr/lib/dovecot/auth\" hostname=10.237.2.255 addr=10.237.2.255 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-dbe5ccfe",
+      "source": "alerts",
+      "timestamp": "2022-02-04T09:48:14Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643968094.656:1826): pid=11304 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"jeffrey.green\" exe=\"/usr/lib/dovecot/auth\" hostname=10.237.2.255 addr=10.237.2.255 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (8 alerts; detectors: AMiner: New characters in Apache Access referer., AMiner: New user_acct parameter combination in Audit logs., AMiner: New user_auth paramete",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (8 alerts; detectors: AMiner: New characters in Apache Access referer., AMiner: New user_acct parameter combination in Audit logs., AMiner: New user_auth paramete",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "harrison/harrison/session-0013",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 8,
+      "kept_alerts": 8
+    },
+    "sealed": true
+  }
+}

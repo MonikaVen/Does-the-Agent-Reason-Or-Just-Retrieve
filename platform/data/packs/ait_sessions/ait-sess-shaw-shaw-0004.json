@@ -1,0 +1,237 @@
+{
+  "incident_id": "ait-sess-shaw-shaw-0004",
+  "name": "ATTEST-AIT shaw/shaw session 4",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "shaw/shaw/session-0004",
+  "alert": {
+    "timestamp": "2022-01-25T02:00:13Z",
+    "host": "shaw",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (9 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New event type., AMiner: New ip address in DNS logs.).",
+    "scenario": "shaw"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-25T02:00:13Z",
+    "end": "2022-01-25T02:29:53Z",
+    "hosts": [
+      "shaw"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-5f746103",
+        "timestamp": "2022-01-25T02:00:13Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 25 02:00:13 dnsmasq[14596]: query[SRV] _http._tcp.ppa.launchpad.net from 192.168.188.19",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-d8b673e2",
+        "timestamp": "2022-01-25T02:03:33Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 25 02:03:33 dnsmasq[14635]: query[AAAA] collinsbecker-mail from 10.70.34.215",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-6cbc4782",
+        "timestamp": "2022-01-25T02:03:33Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 25 02:03:33 dnsmasq[14635]: query[AAAA] collinsbecker-mail from 10.70.34.215",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-ae1085b2",
+        "timestamp": "2022-01-25T02:04:24Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 25 02:04:24 collinsbecker-mail dhclient[407]: DHCPREQUEST of 10.70.34.215 on eth0 to 10.70.32.2 port 67",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-9f2a9d31",
+        "timestamp": "2022-01-25T02:04:24Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 25 02:04:24 collinsbecker-mail dhclient[407]: DHCPACK of 10.70.34.215 from 10.70.32.2",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-edef5753",
+        "timestamp": "2022-01-25T02:04:25Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 25 02:04:25 collinsbecker-mail dhclient[407]: bound to 10.70.34.215 -- renewal in 32224 seconds.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-31e5f469",
+        "timestamp": "2022-01-25T02:07:13Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 25 02:07:13 inet-firewall systemd-timesyncd[571]: Synchronized to time server 91.189.89.199:123 (ntp.ubuntu.com).",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-2b15e96a",
+        "timestamp": "2022-01-25T02:18:52Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 25 02:18:52 dnsmasq[14596]: query[AAAA] mail from 172.24.251.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-880eb54b",
+        "timestamp": "2022-01-25T02:29:53Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"tags\":[\"beats_input_raw_event\"],\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.0783}},\"event\":{\"module\":\"system\",\"duration\":675182,\"dataset\":\"system.cpu\"},\"metricset\":{\"name\":\"cpu\",\"period\":45000},\"system\":{\"cpu\":{\"total\":{\"pct\":0.0783,\"norm\":{\"pct\":0.0783}},\"user\":{\"pct\":0.0323,\"norm\":{\"pct\":0.0323}},\"iowait\":{\"pct\":0.0012,\"norm\":{\"pct\":0.0012}},\"idle\":{\"pct\":0.9205,\"norm\":{\"pct\":0.9205}},\"sys",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-5f746103",
+      "source": "alerts",
+      "timestamp": "2022-01-25T02:00:13Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 25 02:00:13 dnsmasq[14596]: query[SRV] _http._tcp.ppa.launchpad.net from 192.168.188.19",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-d8b673e2",
+      "source": "alerts",
+      "timestamp": "2022-01-25T02:03:33Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 25 02:03:33 dnsmasq[14635]: query[AAAA] collinsbecker-mail from 10.70.34.215",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-6cbc4782",
+      "source": "alerts",
+      "timestamp": "2022-01-25T02:03:33Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 25 02:03:33 dnsmasq[14635]: query[AAAA] collinsbecker-mail from 10.70.34.215",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (9 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New event type., AMiner: New ip address in DNS logs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (9 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New event type., AMiner: New ip address in DNS logs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "shaw/shaw/session-0004",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 9,
+      "kept_alerts": 9
+    },
+    "sealed": true
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "incident_id": "ait-sess-wilson-wilson-0033",
+  "name": "ATTEST-AIT wilson/wilson session 33",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wilson/wilson/session-0033",
+  "alert": {
+    "timestamp": "2022-02-04T13:20:47Z",
+    "host": "wilson",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (2 alerts; detectors: AMiner: New characters in Apache Access request., AMiner: New status code in Apache Access log.).",
+    "scenario": "wilson"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-04T13:20:47Z",
+    "end": "2022-02-04T13:20:47Z",
+    "hosts": [
+      "wilson"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-1a728385",
+        "timestamp": "2022-02-04T13:20:47Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.hallbrown.wilson.com:443 10.182.194.5 - - [04/Feb/2022:13:20:47 +0000] \"GET /index.php/logout?requesttoken=QAgfKz4USh9YOVwIGAYDOykBLyhyXSsDHwslIwtYP38%3D:kdFYxLs%2B2o%2BmM4JUydae%2B0rpRnVP20tHEg9Hb0BvCZw%3D HTTP/1.1\" 303 4509 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-f07ceb21",
+        "timestamp": "2022-02-04T13:20:47Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "cloud.dmz.hallbrown.wilson.com:443 10.182.194.5 - - [04/Feb/2022:13:20:47 +0000] \"GET /ocs/v2.php/apps/notifications/api/v1/notifications?format=json HTTP/1.1\" 401 3861 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-1a728385",
+      "source": "alerts",
+      "timestamp": "2022-02-04T13:20:47Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.hallbrown.wilson.com:443 10.182.194.5 - - [04/Feb/2022:13:20:47 +0000] \"GET /index.php/logout?requesttoken=QAgfKz4USh9YOVwIGAYDOykBLyhyXSsDHwslIwtYP38%3D:kdFYxLs%2B2o%2BmM4JUydae%2B0rpRnVP20tHEg9Hb0BvCZw%3D HTTP/1.1\" 303 4509 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-f07ceb21",
+      "source": "alerts",
+      "timestamp": "2022-02-04T13:20:47Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "cloud.dmz.hallbrown.wilson.com:443 10.182.194.5 - - [04/Feb/2022:13:20:47 +0000] \"GET /ocs/v2.php/apps/notifications/api/v1/notifications?format=json HTTP/1.1\" 401 3861 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (2 alerts; detectors: AMiner: New characters in Apache Access request., AMiner: New status code in Apache Access log.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (2 alerts; detectors: AMiner: New characters in Apache Access request., AMiner: New status code in Apache Access log.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wilson/wilson/session-0033",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 2,
+      "kept_alerts": 2
+    },
+    "sealed": true
+  }
+}

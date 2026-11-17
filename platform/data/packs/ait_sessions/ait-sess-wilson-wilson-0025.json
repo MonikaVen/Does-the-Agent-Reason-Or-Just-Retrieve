@@ -1,0 +1,192 @@
+{
+  "incident_id": "ait-sess-wilson-wilson-0025",
+  "name": "ATTEST-AIT wilson/wilson session 25",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wilson/wilson/session-0025",
+  "alert": {
+    "timestamp": "2022-02-04T06:25:02Z",
+    "host": "wilson",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (4 alerts; detectors: AMiner: New event type.).",
+    "scenario": "wilson"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-04T06:25:02Z",
+    "end": "2022-02-04T06:25:05Z",
+    "hosts": [
+      "wilson"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-7256b0d7",
+        "timestamp": "2022-02-04T06:25:02Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 06:25:02 vpn rsyslogd:  [origin software=\"rsyslogd\" swVersion=\"8.32.0\" x-pid=\"1042\" x-info=\"http://www.rsyslog.com\"] rsyslogd was HUPed",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-a0aff2bd",
+        "timestamp": "2022-02-04T06:25:03Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 06:25:03 mail liblogging-stdlog:  [origin software=\"rsyslogd\" swVersion=\"8.24.0\" x-pid=\"494\" x-info=\"http://www.rsyslog.com\"] rsyslogd was HUPed",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-315725a5",
+        "timestamp": "2022-02-04T06:25:05Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 06:25:05 webserver apachectl[17676]: AH00548: NameVirtualHost has no effect and will be removed in the next release /etc/apache2/sites-enabled/000-catch-all.conf:1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-c41eea8a",
+        "timestamp": "2022-02-04T06:25:05Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "[Fri Feb 04 06:25:05.662365 2022] [ssl:warn] [pid 29774] AH01909: 000-catch-all:443:0 server certificate does NOT include an ID which matches the server name",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-7256b0d7",
+      "source": "alerts",
+      "timestamp": "2022-02-04T06:25:02Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 06:25:02 vpn rsyslogd:  [origin software=\"rsyslogd\" swVersion=\"8.32.0\" x-pid=\"1042\" x-info=\"http://www.rsyslog.com\"] rsyslogd was HUPed",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-a0aff2bd",
+      "source": "alerts",
+      "timestamp": "2022-02-04T06:25:03Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 06:25:03 mail liblogging-stdlog:  [origin software=\"rsyslogd\" swVersion=\"8.24.0\" x-pid=\"494\" x-info=\"http://www.rsyslog.com\"] rsyslogd was HUPed",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-315725a5",
+      "source": "alerts",
+      "timestamp": "2022-02-04T06:25:05Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 06:25:05 webserver apachectl[17676]: AH00548: NameVirtualHost has no effect and will be removed in the next release /etc/apache2/sites-enabled/000-catch-all.conf:1",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (4 alerts; detectors: AMiner: New event type.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (4 alerts; detectors: AMiner: New event type.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wilson/wilson/session-0025",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 4,
+      "kept_alerts": 4
+    },
+    "sealed": true
+  }
+}

@@ -115,7 +115,7 @@ def test_truth_labels_only_reach_oracle_evidence():
     manifest_path = ROOT / "data" / "packs" / "manifest.json"
     if manifest_path.exists():
         manifest = json.loads(manifest_path.read_text())
-        for dataset in ("SOC-AgentBench", "ExCyTIn-Bench", "Cyber-AIT-ADS"):
+        for dataset in ("SOC-AgentBench", "ExCyTIn-Bench", "Cyber-AIT-ADS", "ATTEST-AIT-ADS"):
             row = next(r for r in manifest["packs"] if r["dataset"] == dataset)
             converted = json.loads((ROOT / row["path"]).read_text())
             tele_blob = json.dumps(converted.get("telemetry") or {})
@@ -128,6 +128,11 @@ def test_truth_labels_only_reach_oracle_evidence():
             assert "gold_evidence" not in tele_blob
             if dataset == "Cyber-AIT-ADS":
                 assert answer not in str((converted.get("alert") or {}).get("summary") or "")
+            if dataset == "ATTEST-AIT-ADS":
+                assert gt.get("label") in {"malicious", "benign"}
+                assert "malicious vs benign" in str((converted.get("alert") or {}).get("summary") or "")
+                for stage in gt.get("attack_stages") or []:
+                    assert str(stage) not in tele_blob
             oracle = json.dumps(converted.get("oracle_evidence") or {})
             if dataset == "ExCyTIn-Bench":
                 assert "investigation_graph_step" in oracle or converted.get("oracle_evidence")
@@ -342,18 +347,26 @@ async def test_converted_cyber_packs_validate_and_load(tmp_path, monkeypatch):
     manifest = json.loads(manifest_path.read_text())
     assert manifest["counts"]["secops"] == 54
     assert manifest["counts"]["ait_ads"] == 79
+    assert manifest["counts"].get("ait_sessions", 0) >= 1
     assert manifest["counts"]["soc_agent"] >= 1
     assert manifest["counts"]["excytin"] >= 1
     assert manifest["counts"]["total"] == (
         manifest["counts"]["secops"]
         + manifest["counts"]["ait_ads"]
+        + manifest["counts"].get("ait_sessions", 0)
         + manifest["counts"]["soc_agent"]
         + manifest["counts"]["excytin"]
     )
     lab = Lab(db_path=tmp_path / "converted-packs.sqlite3")
     # Validate a sample from each dataset rather than every pack (ExCyTIn is large).
     samples = []
-    for dataset in ("Cyber-SecOps-ES", "Cyber-AIT-ADS", "SOC-AgentBench", "ExCyTIn-Bench"):
+    for dataset in (
+        "Cyber-SecOps-ES",
+        "Cyber-AIT-ADS",
+        "ATTEST-AIT-ADS",
+        "SOC-AgentBench",
+        "ExCyTIn-Bench",
+    ):
         samples.append(next(r for r in manifest["packs"] if r["dataset"] == dataset))
     for row in samples:
         pack = json.loads((ROOT / row["path"]).read_text())
@@ -362,6 +375,14 @@ async def test_converted_cyber_packs_validate_and_load(tmp_path, monkeypatch):
         loaded = lab.load_pack_file(row["path"])
         assert loaded["incident_id"] == row["incident_id"]
         assert sum(len(v) for v in loaded["pack"]["telemetry"].values()) == row["event_count"]
+        if row["dataset"] == "ATTEST-AIT-ADS":
+            gt = pack.get("ground_truth") or {}
+            assert gt.get("label") in {"malicious", "benign"}
+            assert gt.get("sealed") is True
+            tele = json.dumps(pack.get("telemetry") or {})
+            assert '"label": "malicious"' not in tele
+            assert '"label": "benign"' not in tele
+            assert "attack_stages" not in tele
     sample_path = next(
         r["path"] for r in manifest["packs"] if r["dataset"] == "Cyber-SecOps-ES"
     )

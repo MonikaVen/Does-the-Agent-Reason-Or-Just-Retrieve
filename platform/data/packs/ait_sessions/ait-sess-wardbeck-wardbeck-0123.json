@@ -1,0 +1,707 @@
+{
+  "incident_id": "ait-sess-wardbeck-wardbeck-0123",
+  "name": "ATTEST-AIT wardbeck/wardbeck session 123",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wardbeck/wardbeck/session-0123",
+  "alert": {
+    "timestamp": "2022-01-23T12:44:19Z",
+    "host": "wardbeck",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (29 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New cred_acq parameter combination in Audit logs., AMiner: New cred_di",
+    "scenario": "wardbeck"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-23T12:44:19Z",
+    "end": "2022-01-23T12:55:19Z",
+    "hosts": [
+      "wardbeck"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-2e7fd41d",
+        "timestamp": "2022-01-23T12:44:19Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"host\":{\"cpu\":{\"pct\":1},\"name\":\"intranet-server\"},\"service\":{\"type\":\"system\"},\"ecs\":{\"version\":\"1.9.0\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"system\":{\"cpu\":{\"softirq\":{\"norm\":{\"pct\":4.0E-4},\"pct\":4.0E-4},\"nice\":{\"norm\":{\"pct\":0.9356},\"pct\":0.9356},\"total\":{\"norm\":{\"pct\":1},\"pct\":1},\"steal\":{\"norm\":{\"pct\":9.0E-4},\"pct\":9.0E-4},\"irq\":{\"norm\":{\"pct\":0},\"pct\":0}",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-3cb00485",
+        "timestamp": "2022-01-23T12:55:01Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 23 12:55:01 intranet-server su[28708]: Successful su for blord by www-data",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-990a65a4",
+        "timestamp": "2022-01-23T12:55:01Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 23 12:55:01 intranet-server su[28708]: + /dev/pts/1 www-data:blord",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-1b3a78b9",
+        "timestamp": "2022-01-23T12:55:01Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 23 12:55:01 intranet-server su[28708]: pam_unix(su:session): session opened for user blord by (uid=33)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-ab54e254",
+        "timestamp": "2022-01-23T12:55:01Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642942501.083:2976): pid=28708 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"blord\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-b0b146ac",
+        "timestamp": "2022-01-23T12:55:01Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642942501.087:2977): pid=28708 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"blord\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-dd09e161",
+        "timestamp": "2022-01-23T12:55:01Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1642942501.091:2978): pid=28708 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"blord\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-330c71aa",
+        "timestamp": "2022-01-23T12:55:01Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1642942501.359:2984): pid=28708 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"blord\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-3f8af3cc",
+        "timestamp": "2022-01-23T12:55:14Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 23 12:55:14 intranet-server sudo:    blord : TTY=pts/1 ; PWD=/var/www/intranet.hurstwong.wardbeck.info/wp-content/uploads/2022/01 ; USER=root ; COMMAND=list",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-b75c6b19",
+        "timestamp": "2022-01-23T12:55:15Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 23 12:55:15 intranet-server sudo:    blord : TTY=pts/1 ; PWD=/var/www/intranet.hurstwong.wardbeck.info/wp-content/uploads/2022/01 ; USER=root ; COMMAND=/bin/cat /etc/shadow",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-752ffb64",
+        "timestamp": "2022-01-23T12:55:15Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 23 12:55:15 intranet-server sudo: pam_unix(sudo:session): session opened for user root by (uid=0)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-705a3e83",
+        "timestamp": "2022-01-23T12:55:15Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "type=USER_CMD msg=audit(1642942515.991:2985): pid=28732 uid=1001 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.hurstwong.wardbeck.info/wp-content/uploads/2022/01\" cmd=636174202F6574632F736861646F77 terminal=pts/1 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-e3ff20f3",
+        "timestamp": "2022-01-23T12:55:15Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_cmd parameter combination in Audit logs.",
+        "message": "type=USER_CMD msg=audit(1642942515.991:2985): pid=28732 uid=1001 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.hurstwong.wardbeck.info/wp-content/uploads/2022/01\" cmd=636174202F6574632F736861646F77 terminal=pts/1 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-33a6d1aa",
+        "timestamp": "2022-01-23T12:55:15Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "type=CRED_REFR msg=audit(1642942515.995:2986): pid=28732 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-ddbf9b3e",
+        "timestamp": "2022-01-23T12:55:15Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New cred_refr parameter combination in Audit logs.",
+        "message": "type=CRED_REFR msg=audit(1642942515.995:2986): pid=28732 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-091edccb",
+        "timestamp": "2022-01-23T12:55:15Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1642942515.995:2987): pid=28732 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-7ffc4880",
+        "timestamp": "2022-01-23T12:55:16Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 23 12:55:16 intranet-server sudo: pam_unix(sudo:session): session closed for user root",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-4466e4f7",
+        "timestamp": "2022-01-23T12:55:16Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_end parameter combination in Audit logs.",
+        "message": "type=USER_END msg=audit(1642942516.003:2988): pid=28732 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_close acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-729c5288",
+        "timestamp": "2022-01-23T12:55:16Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "message": "type=CRED_DISP msg=audit(1642942516.003:2989): pid=28732 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-2a3d0f49",
+        "timestamp": "2022-01-23T12:55:19Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 23 12:55:19 intranet-server sudo:    blord : TTY=pts/1 ; PWD=/var/www/intranet.hurstwong.wardbeck.info/wp-content/uploads/2022/01 ; USER=root ; COMMAND=/bin/ls -laR /root/",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-1650f94e",
+        "timestamp": "2022-01-23T12:55:19Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 23 12:55:19 intranet-server sudo: pam_unix(sudo:session): session opened for user root by (uid=0)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-baa65a4b",
+        "timestamp": "2022-01-23T12:55:19Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 23 12:55:19 intranet-server sudo: pam_unix(sudo:session): session closed for user root",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-ddadb8e3",
+        "timestamp": "2022-01-23T12:55:19Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "type=USER_CMD msg=audit(1642942519.275:2990): pid=28734 uid=1001 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.hurstwong.wardbeck.info/wp-content/uploads/2022/01\" cmd=6C73202D6C6152202F726F6F742F terminal=pts/1 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-d2a0a4e9",
+        "timestamp": "2022-01-23T12:55:19Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_cmd parameter combination in Audit logs.",
+        "message": "type=USER_CMD msg=audit(1642942519.275:2990): pid=28734 uid=1001 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.hurstwong.wardbeck.info/wp-content/uploads/2022/01\" cmd=6C73202D6C6152202F726F6F742F terminal=pts/1 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0025-cebc605d",
+        "timestamp": "2022-01-23T12:55:19Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "type=CRED_REFR msg=audit(1642942519.279:2991): pid=28734 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0026-6fc6e76d",
+        "timestamp": "2022-01-23T12:55:19Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New cred_refr parameter combination in Audit logs.",
+        "message": "type=CRED_REFR msg=audit(1642942519.279:2991): pid=28734 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0027-8cea3040",
+        "timestamp": "2022-01-23T12:55:19Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1642942519.279:2992): pid=28734 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0028-4969afec",
+        "timestamp": "2022-01-23T12:55:19Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_end parameter combination in Audit logs.",
+        "message": "type=USER_END msg=audit(1642942519.499:2993): pid=28734 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_close acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0029-54570a3c",
+        "timestamp": "2022-01-23T12:55:19Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "message": "type=CRED_DISP msg=audit(1642942519.499:2994): pid=28734 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-2e7fd41d",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:44:19Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"host\":{\"cpu\":{\"pct\":1},\"name\":\"intranet-server\"},\"service\":{\"type\":\"system\"},\"ecs\":{\"version\":\"1.9.0\"},\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"system\":{\"cpu\":{\"softirq\":{\"norm\":{\"pct\":4.0E-4},\"pct\":4.0E-4},\"nice\":{\"norm\":{\"pct\":0.9356},\"pct\":0.9356},\"total\":{\"norm\":{\"pct\":1},\"pct\":1},\"steal\":{\"norm\":{\"pct\":9.0E-4},\"pct\":9.0E-4},\"irq\":{\"norm\":{\"pct\":0},\"pct\":0}",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-3cb00485",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:55:01Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 23 12:55:01 intranet-server su[28708]: Successful su for blord by www-data",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-990a65a4",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:55:01Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 23 12:55:01 intranet-server su[28708]: + /dev/pts/1 www-data:blord",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0004-1b3a78b9",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:55:01Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 23 12:55:01 intranet-server su[28708]: pam_unix(su:session): session opened for user blord by (uid=33)",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0005-ab54e254",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:55:01Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642942501.083:2976): pid=28708 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"blord\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0006-b0b146ac",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:55:01Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642942501.087:2977): pid=28708 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"blord\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0007-dd09e161",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:55:01Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1642942501.091:2978): pid=28708 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"blord\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0008-330c71aa",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:55:01Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1642942501.359:2984): pid=28708 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"blord\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0009-3f8af3cc",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:55:14Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 23 12:55:14 intranet-server sudo:    blord : TTY=pts/1 ; PWD=/var/www/intranet.hurstwong.wardbeck.info/wp-content/uploads/2022/01 ; USER=root ; COMMAND=list",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0010-b75c6b19",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:55:15Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 23 12:55:15 intranet-server sudo:    blord : TTY=pts/1 ; PWD=/var/www/intranet.hurstwong.wardbeck.info/wp-content/uploads/2022/01 ; USER=root ; COMMAND=/bin/cat /etc/shadow",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0011-752ffb64",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:55:15Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 23 12:55:15 intranet-server sudo: pam_unix(sudo:session): session opened for user root by (uid=0)",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0012-705a3e83",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:55:15Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "type=USER_CMD msg=audit(1642942515.991:2985): pid=28732 uid=1001 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.hurstwong.wardbeck.info/wp-content/uploads/2022/01\" cmd=636174202F6574632F736861646F77 terminal=pts/1 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0013-e3ff20f3",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:55:15Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New user_cmd parameter combination in Audit logs.",
+        "message": "type=USER_CMD msg=audit(1642942515.991:2985): pid=28732 uid=1001 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.hurstwong.wardbeck.info/wp-content/uploads/2022/01\" cmd=636174202F6574632F736861646F77 terminal=pts/1 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0014-33a6d1aa",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:55:15Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "type=CRED_REFR msg=audit(1642942515.995:2986): pid=28732 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0015-ddbf9b3e",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:55:15Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New cred_refr parameter combination in Audit logs.",
+        "message": "type=CRED_REFR msg=audit(1642942515.995:2986): pid=28732 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0016-091edccb",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:55:15Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1642942515.995:2987): pid=28732 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0017-7ffc4880",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:55:16Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 23 12:55:16 intranet-server sudo: pam_unix(sudo:session): session closed for user root",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0018-4466e4f7",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:55:16Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New user_end parameter combination in Audit logs.",
+        "message": "type=USER_END msg=audit(1642942516.003:2988): pid=28732 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_close acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0019-729c5288",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:55:16Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "message": "type=CRED_DISP msg=audit(1642942516.003:2989): pid=28732 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0020-2a3d0f49",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:55:19Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 23 12:55:19 intranet-server sudo:    blord : TTY=pts/1 ; PWD=/var/www/intranet.hurstwong.wardbeck.info/wp-content/uploads/2022/01 ; USER=root ; COMMAND=/bin/ls -laR /root/",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0021-1650f94e",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:55:19Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 23 12:55:19 intranet-server sudo: pam_unix(sudo:session): session opened for user root by (uid=0)",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0022-baa65a4b",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:55:19Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 23 12:55:19 intranet-server sudo: pam_unix(sudo:session): session closed for user root",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0023-ddadb8e3",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:55:19Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "type=USER_CMD msg=audit(1642942519.275:2990): pid=28734 uid=1001 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.hurstwong.wardbeck.info/wp-content/uploads/2022/01\" cmd=6C73202D6C6152202F726F6F742F terminal=pts/1 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0024-d2a0a4e9",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:55:19Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New user_cmd parameter combination in Audit logs.",
+        "message": "type=USER_CMD msg=audit(1642942519.275:2990): pid=28734 uid=1001 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.hurstwong.wardbeck.info/wp-content/uploads/2022/01\" cmd=6C73202D6C6152202F726F6F742F terminal=pts/1 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0025-cebc605d",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:55:19Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "type=CRED_REFR msg=audit(1642942519.279:2991): pid=28734 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0026-6fc6e76d",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:55:19Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New cred_refr parameter combination in Audit logs.",
+        "message": "type=CRED_REFR msg=audit(1642942519.279:2991): pid=28734 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0027-8cea3040",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:55:19Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1642942519.279:2992): pid=28734 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0028-4969afec",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:55:19Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New user_end parameter combination in Audit logs.",
+        "message": "type=USER_END msg=audit(1642942519.499:2993): pid=28734 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_close acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0029-54570a3c",
+      "source": "alerts",
+      "timestamp": "2022-01-23T12:55:19Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "message": "type=CRED_DISP msg=audit(1642942519.499:2994): pid=28734 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (29 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New cred_acq parameter combination in Audit logs., AMiner: New cred_di",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (29 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New cred_acq parameter combination in Audit logs., AMiner: New cred_di",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wardbeck/wardbeck/session-0123",
+    "answer": "malicious",
+    "accept": [
+      "malicious"
+    ],
+    "grading": "exact_ci",
+    "label": "malicious",
+    "is_true_positive": true,
+    "attack_stages": [
+      "cracking",
+      "privilege_escalation",
+      "reverse_shell"
+    ],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 29,
+      "kept_alerts": 29
+    },
+    "sealed": true
+  }
+}

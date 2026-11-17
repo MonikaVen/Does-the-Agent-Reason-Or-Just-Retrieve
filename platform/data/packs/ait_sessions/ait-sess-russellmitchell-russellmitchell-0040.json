@@ -1,0 +1,183 @@
+{
+  "incident_id": "ait-sess-russellmitchell-russellmitchell-0040",
+  "name": "ATTEST-AIT russellmitchell/russellmitchell session 40",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "russellmitchell/russellmitchell/session-0040",
+  "alert": {
+    "timestamp": "2022-01-23T19:46:26Z",
+    "host": "russellmitchell",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (3 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: Unusual occurrence frequencies of DNS query IPs.).",
+    "scenario": "russellmitchell"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-23T19:46:26Z",
+    "end": "2022-01-23T20:00:12Z",
+    "hosts": [
+      "russellmitchell"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-ed13043f",
+        "timestamp": "2022-01-23T19:46:26Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 23 19:46:26 dnsmasq[3326]: reply nl1ads3.simpli.fi is 159.122.14.34",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-5acc844e",
+        "timestamp": "2022-01-23T19:46:26Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 23 19:46:26 dnsmasq[3468]: reply nl1ads3.simpli.fi is 159.122.14.34",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-0c1229ed",
+        "timestamp": "2022-01-23T20:00:12Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 23 20:00:12 dnsmasq[3468]: query[A] intranet.smith.russellmitchell.com from 172.19.131.174",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-ed13043f",
+      "source": "alerts",
+      "timestamp": "2022-01-23T19:46:26Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 23 19:46:26 dnsmasq[3326]: reply nl1ads3.simpli.fi is 159.122.14.34",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-5acc844e",
+      "source": "alerts",
+      "timestamp": "2022-01-23T19:46:26Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 23 19:46:26 dnsmasq[3468]: reply nl1ads3.simpli.fi is 159.122.14.34",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-0c1229ed",
+      "source": "alerts",
+      "timestamp": "2022-01-23T20:00:12Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 23 20:00:12 dnsmasq[3468]: query[A] intranet.smith.russellmitchell.com from 172.19.131.174",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (3 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: Unusual occurrence frequencies of DNS query IPs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (3 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: Unusual occurrence frequencies of DNS query IPs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "russellmitchell/russellmitchell/session-0040",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 3,
+      "kept_alerts": 3
+    },
+    "sealed": true
+  }
+}

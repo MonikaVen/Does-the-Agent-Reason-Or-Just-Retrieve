@@ -1,0 +1,163 @@
+{
+  "incident_id": "ait-sess-russellmitchell-russellmitchell-0018",
+  "name": "ATTEST-AIT russellmitchell/russellmitchell session 18",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "russellmitchell/russellmitchell/session-0018",
+  "alert": {
+    "timestamp": "2022-01-21T11:50:13Z",
+    "host": "russellmitchell",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (2 alerts; detectors: AMiner: CPU value out of expected range in monitoring logs., AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+    "scenario": "russellmitchell"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-21T11:50:13Z",
+    "end": "2022-01-21T11:58:07Z",
+    "hosts": [
+      "russellmitchell"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-2b40f51e",
+        "timestamp": "2022-01-21T11:50:13Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "172.19.131.174 - - [21/Jan/2022:11:50:13 +0000] \"POST /services/ajax.php/imp/sendMessage HTTP/1.1\" 200 1088 \"https://mail.smith.russellmitchell.com/imp/dynamic.php?page=compose&type=new&token=T09qFLXUlmOqYoWnTxecgJr&uniq=1642765705029\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-f9bed739",
+        "timestamp": "2022-01-21T11:58:07Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"agent\":{\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"id\":\"d8e6f857-ec88-4cf5-bc5e-7b72a6fd1e33\",\"ephemeral_id\":\"c6b20ae2-38c0-4ada-8be2-2d607fddf7e9\",\"version\":\"7.13.2\",\"type\":\"metricbeat\"},\"service\":{\"type\":\"system\"},\"event\":{\"module\":\"system\",\"dataset\":\"system.cpu\",\"duration\":359956},\"@version\":\"1\",\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"ecs\":{\"version\":\"1.9.0\"},\"host\":{\"cpu\":{\"pc",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-2b40f51e",
+      "source": "alerts",
+      "timestamp": "2022-01-21T11:50:13Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "172.19.131.174 - - [21/Jan/2022:11:50:13 +0000] \"POST /services/ajax.php/imp/sendMessage HTTP/1.1\" 200 1088 \"https://mail.smith.russellmitchell.com/imp/dynamic.php?page=compose&type=new&token=T09qFLXUlmOqYoWnTxecgJr&uniq=1642765705029\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-f9bed739",
+      "source": "alerts",
+      "timestamp": "2022-01-21T11:58:07Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"agent\":{\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"id\":\"d8e6f857-ec88-4cf5-bc5e-7b72a6fd1e33\",\"ephemeral_id\":\"c6b20ae2-38c0-4ada-8be2-2d607fddf7e9\",\"version\":\"7.13.2\",\"type\":\"metricbeat\"},\"service\":{\"type\":\"system\"},\"event\":{\"module\":\"system\",\"dataset\":\"system.cpu\",\"duration\":359956},\"@version\":\"1\",\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"ecs\":{\"version\":\"1.9.0\"},\"host\":{\"cpu\":{\"pc",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (2 alerts; detectors: AMiner: CPU value out of expected range in monitoring logs., AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (2 alerts; detectors: AMiner: CPU value out of expected range in monitoring logs., AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "russellmitchell/russellmitchell/session-0018",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 2,
+      "kept_alerts": 2
+    },
+    "sealed": true
+  }
+}

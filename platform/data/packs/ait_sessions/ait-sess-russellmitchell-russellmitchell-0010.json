@@ -1,0 +1,606 @@
+{
+  "incident_id": "ait-sess-russellmitchell-russellmitchell-0010",
+  "name": "ATTEST-AIT russellmitchell/russellmitchell session 10",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "russellmitchell/russellmitchell/session-0010",
+  "alert": {
+    "timestamp": "2022-01-21T05:45:15Z",
+    "host": "russellmitchell",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (50 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: CPU value out of expected range in monitoring logs., AMiner: Hi",
+    "scenario": "russellmitchell"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-21T05:45:15Z",
+    "end": "2022-01-21T06:44:30Z",
+    "hosts": [
+      "russellmitchell"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-b4a1c796",
+        "timestamp": "2022-01-21T05:45:15Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 21 05:45:15 dnsmasq[3326]: query[A] 3x6-.746-.7rmOefP7nrEs5hISL9IsmQM/ajuUAOsgGo-.HfxGiwfVRB8540Y9YdoLGQDi8c8KCnanpF-.FtgTI4Pgpyp/HthXhuvzSDj34g7gksGKGP-./rD5Oj9RHsm76UBOP*IZhitr5zE9GDpYyL-.customers_2013.xlsx.email-19.kennedy-mendoza.info from 192.168.230.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-8b163de0",
+        "timestamp": "2022-01-21T05:46:06Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 05:46:06 dnsmasq[3326]: query[A] motd.ubuntu.com from 192.168.231.75",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-eeab03e1",
+        "timestamp": "2022-01-21T05:55:22Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "10.143.3.65 - - [21/Jan/2022:05:55:22 +0000] \"GET / HTTP/1.1\" 200 6202 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-c54a82ba",
+        "timestamp": "2022-01-21T05:55:32Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "::1 - - [21/Jan/2022:05:55:32 +0000] \"OPTIONS * HTTP/1.0\" 200 110 \"-\" \"Apache/2.4.29 (Ubuntu) OpenSSL/1.1.1 (internal dummy connection)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-39309624",
+        "timestamp": "2022-01-21T05:55:32Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "::1 - - [21/Jan/2022:05:55:32 +0000] \"OPTIONS * HTTP/1.0\" 200 110 \"-\" \"Apache/2.4.29 (Ubuntu) OpenSSL/1.1.1 (internal dummy connection)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-5d7daed5",
+        "timestamp": "2022-01-21T05:57:48Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "10.143.3.65 - - [21/Jan/2022:05:57:48 +0000] \"GET /wp-content/plugins/wpdiscuz/themes/default/css/fonts/sqr721c-webfont.woff2 HTTP/1.1\" 200 18908 \"https://intranet.smith.russellmitchell.com/wp-content/plugins/wpdiscuz/themes/default/style.css?ver=7.0.4\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-c6652a60",
+        "timestamp": "2022-01-21T06:00:37Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "10.143.3.65 - - [21/Jan/2022:06:00:37 +0000] \"GET /wp-content/plugins/wpdiscuz/assets/img/loading.gif HTTP/1.1\" 200 4069 \"https://intranet.smith.russellmitchell.com/wp-content/plugins/wpdiscuz/themes/default/style.css?ver=7.0.4\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-b766b12e",
+        "timestamp": "2022-01-21T06:08:38Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "type=AVC msg=audit(1642745318.249:857): apparmor=\"STATUS\" operation=\"profile_replace\" info=\"same as current profile, skipping\" profile=\"unconfined\" name=\"/sbin/dhclient\" pid=18508 comm=\"apparmor_parser\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-adb6d5cb",
+        "timestamp": "2022-01-21T06:08:38Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New syscall parameter combination in Audit logs.",
+        "message": "type=SYSCALL msg=audit(1642745318.249:857): arch=c000003e syscall=1 success=yes exit=44953 a0=6 a1=563ddf19b6e0 a2=af99 a3=0 items=0 ppid=18507 pid=18508 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=4294967295 comm=\"apparmor_parser\" exe=\"/sbin/apparmor_parser\" key=(null)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-9c9e0907",
+        "timestamp": "2022-01-21T06:09:01Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 06:09:01 dnsmasq[3468]: query[A] motd.ubuntu.com from 10.143.0.35",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-bbea837c",
+        "timestamp": "2022-01-21T06:10:03Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642745403.848:869): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=apport comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-c405cc3d",
+        "timestamp": "2022-01-21T06:10:33Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "10.143.3.65 - - [21/Jan/2022:06:10:33 +0000] \"POST /wp-admin/admin-ajax.php HTTP/1.1\" 200 5731 \"https://intranet.smith.russellmitchell.com/?p=5\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-3e19b872",
+        "timestamp": "2022-01-21T06:11:19Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 06:11:19 cloud-share sshd[1423]: Received signal 15; terminating.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-828c71e0",
+        "timestamp": "2022-01-21T06:11:19Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642745479.615:875): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=ssh comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-73d414f8",
+        "timestamp": "2022-01-21T06:11:25Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 06:11:25 cloud-share systemd-timesyncd[579]: Network configuration changed, trying to establish connection.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-55afb2a7",
+        "timestamp": "2022-01-21T06:11:25Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 06:11:25 cloud-share systemd-hostnamed[31911]: Changed host name to 'host-172-19-130-106'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-76c9f429",
+        "timestamp": "2022-01-21T06:11:25Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642745485.491:879): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-networkd comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-b405b3e3",
+        "timestamp": "2022-01-21T06:11:25Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642745485.539:882): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-resolved comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-2f4d2a5f",
+        "timestamp": "2022-01-21T06:11:25Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642745485.635:885): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-timesyncd comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-efc9caea",
+        "timestamp": "2022-01-21T06:11:25Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642745485.687:888): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-journal-flush comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-363c48ce",
+        "timestamp": "2022-01-21T06:11:25Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642745485.711:891): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-journald comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-19ad131a",
+        "timestamp": "2022-01-21T06:11:38Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642745498.323:895): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=grub-common comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-1021f7cf",
+        "timestamp": "2022-01-21T06:11:41Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 06:11:41 cloud-share os-prober: debug: running /usr/lib/os-probes/50mounted-tests on /dev/vda14",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-34ab48d1",
+        "timestamp": "2022-01-21T06:11:41Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 06:11:41 cloud-share 05efi: debug: Not on UEFI platform",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0025-233e0c42",
+        "timestamp": "2022-01-21T06:11:41Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 06:11:41 cloud-share macosx-prober: debug: /dev/vda15 is not an HFS+ partition: exiting",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0026-00f85e78",
+        "timestamp": "2022-01-21T06:11:41Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 06:11:41 cloud-share 30utility: debug: /dev/vda15 is a FAT32 partition",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0027-bbe13a09",
+        "timestamp": "2022-01-21T06:11:55Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642745515.655:898): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-hostnamed comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0028-ae5743ac",
+        "timestamp": "2022-01-21T06:14:37Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"service\":{\"type\":\"system\"},\"agent\":{\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"id\":\"d8e6f857-ec88-4cf5-bc5e-7b72a6fd1e33\",\"ephemeral_id\":\"c6b20ae2-38c0-4ada-8be2-2d607fddf7e9\",\"version\":\"7.13.2\",\"type\":\"metricbeat\"},\"event\":{\"module\":\"system\",\"dataset\":\"system.cpu\",\"duration\":708041},\"@version\":\"1\",\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"host\":{\"cpu\":{\"pct\":0.059},\"name\":\"intranet",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0029-d0feaf17",
+        "timestamp": "2022-01-21T06:23:48Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 06:23:48 dnsmasq[3468]: query[A] motd.ubuntu.com from 10.143.1.36",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0030-208c0288",
+        "timestamp": "2022-01-21T06:25:08Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-21 06:25:08 1nAnMC-0002CB-1J <= root@mailserver.smith.russellmitchell.com U=root P=local S=2261",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0031-3658dc86",
+        "timestamp": "2022-01-21T06:25:08Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-21 06:25:08 1nAnMC-0002CB-1J Completed",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0032-bcf392ac",
+        "timestamp": "2022-01-21T06:27:22Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"service\":{\"type\":\"system\"},\"agent\":{\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"id\":\"d8e6f857-ec88-4cf5-bc5e-7b72a6fd1e33\",\"ephemeral_id\":\"c6b20ae2-38c0-4ada-8be2-2d607fddf7e9\",\"version\":\"7.13.2\",\"type\":\"metricbeat\"},\"event\":{\"module\":\"system\",\"dataset\":\"system.cpu\",\"duration\":845669},\"@version\":\"1\",\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"host\":{\"cpu\":{\"pct\":0.9984},\"name\":\"intrane",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0033-ae088bd0",
+        "timestamp": "2022-01-21T06:29:45Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.smith.russellmitchell.com:443 172.19.130.68 - - [21/Jan/2022:06:29:45 +0000] \"GET /core/vendor/jsTimezoneDetect/jstz.js?v=57925bad04b2781b22d97b514bc2161d HTTP/1.1\" 200 4518 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0034-0ed39f06",
+        "timestamp": "2022-01-21T06:29:55Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "cloud.dmz.smith.russellmitchell.com:443 172.19.130.68 - - [21/Jan/2022:06:29:55 +0000] \"POST /index.php/login HTTP/1.1\" 303 918 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0035-48fdfb8f",
+        "timestamp": "2022-01-21T06:29:56Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "cloud.dmz.smith.russellmitchell.com:443 172.19.130.68 - - [21/Jan/2022:06:29:56 +0000] \"PROPFIND /remote.php/dav/files/rblake/ HTTP/1.1\" 207 4357 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0036-70c8e8a8",
+        "timestamp": "2022-01-21T06:30:01Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-21 06:30:01 192.168.230.95:60795 TLS: Initial packet from [AF_INET]192.168.230.95:60795, sid=30d47335 8140d551",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0037-c13400b3",
+        "timestamp": "2022-01-21T06:30:01Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-21 06:30:01 192.168.230.95:60795 [twhite] Peer Connection Initiated with [AF_INET]192.168.230.95:60795",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0038-020e6f8a",
+        "timestamp": "2022-01-21T06:30:01Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-21 06:30:01 twhite/192.168.230.95:60795 MULTI: Learn: 10.9.0.6 -> twhite/192.168.230.95:60795",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0039-1e7d9f66",
+        "timestamp": "2022-01-21T06:30:03Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-21 06:30:03 twhite/192.168.230.95:60795 PUSH: Received control message: 'PUSH_REQUEST'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0040-0a0ab9c6",
+        "timestamp": "2022-01-21T06:30:14Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "172.19.131.174 - - [21/Jan/2022:06:30:14 +0000] \"GET / HTTP/1.1\" 302 471 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0041-2817e027",
+        "timestamp": "2022-01-21T06:30:20Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642746620.929:1467): pid=8461 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"toby.white\" exe=\"/usr/lib/dovecot/auth\" hostname=172.19.130.4 addr=172.19.130.4 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0042-8b89e287",
+        "timestamp": "2022-01-21T06:30:21Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 06:30:21 mail HORDE: [imp] Login success for toby.white (172.19.130.68) (forwarded for [172.19.131.174]) to {imap://mailserver.smith.russellmitchell.com/} [pid 5833 on line 156 of \"/usr/share/horde/imp/lib/Auth.php\"]",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0043-972a7a22",
+        "timestamp": "2022-01-21T06:33:14Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 21 06:33:14 dnsmasq[3468]: query[SRV] _http._tcp.ppa.launchpad.net from 10.143.2.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0044-8d2841f2",
+        "timestamp": "2022-01-21T06:34:54Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "cloud.dmz.smith.russellmitchell.com:443 172.19.130.68 - - [21/Jan/2022:06:34:54 +0000] \"GET /core/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1\" 200 578 \"https://cloud.smith.russellmitchell.com/core/css/jquery-ui-fixes.css?v=57925bad04b2781b22d97b514bc2161d\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0045-12ad11d3",
+        "timestamp": "2022-01-21T06:38:12Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642747092.702:1481): pid=8499 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"rebecca.blake\" exe=\"/usr/lib/dovecot/auth\" hostname=172.19.130.4 addr=172.19.130.4 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0046-471eb659",
+        "timestamp": "2022-01-21T06:39:00Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.143.3.65 - - [21/Jan/2022:06:39:00 +0000] \"GET /mnemo/memo.php?memo=kYUU0s7DnJRH4zHCdGIkmw4&memolist=fCMn_d8lIdfu5PC8jq1b3jI&actionID=modify_memo HTTP/1.1\" 200 6999 \"https://mail.smith.russellmitchell.com/mnemo/\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0047-626e6b08",
+        "timestamp": "2022-01-21T06:39:38Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "172.19.131.174 - - [21/Jan/2022:06:39:38 +0000] \"GET /imp/themes/default/mime.css HTTP/1.1\" 200 494 \"https://mail.smith.russellmitchell.com/imp/dynamic.php?page=message&buid=15&mailbox=SU5CT1g&token=uplztD1P3yVezseybDFxbtK&uniq=1642747178405\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0048-7c79613b",
+        "timestamp": "2022-01-21T06:42:16Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 06:42:16 mail HORDE: [imp] Message sent to shane.watson@davey.russellmitchell.com, matthew.begum@morris.russellmitchell.com from toby.white (172.19.131.174) [pid 4088 on line 970 of \"/usr/share/horde/imp/lib/Compose.php\"]",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0049-72de2029",
+        "timestamp": "2022-01-21T06:42:58Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "172.19.131.174 - - [21/Jan/2022:06:42:58 +0000] \"-\" 408 575 \"-\" \"-\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0050-2d8fd05d",
+        "timestamp": "2022-01-21T06:42:58Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in Apache Access user agent.",
+        "message": "172.19.131.174 - - [21/Jan/2022:06:42:58 +0000] \"-\" 408 575 \"-\" \"-\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-b4a1c796",
+      "source": "alerts",
+      "timestamp": "2022-01-21T05:45:15Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 21 05:45:15 dnsmasq[3326]: query[A] 3x6-.746-.7rmOefP7nrEs5hISL9IsmQM/ajuUAOsgGo-.HfxGiwfVRB8540Y9YdoLGQDi8c8KCnanpF-.FtgTI4Pgpyp/HthXhuvzSDj34g7gksGKGP-./rD5Oj9RHsm76UBOP*IZhitr5zE9GDpYyL-.customers_2013.xlsx.email-19.kennedy-mendoza.info from 192.168.230.4",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-8b163de0",
+      "source": "alerts",
+      "timestamp": "2022-01-21T05:46:06Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 05:46:06 dnsmasq[3326]: query[A] motd.ubuntu.com from 192.168.231.75",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-eeab03e1",
+      "source": "alerts",
+      "timestamp": "2022-01-21T05:55:22Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "10.143.3.65 - - [21/Jan/2022:05:55:22 +0000] \"GET / HTTP/1.1\" 200 6202 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (50 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: CPU value out of expected range in monitoring logs., AMiner: Hi",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (50 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: CPU value out of expected range in monitoring logs., AMiner: Hi",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "russellmitchell/russellmitchell/session-0010",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 113,
+      "kept_alerts": 50
+    },
+    "sealed": true
+  }
+}

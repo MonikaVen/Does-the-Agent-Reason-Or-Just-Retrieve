@@ -1,0 +1,192 @@
+{
+  "incident_id": "ait-sess-shaw-shaw-0038",
+  "name": "ATTEST-AIT shaw/shaw session 38",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "shaw/shaw/session-0038",
+  "alert": {
+    "timestamp": "2022-01-26T08:56:44Z",
+    "host": "shaw",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (4 alerts; detectors: AMiner: New event type., AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+    "scenario": "shaw"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-26T08:56:44Z",
+    "end": "2022-01-26T09:03:33Z",
+    "hosts": [
+      "shaw"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-1038c43b",
+        "timestamp": "2022-01-26T08:56:44Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "[Wed Jan 26 08:56:44.539109 2022] [proxy_http:error] [pid 6026] (70014)End of file found: [client 192.168.188.49:37114] AH01102: error reading status line from remote server cloud.dmz.thomasmurray.shaw.info:443",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-9830b722",
+        "timestamp": "2022-01-26T09:02:17Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 09:02:17 dnsmasq[14596]: query[AAAA] tracking-protection.cdn.mozilla.net from 192.168.188.49",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-5152fa53",
+        "timestamp": "2022-01-26T09:02:17Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 09:02:17 dnsmasq[14596]: query[A] photos1.blogger.com from 192.168.188.49",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-1c57867c",
+        "timestamp": "2022-01-26T09:03:33Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 09:03:33 dnsmasq[14635]: query[AAAA] collinsbecker-mail from 10.70.34.215",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-1038c43b",
+      "source": "alerts",
+      "timestamp": "2022-01-26T08:56:44Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "[Wed Jan 26 08:56:44.539109 2022] [proxy_http:error] [pid 6026] (70014)End of file found: [client 192.168.188.49:37114] AH01102: error reading status line from remote server cloud.dmz.thomasmurray.shaw.info:443",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-9830b722",
+      "source": "alerts",
+      "timestamp": "2022-01-26T09:02:17Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 09:02:17 dnsmasq[14596]: query[AAAA] tracking-protection.cdn.mozilla.net from 192.168.188.49",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-5152fa53",
+      "source": "alerts",
+      "timestamp": "2022-01-26T09:02:17Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 09:02:17 dnsmasq[14596]: query[A] photos1.blogger.com from 192.168.188.49",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (4 alerts; detectors: AMiner: New event type., AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (4 alerts; detectors: AMiner: New event type., AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "shaw/shaw/session-0038",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 4,
+      "kept_alerts": 4
+    },
+    "sealed": true
+  }
+}

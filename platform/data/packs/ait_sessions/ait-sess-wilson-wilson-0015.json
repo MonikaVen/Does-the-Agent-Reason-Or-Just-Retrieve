@@ -1,0 +1,163 @@
+{
+  "incident_id": "ait-sess-wilson-wilson-0015",
+  "name": "ATTEST-AIT wilson/wilson session 15",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wilson/wilson/session-0015",
+  "alert": {
+    "timestamp": "2022-02-03T13:06:34Z",
+    "host": "wilson",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (2 alerts; detectors: AMiner: CPU value out of expected range in monitoring logs., AMiner: New request method in Apache Access log.).",
+    "scenario": "wilson"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-03T13:06:34Z",
+    "end": "2022-02-03T13:21:11Z",
+    "hosts": [
+      "wilson"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-3cc5bea0",
+        "timestamp": "2022-02-03T13:06:34Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"@timestamp\":\"2022-02-03T13:06:34.080Z\",\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.0334}},\"event\":{\"dataset\":\"system.cpu\",\"module\":\"system\",\"duration\":998667},\"metricset\":{\"name\":\"cpu\",\"period\":45000},\"agent\":{\"id\":\"da99bcc3-c6bc-4a35-b6b1-b0240157675f\",\"type\":\"metricbeat\",\"version\":\"7.13.2\",\"ephemeral_id\":\"9aa22b27-798d-490c-9789-25bfb578d74b\",\"name\":\"intranet-server\",\"hostname\":\"intranet-s",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-d2880b7b",
+        "timestamp": "2022-02-03T13:21:11Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "cloud.dmz.hallbrown.wilson.com:443 10.182.194.5 - - [03/Feb/2022:13:21:11 +0000] \"MKCOL /remote.php/dav/files/kobrien/Documents/student HTTP/1.1\" 201 628 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-3cc5bea0",
+      "source": "alerts",
+      "timestamp": "2022-02-03T13:06:34Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"@timestamp\":\"2022-02-03T13:06:34.080Z\",\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.0334}},\"event\":{\"dataset\":\"system.cpu\",\"module\":\"system\",\"duration\":998667},\"metricset\":{\"name\":\"cpu\",\"period\":45000},\"agent\":{\"id\":\"da99bcc3-c6bc-4a35-b6b1-b0240157675f\",\"type\":\"metricbeat\",\"version\":\"7.13.2\",\"ephemeral_id\":\"9aa22b27-798d-490c-9789-25bfb578d74b\",\"name\":\"intranet-server\",\"hostname\":\"intranet-s",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-d2880b7b",
+      "source": "alerts",
+      "timestamp": "2022-02-03T13:21:11Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "cloud.dmz.hallbrown.wilson.com:443 10.182.194.5 - - [03/Feb/2022:13:21:11 +0000] \"MKCOL /remote.php/dav/files/kobrien/Documents/student HTTP/1.1\" 201 628 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (2 alerts; detectors: AMiner: CPU value out of expected range in monitoring logs., AMiner: New request method in Apache Access log.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (2 alerts; detectors: AMiner: CPU value out of expected range in monitoring logs., AMiner: New request method in Apache Access log.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wilson/wilson/session-0015",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 2,
+      "kept_alerts": 2
+    },
+    "sealed": true
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "incident_id": "ait-sess-santos-santos-0004",
+  "name": "ATTEST-AIT santos/santos session 4",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "santos/santos/session-0004",
+  "alert": {
+    "timestamp": "2022-01-14T02:28:36Z",
+    "host": "santos",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (14 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: High entropy in DNS domain., AMiner: New event type.).",
+    "scenario": "santos"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-14T02:28:36Z",
+    "end": "2022-01-14T03:28:36Z",
+    "hosts": [
+      "santos"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-9cbea458",
+        "timestamp": "2022-01-14T02:28:36Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 14 02:28:36 dnsmasq[14919]: query[AAAA] mail from 172.21.131.50",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-57dd5b72",
+        "timestamp": "2022-01-14T02:29:28Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"agent\":{\"id\":\"ab5616c7-58c0-4480-a883-359041057b74\",\"hostname\":\"intranet-server\",\"type\":\"metricbeat\",\"ephemeral_id\":\"c1899c21-6022-4ee2-9f06-2248c8a823cf\",\"version\":\"7.13.2\",\"name\":\"intranet-server\"},\"tags\":[\"beats_input_raw_event\"],\"host\":{\"cpu\":{\"pct\":0.0751},\"name\":\"intranet-server\"},\"@version\":\"1\",\"system\":{\"cpu\":{\"cores\":1,\"steal\":{\"norm\":{\"pct\":0.0",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-31857e2b",
+        "timestamp": "2022-01-14T02:36:37Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 14 02:36:37 dnsmasq[14919]: query[A] motd.ubuntu.com from 172.21.129.224",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-662177da",
+        "timestamp": "2022-01-14T02:38:08Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642127888.773:355): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=motd-news comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-f9fe8d7a",
+        "timestamp": "2022-01-14T02:38:08Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642127888.773:356): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=motd-news comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-0b1b8bf4",
+        "timestamp": "2022-01-14T02:39:19Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 14 02:39:19 dnsmasq[14569]: query[AAAA] hayes-mail from 10.229.2.25",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-866e9cf2",
+        "timestamp": "2022-01-14T02:40:24Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 14 02:40:24 dnsmasq[14569]: query[A] 3x6-.262-.kOBGeyIWCz/jOKK/S*Zt1wNhByGsOuzspbhnVp9*fyQpP5afIu72XJqjMcAO-.L6RTWuPelmCJdKKm8x7IMW/lSrh87jRyWzWXd6HPCN5e3vZCoZPHraC3gkKt-.nlDT3w1Hym9uB/v3ITLq91Xa/kicsh7jfgT85O*iAyN*SUFGSuDw/6Qr32dV-.customers_2018.xlsx.kiirjekuimkpcrcioastvkeodpnimx.biz from 10.229.0.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-8ddc3b39",
+        "timestamp": "2022-01-14T02:46:48Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 14 02:46:48 dnsmasq[14919]: query[A] motd.ubuntu.com from 192.168.104.98",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-da0b019c",
+        "timestamp": "2022-01-14T02:58:36Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 14 02:58:36 dnsmasq[14919]: query[AAAA] mail from 172.21.131.50",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-d3d8f524",
+        "timestamp": "2022-01-14T03:09:19Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 14 03:09:19 dnsmasq[14569]: query[AAAA] hayes-mail from 10.229.2.25",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-bdfd33b9",
+        "timestamp": "2022-01-14T03:13:34Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642130014.180:675): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=ua-messaging comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-e9554c5b",
+        "timestamp": "2022-01-14T03:13:34Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642130014.180:676): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=ua-messaging comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-955574c5",
+        "timestamp": "2022-01-14T03:17:04Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 14 03:17:04 inet-firewall kernel: [59558.131333] IPv4: martian source 255.255.255.255 from 169.254.169.254, on dev ens7",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-71acdf24",
+        "timestamp": "2022-01-14T03:28:36Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 14 03:28:36 dnsmasq[14919]: query[AAAA] mail from 172.21.131.50",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-9cbea458",
+      "source": "alerts",
+      "timestamp": "2022-01-14T02:28:36Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 14 02:28:36 dnsmasq[14919]: query[AAAA] mail from 172.21.131.50",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-57dd5b72",
+      "source": "alerts",
+      "timestamp": "2022-01-14T02:29:28Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"agent\":{\"id\":\"ab5616c7-58c0-4480-a883-359041057b74\",\"hostname\":\"intranet-server\",\"type\":\"metricbeat\",\"ephemeral_id\":\"c1899c21-6022-4ee2-9f06-2248c8a823cf\",\"version\":\"7.13.2\",\"name\":\"intranet-server\"},\"tags\":[\"beats_input_raw_event\"],\"host\":{\"cpu\":{\"pct\":0.0751},\"name\":\"intranet-server\"},\"@version\":\"1\",\"system\":{\"cpu\":{\"cores\":1,\"steal\":{\"norm\":{\"pct\":0.0",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-31857e2b",
+      "source": "alerts",
+      "timestamp": "2022-01-14T02:36:37Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 14 02:36:37 dnsmasq[14919]: query[A] motd.ubuntu.com from 172.21.129.224",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (14 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: High entropy in DNS domain., AMiner: New event type.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (14 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: High entropy in DNS domain., AMiner: New event type.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "santos/santos/session-0004",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 14,
+      "kept_alerts": 14
+    },
+    "sealed": true
+  }
+}

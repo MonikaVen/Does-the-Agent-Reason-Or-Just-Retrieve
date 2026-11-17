@@ -1,0 +1,534 @@
+{
+  "incident_id": "ait-sess-fox-fox-0012",
+  "name": "ATTEST-AIT fox/fox session 12",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "fox/fox/session-0012",
+  "alert": {
+    "timestamp": "2022-01-15T09:16:10Z",
+    "host": "fox",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (42 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New cred_acq parameter combination in Audit logs., AMiner: New login parameter combination in Audit",
+    "scenario": "fox"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-15T09:16:10Z",
+    "end": "2022-01-15T10:10:14Z",
+    "hosts": [
+      "fox"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-813acafb",
+        "timestamp": "2022-01-15T09:16:10Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642238170.824:2410): pid=10661 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"hwarren\" exe=\"/usr/sbin/sshd\" hostname=172.17.130.196 addr=172.17.130.196 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-7afa47ea",
+        "timestamp": "2022-01-15T09:16:10Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1642238170.828:2411): pid=10661 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"hwarren\" exe=\"/usr/sbin/sshd\" hostname=172.17.130.196 addr=172.17.130.196 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-47e6846f",
+        "timestamp": "2022-01-15T09:16:10Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New login parameter combination in Audit logs.",
+        "message": "type=LOGIN msg=audit(1642238170.832:2412): pid=10661 uid=0 old-auid=4294967295 auid=1003 tty=(none) old-ses=4294967295 ses=115 res=1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-6b1b7bee",
+        "timestamp": "2022-01-15T09:16:10Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642238170.852:2413): pid=10667 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"hwarren\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-14305869",
+        "timestamp": "2022-01-15T09:16:10Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1642238170.852:2415): pid=10667 uid=0 auid=1003 ses=116 msg='op=PAM:session_open acct=\"hwarren\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-3ec1d69c",
+        "timestamp": "2022-01-15T09:16:10Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642238170.868:2416): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=user@1003 comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-d3743c33",
+        "timestamp": "2022-01-15T09:16:10Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1642238170.872:2417): pid=10661 uid=0 auid=1003 ses=115 msg='op=PAM:session_open acct=\"hwarren\" exe=\"/usr/sbin/sshd\" hostname=172.17.130.196 addr=172.17.130.196 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-07c729af",
+        "timestamp": "2022-01-15T09:19:35Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 09:19:35 dnsmasq[14460]: query[AAAA] welt.de from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-9ee9a208",
+        "timestamp": "2022-01-15T09:19:35Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 09:19:35 dnsmasq[14460]: forwarded welt.de to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-72598faf",
+        "timestamp": "2022-01-15T09:19:35Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 09:19:35 dnsmasq[14460]: query[A] welt.de from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-9ee9a208",
+        "timestamp": "2022-01-15T09:19:35Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 09:19:35 dnsmasq[14460]: forwarded welt.de to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-33594ab7",
+        "timestamp": "2022-01-15T09:19:35Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 09:19:35 dnsmasq[14460]: reply welt.de is 195.50.178.200",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-6ca1dfac",
+        "timestamp": "2022-01-15T09:19:35Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 09:19:35 dnsmasq[14460]: reply welt.de is NODATA-IPv6",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-ef7984d9",
+        "timestamp": "2022-01-15T09:19:35Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 09:19:35 dnsmasq[14522]: query[AAAA] welt.de from 172.17.130.196",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-c2143f99",
+        "timestamp": "2022-01-15T09:19:35Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 09:19:35 dnsmasq[14522]: forwarded welt.de to 192.168.255.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-5e4dbc7f",
+        "timestamp": "2022-01-15T09:19:35Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 09:19:35 dnsmasq[14522]: query[A] welt.de from 172.17.130.196",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-c2143f99",
+        "timestamp": "2022-01-15T09:19:35Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 09:19:35 dnsmasq[14522]: forwarded welt.de to 192.168.255.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-8d85ef02",
+        "timestamp": "2022-01-15T09:19:35Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 09:19:35 dnsmasq[14522]: reply welt.de is 195.50.178.200",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-d88b8404",
+        "timestamp": "2022-01-15T09:19:35Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 09:19:35 dnsmasq[14522]: reply welt.de is NODATA-IPv6",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-764ddca4",
+        "timestamp": "2022-01-15T09:19:36Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 09:19:36 dnsmasq[14460]: query[A] img.welt.de from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-09f4490a",
+        "timestamp": "2022-01-15T09:19:36Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 09:19:36 dnsmasq[14460]: forwarded img.welt.de to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-09347469",
+        "timestamp": "2022-01-15T09:19:36Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 09:19:36 dnsmasq[14460]: query[AAAA] img.welt.de from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-09f4490a",
+        "timestamp": "2022-01-15T09:19:36Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 09:19:36 dnsmasq[14460]: forwarded img.welt.de to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-04a3fde2",
+        "timestamp": "2022-01-15T09:19:36Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 09:19:36 dnsmasq[14460]: reply img.welt.de is <CNAME>",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0025-04a3fde2",
+        "timestamp": "2022-01-15T09:19:36Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 09:19:36 dnsmasq[14460]: reply img.welt.de is <CNAME>",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0026-87bd1f1e",
+        "timestamp": "2022-01-15T09:19:36Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 09:19:36 dnsmasq[14522]: query[A] img.welt.de from 172.17.130.196",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0027-829a0d58",
+        "timestamp": "2022-01-15T09:19:36Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 09:19:36 dnsmasq[14522]: forwarded img.welt.de to 192.168.255.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0028-d2beefa6",
+        "timestamp": "2022-01-15T09:19:36Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 09:19:36 dnsmasq[14522]: query[AAAA] img.welt.de from 172.17.130.196",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0029-829a0d58",
+        "timestamp": "2022-01-15T09:19:36Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 09:19:36 dnsmasq[14522]: forwarded img.welt.de to 192.168.255.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0030-2499d948",
+        "timestamp": "2022-01-15T09:19:36Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 09:19:36 dnsmasq[14522]: reply img.welt.de is <CNAME>",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0031-2499d948",
+        "timestamp": "2022-01-15T09:19:36Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 09:19:36 dnsmasq[14522]: reply img.welt.de is <CNAME>",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0032-8f4845ec",
+        "timestamp": "2022-01-15T09:20:23Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access logs.",
+        "message": "172.17.130.196 - - [15/Jan/2022:09:20:23 +0000] \"POST /nag/task/save.php HTTP/1.1\" 302 1016 \"https://mail.price.fox.org/nag/task.php?actionID=add_task\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0033-57a2afce",
+        "timestamp": "2022-01-15T09:33:13Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1642239193.537:665): pid=13955 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"hwarren\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0034-1545f3b2",
+        "timestamp": "2022-01-15T09:33:20Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New user_cmd parameter combination in Audit logs.",
+        "message": "type=USER_CMD msg=audit(1642239200.113:672): pid=14091 uid=1002 auid=1002 ses=98 msg='cwd=\"/home/hwarren\" cmd=7461696C202F7661722F6C6F672F7379736C6F67 terminal=pts/0 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0035-83fe2187",
+        "timestamp": "2022-01-15T09:44:36Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 15 09:44:36 dnsmasq[14460]: query[AAAA] adservice.google.at from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0036-6cd40d4f",
+        "timestamp": "2022-01-15T09:49:07Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 15 09:49:07 dnsmasq[14522]: query[A] 3x6-.772-.JFGbG3fO93MEuGuL3OiOYwqVkJPK7N8qeh*EuMbPK3twlAZvuT1tsMyBh9Mi-.ZsRjvjU8gp5xOlTzsyR1ofqcAtup6wjhWGMUDf1LtoE9kwJ0UNgXPfqsyIyE-.DRYkTiD/y9JMbtiI*30gScrL/EF1/rC1*r4pjY4aFrP7DtmwFpl3Y9i9sDut-.customers_2015.xlsx.ycgjslfptkev.com from 10.35.33.111",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0037-ef5e5b67",
+        "timestamp": "2022-01-15T09:59:17Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 15 09:59:17 dnsmasq[14460]: query[AAAA] whittaker-mail from 192.168.131.228",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0038-54a40d8b",
+        "timestamp": "2022-01-15T10:00:08Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 15 10:00:08 dnsmasq[14460]: query[A] 3x6-.21-.LmR7Wct9CjkH*UfwTg3bTw33znN/DXtkLthPneljc/8ju2Mx38789bN7/Gli-.*bAQ*UffgvELsN36PHrhfvAyZUX2fsj/TX2HqYTXi/dkeS3v*j669a/SkjDe-.Ni5puafO2dSs/9O/Ybj3a3UjdHPnK72XKYaxcebpAq0v0/CSicbt/btZlg1p-.customers_2021.xlsx.ycgjslfptkev.com from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0039-3653e9ff",
+        "timestamp": "2022-01-15T10:00:08Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 15 10:00:08 dnsmasq[14460]: query[A] 3x6-.21-.LmR7Wct9CjkH*UfwTg3bTw33znN/DXtkLthPneljc/8ju2Mx38789bN7/Gli-.*bAQ*UffgvELsN36PHrhfvAyZUX2fsj/TX2HqYTXi/dkeS3v*j669a/SkjDe-.Ni5puafO2dSs/9O/Ybj3a3UjdHPnK72XKYaxcebpAq0v0/CSicbt/btZlg1p-.customers_2021.xlsx.ycgjslfptkev.com from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0040-fd1225aa",
+        "timestamp": "2022-01-15T10:00:08Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query records.",
+        "message": "Jan 15 10:00:08 dnsmasq[14460]: query[A] 3x6-.21-.LmR7Wct9CjkH*UfwTg3bTw33znN/DXtkLthPneljc/8ju2Mx38789bN7/Gli-.*bAQ*UffgvELsN36PHrhfvAyZUX2fsj/TX2HqYTXi/dkeS3v*j669a/SkjDe-.Ni5puafO2dSs/9O/Ybj3a3UjdHPnK72XKYaxcebpAq0v0/CSicbt/btZlg1p-.customers_2021.xlsx.ycgjslfptkev.com from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0041-90bbf515",
+        "timestamp": "2022-01-15T10:10:14Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642241414.771:2545): pid=11268 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"carole.noble\" exe=\"/usr/lib/dovecot/auth\" hostname=172.17.131.81 addr=172.17.131.81 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0042-dea003a5",
+        "timestamp": "2022-01-15T10:10:14Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642241414.771:2546): pid=11268 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"carole.noble\" exe=\"/usr/lib/dovecot/auth\" hostname=172.17.131.81 addr=172.17.131.81 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-813acafb",
+      "source": "alerts",
+      "timestamp": "2022-01-15T09:16:10Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642238170.824:2410): pid=10661 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"hwarren\" exe=\"/usr/sbin/sshd\" hostname=172.17.130.196 addr=172.17.130.196 terminal=ssh res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-7afa47ea",
+      "source": "alerts",
+      "timestamp": "2022-01-15T09:16:10Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1642238170.828:2411): pid=10661 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"hwarren\" exe=\"/usr/sbin/sshd\" hostname=172.17.130.196 addr=172.17.130.196 terminal=ssh res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-47e6846f",
+      "source": "alerts",
+      "timestamp": "2022-01-15T09:16:10Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New login parameter combination in Audit logs.",
+        "message": "type=LOGIN msg=audit(1642238170.832:2412): pid=10661 uid=0 old-auid=4294967295 auid=1003 tty=(none) old-ses=4294967295 ses=115 res=1",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (42 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New cred_acq parameter combination in Audit logs., AMiner: New login parameter combination in Audit",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (42 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New cred_acq parameter combination in Audit logs., AMiner: New login parameter combination in Audit",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "fox/fox/session-0012",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 42,
+      "kept_alerts": 42
+    },
+    "sealed": true
+  }
+}

@@ -1,0 +1,309 @@
+{
+  "incident_id": "ait-sess-harrison-harrison-0006",
+  "name": "ATTEST-AIT harrison/harrison session 6",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "harrison/harrison/session-0006",
+  "alert": {
+    "timestamp": "2022-02-04T03:30:02Z",
+    "host": "harrison",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (17 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: CPU value out of expected range in monitoring logs., AMiner: High entr",
+    "scenario": "harrison"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-04T03:30:02Z",
+    "end": "2022-02-04T04:25:16Z",
+    "hosts": [
+      "harrison"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-75a4aece",
+        "timestamp": "2022-02-04T03:30:02Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New characters in DNS domain.",
+        "message": "Feb  4 03:30:02 dnsmasq[14453]: query[A] 3x6-.1107-.AQAAAKSB1ggAAHhsL3dvcmtzaGVldHMvc2hlZXQxLnhtbFBLBQYAAAAACQAJAE-.4CAAD7jwEAAAA=-.customers_2013.xlsx.db-21.greer.biz from 172.28.192.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-dc054c2a",
+        "timestamp": "2022-02-04T03:34:50Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 03:34:50 dnsmasq[14453]: query[AAAA] taylor-mail from 172.28.192.7",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-c8ae2b3d",
+        "timestamp": "2022-02-04T03:35:56Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  4 03:35:56 dnsmasq[14453]: query[AAAA] motd.ubuntu.com from 172.28.193.219",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-b955c0cd",
+        "timestamp": "2022-02-04T03:39:58Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 03:39:58 dnsmasq[14453]: query[AAAA] smith-mail from 172.28.192.97",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-29c1c934",
+        "timestamp": "2022-02-04T03:44:46Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.09}},\"@timestamp\":\"2022-02-04T03:44:46.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0.9088,\"norm\":{\"pct\":0.9088}},\"steal\":{\"pct\":0.018,\"norm\":{\"pct\":0.018}},\"system\":{\"pct\":0.037,\"norm\":{\"pct\":0.037}},\"user\":{\"pct\":0.0337,\"norm\":{\"pct\":0.0337}},\"softirq\":{\"pct\":0.0014,\"norm\":{\"pct\":0.0014}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-256b622d",
+        "timestamp": "2022-02-04T03:47:48Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1643946468.628:949): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=ua-messaging comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-7cef066e",
+        "timestamp": "2022-02-04T03:47:48Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1643946468.628:950): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=ua-messaging comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-9417fb4a",
+        "timestamp": "2022-02-04T03:51:15Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  4 03:51:15 dnsmasq[14453]: query[A] motd.ubuntu.com from 172.28.193.110",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-b38e2927",
+        "timestamp": "2022-02-04T04:00:31Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-04T04:00:31.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0.8545,\"norm\":{\"pct\":0.8545}},\"steal\":{\"pct\":0.0676,\"norm\":{\"pct\":0.0676}},\"system\":{\"pct\":0.0421,\"norm\":{\"pct\":0.0421}},\"user\":{\"pct\":0.0336,\"norm\":{\"pct\":0.0336}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":0.0013,\"norm\":{\"pct\":0.0013}},\"total\":{\"pct\":0.1446,\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-70cb6c2c",
+        "timestamp": "2022-02-04T04:01:13Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  4 04:01:13 cloud-share kernel: [75821.596190] hrtimer: interrupt took 23472909 ns",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-f4ce1f24",
+        "timestamp": "2022-02-04T04:04:50Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 04:04:50 dnsmasq[14453]: query[AAAA] taylor-mail from 172.28.192.7",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-1433a188",
+        "timestamp": "2022-02-04T04:09:58Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 04:09:58 dnsmasq[14453]: query[AAAA] smith-mail from 172.28.192.97",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-11610d9c",
+        "timestamp": "2022-02-04T04:17:01Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"host\":{\"cpu\":{\"pct\":0.1473},\"name\":\"intranet-server\"},\"@timestamp\":\"2022-02-04T04:17:01.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0.8523,\"norm\":{\"pct\":0.8523}},\"steal\":{\"pct\":0.0745,\"norm\":{\"pct\":0.0745}},\"system\":{\"pct\":0.0347,\"norm\":{\"pct\":0.0347}},\"user\":{\"pct\":0.0367,\"norm\":{\"pct\":0.0367}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":0.0013,\"norm\":{\"pct\":0.0",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-6c870062",
+        "timestamp": "2022-02-04T04:23:03Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  4 04:23:03 dnsmasq[14453]: query[A] motd.ubuntu.com from 172.28.193.217",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-58451c72",
+        "timestamp": "2022-02-04T04:23:03Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  4 04:23:03 dnsmasq[14664]: query[A] motd.ubuntu.com from 192.168.130.116",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-6f213a65",
+        "timestamp": "2022-02-04T04:23:03Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  4 04:23:03 dnsmasq[14664]: query[A] motd.ubuntu.com from 10.237.2.223",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-e020fe2b",
+        "timestamp": "2022-02-04T04:25:16Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-04T04:25:16.130Z\",\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.1485}},\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0.8477,\"norm\":{\"pct\":0.8477}},\"steal\":{\"pct\":0.0748,\"norm\":{\"pct\":0.0748}},\"system\":{\"pct\":0.0382,\"norm\":{\"pct\":0.0382}},\"user\":{\"pct\":0.0344,\"norm\":{\"pct\":0.0344}},\"softirq\":{\"pct\":0.0011,\"norm\":{\"pct\":0.0011}},\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-75a4aece",
+      "source": "alerts",
+      "timestamp": "2022-02-04T03:30:02Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New characters in DNS domain.",
+        "message": "Feb  4 03:30:02 dnsmasq[14453]: query[A] 3x6-.1107-.AQAAAKSB1ggAAHhsL3dvcmtzaGVldHMvc2hlZXQxLnhtbFBLBQYAAAAACQAJAE-.4CAAD7jwEAAAA=-.customers_2013.xlsx.db-21.greer.biz from 172.28.192.4",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-dc054c2a",
+      "source": "alerts",
+      "timestamp": "2022-02-04T03:34:50Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 03:34:50 dnsmasq[14453]: query[AAAA] taylor-mail from 172.28.192.7",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-c8ae2b3d",
+      "source": "alerts",
+      "timestamp": "2022-02-04T03:35:56Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  4 03:35:56 dnsmasq[14453]: query[AAAA] motd.ubuntu.com from 172.28.193.219",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (17 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: CPU value out of expected range in monitoring logs., AMiner: High entr",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (17 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: CPU value out of expected range in monitoring logs., AMiner: High entr",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "harrison/harrison/session-0006",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 17,
+      "kept_alerts": 17
+    },
+    "sealed": true
+  }
+}

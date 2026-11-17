@@ -1,0 +1,354 @@
+{
+  "incident_id": "ait-sess-wilson-wilson-0063",
+  "name": "ATTEST-AIT wilson/wilson session 63",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wilson/wilson/session-0063",
+  "alert": {
+    "timestamp": "2022-02-06T23:09:48Z",
+    "host": "wilson",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (22 alerts; detectors: AMiner: New service_start parameter combination in Audit logs., AMiner: New service_stop parameter combination in Audit logs., AMiner: Unusua",
+    "scenario": "wilson"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-06T23:09:48Z",
+    "end": "2022-02-07T00:06:42Z",
+    "hosts": [
+      "wilson"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-596f6c92",
+        "timestamp": "2022-02-06T23:09:48Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  6 23:09:48 dnsmasq[14481]: query[AAAA] mail from 10.182.193.181",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-87f1eb46",
+        "timestamp": "2022-02-06T23:09:48Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Feb  6 23:09:48 dnsmasq[14481]: query[AAAA] mail from 10.182.193.181",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-e9020d73",
+        "timestamp": "2022-02-06T23:14:43Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  6 23:14:43 dnsmasq[14306]: query[AAAA] lane-mail from 192.168.226.198",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-5584066b",
+        "timestamp": "2022-02-06T23:25:14Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  6 23:25:14 dnsmasq[14306]: query[TXT] current.cvd.clamav.net from 192.168.224.185",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-15e3aea0",
+        "timestamp": "2022-02-06T23:30:47Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  6 23:30:47 dnsmasq[14306]: query[TXT] current.cvd.clamav.net from 192.168.224.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-55032bd3",
+        "timestamp": "2022-02-06T23:44:43Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  6 23:44:43 dnsmasq[14306]: query[AAAA] lane-mail from 192.168.226.198",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-916efbe5",
+        "timestamp": "2022-02-06T23:58:42Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  6 23:58:42 dnsmasq[14306]: query[A] motd.ubuntu.com from 192.168.227.234",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-2e933d55",
+        "timestamp": "2022-02-07T00:00:02Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1644192002.112:5301): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=fstrim comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-770efad1",
+        "timestamp": "2022-02-07T00:00:02Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1644192002.112:5302): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=fstrim comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-48129325",
+        "timestamp": "2022-02-07T00:00:02Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1644192002.232:2643): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=fstrim comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-6b19ead1",
+        "timestamp": "2022-02-07T00:00:02Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1644192002.236:2644): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=fstrim comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-7001e6bd",
+        "timestamp": "2022-02-07T00:00:03Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1644192003.413:980): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=fstrim comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-3d8e2fbc",
+        "timestamp": "2022-02-07T00:00:03Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1644192003.413:981): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=fstrim comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-552ee709",
+        "timestamp": "2022-02-07T00:00:34Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1644192034.134:2736): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=fstrim comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-b888b543",
+        "timestamp": "2022-02-07T00:00:34Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1644192034.134:2737): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=fstrim comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-42be6453",
+        "timestamp": "2022-02-07T00:00:35Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1644192035.119:893): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=fstrim comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-d3b2cdd9",
+        "timestamp": "2022-02-07T00:00:35Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1644192035.119:894): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=fstrim comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-32546e81",
+        "timestamp": "2022-02-07T00:00:48Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1644192048.079:893): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=fstrim comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-6e644bae",
+        "timestamp": "2022-02-07T00:00:48Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1644192048.079:894): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=fstrim comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-51a4e7b0",
+        "timestamp": "2022-02-07T00:06:42Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  7 00:06:42 dnsmasq[14306]: query[AAAA] motd.ubuntu.com from 192.168.224.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-5aff0450",
+        "timestamp": "2022-02-07T00:06:42Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Feb  7 00:06:42 dnsmasq[14306]: query[AAAA] motd.ubuntu.com from 192.168.224.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-c746560f",
+        "timestamp": "2022-02-07T00:06:42Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query records.",
+        "message": "Feb  7 00:06:42 dnsmasq[14306]: query[AAAA] motd.ubuntu.com from 192.168.224.4",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-596f6c92",
+      "source": "alerts",
+      "timestamp": "2022-02-06T23:09:48Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  6 23:09:48 dnsmasq[14481]: query[AAAA] mail from 10.182.193.181",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-87f1eb46",
+      "source": "alerts",
+      "timestamp": "2022-02-06T23:09:48Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Feb  6 23:09:48 dnsmasq[14481]: query[AAAA] mail from 10.182.193.181",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-e9020d73",
+      "source": "alerts",
+      "timestamp": "2022-02-06T23:14:43Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  6 23:14:43 dnsmasq[14306]: query[AAAA] lane-mail from 192.168.226.198",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (22 alerts; detectors: AMiner: New service_start parameter combination in Audit logs., AMiner: New service_stop parameter combination in Audit logs., AMiner: Unusua",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (22 alerts; detectors: AMiner: New service_start parameter combination in Audit logs., AMiner: New service_stop parameter combination in Audit logs., AMiner: Unusua",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wilson/wilson/session-0063",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 22,
+      "kept_alerts": 22
+    },
+    "sealed": true
+  }
+}

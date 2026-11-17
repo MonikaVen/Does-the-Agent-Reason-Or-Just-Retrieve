@@ -1,0 +1,246 @@
+{
+  "incident_id": "ait-sess-harrison-harrison-0125",
+  "name": "ATTEST-AIT harrison/harrison session 125",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "harrison/harrison/session-0125",
+  "alert": {
+    "timestamp": "2022-02-08T21:46:24Z",
+    "host": "harrison",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (10 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: CPU value out of expected range in monitoring logs., AMiner: Unusual o",
+    "scenario": "harrison"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-08T21:46:24Z",
+    "end": "2022-02-08T22:44:46Z",
+    "hosts": [
+      "harrison"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-9d10fa5f",
+        "timestamp": "2022-02-08T21:46:24Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  8 21:46:24 dnsmasq[14453]: query[TXT] current.cvd.clamav.net from 172.28.192.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-2097c686",
+        "timestamp": "2022-02-08T21:51:39Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  8 21:51:39 dnsmasq[14453]: query[A] cloud.mannsmith.harrison.com from 172.28.195.110",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-048c12c6",
+        "timestamp": "2022-02-08T22:00:11Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  8 22:00:11 dnsmasq[14664]: query[AAAA] mail from 10.237.2.255",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-6ee70237",
+        "timestamp": "2022-02-08T22:00:11Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Feb  8 22:00:11 dnsmasq[14664]: query[AAAA] mail from 10.237.2.255",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-bcf0602e",
+        "timestamp": "2022-02-08T22:00:11Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query records.",
+        "message": "Feb  8 22:00:11 dnsmasq[14664]: query[AAAA] mail from 10.237.2.255",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-d244514a",
+        "timestamp": "2022-02-08T22:14:46Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-08T22:14:46.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0.951,\"norm\":{\"pct\":0.951}},\"steal\":{\"pct\":0.0127,\"norm\":{\"pct\":0.0127}},\"system\":{\"pct\":0.0113,\"norm\":{\"pct\":0.0113}},\"user\":{\"pct\":0.0238,\"norm\":{\"pct\":0.0238}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":0.0012,\"norm\":{\"pct\":0.0012}},\"total\":{\"pct\":0.049,\"nor",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-5e136292",
+        "timestamp": "2022-02-08T22:17:01Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"ecs\":{\"version\":\"1.9.0\"},\"@timestamp\":\"2022-02-08T22:17:01.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0.9512,\"norm\":{\"pct\":0.9512}},\"steal\":{\"pct\":0.0115,\"norm\":{\"pct\":0.0115}},\"system\":{\"pct\":0.0113,\"norm\":{\"pct\":0.0113}},\"user\":{\"pct\":0.0248,\"norm\":{\"pct\":0.0248}},\"softirq\":{\"pct\":5.0E-4,\"norm\":{\"pct\":5.0E-4}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"total\":{\"pct\":0.0481,\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-1cd4cec4",
+        "timestamp": "2022-02-08T22:25:40Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  8 22:25:40 dnsmasq[14453]: query[TXT] current.cvd.clamav.net from 172.28.192.7",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-e4ac19a3",
+        "timestamp": "2022-02-08T22:30:11Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  8 22:30:11 dnsmasq[14664]: query[AAAA] mail from 10.237.2.255",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-9999237f",
+        "timestamp": "2022-02-08T22:44:46Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.095}},\"@timestamp\":\"2022-02-08T22:44:46.130Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"idle\":{\"pct\":0.9045,\"norm\":{\"pct\":0.9045}},\"steal\":{\"pct\":0.0159,\"norm\":{\"pct\":0.0159}},\"system\":{\"pct\":0.0395,\"norm\":{\"pct\":0.0395}},\"user\":{\"pct\":0.039,\"norm\":{\"pct\":0.039}},\"softirq\":{\"pct\":7.0E-4,\"norm\":{\"pct\":7.0E-4}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-9d10fa5f",
+      "source": "alerts",
+      "timestamp": "2022-02-08T21:46:24Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  8 21:46:24 dnsmasq[14453]: query[TXT] current.cvd.clamav.net from 172.28.192.4",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-2097c686",
+      "source": "alerts",
+      "timestamp": "2022-02-08T21:51:39Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  8 21:51:39 dnsmasq[14453]: query[A] cloud.mannsmith.harrison.com from 172.28.195.110",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-048c12c6",
+      "source": "alerts",
+      "timestamp": "2022-02-08T22:00:11Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  8 22:00:11 dnsmasq[14664]: query[AAAA] mail from 10.237.2.255",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (10 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: CPU value out of expected range in monitoring logs., AMiner: Unusual o",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (10 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: CPU value out of expected range in monitoring logs., AMiner: Unusual o",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "harrison/harrison/session-0125",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 10,
+      "kept_alerts": 10
+    },
+    "sealed": true
+  }
+}

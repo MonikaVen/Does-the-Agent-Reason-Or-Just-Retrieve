@@ -1,0 +1,163 @@
+{
+  "incident_id": "ait-sess-harrison-harrison-0042",
+  "name": "ATTEST-AIT harrison/harrison session 42",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "harrison/harrison/session-0042",
+  "alert": {
+    "timestamp": "2022-02-05T13:29:46Z",
+    "host": "harrison",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (2 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New event type.).",
+    "scenario": "harrison"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-05T13:29:46Z",
+    "end": "2022-02-05T13:36:08Z",
+    "hosts": [
+      "harrison"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-9a165285",
+        "timestamp": "2022-02-05T13:29:46Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.1371}},\"@timestamp\":\"2022-02-05T13:29:46.133Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.0552,\"norm\":{\"pct\":0.0552}},\"idle\":{\"pct\":0.8618,\"norm\":{\"pct\":0.8618}},\"system\":{\"pct\":0.042,\"norm\":{\"pct\":0.042}},\"user\":{\"pct\":0.0384,\"norm\":{\"pct\":0.0384}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":0.0016,\"norm\":{\"pct\":0.001",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-ee55a27e",
+        "timestamp": "2022-02-05T13:36:08Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  5 13:36:08 taylor-mail HORDE: [gollem] PHP ERROR: Invalid argument supplied for foreach() [pid 21786 on line 338 of \"/usr/share/horde/gollem/lib/Auth.php\"]",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-9a165285",
+      "source": "alerts",
+      "timestamp": "2022-02-05T13:29:46Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.1371}},\"@timestamp\":\"2022-02-05T13:29:46.133Z\",\"system\":{\"cpu\":{\"nice\":{\"pct\":0,\"norm\":{\"pct\":0}},\"steal\":{\"pct\":0.0552,\"norm\":{\"pct\":0.0552}},\"idle\":{\"pct\":0.8618,\"norm\":{\"pct\":0.8618}},\"system\":{\"pct\":0.042,\"norm\":{\"pct\":0.042}},\"user\":{\"pct\":0.0384,\"norm\":{\"pct\":0.0384}},\"irq\":{\"pct\":0,\"norm\":{\"pct\":0}},\"softirq\":{\"pct\":0.0016,\"norm\":{\"pct\":0.001",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-ee55a27e",
+      "source": "alerts",
+      "timestamp": "2022-02-05T13:36:08Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Feb  5 13:36:08 taylor-mail HORDE: [gollem] PHP ERROR: Invalid argument supplied for foreach() [pid 21786 on line 338 of \"/usr/share/horde/gollem/lib/Auth.php\"]",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (2 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New event type.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (2 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New event type.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "harrison/harrison/session-0042",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 2,
+      "kept_alerts": 2
+    },
+    "sealed": true
+  }
+}

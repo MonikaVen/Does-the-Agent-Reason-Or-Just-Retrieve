@@ -1,0 +1,183 @@
+{
+  "incident_id": "ait-sess-wardbeck-wardbeck-0012",
+  "name": "ATTEST-AIT wardbeck/wardbeck session 12",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wardbeck/wardbeck/session-0012",
+  "alert": {
+    "timestamp": "2022-01-19T09:20:20Z",
+    "host": "wardbeck",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (3 alerts; detectors: AMiner: High entropy in Apache Access request., AMiner: New user_acct parameter combination in Audit logs., AMiner: New user_auth parameter ",
+    "scenario": "wardbeck"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-19T09:20:20Z",
+    "end": "2022-01-19T09:21:06Z",
+    "hosts": [
+      "wardbeck"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-acafb611",
+        "timestamp": "2022-01-19T09:20:20Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642584020.818:3008): pid=14751 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"lisa.white\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-817c51a8",
+        "timestamp": "2022-01-19T09:20:20Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642584020.818:3009): pid=14751 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"lisa.white\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-546a234a",
+        "timestamp": "2022-01-19T09:21:06Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.132.56.81 - - [19/Jan/2022:09:21:06 +0000] \"GET /turba/contact.php?source=euEQl8JiTUVwGb8n5hxBbLm&key=zNEgzqxZHt8uc5Kn7ek3wBv HTTP/1.1\" 200 21645 \"https://mail.hurstwong.wardbeck.info/turba/browse.php\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-acafb611",
+      "source": "alerts",
+      "timestamp": "2022-01-19T09:20:20Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642584020.818:3008): pid=14751 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"lisa.white\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-817c51a8",
+      "source": "alerts",
+      "timestamp": "2022-01-19T09:20:20Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642584020.818:3009): pid=14751 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"lisa.white\" exe=\"/usr/lib/dovecot/auth\" hostname=10.132.56.171 addr=10.132.56.171 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-546a234a",
+      "source": "alerts",
+      "timestamp": "2022-01-19T09:21:06Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.132.56.81 - - [19/Jan/2022:09:21:06 +0000] \"GET /turba/contact.php?source=euEQl8JiTUVwGb8n5hxBbLm&key=zNEgzqxZHt8uc5Kn7ek3wBv HTTP/1.1\" 200 21645 \"https://mail.hurstwong.wardbeck.info/turba/browse.php\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (3 alerts; detectors: AMiner: High entropy in Apache Access request., AMiner: New user_acct parameter combination in Audit logs., AMiner: New user_auth parameter ",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (3 alerts; detectors: AMiner: High entropy in Apache Access request., AMiner: New user_acct parameter combination in Audit logs., AMiner: New user_auth parameter ",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wardbeck/wardbeck/session-0012",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 3,
+      "kept_alerts": 3
+    },
+    "sealed": true
+  }
+}

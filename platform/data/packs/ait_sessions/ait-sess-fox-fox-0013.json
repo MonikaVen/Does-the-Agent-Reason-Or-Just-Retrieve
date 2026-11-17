@@ -1,0 +1,192 @@
+{
+  "incident_id": "ait-sess-fox-fox-0013",
+  "name": "ATTEST-AIT fox/fox session 13",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "fox/fox/session-0013",
+  "alert": {
+    "timestamp": "2022-01-15T10:17:01Z",
+    "host": "fox",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (4 alerts; detectors: AMiner: New request method in Apache Access log., AMiner: New status code in Apache Access log.).",
+    "scenario": "fox"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-15T10:17:01Z",
+    "end": "2022-01-15T10:17:49Z",
+    "hosts": [
+      "fox"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-13a4231b",
+        "timestamp": "2022-01-15T10:17:01Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "cloud.dmz.price.fox.org:443 172.17.130.37 - - [15/Jan/2022:10:17:01 +0000] \"DELETE /remote.php/dav/files/jwright/Documents/Example.odt HTTP/1.1\" 204 3491 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-03be9ee5",
+        "timestamp": "2022-01-15T10:17:01Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "cloud.dmz.price.fox.org:443 172.17.130.37 - - [15/Jan/2022:10:17:01 +0000] \"DELETE /remote.php/dav/files/jwright/Documents/Example.odt HTTP/1.1\" 204 3491 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-f0e99aa7",
+        "timestamp": "2022-01-15T10:17:49Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "cloud.dmz.price.fox.org:443 172.17.130.37 - - [15/Jan/2022:10:17:49 +0000] \"PUT /remote.php/dav/files/jwright/Documents/binoculars.png HTTP/1.1\" 201 3689 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-8fbe095d",
+        "timestamp": "2022-01-15T10:17:49Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "cloud.dmz.price.fox.org:443 172.17.130.37 - - [15/Jan/2022:10:17:49 +0000] \"PUT /remote.php/dav/files/jwright/Documents/binoculars.png HTTP/1.1\" 201 3689 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-13a4231b",
+      "source": "alerts",
+      "timestamp": "2022-01-15T10:17:01Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "cloud.dmz.price.fox.org:443 172.17.130.37 - - [15/Jan/2022:10:17:01 +0000] \"DELETE /remote.php/dav/files/jwright/Documents/Example.odt HTTP/1.1\" 204 3491 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-03be9ee5",
+      "source": "alerts",
+      "timestamp": "2022-01-15T10:17:01Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "cloud.dmz.price.fox.org:443 172.17.130.37 - - [15/Jan/2022:10:17:01 +0000] \"DELETE /remote.php/dav/files/jwright/Documents/Example.odt HTTP/1.1\" 204 3491 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-f0e99aa7",
+      "source": "alerts",
+      "timestamp": "2022-01-15T10:17:49Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "cloud.dmz.price.fox.org:443 172.17.130.37 - - [15/Jan/2022:10:17:49 +0000] \"PUT /remote.php/dav/files/jwright/Documents/binoculars.png HTTP/1.1\" 201 3689 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (4 alerts; detectors: AMiner: New request method in Apache Access log., AMiner: New status code in Apache Access log.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (4 alerts; detectors: AMiner: New request method in Apache Access log., AMiner: New status code in Apache Access log.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "fox/fox/session-0013",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 4,
+      "kept_alerts": 4
+    },
+    "sealed": true
+  }
+}

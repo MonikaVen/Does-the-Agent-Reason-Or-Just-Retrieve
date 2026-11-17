@@ -1,0 +1,264 @@
+{
+  "incident_id": "ait-sess-santos-santos-0012",
+  "name": "ATTEST-AIT santos/santos session 12",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "santos/santos/session-0012",
+  "alert": {
+    "timestamp": "2022-01-14T07:48:15Z",
+    "host": "santos",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (12 alerts; detectors: AMiner: New request method in Apache Access log., AMiner: New status code in Apache Access log., AMiner: New user_acct parameter combination ",
+    "scenario": "santos"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-14T07:48:15Z",
+    "end": "2022-01-14T08:20:11Z",
+    "hosts": [
+      "santos"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-81c34f36",
+        "timestamp": "2022-01-14T07:48:15Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642146495.608:1837): pid=9564 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"vickie.sharp\" exe=\"/usr/lib/dovecot/auth\" hostname=172.21.131.50 addr=172.21.131.50 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-1f3be3a1",
+        "timestamp": "2022-01-14T07:48:15Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642146495.608:1838): pid=9564 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"vickie.sharp\" exe=\"/usr/lib/dovecot/auth\" hostname=172.21.131.50 addr=172.21.131.50 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-b6f46e28",
+        "timestamp": "2022-01-14T07:49:45Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 14 07:49:45 dnsmasq[14919]: query[AAAA] mailserver.rogersturnbull.santos.com from 172.21.131.50",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-d224c422",
+        "timestamp": "2022-01-14T07:57:09Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 14 07:57:09 dnsmasq[14569]: query[A] smtp.hayes.santos.com from 10.229.1.118",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-27072856",
+        "timestamp": "2022-01-14T07:58:36Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 14 07:58:36 dnsmasq[14919]: query[AAAA] mail from 172.21.131.50",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-b0769243",
+        "timestamp": "2022-01-14T08:00:20Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 14 08:00:20 dnsmasq[14569]: query[A] 3x6-.2-.PPe0u00*8SjTU*EG6AXycoO7ONnO9XVwtz0Pclhrn21xBsHy0r/AGJZuiKny-.HzPVT*8aZC50tlrRoBN0qklmEEm*nWF4YN0o/x8ncPOneHgcFAQE5gcICMK/-.t152TK5u3nbmroxe9nalPzdttpiR/W40of2Eze2zhbEmlcHCRdFgJ8QMW229-.customers_2019.xlsx.kiirjekuimkpcrcioastvkeodpnimx.biz from 10.229.0.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-0c05ab29",
+        "timestamp": "2022-01-14T08:00:20Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 14 08:00:20 dnsmasq[14569]: query[A] 3x6-.2-.PPe0u00*8SjTU*EG6AXycoO7ONnO9XVwtz0Pclhrn21xBsHy0r/AGJZuiKny-.HzPVT*8aZC50tlrRoBN0qklmEEm*nWF4YN0o/x8ncPOneHgcFAQE5gcICMK/-.t152TK5u3nbmroxe9nalPzdttpiR/W40of2Eze2zhbEmlcHCRdFgJ8QMW229-.customers_2019.xlsx.kiirjekuimkpcrcioastvkeodpnimx.biz from 10.229.0.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-99667f93",
+        "timestamp": "2022-01-14T08:05:29Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "cloud.dmz.smith.santos.com:443 172.21.129.224 - - [14/Jan/2022:08:05:29 +0000] \"PROPFIND /remote.php/dav/files/cmckenzie/ HTTP/1.1\" 207 3643 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-7aeffb63",
+        "timestamp": "2022-01-14T08:05:29Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "cloud.dmz.smith.santos.com:443 172.21.129.224 - - [14/Jan/2022:08:05:29 +0000] \"PROPFIND /remote.php/dav/files/cmckenzie/ HTTP/1.1\" 207 3643 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-8eec468a",
+        "timestamp": "2022-01-14T08:08:16Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "192.168.104.95 - - [14/Jan/2022:08:08:16 +0000] \"GET /favicon.ico HTTP/1.1\" 404 396 \"http://intranet.smith.santos.com/\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-9d98bb9e",
+        "timestamp": "2022-01-14T08:09:27Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "cloud.dmz.smith.santos.com:443 172.21.129.224 - - [14/Jan/2022:08:09:27 +0000] \"REPORT /remote.php/dav/files/cmckenzie/ HTTP/1.1\" 207 3687 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-b7bb2559",
+        "timestamp": "2022-01-14T08:20:11Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 14 08:20:11 dnsmasq[14569]: query[A] 3x6-.77-.HrqY1J*Oe3MUuKsqb81pmq0fN9veobaYE/QhgxHh0JHYP2W0Vt3X23Xue0uH-.om2VISTWaHxH10UaVHgnkX5QcxIf*X*GLzjGbQ/8Go5ld*HERGGRt9Yc2Pwi-.1TNWq/wRFYb6RNRPhmdUUlooKjvQOR882sqH*o95wPjA3hfxTXe1mOeLGc*B-.customers_2019.xlsx.kiirjekuimkpcrcioastvkeodpnimx.biz from 10.229.0.4",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-81c34f36",
+      "source": "alerts",
+      "timestamp": "2022-01-14T07:48:15Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642146495.608:1837): pid=9564 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"vickie.sharp\" exe=\"/usr/lib/dovecot/auth\" hostname=172.21.131.50 addr=172.21.131.50 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-1f3be3a1",
+      "source": "alerts",
+      "timestamp": "2022-01-14T07:48:15Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642146495.608:1838): pid=9564 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"vickie.sharp\" exe=\"/usr/lib/dovecot/auth\" hostname=172.21.131.50 addr=172.21.131.50 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-b6f46e28",
+      "source": "alerts",
+      "timestamp": "2022-01-14T07:49:45Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 14 07:49:45 dnsmasq[14919]: query[AAAA] mailserver.rogersturnbull.santos.com from 172.21.131.50",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (12 alerts; detectors: AMiner: New request method in Apache Access log., AMiner: New status code in Apache Access log., AMiner: New user_acct parameter combination ",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (12 alerts; detectors: AMiner: New request method in Apache Access log., AMiner: New status code in Apache Access log., AMiner: New user_acct parameter combination ",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "santos/santos/session-0012",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 12,
+      "kept_alerts": 12
+    },
+    "sealed": true
+  }
+}

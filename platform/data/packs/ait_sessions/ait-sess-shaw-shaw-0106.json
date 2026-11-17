@@ -1,0 +1,183 @@
+{
+  "incident_id": "ait-sess-shaw-shaw-0106",
+  "name": "ATTEST-AIT shaw/shaw session 106",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "shaw/shaw/session-0106",
+  "alert": {
+    "timestamp": "2022-01-30T08:44:53Z",
+    "host": "shaw",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (3 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New ip address in DNS logs.).",
+    "scenario": "shaw"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-30T08:44:53Z",
+    "end": "2022-01-30T08:59:46Z",
+    "hosts": [
+      "shaw"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-8e88e53d",
+        "timestamp": "2022-01-30T08:44:53Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"tags\":[\"beats_input_raw_event\"],\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.0845}},\"agent\":{\"ephemeral_id\":\"60467123-ae3b-4339-bc93-ff506807789c\",\"type\":\"metricbeat\",\"version\":\"7.13.2\",\"id\":\"fe2b129b-2792-44df-b7e6-ed5439c2b628\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\"},\"event\":{\"module\":\"system\",\"duration\":657558,\"dataset\":\"system.cpu\"},\"metricset\":{\"name\":\"cpu\",\"period\":45000}",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-f52c45c6",
+        "timestamp": "2022-01-30T08:59:46Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 30 08:59:46 dnsmasq[14635]: query[A] ntp.ubuntu.com from 10.70.32.61",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-ef4b1a48",
+        "timestamp": "2022-01-30T08:59:46Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 30 08:59:46 dnsmasq[14635]: query[AAAA] ntp.ubuntu.com from 10.70.32.61",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-8e88e53d",
+      "source": "alerts",
+      "timestamp": "2022-01-30T08:44:53Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"tags\":[\"beats_input_raw_event\"],\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.0845}},\"agent\":{\"ephemeral_id\":\"60467123-ae3b-4339-bc93-ff506807789c\",\"type\":\"metricbeat\",\"version\":\"7.13.2\",\"id\":\"fe2b129b-2792-44df-b7e6-ed5439c2b628\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\"},\"event\":{\"module\":\"system\",\"duration\":657558,\"dataset\":\"system.cpu\"},\"metricset\":{\"name\":\"cpu\",\"period\":45000}",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-f52c45c6",
+      "source": "alerts",
+      "timestamp": "2022-01-30T08:59:46Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 30 08:59:46 dnsmasq[14635]: query[A] ntp.ubuntu.com from 10.70.32.61",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-ef4b1a48",
+      "source": "alerts",
+      "timestamp": "2022-01-30T08:59:46Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 30 08:59:46 dnsmasq[14635]: query[AAAA] ntp.ubuntu.com from 10.70.32.61",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (3 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New ip address in DNS logs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (3 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New ip address in DNS logs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "shaw/shaw/session-0106",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 3,
+      "kept_alerts": 3
+    },
+    "sealed": true
+  }
+}

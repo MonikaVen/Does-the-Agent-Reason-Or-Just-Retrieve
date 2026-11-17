@@ -1,0 +1,183 @@
+{
+  "incident_id": "ait-sess-russellmitchell-russellmitchell-0013",
+  "name": "ATTEST-AIT russellmitchell/russellmitchell session 13",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "russellmitchell/russellmitchell/session-0013",
+  "alert": {
+    "timestamp": "2022-01-21T08:39:45Z",
+    "host": "russellmitchell",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (3 alerts; detectors: AMiner: New status code in Apache Access log., AMiner: New user_acct parameter combination in Audit logs., AMiner: New user_auth para",
+    "scenario": "russellmitchell"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-21T08:39:45Z",
+    "end": "2022-01-21T08:49:22Z",
+    "hosts": [
+      "russellmitchell"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-49e54abc",
+        "timestamp": "2022-01-21T08:39:45Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.143.3.65 - - [21/Jan/2022:08:39:45 +0000] \"GET /themes/default/sounds/doorbell.wav HTTP/1.1\" 206 5547 \"https://mail.smith.russellmitchell.com/kronolith/\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-470f3e3c",
+        "timestamp": "2022-01-21T08:49:22Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642754962.973:1713): pid=9553 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"alyssa.hayes\" exe=\"/usr/lib/dovecot/auth\" hostname=172.19.130.4 addr=172.19.130.4 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-2a035028",
+        "timestamp": "2022-01-21T08:49:22Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642754962.977:1714): pid=9553 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"alyssa.hayes\" exe=\"/usr/lib/dovecot/auth\" hostname=172.19.130.4 addr=172.19.130.4 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-49e54abc",
+      "source": "alerts",
+      "timestamp": "2022-01-21T08:39:45Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.143.3.65 - - [21/Jan/2022:08:39:45 +0000] \"GET /themes/default/sounds/doorbell.wav HTTP/1.1\" 206 5547 \"https://mail.smith.russellmitchell.com/kronolith/\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-470f3e3c",
+      "source": "alerts",
+      "timestamp": "2022-01-21T08:49:22Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642754962.973:1713): pid=9553 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"alyssa.hayes\" exe=\"/usr/lib/dovecot/auth\" hostname=172.19.130.4 addr=172.19.130.4 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-2a035028",
+      "source": "alerts",
+      "timestamp": "2022-01-21T08:49:22Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642754962.977:1714): pid=9553 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"alyssa.hayes\" exe=\"/usr/lib/dovecot/auth\" hostname=172.19.130.4 addr=172.19.130.4 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (3 alerts; detectors: AMiner: New status code in Apache Access log., AMiner: New user_acct parameter combination in Audit logs., AMiner: New user_auth para",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (3 alerts; detectors: AMiner: New status code in Apache Access log., AMiner: New user_acct parameter combination in Audit logs., AMiner: New user_auth para",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "russellmitchell/russellmitchell/session-0013",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 3,
+      "kept_alerts": 3
+    },
+    "sealed": true
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "incident_id": "ait-sess-wilson-wilson-0072",
+  "name": "ATTEST-AIT wilson/wilson session 72",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wilson/wilson/session-0072",
+  "alert": {
+    "timestamp": "2022-02-07T08:00:05Z",
+    "host": "wilson",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (3 alerts; detectors: AMiner: High entropy in Apache Access request., AMiner: Unusual occurrence frequencies of DNS query IPs.).",
+    "scenario": "wilson"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-07T08:00:05Z",
+    "end": "2022-02-07T08:00:30Z",
+    "hosts": [
+      "wilson"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-50e36f7f",
+        "timestamp": "2022-02-07T08:00:05Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Feb  7 08:00:05 dnsmasq[14306]: query[A] location.services.mozilla.com from 192.168.224.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-c56f35bc",
+        "timestamp": "2022-02-07T08:00:30Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "cloud.dmz.hallbrown.wilson.com:443 10.182.194.5 - - [07/Feb/2022:08:00:30 +0000] \"GET /index.php/logout?requesttoken=BTBJeWUqDjhzIgIHeGIlIAIAOzsYAwALDTs5F1UdNyE%3D:7Dq/VXtRAtgOW6HyMfztLJlhEKAn0xGxLKDSnaDSEGY%3D HTTP/1.1\" 303 4509 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-bc282c54",
+        "timestamp": "2022-02-07T08:00:30Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.26.242.89 - - [07/Feb/2022:08:00:30 +0000] \"GET /index.php/logout?requesttoken=BTBJeWUqDjhzIgIHeGIlIAIAOzsYAwALDTs5F1UdNyE%3D:7Dq/VXtRAtgOW6HyMfztLJlhEKAn0xGxLKDSnaDSEGY%3D HTTP/1.1\" 303 2119 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-50e36f7f",
+      "source": "alerts",
+      "timestamp": "2022-02-07T08:00:05Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Feb  7 08:00:05 dnsmasq[14306]: query[A] location.services.mozilla.com from 192.168.224.4",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-c56f35bc",
+      "source": "alerts",
+      "timestamp": "2022-02-07T08:00:30Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "cloud.dmz.hallbrown.wilson.com:443 10.182.194.5 - - [07/Feb/2022:08:00:30 +0000] \"GET /index.php/logout?requesttoken=BTBJeWUqDjhzIgIHeGIlIAIAOzsYAwALDTs5F1UdNyE%3D:7Dq/VXtRAtgOW6HyMfztLJlhEKAn0xGxLKDSnaDSEGY%3D HTTP/1.1\" 303 4509 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-bc282c54",
+      "source": "alerts",
+      "timestamp": "2022-02-07T08:00:30Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.26.242.89 - - [07/Feb/2022:08:00:30 +0000] \"GET /index.php/logout?requesttoken=BTBJeWUqDjhzIgIHeGIlIAIAOzsYAwALDTs5F1UdNyE%3D:7Dq/VXtRAtgOW6HyMfztLJlhEKAn0xGxLKDSnaDSEGY%3D HTTP/1.1\" 303 2119 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (3 alerts; detectors: AMiner: High entropy in Apache Access request., AMiner: Unusual occurrence frequencies of DNS query IPs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (3 alerts; detectors: AMiner: High entropy in Apache Access request., AMiner: Unusual occurrence frequencies of DNS query IPs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wilson/wilson/session-0072",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 3,
+      "kept_alerts": 3
+    },
+    "sealed": true
+  }
+}

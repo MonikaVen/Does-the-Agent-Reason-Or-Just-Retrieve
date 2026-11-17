@@ -1,0 +1,246 @@
+{
+  "incident_id": "ait-sess-shaw-shaw-0040",
+  "name": "ATTEST-AIT shaw/shaw session 40",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "shaw/shaw/session-0040",
+  "alert": {
+    "timestamp": "2022-01-26T09:43:34Z",
+    "host": "shaw",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (10 alerts; detectors: AMiner: New event type., AMiner: Unusual occurrence frequencies of DNS log events., AMiner: Unusual occurrence frequencies of query records in ",
+    "scenario": "shaw"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-26T09:43:34Z",
+    "end": "2022-01-26T10:16:31Z",
+    "hosts": [
+      "shaw"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-d3bb4222",
+        "timestamp": "2022-01-26T09:43:34Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 09:43:34 dnsmasq[14596]: query[A] events.apester.com from 192.168.188.66",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-eb622671",
+        "timestamp": "2022-01-26T09:43:35Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 09:43:35 dnsmasq[14635]: query[AAAA] www.neighbourly.co.nz from 10.70.32.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-e9c21de3",
+        "timestamp": "2022-01-26T09:48:39Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 09:48:39 dnsmasq[14635]: query[PTR] 107.35.70.10.in-addr.arpa from 10.70.34.215",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-318f1d1a",
+        "timestamp": "2022-01-26T09:52:17Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 09:52:17 dnsmasq[14596]: query[MX] collinsbecker.shaw.info from 172.24.251.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-e71de820",
+        "timestamp": "2022-01-26T09:53:39Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 26 09:53:39 dnsmasq[14635]: query[PTR] 107.35.70.10.in-addr.arpa from 10.70.34.215",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-bec31ab9",
+        "timestamp": "2022-01-26T09:59:58Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 09:59:58 dnsmasq[14596]: query[MX] collinsbecker.shaw.info from 172.24.251.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-c16dcf96",
+        "timestamp": "2022-01-26T10:02:24Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 10:02:24 dnsmasq[14635]: query[A] mailserver.collinsbecker.shaw.info from 10.70.34.215",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-1db6811d",
+        "timestamp": "2022-01-26T10:02:24Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 10:02:24 dnsmasq[14635]: query[PTR] 215.34.70.10.in-addr.arpa from 10.70.34.215",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-b1709b8f",
+        "timestamp": "2022-01-26T10:03:33Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 10:03:33 dnsmasq[14635]: query[AAAA] collinsbecker-mail from 10.70.34.215",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-5d91fc6c",
+        "timestamp": "2022-01-26T10:16:31Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "[Wed Jan 26 10:16:31.047042 2022] [php7:warn] [pid 10592] [client 192.168.188.179:43626] PHP Warning:  scandir(/var/www/intranet.thomasmurray.shaw.info/wp-content/uploads/wpdiscuz/cache/gravatars/): failed to open dir: No such file or directory in /var/www/intranet.thomasmurray.shaw.info/wp-content/plugins/wpdiscuz/utils/class.WpdiscuzCache.php on line 190",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-d3bb4222",
+      "source": "alerts",
+      "timestamp": "2022-01-26T09:43:34Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 09:43:34 dnsmasq[14596]: query[A] events.apester.com from 192.168.188.66",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-eb622671",
+      "source": "alerts",
+      "timestamp": "2022-01-26T09:43:35Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 09:43:35 dnsmasq[14635]: query[AAAA] www.neighbourly.co.nz from 10.70.32.4",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-e9c21de3",
+      "source": "alerts",
+      "timestamp": "2022-01-26T09:48:39Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 09:48:39 dnsmasq[14635]: query[PTR] 107.35.70.10.in-addr.arpa from 10.70.34.215",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (10 alerts; detectors: AMiner: New event type., AMiner: Unusual occurrence frequencies of DNS log events., AMiner: Unusual occurrence frequencies of query records in ",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (10 alerts; detectors: AMiner: New event type., AMiner: Unusual occurrence frequencies of DNS log events., AMiner: Unusual occurrence frequencies of query records in ",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "shaw/shaw/session-0040",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 10,
+      "kept_alerts": 10
+    },
+    "sealed": true
+  }
+}

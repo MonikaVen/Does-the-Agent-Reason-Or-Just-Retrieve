@@ -1,0 +1,264 @@
+{
+  "incident_id": "ait-sess-fox-fox-0050",
+  "name": "ATTEST-AIT fox/fox session 50",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "fox/fox/session-0050",
+  "alert": {
+    "timestamp": "2022-01-17T15:01:00Z",
+    "host": "fox",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (12 alerts; detectors: AMiner: High entropy in DNS domain.).",
+    "scenario": "fox"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-17T15:01:00Z",
+    "end": "2022-01-17T15:01:00Z",
+    "hosts": [
+      "fox"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-578796e4",
+        "timestamp": "2022-01-17T15:01:00Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 17 15:01:00 dnsmasq[14460]: query[A] youtu.be from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-bb61d235",
+        "timestamp": "2022-01-17T15:01:00Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 17 15:01:00 dnsmasq[14460]: forwarded youtu.be to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-6dc1e3da",
+        "timestamp": "2022-01-17T15:01:00Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 17 15:01:00 dnsmasq[14460]: query[AAAA] youtu.be from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-bb61d235",
+        "timestamp": "2022-01-17T15:01:00Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 17 15:01:00 dnsmasq[14460]: forwarded youtu.be to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-ec8f4c1d",
+        "timestamp": "2022-01-17T15:01:00Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 17 15:01:00 dnsmasq[14460]: reply youtu.be is 172.217.20.14",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-8945af9b",
+        "timestamp": "2022-01-17T15:01:00Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 17 15:01:00 dnsmasq[14460]: reply youtu.be is 2a00:1450:400d:805::200e",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-ac96f0d0",
+        "timestamp": "2022-01-17T15:01:00Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 17 15:01:00 dnsmasq[14522]: query[A] youtu.be from 172.17.130.196",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-247c6622",
+        "timestamp": "2022-01-17T15:01:00Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 17 15:01:00 dnsmasq[14522]: forwarded youtu.be to 192.168.255.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-b1650da4",
+        "timestamp": "2022-01-17T15:01:00Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 17 15:01:00 dnsmasq[14522]: query[AAAA] youtu.be from 172.17.130.196",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-247c6622",
+        "timestamp": "2022-01-17T15:01:00Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 17 15:01:00 dnsmasq[14522]: forwarded youtu.be to 192.168.255.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-71143a72",
+        "timestamp": "2022-01-17T15:01:00Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 17 15:01:00 dnsmasq[14522]: reply youtu.be is 172.217.20.14",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-b13254e4",
+        "timestamp": "2022-01-17T15:01:00Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 17 15:01:00 dnsmasq[14522]: reply youtu.be is 2a00:1450:400d:805::200e",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-578796e4",
+      "source": "alerts",
+      "timestamp": "2022-01-17T15:01:00Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 17 15:01:00 dnsmasq[14460]: query[A] youtu.be from 192.168.128.4",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-bb61d235",
+      "source": "alerts",
+      "timestamp": "2022-01-17T15:01:00Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 17 15:01:00 dnsmasq[14460]: forwarded youtu.be to 8.8.8.8",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-6dc1e3da",
+      "source": "alerts",
+      "timestamp": "2022-01-17T15:01:00Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 17 15:01:00 dnsmasq[14460]: query[AAAA] youtu.be from 192.168.128.4",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (12 alerts; detectors: AMiner: High entropy in DNS domain.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (12 alerts; detectors: AMiner: High entropy in DNS domain.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "fox/fox/session-0050",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 12,
+      "kept_alerts": 12
+    },
+    "sealed": true
+  }
+}

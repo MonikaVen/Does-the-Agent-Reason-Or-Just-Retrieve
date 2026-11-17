@@ -1,0 +1,246 @@
+{
+  "incident_id": "ait-sess-shaw-shaw-0013",
+  "name": "ATTEST-AIT shaw/shaw session 13",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "shaw/shaw/session-0013",
+  "alert": {
+    "timestamp": "2022-01-25T09:37:23Z",
+    "host": "shaw",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (10 alerts; detectors: AMiner: CPU value out of expected range in monitoring logs., AMiner: New characters in Apache Access referer., AMiner: New characters in Apache",
+    "scenario": "shaw"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-25T09:37:23Z",
+    "end": "2022-01-25T10:03:33Z",
+    "hosts": [
+      "shaw"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-f1f73769",
+        "timestamp": "2022-01-25T09:37:23Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"tags\":[\"beats_input_raw_event\"],\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.0425}},\"agent\":{\"ephemeral_id\":\"60467123-ae3b-4339-bc93-ff506807789c\",\"type\":\"metricbeat\",\"version\":\"7.13.2\",\"id\":\"fe2b129b-2792-44df-b7e6-ed5439c2b628\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\"},\"event\":{\"module\":\"system\",\"dataset\":\"system.cpu\",\"duration\":286312},\"metricset\":{\"name\":\"cpu\",\"period\":45000}",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-2cb679bd",
+        "timestamp": "2022-01-25T09:38:53Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"tags\":[\"beats_input_raw_event\"],\"event\":{\"module\":\"system\",\"dataset\":\"system.cpu\",\"duration\":389904},\"metricset\":{\"name\":\"cpu\",\"period\":45000},\"service\":{\"type\":\"system\"},\"system\":{\"cpu\":{\"total\":{\"pct\":0.039,\"norm\":{\"pct\":0.039}},\"user\":{\"pct\":0.0202,\"norm\":{\"pct\":0.0202}},\"iowait\":{\"pct\":7.0E-4,\"norm\":{\"pct\":7.0E-4}},\"idle\":{\"pct\":0.9603,\"norm\":{\"pct\":0.9603}},\"system\":{\"pct\":0.0155,\"norm\":{\"p",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-ad8a87ac",
+        "timestamp": "2022-01-25T09:53:20Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "192.168.188.32 - - [25/Jan/2022:09:53:20 +0000] \"GET /wp-admin/load-scripts.php?c=0&load%5Bchunk_0%5D=jquery-core,jquery-migrate,utils&ver=5.8.3 HTTP/1.1\" 200 35995 \"https://intranet.thomasmurray.shaw.info/wp-admin/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-7f2df82c",
+        "timestamp": "2022-01-25T09:57:34Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 25 09:57:34 dnsmasq[14635]: query[TXT] current.cvd.clamav.net from 10.70.32.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-767c2a68",
+        "timestamp": "2022-01-25T09:58:18Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643104698.390:1718): pid=9381 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"samantha.hayes\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-14d181b4",
+        "timestamp": "2022-01-25T09:58:18Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643104698.390:1719): pid=9381 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"samantha.hayes\" exe=\"/usr/lib/dovecot/auth\" hostname=172.24.251.90 addr=172.24.251.90 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-39cf8421",
+        "timestamp": "2022-01-25T09:58:40Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "192.168.188.32 - - [25/Jan/2022:09:58:40 +0000] \"GET /wp-admin/images/spinner.gif HTTP/1.1\" 200 3969 \"https://intranet.thomasmurray.shaw.info/wp-admin/load-styles.php?c=0&dir=ltr&load%5Bchunk_0%5D=dashicons,admin-bar,common,forms,admin-menu,dashboard,list-tables,edit,revisions,media,themes,about,nav-menus,wp-pointer,widgets&load%5Bchunk_1%5D=,site-icon,l10n,buttons,wp-auth-check&ver=5.8.3\" \"Mozill",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-8575df02",
+        "timestamp": "2022-01-25T09:59:50Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 25 09:59:50 dnsmasq[14635]: query[TXT] current.cvd.clamav.net from 10.70.32.243",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-4285d917",
+        "timestamp": "2022-01-25T10:03:33Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 25 10:03:33 dnsmasq[14635]: query[AAAA] collinsbecker-mail from 10.70.34.215",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-bbb0407d",
+        "timestamp": "2022-01-25T10:03:33Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 25 10:03:33 dnsmasq[14635]: query[AAAA] collinsbecker-mail from 10.70.34.215",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-f1f73769",
+      "source": "alerts",
+      "timestamp": "2022-01-25T09:37:23Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"tags\":[\"beats_input_raw_event\"],\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.0425}},\"agent\":{\"ephemeral_id\":\"60467123-ae3b-4339-bc93-ff506807789c\",\"type\":\"metricbeat\",\"version\":\"7.13.2\",\"id\":\"fe2b129b-2792-44df-b7e6-ed5439c2b628\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\"},\"event\":{\"module\":\"system\",\"dataset\":\"system.cpu\",\"duration\":286312},\"metricset\":{\"name\":\"cpu\",\"period\":45000}",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-2cb679bd",
+      "source": "alerts",
+      "timestamp": "2022-01-25T09:38:53Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"tags\":[\"beats_input_raw_event\"],\"event\":{\"module\":\"system\",\"dataset\":\"system.cpu\",\"duration\":389904},\"metricset\":{\"name\":\"cpu\",\"period\":45000},\"service\":{\"type\":\"system\"},\"system\":{\"cpu\":{\"total\":{\"pct\":0.039,\"norm\":{\"pct\":0.039}},\"user\":{\"pct\":0.0202,\"norm\":{\"pct\":0.0202}},\"iowait\":{\"pct\":7.0E-4,\"norm\":{\"pct\":7.0E-4}},\"idle\":{\"pct\":0.9603,\"norm\":{\"pct\":0.9603}},\"system\":{\"pct\":0.0155,\"norm\":{\"p",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-ad8a87ac",
+      "source": "alerts",
+      "timestamp": "2022-01-25T09:53:20Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "192.168.188.32 - - [25/Jan/2022:09:53:20 +0000] \"GET /wp-admin/load-scripts.php?c=0&load%5Bchunk_0%5D=jquery-core,jquery-migrate,utils&ver=5.8.3 HTTP/1.1\" 200 35995 \"https://intranet.thomasmurray.shaw.info/wp-admin/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (10 alerts; detectors: AMiner: CPU value out of expected range in monitoring logs., AMiner: New characters in Apache Access referer., AMiner: New characters in Apache",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (10 alerts; detectors: AMiner: CPU value out of expected range in monitoring logs., AMiner: New characters in Apache Access referer., AMiner: New characters in Apache",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "shaw/shaw/session-0013",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 10,
+      "kept_alerts": 10
+    },
+    "sealed": true
+  }
+}

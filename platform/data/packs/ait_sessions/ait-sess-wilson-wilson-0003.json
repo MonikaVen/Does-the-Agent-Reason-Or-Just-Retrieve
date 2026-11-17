@@ -1,0 +1,246 @@
+{
+  "incident_id": "ait-sess-wilson-wilson-0003",
+  "name": "ATTEST-AIT wilson/wilson session 3",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wilson/wilson/session-0003",
+  "alert": {
+    "timestamp": "2022-02-03T01:30:11Z",
+    "host": "wilson",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (10 alerts; detectors: AMiner: New event type., AMiner: New ip address in DNS logs.).",
+    "scenario": "wilson"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-03T01:30:11Z",
+    "end": "2022-02-03T02:03:49Z",
+    "hosts": [
+      "wilson"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-7a04d31e",
+        "timestamp": "2022-02-03T01:30:11Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  3 01:30:11 dnsmasq[14481]: query[A] cloud.hallbrown.wilson.com from 172.26.243.237",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-0d5988f7",
+        "timestamp": "2022-02-03T01:30:11Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  3 01:30:11 dnsmasq[14481]: forwarded cloud.hallbrown.wilson.com to 127.0.0.1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-c67f8386",
+        "timestamp": "2022-02-03T01:30:11Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  3 01:30:11 dnsmasq[14481]: nameserver 127.0.0.1 refused to do a recursive query",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-a44ecbb8",
+        "timestamp": "2022-02-03T01:31:44Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  3 01:31:44 dnsmasq[14481]: query[A] motd.ubuntu.com from 172.26.241.140",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-1710b246",
+        "timestamp": "2022-02-03T01:32:40Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  3 01:32:40 dnsmasq[14481]: query[A] motd.ubuntu.com from 172.26.242.89",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-759505b7",
+        "timestamp": "2022-02-03T01:40:52Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  3 01:40:52 dnsmasq[14306]: query[A] motd.ubuntu.com from 192.168.224.62",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-5fbe6aba",
+        "timestamp": "2022-02-03T01:55:14Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  3 01:55:14 dnsmasq[14481]: query[AAAA] motd.ubuntu.com from 172.26.243.99",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-97c17ca0",
+        "timestamp": "2022-02-03T02:03:49Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  3 02:03:49 lane-mail dhclient[427]: DHCPREQUEST of 192.168.226.198 on eth0 to 192.168.224.2 port 67",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-e6a47048",
+        "timestamp": "2022-02-03T02:03:49Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  3 02:03:49 lane-mail dhclient[427]: DHCPACK of 192.168.226.198 from 192.168.224.2",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-61f5cb9f",
+        "timestamp": "2022-02-03T02:03:49Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  3 02:03:49 lane-mail dhclient[427]: bound to 192.168.226.198 -- renewal in 37012 seconds.",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-7a04d31e",
+      "source": "alerts",
+      "timestamp": "2022-02-03T01:30:11Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  3 01:30:11 dnsmasq[14481]: query[A] cloud.hallbrown.wilson.com from 172.26.243.237",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-0d5988f7",
+      "source": "alerts",
+      "timestamp": "2022-02-03T01:30:11Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Feb  3 01:30:11 dnsmasq[14481]: forwarded cloud.hallbrown.wilson.com to 127.0.0.1",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-c67f8386",
+      "source": "alerts",
+      "timestamp": "2022-02-03T01:30:11Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Feb  3 01:30:11 dnsmasq[14481]: nameserver 127.0.0.1 refused to do a recursive query",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (10 alerts; detectors: AMiner: New event type., AMiner: New ip address in DNS logs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (10 alerts; detectors: AMiner: New event type., AMiner: New ip address in DNS logs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wilson/wilson/session-0003",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 10,
+      "kept_alerts": 10
+    },
+    "sealed": true
+  }
+}

@@ -1,0 +1,266 @@
+{
+  "incident_id": "ait-sess-wheeler-wheeler-0049",
+  "name": "ATTEST-AIT wheeler/wheeler session 49",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wheeler/wheeler/session-0049",
+  "alert": {
+    "timestamp": "2022-01-29T05:27:25Z",
+    "host": "wheeler",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (7 alerts; detectors: AMiner: New service_start parameter combination in Audit logs., AMiner: New service_stop parameter combination in Audit logs., AMiner: Unusua",
+    "scenario": "wheeler"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-29T05:27:25Z",
+    "end": "2022-01-29T06:02:02Z",
+    "hosts": [
+      "wheeler"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-f93099c9",
+        "timestamp": "2022-01-29T05:27:25Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1643434045.225:725): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=magnam comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-263166e2",
+        "timestamp": "2022-01-29T05:27:25Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1643434045.225:726): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=magnam comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-e2168a0f",
+        "timestamp": "2022-01-29T05:28:17Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "172.27.183.131 - - [29/Jan/2022:05:28:17 +0000] \"GET / HTTP/1.1\" 302 3203 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-508c8837",
+        "timestamp": "2022-01-29T05:40:45Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 29 05:40:45 dnsmasq[12225]: query[AAAA] motd.ubuntu.com from 172.27.182.162",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-36c050be",
+        "timestamp": "2022-01-29T05:50:12Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 29 05:50:12 dnsmasq[12225]: query[TXT] current.cvd.clamav.net from 172.27.182.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-704b6f81",
+        "timestamp": "2022-01-29T06:02:02Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 29 06:02:02 dnsmasq[12225]: query[A] motd.ubuntu.com from 172.27.180.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-b23b4eb5",
+        "timestamp": "2022-01-29T06:02:02Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 29 06:02:02 dnsmasq[12225]: query[A] motd.ubuntu.com from 172.27.180.4",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-f93099c9",
+      "source": "alerts",
+      "timestamp": "2022-01-29T05:27:25Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1643434045.225:725): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=magnam comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-263166e2",
+      "source": "alerts",
+      "timestamp": "2022-01-29T05:27:25Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1643434045.225:726): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=magnam comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-e2168a0f",
+      "source": "alerts",
+      "timestamp": "2022-01-29T05:28:17Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "172.27.183.131 - - [29/Jan/2022:05:28:17 +0000] \"GET / HTTP/1.1\" 302 3203 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0004-508c8837",
+      "source": "alerts",
+      "timestamp": "2022-01-29T05:40:45Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 29 05:40:45 dnsmasq[12225]: query[AAAA] motd.ubuntu.com from 172.27.182.162",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0005-36c050be",
+      "source": "alerts",
+      "timestamp": "2022-01-29T05:50:12Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 29 05:50:12 dnsmasq[12225]: query[TXT] current.cvd.clamav.net from 172.27.182.4",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0006-704b6f81",
+      "source": "alerts",
+      "timestamp": "2022-01-29T06:02:02Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 29 06:02:02 dnsmasq[12225]: query[A] motd.ubuntu.com from 172.27.180.4",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0007-b23b4eb5",
+      "source": "alerts",
+      "timestamp": "2022-01-29T06:02:02Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 29 06:02:02 dnsmasq[12225]: query[A] motd.ubuntu.com from 172.27.180.4",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (7 alerts; detectors: AMiner: New service_start parameter combination in Audit logs., AMiner: New service_stop parameter combination in Audit logs., AMiner: Unusua",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (7 alerts; detectors: AMiner: New service_start parameter combination in Audit logs., AMiner: New service_stop parameter combination in Audit logs., AMiner: Unusua",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wheeler/wheeler/session-0049",
+    "answer": "malicious",
+    "accept": [
+      "malicious"
+    ],
+    "grading": "exact_ci",
+    "label": "malicious",
+    "is_true_positive": true,
+    "attack_stages": [
+      "dnsteal",
+      "service_stop"
+    ],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 7,
+      "kept_alerts": 7
+    },
+    "sealed": true
+  }
+}

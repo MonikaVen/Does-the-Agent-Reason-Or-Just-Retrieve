@@ -1,0 +1,185 @@
+{
+  "incident_id": "ait-sess-santos-santos-0048",
+  "name": "ATTEST-AIT santos/santos session 48",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "santos/santos/session-0048",
+  "alert": {
+    "timestamp": "2022-01-16T07:16:18Z",
+    "host": "santos",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (3 alerts; detectors: AMiner: New event type., AMiner: New service_start parameter combination in Audit logs., AMiner: New service_stop parameter combination in Aud",
+    "scenario": "santos"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-16T07:16:18Z",
+    "end": "2022-01-16T07:16:18Z",
+    "hosts": [
+      "santos"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-b5c30af1",
+        "timestamp": "2022-01-16T07:16:18Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 16 07:16:18 internal-share ut[29155]: dig: '3x6-.10-.M6TOLK6vTIuiMb1a77D9vXnYFoaY6n82j9bPDoPwr83DwMbe6I/2ERk3KtNL-.Dy/y6CmSIK0SuquEjExSClKCVRIgjBCS*aO40mxH7aHe7D2Le6UeQbvm9tcG-.R1Zw/HLuUCYPOpVkojszOA8YMl2g0umch*7Em8fkj6EEPbdS/Hvzmg3qNvHm-.DavisPooleAndMiller.docx.kiirjekuimkpcrcioastvkeodpnimx.biz' is not a legal name (ran out of space)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-c94b1d32",
+        "timestamp": "2022-01-16T07:16:18Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642317378.019:579): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=ut comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-383a0534",
+        "timestamp": "2022-01-16T07:16:18Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642317378.019:580): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=ut comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-b5c30af1",
+      "source": "alerts",
+      "timestamp": "2022-01-16T07:16:18Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 16 07:16:18 internal-share ut[29155]: dig: '3x6-.10-.M6TOLK6vTIuiMb1a77D9vXnYFoaY6n82j9bPDoPwr83DwMbe6I/2ERk3KtNL-.Dy/y6CmSIK0SuquEjExSClKCVRIgjBCS*aO40mxH7aHe7D2Le6UeQbvm9tcG-.R1Zw/HLuUCYPOpVkojszOA8YMl2g0umch*7Em8fkj6EEPbdS/Hvzmg3qNvHm-.DavisPooleAndMiller.docx.kiirjekuimkpcrcioastvkeodpnimx.biz' is not a legal name (ran out of space)",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-c94b1d32",
+      "source": "alerts",
+      "timestamp": "2022-01-16T07:16:18Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642317378.019:579): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=ut comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-383a0534",
+      "source": "alerts",
+      "timestamp": "2022-01-16T07:16:18Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642317378.019:580): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=ut comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (3 alerts; detectors: AMiner: New event type., AMiner: New service_start parameter combination in Audit logs., AMiner: New service_stop parameter combination in Aud",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (3 alerts; detectors: AMiner: New event type., AMiner: New service_start parameter combination in Audit logs., AMiner: New service_stop parameter combination in Aud",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "santos/santos/session-0048",
+    "answer": "malicious",
+    "accept": [
+      "malicious"
+    ],
+    "grading": "exact_ci",
+    "label": "malicious",
+    "is_true_positive": true,
+    "attack_stages": [
+      "service_stop"
+    ],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 3,
+      "kept_alerts": 3
+    },
+    "sealed": true
+  }
+}

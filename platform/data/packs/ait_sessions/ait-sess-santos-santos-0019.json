@@ -1,0 +1,228 @@
+{
+  "incident_id": "ait-sess-santos-santos-0019",
+  "name": "ATTEST-AIT santos/santos session 19",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "santos/santos/session-0019",
+  "alert": {
+    "timestamp": "2022-01-14T12:00:52Z",
+    "host": "santos",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (8 alerts; detectors: AMiner: New characters in Apache Access request., AMiner: New event type., AMiner: New request method in Apache Access log.).",
+    "scenario": "santos"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-14T12:00:52Z",
+    "end": "2022-01-14T12:10:10Z",
+    "hosts": [
+      "santos"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-d241d9e3",
+        "timestamp": "2022-01-14T12:00:52Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "cloud.dmz.smith.santos.com:443 172.21.129.224 - - [14/Jan/2022:12:00:52 +0000] \"PUT /remote.php/dav/files/cturner/Documents/institution.zip HTTP/1.1\" 201 3695 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-d2fe8ba7",
+        "timestamp": "2022-01-14T12:00:52Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "cloud.dmz.smith.santos.com:443 172.21.129.224 - - [14/Jan/2022:12:00:52 +0000] \"PUT /remote.php/dav/files/cturner/Documents/institution.zip HTTP/1.1\" 201 3695 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-6922c3cf",
+        "timestamp": "2022-01-14T12:05:25Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-14 12:05:25 sfitzgerald/10.229.3.237:57135 TLS: soft reset sec=3457/3456 bytes=5543928/-1 pkts=8714/0",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-5f3a38b6",
+        "timestamp": "2022-01-14T12:06:25Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-14 12:06:25 sfitzgerald/10.229.3.237:57135 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-fb9136fa",
+        "timestamp": "2022-01-14T12:06:25Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-14 12:06:25 sfitzgerald/10.229.3.237:57135 TLS Error: TLS handshake failed",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-f07dce96",
+        "timestamp": "2022-01-14T12:06:25Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-14 12:06:25 sfitzgerald/10.229.3.237:57135 TLS: move_session: dest=TM_LAME_DUCK src=TM_ACTIVE reinit_src=1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-21ccc529",
+        "timestamp": "2022-01-14T12:08:13Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "192.168.104.198 - - [14/Jan/2022:12:08:13 +0000] \"GET /wp-content/plugins/wpdiscuz/assets/third-party/font-awesome-5.13.0/webfonts/fa-solid-900.woff2 HTTP/1.1\" 304 188 \"https://intranet.smith.santos.com/wp-content/plugins/wpdiscuz/assets/third-party/font-awesome-5.13.0/css/fa.min.css?ver=7.0.4\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-05ab724c",
+        "timestamp": "2022-01-14T12:10:10Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.21.128.119 - - [14/Jan/2022:12:10:10 +0000] \"GET /wp-admin/load-styles.php?c=0&dir=ltr&load%5Bchunk_0%5D=dashicons,admin-bar,common,forms,admin-menu,dashboard,list-tables,edit,revisions,media,themes,about,nav-menus,wp-pointer,widgets&load%5Bchunk_1%5D=,site-icon,l10n,buttons,wp-auth-check&ver=5.8.3 HTTP/1.1\" 200 98689 \"https://intranet.smith.santos.com/wp-admin/\" \"Mozilla/5.0 (X11; Ubuntu; Lin",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-d241d9e3",
+      "source": "alerts",
+      "timestamp": "2022-01-14T12:00:52Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "cloud.dmz.smith.santos.com:443 172.21.129.224 - - [14/Jan/2022:12:00:52 +0000] \"PUT /remote.php/dav/files/cturner/Documents/institution.zip HTTP/1.1\" 201 3695 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-d2fe8ba7",
+      "source": "alerts",
+      "timestamp": "2022-01-14T12:00:52Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "cloud.dmz.smith.santos.com:443 172.21.129.224 - - [14/Jan/2022:12:00:52 +0000] \"PUT /remote.php/dav/files/cturner/Documents/institution.zip HTTP/1.1\" 201 3695 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-6922c3cf",
+      "source": "alerts",
+      "timestamp": "2022-01-14T12:05:25Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-14 12:05:25 sfitzgerald/10.229.3.237:57135 TLS: soft reset sec=3457/3456 bytes=5543928/-1 pkts=8714/0",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (8 alerts; detectors: AMiner: New characters in Apache Access request., AMiner: New event type., AMiner: New request method in Apache Access log.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (8 alerts; detectors: AMiner: New characters in Apache Access request., AMiner: New event type., AMiner: New request method in Apache Access log.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "santos/santos/session-0019",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 8,
+      "kept_alerts": 8
+    },
+    "sealed": true
+  }
+}

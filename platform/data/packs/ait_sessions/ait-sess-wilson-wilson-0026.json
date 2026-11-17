@@ -1,0 +1,219 @@
+{
+  "incident_id": "ait-sess-wilson-wilson-0026",
+  "name": "ATTEST-AIT wilson/wilson session 26",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wilson/wilson/session-0026",
+  "alert": {
+    "timestamp": "2022-02-04T06:50:39Z",
+    "host": "wilson",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (7 alerts; detectors: AMiner: New event type., AMiner: Unusual occurrence frequencies of Apache Access logs., AMiner: Unusual occurrence frequencies of DNS query IP",
+    "scenario": "wilson"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-04T06:50:39Z",
+    "end": "2022-02-04T07:00:11Z",
+    "hosts": [
+      "wilson"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-f9a37584",
+        "timestamp": "2022-02-04T06:50:39Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Feb  4 06:50:39 dnsmasq[14306]: query[AAAA] lane-mail from 192.168.226.198",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-8e734e21",
+        "timestamp": "2022-02-04T06:57:57Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "[Fri Feb 04 06:57:57.109308 2022] [:error] [pid 27299] [client 10.182.194.5:59606] PHP Warning:  Declaration of Horde_Form_Type_pgp::init($gpg, $temp_dir = NULL, $rows = NULL, $cols = NULL) should be compatible with Horde_Form_Type_longtext::init($rows = 8, $cols = 80, $helper = Array) in /usr/share/php/Horde/Form/Type.php on line 863, referer: https://mail.hallbrown.wilson.com/turba/",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-7cceb69f",
+        "timestamp": "2022-02-04T06:57:57Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "[Fri Feb 04 06:57:57.116471 2022] [:error] [pid 27299] [client 10.182.194.5:59606] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Horde_Form_Variable has a deprecated constructor in /usr/share/php/Horde/Form/Variable.php on line 9, referer: https://mail.hallbrown.wilson.com/turba/",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-6f99b838",
+        "timestamp": "2022-02-04T07:00:00Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Feb  4 07:00:00 dnsmasq[14306]: query[A] mailserver.lane.wilson.com from 192.168.224.185",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-5533c560",
+        "timestamp": "2022-02-04T07:00:00Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Feb  4 07:00:00 dnsmasq[14306]: query[AAAA] wilsonahmed-mail from 192.168.224.185",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-fd72f092",
+        "timestamp": "2022-02-04T07:00:05Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Feb  4 07:00:05 dnsmasq[14306]: query[PTR] 242.226.168.192.in-addr.arpa from 192.168.224.185",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-7f7a2e68",
+        "timestamp": "2022-02-04T07:00:11Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access logs.",
+        "message": "cloud.dmz.hallbrown.wilson.com:443 10.182.194.5 - - [04/Feb/2022:07:00:11 +0000] \"GET /ocs/v2.php/apps/notifications/api/v1/notifications?format=json HTTP/1.1\" 200 3876 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-f9a37584",
+      "source": "alerts",
+      "timestamp": "2022-02-04T06:50:39Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Feb  4 06:50:39 dnsmasq[14306]: query[AAAA] lane-mail from 192.168.226.198",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-8e734e21",
+      "source": "alerts",
+      "timestamp": "2022-02-04T06:57:57Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "[Fri Feb 04 06:57:57.109308 2022] [:error] [pid 27299] [client 10.182.194.5:59606] PHP Warning:  Declaration of Horde_Form_Type_pgp::init($gpg, $temp_dir = NULL, $rows = NULL, $cols = NULL) should be compatible with Horde_Form_Type_longtext::init($rows = 8, $cols = 80, $helper = Array) in /usr/share/php/Horde/Form/Type.php on line 863, referer: https://mail.hallbrown.wilson.com/turba/",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-7cceb69f",
+      "source": "alerts",
+      "timestamp": "2022-02-04T06:57:57Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "[Fri Feb 04 06:57:57.116471 2022] [:error] [pid 27299] [client 10.182.194.5:59606] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Horde_Form_Variable has a deprecated constructor in /usr/share/php/Horde/Form/Variable.php on line 9, referer: https://mail.hallbrown.wilson.com/turba/",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (7 alerts; detectors: AMiner: New event type., AMiner: Unusual occurrence frequencies of Apache Access logs., AMiner: Unusual occurrence frequencies of DNS query IP",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (7 alerts; detectors: AMiner: New event type., AMiner: Unusual occurrence frequencies of Apache Access logs., AMiner: Unusual occurrence frequencies of DNS query IP",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wilson/wilson/session-0026",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 7,
+      "kept_alerts": 7
+    },
+    "sealed": true
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "incident_id": "ait-sess-harrison-harrison-0093",
+  "name": "ATTEST-AIT harrison/harrison session 93",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "harrison/harrison/session-0093",
+  "alert": {
+    "timestamp": "2022-02-07T18:15:40Z",
+    "host": "harrison",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (2 alerts; detectors: AMiner: New characters in Apache Access request.).",
+    "scenario": "harrison"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-07T18:15:40Z",
+    "end": "2022-02-07T18:15:40Z",
+    "hosts": [
+      "harrison"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-37e0b595",
+        "timestamp": "2022-02-07T18:15:40Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.mannsmith.harrison.com:443 10.237.0.166 - - [07/Feb/2022:18:15:40 +0000] \"GET /index.php/logout?requesttoken=HHc/My1zPF4dASUxJh0VBAgvIFV8RiERDmtYJQoWIlg%3D:%2B0PWyJv9tRiRpWZCLlIlMrBYd8jLbyq/gKwO7qD7CbU%3D HTTP/1.1\" 303 4547 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-b7cc48d4",
+        "timestamp": "2022-02-07T18:15:40Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.237.1.238 - - [07/Feb/2022:18:15:40 +0000] \"GET /index.php/logout?requesttoken=HHc/My1zPF4dASUxJh0VBAgvIFV8RiERDmtYJQoWIlg%3D:%2B0PWyJv9tRiRpWZCLlIlMrBYd8jLbyq/gKwO7qD7CbU%3D HTTP/1.1\" 303 2121 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-37e0b595",
+      "source": "alerts",
+      "timestamp": "2022-02-07T18:15:40Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.mannsmith.harrison.com:443 10.237.0.166 - - [07/Feb/2022:18:15:40 +0000] \"GET /index.php/logout?requesttoken=HHc/My1zPF4dASUxJh0VBAgvIFV8RiERDmtYJQoWIlg%3D:%2B0PWyJv9tRiRpWZCLlIlMrBYd8jLbyq/gKwO7qD7CbU%3D HTTP/1.1\" 303 4547 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-b7cc48d4",
+      "source": "alerts",
+      "timestamp": "2022-02-07T18:15:40Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "10.237.1.238 - - [07/Feb/2022:18:15:40 +0000] \"GET /index.php/logout?requesttoken=HHc/My1zPF4dASUxJh0VBAgvIFV8RiERDmtYJQoWIlg%3D:%2B0PWyJv9tRiRpWZCLlIlMrBYd8jLbyq/gKwO7qD7CbU%3D HTTP/1.1\" 303 2121 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (2 alerts; detectors: AMiner: New characters in Apache Access request.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (2 alerts; detectors: AMiner: New characters in Apache Access request.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "harrison/harrison/session-0093",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 2,
+      "kept_alerts": 2
+    },
+    "sealed": true
+  }
+}

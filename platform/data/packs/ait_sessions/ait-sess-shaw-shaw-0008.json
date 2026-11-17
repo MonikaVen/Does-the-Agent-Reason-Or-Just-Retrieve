@@ -1,0 +1,606 @@
+{
+  "incident_id": "ait-sess-shaw-shaw-0008",
+  "name": "ATTEST-AIT shaw/shaw session 8",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "shaw/shaw/session-0008",
+  "alert": {
+    "timestamp": "2022-01-25T04:33:13Z",
+    "host": "shaw",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (50 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: CPU value out of expected range in monitoring logs., AMiner: High entropy ",
+    "scenario": "shaw"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-25T04:33:13Z",
+    "end": "2022-01-25T05:29:05Z",
+    "hosts": [
+      "shaw"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-a638d143",
+        "timestamp": "2022-01-25T04:33:13Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 25 04:33:13 dnsmasq[14635]: query[A] motd.ubuntu.com from 10.70.35.140",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-679cde6a",
+        "timestamp": "2022-01-25T04:39:38Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"tags\":[\"beats_input_raw_event\"],\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.0968}},\"agent\":{\"ephemeral_id\":\"60467123-ae3b-4339-bc93-ff506807789c\",\"type\":\"metricbeat\",\"version\":\"7.13.2\",\"id\":\"fe2b129b-2792-44df-b7e6-ed5439c2b628\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\"},\"event\":{\"module\":\"system\",\"dataset\":\"system.cpu\",\"duration\":954546},\"metricset\":{\"name\":\"cpu\",\"period\":45000}",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-ef3e0063",
+        "timestamp": "2022-01-25T04:51:58Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 25 04:51:58 dnsmasq[14635]: query[SRV] _http._tcp.security.ubuntu.com from 10.70.32.108",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-c75e6f06",
+        "timestamp": "2022-01-25T04:51:58Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 25 04:51:58 dnsmasq[14596]: query[SRV] _http._tcp.security.ubuntu.com from 192.168.188.143",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-92175de6",
+        "timestamp": "2022-01-25T04:51:58Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 25 04:51:58 dnsmasq[14596]: query[SRV] _http._tcp.security.ubuntu.com from 172.24.248.97",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-4dccea16",
+        "timestamp": "2022-01-25T04:59:53Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"tags\":[\"beats_input_raw_event\"],\"metricset\":{\"name\":\"cpu\",\"period\":45000},\"agent\":{\"ephemeral_id\":\"60467123-ae3b-4339-bc93-ff506807789c\",\"type\":\"metricbeat\",\"version\":\"7.13.2\",\"id\":\"fe2b129b-2792-44df-b7e6-ed5439c2b628\",\"name\":\"intranet-server\",\"hostname\":\"intranet-server\"},\"service\":{\"type\":\"system\"},\"system\":{\"cpu\":{\"total\":{\"pct\":0.0871,\"norm\":{\"pct\":0.0871}},\"user\":{\"pct\":0.035,\"norm\":{\"pct\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-c8a84167",
+        "timestamp": "2022-01-25T05:03:33Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 25 05:03:33 dnsmasq[14635]: query[AAAA] collinsbecker-mail from 10.70.34.215",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-a8094c58",
+        "timestamp": "2022-01-25T05:03:38Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"tags\":[\"beats_input_raw_event\"],\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.0976}},\"event\":{\"duration\":1391191,\"dataset\":\"system.cpu\",\"module\":\"system\"},\"metricset\":{\"name\":\"cpu\",\"period\":45000},\"service\":{\"type\":\"system\"},\"@timestamp\":\"2022-01-25T05:03:38.304Z\",\"system\":{\"cpu\":{\"total\":{\"pct\":0.0976,\"norm\":{\"pct\":0.0976}},\"user\":{\"pct\":0.0387,\"norm\":{\"pct\":0.0387}},\"iowait\":{\"pct\":0.0021,\"n",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-56c0f688",
+        "timestamp": "2022-01-25T05:07:32Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in DNS domain.",
+        "message": "Jan 25 05:07:32 dnsmasq[14635]: query[A] shavar.services.mozilla.com from 10.70.32.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-179d5738",
+        "timestamp": "2022-01-25T05:07:55Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 25 05:07:55 dnsmasq[14635]: query[A] motd.ubuntu.com from 10.70.33.202",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-4e3ed54f",
+        "timestamp": "2022-01-25T05:18:52Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Jan 25 05:18:52 dnsmasq[14596]: query[AAAA] mail from 172.24.251.90",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-05488f16",
+        "timestamp": "2022-01-25T05:20:01Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-25 05:20:01 10.70.33.29:51404 TLS: Initial packet from [AF_INET]10.70.33.29:51404, sid=560a16cf ae9c1d7b",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-1a737167",
+        "timestamp": "2022-01-25T05:20:01Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-25 05:20:01 10.70.33.29:51404 peer info: IV_NCP=2",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-92574959",
+        "timestamp": "2022-01-25T05:20:01Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-25 05:20:01 hpalmer/10.70.33.29:51404 MULTI_sva: pool returned IPv4=10.9.0.6, IPv6=(Not enabled)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-7a776893",
+        "timestamp": "2022-01-25T05:20:01Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-25 05:20:01 hpalmer/10.70.33.29:51404 MULTI: Learn: 10.9.0.6 -> hpalmer/10.70.33.29:51404",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-523881fe",
+        "timestamp": "2022-01-25T05:20:01Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-25 05:20:01 hpalmer/10.70.33.29:51404 MULTI: primary virtual IP for hpalmer/10.70.33.29:51404: 10.9.0.6",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-f01d6644",
+        "timestamp": "2022-01-25T05:20:02Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-25 05:20:02 hpalmer/10.70.33.29:51404 PUSH: Received control message: 'PUSH_REQUEST'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-3f68ea67",
+        "timestamp": "2022-01-25T05:20:02Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-25 05:20:02 hpalmer/10.70.33.29:51404 SENT CONTROL [hpalmer]: 'PUSH_REPLY,redirect-gateway def1,block-outside-dns,route 10.9.0.1,topology net30,ping 10,ping-restart 120,ifconfig 10.9.0.6 10.9.0.5,peer-id 0,cipher AES-256-CBC' (status=1)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-554d9c98",
+        "timestamp": "2022-01-25T05:20:09Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 25 05:20:09 dnsmasq[14596]: forwarded intranet.thomasmurray.shaw.info to 127.0.0.1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-12538431",
+        "timestamp": "2022-01-25T05:20:09Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 25 05:20:09 dnsmasq[14596]: nameserver 127.0.0.1 refused to do a recursive query",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-350c2433",
+        "timestamp": "2022-01-25T05:20:14Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "172.24.249.224 - - [25/Jan/2022:05:20:14 +0000] \"GET / HTTP/1.1\" 200 6201 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-1645fdff",
+        "timestamp": "2022-01-25T05:20:14Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.24.249.224 - - [25/Jan/2022:05:20:14 +0000] \"GET / HTTP/1.1\" 200 6201 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-ba769a23",
+        "timestamp": "2022-01-25T05:20:14Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "172.24.249.224 - - [25/Jan/2022:05:20:14 +0000] \"GET / HTTP/1.1\" 200 6201 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-30c0af1a",
+        "timestamp": "2022-01-25T05:20:14Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.24.249.224 - - [25/Jan/2022:05:20:14 +0000] \"GET / HTTP/1.1\" 200 6201 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0025-2777c0ea",
+        "timestamp": "2022-01-25T05:20:14Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in Apache Access referer.",
+        "message": "172.24.249.224 - - [25/Jan/2022:05:20:14 +0000] \"GET / HTTP/1.1\" 200 6201 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0026-36b49d66",
+        "timestamp": "2022-01-25T05:20:14Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "192.168.188.179 - - [25/Jan/2022:05:20:14 +0000] \"POST /wp-cron.php?doing_wp_cron=1643088014.0896780490875244140625 HTTP/1.1\" 200 150 \"-\" \"WordPress/5.8.3; https://intranet.thomasmurray.shaw.info\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0027-3c9780a6",
+        "timestamp": "2022-01-25T05:20:14Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "192.168.188.179 - - [25/Jan/2022:05:20:14 +0000] \"POST /wp-cron.php?doing_wp_cron=1643088014.0896780490875244140625 HTTP/1.1\" 200 150 \"-\" \"WordPress/5.8.3; https://intranet.thomasmurray.shaw.info\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0028-963ba7e3",
+        "timestamp": "2022-01-25T05:20:14Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "192.168.188.179 - - [25/Jan/2022:05:20:14 +0000] \"POST /wp-cron.php?doing_wp_cron=1643088014.0896780490875244140625 HTTP/1.1\" 200 150 \"-\" \"WordPress/5.8.3; https://intranet.thomasmurray.shaw.info\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0029-6e19d56a",
+        "timestamp": "2022-01-25T05:20:14Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.24.249.224 - - [25/Jan/2022:05:20:14 +0000] \"GET /wp-includes/js/wp-embed.min.js?ver=5.8.3 HTTP/1.1\" 200 1099 \"http://intranet.thomasmurray.shaw.info/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0030-3c4673dd",
+        "timestamp": "2022-01-25T05:20:14Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in Apache Access referer.",
+        "message": "172.24.249.224 - - [25/Jan/2022:05:20:14 +0000] \"GET /wp-includes/js/wp-embed.min.js?ver=5.8.3 HTTP/1.1\" 200 1099 \"http://intranet.thomasmurray.shaw.info/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0031-066fcda2",
+        "timestamp": "2022-01-25T05:20:14Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "172.24.249.224 - - [25/Jan/2022:05:20:14 +0000] \"GET /wp-includes/js/wp-embed.min.js?ver=5.8.3 HTTP/1.1\" 200 1099 \"http://intranet.thomasmurray.shaw.info/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0032-9a4fdec6",
+        "timestamp": "2022-01-25T05:20:14Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.24.249.224 - - [25/Jan/2022:05:20:14 +0000] \"GET /wp-content/themes/go/dist/js/frontend.min.js?ver=1.5.2 HTTP/1.1\" 200 2916 \"http://intranet.thomasmurray.shaw.info/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0033-7ab1f8e9",
+        "timestamp": "2022-01-25T05:20:14Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.24.249.224 - - [25/Jan/2022:05:20:14 +0000] \"GET /wp-content/themes/go/dist/css/design-styles/style-traditional.min.css?ver=1.5.2 HTTP/1.1\" 200 1412 \"http://intranet.thomasmurray.shaw.info/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0034-40e7446a",
+        "timestamp": "2022-01-25T05:20:14Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.24.249.224 - - [25/Jan/2022:05:20:14 +0000] \"GET /wp-includes/css/dist/block-library/style.min.css?ver=5.8.3 HTTP/1.1\" 200 10846 \"http://intranet.thomasmurray.shaw.info/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0035-118313a7",
+        "timestamp": "2022-01-25T05:25:28Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.24.249.224 - - [25/Jan/2022:05:25:28 +0000] \"GET /wp-content/plugins/wpdiscuz/assets/third-party/font-awesome-5.13.0/css/fa.min.css?ver=7.0.4 HTTP/1.1\" 200 3464 \"https://intranet.thomasmurray.shaw.info/?p=5\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0036-1db01ae7",
+        "timestamp": "2022-01-25T05:25:28Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "172.24.249.224 - - [25/Jan/2022:05:25:28 +0000] \"GET /wp-content/plugins/wpdiscuz/assets/third-party/font-awesome-5.13.0/css/fa.min.css?ver=7.0.4 HTTP/1.1\" 200 3464 \"https://intranet.thomasmurray.shaw.info/?p=5\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0037-86c75997",
+        "timestamp": "2022-01-25T05:25:28Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.24.249.224 - - [25/Jan/2022:05:25:28 +0000] \"GET /wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2 HTTP/1.1\" 200 4570 \"https://intranet.thomasmurray.shaw.info/?p=5\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0038-228e95b3",
+        "timestamp": "2022-01-25T05:25:28Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "172.24.249.224 - - [25/Jan/2022:05:25:28 +0000] \"GET /wp-content/plugins/wpdiscuz/themes/default/css/fonts/sqr721c-webfont.woff2 HTTP/1.1\" 200 18908 \"https://intranet.thomasmurray.shaw.info/wp-content/plugins/wpdiscuz/themes/default/style.css?ver=7.0.4\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0039-e201be2d",
+        "timestamp": "2022-01-25T05:25:48Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "172.24.249.224 - - [25/Jan/2022:05:25:48 +0000] \"-\" 408 3014 \"-\" \"-\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0040-614c9dde",
+        "timestamp": "2022-01-25T05:25:48Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "172.24.249.224 - - [25/Jan/2022:05:25:48 +0000] \"-\" 408 3014 \"-\" \"-\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0041-025f7f94",
+        "timestamp": "2022-01-25T05:25:48Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in Apache Access user agent.",
+        "message": "172.24.249.224 - - [25/Jan/2022:05:25:48 +0000] \"-\" 408 3014 \"-\" \"-\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0042-ec93f65e",
+        "timestamp": "2022-01-25T05:25:50Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "::1 - - [25/Jan/2022:05:25:50 +0000] \"OPTIONS * HTTP/1.0\" 200 110 \"-\" \"Apache/2.4.29 (Ubuntu) OpenSSL/1.1.1 (internal dummy connection)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0043-47b9b9f0",
+        "timestamp": "2022-01-25T05:25:50Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "::1 - - [25/Jan/2022:05:25:50 +0000] \"OPTIONS * HTTP/1.0\" 200 110 \"-\" \"Apache/2.4.29 (Ubuntu) OpenSSL/1.1.1 (internal dummy connection)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0044-3280a677",
+        "timestamp": "2022-01-25T05:25:50Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "::1 - - [25/Jan/2022:05:25:50 +0000] \"OPTIONS * HTTP/1.0\" 200 110 \"-\" \"Apache/2.4.29 (Ubuntu) OpenSSL/1.1.1 (internal dummy connection)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0045-3d3fe549",
+        "timestamp": "2022-01-25T05:25:50Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "::1 - - [25/Jan/2022:05:25:50 +0000] \"OPTIONS * HTTP/1.0\" 200 110 \"-\" \"Apache/2.4.29 (Ubuntu) OpenSSL/1.1.1 (internal dummy connection)\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0046-63f6f114",
+        "timestamp": "2022-01-25T05:27:38Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 25 05:27:38 dnsmasq[14596]: query[A] intranet.thomasmurray.shaw.info from 172.24.249.224",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0047-917cd1d2",
+        "timestamp": "2022-01-25T05:27:43Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.24.249.224 - - [25/Jan/2022:05:27:43 +0000] \"POST /wp-admin/admin-ajax.php HTTP/1.1\" 200 5481 \"https://intranet.thomasmurray.shaw.info/?p=5\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0048-66e06d8c",
+        "timestamp": "2022-01-25T05:29:03Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 25 05:29:03 dnsmasq[14635]: query[A] location.services.mozilla.com from 10.70.34.71",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0049-69976f60",
+        "timestamp": "2022-01-25T05:29:03Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in DNS domain.",
+        "message": "Jan 25 05:29:03 dnsmasq[14635]: reply locprod2-elb-us-west-2.prod.mozaws.net is 35.82.27.113",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0050-6eae6e57",
+        "timestamp": "2022-01-25T05:29:04Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in DNS domain.",
+        "message": "Jan 25 05:29:04 dnsmasq[14635]: query[A] firefox.settings.services.mozilla.com from 10.70.34.71",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-a638d143",
+      "source": "alerts",
+      "timestamp": "2022-01-25T04:33:13Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 25 04:33:13 dnsmasq[14635]: query[A] motd.ubuntu.com from 10.70.35.140",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-679cde6a",
+      "source": "alerts",
+      "timestamp": "2022-01-25T04:39:38Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"tags\":[\"beats_input_raw_event\"],\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.0968}},\"agent\":{\"ephemeral_id\":\"60467123-ae3b-4339-bc93-ff506807789c\",\"type\":\"metricbeat\",\"version\":\"7.13.2\",\"id\":\"fe2b129b-2792-44df-b7e6-ed5439c2b628\",\"hostname\":\"intranet-server\",\"name\":\"intranet-server\"},\"event\":{\"module\":\"system\",\"dataset\":\"system.cpu\",\"duration\":954546},\"metricset\":{\"name\":\"cpu\",\"period\":45000}",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-ef3e0063",
+      "source": "alerts",
+      "timestamp": "2022-01-25T04:51:58Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 25 04:51:58 dnsmasq[14635]: query[SRV] _http._tcp.security.ubuntu.com from 10.70.32.108",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (50 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: CPU value out of expected range in monitoring logs., AMiner: High entropy ",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (50 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: CPU value out of expected range in monitoring logs., AMiner: High entropy ",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "shaw/shaw/session-0008",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 54,
+      "kept_alerts": 50
+    },
+    "sealed": true
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "incident_id": "ait-sess-russellmitchell-russellmitchell-0014",
+  "name": "ATTEST-AIT russellmitchell/russellmitchell session 14",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "russellmitchell/russellmitchell/session-0014",
+  "alert": {
+    "timestamp": "2022-01-21T09:14:04Z",
+    "host": "russellmitchell",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (6 alerts; detectors: AMiner: New characters in Apache Access referer., AMiner: New event type., AMiner: New ip address in DNS logs.).",
+    "scenario": "russellmitchell"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-21T09:14:04Z",
+    "end": "2022-01-21T09:21:17Z",
+    "hosts": [
+      "russellmitchell"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-0fbc0fb9",
+        "timestamp": "2022-01-21T09:14:04Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 09:14:04 dnsmasq[3468]: query[A] mail.smith.russellmitchell.com from 10.143.2.25",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-e14f50bd",
+        "timestamp": "2022-01-21T09:14:16Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642756456.426:1763): pid=9778 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"traci.stevenson\" exe=\"/usr/lib/dovecot/auth\" hostname=172.19.130.4 addr=172.19.130.4 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-25c4d9c7",
+        "timestamp": "2022-01-21T09:14:16Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642756456.430:1764): pid=9778 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"traci.stevenson\" exe=\"/usr/lib/dovecot/auth\" hostname=172.19.130.4 addr=172.19.130.4 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-b939114a",
+        "timestamp": "2022-01-21T09:18:01Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "172.19.131.174 - - [21/Jan/2022:09:18:01 +0000] \"POST /nag/task/save.php HTTP/1.1\" 302 1044 \"https://mail.smith.russellmitchell.com/nag/task.php?tasklist=dV1-G1CR4lFCl9MgG0p7ifX&task=KAHgl8-yT2uHGum1eBKviSP&actionID=modify_task&have_search&tab_name=1&url=%2Fnag%2Flist.php\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-f7933ade",
+        "timestamp": "2022-01-21T09:21:17Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-21 09:21:17 1nAq6f-0001Kg-Gp -> marcus.morgan@smith.russellmitchell.com R=dnslookup T=remote_smtp H=mailserver.smith.russellmitchell.com [192.168.230.4] X=TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256 CV=yes DN=\"C=AT,ST=Vienna,L=Vienna,O=Company,CN=mailserver.smith.russellmitchell.com\" PRDR C=\"250 PRDR R=<marcus.morgan@smith.russellmitchell.com> acceptance\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-c7fd1fae",
+        "timestamp": "2022-01-21T09:21:17Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-21 09:21:17 1nAq6f-0002Yb-Q4 PRDR R=<rebecca.blake@smith.russellmitchell.com> acceptance",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-0fbc0fb9",
+      "source": "alerts",
+      "timestamp": "2022-01-21T09:14:04Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 21 09:14:04 dnsmasq[3468]: query[A] mail.smith.russellmitchell.com from 10.143.2.25",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-e14f50bd",
+      "source": "alerts",
+      "timestamp": "2022-01-21T09:14:16Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642756456.426:1763): pid=9778 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"traci.stevenson\" exe=\"/usr/lib/dovecot/auth\" hostname=172.19.130.4 addr=172.19.130.4 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-25c4d9c7",
+      "source": "alerts",
+      "timestamp": "2022-01-21T09:14:16Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642756456.430:1764): pid=9778 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"traci.stevenson\" exe=\"/usr/lib/dovecot/auth\" hostname=172.19.130.4 addr=172.19.130.4 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (6 alerts; detectors: AMiner: New characters in Apache Access referer., AMiner: New event type., AMiner: New ip address in DNS logs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (6 alerts; detectors: AMiner: New characters in Apache Access referer., AMiner: New event type., AMiner: New ip address in DNS logs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "russellmitchell/russellmitchell/session-0014",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 6,
+      "kept_alerts": 6
+    },
+    "sealed": true
+  }
+}

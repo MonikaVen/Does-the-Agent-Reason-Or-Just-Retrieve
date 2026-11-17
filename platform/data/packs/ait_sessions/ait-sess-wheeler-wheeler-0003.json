@@ -1,0 +1,255 @@
+{
+  "incident_id": "ait-sess-wheeler-wheeler-0003",
+  "name": "ATTEST-AIT wheeler/wheeler session 3",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wheeler/wheeler/session-0003",
+  "alert": {
+    "timestamp": "2022-01-26T01:46:55Z",
+    "host": "wheeler",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (11 alerts; detectors: AMiner: CPU value out of expected range in monitoring logs., AMiner: High entropy in DNS domain., AMiner: New event type.).",
+    "scenario": "wheeler"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-26T01:46:55Z",
+    "end": "2022-01-26T02:01:00Z",
+    "hosts": [
+      "wheeler"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-5b7b6977",
+        "timestamp": "2022-01-26T01:46:55Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 26 01:46:55 dnsmasq[14167]: query[AAAA] mail from 10.38.242.195",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-86fbabdd",
+        "timestamp": "2022-01-26T01:48:29Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 26 01:48:29 dnsmasq[12225]: query[AAAA] khanwood-mail from 172.27.181.253",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-23bf5c8b",
+        "timestamp": "2022-01-26T01:53:29Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 26 01:53:29 dnsmasq[12225]: query[SRV] _http._tcp.security.ubuntu.com from 172.27.181.245",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-843da0bb",
+        "timestamp": "2022-01-26T01:53:29Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 26 01:53:29 dnsmasq[14167]: query[SRV] _http._tcp.security.ubuntu.com from 192.168.1.150",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-f300a50f",
+        "timestamp": "2022-01-26T01:53:29Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 26 01:53:29 dnsmasq[14167]: query[SRV] _http._tcp.security.ubuntu.com from 10.38.242.70",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-2b227dce",
+        "timestamp": "2022-01-26T01:53:29Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 01:53:29 dnsmasq[14167]: query[SRV] _http._tcp.security.ubuntu.com from 10.38.242.70",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-cbbd683f",
+        "timestamp": "2022-01-26T01:55:29Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 26 01:55:29 dnsmasq[14167]: query[SRV] _http._tcp.archive.ubuntu.com from 10.38.242.70",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-562ab42a",
+        "timestamp": "2022-01-26T01:56:34Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 26 01:56:34 dnsmasq[14167]: query[A] shavar.services.mozilla.com from 192.168.0.133",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-9639d710",
+        "timestamp": "2022-01-26T01:56:35Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "01/26/2022-01:56:35.579669  [**] [1:2230003:1] SURICATA TLS invalid handshake message [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 52.35.174.64:443 -> 172.27.180.4:46682",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-4bde9c25",
+        "timestamp": "2022-01-26T01:59:10Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 26 01:59:10 dnsmasq[12225]: query[AAAA] sanchez-mail from 172.27.181.174",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-580f0e43",
+        "timestamp": "2022-01-26T02:01:00Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"event\":{\"duration\":496766,\"dataset\":\"system.cpu\",\"module\":\"system\"},\"@version\":\"1\",\"tags\":[\"beats_input_raw_event\"],\"@timestamp\":\"2022-01-26T02:01:00.510Z\",\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.071}},\"agent\":{\"ephemeral_id\":\"ff1ada7a-b5be-4a46-bf74-39dc388f9556\",\"hostname\":\"intranet-server\",\"version\":\"7.13.2\",\"id\":\"47b93423-92d0-4618-b91a-c441d675c426\",\"name\":\"intranet-server\",\"type\":\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-5b7b6977",
+      "source": "alerts",
+      "timestamp": "2022-01-26T01:46:55Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 26 01:46:55 dnsmasq[14167]: query[AAAA] mail from 10.38.242.195",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-86fbabdd",
+      "source": "alerts",
+      "timestamp": "2022-01-26T01:48:29Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 26 01:48:29 dnsmasq[12225]: query[AAAA] khanwood-mail from 172.27.181.253",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-23bf5c8b",
+      "source": "alerts",
+      "timestamp": "2022-01-26T01:53:29Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 26 01:53:29 dnsmasq[12225]: query[SRV] _http._tcp.security.ubuntu.com from 172.27.181.245",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (11 alerts; detectors: AMiner: CPU value out of expected range in monitoring logs., AMiner: High entropy in DNS domain., AMiner: New event type.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (11 alerts; detectors: AMiner: CPU value out of expected range in monitoring logs., AMiner: High entropy in DNS domain., AMiner: New event type.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wheeler/wheeler/session-0003",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 11,
+      "kept_alerts": 11
+    },
+    "sealed": true
+  }
+}

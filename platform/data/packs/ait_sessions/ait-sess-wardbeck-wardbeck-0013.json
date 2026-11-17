@@ -1,0 +1,219 @@
+{
+  "incident_id": "ait-sess-wardbeck-wardbeck-0013",
+  "name": "ATTEST-AIT wardbeck/wardbeck session 13",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wardbeck/wardbeck/session-0013",
+  "alert": {
+    "timestamp": "2022-01-19T09:45:30Z",
+    "host": "wardbeck",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (7 alerts; detectors: AMiner: New characters in Apache Access referer., AMiner: New characters in Apache Access request., AMiner: New event type.).",
+    "scenario": "wardbeck"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-19T09:45:30Z",
+    "end": "2022-01-19T10:31:13Z",
+    "hosts": [
+      "wardbeck"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-cda3353c",
+        "timestamp": "2022-01-19T09:45:30Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "172.21.240.147 - - [19/Jan/2022:09:45:30 +0000] \"GET /wp-includes/images/spinner.gif HTTP/1.1\" 200 3969 \"https://intranet.hurstwong.wardbeck.info/wp-admin/load-styles.php?c=0&dir=ltr&load%5Bchunk_0%5D=dashicons,admin-bar,buttons,media-views,common,forms,admin-menu,dashboard,list-tables,edit,revisions,media,themes,about,nav-menu&load%5Bchunk_1%5D=s,wp-pointer,widgets,site-icon,l10n,wp-auth-check&ve",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-f99556c9",
+        "timestamp": "2022-01-19T10:00:10Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 19 10:00:10 dnsmasq[14529]: query[A] 3x6-.788-.BoIfXAfZMF0l*DVA8Osawa*/RfAjqMv8tVgW-.cDMsBNr/YU9dC4cusR0MvM7/QpezxjrbvRfl-.67ZY7l17DH/KDzajjt3Dnpt390RYu3Gy04ZI-.Yx02TzIZsO5MSOugSSHi2HB93JKsh83A66Yh-.Wf3bbepNuMY*dDhErquUvgYofV2j9DVC6XsM-.customers_2021.xlsx.db-99.brown.com from 192.168.96.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-94bb1193",
+        "timestamp": "2022-01-19T10:13:43Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.hurstwong.wardbeck.info:443 10.132.57.136 - - [19/Jan/2022:10:13:43 +0000] \"GET /index.php/apps/files/ajax/download.php?dir=%2F&files=Photos%20(2)&downloadStartSecret=3x5tajlyawd HTTP/1.1\" 200 1022512 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-9d1be192",
+        "timestamp": "2022-01-19T10:25:14Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "cloud.dmz.hurstwong.wardbeck.info:443 10.132.57.136 - - [19/Jan/2022:10:25:14 +0000] \"PUT /remote.php/dav/files/dhunt/Documents/word.png HTTP/1.1\" 201 737 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-3aeff56e",
+        "timestamp": "2022-01-19T10:25:14Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "cloud.dmz.hurstwong.wardbeck.info:443 10.132.57.136 - - [19/Jan/2022:10:25:14 +0000] \"PUT /remote.php/dav/files/dhunt/Documents/word.png HTTP/1.1\" 201 737 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-ac65157b",
+        "timestamp": "2022-01-19T10:31:13Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-19 10:31:13 dhunt/192.168.96.254:52979 [dhunt] Inactivity timeout (--ping-restart), restarting",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-47e414b4",
+        "timestamp": "2022-01-19T10:31:13Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-19 10:31:13 dhunt/192.168.96.254:52979 SIGUSR1[soft,ping-restart] received, client-instance restarting",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-cda3353c",
+      "source": "alerts",
+      "timestamp": "2022-01-19T09:45:30Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "172.21.240.147 - - [19/Jan/2022:09:45:30 +0000] \"GET /wp-includes/images/spinner.gif HTTP/1.1\" 200 3969 \"https://intranet.hurstwong.wardbeck.info/wp-admin/load-styles.php?c=0&dir=ltr&load%5Bchunk_0%5D=dashicons,admin-bar,buttons,media-views,common,forms,admin-menu,dashboard,list-tables,edit,revisions,media,themes,about,nav-menu&load%5Bchunk_1%5D=s,wp-pointer,widgets,site-icon,l10n,wp-auth-check&ve",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-f99556c9",
+      "source": "alerts",
+      "timestamp": "2022-01-19T10:00:10Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 19 10:00:10 dnsmasq[14529]: query[A] 3x6-.788-.BoIfXAfZMF0l*DVA8Osawa*/RfAjqMv8tVgW-.cDMsBNr/YU9dC4cusR0MvM7/QpezxjrbvRfl-.67ZY7l17DH/KDzajjt3Dnpt390RYu3Gy04ZI-.Yx02TzIZsO5MSOugSSHi2HB93JKsh83A66Yh-.Wf3bbepNuMY*dDhErquUvgYofV2j9DVC6XsM-.customers_2021.xlsx.db-99.brown.com from 192.168.96.4",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-94bb1193",
+      "source": "alerts",
+      "timestamp": "2022-01-19T10:13:43Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.hurstwong.wardbeck.info:443 10.132.57.136 - - [19/Jan/2022:10:13:43 +0000] \"GET /index.php/apps/files/ajax/download.php?dir=%2F&files=Photos%20(2)&downloadStartSecret=3x5tajlyawd HTTP/1.1\" 200 1022512 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (7 alerts; detectors: AMiner: New characters in Apache Access referer., AMiner: New characters in Apache Access request., AMiner: New event type.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (7 alerts; detectors: AMiner: New characters in Apache Access referer., AMiner: New characters in Apache Access request., AMiner: New event type.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wardbeck/wardbeck/session-0013",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 7,
+      "kept_alerts": 7
+    },
+    "sealed": true
+  }
+}

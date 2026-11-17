@@ -1,0 +1,219 @@
+{
+  "incident_id": "ait-sess-santos-santos-0032",
+  "name": "ATTEST-AIT santos/santos session 32",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "santos/santos/session-0032",
+  "alert": {
+    "timestamp": "2022-01-15T06:24:36Z",
+    "host": "santos",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (7 alerts; detectors: AMiner: New event type., AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+    "scenario": "santos"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-15T06:24:36Z",
+    "end": "2022-01-15T06:25:11Z",
+    "hosts": [
+      "santos"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-04828a58",
+        "timestamp": "2022-01-15T06:24:36Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 15 06:24:36 dnsmasq[14919]: query[AAAA] motd.ubuntu.com from 172.21.131.122",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-bf3d8bbe",
+        "timestamp": "2022-01-15T06:25:01Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 15 06:25:01 inet-dns rsyslogd:  [origin software=\"rsyslogd\" swVersion=\"8.32.0\" x-pid=\"763\" x-info=\"http://www.rsyslog.com\"] rsyslogd was HUPed",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-2344bbbc",
+        "timestamp": "2022-01-15T06:25:03Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 15 06:25:03 mail liblogging-stdlog:  [origin software=\"rsyslogd\" swVersion=\"8.24.0\" x-pid=\"499\" x-info=\"http://www.rsyslog.com\"] rsyslogd was HUPed",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-e2510e84",
+        "timestamp": "2022-01-15T06:25:05Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "[Sat Jan 15 06:25:05.557599 2022] [:error] [pid 21684] [client 172.21.129.224:35594] PHP Warning:  Declaration of Horde_Form_Type_pgp::init($gpg, $temp_dir = NULL, $rows = NULL, $cols = NULL) should be compatible with Horde_Form_Type_longtext::init($rows = 8, $cols = 80, $helper = Array) in /usr/share/php/Horde/Form/Type.php on line 863, referer: https://mail.smith.santos.com/turba/add.php",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-156d17f2",
+        "timestamp": "2022-01-15T06:25:05Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "[Sat Jan 15 06:25:05.564099 2022] [:error] [pid 21684] [client 172.21.129.224:35594] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Horde_Form_Variable has a deprecated constructor in /usr/share/php/Horde/Form/Variable.php on line 9, referer: https://mail.smith.santos.com/turba/add.php",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-e7eebbfd",
+        "timestamp": "2022-01-15T06:25:09Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 15 06:25:09 webserver apachectl[6907]: AH00548: NameVirtualHost has no effect and will be removed in the next release /etc/apache2/sites-enabled/000-catch-all.conf:1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-73d45c39",
+        "timestamp": "2022-01-15T06:25:11Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "[Sat Jan 15 06:25:11.555081 2022] [ssl:warn] [pid 29644] AH01909: 000-catch-all:443:0 server certificate does NOT include an ID which matches the server name",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-04828a58",
+      "source": "alerts",
+      "timestamp": "2022-01-15T06:24:36Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 15 06:24:36 dnsmasq[14919]: query[AAAA] motd.ubuntu.com from 172.21.131.122",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-bf3d8bbe",
+      "source": "alerts",
+      "timestamp": "2022-01-15T06:25:01Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 15 06:25:01 inet-dns rsyslogd:  [origin software=\"rsyslogd\" swVersion=\"8.32.0\" x-pid=\"763\" x-info=\"http://www.rsyslog.com\"] rsyslogd was HUPed",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-2344bbbc",
+      "source": "alerts",
+      "timestamp": "2022-01-15T06:25:03Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 15 06:25:03 mail liblogging-stdlog:  [origin software=\"rsyslogd\" swVersion=\"8.24.0\" x-pid=\"499\" x-info=\"http://www.rsyslog.com\"] rsyslogd was HUPed",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (7 alerts; detectors: AMiner: New event type., AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (7 alerts; detectors: AMiner: New event type., AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "santos/santos/session-0032",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 7,
+      "kept_alerts": 7
+    },
+    "sealed": true
+  }
+}

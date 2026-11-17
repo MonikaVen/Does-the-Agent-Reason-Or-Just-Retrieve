@@ -1,0 +1,201 @@
+{
+  "incident_id": "ait-sess-santos-santos-0014",
+  "name": "ATTEST-AIT santos/santos session 14",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "santos/santos/session-0014",
+  "alert": {
+    "timestamp": "2022-01-14T09:26:15Z",
+    "host": "santos",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (5 alerts; detectors: AMiner: New ip address in DNS logs., AMiner: New user_acct parameter combination in Audit logs., AMiner: New user_auth parameter combination i",
+    "scenario": "santos"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-14T09:26:15Z",
+    "end": "2022-01-14T09:29:25Z",
+    "hosts": [
+      "santos"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-92067084",
+        "timestamp": "2022-01-14T09:26:15Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642152375.840:2069): pid=10629 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"brian.thomas\" exe=\"/usr/lib/dovecot/auth\" hostname=172.21.131.50 addr=172.21.131.50 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-497d33ef",
+        "timestamp": "2022-01-14T09:26:15Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642152375.840:2070): pid=10629 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"brian.thomas\" exe=\"/usr/lib/dovecot/auth\" hostname=172.21.131.50 addr=172.21.131.50 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-89ca7eae",
+        "timestamp": "2022-01-14T09:29:03Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 14 09:29:03 dnsmasq[14569]: query[AAAA] location.services.mozilla.com from 10.229.1.138",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-a26c5977",
+        "timestamp": "2022-01-14T09:29:25Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642152565.065:2077): pid=10665 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"andrew.pierce\" exe=\"/usr/lib/dovecot/auth\" hostname=172.21.131.50 addr=172.21.131.50 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-d0c7d803",
+        "timestamp": "2022-01-14T09:29:25Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642152565.065:2078): pid=10665 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"andrew.pierce\" exe=\"/usr/lib/dovecot/auth\" hostname=172.21.131.50 addr=172.21.131.50 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-92067084",
+      "source": "alerts",
+      "timestamp": "2022-01-14T09:26:15Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1642152375.840:2069): pid=10629 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"brian.thomas\" exe=\"/usr/lib/dovecot/auth\" hostname=172.21.131.50 addr=172.21.131.50 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-497d33ef",
+      "source": "alerts",
+      "timestamp": "2022-01-14T09:26:15Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642152375.840:2070): pid=10629 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"brian.thomas\" exe=\"/usr/lib/dovecot/auth\" hostname=172.21.131.50 addr=172.21.131.50 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-89ca7eae",
+      "source": "alerts",
+      "timestamp": "2022-01-14T09:29:03Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 14 09:29:03 dnsmasq[14569]: query[AAAA] location.services.mozilla.com from 10.229.1.138",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (5 alerts; detectors: AMiner: New ip address in DNS logs., AMiner: New user_acct parameter combination in Audit logs., AMiner: New user_auth parameter combination i",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (5 alerts; detectors: AMiner: New ip address in DNS logs., AMiner: New user_acct parameter combination in Audit logs., AMiner: New user_auth parameter combination i",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "santos/santos/session-0014",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 5,
+      "kept_alerts": 5
+    },
+    "sealed": true
+  }
+}

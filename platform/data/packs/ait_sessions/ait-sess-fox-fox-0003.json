@@ -1,0 +1,210 @@
+{
+  "incident_id": "ait-sess-fox-fox-0003",
+  "name": "ATTEST-AIT fox/fox session 3",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "fox/fox/session-0003",
+  "alert": {
+    "timestamp": "2022-01-15T02:01:16Z",
+    "host": "fox",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (6 alerts; detectors: AMiner: CPU value out of expected range in monitoring logs., AMiner: High entropy in DNS domain., AMiner: New event type.).",
+    "scenario": "fox"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-15T02:01:16Z",
+    "end": "2022-01-15T02:11:47Z",
+    "hosts": [
+      "fox"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-ddc7944f",
+        "timestamp": "2022-01-15T02:01:16Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 02:01:16 dnsmasq[14460]: query[AAAA] taylorcruz-mail from 192.168.128.195",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-19d17d28",
+        "timestamp": "2022-01-15T02:08:20Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 15 02:08:20 jonesmorgan-mail dhclient[410]: DHCPREQUEST of 192.168.128.170 on eth0 to 192.168.128.2 port 67",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-373164d9",
+        "timestamp": "2022-01-15T02:08:20Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 15 02:08:20 jonesmorgan-mail dhclient[410]: DHCPACK of 192.168.128.170 from 192.168.128.2",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-dac65ecb",
+        "timestamp": "2022-01-15T02:08:20Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 15 02:08:20 jonesmorgan-mail dhclient[410]: bound to 192.168.128.170 -- renewal in 33879 seconds.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-4cc442ee",
+        "timestamp": "2022-01-15T02:09:39Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"@timestamp\":\"2022-01-15T02:09:39.321Z\",\"service\":{\"type\":\"system\"},\"tags\":[\"beats_input_raw_event\"],\"@version\":\"1\",\"agent\":{\"type\":\"metricbeat\",\"hostname\":\"intranet-server\",\"version\":\"7.13.2\",\"id\":\"a0c41e4e-ff4a-481f-adda-21fc96889b28\",\"name\":\"intranet-server\",\"ephemeral_id\":\"ae20c47b-0a81-4e05-a749-cbe0dacd5e36\"},\"system\":{\"cpu\":{\"softirq\":{\"pct\":0.0021,\"norm\":{\"pct\":0.0021}},\"iowait\":{\"pct\":0.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-0059d940",
+        "timestamp": "2022-01-15T02:11:47Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 02:11:47 dnsmasq[14460]: query[AAAA] jonesmorgan-mail from 192.168.128.170",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-ddc7944f",
+      "source": "alerts",
+      "timestamp": "2022-01-15T02:01:16Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 15 02:01:16 dnsmasq[14460]: query[AAAA] taylorcruz-mail from 192.168.128.195",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-19d17d28",
+      "source": "alerts",
+      "timestamp": "2022-01-15T02:08:20Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 15 02:08:20 jonesmorgan-mail dhclient[410]: DHCPREQUEST of 192.168.128.170 on eth0 to 192.168.128.2 port 67",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-373164d9",
+      "source": "alerts",
+      "timestamp": "2022-01-15T02:08:20Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 15 02:08:20 jonesmorgan-mail dhclient[410]: DHCPACK of 192.168.128.170 from 192.168.128.2",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (6 alerts; detectors: AMiner: CPU value out of expected range in monitoring logs., AMiner: High entropy in DNS domain., AMiner: New event type.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (6 alerts; detectors: AMiner: CPU value out of expected range in monitoring logs., AMiner: High entropy in DNS domain., AMiner: New event type.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "fox/fox/session-0003",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 6,
+      "kept_alerts": 6
+    },
+    "sealed": true
+  }
+}

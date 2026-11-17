@@ -1,0 +1,381 @@
+{
+  "incident_id": "ait-sess-fox-fox-0052",
+  "name": "ATTEST-AIT fox/fox session 52",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "fox/fox/session-0052",
+  "alert": {
+    "timestamp": "2022-01-17T17:51:25Z",
+    "host": "fox",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (25 alerts; detectors: AMiner: New characters in Apache Access referer., AMiner: New characters in Apache Access request., AMiner: Unusual occurrence frequencies of DN",
+    "scenario": "fox"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-17T17:51:25Z",
+    "end": "2022-01-17T18:22:20Z",
+    "hosts": [
+      "fox"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-9f6d352a",
+        "timestamp": "2022-01-17T17:51:25Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.price.fox.org:443 172.17.130.37 - - [17/Jan/2022:17:51:25 +0000] \"PROPFIND /remote.php/dav/files/jwright/Photos%20(2) HTTP/1.1\" 207 3595 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-096098f2",
+        "timestamp": "2022-01-17T17:51:25Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.price.fox.org:443 172.17.130.37 - - [17/Jan/2022:17:51:25 +0000] \"GET /index.php/apps/files/ajax/getstoragestats.php?dir=%2FPhotos%20(2) HTTP/1.1\" 200 951 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-21bfc6ed",
+        "timestamp": "2022-01-17T17:51:25Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "cloud.dmz.price.fox.org:443 172.17.130.37 - - [17/Jan/2022:17:51:25 +0000] \"GET /core/img/filetypes/image.svg HTTP/1.1\" 200 1242 \"https://cloud.price.fox.org/index.php/apps/files/?dir=/Photos%20(2)&fileid=59\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-ca0761b4",
+        "timestamp": "2022-01-17T17:51:25Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.price.fox.org:443 172.17.130.37 - - [17/Jan/2022:17:51:25 +0000] \"GET /remote.php/dav/files/jwright/Photos%20(2)/Lake-Constance.jpg?c=4c3c1ddfa2a3641e6f000ce32767ce2f&x=32&y=32&forceIcon=0&preview=1 HTTP/1.1\" 200 1762 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-034052c1",
+        "timestamp": "2022-01-17T17:51:25Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.price.fox.org:443 172.17.130.37 - - [17/Jan/2022:17:51:25 +0000] \"PROPFIND /remote.php/dav/files/jwright/Photos%20(2) HTTP/1.1\" 207 974 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-58976646",
+        "timestamp": "2022-01-17T17:51:25Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.price.fox.org:443 172.17.130.37 - - [17/Jan/2022:17:51:25 +0000] \"GET /remote.php/dav/files/jwright/Photos%20(2)/Teotihuacan.jpg?c=4ff6cd80fe6d217a7e681cf6d7179a6d&x=32&y=32&forceIcon=0&preview=1 HTTP/1.1\" 200 4686 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-29c52571",
+        "timestamp": "2022-01-17T17:51:25Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.price.fox.org:443 172.17.130.37 - - [17/Jan/2022:17:51:25 +0000] \"GET /remote.php/dav/files/jwright/Photos%20(2)/Portugal.jpg?c=2a988b0d92f89dbd0929d6f04bb89d0c&x=32&y=32&forceIcon=0&preview=1 HTTP/1.1\" 200 4684 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-95cb846f",
+        "timestamp": "2022-01-17T17:51:25Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [17/Jan/2022:17:51:25 +0000] \"PROPFIND /remote.php/dav/files/jwright/Photos%20(2) HTTP/1.1\" 207 3595 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-87429b94",
+        "timestamp": "2022-01-17T17:51:25Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [17/Jan/2022:17:51:25 +0000] \"GET /index.php/apps/files/ajax/getstoragestats.php?dir=%2FPhotos%20(2) HTTP/1.1\" 200 951 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-9c99e726",
+        "timestamp": "2022-01-17T17:51:25Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "172.17.130.196 - - [17/Jan/2022:17:51:25 +0000] \"GET /core/img/filetypes/image.svg HTTP/1.1\" 200 1242 \"https://cloud.price.fox.org/index.php/apps/files/?dir=/Photos%20(2)&fileid=59\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-cfae72bd",
+        "timestamp": "2022-01-17T17:51:25Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [17/Jan/2022:17:51:25 +0000] \"PROPFIND /remote.php/dav/files/jwright/Photos%20(2) HTTP/1.1\" 207 974 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-02d825c5",
+        "timestamp": "2022-01-17T17:51:38Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.price.fox.org:443 172.17.130.37 - - [17/Jan/2022:17:51:38 +0000] \"GET /index.php/apps/files/ajax/getstoragestats.php?dir=%2FPhotos%20(2) HTTP/1.1\" 200 3903 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-79fbcc77",
+        "timestamp": "2022-01-17T17:51:38Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [17/Jan/2022:17:51:38 +0000] \"GET /index.php/apps/files/ajax/getstoragestats.php?dir=%2FPhotos%20(2) HTTP/1.1\" 200 1527 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-daa8079d",
+        "timestamp": "2022-01-17T17:51:55Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.price.fox.org:443 172.17.130.37 - - [17/Jan/2022:17:51:55 +0000] \"GET /remote.php/dav/files/jwright/Photos%20(2)/Portugal.jpg?x=466&y=263&a=1&mode=cover&c=2a988b0d92f89dbd0929d6f04bb89d0c&forceIcon=0&preview=1 HTTP/1.1\" 200 34378 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-bfb3fde3",
+        "timestamp": "2022-01-17T17:58:59Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.price.fox.org:443 172.17.130.37 - - [17/Jan/2022:17:58:59 +0000] \"GET /index.php/apps/files/ajax/getstoragestats.php?dir=%2FPhotos%20(2) HTTP/1.1\" 200 3903 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-1a7aa717",
+        "timestamp": "2022-01-17T17:58:59Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [17/Jan/2022:17:58:59 +0000] \"GET /index.php/apps/files/ajax/getstoragestats.php?dir=%2FPhotos%20(2) HTTP/1.1\" 200 1511 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-7265aeee",
+        "timestamp": "2022-01-17T18:00:03Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 17 18:00:03 dnsmasq[14460]: query[AAAA] policies.google.com from 192.168.128.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-5531c2f4",
+        "timestamp": "2022-01-17T18:03:59Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.price.fox.org:443 172.17.130.37 - - [17/Jan/2022:18:03:59 +0000] \"GET /index.php/apps/files/ajax/getstoragestats.php?dir=%2FPhotos%20(2) HTTP/1.1\" 200 3903 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-60f63eaa",
+        "timestamp": "2022-01-17T18:03:59Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [17/Jan/2022:18:03:59 +0000] \"GET /index.php/apps/files/ajax/getstoragestats.php?dir=%2FPhotos%20(2) HTTP/1.1\" 200 1527 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-c2a4b5c7",
+        "timestamp": "2022-01-17T18:08:59Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.price.fox.org:443 172.17.130.37 - - [17/Jan/2022:18:08:59 +0000] \"GET /index.php/apps/files/ajax/getstoragestats.php?dir=%2FPhotos%20(2) HTTP/1.1\" 200 3903 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-869b9066",
+        "timestamp": "2022-01-17T18:08:59Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [17/Jan/2022:18:08:59 +0000] \"GET /index.php/apps/files/ajax/getstoragestats.php?dir=%2FPhotos%20(2) HTTP/1.1\" 200 1511 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-3f3f673f",
+        "timestamp": "2022-01-17T18:17:01Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.price.fox.org:443 172.17.130.37 - - [17/Jan/2022:18:17:01 +0000] \"GET /index.php/apps/files/ajax/getstoragestats.php?dir=%2FPhotos%20(2) HTTP/1.1\" 200 3903 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-6829bf1b",
+        "timestamp": "2022-01-17T18:17:01Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [17/Jan/2022:18:17:01 +0000] \"GET /index.php/apps/files/ajax/getstoragestats.php?dir=%2FPhotos%20(2) HTTP/1.1\" 200 1511 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-ccba7b44",
+        "timestamp": "2022-01-17T18:22:20Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.price.fox.org:443 172.17.130.37 - - [17/Jan/2022:18:22:20 +0000] \"GET /index.php/apps/files/ajax/getstoragestats.php?dir=%2FPhotos%20(2) HTTP/1.1\" 200 3903 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0025-411ab47c",
+        "timestamp": "2022-01-17T18:22:20Z",
+        "host": "fox",
+        "source": "alerts",
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "172.17.130.196 - - [17/Jan/2022:18:22:20 +0000] \"GET /index.php/apps/files/ajax/getstoragestats.php?dir=%2FPhotos%20(2) HTTP/1.1\" 200 1511 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-9f6d352a",
+      "source": "alerts",
+      "timestamp": "2022-01-17T17:51:25Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.price.fox.org:443 172.17.130.37 - - [17/Jan/2022:17:51:25 +0000] \"PROPFIND /remote.php/dav/files/jwright/Photos%20(2) HTTP/1.1\" 207 3595 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-096098f2",
+      "source": "alerts",
+      "timestamp": "2022-01-17T17:51:25Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access request.",
+        "message": "cloud.dmz.price.fox.org:443 172.17.130.37 - - [17/Jan/2022:17:51:25 +0000] \"GET /index.php/apps/files/ajax/getstoragestats.php?dir=%2FPhotos%20(2) HTTP/1.1\" 200 951 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-21bfc6ed",
+      "source": "alerts",
+      "timestamp": "2022-01-17T17:51:25Z",
+      "host": "fox",
+      "fields": {
+        "detector": "AMiner: New characters in Apache Access referer.",
+        "message": "cloud.dmz.price.fox.org:443 172.17.130.37 - - [17/Jan/2022:17:51:25 +0000] \"GET /core/img/filetypes/image.svg HTTP/1.1\" 200 1242 \"https://cloud.price.fox.org/index.php/apps/files/?dir=/Photos%20(2)&fileid=59\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/95.0.4638.69 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "fox"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (25 alerts; detectors: AMiner: New characters in Apache Access referer., AMiner: New characters in Apache Access request., AMiner: Unusual occurrence frequencies of DN",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "fox"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on fox (25 alerts; detectors: AMiner: New characters in Apache Access referer., AMiner: New characters in Apache Access request., AMiner: Unusual occurrence frequencies of DN",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "fox/fox/session-0052",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 25,
+      "kept_alerts": 25
+    },
+    "sealed": true
+  }
+}

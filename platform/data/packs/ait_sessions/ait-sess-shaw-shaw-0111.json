@@ -1,0 +1,246 @@
+{
+  "incident_id": "ait-sess-shaw-shaw-0111",
+  "name": "ATTEST-AIT shaw/shaw session 111",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "shaw/shaw/session-0111",
+  "alert": {
+    "timestamp": "2022-01-30T12:36:35Z",
+    "host": "shaw",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (10 alerts; detectors: AMiner: New cred_acq parameter combination in Audit logs., AMiner: New event type., AMiner: New login parameter combination in Audit logs.).",
+    "scenario": "shaw"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-30T12:36:35Z",
+    "end": "2022-01-30T12:36:36Z",
+    "hosts": [
+      "shaw"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-df4ce2b1",
+        "timestamp": "2022-01-30T12:36:35Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 12:36:35 intranet-server sshd[32662]: Accepted publickey for gmarsh from 172.24.249.224 port 56298 ssh2: RSA SHA256:8wFbiaYPevKS/wYKnePO20v0iymTcrRh4Kr+1uRS1UM",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-586d925b",
+        "timestamp": "2022-01-30T12:36:35Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 12:36:35 intranet-server sshd[32662]: pam_unix(sshd:session): session opened for user gmarsh by (uid=0)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-e39ddbf7",
+        "timestamp": "2022-01-30T12:36:35Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 12:36:35 intranet-server systemd-logind[948]: New session 485 of user gmarsh.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-446cd219",
+        "timestamp": "2022-01-30T12:36:35Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643546195.101:3457): pid=32662 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"gmarsh\" exe=\"/usr/sbin/sshd\" hostname=172.24.249.224 addr=172.24.249.224 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-42184aa5",
+        "timestamp": "2022-01-30T12:36:35Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1643546195.109:3458): pid=32662 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"gmarsh\" exe=\"/usr/sbin/sshd\" hostname=172.24.249.224 addr=172.24.249.224 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-8053a1f9",
+        "timestamp": "2022-01-30T12:36:35Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New login parameter combination in Audit logs.",
+        "message": "type=LOGIN msg=audit(1643546195.109:3459): pid=32662 uid=0 old-auid=4294967295 auid=1001 tty=(none) old-ses=4294967295 ses=485 res=1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-430deadb",
+        "timestamp": "2022-01-30T12:36:36Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1643546196.541:3460): pid=32662 uid=0 auid=1001 ses=485 msg='op=PAM:session_open acct=\"gmarsh\" exe=\"/usr/sbin/sshd\" hostname=172.24.249.224 addr=172.24.249.224 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-52d953c7",
+        "timestamp": "2022-01-30T12:36:36Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1643546196.545:3461): pid=32752 uid=0 auid=1001 ses=485 msg='op=PAM:setcred acct=\"gmarsh\" exe=\"/usr/sbin/sshd\" hostname=172.24.249.224 addr=172.24.249.224 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-c066f967",
+        "timestamp": "2022-01-30T12:36:36Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "type=USER_LOGIN msg=audit(1643546196.593:3462): pid=32662 uid=0 auid=1001 ses=485 msg='op=login id=1001 exe=\"/usr/sbin/sshd\" hostname=172.24.249.224 addr=172.24.249.224 terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-9efbc1e5",
+        "timestamp": "2022-01-30T12:36:36Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New user_login parameter combination in Audit logs.",
+        "message": "type=USER_LOGIN msg=audit(1643546196.593:3462): pid=32662 uid=0 auid=1001 ses=485 msg='op=login id=1001 exe=\"/usr/sbin/sshd\" hostname=172.24.249.224 addr=172.24.249.224 terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-df4ce2b1",
+      "source": "alerts",
+      "timestamp": "2022-01-30T12:36:35Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 12:36:35 intranet-server sshd[32662]: Accepted publickey for gmarsh from 172.24.249.224 port 56298 ssh2: RSA SHA256:8wFbiaYPevKS/wYKnePO20v0iymTcrRh4Kr+1uRS1UM",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-586d925b",
+      "source": "alerts",
+      "timestamp": "2022-01-30T12:36:35Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 12:36:35 intranet-server sshd[32662]: pam_unix(sshd:session): session opened for user gmarsh by (uid=0)",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-e39ddbf7",
+      "source": "alerts",
+      "timestamp": "2022-01-30T12:36:35Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 30 12:36:35 intranet-server systemd-logind[948]: New session 485 of user gmarsh.",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (10 alerts; detectors: AMiner: New cred_acq parameter combination in Audit logs., AMiner: New event type., AMiner: New login parameter combination in Audit logs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (10 alerts; detectors: AMiner: New cred_acq parameter combination in Audit logs., AMiner: New event type., AMiner: New login parameter combination in Audit logs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "shaw/shaw/session-0111",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 10,
+      "kept_alerts": 10
+    },
+    "sealed": true
+  }
+}

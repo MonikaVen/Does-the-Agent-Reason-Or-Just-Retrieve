@@ -1,0 +1,163 @@
+{
+  "incident_id": "ait-sess-harrison-harrison-0082",
+  "name": "ATTEST-AIT harrison/harrison session 82",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "harrison/harrison/session-0082",
+  "alert": {
+    "timestamp": "2022-02-07T08:15:32Z",
+    "host": "harrison",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (2 alerts; detectors: AMiner: New status code in Apache Access log.).",
+    "scenario": "harrison"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-07T08:15:32Z",
+    "end": "2022-02-07T08:15:32Z",
+    "hosts": [
+      "harrison"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-0865cdbd",
+        "timestamp": "2022-02-07T08:15:32Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.237.1.238 - - [07/Feb/2022:08:15:32 +0000] \"GET /themes/default/sounds/doorbell.wav HTTP/1.1\" 206 5547 \"https://mail.mannsmith.harrison.com/kronolith/\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-7e61f26a",
+        "timestamp": "2022-02-07T08:15:32Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.237.0.166 - - [07/Feb/2022:08:15:32 +0000] \"GET /themes/default/sounds/doorbell.wav HTTP/1.1\" 206 5561 \"https://mail.mannsmith.harrison.com/kronolith/\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-0865cdbd",
+      "source": "alerts",
+      "timestamp": "2022-02-07T08:15:32Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.237.1.238 - - [07/Feb/2022:08:15:32 +0000] \"GET /themes/default/sounds/doorbell.wav HTTP/1.1\" 206 5547 \"https://mail.mannsmith.harrison.com/kronolith/\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-7e61f26a",
+      "source": "alerts",
+      "timestamp": "2022-02-07T08:15:32Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "10.237.0.166 - - [07/Feb/2022:08:15:32 +0000] \"GET /themes/default/sounds/doorbell.wav HTTP/1.1\" 206 5561 \"https://mail.mannsmith.harrison.com/kronolith/\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (2 alerts; detectors: AMiner: New status code in Apache Access log.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (2 alerts; detectors: AMiner: New status code in Apache Access log.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "harrison/harrison/session-0082",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 2,
+      "kept_alerts": 2
+    },
+    "sealed": true
+  }
+}

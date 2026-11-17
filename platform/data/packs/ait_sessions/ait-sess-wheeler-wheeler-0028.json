@@ -1,0 +1,183 @@
+{
+  "incident_id": "ait-sess-wheeler-wheeler-0028",
+  "name": "ATTEST-AIT wheeler/wheeler session 28",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wheeler/wheeler/session-0028",
+  "alert": {
+    "timestamp": "2022-01-27T05:59:35Z",
+    "host": "wheeler",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (3 alerts; detectors: AMiner: Unusual occurrence frequencies of DNS query IPs., AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+    "scenario": "wheeler"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-27T05:59:35Z",
+    "end": "2022-01-27T06:00:12Z",
+    "hosts": [
+      "wheeler"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-accf6112",
+        "timestamp": "2022-01-27T05:59:35Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 27 05:59:35 dnsmasq[14167]: query[AAAA] motd.ubuntu.com from 10.38.243.125",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-b7c42d61",
+        "timestamp": "2022-01-27T06:00:01Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 27 06:00:01 dnsmasq[14167]: query[A] 3x6-.482-.zmjetS*7Er8oNzW*SH61HgS0eFwLLEf3c60/ozQQBdNrfYA7XBX-.0xdRoN48vhlWTZot/eKgNpTAGqvBKi9f9MiDcQiN2Yax3CkjGWP-.szqpzMrdLpcunOp8k/7Ub1hguuGQ2dKQwyXH9ob0NBozakyCPj3-.payroll_2016.xlsx.mttydlmfikviqpumsexff.info from 192.168.3.116",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-25a27e7b",
+        "timestamp": "2022-01-27T06:00:12Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 27 06:00:12 dnsmasq[12225]: query[PTR] 155.182.27.172.in-addr.arpa from 172.27.181.253",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-accf6112",
+      "source": "alerts",
+      "timestamp": "2022-01-27T05:59:35Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 27 05:59:35 dnsmasq[14167]: query[AAAA] motd.ubuntu.com from 10.38.243.125",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-b7c42d61",
+      "source": "alerts",
+      "timestamp": "2022-01-27T06:00:01Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 27 06:00:01 dnsmasq[14167]: query[A] 3x6-.482-.zmjetS*7Er8oNzW*SH61HgS0eFwLLEf3c60/ozQQBdNrfYA7XBX-.0xdRoN48vhlWTZot/eKgNpTAGqvBKi9f9MiDcQiN2Yax3CkjGWP-.szqpzMrdLpcunOp8k/7Ub1hguuGQ2dKQwyXH9ob0NBozakyCPj3-.payroll_2016.xlsx.mttydlmfikviqpumsexff.info from 192.168.3.116",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-25a27e7b",
+      "source": "alerts",
+      "timestamp": "2022-01-27T06:00:12Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Jan 27 06:00:12 dnsmasq[12225]: query[PTR] 155.182.27.172.in-addr.arpa from 172.27.181.253",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (3 alerts; detectors: AMiner: Unusual occurrence frequencies of DNS query IPs., AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (3 alerts; detectors: AMiner: Unusual occurrence frequencies of DNS query IPs., AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wheeler/wheeler/session-0028",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 3,
+      "kept_alerts": 3
+    },
+    "sealed": true
+  }
+}

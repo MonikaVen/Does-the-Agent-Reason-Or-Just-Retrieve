@@ -1,0 +1,255 @@
+{
+  "incident_id": "ait-sess-wilson-wilson-0105",
+  "name": "ATTEST-AIT wilson/wilson session 105",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wilson/wilson/session-0105",
+  "alert": {
+    "timestamp": "2022-02-08T17:06:42Z",
+    "host": "wilson",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (11 alerts; detectors: AMiner: New cred_disp parameter combination in Audit logs., AMiner: New event type., AMiner: New service_stop parameter combination in Audit ",
+    "scenario": "wilson"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-08T17:06:42Z",
+    "end": "2022-02-08T17:13:08Z",
+    "hosts": [
+      "wilson"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-ae89b7e9",
+        "timestamp": "2022-02-08T17:06:42Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-08 17:06:42 jwilkinson/192.168.225.175:33715 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-f5c90ac6",
+        "timestamp": "2022-02-08T17:06:42Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-08 17:06:42 jwilkinson/192.168.225.175:33715 TLS Error: TLS handshake failed",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-45de5d3a",
+        "timestamp": "2022-02-08T17:06:42Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-08 17:06:42 jwilkinson/192.168.225.175:33715 TLS: move_session: dest=TM_LAME_DUCK src=TM_ACTIVE reinit_src=1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-d4ffe60d",
+        "timestamp": "2022-02-08T17:07:57Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-08 17:07:57 jwilkinson/192.168.225.175:33715 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-3aac4b59",
+        "timestamp": "2022-02-08T17:07:57Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-08 17:07:57 jwilkinson/192.168.225.175:33715 TLS Error: TLS handshake failed",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-62ba774a",
+        "timestamp": "2022-02-08T17:09:12Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-08 17:09:12 jwilkinson/192.168.225.175:33715 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-3592dce9",
+        "timestamp": "2022-02-08T17:09:12Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-08 17:09:12 jwilkinson/192.168.225.175:33715 TLS Error: TLS handshake failed",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-b513be35",
+        "timestamp": "2022-02-08T17:13:08Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Feb  8 17:13:08 mail sshd[29142]: Timeout, client not responding.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-3d88ef8d",
+        "timestamp": "2022-02-08T17:13:08Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New user_end parameter combination in Audit logs.",
+        "message": "type=USER_END msg=audit(1644340388.702:22802): pid=29130 uid=0 auid=1004 ses=349 msg='op=PAM:session_close acct=\"jwilkinson\" exe=\"/usr/sbin/sshd\" hostname=10.182.193.78 addr=10.182.193.78 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-2fa6a0f5",
+        "timestamp": "2022-02-08T17:13:08Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "message": "type=CRED_DISP msg=audit(1644340388.702:22803): pid=29130 uid=0 auid=1004 ses=349 msg='op=PAM:setcred acct=\"jwilkinson\" exe=\"/usr/sbin/sshd\" hostname=10.182.193.78 addr=10.182.193.78 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-fe42d0cd",
+        "timestamp": "2022-02-08T17:13:08Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1644340388.734:22804): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=user@1004 comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-ae89b7e9",
+      "source": "alerts",
+      "timestamp": "2022-02-08T17:06:42Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-08 17:06:42 jwilkinson/192.168.225.175:33715 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-f5c90ac6",
+      "source": "alerts",
+      "timestamp": "2022-02-08T17:06:42Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-08 17:06:42 jwilkinson/192.168.225.175:33715 TLS Error: TLS handshake failed",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-45de5d3a",
+      "source": "alerts",
+      "timestamp": "2022-02-08T17:06:42Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "2022-02-08 17:06:42 jwilkinson/192.168.225.175:33715 TLS: move_session: dest=TM_LAME_DUCK src=TM_ACTIVE reinit_src=1",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (11 alerts; detectors: AMiner: New cred_disp parameter combination in Audit logs., AMiner: New event type., AMiner: New service_stop parameter combination in Audit ",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (11 alerts; detectors: AMiner: New cred_disp parameter combination in Audit logs., AMiner: New event type., AMiner: New service_stop parameter combination in Audit ",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wilson/wilson/session-0105",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 11,
+      "kept_alerts": 11
+    },
+    "sealed": true
+  }
+}

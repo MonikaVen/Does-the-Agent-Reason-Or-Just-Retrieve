@@ -1,0 +1,228 @@
+{
+  "incident_id": "ait-sess-wilson-wilson-0067",
+  "name": "ATTEST-AIT wilson/wilson session 67",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wilson/wilson/session-0067",
+  "alert": {
+    "timestamp": "2022-02-07T03:02:04Z",
+    "host": "wilson",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (8 alerts; detectors: AMiner: CPU value out of expected range in monitoring logs., AMiner: Unusual occurrence frequencies of DNS log events., AMiner: Unusual occurr",
+    "scenario": "wilson"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-07T03:02:04Z",
+    "end": "2022-02-07T03:44:43Z",
+    "hosts": [
+      "wilson"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-aa19b3d8",
+        "timestamp": "2022-02-07T03:02:04Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"@timestamp\":\"2022-02-07T03:02:04.080Z\",\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.032}},\"event\":{\"dataset\":\"system.cpu\",\"module\":\"system\",\"duration\":817093},\"metricset\":{\"name\":\"cpu\",\"period\":45000},\"agent\":{\"id\":\"da99bcc3-c6bc-4a35-b6b1-b0240157675f\",\"type\":\"metricbeat\",\"version\":\"7.13.2\",\"ephemeral_id\":\"9aa22b27-798d-490c-9789-25bfb578d74b\",\"name\":\"intranet-server\",\"hostname\":\"intranet-se",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-08dd3901",
+        "timestamp": "2022-02-07T03:09:48Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  7 03:09:48 dnsmasq[14481]: query[AAAA] mail from 10.182.193.181",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-e70bd324",
+        "timestamp": "2022-02-07T03:09:48Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Feb  7 03:09:48 dnsmasq[14481]: query[AAAA] mail from 10.182.193.181",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-3fc35655",
+        "timestamp": "2022-02-07T03:09:48Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query records.",
+        "message": "Feb  7 03:09:48 dnsmasq[14481]: query[AAAA] mail from 10.182.193.181",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-0a3e9b5c",
+        "timestamp": "2022-02-07T03:14:43Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  7 03:14:43 dnsmasq[14306]: query[AAAA] lane-mail from 192.168.226.198",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-b5cbf75b",
+        "timestamp": "2022-02-07T03:24:20Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  7 03:24:20 dnsmasq[14306]: query[A] motd.ubuntu.com from 192.168.224.189",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-5e76e7ae",
+        "timestamp": "2022-02-07T03:32:07Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  7 03:32:07 dnsmasq[14306]: query[TXT] current.cvd.clamav.net from 192.168.224.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-1c409ea9",
+        "timestamp": "2022-02-07T03:44:43Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  7 03:44:43 dnsmasq[14306]: query[AAAA] lane-mail from 192.168.226.198",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-aa19b3d8",
+      "source": "alerts",
+      "timestamp": "2022-02-07T03:02:04Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: CPU value out of expected range in monitoring logs.",
+        "message": "{\"@timestamp\":\"2022-02-07T03:02:04.080Z\",\"host\":{\"name\":\"intranet-server\",\"cpu\":{\"pct\":0.032}},\"event\":{\"dataset\":\"system.cpu\",\"module\":\"system\",\"duration\":817093},\"metricset\":{\"name\":\"cpu\",\"period\":45000},\"agent\":{\"id\":\"da99bcc3-c6bc-4a35-b6b1-b0240157675f\",\"type\":\"metricbeat\",\"version\":\"7.13.2\",\"ephemeral_id\":\"9aa22b27-798d-490c-9789-25bfb578d74b\",\"name\":\"intranet-server\",\"hostname\":\"intranet-se",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-08dd3901",
+      "source": "alerts",
+      "timestamp": "2022-02-07T03:09:48Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  7 03:09:48 dnsmasq[14481]: query[AAAA] mail from 10.182.193.181",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-e70bd324",
+      "source": "alerts",
+      "timestamp": "2022-02-07T03:09:48Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Feb  7 03:09:48 dnsmasq[14481]: query[AAAA] mail from 10.182.193.181",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (8 alerts; detectors: AMiner: CPU value out of expected range in monitoring logs., AMiner: Unusual occurrence frequencies of DNS log events., AMiner: Unusual occurr",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (8 alerts; detectors: AMiner: CPU value out of expected range in monitoring logs., AMiner: Unusual occurrence frequencies of DNS log events., AMiner: Unusual occurr",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wilson/wilson/session-0067",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 8,
+      "kept_alerts": 8
+    },
+    "sealed": true
+  }
+}

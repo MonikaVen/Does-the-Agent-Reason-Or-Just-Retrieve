@@ -1,0 +1,163 @@
+{
+  "incident_id": "ait-sess-wheeler-wheeler-0033",
+  "name": "ATTEST-AIT wheeler/wheeler session 33",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wheeler/wheeler/session-0033",
+  "alert": {
+    "timestamp": "2022-01-27T10:19:56Z",
+    "host": "wheeler",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (2 alerts; detectors: AMiner: High entropy in Apache Access request.).",
+    "scenario": "wheeler"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-27T10:19:56Z",
+    "end": "2022-01-27T10:19:56Z",
+    "hosts": [
+      "wheeler"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-08f0cdc3",
+        "timestamp": "2022-01-27T10:19:56Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "cloud.dmz.flores.wheeler.biz:443 10.38.243.24 - - [27/Jan/2022:10:19:56 +0000] \"GET /index.php/logout?requesttoken=FQJhV3VWOw03ITwGHAQjIi4uDgZgcT5cPwV/eV8JMhw%3D:ed7x3nHiTbEBK5rzDFfuT6I4FA/3tJVj9SIzbAsPzrM%3D HTTP/1.1\" 303 4503 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-11d5a374",
+        "timestamp": "2022-01-27T10:19:56Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.38.243.125 - - [27/Jan/2022:10:19:56 +0000] \"GET /index.php/logout?requesttoken=FQJhV3VWOw03ITwGHAQjIi4uDgZgcT5cPwV/eV8JMhw%3D:ed7x3nHiTbEBK5rzDFfuT6I4FA/3tJVj9SIzbAsPzrM%3D HTTP/1.1\" 303 2117 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-08f0cdc3",
+      "source": "alerts",
+      "timestamp": "2022-01-27T10:19:56Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "cloud.dmz.flores.wheeler.biz:443 10.38.243.24 - - [27/Jan/2022:10:19:56 +0000] \"GET /index.php/logout?requesttoken=FQJhV3VWOw03ITwGHAQjIi4uDgZgcT5cPwV/eV8JMhw%3D:ed7x3nHiTbEBK5rzDFfuT6I4FA/3tJVj9SIzbAsPzrM%3D HTTP/1.1\" 303 4503 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-11d5a374",
+      "source": "alerts",
+      "timestamp": "2022-01-27T10:19:56Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "10.38.243.125 - - [27/Jan/2022:10:19:56 +0000] \"GET /index.php/logout?requesttoken=FQJhV3VWOw03ITwGHAQjIi4uDgZgcT5cPwV/eV8JMhw%3D:ed7x3nHiTbEBK5rzDFfuT6I4FA/3tJVj9SIzbAsPzrM%3D HTTP/1.1\" 303 2117 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (2 alerts; detectors: AMiner: High entropy in Apache Access request.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (2 alerts; detectors: AMiner: High entropy in Apache Access request.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wheeler/wheeler/session-0033",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 2,
+      "kept_alerts": 2
+    },
+    "sealed": true
+  }
+}

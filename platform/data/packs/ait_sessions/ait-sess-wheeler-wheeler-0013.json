@@ -1,0 +1,201 @@
+{
+  "incident_id": "ait-sess-wheeler-wheeler-0013",
+  "name": "ATTEST-AIT wheeler/wheeler session 13",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wheeler/wheeler/session-0013",
+  "alert": {
+    "timestamp": "2022-01-26T09:08:58Z",
+    "host": "wheeler",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (5 alerts; detectors: AMiner: New ip address in DNS logs., AMiner: New request method in Apache Access log., AMiner: New status code in Apache Access log.).",
+    "scenario": "wheeler"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-26T09:08:58Z",
+    "end": "2022-01-26T09:11:04Z",
+    "hosts": [
+      "wheeler"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-73cffeec",
+        "timestamp": "2022-01-26T09:08:58Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643188138.186:3164): pid=18109 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"bryan.brennan\" exe=\"/usr/lib/dovecot/auth\" hostname=10.38.242.195 addr=10.38.242.195 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-2a038a94",
+        "timestamp": "2022-01-26T09:08:58Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643188138.190:3165): pid=18109 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"bryan.brennan\" exe=\"/usr/lib/dovecot/auth\" hostname=10.38.242.195 addr=10.38.242.195 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-e60f8da4",
+        "timestamp": "2022-01-26T09:10:38Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "cloud.dmz.flores.wheeler.biz:443 10.38.243.24 - - [26/Jan/2022:09:10:38 +0000] \"MKCOL /remote.php/dav/files/ajackson/Documents/evidence HTTP/1.1\" 201 628 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-ab25dd65",
+        "timestamp": "2022-01-26T09:10:38Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New request method in Apache Access log.",
+        "message": "cloud.dmz.flores.wheeler.biz:443 10.38.243.24 - - [26/Jan/2022:09:10:38 +0000] \"MKCOL /remote.php/dav/files/ajackson/Documents/evidence HTTP/1.1\" 201 628 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-e7dde1b3",
+        "timestamp": "2022-01-26T09:11:04Z",
+        "host": "wheeler",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 26 09:11:04 dnsmasq[12225]: query[A] location.services.mozilla.com from 172.27.183.131",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-73cffeec",
+      "source": "alerts",
+      "timestamp": "2022-01-26T09:08:58Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643188138.186:3164): pid=18109 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"bryan.brennan\" exe=\"/usr/lib/dovecot/auth\" hostname=10.38.242.195 addr=10.38.242.195 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-2a038a94",
+      "source": "alerts",
+      "timestamp": "2022-01-26T09:08:58Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643188138.190:3165): pid=18109 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"bryan.brennan\" exe=\"/usr/lib/dovecot/auth\" hostname=10.38.242.195 addr=10.38.242.195 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-e60f8da4",
+      "source": "alerts",
+      "timestamp": "2022-01-26T09:10:38Z",
+      "host": "wheeler",
+      "fields": {
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "cloud.dmz.flores.wheeler.biz:443 10.38.243.24 - - [26/Jan/2022:09:10:38 +0000] \"MKCOL /remote.php/dav/files/ajackson/Documents/evidence HTTP/1.1\" 201 628 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wheeler"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (5 alerts; detectors: AMiner: New ip address in DNS logs., AMiner: New request method in Apache Access log., AMiner: New status code in Apache Access log.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wheeler"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wheeler (5 alerts; detectors: AMiner: New ip address in DNS logs., AMiner: New request method in Apache Access log., AMiner: New status code in Apache Access log.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wheeler/wheeler/session-0013",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 5,
+      "kept_alerts": 5
+    },
+    "sealed": true
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "incident_id": "ait-sess-wilson-wilson-0088",
+  "name": "ATTEST-AIT wilson/wilson session 88",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wilson/wilson/session-0088",
+  "alert": {
+    "timestamp": "2022-02-07T23:38:52Z",
+    "host": "wilson",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (9 alerts; detectors: AMiner: Unusual occurrence frequencies of DNS log events., AMiner: Unusual occurrence frequencies of DNS query IPs., AMiner: Unusual occurrenc",
+    "scenario": "wilson"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-07T23:38:52Z",
+    "end": "2022-02-08T00:35:39Z",
+    "hosts": [
+      "wilson"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-1a42766f",
+        "timestamp": "2022-02-07T23:38:52Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  7 23:38:52 dnsmasq[14306]: query[TXT] current.cvd.clamav.net from 192.168.224.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-952c1076",
+        "timestamp": "2022-02-07T23:42:16Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  7 23:42:16 dnsmasq[14481]: query[AAAA] mail.hallbrown.wilson.com from 10.182.193.78",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-4b84503e",
+        "timestamp": "2022-02-07T23:52:16Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  7 23:52:16 dnsmasq[14481]: query[AAAA] mail.hallbrown.wilson.com from 10.182.193.78",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-593ae37f",
+        "timestamp": "2022-02-08T00:00:11Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  8 00:00:11 dnsmasq[14481]: query[A] cloud.hallbrown.wilson.com from 172.26.243.237",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-cffe6521",
+        "timestamp": "2022-02-08T00:00:11Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Feb  8 00:00:11 dnsmasq[14481]: query[A] cloud.hallbrown.wilson.com from 172.26.243.237",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-2af27dae",
+        "timestamp": "2022-02-08T00:00:11Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query records.",
+        "message": "Feb  8 00:00:11 dnsmasq[14481]: query[A] cloud.hallbrown.wilson.com from 172.26.243.237",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-33dc27fa",
+        "timestamp": "2022-02-08T00:14:43Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  8 00:14:43 dnsmasq[14306]: query[AAAA] lane-mail from 192.168.226.198",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-da1f32a3",
+        "timestamp": "2022-02-08T00:22:16Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  8 00:22:16 dnsmasq[14481]: query[AAAA] mail.hallbrown.wilson.com from 10.182.193.78",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-6330980f",
+        "timestamp": "2022-02-08T00:35:39Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  8 00:35:39 dnsmasq[14306]: query[AAAA] motd.ubuntu.com from 192.168.224.4",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-1a42766f",
+      "source": "alerts",
+      "timestamp": "2022-02-07T23:38:52Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  7 23:38:52 dnsmasq[14306]: query[TXT] current.cvd.clamav.net from 192.168.224.4",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-952c1076",
+      "source": "alerts",
+      "timestamp": "2022-02-07T23:42:16Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  7 23:42:16 dnsmasq[14481]: query[AAAA] mail.hallbrown.wilson.com from 10.182.193.78",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-4b84503e",
+      "source": "alerts",
+      "timestamp": "2022-02-07T23:52:16Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  7 23:52:16 dnsmasq[14481]: query[AAAA] mail.hallbrown.wilson.com from 10.182.193.78",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (9 alerts; detectors: AMiner: Unusual occurrence frequencies of DNS log events., AMiner: Unusual occurrence frequencies of DNS query IPs., AMiner: Unusual occurrenc",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (9 alerts; detectors: AMiner: Unusual occurrence frequencies of DNS log events., AMiner: Unusual occurrence frequencies of DNS query IPs., AMiner: Unusual occurrenc",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wilson/wilson/session-0088",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 9,
+      "kept_alerts": 9
+    },
+    "sealed": true
+  }
+}

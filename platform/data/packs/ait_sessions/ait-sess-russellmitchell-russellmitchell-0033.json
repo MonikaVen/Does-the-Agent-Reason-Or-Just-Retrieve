@@ -1,0 +1,192 @@
+{
+  "incident_id": "ait-sess-russellmitchell-russellmitchell-0033",
+  "name": "ATTEST-AIT russellmitchell/russellmitchell session 33",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "russellmitchell/russellmitchell/session-0033",
+  "alert": {
+    "timestamp": "2022-01-22T11:42:19Z",
+    "host": "russellmitchell",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (4 alerts; detectors: AMiner: New status code in Apache Access log., AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+    "scenario": "russellmitchell"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-22T11:42:19Z",
+    "end": "2022-01-22T12:00:09Z",
+    "hosts": [
+      "russellmitchell"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-b45e30f2",
+        "timestamp": "2022-01-22T11:42:19Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "cloud.dmz.smith.russellmitchell.com:443 172.19.130.68 - - [22/Jan/2022:11:42:19 +0000] \"DELETE /remote.php/dav/files/tstevenson/Documents/Example.odt HTTP/1.1\" 204 539 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-c9bf08d6",
+        "timestamp": "2022-01-22T11:46:12Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 22 11:46:12 dnsmasq[3326]: query[MX] smith.russellmitchell.com from 192.168.231.56",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-1fddf262",
+        "timestamp": "2022-01-22T11:58:44Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 22 11:58:44 dnsmasq[3468]: query[PTR] 4.130.19.172.in-addr.arpa from 172.19.130.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-ac82ad28",
+        "timestamp": "2022-01-22T12:00:09Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 22 12:00:09 dnsmasq[3326]: query[A] 3x6-.863-.MlR4RQqbckOPrjpXwrebRE8tq3o7jFpZXx-.K7c/54TD3TmicQ18stZArdQVrSEBzVtZRG-.mNwt4YINkDixgDX4XCJVVdEyemXrfcA70W-.v8aoh1DlkzZdxGKKSPVNM5yW*YBJUm1V0b-.customers_2016.xlsx.email-19.kennedy-mendoza.info from 192.168.230.4",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-b45e30f2",
+      "source": "alerts",
+      "timestamp": "2022-01-22T11:42:19Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New status code in Apache Access log.",
+        "message": "cloud.dmz.smith.russellmitchell.com:443 172.19.130.68 - - [22/Jan/2022:11:42:19 +0000] \"DELETE /remote.php/dav/files/tstevenson/Documents/Example.odt HTTP/1.1\" 204 539 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-c9bf08d6",
+      "source": "alerts",
+      "timestamp": "2022-01-22T11:46:12Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 22 11:46:12 dnsmasq[3326]: query[MX] smith.russellmitchell.com from 192.168.231.56",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-1fddf262",
+      "source": "alerts",
+      "timestamp": "2022-01-22T11:58:44Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 22 11:58:44 dnsmasq[3468]: query[PTR] 4.130.19.172.in-addr.arpa from 172.19.130.4",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (4 alerts; detectors: AMiner: New status code in Apache Access log., AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (4 alerts; detectors: AMiner: New status code in Apache Access log., AMiner: Unusual occurrence frequencies of query records in DNS logs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "russellmitchell/russellmitchell/session-0033",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 4,
+      "kept_alerts": 4
+    },
+    "sealed": true
+  }
+}

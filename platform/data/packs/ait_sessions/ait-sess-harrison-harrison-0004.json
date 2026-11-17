@@ -1,0 +1,192 @@
+{
+  "incident_id": "ait-sess-harrison-harrison-0004",
+  "name": "ATTEST-AIT harrison/harrison session 4",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "harrison/harrison/session-0004",
+  "alert": {
+    "timestamp": "2022-02-04T02:00:10Z",
+    "host": "harrison",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (4 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: Unusual occurrence frequencies of DNS log events., AMiner: Unusual occurrence frequencies of DN",
+    "scenario": "harrison"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-04T02:00:10Z",
+    "end": "2022-02-04T02:10:08Z",
+    "hosts": [
+      "harrison"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-4f33fc93",
+        "timestamp": "2022-02-04T02:00:10Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Feb  4 02:00:10 dnsmasq[14664]: query[AAAA] mail from 10.237.2.255",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-8bb98993",
+        "timestamp": "2022-02-04T02:04:50Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 02:04:50 dnsmasq[14453]: query[AAAA] taylor-mail from 172.28.192.7",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-43a2a815",
+        "timestamp": "2022-02-04T02:09:58Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 02:09:58 dnsmasq[14453]: query[AAAA] smith-mail from 172.28.192.97",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-e7d6c920",
+        "timestamp": "2022-02-04T02:10:08Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS log events.",
+        "message": "Feb  4 02:10:08 dnsmasq[14453]: query[A] 3x6-.808-.wfOfR87qp6MujygBWPOwnlFfsImAdRt7JKWdWwg6n35h3/z/dCNxNa8HU/UfIo-.*91J/GTPwIuuwuvPZZm/9oMLrchNjp452phZJhaBPMyq7Y9/h99GtVKamjne9U-.customers_2013.xlsx.db-21.greer.biz from 172.28.192.4",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-4f33fc93",
+      "source": "alerts",
+      "timestamp": "2022-02-04T02:00:10Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Feb  4 02:00:10 dnsmasq[14664]: query[AAAA] mail from 10.237.2.255",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-8bb98993",
+      "source": "alerts",
+      "timestamp": "2022-02-04T02:04:50Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 02:04:50 dnsmasq[14453]: query[AAAA] taylor-mail from 172.28.192.7",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-43a2a815",
+      "source": "alerts",
+      "timestamp": "2022-02-04T02:09:58Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Feb  4 02:09:58 dnsmasq[14453]: query[AAAA] smith-mail from 172.28.192.97",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (4 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: Unusual occurrence frequencies of DNS log events., AMiner: Unusual occurrence frequencies of DN",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (4 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: Unusual occurrence frequencies of DNS log events., AMiner: Unusual occurrence frequencies of DN",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "harrison/harrison/session-0004",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 4,
+      "kept_alerts": 4
+    },
+    "sealed": true
+  }
+}

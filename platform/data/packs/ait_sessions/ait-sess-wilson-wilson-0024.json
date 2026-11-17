@@ -1,0 +1,201 @@
+{
+  "incident_id": "ait-sess-wilson-wilson-0024",
+  "name": "ATTEST-AIT wilson/wilson session 24",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wilson/wilson/session-0024",
+  "alert": {
+    "timestamp": "2022-02-04T05:46:37Z",
+    "host": "wilson",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (5 alerts; detectors: AMiner: Unusual occurrence frequencies of Apache Access logs., AMiner: Unusual occurrence frequencies of DNS query IPs., AMiner: Unusual occur",
+    "scenario": "wilson"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-04T05:46:37Z",
+    "end": "2022-02-04T06:00:11Z",
+    "hosts": [
+      "wilson"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-9d39a47a",
+        "timestamp": "2022-02-04T05:46:37Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Feb  4 05:46:37 dnsmasq[14481]: query[A] 3x6-.221-.lVUpzhuJEZEeYHMXdhcifCEcQTE3rKrqW0DVtw1V32KqfsC8-.EEU8/VYG3Pw42E/L9WOeBerwIvD88QctF59yw5CsPSPNiFUq-.IW6l8xfDmb83Ipy7D5sZGNOf2IRpKjhXLGl6Yj8X0499Z1Hv-.customers_2014.xlsx.jagwgfpkvsawgaysmkwcilvqcp.com from 172.26.240.200",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-9b592d0f",
+        "timestamp": "2022-02-04T05:59:12Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Feb  4 05:59:12 dnsmasq[14306]: query[AAAA] mailserver.lane.wilson.com from 192.168.227.65",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-03256133",
+        "timestamp": "2022-02-04T05:59:56Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Feb  4 05:59:56 dnsmasq[14481]: query[A] 3x6-.279-.xMpBAQkEBWQlKCARjj5wacZR9W26me8haBODDt3RuHvvNd/C-.U1UR*PTtv3gtaodN5odFhNJnkcWuB0KSQeOiR6RkmnDr/jVQ-.KQcctvTDnxkTQvnUjGqlHPLysrAd3J9wCApZZPyWBtNmEWjj-.customers_2014.xlsx.jagwgfpkvsawgaysmkwcilvqcp.com from 172.26.240.200",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-551ac51f",
+        "timestamp": "2022-02-04T06:00:05Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of DNS query IPs.",
+        "message": "Feb  4 06:00:05 dnsmasq[14306]: query[PTR] 65.227.168.192.in-addr.arpa from 192.168.226.198",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-dc8a0a25",
+        "timestamp": "2022-02-04T06:00:11Z",
+        "host": "wilson",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access logs.",
+        "message": "cloud.dmz.hallbrown.wilson.com:443 10.182.194.5 - - [04/Feb/2022:06:00:11 +0000] \"GET /ocs/v2.php/apps/notifications/api/v1/notifications?format=json HTTP/1.1\" 200 3876 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-9d39a47a",
+      "source": "alerts",
+      "timestamp": "2022-02-04T05:46:37Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Feb  4 05:46:37 dnsmasq[14481]: query[A] 3x6-.221-.lVUpzhuJEZEeYHMXdhcifCEcQTE3rKrqW0DVtw1V32KqfsC8-.EEU8/VYG3Pw42E/L9WOeBerwIvD88QctF59yw5CsPSPNiFUq-.IW6l8xfDmb83Ipy7D5sZGNOf2IRpKjhXLGl6Yj8X0499Z1Hv-.customers_2014.xlsx.jagwgfpkvsawgaysmkwcilvqcp.com from 172.26.240.200",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-9b592d0f",
+      "source": "alerts",
+      "timestamp": "2022-02-04T05:59:12Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Feb  4 05:59:12 dnsmasq[14306]: query[AAAA] mailserver.lane.wilson.com from 192.168.227.65",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-03256133",
+      "source": "alerts",
+      "timestamp": "2022-02-04T05:59:56Z",
+      "host": "wilson",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Feb  4 05:59:56 dnsmasq[14481]: query[A] 3x6-.279-.xMpBAQkEBWQlKCARjj5wacZR9W26me8haBODDt3RuHvvNd/C-.U1UR*PTtv3gtaodN5odFhNJnkcWuB0KSQeOiR6RkmnDr/jVQ-.KQcctvTDnxkTQvnUjGqlHPLysrAd3J9wCApZZPyWBtNmEWjj-.customers_2014.xlsx.jagwgfpkvsawgaysmkwcilvqcp.com from 172.26.240.200",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wilson"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (5 alerts; detectors: AMiner: Unusual occurrence frequencies of Apache Access logs., AMiner: Unusual occurrence frequencies of DNS query IPs., AMiner: Unusual occur",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wilson"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wilson (5 alerts; detectors: AMiner: Unusual occurrence frequencies of Apache Access logs., AMiner: Unusual occurrence frequencies of DNS query IPs., AMiner: Unusual occur",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wilson/wilson/session-0024",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 5,
+      "kept_alerts": 5
+    },
+    "sealed": true
+  }
+}

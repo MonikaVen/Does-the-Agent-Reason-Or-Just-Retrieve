@@ -1,0 +1,201 @@
+{
+  "incident_id": "ait-sess-santos-santos-0006",
+  "name": "ATTEST-AIT santos/santos session 6",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "santos/santos/session-0006",
+  "alert": {
+    "timestamp": "2022-01-14T03:58:36Z",
+    "host": "santos",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (5 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New event type., AMiner: New ip address in DNS logs.).",
+    "scenario": "santos"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-14T03:58:36Z",
+    "end": "2022-01-14T04:10:24Z",
+    "hosts": [
+      "santos"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-f8592b68",
+        "timestamp": "2022-01-14T03:58:36Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 14 03:58:36 dnsmasq[14919]: query[AAAA] mail from 172.21.131.50",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-31073a5b",
+        "timestamp": "2022-01-14T03:59:30Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 14 03:59:30 dnsmasq[14569]: query[A] motd.ubuntu.com from 10.229.3.237",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-182869fe",
+        "timestamp": "2022-01-14T04:00:59Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 14 04:00:59 dnsmasq[14569]: query[A] motd.ubuntu.com from 10.229.0.23",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-e3a1481c",
+        "timestamp": "2022-01-14T04:09:19Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 14 04:09:19 dnsmasq[14569]: query[AAAA] hayes-mail from 10.229.2.25",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-0007c822",
+        "timestamp": "2022-01-14T04:10:24Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 14 04:10:24 vpn 50-motd-news[29843]:  * Super-optimized for small spaces - read how we shrank the memory",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-f8592b68",
+      "source": "alerts",
+      "timestamp": "2022-01-14T03:58:36Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 14 03:58:36 dnsmasq[14919]: query[AAAA] mail from 172.21.131.50",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-31073a5b",
+      "source": "alerts",
+      "timestamp": "2022-01-14T03:59:30Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 14 03:59:30 dnsmasq[14569]: query[A] motd.ubuntu.com from 10.229.3.237",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-182869fe",
+      "source": "alerts",
+      "timestamp": "2022-01-14T04:00:59Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New ip address in DNS logs.",
+        "message": "Jan 14 04:00:59 dnsmasq[14569]: query[A] motd.ubuntu.com from 10.229.0.23",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (5 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New event type., AMiner: New ip address in DNS logs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (5 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New event type., AMiner: New ip address in DNS logs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "santos/santos/session-0006",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 5,
+      "kept_alerts": 5
+    },
+    "sealed": true
+  }
+}

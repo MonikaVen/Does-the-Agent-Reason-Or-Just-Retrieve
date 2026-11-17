@@ -1,0 +1,192 @@
+{
+  "incident_id": "ait-sess-shaw-shaw-0114",
+  "name": "ATTEST-AIT shaw/shaw session 114",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "shaw/shaw/session-0114",
+  "alert": {
+    "timestamp": "2022-01-30T17:52:34Z",
+    "host": "shaw",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (4 alerts; detectors: AMiner: High entropy in Apache Access request., AMiner: New characters in DNS domain.).",
+    "scenario": "shaw"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-30T17:52:34Z",
+    "end": "2022-01-30T17:54:38Z",
+    "hosts": [
+      "shaw"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-9f4b520b",
+        "timestamp": "2022-01-30T17:52:34Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in DNS domain.",
+        "message": "Jan 30 17:52:34 dnsmasq[14635]: reply WWW.R53.cmu.edu is 128.2.42.52",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-31789d2f",
+        "timestamp": "2022-01-30T17:52:34Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: New characters in DNS domain.",
+        "message": "Jan 30 17:52:34 dnsmasq[14596]: reply WWW.R53.cmu.edu is 128.2.42.52",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-67bd2021",
+        "timestamp": "2022-01-30T17:54:38Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "cloud.dmz.thomasmurray.shaw.info:443 172.24.251.86 - - [30/Jan/2022:17:54:38 +0000] \"GET /index.php/logout?requesttoken=CRoWQyQWIgQrHAwUBSN/HycnJjMhRFRrPwEyF3YgJyY%3D:MXqhLrCuRjXf2nNEKBcQFw93ZJfO7eIeD4KXYRBbrvw%3D HTTP/1.1\" 303 4547 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-06099e6b",
+        "timestamp": "2022-01-30T17:54:38Z",
+        "host": "shaw",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "172.24.249.224 - - [30/Jan/2022:17:54:38 +0000] \"GET /index.php/logout?requesttoken=CRoWQyQWIgQrHAwUBSN/HycnJjMhRFRrPwEyF3YgJyY%3D:MXqhLrCuRjXf2nNEKBcQFw93ZJfO7eIeD4KXYRBbrvw%3D HTTP/1.1\" 303 2121 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-9f4b520b",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:52:34Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New characters in DNS domain.",
+        "message": "Jan 30 17:52:34 dnsmasq[14635]: reply WWW.R53.cmu.edu is 128.2.42.52",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-31789d2f",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:52:34Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: New characters in DNS domain.",
+        "message": "Jan 30 17:52:34 dnsmasq[14596]: reply WWW.R53.cmu.edu is 128.2.42.52",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-67bd2021",
+      "source": "alerts",
+      "timestamp": "2022-01-30T17:54:38Z",
+      "host": "shaw",
+      "fields": {
+        "detector": "AMiner: High entropy in Apache Access request.",
+        "message": "cloud.dmz.thomasmurray.shaw.info:443 172.24.251.86 - - [30/Jan/2022:17:54:38 +0000] \"GET /index.php/logout?requesttoken=CRoWQyQWIgQrHAwUBSN/HycnJjMhRFRrPwEyF3YgJyY%3D:MXqhLrCuRjXf2nNEKBcQFw93ZJfO7eIeD4KXYRBbrvw%3D HTTP/1.1\" 303 4547 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\"",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "shaw"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (4 alerts; detectors: AMiner: High entropy in Apache Access request., AMiner: New characters in DNS domain.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "shaw"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on shaw (4 alerts; detectors: AMiner: High entropy in Apache Access request., AMiner: New characters in DNS domain.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "shaw/shaw/session-0114",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 4,
+      "kept_alerts": 4
+    },
+    "sealed": true
+  }
+}

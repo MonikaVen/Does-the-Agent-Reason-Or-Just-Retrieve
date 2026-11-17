@@ -1,0 +1,163 @@
+{
+  "incident_id": "ait-sess-harrison-harrison-0015",
+  "name": "ATTEST-AIT harrison/harrison session 15",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "harrison/harrison/session-0015",
+  "alert": {
+    "timestamp": "2022-02-04T11:30:01Z",
+    "host": "harrison",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (2 alerts; detectors: AMiner: New user_acct parameter combination in Audit logs., AMiner: New user_auth parameter combination in Audit logs.).",
+    "scenario": "harrison"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-02-04T11:30:01Z",
+    "end": "2022-02-04T11:30:01Z",
+    "hosts": [
+      "harrison"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-4eb5a17a",
+        "timestamp": "2022-02-04T11:30:01Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643974201.888:2119): pid=12478 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"june.thompson\" exe=\"/usr/lib/dovecot/auth\" hostname=10.237.2.255 addr=10.237.2.255 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-d91afb0c",
+        "timestamp": "2022-02-04T11:30:01Z",
+        "host": "harrison",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643974201.892:2120): pid=12478 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"june.thompson\" exe=\"/usr/lib/dovecot/auth\" hostname=10.237.2.255 addr=10.237.2.255 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-4eb5a17a",
+      "source": "alerts",
+      "timestamp": "2022-02-04T11:30:01Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New user_auth parameter combination in Audit logs.",
+        "message": "type=USER_AUTH msg=audit(1643974201.888:2119): pid=12478 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"june.thompson\" exe=\"/usr/lib/dovecot/auth\" hostname=10.237.2.255 addr=10.237.2.255 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-d91afb0c",
+      "source": "alerts",
+      "timestamp": "2022-02-04T11:30:01Z",
+      "host": "harrison",
+      "fields": {
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1643974201.892:2120): pid=12478 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"june.thompson\" exe=\"/usr/lib/dovecot/auth\" hostname=10.237.2.255 addr=10.237.2.255 terminal=dovecot res=success'",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "harrison"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (2 alerts; detectors: AMiner: New user_acct parameter combination in Audit logs., AMiner: New user_auth parameter combination in Audit logs.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "harrison"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on harrison (2 alerts; detectors: AMiner: New user_acct parameter combination in Audit logs., AMiner: New user_auth parameter combination in Audit logs.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "harrison/harrison/session-0015",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 2,
+      "kept_alerts": 2
+    },
+    "sealed": true
+  }
+}

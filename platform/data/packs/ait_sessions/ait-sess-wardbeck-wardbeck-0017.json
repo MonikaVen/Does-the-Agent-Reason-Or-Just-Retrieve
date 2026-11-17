@@ -1,0 +1,453 @@
+{
+  "incident_id": "ait-sess-wardbeck-wardbeck-0017",
+  "name": "ATTEST-AIT wardbeck/wardbeck session 17",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "wardbeck/wardbeck/session-0017",
+  "alert": {
+    "timestamp": "2022-01-19T13:46:05Z",
+    "host": "wardbeck",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (33 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New cred_acq parameter combination in Audit logs., AMiner: New cred_disp parameter combination",
+    "scenario": "wardbeck"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-19T13:46:05Z",
+    "end": "2022-01-19T14:07:02Z",
+    "hosts": [
+      "wardbeck"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-16bb020b",
+        "timestamp": "2022-01-19T13:46:05Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 19 13:46:05 mail sshd[18933]: Accepted publickey for blord from 172.21.240.147 port 34754 ssh2: RSA SHA256:8wFbiaYPevKS/wYKnePO20v0iymTcrRh4Kr+1uRS1UM",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-7e73b290",
+        "timestamp": "2022-01-19T13:46:05Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 19 13:46:05 mail sshd[18933]: pam_unix(sshd:session): session opened for user blord by (uid=0)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-27904a67",
+        "timestamp": "2022-01-19T13:46:05Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 19 13:46:05 mail systemd-logind[494]: New session 111 of user blord.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-19ccf846",
+        "timestamp": "2022-01-19T13:46:05Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642599965.961:4265): pid=18933 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"blord\" exe=\"/usr/sbin/sshd\" hostname=172.21.240.147 addr=172.21.240.147 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-ab31a1f5",
+        "timestamp": "2022-01-19T13:46:05Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "message": "type=CRED_ACQ msg=audit(1642599965.965:4266): pid=18933 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"blord\" exe=\"/usr/sbin/sshd\" hostname=172.21.240.147 addr=172.21.240.147 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-4d218c05",
+        "timestamp": "2022-01-19T13:46:05Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New login parameter combination in Audit logs.",
+        "message": "type=LOGIN msg=audit(1642599965.965:4267): pid=18933 uid=0 old-auid=4294967295 auid=1002 tty=(none) old-ses=4294967295 ses=111 res=1",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-e6479134",
+        "timestamp": "2022-01-19T13:46:06Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 19 13:46:06 mail systemd: pam_unix(systemd-user:session): session opened for user blord by (uid=0)",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-58d9b073",
+        "timestamp": "2022-01-19T13:46:06Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_acct parameter combination in Audit logs.",
+        "message": "type=USER_ACCT msg=audit(1642599966.001:4268): pid=18939 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"blord\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-d1c53487",
+        "timestamp": "2022-01-19T13:46:06Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1642599966.001:4270): pid=18939 uid=0 auid=1002 ses=112 msg='op=PAM:session_open acct=\"blord\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-d19cb4bc",
+        "timestamp": "2022-01-19T13:46:06Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642599966.021:4271): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=user@1002 comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0011-ccc0b3b0",
+        "timestamp": "2022-01-19T13:46:06Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_start parameter combination in Audit logs.",
+        "message": "type=USER_START msg=audit(1642599966.029:4272): pid=18933 uid=0 auid=1002 ses=111 msg='op=PAM:session_open acct=\"blord\" exe=\"/usr/sbin/sshd\" hostname=172.21.240.147 addr=172.21.240.147 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0012-21fc5faf",
+        "timestamp": "2022-01-19T13:46:06Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "type=USER_LOGIN msg=audit(1642599966.081:4274): pid=18933 uid=0 auid=1002 ses=111 msg='op=login id=1002 exe=\"/usr/sbin/sshd\" hostname=172.21.240.147 addr=172.21.240.147 terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0013-a5a5ac9b",
+        "timestamp": "2022-01-19T13:46:06Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_login parameter combination in Audit logs.",
+        "message": "type=USER_LOGIN msg=audit(1642599966.081:4274): pid=18933 uid=0 auid=1002 ses=111 msg='op=login id=1002 exe=\"/usr/sbin/sshd\" hostname=172.21.240.147 addr=172.21.240.147 terminal=/dev/pts/1 res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0014-6a59fa3e",
+        "timestamp": "2022-01-19T13:46:46Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 19 13:46:46 mail sshd[18946]: Received disconnect from 172.21.240.147 port 34754:11: disconnected by user",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0015-66bfd241",
+        "timestamp": "2022-01-19T13:46:46Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 19 13:46:46 mail sshd[18946]: Disconnected from 172.21.240.147 port 34754",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0016-8fe282cc",
+        "timestamp": "2022-01-19T13:46:46Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 19 13:46:46 mail systemd-logind[494]: Removed session 111.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0017-fd91cd15",
+        "timestamp": "2022-01-19T13:46:46Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New user_end parameter combination in Audit logs.",
+        "message": "type=USER_END msg=audit(1642600006.521:4275): pid=18933 uid=0 auid=1002 ses=111 msg='op=PAM:session_close acct=\"blord\" exe=\"/usr/sbin/sshd\" hostname=172.21.240.147 addr=172.21.240.147 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0018-5c32ae40",
+        "timestamp": "2022-01-19T13:46:46Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "message": "type=CRED_DISP msg=audit(1642600006.525:4276): pid=18933 uid=0 auid=1002 ses=111 msg='op=PAM:setcred acct=\"blord\" exe=\"/usr/sbin/sshd\" hostname=172.21.240.147 addr=172.21.240.147 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0019-ddc9e5ec",
+        "timestamp": "2022-01-19T13:46:46Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642600006.589:4277): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=user@1002 comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0020-837cbff8",
+        "timestamp": "2022-01-19T13:59:48Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 13:59:48 dnsmasq[14529]: query[A] um.simpli.fi from 192.168.96.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0021-753023c2",
+        "timestamp": "2022-01-19T13:59:48Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 13:59:48 dnsmasq[14529]: forwarded um.simpli.fi to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0022-67e24cb7",
+        "timestamp": "2022-01-19T13:59:48Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 13:59:48 dnsmasq[14529]: reply um.simpli.fi is <CNAME>",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0023-ae8f692c",
+        "timestamp": "2022-01-19T13:59:48Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 13:59:48 dnsmasq[14755]: query[A] um.simpli.fi from 172.21.241.113",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0024-3a00e617",
+        "timestamp": "2022-01-19T13:59:48Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 13:59:48 dnsmasq[14755]: forwarded um.simpli.fi to 192.168.127.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0025-67f31ae0",
+        "timestamp": "2022-01-19T13:59:48Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 13:59:48 dnsmasq[14755]: reply um.simpli.fi is <CNAME>",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0026-79325859",
+        "timestamp": "2022-01-19T14:07:02Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 14:07:02 dnsmasq[14529]: query[A] um.simpli.fi from 192.168.96.4",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0027-97bd17e2",
+        "timestamp": "2022-01-19T14:07:02Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 14:07:02 dnsmasq[14529]: forwarded um.simpli.fi to 8.8.8.8",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0028-3b0a3659",
+        "timestamp": "2022-01-19T14:07:02Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 14:07:02 dnsmasq[14529]: reply um.simpli.fi is <CNAME>",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0029-4c8387f2",
+        "timestamp": "2022-01-19T14:07:02Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 14:07:02 dnsmasq[14529]: reply nl1ads3.simpli.fi is 159.122.14.34",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0030-1da35f08",
+        "timestamp": "2022-01-19T14:07:02Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 14:07:02 dnsmasq[14755]: query[A] um.simpli.fi from 172.21.240.147",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0031-b34fa15b",
+        "timestamp": "2022-01-19T14:07:02Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 14:07:02 dnsmasq[14755]: forwarded um.simpli.fi to 192.168.127.254",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0032-d2c71d78",
+        "timestamp": "2022-01-19T14:07:02Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 14:07:02 dnsmasq[14755]: reply um.simpli.fi is <CNAME>",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0033-f689030f",
+        "timestamp": "2022-01-19T14:07:02Z",
+        "host": "wardbeck",
+        "source": "alerts",
+        "detector": "AMiner: High entropy in DNS domain.",
+        "message": "Jan 19 14:07:02 dnsmasq[14755]: reply nl1ads3.simpli.fi is 159.122.14.34",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-16bb020b",
+      "source": "alerts",
+      "timestamp": "2022-01-19T13:46:05Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 19 13:46:05 mail sshd[18933]: Accepted publickey for blord from 172.21.240.147 port 34754 ssh2: RSA SHA256:8wFbiaYPevKS/wYKnePO20v0iymTcrRh4Kr+1uRS1UM",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-7e73b290",
+      "source": "alerts",
+      "timestamp": "2022-01-19T13:46:05Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 19 13:46:05 mail sshd[18933]: pam_unix(sshd:session): session opened for user blord by (uid=0)",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-27904a67",
+      "source": "alerts",
+      "timestamp": "2022-01-19T13:46:05Z",
+      "host": "wardbeck",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 19 13:46:05 mail systemd-logind[494]: New session 111 of user blord.",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wardbeck"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (33 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New cred_acq parameter combination in Audit logs., AMiner: New cred_disp parameter combination",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wardbeck"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wardbeck (33 alerts; detectors: AMiner: High entropy in DNS domain., AMiner: New cred_acq parameter combination in Audit logs., AMiner: New cred_disp parameter combination",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "wardbeck/wardbeck/session-0017",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 33,
+      "kept_alerts": 33
+    },
+    "sealed": true
+  }
+}

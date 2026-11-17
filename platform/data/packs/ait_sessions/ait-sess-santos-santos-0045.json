@@ -1,0 +1,219 @@
+{
+  "incident_id": "ait-sess-santos-santos-0045",
+  "name": "ATTEST-AIT santos/santos session 45",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "santos/santos/session-0045",
+  "alert": {
+    "timestamp": "2022-01-16T00:48:12Z",
+    "host": "santos",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (7 alerts; detectors: AMiner: New cred_disp parameter combination in Audit logs., AMiner: New event type., AMiner: New service_stop parameter combination in Audit l",
+    "scenario": "santos"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-16T00:48:12Z",
+    "end": "2022-01-16T00:48:13Z",
+    "hosts": [
+      "santos"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-3bbfbe4c",
+        "timestamp": "2022-01-16T00:48:12Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 16 00:48:12 mail sshd[1487]: Timeout, client not responding.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-3aff7446",
+        "timestamp": "2022-01-16T00:48:12Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 16 00:48:12 mail sshd[1474]: pam_unix(sshd:session): session closed for user gmorgan",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-8951b1d7",
+        "timestamp": "2022-01-16T00:48:12Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 16 00:48:12 mail systemd-logind[496]: Removed session 40.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-b4e6870a",
+        "timestamp": "2022-01-16T00:48:12Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New user_end parameter combination in Audit logs.",
+        "message": "type=USER_END msg=audit(1642294092.936:7757): pid=1474 uid=0 auid=1003 ses=40 msg='op=PAM:session_close acct=\"gmorgan\" exe=\"/usr/sbin/sshd\" hostname=172.21.128.119 addr=172.21.128.119 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-30ac72c2",
+        "timestamp": "2022-01-16T00:48:12Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "message": "type=CRED_DISP msg=audit(1642294092.936:7758): pid=1474 uid=0 auid=1003 ses=40 msg='op=PAM:setcred acct=\"gmorgan\" exe=\"/usr/sbin/sshd\" hostname=172.21.128.119 addr=172.21.128.119 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-1b09eed6",
+        "timestamp": "2022-01-16T00:48:13Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 16 00:48:13 mail systemd: pam_unix(systemd-user:session): session closed for user gmorgan",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-b494c4a0",
+        "timestamp": "2022-01-16T00:48:13Z",
+        "host": "santos",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642294093.008:7759): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=user@1003 comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-3bbfbe4c",
+      "source": "alerts",
+      "timestamp": "2022-01-16T00:48:12Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 16 00:48:12 mail sshd[1487]: Timeout, client not responding.",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-3aff7446",
+      "source": "alerts",
+      "timestamp": "2022-01-16T00:48:12Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 16 00:48:12 mail sshd[1474]: pam_unix(sshd:session): session closed for user gmorgan",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-8951b1d7",
+      "source": "alerts",
+      "timestamp": "2022-01-16T00:48:12Z",
+      "host": "santos",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 16 00:48:12 mail systemd-logind[496]: Removed session 40.",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "santos"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (7 alerts; detectors: AMiner: New cred_disp parameter combination in Audit logs., AMiner: New event type., AMiner: New service_stop parameter combination in Audit l",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "santos"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on santos (7 alerts; detectors: AMiner: New cred_disp parameter combination in Audit logs., AMiner: New event type., AMiner: New service_stop parameter combination in Audit l",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "santos/santos/session-0045",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 7,
+      "kept_alerts": 7
+    },
+    "sealed": true
+  }
+}

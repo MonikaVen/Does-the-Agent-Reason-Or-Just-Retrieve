@@ -1,0 +1,246 @@
+{
+  "incident_id": "ait-sess-russellmitchell-russellmitchell-0012",
+  "name": "ATTEST-AIT russellmitchell/russellmitchell session 12",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "russellmitchell/russellmitchell/session-0012",
+  "alert": {
+    "timestamp": "2022-01-21T07:56:29Z",
+    "host": "russellmitchell",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (10 alerts; detectors: AMiner: New cred_disp parameter combination in Audit logs., AMiner: New event type., AMiner: New service_start parameter combination",
+    "scenario": "russellmitchell"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-21T07:56:29Z",
+    "end": "2022-01-21T08:09:33Z",
+    "hosts": [
+      "russellmitchell"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-4549088b",
+        "timestamp": "2022-01-21T07:56:29Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 21 07:56:29 dnsmasq[3326]: query[PTR] 180.231.168.192.in-addr.arpa from 192.168.231.56",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-78222538",
+        "timestamp": "2022-01-21T08:00:24Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "172.19.131.174 - - [21/Jan/2022:08:00:24 +0000] \"GET /imp/themes/default/graphics/checkbox_on.png HTTP/1.1\" 200 1359 \"https://mail.smith.russellmitchell.com/imp/themes/default/dynamic/screen.css\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-85ec4baa",
+        "timestamp": "2022-01-21T08:05:20Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 08:05:20 intranet-server sshd[7708]: pam_unix(sshd:session): session closed for user jhall",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-848f6de2",
+        "timestamp": "2022-01-21T08:05:20Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 08:05:20 intranet-server systemd-logind[957]: Removed session 29.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0005-423ff8d7",
+        "timestamp": "2022-01-21T08:05:20Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New user_end parameter combination in Audit logs.",
+        "message": "type=USER_END msg=audit(1642752320.510:603): pid=7708 uid=0 auid=1002 ses=29 msg='op=PAM:session_close acct=\"jhall\" exe=\"/usr/sbin/sshd\" hostname=172.19.131.174 addr=172.19.131.174 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0006-6f40931e",
+        "timestamp": "2022-01-21T08:05:20Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "message": "type=CRED_DISP msg=audit(1642752320.510:604): pid=7708 uid=0 auid=1002 ses=29 msg='op=PAM:setcred acct=\"jhall\" exe=\"/usr/sbin/sshd\" hostname=172.19.131.174 addr=172.19.131.174 terminal=ssh res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0007-24a4b804",
+        "timestamp": "2022-01-21T08:05:20Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New service_start parameter combination in Audit logs.",
+        "message": "type=SERVICE_START msg=audit(1642752320.622:605): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=user@1002 comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0008-6105edc1",
+        "timestamp": "2022-01-21T08:05:20Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New service_stop parameter combination in Audit logs.",
+        "message": "type=SERVICE_STOP msg=audit(1642752320.622:606): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=user@1002 comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0009-9a125aa9",
+        "timestamp": "2022-01-21T08:09:33Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-21 08:09:33 jhall/192.168.230.165:46011 [jhall] Inactivity timeout (--ping-restart), restarting",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0010-751b3048",
+        "timestamp": "2022-01-21T08:09:33Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "2022-01-21 08:09:33 jhall/192.168.230.165:46011 SIGUSR1[soft,ping-restart] received, client-instance restarting",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-4549088b",
+      "source": "alerts",
+      "timestamp": "2022-01-21T07:56:29Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "message": "Jan 21 07:56:29 dnsmasq[3326]: query[PTR] 180.231.168.192.in-addr.arpa from 192.168.231.56",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-78222538",
+      "source": "alerts",
+      "timestamp": "2022-01-21T08:00:24Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "message": "172.19.131.174 - - [21/Jan/2022:08:00:24 +0000] \"GET /imp/themes/default/graphics/checkbox_on.png HTTP/1.1\" 200 1359 \"https://mail.smith.russellmitchell.com/imp/themes/default/dynamic/screen.css\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36\"",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-85ec4baa",
+      "source": "alerts",
+      "timestamp": "2022-01-21T08:05:20Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 08:05:20 intranet-server sshd[7708]: pam_unix(sshd:session): session closed for user jhall",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (10 alerts; detectors: AMiner: New cred_disp parameter combination in Audit logs., AMiner: New event type., AMiner: New service_start parameter combination",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (10 alerts; detectors: AMiner: New cred_disp parameter combination in Audit logs., AMiner: New event type., AMiner: New service_start parameter combination",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "russellmitchell/russellmitchell/session-0012",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 10,
+      "kept_alerts": 10
+    },
+    "sealed": true
+  }
+}

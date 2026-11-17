@@ -1,0 +1,192 @@
+{
+  "incident_id": "ait-sess-russellmitchell-russellmitchell-0008",
+  "name": "ATTEST-AIT russellmitchell/russellmitchell session 8",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "russellmitchell/russellmitchell/session-0008",
+  "alert": {
+    "timestamp": "2022-01-21T04:59:22Z",
+    "host": "russellmitchell",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (4 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New event type.).",
+    "scenario": "russellmitchell"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-21T04:59:22Z",
+    "end": "2022-01-21T04:59:37Z",
+    "hosts": [
+      "russellmitchell"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-1226b9b8",
+        "timestamp": "2022-01-21T04:59:22Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 04:59:22 mail dhclient[428]: DHCPREQUEST of 172.19.130.4 on eth0 to 172.19.128.2 port 67",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0002-dc760522",
+        "timestamp": "2022-01-21T04:59:22Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 04:59:22 mail dhclient[428]: DHCPACK of 172.19.130.4 from 172.19.128.2",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0003-b522c8b5",
+        "timestamp": "2022-01-21T04:59:22Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 04:59:22 mail dhclient[428]: bound to 172.19.130.4 -- renewal in 33781 seconds.",
+        "sensor": "aminer"
+      },
+      {
+        "event_id": "ait-sess-0004-fae27724",
+        "timestamp": "2022-01-21T04:59:37Z",
+        "host": "russellmitchell",
+        "source": "alerts",
+        "detector": "AMiner: CPU value deviates from average in monitoring logs.",
+        "message": "{\"service\":{\"type\":\"system\"},\"agent\":{\"hostname\":\"intranet-server\",\"name\":\"intranet-server\",\"id\":\"d8e6f857-ec88-4cf5-bc5e-7b72a6fd1e33\",\"ephemeral_id\":\"c6b20ae2-38c0-4ada-8be2-2d607fddf7e9\",\"version\":\"7.13.2\",\"type\":\"metricbeat\"},\"event\":{\"module\":\"system\",\"dataset\":\"system.cpu\",\"duration\":90877},\"@version\":\"1\",\"metricset\":{\"period\":45000,\"name\":\"cpu\"},\"ecs\":{\"version\":\"1.9.0\"},\"host\":{\"cpu\":{\"pct",
+        "sensor": "aminer"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0001-1226b9b8",
+      "source": "alerts",
+      "timestamp": "2022-01-21T04:59:22Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 04:59:22 mail dhclient[428]: DHCPREQUEST of 172.19.130.4 on eth0 to 172.19.128.2 port 67",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0002-dc760522",
+      "source": "alerts",
+      "timestamp": "2022-01-21T04:59:22Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 04:59:22 mail dhclient[428]: DHCPACK of 172.19.130.4 from 172.19.128.2",
+        "sensor": "aminer"
+      }
+    },
+    {
+      "event_id": "ait-sess-0003-b522c8b5",
+      "source": "alerts",
+      "timestamp": "2022-01-21T04:59:22Z",
+      "host": "russellmitchell",
+      "fields": {
+        "detector": "AMiner: New event type.",
+        "message": "Jan 21 04:59:22 mail dhclient[428]: bound to 172.19.130.4 -- renewal in 33781 seconds.",
+        "sensor": "aminer"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "russellmitchell"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (4 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New event type.).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "russellmitchell"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on russellmitchell (4 alerts; detectors: AMiner: CPU value deviates from average in monitoring logs., AMiner: New event type.).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "russellmitchell/russellmitchell/session-0008",
+    "answer": "benign",
+    "accept": [
+      "benign"
+    ],
+    "grading": "exact_ci",
+    "label": "benign",
+    "is_true_positive": false,
+    "attack_stages": [],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 4,
+      "kept_alerts": 4
+    },
+    "sealed": true
+  }
+}

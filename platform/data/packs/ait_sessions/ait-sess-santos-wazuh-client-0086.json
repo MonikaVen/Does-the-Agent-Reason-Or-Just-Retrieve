@@ -1,0 +1,1332 @@
+{
+  "incident_id": "ait-sess-santos-wazuh-client-0086",
+  "name": "ATTEST-AIT santos/wazuh-client session 86",
+  "source_benchmark": "ATTEST-AIT-ADS",
+  "source_scenario": "santos/wazuh-client/session-0086",
+  "alert": {
+    "timestamp": "2022-01-17T10:27:15Z",
+    "host": "wazuh-client",
+    "user": "unknown",
+    "alert_type": "ait_ads_session",
+    "summary": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wazuh-client (50 alerts; detectors: wazuh:20101, wazuh:20151, wazuh:31101).",
+    "scenario": "santos"
+  },
+  "scope": {
+    "allowed_log_sources": [
+      "alerts"
+    ],
+    "start": "2022-01-17T10:27:15Z",
+    "end": "2022-01-17T11:25:36Z",
+    "hosts": [
+      "wazuh-client"
+    ]
+  },
+  "telemetry": {
+    "alerts": [
+      {
+        "event_id": "ait-sess-0001-f86d8099",
+        "timestamp": "2022-01-17T10:27:15Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:86601",
+        "message": "Suricata: Alert - SURICATA TLS invalid record/traffic",
+        "rule_level": 3,
+        "decoder": "json",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0002-0a21d0a5",
+        "timestamp": "2022-01-17T10:36:54Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:20151",
+        "message": "Multiple IDS events from same source ip.",
+        "rule_level": 10,
+        "decoder": "snort",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0003-72f9821d",
+        "timestamp": "2022-01-17T10:37:03Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:86601",
+        "message": "Suricata: Alert - SURICATA TLS invalid record/traffic",
+        "rule_level": 3,
+        "decoder": "json",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0004-409e8d6e",
+        "timestamp": "2022-01-17T10:46:15Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:20101",
+        "message": "IDS event.",
+        "rule_level": 6,
+        "decoder": "snort",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0005-272d23f4",
+        "timestamp": "2022-01-17T10:46:49Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:86601",
+        "message": "Suricata: Alert - SURICATA TLS invalid record/traffic",
+        "rule_level": 3,
+        "decoder": "json",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0006-cc880623",
+        "timestamp": "2022-01-17T10:58:29Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:9701",
+        "message": "Dovecot Authentication Success.",
+        "rule_level": 3,
+        "decoder": "dovecot",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0007-869be81f",
+        "timestamp": "2022-01-17T11:08:28Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:20101",
+        "message": "IDS event.",
+        "rule_level": 6,
+        "decoder": "snort",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0008-b6c58d26",
+        "timestamp": "2022-01-17T11:21:32Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:5706",
+        "message": "sshd: insecure connection attempt (scan).",
+        "rule_level": 6,
+        "decoder": "sshd",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0009-7333eb9c",
+        "timestamp": "2022-01-17T11:22:02Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0010-073564d1",
+        "timestamp": "2022-01-17T11:22:03Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0011-073564d1",
+        "timestamp": "2022-01-17T11:22:03Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0012-6e9597c8",
+        "timestamp": "2022-01-17T11:22:04Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0013-6e9597c8",
+        "timestamp": "2022-01-17T11:22:04Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0014-861ad8f3",
+        "timestamp": "2022-01-17T11:22:05Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0015-861ad8f3",
+        "timestamp": "2022-01-17T11:22:05Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0016-861ad8f3",
+        "timestamp": "2022-01-17T11:22:05Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0017-49e2f5f9",
+        "timestamp": "2022-01-17T11:22:06Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0018-4c9bb752",
+        "timestamp": "2022-01-17T11:22:06Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31151",
+        "message": "Multiple web server 400 error codes from same source ip.",
+        "rule_level": 10,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0019-49e2f5f9",
+        "timestamp": "2022-01-17T11:22:06Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0020-cb00060e",
+        "timestamp": "2022-01-17T11:22:07Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31151",
+        "message": "Multiple web server 400 error codes from same source ip.",
+        "rule_level": 10,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0021-b343bd61",
+        "timestamp": "2022-01-17T11:22:07Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0022-a8585b5c",
+        "timestamp": "2022-01-17T11:22:08Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0023-1a03dd0f",
+        "timestamp": "2022-01-17T11:22:09Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0024-1a03dd0f",
+        "timestamp": "2022-01-17T11:22:09Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0025-1a03dd0f",
+        "timestamp": "2022-01-17T11:22:09Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0026-5ca1c41b",
+        "timestamp": "2022-01-17T11:22:10Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0027-5ca1c41b",
+        "timestamp": "2022-01-17T11:22:10Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0028-4105e3a8",
+        "timestamp": "2022-01-17T11:22:11Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0029-8d9e9892",
+        "timestamp": "2022-01-17T11:22:11Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31151",
+        "message": "Multiple web server 400 error codes from same source ip.",
+        "rule_level": 10,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0030-4105e3a8",
+        "timestamp": "2022-01-17T11:22:11Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0031-41d0dfec",
+        "timestamp": "2022-01-17T11:22:12Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0032-41d0dfec",
+        "timestamp": "2022-01-17T11:22:12Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0033-39c645fd",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0034-39c645fd",
+        "timestamp": "2022-01-17T11:22:30Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0035-686e7745",
+        "timestamp": "2022-01-17T11:22:32Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0036-686e7745",
+        "timestamp": "2022-01-17T11:22:32Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0037-9d1e4bfe",
+        "timestamp": "2022-01-17T11:22:33Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31151",
+        "message": "Multiple web server 400 error codes from same source ip.",
+        "rule_level": 10,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0038-a93d349c",
+        "timestamp": "2022-01-17T11:22:34Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31151",
+        "message": "Multiple web server 400 error codes from same source ip.",
+        "rule_level": 10,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0039-89344fc9",
+        "timestamp": "2022-01-17T11:22:35Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0040-89344fc9",
+        "timestamp": "2022-01-17T11:22:35Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0041-c3481940",
+        "timestamp": "2022-01-17T11:22:36Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0042-d4b60d70",
+        "timestamp": "2022-01-17T11:22:37Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0043-d4b60d70",
+        "timestamp": "2022-01-17T11:22:37Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0044-85941f61",
+        "timestamp": "2022-01-17T11:22:38Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0045-3943501f",
+        "timestamp": "2022-01-17T11:22:39Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0046-3943501f",
+        "timestamp": "2022-01-17T11:22:39Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0047-91f7d179",
+        "timestamp": "2022-01-17T11:22:40Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0048-be88e2c6",
+        "timestamp": "2022-01-17T11:22:41Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0049-773d0893",
+        "timestamp": "2022-01-17T11:22:42Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31516",
+        "message": "Suspicious URL access.",
+        "rule_level": 6,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      },
+      {
+        "event_id": "ait-sess-0050-040145a6",
+        "timestamp": "2022-01-17T11:22:42Z",
+        "host": "wazuh-client",
+        "source": "alerts",
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    ]
+  },
+  "oracle_evidence": [
+    {
+      "event_id": "ait-sess-0008-b6c58d26",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:21:32Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:5706",
+        "message": "sshd: insecure connection attempt (scan).",
+        "rule_level": 6,
+        "decoder": "sshd",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0009-7333eb9c",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:02Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0010-073564d1",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:03Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0011-073564d1",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:03Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0012-6e9597c8",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:04Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0013-6e9597c8",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:04Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0014-861ad8f3",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:05Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0015-861ad8f3",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:05Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0016-861ad8f3",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:05Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0017-49e2f5f9",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:06Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0018-4c9bb752",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:06Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31151",
+        "message": "Multiple web server 400 error codes from same source ip.",
+        "rule_level": 10,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0019-49e2f5f9",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:06Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0020-cb00060e",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:07Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31151",
+        "message": "Multiple web server 400 error codes from same source ip.",
+        "rule_level": 10,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0021-b343bd61",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:07Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0022-a8585b5c",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:08Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0023-1a03dd0f",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:09Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0024-1a03dd0f",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:09Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0025-1a03dd0f",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:09Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0026-5ca1c41b",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:10Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0027-5ca1c41b",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:10Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0028-4105e3a8",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:11Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0029-8d9e9892",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:11Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31151",
+        "message": "Multiple web server 400 error codes from same source ip.",
+        "rule_level": 10,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0030-4105e3a8",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:11Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0031-41d0dfec",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:12Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0032-41d0dfec",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:12Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0033-39c645fd",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:30Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0034-39c645fd",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:30Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0035-686e7745",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:32Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0036-686e7745",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:32Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0037-9d1e4bfe",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:33Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31151",
+        "message": "Multiple web server 400 error codes from same source ip.",
+        "rule_level": 10,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0038-a93d349c",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:34Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31151",
+        "message": "Multiple web server 400 error codes from same source ip.",
+        "rule_level": 10,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0039-89344fc9",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:35Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0040-89344fc9",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:35Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0041-c3481940",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:36Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0042-d4b60d70",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:37Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0043-d4b60d70",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:37Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0044-85941f61",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:38Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0045-3943501f",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:39Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0046-3943501f",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:39Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0047-91f7d179",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:40Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0048-be88e2c6",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:41Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0049-773d0893",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:42Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31516",
+        "message": "Suspicious URL access.",
+        "rule_level": 6,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    },
+    {
+      "event_id": "ait-sess-0050-040145a6",
+      "source": "alerts",
+      "timestamp": "2022-01-17T11:22:42Z",
+      "host": "wazuh-client",
+      "fields": {
+        "detector": "wazuh:31101",
+        "message": "Web server 400 error code.",
+        "rule_level": 5,
+        "decoder": "web-accesslog",
+        "sensor": "wazuh",
+        "agent": "wazuh-client"
+      }
+    }
+  ],
+  "oracle_plan": [
+    {
+      "order": 1,
+      "question": "What processes or alerts fired in the investigation window?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wazuh-client"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 2,
+      "question": "Are there related network or secondary signals on this host?",
+      "tool": "query_events",
+      "arguments": {
+        "source": "alerts",
+        "filter": {
+          "host": "wazuh-client"
+        },
+        "limit": 50
+      }
+    },
+    {
+      "order": 3,
+      "question": "What ATT&CK or detection knowledge matches this alert?",
+      "tool": "retrieve_knowledge",
+      "arguments": {
+        "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wazuh-client (50 alerts; detectors: wazuh:20101, wazuh:20151, wazuh:31101).",
+        "corpus_tags": [
+          "detection",
+          "attack"
+        ],
+        "top_k": 3
+      }
+    }
+  ],
+  "fixed_query_pack": {
+    "version": "converted-pack-v1",
+    "queries": [
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wazuh-client"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "query_events",
+        "arguments": {
+          "source": "alerts",
+          "filter": {
+            "host": "wazuh-client"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "retrieve_knowledge",
+        "arguments": {
+          "question": "Decide malicious vs benign for ATTEST-style AIT-ADS alert session on wazuh-client (50 alerts; detectors: wazuh:20101, wazuh:20151, wazuh:31101).",
+          "corpus_tags": [
+            "detection"
+          ],
+          "top_k": 3
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "dataset": "ATTEST-AIT-ADS",
+    "scenario": "santos/wazuh-client/session-0086",
+    "answer": "malicious",
+    "accept": [
+      "malicious"
+    ],
+    "grading": "exact_ci",
+    "label": "malicious",
+    "is_true_positive": true,
+    "attack_stages": [
+      "cracking",
+      "dirb",
+      "network_scans",
+      "service_scans",
+      "webshell",
+      "wpscan"
+    ],
+    "session": {
+      "gap_sec": 900,
+      "max_sec": 3600,
+      "alert_count": 9182,
+      "kept_alerts": 50
+    },
+    "sealed": true
+  }
+}
