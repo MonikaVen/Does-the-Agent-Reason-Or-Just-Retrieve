@@ -1,0 +1,6 @@
+{
+  "incident_id": "soc-soc-000045",
+  "error": "Matched C3 run has zero evidence; C5 is not backfilled",
+  "traceback": "Traceback (most recent call last):\n  File \"/agent/repos/Does-the-Agent-Reason-Or-Just-Retrieve/platform/scripts/run_converted_packs_suite.py\", line 255, in worker\n    summary = await run_one(\n              ^^^^^^^^^^^^^^\n  File \"/agent/repos/Does-the-Agent-Reason-Or-Just-Retrieve/platform/scripts/run_converted_packs_suite.py\", line 182, in run_one\n    suite = await lab.run_suite(\n            ^^^^^^^^^^^^^^^^^^^^\n  File \"/agent/repos/Does-the-Agent-Reason-Or-Just-Retrieve/platform/app/lab.py\", line 310, in run_suite\n    summary = await self.run_condition(\n              ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/agent/repos/Does-the-Agent-Reason-Or-Just-Retrieve/platform/app/lab.py\", line 269, in run_condition\n    record = self.prepare_run(\n             ^^^^^^^^^^^^^^^^^\n  File \"/agent/repos/Does-the-Agent-Reason-Or-Just-Retrieve/platform/app/lab.py\", line 186, in prepare_run\n    raise LabError(\"Matched C3 run has zero evidence; C5 is not backfilled\")\napp.lab.LabError: Matched C3 run has zero evidence; C5 is not backfilled\n",
+  "at": "2026-11-16T05:12:27Z"
+}

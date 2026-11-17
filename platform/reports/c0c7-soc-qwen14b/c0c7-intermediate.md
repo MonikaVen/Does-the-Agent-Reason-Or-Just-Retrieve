@@ -1,30 +1,16 @@
-# C0–C7 intermediate results — SOC-AgentBench / qwen2.5:14b
+# C0–C7 final results — SOC-AgentBench / qwen2.5:14b
 
-- Packs completed: **73/120**
+- Packs completed: **119/120**
 - Packs failed: **1** (`soc-soc-000045`)
-- Model: `ollama:qwen2.5:14b` · tools=2 · workers=1 · num_ctx=4096
-- Accuracy = match to sealed `ground_truth.label` (scored offline; labels never reach non-C6 model context)
+- Ground truth mix: **109 malicious / 10 benign**
 
-| Condition | n | Acc. | Malicious | Benign | Mean conf. | Med. conf. | Mean tools | Mean KB |
-|-----------|--:|-----:|----------:|-------:|-----------:|-----------:|-----------:|--------:|
-| C0 | 73 | 50.7% | 32 (44%) | 41 (56%) | 0.61 | 0.58 | 0.00 | 0.00 |
-| C1 | 73 | 56.2% | 40 (55%) | 33 (45%) | 0.61 | 0.58 | 0.00 | 1.00 |
-| C2 | 73 | 80.8% | 60 (82%) | 13 (18%) | 0.61 | 0.58 | 2.00 | 0.00 |
-| C3 | 73 | 82.2% | 59 (81%) | 14 (19%) | 0.61 | 0.58 | 2.00 | 0.00 |
-| C4 | 73 | 93.2% | 73 (100%) | 0 (0%) | 0.60 | 0.58 | 2.00 | 1.00 |
-| C5 | 73 | 84.9% | 67 (92%) | 6 (8%) | 0.61 | 0.58 | 0.00 | 1.00 |
-| C6 | 73 | 56.2% | 36 (49%) | 37 (51%) | 0.61 | 0.58 | 0.00 | 1.00 |
-| C7 | 73 | 83.6% | 58 (79%) | 15 (21%) | 0.61 | 0.58 | 2.00 | 0.00 |
-
-**Ground-truth mix in completed packs:** benign=5, malicious=68
-
-## Per-condition accuracy vs ablation ladder
-
-| | C0 Raw | C1 KB | C2 Search | C3 Full | C4 Fixed | C5 Matched | C6 Oracle evid. | C7 Oracle plan |
-|--|------:|------:|----------:|--------:|---------:|-----------:|----------------:|---------------:|
-| Acc. | 50.7% | 56.2% | 80.8% | 82.2% | 93.2% | 84.9% | 56.2% | 83.6% |
-| % mal | 44% | 55% | 82% | 81% | 100% | 92% | 49% | 79% |
-
-## Notes
-- Intermediate snapshot; suite still running.
-- Pack `soc-soc-000045` failed at C5 (`Matched C3 run has zero evidence`) and is excluded from n.
+| Condition | n | Acc. | Malicious | Benign | Mean conf. | Mean tools | Mean KB |
+|-----------|--:|-----:|----------:|-------:|-----------:|-----------:|--------:|
+| C0 Raw | 119 | 52.9% | 53 (45%) | 66 (55%) | 0.61 | 0.00 | 0.00 |
+| C1 KB | 119 | 48.7% | 56 (47%) | 63 (53%) | 0.61 | 0.00 | 1.00 |
+| C2 Search | 119 | 84.0% | 102 (86%) | 17 (14%) | 0.61 | 2.00 | 0.00 |
+| C3 Full | 119 | 83.2% | 99 (83%) | 20 (17%) | 0.61 | 2.00 | 0.00 |
+| C4 Fixed | 119 | 89.1% | 116 (97%) | 3 (3%) | 0.60 | 2.00 | 1.00 |
+| C5 Matched | 119 | 84.9% | 111 (93%) | 8 (7%) | 0.61 | 0.00 | 1.00 |
+| C6 Oracle evid. | 119 | 52.9% | 53 (45%) | 66 (55%) | 0.60 | 0.00 | 1.00 |
+| C7 Oracle plan | 119 | 84.9% | 95 (80%) | 24 (20%) | 0.60 | 1.97 | 0.00 |
