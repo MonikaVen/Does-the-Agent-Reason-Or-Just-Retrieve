@@ -8,8 +8,10 @@ import sys
 from pathlib import Path
 from typing import Any
 
+from .artifacts import ArtifactError
 from .codegen import generate_experiment
 from .conditions import CONDITIONS, condition_ids, get_condition
+from .explorer import serve
 from .lab import Lab, LabError, SUITE_CONDITIONS, format_architecture, format_event, format_summary
 from .llm import PROVIDER_INDEX
 from .packs import DATA_KINDS
@@ -46,6 +48,18 @@ def _budgets(args: argparse.Namespace) -> dict[str, int]:
     if args.records is not None:
         budgets["max_records_per_call"] = args.records
     return budgets
+
+
+def cmd_explore(args: argparse.Namespace) -> int:
+    server = serve(args.host, args.port)
+    print(f"Artifact explorer at http://{args.host}:{server.server_address[1]}", flush=True)
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        print("\nstopped", flush=True)
+    finally:
+        server.server_close()
+    return 0
 
 
 def cmd_health(args: argparse.Namespace) -> int:
@@ -247,7 +261,7 @@ def build_parser() -> argparse.ArgumentParser:
     common = _common_flags()
     parser = argparse.ArgumentParser(
         prog="python -m app",
-        description="Run C0–C7 investigation experiments from the terminal. No frontend.",
+        description="Run C0–C7 investigation experiments from the terminal.",
         parents=[common],
     )
     sub = parser.add_subparsers(dest="command")
@@ -309,6 +323,11 @@ def build_parser() -> argparse.ArgumentParser:
     bench.add_argument("--checkpoint-every", type=int, default=10, help="write checkpoint every N scenarios")
     bench.set_defaults(func=cmd_bench)
 
+    explore = sub.add_parser("explore", help="open a read-only browser for suite artifacts")
+    explore.add_argument("--host", default="127.0.0.1")
+    explore.add_argument("--port", type=int, default=8765)
+    explore.set_defaults(func=cmd_explore)
+
     parser.set_defaults(func=None, conditions="all")
     return parser
 
@@ -321,7 +340,7 @@ def main(argv: list[str] | None = None) -> int:
         return 2
     try:
         return args.func(args)
-    except LabError as exc:
+    except (LabError, ArtifactError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 2
 

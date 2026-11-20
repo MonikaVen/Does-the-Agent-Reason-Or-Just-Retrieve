@@ -25,15 +25,21 @@ The central research question is:
 
 > **Does the agent reason over evidence, or does it just retrieve useful context?**
 
-The runnable lab is Python. There is no frontend. Load typed agent data
-(alert, telemetry, knowledge, C4/C6/C7 packs), pin a **local Ollama** model
-(default) or a cloud model, and run C0–C7 from the terminal. See
+The runnable lab is Python. Load typed agent data (alert, telemetry,
+knowledge, C4/C6/C7 packs), pin a **local Ollama** model (default) or a cloud
+model, and run C0–C7 from the terminal. Saved suite directories open in the
+result explorer. Install, a live model check, and the explorer are in
 [`platform/README.md`](platform/README.md).
 
 ```bash
 cd platform
 python3 -m pip install -r requirements.txt
+ollama serve
+ollama pull llama3.2:1b
+python3 -m app health --provider ollama --model llama3.2:1b
 python3 -m app suite --provider ollama --model llama3.2:1b
+python3 -m app explore
+# http://127.0.0.1:8765
 ```
 
 Rather than treating generated explanations or chain-of-thought text as proof of reasoning, the framework evaluates observable behavior:

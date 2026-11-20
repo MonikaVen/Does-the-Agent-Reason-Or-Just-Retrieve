@@ -1,19 +1,30 @@
 # Investigation lab
 
-Python C0–C7 experiment runner. There is no frontend. Experiments run from
-the terminal against a **locally deployed Ollama** LLM (default) or the
-offline reference investigator.
+Python C0–C7 experiment runner. Experiments run from the terminal against a
+**locally deployed Ollama** LLM (default) or the offline reference
+investigator. `python3 -m app explore` opens a read-only browser for saved
+pack files and trajectories.
 
-## Setup
+## Install
+
+Python 3.10 or newer. Commands below run from `platform/`. Ollama is local:
+the lab calls `http://127.0.0.1:11434` and does not use an API key. Point at
+another server with `--ollama-url` or `OLLAMA_HOST`.
 
 ```bash
-# 1. Local model (skip if using --provider reference)
+# Ollama. https://ollama.com/download — on Linux:
+# curl -fsSL https://ollama.com/install.sh | sh
 ollama serve
 ollama pull llama3.2:1b
+# any tag already on disk works; names must match `ollama list`
 
-# 2. Lab
+# Lab
 python3 -m pip install -r requirements.txt
+python3 -m app health --provider ollama --model llama3.2:1b
 ```
+
+`health` prints the models Ollama is serving. The run fails if that list does
+not include the `--model` tag.
 
 ## Run experiments
 
@@ -92,6 +103,70 @@ LAB_STEP_DELAY=0 python3 scripts/run_converted_packs_suite.py \
 
 DiscoveryBench/DiscoveryWorld are not converted.
 
+## Test a local Ollama model
+
+Unit tests stay offline. They do not call Ollama:
+
+```bash
+python3 -m pytest tests
+```
+
+A live check uses a model from `ollama list`. One condition on the sample
+incident:
+
+```bash
+python3 -m app run C3 --provider ollama --model llama3.2:1b \
+  --pack data/sample_incident.json --tools 2
+```
+
+All eight conditions on that same pack. This writes
+`reports/experiment-report.md`. Read it with `python3 -m app report`.
+
+```bash
+python3 -m app suite --provider ollama --model llama3.2:1b \
+  --pack data/sample_incident.json --tools 2
+```
+
+One converted pack, written as a suite directory the result explorer can open.
+Convert the benchmarks first (Converted cyber packs, above). `--tools 2` caps C2, C3, and C7.
+`--workers 1` keeps a single local model from running two packs at once.
+`--limit 1` stops after the first pack.
+
+```bash
+LAB_STEP_DELAY=0 python3 scripts/run_converted_packs_suite.py \
+  --provider ollama --model llama3.2:1b --tools 2 --workers 1 \
+  --runtime 1800 --limit 1 --datasets SOC-AgentBench \
+  --out reports/smoke-ollama
+```
+
+Swap in `qwen2.5:14b`, `qwen2.5:3b`, or another pulled tag the same way.
+`python3 -m app … --provider ollama` with no `--model` uses `qwen2.5:14b`.
+The converted-pack script defaults to `qwen2.5:3b`.
+
+## Result explorer
+
+Read-only browser over a suite directory. It does not start runs or write the
+lab database.
+
+```bash
+python3 -m app explore
+# http://127.0.0.1:8765
+# python3 -m app explore --host 127.0.0.1 --port 8765
+```
+
+Open that URL, pick a suite (the smoke above is `smoke-ollama`), pick an
+incident, then click a condition. The table is the pack summary: status,
+verdict, confidence, tool count, knowledge count. The click loads that run's
+report and event trail from `lab-w*.sqlite3`. An in-progress pack is listed
+from the database before its summary file exists. Ground truth stays in the
+pack file and is not shown. Stop the server with Ctrl-C.
+
+A directory under `reports/` is listed when it contains `packs/*.json`,
+`lab-w*.sqlite3`, or `c0c7-table.md`. `run_converted_packs_suite.py` writes
+those. `python3 -m app suite` writes `experiment-report.md` and stores the
+trajectory in `var/lab.sqlite3` (or `LAB_DB`); read that report with
+`python3 -m app report`.
+
 ## Experiment report
 
 `python3 -m app suite` writes `reports/experiment-report.md` and `.json`.
@@ -121,9 +196,3 @@ Scenario, and Score.
 
 `python3 -m app generate C3 --provider ollama` prints an in-process script
 that pins condition, pack, model, and budgets. It does not call HTTP.
-
-## Tests
-
-```bash
-python3 -m pytest tests
-```
