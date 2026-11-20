@@ -1,8 +1,9 @@
 # Investigation lab
 
-Python C0–C7 experiment runner. There is no frontend. Experiments run from
-the terminal against a **locally deployed Ollama** LLM (default) or the
-offline reference investigator.
+Python C0–C7 experiment runner. Experiments run from the terminal against a
+**locally deployed Ollama** LLM (default) or the offline reference
+investigator. `python3 -m app explore` opens a read-only browser for saved
+pack files and trajectories.
 
 ## Setup
 
@@ -91,6 +92,21 @@ LAB_STEP_DELAY=0 python3 scripts/run_converted_packs_suite.py \
 ```
 
 DiscoveryBench/DiscoveryWorld are not converted.
+
+## Artifact explorer
+
+Read-only. It does not start runs or write the lab database.
+
+```bash
+python3 -m app explore
+# http://127.0.0.1:8765
+```
+
+Suites are directories under `reports/` that contain `packs/*.json` or
+`lab-w*.sqlite3`. A pack file is the condition summary (verdict, confidence,
+tool counts). Clicking a condition loads that run's report and event trail
+from SQLite. The in-progress pack is listed from the database before its
+summary file exists.
 
 ## Experiment report
 
